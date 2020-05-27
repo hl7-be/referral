@@ -46,7 +46,6 @@
         </discriminator>
         <rules value="open" />
       </slicing>
-      <definition value="Identifiers assigned to this order instance by the orderer and/or the receiver and/or order fulfiller." />
       <mustSupport value="true" />
     </element>
     <element id="ServiceRequest.identifier:UHMEP">
@@ -57,6 +56,10 @@
     </element>
     <element id="ServiceRequest.status">
       <path value="ServiceRequest.status" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.code">
+      <path value="ServiceRequest.code" />
       <mustSupport value="true" />
     </element>
     <element id="ServiceRequest.subject">
@@ -72,6 +75,17 @@
     </element>
     <element id="ServiceRequest.requester">
       <path value="ServiceRequest.requester" />
+      <short value="Prescriber of the requested service" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device" />
+        <targetProfile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient" />
+        <targetProfile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization" />
+        <targetProfile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner" />
+        <targetProfile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitionerrole" />
+      </type>
       <mustSupport value="true" />
     </element>
     <element id="ServiceRequest.performerType">
@@ -80,6 +94,17 @@
     </element>
     <element id="ServiceRequest.performer">
       <path value="ServiceRequest.performer" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/CareTeam" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/HealthcareService" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
+        <targetProfile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner" />
+        <targetProfile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitionerrole" />
+        <targetProfile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient" />
+        <targetProfile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization" />
+      </type>
       <mustSupport value="true" />
     </element>
   </differential>
