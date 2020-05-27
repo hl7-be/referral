@@ -131,13 +131,17 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Base" />
   <derivation value="specialization" />
   <differential>
-    <element id="BeReferralPrescription">
-      <path value="BeReferralPrescription" />
+    <element id="be-model-referralprescription">
+      <path value="be-model-referralprescription" />
       <min value="0" />
       <max value="*" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Base" />
+      </type>
     </element>
-    <element id="BeReferralPrescription.prescriber">
-      <path value="BeReferralPrescription.prescriber" />
+    <element id="be-model-referralprescription.prescriber">
+      <path value="be-model-referralprescription.prescriber" />
       <short value="The NIHDI of the prescribing healthcare party" />
       <min value="1" />
       <max value="1" />
@@ -145,8 +149,8 @@
         <code value="Reference" />
       </type>
     </element>
-    <element id="BeReferralPrescription.patient">
-      <path value="BeReferralPrescription.patient" />
+    <element id="be-model-referralprescription.patient">
+      <path value="be-model-referralprescription.patient" />
       <short value="The SSIN of the person for which the referral is prescribed." />
       <min value="1" />
       <max value="1" />
@@ -154,8 +158,8 @@
         <code value="Reference" />
       </type>
     </element>
-    <element id="BeReferralPrescription.provider">
-      <path value="BeReferralPrescription.provider" />
+    <element id="be-model-referralprescription.provider">
+      <path value="be-model-referralprescription.provider" />
       <short value="A NIHDI of the recommended healthcare party" />
       <min value="0" />
       <max value="*" />
@@ -163,8 +167,8 @@
         <code value="Reference" />
       </type>
     </element>
-    <element id="BeReferralPrescription.disciplineProvider">
-      <path value="BeReferralPrescription.disciplineProvider" />
+    <element id="be-model-referralprescription.disciplineProvider">
+      <path value="be-model-referralprescription.disciplineProvider" />
       <short value="Required discipline of the provider party" />
       <min value="1" />
       <max value="1" />
@@ -173,8 +177,8 @@
         <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
       </type>
     </element>
-    <element id="BeReferralPrescription.timestampCreation">
-      <path value="BeReferralPrescription.timestampCreation" />
+    <element id="be-model-referralprescription.timestampCreation">
+      <path value="be-model-referralprescription.timestampCreation" />
       <short value="When this prescription was created" />
       <min value="1" />
       <max value="1" />
@@ -183,8 +187,8 @@
         <profile value="http://hl7.org/fhir/StructureDefinition/dateTime" />
       </type>
     </element>
-    <element id="BeReferralPrescription.status">
-      <path value="BeReferralPrescription.status" />
+    <element id="be-model-referralprescription.status">
+      <path value="be-model-referralprescription.status" />
       <short value="Current status" />
       <min value="1" />
       <max value="1" />
@@ -197,18 +201,18 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/request-status" />
       </binding>
     </element>
-    <element id="BeReferralPrescription.uhmepIdentifier">
-      <path value="BeReferralPrescription.uhmepIdentifier" />
+    <element id="be-model-referralprescription.uhmepIdentifier">
+      <path value="be-model-referralprescription.uhmepIdentifier" />
       <short value="Reference ID of the UHMEP once available there" />
       <min value="0" />
       <max value="1" />
       <type>
-        <code value="CodeableConcept" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
       </type>
     </element>
-    <element id="BeReferralPrescription.validityPeriod">
-      <path value="BeReferralPrescription.validityPeriod" />
+    <element id="be-model-referralprescription.validityPeriod">
+      <path value="be-model-referralprescription.validityPeriod" />
       <short value="Period of validity of prescription" />
       <min value="1" />
       <max value="1" />
@@ -217,8 +221,8 @@
         <profile value="http://hl7.org/fhir/StructureDefinition/Period" />
       </type>
     </element>
-    <element id="BeReferralPrescription.executionPeriod">
-      <path value="BeReferralPrescription.executionPeriod" />
+    <element id="be-model-referralprescription.executionPeriod">
+      <path value="be-model-referralprescription.executionPeriod" />
       <short value="When this prescription is executed, available after start of execution" />
       <min value="0" />
       <max value="1" />
@@ -227,8 +231,8 @@
         <profile value="http://hl7.org/fhir/StructureDefinition/Period" />
       </type>
     </element>
-    <element id="BeReferralPrescription.prescribedService">
-      <path value="BeReferralPrescription.prescribedService" />
+    <element id="be-model-referralprescription.prescribedService">
+      <path value="be-model-referralprescription.prescribedService" />
       <short value="What is prescribed" />
       <min value="1" />
       <max value="1" />
