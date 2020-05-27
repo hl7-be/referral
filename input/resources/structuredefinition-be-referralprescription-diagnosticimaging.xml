@@ -37,4 +37,20 @@
   <type value="ServiceRequest" />
   <baseDefinition value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription" />
   <derivation value="constraint" />
+  <differential>
+    <element id="ServiceRequest.supportingInfo">
+      <path value="ServiceRequest.supportingInfo" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.supportingInfo.reference">
+      <path value="ServiceRequest.supportingInfo.reference" />
+      <type>
+        <code value="string" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/be-observation" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/procedure" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/questionnaireResponse" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/coverage" />
+      </type>
+    </element>
+  </differential>
 </StructureDefinition>
