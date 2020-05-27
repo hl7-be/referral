@@ -40,17 +40,15 @@
   <differential>
     <element id="ServiceRequest.supportingInfo">
       <path value="ServiceRequest.supportingInfo" />
-      <mustSupport value="true" />
-    </element>
-    <element id="ServiceRequest.supportingInfo.reference">
-      <path value="ServiceRequest.supportingInfo.reference" />
       <type>
-        <code value="string" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/be-observation" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/procedure" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/questionnaireResponse" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/coverage" />
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Resource" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/procedure" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/documentReference" />
+        <targetProfile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-observation" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/questionnaireResponse" />
       </type>
+      <mustSupport value="true" />
     </element>
   </differential>
 </StructureDefinition>
