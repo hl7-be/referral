@@ -38,6 +38,27 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/ServiceRequest" />
   <derivation value="constraint" />
   <differential>
+    <element id="ServiceRequest.extension">
+      <path value="ServiceRequest.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="ServiceRequest.extension:statusReason">
+      <path value="ServiceRequest.extension" />
+      <sliceName value="statusReason" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/request-statusReason" />
+      </type>
+      <mustSupport value="true" />
+    </element>
     <element id="ServiceRequest.identifier">
       <path value="ServiceRequest.identifier" />
       <slicing>
@@ -57,6 +78,10 @@
     </element>
     <element id="ServiceRequest.status">
       <path value="ServiceRequest.status" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.category">
+      <path value="ServiceRequest.category" />
       <mustSupport value="true" />
     </element>
     <element id="ServiceRequest.code">
