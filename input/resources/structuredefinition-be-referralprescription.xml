@@ -59,7 +59,7 @@
       <mustSupport value="true" />
     </element>
     <element id="ServiceRequest.extension:statusReason.value[x]:valueCodeableConcept">
-      <path value="ServiceRequest.extension.valueCodeableConcept" />
+      <path value="ServiceRequest.extension.value[x]" />
       <sliceName value="valueCodeableConcept" />
       <binding>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
@@ -103,6 +103,13 @@
       <path value="ServiceRequest.category" />
       <min value="1" />
       <mustSupport value="true" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="ServiceRequestCategory" />
+        </extension>
+        <strength value="extensible" />
+        <valueSet value="https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-referral-category" />
+      </binding>
     </element>
     <element id="ServiceRequest.code">
       <path value="ServiceRequest.code" />
