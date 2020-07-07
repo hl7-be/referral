@@ -94,6 +94,14 @@
     </element>
     <element id="ServiceRequest.category">
       <path value="ServiceRequest.category" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="coding.system" />
+        </discriminator>
+        <description value="To define a category of the referral." />
+        <rules value="open" />
+      </slicing>
       <min value="1" />
       <mustSupport value="true" />
       <binding>
@@ -101,6 +109,26 @@
           <valueString value="ServiceRequestCategory" />
         </extension>
         <strength value="extensible" />
+      </binding>
+    </element>
+    <element id="ServiceRequest.category:mainCategory">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="normative" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version">
+        <valueCode value="4.0.0" />
+      </extension>
+      <path value="ServiceRequest.category" />
+      <sliceName value="mainCategory" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="ServiceRequestCategory" />
+        </extension>
+        <strength value="extensible" />
+        <description value="Main category" />
         <valueSet value="https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-referral-category" />
       </binding>
     </element>

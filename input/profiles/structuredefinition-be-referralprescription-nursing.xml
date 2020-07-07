@@ -38,20 +38,20 @@
   <baseDefinition value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription" />
   <derivation value="constraint" />
   <differential>
-    <element id="ServiceRequest.code">
-      <path value="ServiceRequest.code" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="coding.system" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-    </element>
-    <element id="ServiceRequest.code:nursingCategory">
-      <path value="ServiceRequest.code" />
+    <element id="ServiceRequest.category:nursingCategory">
+      <path value="ServiceRequest.category" />
       <sliceName value="nursingCategory" />
-      <short value="The high level nursing category (like woundcare or compression therapy)" />
+      <short value="e.g. woundcare or compression therapy" />
+      <min value="1" />
+      <max value="1" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="ServiceRequestCategory" />
+        </extension>
+        <strength value="extensible" />
+        <description value="Nursing category." />
+        <valueSet value="https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-referral-nursing-category" />
+      </binding>
     </element>
   </differential>
 </StructureDefinition>
