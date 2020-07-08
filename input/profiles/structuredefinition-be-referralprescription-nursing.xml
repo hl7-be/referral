@@ -38,12 +38,23 @@
   <baseDefinition value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription" />
   <derivation value="constraint" />
   <differential>
+    <element id="ServiceRequest.extension:statusReason">
+      <path value="ServiceRequest.extension" />
+      <sliceName value="statusReason" />
+    </element>
+    <element id="ServiceRequest.extension:statusReason.value[x]:valueCodeableConcept">
+      <path value="ServiceRequest.extension.value[x]" />
+      <sliceName value="valueCodeableConcept" />
+      <fixedCodeableConcept>
+        <coding>
+          <system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason" />
+        </coding>
+      </fixedCodeableConcept>
+    </element>
     <element id="ServiceRequest.category:nursingCategory">
       <path value="ServiceRequest.category" />
       <sliceName value="nursingCategory" />
       <short value="e.g. woundcare or compression therapy" />
-      <min value="1" />
-      <max value="1" />
       <constraint>
         <key value="nursing-1" />
         <severity value="error" />
@@ -63,6 +74,12 @@
     <element id="ServiceRequest.bodySite">
       <path value="ServiceRequest.bodySite" />
       <short value="Location on Body - to be used in context of woundcare" />
+      <constraint>
+        <key value="nursing-1" />
+        <severity value="error" />
+        <human value="Woundcare SHALL have bodySite" />
+        <expression value="ServiceRequest.coding.code = '225358003' implies bodySite.exists()" />
+      </constraint>
       <mustSupport value="true" />
     </element>
   </differential>
