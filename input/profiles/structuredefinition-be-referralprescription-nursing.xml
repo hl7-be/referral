@@ -38,16 +38,18 @@
   <baseDefinition value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription" />
   <derivation value="constraint" />
   <differential>
-    <element id="ServiceRequest.bodySite">
-      <path value="ServiceRequest.bodySite" />
-      <short value="Location on Body - to be used in context of woundcare" />
+    <element id="ServiceRequest.code">
+      <path value="ServiceRequest.code" />
       <constraint>
         <key value="nursing-1" />
         <severity value="error" />
         <human value="Woundcare SHALL have bodySite" />
-        <expression value="ServiceRequest.code.coding.code = '225358003' implies bodySite.exists()" />
-        <source value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing" />
+        <expression value="coding.code = '225358003' implies bodySite.exists()" />
       </constraint>
+    </element>
+    <element id="ServiceRequest.bodySite">
+      <path value="ServiceRequest.bodySite" />
+      <short value="Location on Body - to be used in context of woundcare" />
       <mustSupport value="true" />
     </element>
   </differential>
