@@ -44,6 +44,12 @@
       <short value="e.g. woundcare or compression therapy" />
       <min value="1" />
       <max value="1" />
+      <constraint>
+        <key value="nursing-1" />
+        <severity value="error" />
+        <human value="Give bodySite when woundcare" />
+        <expression value="category.coding.code = '225358003' implies bodySite.exists()" />
+      </constraint>
       <binding>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="ServiceRequestCategory" />
@@ -52,6 +58,11 @@
         <description value="Nursing category." />
         <valueSet value="https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-referral-nursing-category" />
       </binding>
+    </element>
+    <element id="ServiceRequest.bodySite">
+      <path value="ServiceRequest.bodySite" />
+      <short value="Location on Body - to be used in context of woundcare" />
+      <mustSupport value="true" />
     </element>
   </differential>
 </StructureDefinition>
