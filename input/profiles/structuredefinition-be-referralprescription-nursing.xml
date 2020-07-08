@@ -44,7 +44,7 @@
         <key value="nursing-1" />
         <severity value="error" />
         <human value="Woundcare SHALL have bodySite" />
-        <expression value="category.coding.code = '225358003' implies bodySite.exists()" />
+        <expression value="code.coding.code = '225358003' implies bodySite.exists()" />
         <source value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing" />
       </constraint>
     </element>
@@ -57,6 +57,17 @@
         <strength value="extensible" />
         <description value="Nursing codes" />
         <valueSet value="https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-referral-nursing-codes" />
+      </binding>
+    </element>
+    <element id="ServiceRequest.orderDetail">
+      <path value="ServiceRequest.orderDetail" />
+      <mustSupport value="true" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="OrderDetail" />
+        </extension>
+        <strength value="extensible" />
+        <valueSet value="https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-referral-nursing-details" />
       </binding>
     </element>
     <element id="ServiceRequest.bodySite">
