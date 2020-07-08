@@ -96,20 +96,14 @@
       <path value="ServiceRequest.category" />
       <slicing>
         <discriminator>
-          <type value="value" />
-          <path value="resolve().code" />
+          <type value="profile" />
+          <path value="coding.code" />
         </discriminator>
         <description value="To define a category of the referral." />
         <rules value="open" />
       </slicing>
       <min value="1" />
       <mustSupport value="true" />
-      <binding>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-          <valueString value="ServiceRequestCategory" />
-        </extension>
-        <strength value="extensible" />
-      </binding>
     </element>
     <element id="ServiceRequest.category:mainCategory">
       <path value="ServiceRequest.category" />
