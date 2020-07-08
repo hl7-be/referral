@@ -49,12 +49,13 @@
         <severity value="error" />
         <human value="Give bodySite when woundcare" />
         <expression value="category.coding.code = '225358003' implies bodySite.exists()" />
+        <source value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing" />
       </constraint>
       <binding>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="ServiceRequestCategory" />
         </extension>
-        <strength value="extensible" />
+        <strength value="required" />
         <description value="Nursing category." />
         <valueSet value="https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-referral-nursing-category" />
       </binding>

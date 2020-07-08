@@ -96,8 +96,8 @@
       <path value="ServiceRequest.category" />
       <slicing>
         <discriminator>
-          <type value="profile" />
-          <path value="coding.code" />
+          <type value="pattern" />
+          <path value="$this" />
         </discriminator>
         <description value="To define a category of the referral." />
         <rules value="open" />
@@ -115,7 +115,7 @@
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="ServiceRequestCategory" />
         </extension>
-        <strength value="extensible" />
+        <strength value="required" />
         <description value="Main category" />
         <valueSet value="https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-referral-category" />
       </binding>
