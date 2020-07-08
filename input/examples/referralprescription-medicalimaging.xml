@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ServiceRequest xmlns="http://hl7.org/fhir">>
+<ServiceRequest xmlns="http://hl7.org/fhir">
 	<id value="diagnostic-imaging-basic-example"/>
 	<meta>
 		<profile
@@ -13,18 +13,7 @@
 			More information on https://www.hl7.org/fhir/R4/narrative.html
 		</div>
 	</text>
-	<extension
-		url="http://hl7.org/fhir/StructureDefinition/request-statusReason">
-		<valueCodeableConcept>
-			<coding>
-				<system
-					value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason" />
-				<code value="created" />
-				<display value="Created" />
-			</coding>
-		</valueCodeableConcept>
-	</extension>
-	<!-- In this example some referenced resources are placed here in <contained> tags to be fully 'contained' 
+		<!-- In this example some referenced resources are placed here in <contained> tags to be fully 'contained' 
 		within the serviceRequest, depending on the final architectural approach 
 		- this may have to be revisited -->
 	<contained>
@@ -88,6 +77,18 @@
 			</name>
 		</Practitioner>
 	</contained>
+	<extension
+		url="http://hl7.org/fhir/StructureDefinition/request-statusReason">
+		<valueCodeableConcept>
+			<coding>
+				<system
+					value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason" />
+				<code value="created" />
+				<display value="Created" />
+			</coding>
+		</valueCodeableConcept>
+	</extension>
+
 	<status value="active" />
 	<intent value="order" />
 	<category>
