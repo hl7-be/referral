@@ -38,16 +38,25 @@
   <baseDefinition value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription" />
   <derivation value="constraint" />
   <differential>
+    <element id="ServiceRequest">
+      <path value="ServiceRequest" />
+      <constraint>
+        <key value="nursing-1" />
+        <severity value="error" />
+        <human value="Woundcare in code (SNOMED-CT 225358003 ) SHALL have bodySite" />
+        <expression value="code.coding.code = '225358003' implies bodySite.exists()" />
+        <source value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing" />
+      </constraint>
+    </element>
     <element id="ServiceRequest.code">
       <path value="ServiceRequest.code" />
-      <min value="1" />
       <binding>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="ServiceRequestCode" />
         </extension>
-        <strength value="required" />
+        <strength value="extensible" />
         <description value="Nursing codes" />
-        <valueSet value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-codes" />
+        <valueSet value="https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-referral-nursing-codes" />
       </binding>
     </element>
     <element id="ServiceRequest.orderDetail">
@@ -60,6 +69,11 @@
         <strength value="extensible" />
         <valueSet value="https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-referral-nursing-details" />
       </binding>
+    </element>
+    <element id="ServiceRequest.bodySite">
+      <path value="ServiceRequest.bodySite" />
+      <short value="Location on Body - to be used in context of woundcare" />
+      <mustSupport value="true" />
     </element>
   </differential>
 </StructureDefinition>
