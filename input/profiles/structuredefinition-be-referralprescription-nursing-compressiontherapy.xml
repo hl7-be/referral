@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
- <id value="be-referralprescription-nursing-compressiontherapy" />
+  <id value="be-referralprescription-nursing-compressiontherapy" />
   <url value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-compressiontherapy" />
   <name value="BeReferralPrescriptionNursingCompressionTherapy" />
   <status value="draft" />
@@ -36,6 +36,10 @@
   <baseDefinition value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing" />
   <derivation value="constraint" />
   <differential>
+    <element id="ServiceRequest.code.coding.code">
+      <path value="ServiceRequest.code.coding.code" />
+      <fixedCode value="compression-therapy" />
+    </element>
     <element id="ServiceRequest.orderDetail.coding.system">
       <path value="ServiceRequest.orderDetail.coding.system" />
       <min value="1" />
