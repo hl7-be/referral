@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="be-lab-prescription" />
+  <url value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-lab-prescription" />
+  <version value="0.0.1" />
+  <name value="BeLabPrescription" />
+  <status value="draft" />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="quick" />
+    <uri value="http://siframework.org/cqf" />
+    <name value="Quality Improvement and Clinical Knowledge (QUICK)" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="ServiceRequest" />
+  <baseDefinition value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="ServiceRequest.text">
+      <path value="ServiceRequest.text" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.basedOn">
+      <path value="ServiceRequest.basedOn" />
+      <short value="What request fulfills - could be a different lab order for example in case of sub orders." />
+      <definition value="The order might depend on a different order ." />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.replaces">
+      <path value="ServiceRequest.replaces" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.intent">
+      <path value="ServiceRequest.intent" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.priority">
+      <path value="ServiceRequest.priority" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.code">
+      <path value="ServiceRequest.code" />
+      <short value="High level code to describe the tests - if needed to detail within orderDetail - consult comment for more detail." />
+      <definition value="A code that identifies a particular service (i.e., procedure, diagnostic investigation, or panel of investigations) that have been requested." />
+      <comment value="Many laboratory and radiology procedure codes embed the specimen/organ system in the test order name, for example,  serum or serum/plasma glucose, or a chest x-ray. The specimen might not be recorded separately from the test code.&#xD;&#xA;The implementer SHALL adhere to the preferred codes to use.&#xD;&#xA;The recommended codification used is LOINC as per the subset defined by the FPS Health, for the majority of commonly used lab measurements and demands. This subset is available on https://www.vas.ehealth.fgov.be/webretam/retam/home.htm&#xD;&#xA;&#xD;&#xA;It is allowed to use multiple codes within the FHIR CodeableConcept datatype. But the first code given must follow the following rules.(Other codes given will be for information purposes.)&#xD;&#xA;&#xD;&#xA;The actual observation is preferably coded in LOINC (subset as defined by FPS Health)&#xD;&#xA;&#xD;&#xA;If that is not possible , ALBERT codes are used (subset as defined by FPS Health.) &#xD;&#xA;&#xD;&#xA;If that is not possible,laboratory may send its own code plus obligatory a text element to further explain. Specifically in the context of a laboratory order, this SHALL be used with caution as the laboratory fulfilling the order needs to understand what is ordered.&#xD;&#xA;&#xD;&#xA;If that is not possible the kind of observation is expressed only in text (allowed but NOT RECOMMENDED)" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-observationcodeableconcept" />
+      </type>
+    </element>
+    <element id="ServiceRequest.orderDetail">
+      <path value="ServiceRequest.orderDetail" />
+      <short value="Additional order information - consult comment for more information" />
+      <comment value="For information from the medical record intended to support the delivery of the requested services, use the `supportingInformation` element.&#xD;&#xA;The implementer SHALL adhere to the preferred codes to use.&#xD;&#xA;The recommended codification used is LOINC as per the subset defined by the FPS Health, for the majority of commonly used lab measurements and demands. This subset is available on https://www.vas.ehealth.fgov.be/webretam/retam/home.htm&#xD;&#xA;&#xD;&#xA;It is allowed to use multiple codes within the FHIR CodeableConcept datatype. But the first code given must follow the following rules.(Other codes given will be for information purposes.)&#xD;&#xA;&#xD;&#xA;The actual observation is preferably coded in LOINC (subset as defined by FPS Health)&#xD;&#xA;&#xD;&#xA;If that is not possible , ALBERT codes are used (subset as defined by FPS Health.) &#xD;&#xA;&#xD;&#xA;If that is not possible,laboratory may send its own code plus obligatory a text element to further explain. Specifically in the context of a laboratory order, this SHALL be used with caution as the laboratory fulfilling the order needs to understand what is ordered.&#xD;&#xA;&#xD;&#xA;If that is not possible the kind of observation is expressed only in text (allowed but NOT RECOMMENDED)" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-observationcodeableconcept" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode">
+      <path value="ServiceRequest.reasonCode" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.supportingInfo">
+      <path value="ServiceRequest.supportingInfo" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.specimen">
+      <path value="ServiceRequest.specimen" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.note">
+      <path value="ServiceRequest.note" />
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>
