@@ -88,6 +88,11 @@
       <path value="ServiceRequest.identifier.value" />
       <min value="1" />
     </element>
+    <element id="ServiceRequest.requisition">
+      <path value="ServiceRequest.requisition" />
+      <short value="If needed to have a common identifier among different prescriptions." />
+      <mustSupport value="true" />
+    </element>
     <element id="ServiceRequest.status">
       <path value="ServiceRequest.status" />
       <mustSupport value="true" />
@@ -98,9 +103,6 @@
       <max value="1" />
       <mustSupport value="true" />
       <binding>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-          <valueString value="ServiceRequestCategory" />
-        </extension>
         <strength value="extensible" />
         <valueSet value="https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-referral-category" />
       </binding>
