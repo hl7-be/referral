@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ServiceRequest xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file:///H:/OLD_DESKTOP/Desktop/LATEST%20AND%20GREATEST/FHIR4/servicerequest.xsd">
+	<id value="laboratory-order-example1"/>
+	<meta>
+		<profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-lab-prescriptionr"/>
+	</meta>
+	<text>
+		<status value="generated"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">A human readable form of the request (in HTML) SHALL be
+			provided here to enable systems that cannot process all structured
+			data, to at least present the information to the interactive user.
+			More information on https://www.hl7.org/fhir/R4/narrative.html
+		</div>
+	</text>
+	<!-- In this example some referenced resources are placed here in <contained> tags to be fully 'contained' 
+		within the serviceRequest, depending on the final architectural approach 
+		- this may have to be revisited -->
+	<!-- 
+
+- Specific tests ordered
+- Possibilty to define the order using text
+- Order with/without specimen
+- Telephone and adresses of different parties
+- Possibility to add extra codes referring to some sort of coded justification
+- possibility to mark the tests ordered in different coded structured ways and/or in text
+
+-->
+	<contained>
+		<Patient xmlns="http://hl7.org/fhir">
+			<id value="Patient1"/>
+			<meta>
+				<profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient"/>
+			</meta>
+			<identifier>
+				<use value="official"/>
+				<system value="https://www.ehealth.fgov.be/standards/fhir/NamingSystem/ssin"/>
+				<value value="9999999999"/>
+			</identifier>
+			<name>
+				<family value="Doe"/>
+				<given value="Jane"/>
+			</name>
+			<telecom>
+				<system value="phone"/>
+				<value value="322672299"/>
+				<use value="home"/>
+			</telecom>
+			<gender value="female"/>
+			<birthDate value="1956-05-27"/>
+			<address>
+				<use value="home"/>
+				<type value="both"/>
+				<text value="Labradorstraat 26, 1000 Brussel"/>
+				<line value="Labradorstraat 26"/>
+				<city value="Brussel"/>
+				<postalCode value="1000"/>
+				<country value="BE"/>
+			</address>
+		</Patient>
+	</contained>
+	<contained>
+		<Observation xmlns="http://hl7.org/fhir">
+			<id value="observation1"/>
+			<status value="final"/>
+			<category>
+				<coding>
+					<system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+					<code value="vital-signs"/>
+					<display value="Vital Signs"/>
+				</coding>
+				<text value="Vital Signs"/>
+			</category>
+			<code>
+				<coding>
+					<system value="http://loinc.org"/>
+					<code value="8867-4"/>
+					<display value="Heart rate"/>
+				</coding>
+				<coding>
+					<system value="http://snomed.info/sct"/>
+					<code value="364075005"/>
+					<display value="Heart rate (observable entity)"/>
+				</coding>
+				<text value="Heart rate"/>
+			</code>
+			<subject>
+				<reference value="#Patient1"/>
+			</subject>
+			<effectiveDateTime value="1999-07-02"/>
+			<performer>
+				<reference value="#Requester1"/>
+			</performer>
+			<valueQuantity>
+				<value value="44"/>
+				<unit value="beats/minute"/>
+				<system value="http://unitsofmeasure.org"/>
+				<code value="/min"/>
+			</valueQuantity>
+		</Observation>
+	</contained>
+	<contained>
+		<Practitioner xmlns="http://hl7.org/fhir">
+			<id value="Requester1"/>
+			<meta>
+				<profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner"/>
+			</meta>
+			<identifier>
+				<use value="official"/>
+				<system value="https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi"/>
+				<value value="8888888888"/>
+			</identifier>
+			<name>
+				<use value="official"/>
+				<family value="Seven"/>
+				<given value="Henry"/>
+			</name>
+			<telecom>
+				<system value="phone"/>
+				<value value="322882299"/>
+				<use value="home"/>
+			</telecom>
+			<address>
+				<use value="work"/>
+				<type value="both"/>
+				<text value="Werkstraat 26, 1000 Brussel"/>
+				<line value="Werkstraat 26"/>
+				<city value="Brussel"/>
+				<postalCode value="1000"/>
+				<country value="BE"/>
+			</address>
+		</Practitioner>
+	</contained>
+	<contained>
+		<Organization xmlns="http://hl7.org/fhir">
+			<id value="Performer1"/>
+			<meta>
+				<profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization"/>
+			</meta>
+			<identifier>
+				<use value="official"/>
+				<system value="https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi"/>
+				<value value="9876543210"/>
+			</identifier>
+			<name value="Labstraatlabo">
+			</name>
+			<telecom>
+				<system value="phone"/>
+				<value value="322884499"/>
+				<use value="work"/>
+			</telecom>
+			<address>
+				<use value="work"/>
+				<type value="both"/>
+				<text value="Labstraat 101, 1000 Brussel"/>
+				<line value="Labstraat 101"/>
+				<city value="Brussel"/>
+				<postalCode value="1000"/>
+				<country value="BE"/>
+			</address>
+		</Organization>
+	</contained>
+	<extension url="http://hl7.org/fhir/StructureDefinition/request-statusReason">
+		<valueCodeableConcept>
+			<coding>
+				<system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason"/>
+				<code value="created"/>
+				<display value="Created"/>
+			</coding>
+		</valueCodeableConcept>
+	</extension>
+	<status value="active"/>
+	<!--This could also be e.g. 'draft' or 'on-hold' if the order e.g. is made by a secretary and still needs approval (cfr. specifications) -->
+	<intent value="order"/>
+	<!--This could also be e.g. 'refelx-order' (cfr. specifications) -->
+	<category>
+		<coding>
+			<system value="http://snomed.info/sct"/>
+			<code value="15220000"/>
+			<display value="Laboratory test"/>
+		</coding>
+	</category>
+	<priority value="stat"/>
+	<!--priority according to specifications -->
+	<code>
+		<coding>
+			<!-- high level: 1 code -->
+			<system value="http://loinc.org"/>
+			<code value="18723-7"/>
+			<display value="Hematology studies (set)"/>
+		</coding>
+	</code>
+	<orderDetail>
+		<!-- If needed to specify: multiple codes -->
+		<coding>
+			<system value="http://loinc.org"/>
+			<code value="30341-2"/>
+			<display value="Erythrocyte sedimentation rate"/>
+		</coding>
+	</orderDetail>
+	<orderDetail>
+		<coding>
+			<system value="http://loinc.org"/>
+			<code value="789-8"/>
+			<display value="Erythrocytes [#/volume] in Blood by Automated count"/>
+		</coding>
+	</orderDetail>
+	<orderDetail>
+		<coding>
+			<system value="http://loinc.org"/>
+			<code value="20563-3"/>
+			<display value="Carboxyhemoglobin/Hemoglobin.total in Blood"/>
+		</coding>
+	</orderDetail>
+		<orderDetail>
+		<text value="Test described in text only"/>
+	</orderDetail>
+	<subject>
+		<reference value="#Patient1"/>
+	</subject>
+	<authoredOn value="2015-11-01T14:41:00+01:00"/>
+	<requester>
+		<reference value="#Requester1"/>
+	</requester>
+	<performerType>
+		<coding>
+			<system value="http://snomed.info/sct"/>
+			<code value="61246008"/>
+			<!-- here the high level SNOMED-CT code is given for laboratory performer - could also be a specialized child of this SNOMED-CT code -->
+			<display value="Laboratory medicine specialist"/>
+		</coding>
+	</performerType>
+	<performer>
+		<!--This could be a practitioner, but in this case, it is a laboratory. Naturally, this might be not known and the entire element will not exist.-->
+		<reference value="#Performer1"/>
+	</performer>
+	<reasonCode>
+		<coding>
+			<system value="https://www.SOME_NOMENCLATURE_SYSTEM.be/"/>
+			<code value="123"/>
+			<display value="TheJustification"/>
+			<!-- Using a code, it should be possible to also send a justification (e.g. a toxoplasmosis test during pregnancy) (this is a limited list of nomenclature codes) -->
+		</coding>
+	</reasonCode>
+	<supportingInfo>
+		<reference value="Observation1"/>
+	</supportingInfo>
+	<specimen>
+		<identifier>
+			<!--  Business identifier of the specimen MAY BE included if available  -->
+			<system value="https://www.IDENTIFYING_SYSTEM.be/"/>
+			<value value="1"/>
+		</identifier>
+	</specimen>
+	<note>
+		<text value="Some free text explaining about these tests that are ordered."/>
+	</note>
+</ServiceRequest>
