@@ -17,7 +17,7 @@
 		within the serviceRequest, depending on the final architectural approach 
 		- this may have to be revisited -->
 	<!-- 
-
+Some reqs explicitely in this example:
 - Specific tests ordered
 - Possibilty to define the order using text
 - Order with/without specimen
@@ -26,6 +26,7 @@
 - possibility to mark the tests ordered in different coded structured ways and/or in text
 - extra clinical information is provided, as an Observation resource and as an image (using B64 encoding in the Binary resource)
 - a suspected codition of the patient is given as extra clinical information
+- how to model an initial prescription by an administrative assistent.
 
 -->
 	<contained>
@@ -103,7 +104,7 @@
 	</contained>
 	<contained>
 		<Condition>
-		<!-- a suspected codition of the patient is given as extra clinical information -->
+			<!-- a suspected codition of the patient is given as extra clinical information -->
 			<id value="condition1"/>
 			<clinicalStatus>
 				<coding>
@@ -126,7 +127,7 @@
 				<reference value="#Patient1"/>
 			</subject>
 			<note>
-				<text value="This is a suspicion"></text>
+				<text value="This is a suspicion"/>
 			</note>
 		</Condition>
 	</contained>
@@ -208,7 +209,7 @@
 		</valueCodeableConcept>
 	</extension>
 	<status value="active"/>
-	<!--This could also be e.g. 'draft' or 'on-hold' if the order e.g. is made by a secretary and still needs approval (cfr. specifications) -->
+	<!--This could also be e.g. 'draft' or 'on-hold' if the order e.g. is made by a secretary and still needs approval-->
 	<intent value="order"/>
 	<!--This could also be e.g. 'reflex-order' (cfr. specifications) -->
 	<category>
@@ -260,6 +261,10 @@
 	<requester>
 		<reference value="#Requester1"/>
 	</requester>
+	<!-- if simply needed to mark the prescription as an internal draft that is made by administrative personel, the requester might alternatively be modeled simply like this:
+<requester>
+<display value="Jan Van Den Admin-assistent"/>	
+	</requester> -->
 	<performerType>
 		<coding>
 			<system value="http://snomed.info/sct"/>
@@ -283,7 +288,7 @@
 	<supportingInfo>
 		<reference value="#observation1"/>
 	</supportingInfo>
-		<supportingInfo>
+	<supportingInfo>
 		<reference value="#condition1"/>
 	</supportingInfo>
 	<supportingInfo>
