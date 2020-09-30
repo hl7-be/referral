@@ -65,11 +65,21 @@
       <path value="ServiceRequest.code" />
       <short value="High level code to describe the tests - if needed to detail within orderDetail - consult comment for more detail." />
       <definition value="A code that identifies a particular service (i.e., procedure, diagnostic investigation, or panel of investigations) that have been requested." />
-      <comment value="Many laboratory and radiology procedure codes embed the specimen/organ system in the test order name, for example,  serum or serum/plasma glucose, or a chest x-ray. The specimen might not be recorded separately from the test code.&#xD;&#xA;The implementer SHALL adhere to the preferred codes to use.&#xD;&#xA;The recommended codification used is LOINC as per the subset defined by the FPS Health, for the majority of commonly used lab measurements and demands. This subset is available on https://www.vas.ehealth.fgov.be/webretam/retam/home.htm&#xD;&#xA;&#xD;&#xA;It is allowed to use multiple codes within the FHIR CodeableConcept datatype. But the first code given must follow the following rules.(Other codes given will be for information purposes.)&#xD;&#xA;&#xD;&#xA;The actual observation is preferably coded in LOINC (subset as defined by FPS Health)&#xD;&#xA;&#xD;&#xA;If that is not possible , ALBERT codes are used (subset as defined by FPS Health.) &#xD;&#xA;&#xD;&#xA;If that is not possible,laboratory may send its own code plus obligatory a text element to further explain. For a laboratory order, this SHALL be used with caution as the laboratory fulfilling the order needs to understand what is ordered - as such it SHALL only be used when the order is sent adressed.&#xD;&#xA;&#xD;&#xA;If that is not possible the kind of observation is expressed only in text (allowed but NOT RECOMMENDED)" />
+      <comment value="Many laboratory and radiology procedure codes embed the specimen/organ system in the test order name, for example,  serum or serum/plasma glucose, or a chest x-ray. The specimen might not be recorded separately from the test code.&#xD;&#xA;The implementer SHALL adhere to the preferred codes to use.&#xD;&#xA;The recommended codification used is LOINC as per the subset defined by the FPS Health, for the majority of commonly used lab measurements and demands. This subset is available on https://www.vas.ehealth.fgov.be/webretam/retam/home.htm&#xD;&#xA;&#xD;&#xA;It is allowed to use multiple codes within the FHIR CodeableConcept datatype. But the first code given must follow the following rules.(Other codes given will be for information purposes.)&#xD;&#xA;&#xD;&#xA;The actual observation is preferably coded in LOINC (subset as defined by FPS Health)&#xD;&#xA;&#xD;&#xA;If that is not possible , ALBERT codes are used (subset as defined by FPS Health.) &#xD;&#xA;&#xD;&#xA;If that is not possible,laboratory may send its own code plus obligatory a text element to further explain. For a laboratory order, this SHALL be used with caution as the laboratory fulfilling the order needs to understand what is ordered - as such it SHALL only be used when the order is sent adressed.&#xD;&#xA;&#xD;&#xA;If that is not possible the kind of observation is expressed only in text (allowed but NOT RECOMMENDED - although if considered sufficient the .code element could be just a .text element e.g. &quot;Diabetes?&quot;)" />
       <type>
         <code value="CodeableConcept" />
         <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-observationcodeableconcept" />
       </type>
+    </element>
+    <element id="ServiceRequest.code.coding">
+      <path value="ServiceRequest.code.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
     </element>
     <element id="ServiceRequest.orderDetail">
       <path value="ServiceRequest.orderDetail" />
@@ -80,6 +90,16 @@
         <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-observationcodeableconcept" />
       </type>
       <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.orderDetail.coding">
+      <path value="ServiceRequest.orderDetail.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
     </element>
     <element id="ServiceRequest.reasonCode">
       <path value="ServiceRequest.reasonCode" />

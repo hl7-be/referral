@@ -121,7 +121,7 @@ Some reqs explicitely in this example:
 				</coding>
 			</verificationStatus>
 			<code>
-				<text value="bradycvardie"/>
+				<text value="bradycardie"/>
 			</code>
 			<subject>
 				<reference value="#Patient1"/>
@@ -223,14 +223,19 @@ Some reqs explicitely in this example:
 	<!--priority according to specifications -->
 	<code>
 		<coding>
-			<!-- high level: 1 code -->
+			<!-- high level: 1 code. Cfr. profile for rules on what codes to use here (preferably LOINC etc.) -->
 			<system value="http://loinc.org"/>
 			<code value="18723-7"/>
 			<display value="Hematology studies (set)"/>
 		</coding>
+		<!-- the FHIR datatype that is used here allows for only textual expressions.If considered exhaustive enough - an order might only contain: e.g.
+<code>
+<text value="Diabetes?"/>
+</code>
+-->
 	</code>
 	<orderDetail>
-		<!-- If needed to specify: multiple codes -->
+		<!-- If needed to specify: multiple codes. Cfr. profile for rules on what codes to use here (preferably LOINC etc.) --> 
 		<coding>
 			<system value="http://loinc.org"/>
 			<code value="30341-2"/>
