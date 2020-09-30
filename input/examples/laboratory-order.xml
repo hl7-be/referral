@@ -4,6 +4,7 @@
 	<meta>
 		<profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-lab-prescriptionr"/>
 	</meta>
+	<!-- NOTE the mix of codes etc. in this example serve to illustrate and may not be clinically logical -->
 	<text>
 		<status value="generated"/>
 		<div xmlns="http://www.w3.org/1999/xhtml">A human readable form of the request (in HTML) SHALL be
@@ -24,6 +25,7 @@
 - Possibility to add extra codes referring to some sort of coded justification
 - possibility to mark the tests ordered in different coded structured ways and/or in text
 - extra clinical information is provided, as an Observation resource and as an image (using B64 encoding in the Binary resource)
+- a suspected codition of the patient is given as extra clinical information
 
 -->
 	<contained>
@@ -92,12 +94,41 @@
 				<reference value="#Requester1"/>
 			</performer>
 			<valueQuantity>
-				<value value="44"/>
+				<value value="51"/>
 				<unit value="beats/minute"/>
 				<system value="http://unitsofmeasure.org"/>
 				<code value="/min"/>
 			</valueQuantity>
 		</Observation>
+	</contained>
+	<contained>
+		<Condition>
+		<!-- a suspected codition of the patient is given as extra clinical information -->
+			<id value="condition1"/>
+			<clinicalStatus>
+				<coding>
+					<system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+					<code value="active"/>
+				</coding>
+			</clinicalStatus>
+			<verificationStatus>
+				<coding>
+					<system value="http://terminology.hl7.org/CodeSystem/condition-ver-status">
+					</system>
+					<code value="provisional">
+					</code>
+				</coding>
+			</verificationStatus>
+			<code>
+				<text value="bradycvardie"/>
+			</code>
+			<subject>
+				<reference value="#Patient1"/>
+			</subject>
+			<note>
+				<text value="This is a suspicion"></text>
+			</note>
+		</Condition>
 	</contained>
 	<contained>
 		<Binary xmlns="http://hl7.org/fhir">
@@ -252,8 +283,11 @@
 	<supportingInfo>
 		<reference value="#observation1"/>
 	</supportingInfo>
+		<supportingInfo>
+		<reference value="#condition1"/>
+	</supportingInfo>
 	<supportingInfo>
-<reference value="#image1"/>	
+		<reference value="#image1"/>
 	</supportingInfo>
 	<specimen>
 		<identifier>
