@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="be-model-laboratoryprescription" />
   <url value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-model-laboratoryprescription" />
-  <name value="BELaboratoryPrescription" />
+  <name value="BeLaboratoryPrescription" />
   <status value="draft" />
   <fhirVersion value="4.0.1" />
   <kind value="logical" />
@@ -15,10 +15,7 @@
       <path value="BeLaboratoryPrescription" />
       <min value="0" />
       <max value="*" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Base" />
-      </type>
+
     </element>
     <element id="BeLaboratoryPrescription.BeReferralPrescription">
       <path value="BeLaboratoryPrescription.BeReferralPrescription" />
@@ -28,8 +25,9 @@
         <code value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-model-referralprescription" />
       </type>
     </element>
-    <element id="BeLaboratoryPrescription.element">
-      <path value="BeLaboratoryPrescription.element" />
+    <element id="BeLaboratoryPrescription.basedOn">
+      <path value="BeLaboratoryPrescription.basedOn" />
+	   <short value="What the prescription is based on. e.g. a previous request for sub-ordering" />
       <min value="0" />
       <max value="*" />
     </element>
