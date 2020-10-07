@@ -71,16 +71,6 @@
         <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-observationcodeableconcept" />
       </type>
     </element>
-    <element id="ServiceRequest.code.coding">
-      <path value="ServiceRequest.code.coding" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="system" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-    </element>
     <element id="ServiceRequest.orderDetail">
       <path value="ServiceRequest.orderDetail" />
       <short value="Additional order information - consult comment for more information" />
@@ -91,16 +81,6 @@
       </type>
       <mustSupport value="true" />
     </element>
-    <element id="ServiceRequest.orderDetail.coding">
-      <path value="ServiceRequest.orderDetail.coding" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="system" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-    </element>
     <element id="ServiceRequest.reasonCode">
       <path value="ServiceRequest.reasonCode" />
       <short value="Explanation/Justification for procedure or service. Based on nomenclature codes." />
@@ -108,7 +88,7 @@
     </element>
     <element id="ServiceRequest.supportingInfo">
       <path value="ServiceRequest.supportingInfo" />
-      <short value="Additional clinical information - e.g. an Observation or Condition or supporting image." />
+      <short value="Additional clinical information - e.g. an Observation or Condition or a link to a supporting image." />
       <definition value="Additional clinical information about the patient or specimen that may influence the services or their interpretations.     &#xD;&#xA;This information includes diagnosis, clinical findings and other observations.  In laboratory ordering these are typically referred to as &quot;ask at order entry questions (AOEs)&quot;.  This includes observations explicitly requested by the producer (filler) to provide context or supporting information needed to complete the order. For example,  reporting the amount of inspired oxygen for blood gas measurements." />
       <comment value="To represent information about how the services are to be delivered use the `instructions` element.&#xD;&#xA;&#xD;&#xA;Typically, for a laboratory order, it might be needed to inform the laboratory of the existence of an unconfirmed or provisional problem. This can be fully provided for by using the Condition resource and the correct .verificationStatus." />
       <mustSupport value="true" />
