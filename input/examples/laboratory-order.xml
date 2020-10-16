@@ -5,6 +5,9 @@
 		<profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-lab-prescription"/>
 	</meta>
 	<!-- NOTE the mix of codes etc. in this example serve to illustrate and may not be clinically logical -->
+	<!-- In this example some referenced resources are placed here in <contained> tags to be fully 'contained' 
+		within the serviceRequest, depending on the final architectural approach 
+		- this may have to be revisited -->
 	<text>
 		<status value="generated"/>
 		<div xmlns="http://www.w3.org/1999/xhtml">A human readable form of the request (in HTML) SHALL be
@@ -13,10 +16,7 @@
 			More information on https://www.hl7.org/fhir/R4/narrative.html
 		</div>
 	</text>
-	<!-- In this example some referenced resources are placed here in <contained> tags to be fully 'contained' 
-		within the serviceRequest, depending on the final architectural approach 
-		- this may have to be revisited -->
-	<!-- 
+<!-- 
 Some reqs explicitely in this example:
 - Specific tests ordered
 - Possibilty to define the order using text
