@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="be-ext-inform-party" />
+  <url value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-inform-party" />
+  <name value="BeInformParty" />
+  <title value="BeInformParty" />
+  <status value="draft" />
+  <description value="Extra parties that need to be informed of the outcome, besides the prescriber." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Observation.code" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="Relative time extension" />
+      <definition value="To define codes that imply a specific timing interval but where the interval is not specified in the code.&#xD;&#xA;This extension is used to define the timing interval, typically the UCUM code will be s, min or h." />
+      <isModifier value="false" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-relative-time" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner" />
+        <targetProfile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization" />
+        <targetProfile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

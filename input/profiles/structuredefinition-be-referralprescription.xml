@@ -62,6 +62,17 @@
         <valueSet value="https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-reason-referral-status" />
       </binding>
     </element>
+    <element id="ServiceRequest.extension:informParty">
+      <path value="ServiceRequest.extension" />
+      <sliceName value="informParty" />
+      <short value="Parties to inform of fulfillment of the prescription, besides the prescriber." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-inform-party" />
+      </type>
+    </element>
     <element id="ServiceRequest.identifier">
       <path value="ServiceRequest.identifier" />
       <slicing>
