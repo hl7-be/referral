@@ -207,6 +207,50 @@ Some reqs explicitely in this example:
 			</address>
 		</Organization>
 	</contained>
+	<contained>
+  <Specimen>
+        <id value="specimen1"/>
+        <identifier>
+        <!--  Business identifier 0..* of the specimen SHOULD BE included if available  -->
+          <system value="https://www.GTL-LABO.be/"/>
+          <value value="1"/>
+        </identifier>
+        <type>
+          <coding>
+          <!--   RECOMMENDED to include The actual specimen, described using a coding system. Here, the coding system SNOMED-CT is used for this which is RECOMMENDED for specimen. As a general back-up rule, whenever the laboratory does use a propriety code, a .text element SHALL always be included explaining the code.   -->
+            <system value="http://snomed.info/sct"/>
+            <code value="119297000"/>
+            <display value="Blood specimen"/>
+          </coding>
+          <text value="A string can be added to nuance or explain."/>
+        </type>
+        <collection>
+        <!--   The date/time when the specimen was collected SHOULD be included if available   -->
+          <collectedDateTime value="2015-11-03"/>
+          <method>
+          <!--  OPTIONAL provide the method of collection   -->
+            <coding>
+              <system value="http://snomed.info/sct"/>
+              <code value="28520004"/>
+              <display value="Venipuncture for blood test (procedure)"/>
+            </coding>
+          </method>
+          <bodySite>
+          <!--  OPTIONAL provide the bodySite. Here, a SNOMED-CT code is used. Alternatively, express this using the .text element of the CodeableConcept datatype.  -->
+            <coding>
+              <system value="http://snomed.info/sct"/>
+              <code value="368208006"/>
+              <display value="Left upper arm structure (body structure)"/>
+            </coding>
+          </bodySite>
+        </collection>
+        <note>
+        <!--  OPTIONAL  the .processing element can be added here. Again, this is also a powerful element to express details if needed. (refer to the profile for the many possibilities that can be leveraged here)  -->
+        <!--   OPTIONAL, any note concerning the specimen. Using the Annotation datatype in FHIR, it is OPTIONAL here to also add an author and/or dateTime of this annotation   -->
+          <text value="Some extra relevant information concerning the specimen"/>
+        </note>
+      </Specimen>
+	</contained>
 	<extension url="http://hl7.org/fhir/StructureDefinition/request-statusReason">
 		<valueCodeableConcept>
 			<coding>
@@ -314,11 +358,7 @@ Some reqs explicitely in this example:
 		<reference value="#media1"/>
 	</supportingInfo>
 	<specimen>
-		<identifier>
-			<!--  Business identifier of the specimen MAY BE included if available  -->
-			<system value="https://www.IDENTIFYING_SYSTEM.be/"/>
-			<value value="1"/>
-		</identifier>
+	<reference value="#specimen1"/>
 	</specimen>
 	<note>
 		<text value="Some free text explaining about these tests that are ordered."/>
