@@ -148,10 +148,39 @@
     </element>
     <element id="BeReferralPrescription.co-prescriber">
       <path value="BeReferralPrescription.co-prescriber" />
+      <short value="Information about co prescribers" />
       <min value="0" />
       <max value="*" />
       <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="BeReferralPrescription.co-prescriber.co-prescriber">
+      <path value="BeReferralPrescription.co-prescriber.co-prescriber" />
+      <short value="NIHDI of co prescriber party" />
+      <min value="1" />
+      <max value="1" />
+      <type>
         <code value="Reference" />
+      </type>
+    </element>
+    <element id="BeReferralPrescription.co-prescriber.co-prescriberSubstitute">
+      <path value="BeReferralPrescription.co-prescriber.co-prescriberSubstitute" />
+      <short value="NIHDI of co prescriber substitute party" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+      </type>
+    </element>
+    <element id="BeReferralPrescription.co-prescriber.status">
+      <path value="BeReferralPrescription.co-prescriber.status" />
+      <short value="Status of co prescribing status (to sign, signed or refused)" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
       </type>
     </element>
     <element id="BeReferralPrescription.patient">
