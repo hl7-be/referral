@@ -1,28 +1,36 @@
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd" >
   
 
-
+<a name="Related persons as performer of the prescription"> </a>
 <h3>Related persons as performer of the prescription</h3>
 <p>The requested performer in a referral prescription is typically a reference to a practitioner but it could also be reference to related person.  Typically the performer shall be referred by a business identifier or Reference.display.</p>
 <p>It is RECOMMENDED in case of a related person as performer, the related person is included using the <a href="https://www.hl7.org/fhir/references.html#contained">contained mechanism</a>.</p>
+ <a name="The procedure or observation executing the referral prescription"> </a>
  <h3>The procedure or observation executing the referral prescription</h3>
  <p>A procedure or observation resource typically execute the referral prescription. As such, they shall be made available on the system where the ServiceRequest resides and refer to the ServiceRequest resource using their basedOn field.</p> 
-
+<a name="Specifics concerning the referral prescription for nursing"> </a>
  <h3>Specifics concerning the referral prescription for nursing</h3>
+ <a name="Availability of prescriber"> </a>
    <h4>Availability of prescriber</h4>
  <p>If needed, the availability of a prescriber SHALL be given using a PractitionerRole resource referring to the Practitioner that is the prescriber of the ServiceRequest.</p> 
+  <a name="Signature and date of signature"> </a>
   <h4>Signature and date of signature</h4>
  <p>If needed, a signature SHALL be given using a Provenance resource referring to the ServiceRequest.</p> 
+  <a name="Specifics concerning the referral prescription for diagnostic imaging"> </a>
   <h3>Specifics concerning the referral prescription for diagnostic imaging</h3>
  <p>N/A</p> 
+  <a name="Specifics concerning the referral prescription for physiotherapy"> </a>
   <h3>Specifics concerning the referral prescription for physiotherapy</h3>
  <p>N/A</p> 
+ <a name="Specifics concerning the referral prescription for laboratory"> </a>
    <h3>Specifics concerning the referral prescription for laboratory</h3>
+   <a name="Workflow for the specimen"> </a>
    <h4>Workflow for the specimen</h4>
    <p>It is noted here, the physical workflow concerning the specimen is considered out of scope in this implementation guide.
    To enable any future initiative to deal with specimen, this guide does provide a national identifier naming system but it is fully
    expected there will be instances of the laboratory prescription
    where no specimen identifier is known at the time of making the prescription.</p>
+   <a name="Intent/status of prescription"> </a>
    <h4>Intent/status of prescription</h4>
    <p>A laboratory prescription might use different specific elements depending on the workflow. It SHALL be noted this is of
 course limited to what is possible concerning when the specimen was accepted</p>
