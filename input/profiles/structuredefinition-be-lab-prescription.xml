@@ -71,6 +71,16 @@
         <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-observationcodeableconcept" />
       </type>
     </element>
+    <element id="ServiceRequest.code.coding">
+      <path value="ServiceRequest.code.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
     <element id="ServiceRequest.orderDetail">
       <path value="ServiceRequest.orderDetail" />
       <short value="Additional order information - consult comment for more information" />
@@ -80,6 +90,16 @@
         <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-observationcodeableconcept" />
       </type>
       <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.orderDetail.coding">
+      <path value="ServiceRequest.orderDetail.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
     </element>
     <element id="ServiceRequest.reasonCode">
       <path value="ServiceRequest.reasonCode" />
@@ -100,6 +120,10 @@
     </element>
     <element id="ServiceRequest.note">
       <path value="ServiceRequest.note" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.patientInstruction">
+      <path value="ServiceRequest.patientInstruction" />
       <mustSupport value="true" />
     </element>
   </differential>
