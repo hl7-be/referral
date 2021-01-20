@@ -26,8 +26,18 @@
    <h3>Specifics concerning the referral prescription for laboratory</h3>
    <a name="Connecting specimen and tests in the order"> </a>
    <h4>Connecting specimen and tests in the order</h4>
-   <p>Details on the the specimen are optional if it is sufficiently clear from the testcodes that are given what the specimen is.</p>
-   
+   <p>Although the order allows for multiple testing codes (using orderDetail) and references to multiple specimen the implementer SHALL be aware
+   of the following to ensure there is no ambiguity in the order. The order SHALL fall in one of the following categories:</p>
+  <ul>
+  <li>No references to specimen are given but the testcodes given are clear on the specimen.</li>
+  <li>One or more references to a specimen are given and from the testcode(s) given it is clear what test uses what specimen.</li>
+  <li>A connection between a testcode and a specimen cannot be deduced from the testcode: for every specimen
+   there is one order created only containing the testcode(s) for that specimen. If still needed to combine to make a link between multiple orders
+   that are created in such a way: the .requisition element SHALL be used.</li>
+
+
+  </ul>
+    <p>When 
    <a name="Physical workflow for the specimen"> </a>
    <h4>Workflow for the specimen</h4>
    <p>It is noted here, the physical workflow concerning the specimen is considered out of scope in this implementation guide.
