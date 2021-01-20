@@ -135,7 +135,6 @@
       <path value="BeDiagnosticImagingPrescription" />
       <min value="0" />
       <max value="*" />
-   
     </element>
     <element id="BeDiagnosticImagingPrescription.prescriber">
       <path value="BeDiagnosticImagingPrescription.prescriber" />
@@ -303,6 +302,7 @@
     </element>
     <element id="BeDiagnosticImagingPrescription.supportingInformation.questionnaireResponse">
       <path value="BeDiagnosticImagingPrescription.supportingInformation.questionnaireResponse" />
+      <short value="Questionnaire responses" />
       <min value="0" />
       <max value="*" />
       <type>
@@ -312,6 +312,7 @@
     </element>
     <element id="BeDiagnosticImagingPrescription.supportingInformation.observation">
       <path value="BeDiagnosticImagingPrescription.supportingInformation.observation" />
+      <short value="Observations, test results about patient" />
       <min value="0" />
       <max value="*" />
       <type>
@@ -321,6 +322,7 @@
     </element>
     <element id="BeDiagnosticImagingPrescription.supportingInformation.procedure">
       <path value="BeDiagnosticImagingPrescription.supportingInformation.procedure" />
+      <short value="Treatments/procedures patient underwent" />
       <min value="0" />
       <max value="*" />
       <type>
@@ -330,11 +332,32 @@
     </element>
     <element id="BeDiagnosticImagingPrescription.supportingInformation.document">
       <path value="BeDiagnosticImagingPrescription.supportingInformation.document" />
+      <short value="Any document added as extra information" />
       <min value="0" />
       <max value="*" />
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/DocumentReference" />
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.supportingInformation.complaint">
+      <path value="BeDiagnosticImagingPrescription.supportingInformation.complaint" />
+      <short value="Complaints formulated by patient" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Observation" />
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.supportingInformation.device">
+      <path value="BeDiagnosticImagingPrescription.supportingInformation.device" />
+      <short value="Implanted devices, prostheses" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device" />
       </type>
     </element>
   </differential>
