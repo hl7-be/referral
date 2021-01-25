@@ -24,18 +24,22 @@
  <p>N/A</p> 
  <a name="Specifics concerning the referral prescription for laboratory"> </a>
    <h3>Specifics concerning the referral prescription for laboratory</h3>
+   <a name="Sending more than one testing code in the prescription"> </a>
+      <h4>Sending more than one testing code in the prescriptionr</h4>
+      <p>When more than one code is present in the prescription, they SHALL be different codes.</p>
+   <h4>Connecting specimen and tests in the order</h4>
    <a name="Connecting specimen and tests in the order"> </a>
    <h4>Connecting specimen and tests in the order</h4>
-   <p>Although the order allows for multiple testing codes (using orderDetail) and references to multiple specimen the implementer SHALL be aware
+   <p>Although the order allows for multiple testing codes (using orderDetail) and 
+   references to multiple specimen the implementer SHALL be aware
    of the following to ensure there is no ambiguity in the order. The order SHALL fall in one of the following categories:</p>
   <ul>
-  <li>No references to specimen are given but the testcodes given are clear on the specimen.</li>
-  <li>One or more references to a specimen are given and from the testcode(s) given it is clear what test uses what specimen.</li>
-  <li>A connection between a testcode and a specimen cannot be deduced from the testcode: for every specimen
-   there is one order created only containing the testcode(s) for that specimen. 
+  <li>No references to specimen are given but the testing codes given are clear on the specimen.</li>
+  <li>One or more references to a specimen are given and from the testing code(s) given it is clear what test uses what specimen.</li>
+  <li>A connection between a testing code and a specimen cannot be deduced from the testing code: for every specimen
+   there is one order created only containing the testing code(s) for that specimen. 
    If still needed to combine multiple orders 
-   that are created in such a way: the .requisition element SHALL be used.</li>
-
+   that are created in such a way: the .requisition element SHALL be used where a common Identifier is given.</li>
 
   </ul>
    
