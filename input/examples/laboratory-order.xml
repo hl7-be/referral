@@ -262,6 +262,27 @@ gg=="/> <!-- [...] -->
 			</coding>
 		</valueCodeableConcept>
 	</extension>
+	<extension url="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-urgent-communication">
+	<extension url="channel">
+		<valueCodeableConcept>
+			<coding>
+				<system value="http://hl7.org/fhir/contact-point-system"/>
+				<code value="email"/>
+				<display value="email"/>
+			</coding>
+		</valueCodeableConcept>
+	</extension>
+	<extension url="party">
+		<valueReference>
+		<reference value="#Requester1"/>
+		</valueReference>
+	</extension>
+		<extension url="instructions">
+		<valueString>
+		<string value="Send the requester an email, when the test is etc."/>
+		</valueString>
+	</extension>
+	</extension>
 	<identifier>
 		<system value="https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"/>
 		<value value="XXXXXX"/>
