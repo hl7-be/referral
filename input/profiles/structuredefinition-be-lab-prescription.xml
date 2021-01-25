@@ -43,6 +43,27 @@
       <path value="ServiceRequest.text" />
       <mustSupport value="true" />
     </element>
+    <element id="ServiceRequest.extension">
+      <path value="ServiceRequest.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="ServiceRequest.extension:urgentCommunication">
+      <path value="ServiceRequest.extension" />
+      <sliceName value="urgentCommunication" />
+      <short value="when needed to communicate urgently any results" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-urgent-communication" />
+      </type>
+    </element>
     <element id="ServiceRequest.basedOn">
       <path value="ServiceRequest.basedOn" />
       <short value="What request fulfills - could be a different lab order for example in case of sub orders." />
@@ -71,16 +92,6 @@
         <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-observationcodeableconcept" />
       </type>
     </element>
-    <element id="ServiceRequest.code.coding">
-      <path value="ServiceRequest.code.coding" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="system" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-    </element>
     <element id="ServiceRequest.orderDetail">
       <path value="ServiceRequest.orderDetail" />
       <short value="Additional order information - consult comment for more information" />
@@ -90,16 +101,6 @@
         <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-observationcodeableconcept" />
       </type>
       <mustSupport value="true" />
-    </element>
-    <element id="ServiceRequest.orderDetail.coding">
-      <path value="ServiceRequest.orderDetail.coding" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="system" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
     </element>
     <element id="ServiceRequest.occurrence[x]">
       <path value="ServiceRequest.occurrence[x]" />

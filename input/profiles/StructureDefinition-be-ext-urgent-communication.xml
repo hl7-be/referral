@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="be-ext-inform-party" />
-  <url value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-inform-party" />
-  <name value="BeInformParty" />
-  <title value="BeInformParty" />
+  <id value="be-ext-urgent-communication" />
+  <url value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-urgent-communication" />
+  <name value="BeUrgentCommunication" />
+  <title value="BeUrgentCommunication" />
   <status value="draft" />
-  <description value="Extra parties that need to be informed of the outcome, besides the prescriber." />
+  <description value="When there is a need to urgently communicate results of an order." />
   <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="rim" />
@@ -24,22 +24,230 @@
   <differential>
     <element id="Extension">
       <path value="Extension" />
-      <short value="Relative time extension" />
-      <definition value="To define codes that imply a specific timing interval but where the interval is not specified in the code.&#xD;&#xA;This extension is used to define the timing interval, typically the UCUM code will be s, min or h." />
+      <short value="Urgent communication is needed" />
       <isModifier value="false" />
     </element>
-    <element id="Extension.url">
-      <path value="Extension.url" />
-      <fixedUri value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-inform-party" />
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
     </element>
-    <element id="Extension.value[x]">
-      <path value="Extension.value[x]" />
+    <element id="Extension.extension:channel">
+      <path value="Extension.extension" />
+      <sliceName value="channel" />
+      <short value="Channel to use to communicate" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-channel" />
+      </type>
+    </element>
+    <element id="Extension.extension:channel.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="channel" />
+    </element>
+    <element id="Extension.extension:channel.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+    </element>
+    <element id="Extension.extension:party">
+      <path value="Extension.extension" />
+      <sliceName value="party" />
+      <short value="party to inform" />
       <min value="1" />
+    </element>
+    <element id="Extension.extension:party.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="party" />
+    </element>
+    <element id="Extension.extension:party.value[x]">
+      <path value="Extension.extension.value[x]" />
       <type>
         <code value="Reference" />
         <targetProfile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner" />
         <targetProfile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization" />
         <targetProfile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient" />
+      </type>
+    </element>
+    <element id="Extension.extension:instructions">
+      <path value="Extension.extension" />
+      <sliceName value="instructions" />
+      <short value="Any extra instruction" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:instructions.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="instructions" />
+    </element>
+    <element id="Extension.extension:instructions.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-urgent-communication" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+      <type>
+        <code value="base64Binary" />
+      </type>
+      <type>
+        <code value="boolean" />
+      </type>
+      <type>
+        <code value="canonical" />
+      </type>
+      <type>
+        <code value="code" />
+      </type>
+      <type>
+        <code value="date" />
+      </type>
+      <type>
+        <code value="dateTime" />
+      </type>
+      <type>
+        <code value="decimal" />
+      </type>
+      <type>
+        <code value="id" />
+      </type>
+      <type>
+        <code value="instant" />
+      </type>
+      <type>
+        <code value="integer" />
+      </type>
+      <type>
+        <code value="markdown" />
+      </type>
+      <type>
+        <code value="oid" />
+      </type>
+      <type>
+        <code value="positiveInt" />
+      </type>
+      <type>
+        <code value="string" />
+      </type>
+      <type>
+        <code value="time" />
+      </type>
+      <type>
+        <code value="unsignedInt" />
+      </type>
+      <type>
+        <code value="uri" />
+      </type>
+      <type>
+        <code value="url" />
+      </type>
+      <type>
+        <code value="uuid" />
+      </type>
+      <type>
+        <code value="Address" />
+      </type>
+      <type>
+        <code value="Age" />
+      </type>
+      <type>
+        <code value="Annotation" />
+      </type>
+      <type>
+        <code value="Attachment" />
+      </type>
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <type>
+        <code value="Coding" />
+      </type>
+      <type>
+        <code value="ContactPoint" />
+      </type>
+      <type>
+        <code value="Count" />
+      </type>
+      <type>
+        <code value="Distance" />
+      </type>
+      <type>
+        <code value="Duration" />
+      </type>
+      <type>
+        <code value="HumanName" />
+      </type>
+      <type>
+        <code value="Identifier" />
+      </type>
+      <type>
+        <code value="Money" />
+      </type>
+      <type>
+        <code value="Period" />
+      </type>
+      <type>
+        <code value="Quantity" />
+      </type>
+      <type>
+        <code value="Range" />
+      </type>
+      <type>
+        <code value="Ratio" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner" />
+        <targetProfile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization" />
+        <targetProfile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient" />
+      </type>
+      <type>
+        <code value="SampledData" />
+      </type>
+      <type>
+        <code value="Signature" />
+      </type>
+      <type>
+        <code value="Timing" />
+      </type>
+      <type>
+        <code value="ContactDetail" />
+      </type>
+      <type>
+        <code value="Contributor" />
+      </type>
+      <type>
+        <code value="DataRequirement" />
+      </type>
+      <type>
+        <code value="Expression" />
+      </type>
+      <type>
+        <code value="ParameterDefinition" />
+      </type>
+      <type>
+        <code value="RelatedArtifact" />
+      </type>
+      <type>
+        <code value="TriggerDefinition" />
+      </type>
+      <type>
+        <code value="UsageContext" />
+      </type>
+      <type>
+        <code value="Dosage" />
       </type>
     </element>
   </differential>
