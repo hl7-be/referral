@@ -26,6 +26,11 @@
    <h3>Specifics concerning the referral prescription for laboratory</h3>
    <a name="Sending more than one testing code in the prescription"> </a>
       <h4>Sending more than one testing code in the prescriptionr</h4>
+      <p>Both fields .code and orderDetail are allowed to contain testing codes. The base FHIR resource allows for only
+      one code in the .code element and multiple codes using the .orderDetail element</p>
+      <p>The best way to use these two elements is left to the discretion of the implementer. When reading
+      an order, implementers SHALL always
+      take note of these two elements when determining the testing codes that are in the order. </p>
       <p>When more than one code is present in the prescription, they SHALL be different codes.</p>
    
    <a name="Connecting specimen and tests in the order"> </a>
