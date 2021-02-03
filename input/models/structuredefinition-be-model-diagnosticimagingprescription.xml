@@ -292,6 +292,24 @@
         <code value="Reference" />
       </type>
     </element>
+    <element id="BeDiagnosticImagingPrescription.relevantClinicalInformation">
+      <path value="BeDiagnosticImagingPrescription.relevantClinicalInformation" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Annotation" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Annotation" />
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.diagnosticQuestion">
+      <path value="BeDiagnosticImagingPrescription.diagnosticQuestion" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Annotation" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Annotation" />
+      </type>
+    </element>
     <element id="BeDiagnosticImagingPrescription.supportingInformation">
       <path value="BeDiagnosticImagingPrescription.supportingInformation" />
       <min value="0" />
@@ -312,7 +330,7 @@
     </element>
     <element id="BeDiagnosticImagingPrescription.supportingInformation.observation">
       <path value="BeDiagnosticImagingPrescription.supportingInformation.observation" />
-      <short value="Observations, test results about patient" />
+      <short value="Observations (also lab test results about patient)" />
       <min value="0" />
       <max value="*" />
       <type>
@@ -368,6 +386,35 @@
       <type>
         <code value="CodeableConcept" />
         <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.proposedInvestigation">
+      <path value="BeDiagnosticImagingPrescription.proposedInvestigation" />
+      <short value="What to do - coded or as text" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.previousRelevantExaminations">
+      <path value="BeDiagnosticImagingPrescription.previousRelevantExaminations" />
+      <short value="Code from a list or free text" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.additionalNotes">
+      <path value="BeDiagnosticImagingPrescription.additionalNotes" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Annotation" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Annotation" />
       </type>
     </element>
   </differential>
