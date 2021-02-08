@@ -5,30 +5,12 @@
 		<profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-lab-prescription"/>
 	</meta>
 	<!-- NOTE the mix of codes etc. in this example serve to illustrate and may not be clinically logical -->
-	<!-- In this example some referenced resources are placed here in <contained> tags to be fully 'contained' 
-		within the serviceRequest, depending on the final architectural approach 
-		- this may have to be revisited -->
+	<!-- In this example some referenced resources are placed here in <contained> tags to be fully 'contained' 	within the serviceRequest, depending on the final architectural approach 	- this may have to be revisited -->
 	<text>
 		<status value="generated"/>
-		<div xmlns="http://www.w3.org/1999/xhtml">A human readable form of the request (in HTML) SHALL be
-			provided here to enable systems that cannot process all structured
-			data, to at least present the information to the interactive user.
-			More information on https://www.hl7.org/fhir/R4/narrative.html
-		</div>
+		<div xmlns="http://www.w3.org/1999/xhtml">A human readable form of the request (in HTML) SHALL be	provided here to enable systems that cannot process all structured	data, to at least present the information to the interactive user.	More information on https://www.hl7.org/fhir/R4/narrative.html</div>
 	</text>
-<!-- 
-Some reqs explicitely in this example:
-- Specific tests ordered
-- Possibilty to define the order using text
-- Order with/without specimen
-- Telephone and adresses of different parties
-- Possibility to add extra codes referring to some sort of coded justification
-- possibility to mark the tests ordered in different coded structured ways and/or in text
-- extra clinical information is provided, such as an Observation resource
-- a suspected codition of the patient is given as extra clinical information
-- how to model an initial prescription by an administrative assistent.
-
--->
+	<!--  Some reqs explicitely in this example: - Specific tests ordered - Possibilty to define the order using text - Order with/without specimen - Telephone and adresses of different parties - Possibility to add extra codes referring to some sort of coded justification - possibility to mark the tests ordered in different coded structured ways and/or in text - extra clinical information is provided, such as an Observation resource - a suspected codition of the patient is given as extra clinical information - how to model an initial prescription by an administrative assistent. -->
 	<contained>
 		<Patient xmlns="http://hl7.org/fhir">
 			<id value="Patient1"/>
@@ -114,10 +96,8 @@ Some reqs explicitely in this example:
 			</clinicalStatus>
 			<verificationStatus>
 				<coding>
-					<system value="http://terminology.hl7.org/CodeSystem/condition-ver-status">
-					</system>
-					<code value="provisional">
-					</code>
+					<system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+					<code value="provisional"/>
 				</coding>
 			</verificationStatus>
 			<code>
@@ -140,10 +120,9 @@ Some reqs explicitely in this example:
 			<content>
 				<attachment>
 					<contentType value="image/gif"/>
-	<!--Many elements are available within the attachment resource to further define, in this example, minimal use is made to only highlight the bare essentials -->
-		<data value="iVBORw0KGgoAAAANSUhEUgAAA+MAAACnCAYAAAB6pY03AAAAAXNSR0IArs4c6QAAAARnQU1BAACx
-jwv8YQUAAAAJcEhZcwAAEnMAABJzAYwiuQcAADBZSURBVHhe7d09rty218fxrOFfZj/ZQHZgwEiZ
-gg=="/> <!-- [...] -->
+					<!--Many elements are available within the attachment resource to further define, in this example, minimal use is made to only highlight the bare essentials -->
+					<data value="iVBORw0KGgoAAAANSUhEUgAAA+MAAACnCAYAAAB6pY03AAAAAXNSR0IArs4c6QAAAARnQU1BAACx jwv8YQUAAAAJcEhZcwAAEnMAABJzAYwiuQcAADBZSURBVHhe7d09rty218fxrOFfZj/ZQHZgwEiZ gg=="/>
+					<!-- [...] -->
 				</attachment>
 			</content>
 		</DocumentReference>
@@ -191,8 +170,7 @@ gg=="/> <!-- [...] -->
 				<system value="https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi"/>
 				<value value="9876543210"/>
 			</identifier>
-			<name value="Labstraatlabo">
-			</name>
+			<name value="Labstraatlabo"/>
 			<telecom>
 				<system value="phone"/>
 				<value value="322884499"/>
@@ -210,48 +188,48 @@ gg=="/> <!-- [...] -->
 		</Organization>
 	</contained>
 	<contained>
-  <Specimen>
-        <id value="specimen1"/>
-        <identifier>
-        <!--  Business identifier 0..* of the specimen SHOULD BE included if available  -->
-          <system value="https://www.GTL-LABO.be/"/>
-          <value value="1"/>
-        </identifier>
-        <type>
-          <coding>
-          <!--   RECOMMENDED to include The actual specimen, described using a coding system. Here, the coding system SNOMED-CT is used for this which is RECOMMENDED for specimen. As a general back-up rule, whenever the laboratory does use a propriety code, a .text element SHALL always be included explaining the code.   -->
-            <system value="http://snomed.info/sct"/>
-            <code value="119297000"/>
-            <display value="Blood specimen"/>
-          </coding>
-          <text value="A string can be added to nuance or explain."/>
-        </type>
-        <collection>
-        <!--   The date/time when the specimen was collected SHOULD be included if available   -->
-          <collectedDateTime value="2015-11-03"/>
-          <method>
-          <!--  OPTIONAL provide the method of collection   -->
-            <coding>
-              <system value="http://snomed.info/sct"/>
-              <code value="28520004"/>
-              <display value="Venipuncture for blood test (procedure)"/>
-            </coding>
-          </method>
-          <bodySite>
-          <!--  OPTIONAL provide the bodySite. Here, a SNOMED-CT code is used. Alternatively, express this using the .text element of the CodeableConcept datatype.  -->
-            <coding>
-              <system value="http://snomed.info/sct"/>
-              <code value="368208006"/>
-              <display value="Left upper arm structure (body structure)"/>
-            </coding>
-          </bodySite>
-        </collection>
-        <note>
-        <!--  OPTIONAL  the .processing element can be added here. Again, this is also a powerful element to express details if needed. (refer to the profile for the many possibilities that can be leveraged here)  -->
-        <!--   OPTIONAL, any note concerning the specimen. Using the Annotation datatype in FHIR, it is OPTIONAL here to also add an author and/or dateTime of this annotation   -->
-          <text value="Some extra relevant information concerning the specimen"/>
-        </note>
-      </Specimen>
+		<Specimen>
+			<id value="specimen1"/>
+			<identifier>
+				<!--  Business identifier 0..* of the specimen SHOULD BE included if available  -->
+				<system value="https://www.GTL-LABO.be/"/>
+				<value value="1"/>
+			</identifier>
+			<type>
+				<coding>
+					<!--   RECOMMENDED to include The actual specimen, described using a coding system. Here, the coding system SNOMED-CT is used for this which is RECOMMENDED for specimen. As a general back-up rule, whenever the laboratory does use a propriety code, a .text element SHALL always be included explaining the code.   -->
+					<system value="http://snomed.info/sct"/>
+					<code value="119297000"/>
+					<display value="Blood specimen"/>
+				</coding>
+				<text value="A string can be added to nuance or explain."/>
+			</type>
+			<collection>
+				<!--   The date/time when the specimen was collected SHOULD be included if available   -->
+				<collectedDateTime value="2015-11-03"/>
+				<method>
+					<!--  OPTIONAL provide the method of collection   -->
+					<coding>
+						<system value="http://snomed.info/sct"/>
+						<code value="28520004"/>
+						<display value="Venipuncture for blood test (procedure)"/>
+					</coding>
+				</method>
+				<bodySite>
+					<!--  OPTIONAL provide the bodySite. Here, a SNOMED-CT code is used. Alternatively, express this using the .text element of the CodeableConcept datatype.  -->
+					<coding>
+						<system value="http://snomed.info/sct"/>
+						<code value="368208006"/>
+						<display value="Left upper arm structure (body structure)"/>
+					</coding>
+				</bodySite>
+			</collection>
+			<note>
+				<!--  OPTIONAL  the .processing element can be added here. Again, this is also a powerful element to express details if needed. (refer to the profile for the many possibilities that can be leveraged here)  -->
+				<!--   OPTIONAL, any note concerning the specimen. Using the Annotation datatype in FHIR, it is OPTIONAL here to also add an author and/or dateTime of this annotation   -->
+				<text value="Some extra relevant information concerning the specimen"/>
+			</note>
+		</Specimen>
 	</contained>
 	<extension url="http://hl7.org/fhir/StructureDefinition/request-statusReason">
 		<valueCodeableConcept>
@@ -263,24 +241,28 @@ gg=="/> <!-- [...] -->
 		</valueCodeableConcept>
 	</extension>
 	<extension url="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-urgent-communication">
-	<extension url="channel">
-		<valueCodeableConcept>
-			<coding>
-				<system value="http://hl7.org/fhir/contact-point-system"/>
-				<code value="email"/>
-				<display value="email"/>
-			</coding>
-		</valueCodeableConcept>
-	</extension>
-	<extension url="party">
-		<valueReference>
-		<reference value="#Requester1"/>
-		</valueReference>
-	</extension>
+		<extension url="party">
+			<valueReference>
+				<reference value="#Requester1"/>
+			</valueReference>
+		</extension>
 		<extension url="instructions">
-		<valueString value="Send the requester an email, when the test is etc."/>
-	
-	</extension>
+			<valueString value="Send the requester an email, when the test is done."/>
+		</extension>
+		<extension url="contactway">
+			<extension url="contactSystem">
+				<valueCodeableConcept>
+					<coding>
+						<system value="http://hl7.org/fhir/contact-point-system"/>
+						<code value="email"/>
+						<display value="email"/>
+					</coding>
+				</valueCodeableConcept>
+			</extension>
+			<extension url="contactSystemValue">
+				<valueString value="doctor@mycabinet.be"/>
+			</extension>
+		</extension>
 	</extension>
 	<identifier>
 		<system value="https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"/>
@@ -308,11 +290,7 @@ gg=="/> <!-- [...] -->
 			<code value="18723-7"/>
 			<display value="Hematology studies (set)"/>
 		</coding>
-		<!-- the FHIR datatype that is used here allows for only textual expressions.If considered exhaustive enough - an order might only contain: e.g.
-<code>
-<text value="Diabetes?"/>
-</code>
--->
+		<!-- the FHIR datatype that is used here allows for only textual expressions.If considered exhaustive enough - an order might only contain: e.g.<code><text value="Diabetes?"/></code>-->
 	</code>
 	<orderDetail>
 		<!-- If needed to specify: multiple codes. Cfr. profile for rules on what codes to use here (preferably LOINC etc.) -->
@@ -346,10 +324,7 @@ gg=="/> <!-- [...] -->
 	<requester>
 		<reference value="#Requester1"/>
 	</requester>
-	<!-- if simply needed to mark the prescription as an internal draft that is made by administrative personel, the requester might alternatively be modeled simply like this:
-<requester>
-<display value="Jan Van Den Admin-assistent"/>	
-	</requester> -->
+	<!-- if simply needed to mark the prescription as an internal draft that is made by administrative personel, the requester might alternatively be modeled simply like this:<requester><display value="Jan Van Den Admin-assistent"/>	</requester> -->
 	<performerType>
 		<coding>
 			<system value="http://snomed.info/sct"/>
@@ -380,7 +355,7 @@ gg=="/> <!-- [...] -->
 		<reference value="#media1"/>
 	</supportingInfo>
 	<specimen>
-	<reference value="#specimen1"/>
+		<reference value="#specimen1"/>
 	</specimen>
 	<note>
 		<text value="Some free text explaining about these tests that are ordered."/>
