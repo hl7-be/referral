@@ -78,7 +78,7 @@
       <sliceName value="contactway" />
       <short value="Will override any other known channel for partner for urgent communication" />
     </element>
-    <element id="Extension.extension:channel.extension">
+    <element id="Extension.extension:contactway.extension">
       <path value="Extension.extension.extension" />
       <slicing>
         <discriminator>
@@ -130,6 +130,45 @@
     </element>
     <element id="Extension.extension:contactway.value[x]">
       <path value="Extension.extension.value[x]" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:contactPoint">
+      <path value="Extension.extension" />
+      <sliceName value="contactPoint" />
+      <short value="Will override any other known channel for partner for urgent communication" />
+    </element>
+    <element id="Extension.extension:contactPoint.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="contactPoint" />
+    </element>
+    <element id="Extension.extension:contactPoint.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <type>
+        <code value="ContactPoint" />
+      </type>
+    </element>
+    <element id="Extension.extension:contactPoint.value[x].id">
+      <path value="Extension.extension.value[x].id" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:contactPoint.value[x].system">
+      <path value="Extension.extension.value[x].system" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:contactPoint.value[x].value">
+      <path value="Extension.extension.value[x].value" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:contactPoint.value[x].use">
+      <path value="Extension.extension.value[x].use" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:contactPoint.value[x].rank">
+      <path value="Extension.extension.value[x].rank" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:contactPoint.value[x].period">
+      <path value="Extension.extension.value[x].period" />
       <max value="0" />
     </element>
     <element id="Extension.url">
