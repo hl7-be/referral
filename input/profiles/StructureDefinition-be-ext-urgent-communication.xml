@@ -37,27 +37,12 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="Extension.extension:channel">
-      <path value="Extension.extension" />
-      <sliceName value="channel" />
-      <short value="Channel to use" />
-      <max value="1" />
-    </element>
-    <element id="Extension.extension:channel.url">
-      <path value="Extension.extension.url" />
-      <fixedUri value="channel" />
-    </element>
-    <element id="Extension.extension:channel.value[x]">
-      <path value="Extension.extension.value[x]" />
-      <type>
-        <code value="CodeableConcept" />
-      </type>
-    </element>
     <element id="Extension.extension:party">
       <path value="Extension.extension" />
       <sliceName value="party" />
       <short value="party to inform" />
       <min value="1" />
+      <max value="1" />
     </element>
     <element id="Extension.extension:party.url">
       <path value="Extension.extension.url" />
@@ -66,16 +51,160 @@
     <element id="Extension.extension:party.value[x]">
       <path value="Extension.extension.value[x]" />
       <type>
+        <code value="base64Binary" />
+      </type>
+      <type>
+        <code value="boolean" />
+      </type>
+      <type>
+        <code value="canonical" />
+      </type>
+      <type>
+        <code value="code" />
+      </type>
+      <type>
+        <code value="date" />
+      </type>
+      <type>
+        <code value="dateTime" />
+      </type>
+      <type>
+        <code value="decimal" />
+      </type>
+      <type>
+        <code value="id" />
+      </type>
+      <type>
+        <code value="instant" />
+      </type>
+      <type>
+        <code value="integer" />
+      </type>
+      <type>
+        <code value="markdown" />
+      </type>
+      <type>
+        <code value="oid" />
+      </type>
+      <type>
+        <code value="positiveInt" />
+      </type>
+      <type>
+        <code value="string" />
+      </type>
+      <type>
+        <code value="time" />
+      </type>
+      <type>
+        <code value="unsignedInt" />
+      </type>
+      <type>
+        <code value="uri" />
+      </type>
+      <type>
+        <code value="url" />
+      </type>
+      <type>
+        <code value="uuid" />
+      </type>
+      <type>
+        <code value="Address" />
+      </type>
+      <type>
+        <code value="Age" />
+      </type>
+      <type>
+        <code value="Annotation" />
+      </type>
+      <type>
+        <code value="Attachment" />
+      </type>
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <type>
+        <code value="Coding" />
+      </type>
+      <type>
+        <code value="ContactPoint" />
+      </type>
+      <type>
+        <code value="Count" />
+      </type>
+      <type>
+        <code value="Distance" />
+      </type>
+      <type>
+        <code value="Duration" />
+      </type>
+      <type>
+        <code value="HumanName" />
+      </type>
+      <type>
+        <code value="Identifier" />
+      </type>
+      <type>
+        <code value="Money" />
+      </type>
+      <type>
+        <code value="Period" />
+      </type>
+      <type>
+        <code value="Quantity" />
+      </type>
+      <type>
+        <code value="Range" />
+      </type>
+      <type>
+        <code value="Ratio" />
+      </type>
+      <type>
         <code value="Reference" />
         <targetProfile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner" />
         <targetProfile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization" />
         <targetProfile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient" />
       </type>
+      <type>
+        <code value="SampledData" />
+      </type>
+      <type>
+        <code value="Signature" />
+      </type>
+      <type>
+        <code value="Timing" />
+      </type>
+      <type>
+        <code value="ContactDetail" />
+      </type>
+      <type>
+        <code value="Contributor" />
+      </type>
+      <type>
+        <code value="DataRequirement" />
+      </type>
+      <type>
+        <code value="Expression" />
+      </type>
+      <type>
+        <code value="ParameterDefinition" />
+      </type>
+      <type>
+        <code value="RelatedArtifact" />
+      </type>
+      <type>
+        <code value="TriggerDefinition" />
+      </type>
+      <type>
+        <code value="UsageContext" />
+      </type>
+      <type>
+        <code value="Dosage" />
+      </type>
     </element>
     <element id="Extension.extension:instructions">
       <path value="Extension.extension" />
       <sliceName value="instructions" />
-      <short value="Any extra instruction" />
+      <short value="For example 'Try phone first but also send SMS and e-mail'" />
       <max value="1" />
     </element>
     <element id="Extension.extension:instructions.url">
@@ -87,6 +216,65 @@
       <type>
         <code value="string" />
       </type>
+    </element>
+    <element id="Extension.extension:channel">
+      <path value="Extension.extension" />
+      <sliceName value="channel" />
+      <short value="Will override any other known channel for partner for urgent communication" />
+    </element>
+    <element id="Extension.extension:channel.extension">
+      <path value="Extension.extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:channel.extension:channel">
+      <path value="Extension.extension.extension" />
+      <sliceName value="channel" />
+      <min value="1" />
+      <max value="1" />
+      <binding>
+        <strength value="preferred" />
+        <valueSet value="http://hl7.org/fhir/ValueSet/contact-point-system" />
+      </binding>
+    </element>
+    <element id="Extension.extension:channel.extension:channel.url">
+      <path value="Extension.extension.extension.url" />
+      <fixedUri value="channel" />
+    </element>
+    <element id="Extension.extension:channel.extension:channel.value[x]">
+      <path value="Extension.extension.extension.value[x]" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+    </element>
+    <element id="Extension.extension:channel.extension:channelValue">
+      <path value="Extension.extension.extension" />
+      <sliceName value="channelValue" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:channel.extension:channelValue.url">
+      <path value="Extension.extension.extension.url" />
+      <fixedUri value="channelValue" />
+    </element>
+    <element id="Extension.extension:channel.extension:channelValue.value[x]">
+      <path value="Extension.extension.extension.value[x]" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:channel.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="channel" />
+    </element>
+    <element id="Extension.extension:channel.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <max value="0" />
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
