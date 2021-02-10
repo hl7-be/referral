@@ -137,6 +137,49 @@
       <max value="*" />
   
     </element>
+    <element id="BeReferralPrescription.identifier">
+      <path value="BeReferralPrescription.identifier" />
+      <short value="An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="BeReferralPrescription.status">
+      <path value="BeReferralPrescription.status" />
+      <short value="Current status" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://hl7.org/fhir/ValueSet/request-status" />
+      </binding>
+    </element>
+    <element id="BeReferralPrescription.reasonCurrentStatus">
+      <path value="BeReferralPrescription.reasonCurrentStatus" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="BeReferralPrescription.timestampCreation">
+      <path value="BeReferralPrescription.timestampCreation" />
+      <short value="When this prescription was created" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="dateTime" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/dateTime" />
+      </type>
+    </element>
     <element id="BeReferralPrescription.prescriber">
       <path value="BeReferralPrescription.prescriber" />
       <short value="The NIHDI of the prescribing healthcare party" />
@@ -192,8 +235,36 @@
         <code value="Reference" />
       </type>
     </element>
-    <element id="BeReferralPrescription.provider">
-      <path value="BeReferralPrescription.provider" />
+    <element id="BeReferralPrescription.originalRequest">
+      <path value="BeReferralPrescription.originalRequest" />
+      <short value="The original request or prescription triggered this prescription" />
+      <definition value="The original request or prescription that is the reason for this request - for example when a detailed request is created by a broader request." />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+      </type>
+    </element>
+    <element id="BeReferralPrescription.reason">
+      <path value="BeReferralPrescription.reason" />
+      <short value="The problem (code or reference) that is the main reason for this prescription" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableReference" />
+      </type>
+    </element>
+    <element id="BeReferralPrescription.intendedProvider">
+      <path value="BeReferralPrescription.intendedProvider" />
+      <short value="The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="BeReferralPrescription.intendedProvider.provider">
+      <path value="BeReferralPrescription.intendedProvider.provider" />
       <short value="A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)" />
       <min value="0" />
       <max value="*" />
@@ -201,57 +272,15 @@
         <code value="Reference" />
       </type>
     </element>
-    <element id="BeReferralPrescription.disciplineProvider">
-      <path value="BeReferralPrescription.disciplineProvider" />
-      <short value="Required discipline of the provider party" />
+
+    <element id="BeReferralPrescription.intendedProvider.discipline">
+      <path value="BeReferralPrescription.intendedProvider.discipline" />
+      <short value="The required discipline of the provider party" />
       <min value="1" />
       <max value="1" />
       <type>
         <code value="CodeableConcept" />
         <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
-      </type>
-    </element>
-    <element id="BeReferralPrescription.timestampCreation">
-      <path value="BeReferralPrescription.timestampCreation" />
-      <short value="When this prescription was created" />
-      <min value="1" />
-      <max value="1" />
-      <type>
-        <code value="dateTime" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/dateTime" />
-      </type>
-    </element>
-    <element id="BeReferralPrescription.status">
-      <path value="BeReferralPrescription.status" />
-      <short value="Current status" />
-      <min value="1" />
-      <max value="1" />
-      <type>
-        <code value="code" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
-      </type>
-      <binding>
-        <strength value="required" />
-        <valueSet value="http://hl7.org/fhir/ValueSet/request-status" />
-      </binding>
-    </element>
-    <element id="BeReferralPrescription.reasonCurrentStatus">
-      <path value="BeReferralPrescription.reasonCurrentStatus" />
-      <min value="1" />
-      <max value="1" />
-      <type>
-        <code value="CodeableConcept" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
-      </type>
-    </element>
-    <element id="BeReferralPrescription.uhmepIdentifier">
-      <path value="BeReferralPrescription.uhmepIdentifier" />
-      <short value="Reference ID of the UHMEP once available there" />
-      <min value="0" />
-      <max value="1" />
-      <type>
-        <code value="Identifier" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
       </type>
     </element>
     <element id="BeReferralPrescription.validityPeriod">
@@ -291,6 +320,15 @@
       <max value="*" />
       <type>
         <code value="Reference" />
+      </type>
+    </element>
+    <element id="BeReferralPrescription.note">
+      <path value="BeReferralPrescription.note" />
+      <short value="Additional text notes about the request." />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Annotation" />
       </type>
     </element>
   </differential>
