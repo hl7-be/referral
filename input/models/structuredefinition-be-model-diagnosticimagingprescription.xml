@@ -380,12 +380,16 @@
     </element>
     <element id="BeDiagnosticImagingPrescription.supportingInformation.procedure">
       <path value="BeDiagnosticImagingPrescription.supportingInformation.procedure" />
-      <short value="Treatments/procedures patient underwent" />
+      <short value="Relevant treatments/procedures patient underwent. Referring to a procedure or by giving a code." />
       <min value="0" />
       <max value="*" />
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Procedure" />
+      </type>
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
       </type>
     </element>
     <element id="BeDiagnosticImagingPrescription.supportingInformation.document">
@@ -440,16 +444,6 @@
     <element id="BeDiagnosticImagingPrescription.proposedInvestigation">
       <path value="BeDiagnosticImagingPrescription.proposedInvestigation" />
       <short value="What to do - coded or as text" />
-      <min value="0" />
-      <max value="*" />
-      <type>
-        <code value="CodeableConcept" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
-      </type>
-    </element>
-    <element id="BeDiagnosticImagingPrescription.previousRelevantExaminations">
-      <path value="BeDiagnosticImagingPrescription.previousRelevantExaminations" />
-      <short value="Code from a list or free text" />
       <min value="0" />
       <max value="*" />
       <type>
