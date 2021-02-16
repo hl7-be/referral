@@ -136,6 +136,49 @@
       <min value="0" />
       <max value="*" />
     </element>
+    <element id="BeDiagnosticImagingPrescription.identifier">
+      <path value="BeDiagnosticImagingPrescription.identifier" />
+      <short value="An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.status">
+      <path value="BeDiagnosticImagingPrescription.status" />
+      <short value="Current status" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://hl7.org/fhir/ValueSet/request-status" />
+      </binding>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.reasonCurrentStatus">
+      <path value="BeDiagnosticImagingPrescription.reasonCurrentStatus" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.authoredOn">
+      <path value="BeDiagnosticImagingPrescription.authoredOn" />
+      <short value="When this prescription was created" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="dateTime" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/dateTime" />
+      </type>
+    </element>
     <element id="BeDiagnosticImagingPrescription.prescriber">
       <path value="BeDiagnosticImagingPrescription.prescriber" />
       <short value="The NIHDI of the prescribing healthcare party" />
@@ -191,8 +234,36 @@
         <code value="Reference" />
       </type>
     </element>
-    <element id="BeDiagnosticImagingPrescription.provider">
-      <path value="BeDiagnosticImagingPrescription.provider" />
+    <element id="BeDiagnosticImagingPrescription.originalRequest">
+      <path value="BeDiagnosticImagingPrescription.originalRequest" />
+      <short value="The original request or prescription triggered this prescription" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Reference" />
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.reason">
+      <path value="BeDiagnosticImagingPrescription.reason" />
+      <short value="The problem (code or reference) that is the main reason for this prescription" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.intendedProvider">
+      <path value="BeDiagnosticImagingPrescription.intendedProvider" />
+      <short value="The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.intendedProvider.provider">
+      <path value="BeDiagnosticImagingPrescription.intendedProvider.provider" />
       <short value="A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)" />
       <min value="0" />
       <max value="*" />
@@ -200,57 +271,14 @@
         <code value="Reference" />
       </type>
     </element>
-    <element id="BeDiagnosticImagingPrescription.disciplineProvider">
-      <path value="BeDiagnosticImagingPrescription.disciplineProvider" />
-      <short value="Required discipline of the provider party" />
-      <min value="1" />
-      <max value="1" />
-      <type>
-        <code value="CodeableConcept" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
-      </type>
-    </element>
-    <element id="BeDiagnosticImagingPrescription.timestampCreation">
-      <path value="BeDiagnosticImagingPrescription.timestampCreation" />
-      <short value="When this prescription was created" />
-      <min value="1" />
-      <max value="1" />
-      <type>
-        <code value="dateTime" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/dateTime" />
-      </type>
-    </element>
-    <element id="BeDiagnosticImagingPrescription.status">
-      <path value="BeDiagnosticImagingPrescription.status" />
-      <short value="Current status" />
-      <min value="1" />
-      <max value="1" />
-      <type>
-        <code value="code" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
-      </type>
-      <binding>
-        <strength value="required" />
-        <valueSet value="http://hl7.org/fhir/ValueSet/request-status" />
-      </binding>
-    </element>
-    <element id="BeDiagnosticImagingPrescription.reasonCurrentStatus">
-      <path value="BeDiagnosticImagingPrescription.reasonCurrentStatus" />
-      <min value="1" />
-      <max value="1" />
-      <type>
-        <code value="CodeableConcept" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
-      </type>
-    </element>
-    <element id="BeDiagnosticImagingPrescription.uhmepIdentifier">
-      <path value="BeDiagnosticImagingPrescription.uhmepIdentifier" />
-      <short value="Reference ID of the UHMEP once available there" />
+    <element id="BeDiagnosticImagingPrescription.intendedProvider.discipline">
+      <path value="BeDiagnosticImagingPrescription.intendedProvider.discipline" />
+      <short value="The required discipline of the provider party" />
       <min value="0" />
-      <max value="1" />
+      <max value="*" />
       <type>
-        <code value="Identifier" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+        <code value="CodeableConcept" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
       </type>
     </element>
     <element id="BeDiagnosticImagingPrescription.validityPeriod">
@@ -290,6 +318,16 @@
       <max value="*" />
       <type>
         <code value="Reference" />
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.note">
+      <path value="BeDiagnosticImagingPrescription.note" />
+      <short value="Additional text notes about the request." />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Annotation" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Annotation" />
       </type>
     </element>
     <element id="BeDiagnosticImagingPrescription.relevantClinicalInformation">
@@ -417,15 +455,6 @@
       <type>
         <code value="CodeableConcept" />
         <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
-      </type>
-    </element>
-    <element id="BeDiagnosticImagingPrescription.additionalNotes">
-      <path value="BeDiagnosticImagingPrescription.additionalNotes" />
-      <min value="0" />
-      <max value="1" />
-      <type>
-        <code value="Annotation" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/Annotation" />
       </type>
     </element>
   </differential>
