@@ -332,7 +332,7 @@
     </element>
     <element id="BeDiagnosticImagingPrescription.relevantClinicalInformation[x]">
       <path value="BeDiagnosticImagingPrescription.relevantClinicalInformation[x]" />
-      <short value="e.g. stomach ache during 10 days, echo suspected damage kidneys, complaints of patients" />
+      <short value="e.g. stomach ache during 10 days, echo suspected damage kidneys, complaints of patients, allergies,..." />
       <min value="0" />
       <max value="*" />
       <type>
@@ -346,6 +346,7 @@
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Procedure" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Condition" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Observation" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/AllergyIntolerance" />
       </type>
     </element>
     <element id="BeDiagnosticImagingPrescription.diagnosticQuestion[x]">
@@ -401,25 +402,6 @@
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/DocumentReference" />
       </type>
     </element>
-    <element id="BeDiagnosticImagingPrescription.supportingInformation[x].complaint">
-      <path value="BeDiagnosticImagingPrescription.supportingInformation[x].complaint" />
-      <short value="Complaints formulated by patient" />
-      <min value="0" />
-      <max value="*" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Condition" />
-      </type>
-    </element>
-    <element id="BeDiagnosticImagingPrescription.supportingInformation[x].allergy">
-      <path value="BeDiagnosticImagingPrescription.supportingInformation[x].allergy" />
-      <min value="0" />
-      <max value="*" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/AllergyIntolerance" />
-      </type>
-    </element>
     <element id="BeDiagnosticImagingPrescription.supportingInformation[x].imagingStudy">
       <path value="BeDiagnosticImagingPrescription.supportingInformation[x].imagingStudy" />
       <short value="If vital to this request, references may be given to previous diagnostic imaging" />
@@ -448,6 +430,25 @@
       <type>
         <code value="CodeableConcept" />
         <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.soberExceptMedication">
+      <path value="BeDiagnosticImagingPrescription.soberExceptMedication" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="boolean" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/boolean" />
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.contrastFluid">
+      <path value="BeDiagnosticImagingPrescription.contrastFluid" />
+      <short value="ifNecessary|notPermitted" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="code" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/code" />
       </type>
     </element>
   </differential>
