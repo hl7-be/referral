@@ -334,7 +334,7 @@
       <path value="BeDiagnosticImagingPrescription.relevantClinicalInformation[x]" />
       <short value="e.g. stomach ache during 10 days, echo suspected damage kidneys" />
       <min value="0" />
-      <max value="1" />
+      <max value="*" />
       <type>
         <code value="Annotation" />
         <profile value="http://hl7.org/fhir/StructureDefinition/Annotation" />
@@ -342,6 +342,11 @@
       <type>
         <code value="CodeableConcept" />
         <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Procedure" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Condition" />
       </type>
     </element>
     <element id="BeDiagnosticImagingPrescription.diagnosticQuestion[x]">
@@ -356,6 +361,17 @@
       <type>
         <code value="CodeableConcept" />
         <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.contraIndication[x]">
+      <path value="BeDiagnosticImagingPrescription.contraIndication[x]" />
+      <short value="e.g.pregnancy, devices, kidney functioning" />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Condition" />
       </type>
     </element>
     <element id="BeDiagnosticImagingPrescription.supportingInformation[x]">
@@ -386,20 +402,6 @@
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Observation" />
       </type>
     </element>
-    <element id="BeDiagnosticImagingPrescription.supportingInformation[x].procedure[x]">
-      <path value="BeDiagnosticImagingPrescription.supportingInformation[x].procedure[x]" />
-      <short value="Relevant treatments/procedures patient underwent. Referring to a procedure or by giving a code." />
-      <min value="0" />
-      <max value="*" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Procedure" />
-      </type>
-      <type>
-        <code value="CodeableConcept" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
-      </type>
-    </element>
     <element id="BeDiagnosticImagingPrescription.supportingInformation[x].document">
       <path value="BeDiagnosticImagingPrescription.supportingInformation[x].document" />
       <short value="Any document added as extra information" />
@@ -417,17 +419,7 @@
       <max value="*" />
       <type>
         <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Observation" />
-      </type>
-    </element>
-    <element id="BeDiagnosticImagingPrescription.supportingInformation[x].device">
-      <path value="BeDiagnosticImagingPrescription.supportingInformation[x].device" />
-      <short value="Implanted devices, prostheses" />
-      <min value="0" />
-      <max value="*" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Condition" />
       </type>
     </element>
     <element id="BeDiagnosticImagingPrescription.supportingInformation[x].allergy">
