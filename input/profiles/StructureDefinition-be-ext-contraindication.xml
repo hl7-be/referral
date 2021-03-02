@@ -25,6 +25,14 @@
     <element id="Extension">
       <path value="Extension" />
       <short value="Contra indication" />
+      <constraint>
+        <key value="ima-1" />
+        <requirements value="A CodeableConcept SHALL be present if (no Reference and no Annotation)" />
+        <severity value="error" />
+        <human value="A CodeableConcept SHALL be present if (no Reference and no Annotation)" />
+        <expression value="extension.where(url = 'CodeableConcept').exists()" />
+        <source value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-contraindication" />
+      </constraint>
       <isModifier value="true" />
     </element>
     <element id="Extension.extension">
@@ -72,6 +80,14 @@
     <element id="Extension.extension:CodeableConcept">
       <path value="Extension.extension" />
       <sliceName value="CodeableConcept" />
+      <constraint>
+        <key value="ima-1" />
+        <requirements value="If there is (no Reference and no Annotation): a CodeableConcept SHALL be given." />
+        <severity value="error" />
+        <human value="If there is (no Reference and no Annotation): a CodeableConcept SHALL be given." />
+        <expression value="extension.where(url = 'CodeableConcept').empty() implies (extension.where(url = 'Reference').exists() or extension.where(url = 'Annotation').exists())" />
+        <source value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-contraindication" />
+      </constraint>
     </element>
     <element id="Extension.extension:CodeableConcept.url">
       <path value="Extension.extension.url" />
