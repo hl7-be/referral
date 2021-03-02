@@ -32,7 +32,7 @@
       <min value="0" />
       <max value="*" />
     </element>
-      <element id="BeDiagnosticImagingPrescription.BeReferralPrescription">
+    <element id="BeDiagnosticImagingPrescription.BeReferralPrescription">
       <path value="BeDiagnosticImagingPrescription.BeReferralPrescription" />
       <min value="1" />
       <max value="1" />
@@ -42,7 +42,8 @@
     </element>
     <element id="BeDiagnosticImagingPrescription.relevantClinicalInformation[x]">
       <path value="BeDiagnosticImagingPrescription.relevantClinicalInformation[x]" />
-      <short value="e.g. stomach ache during 10 days, echo suspected damage kidneys, complaints of patients, allergies,..." />
+      <short value="Relevant information in the context of this prescription concerning for example allergies, kidney function, diabetic. When detailed information can be given, it is RECOMMENDED to express it as structured as possible." />
+      <definition value="e.g. stomach ache during 10 days, echo suspected damage kidneys, complaints of patients, allergies,..." />
       <min value="0" />
       <max value="*" />
       <type>
@@ -57,11 +58,13 @@
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Condition" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Observation" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/AllergyIntolerance" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/MedicationStatement" />
       </type>
     </element>
     <element id="BeDiagnosticImagingPrescription.diagnosticQuestion[x]">
       <path value="BeDiagnosticImagingPrescription.diagnosticQuestion[x]" />
-      <short value="e.g. Cyste? Metastasis?" />
+      <short value="Either in text or in a coded format. At the discretion of the prescribing party." />
+      <definition value="e.g. Cyste? Metastasis?" />
       <min value="0" />
       <max value="*" />
       <type>
@@ -75,17 +78,25 @@
     </element>
     <element id="BeDiagnosticImagingPrescription.contraIndication[x]">
       <path value="BeDiagnosticImagingPrescription.contraIndication[x]" />
-      <short value="e.g.pregnancy, devices, kidney functioning" />
-      <min value="0" />
+      <short value="Relevant information in the context of this prescription concerning possible contra indication. For example presence of devices or (suspected) pregnancy. When detailed information can be given, it is RECOMMENDED to express it as structured as possible. If prescriber has no knowledge of contra indication, this SHALL be expressed with a 'ASKU' nullFlavor ( = Information was sought but not found  )" />
+      <definition value="e.g.pregnancy, devices, kidney functioning" />
+      <min value="1" />
       <max value="*" />
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Condition" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Observation" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/MedicationStatement" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/AllergyIntolerance" />
       </type>
       <type>
         <code value="CodeableConcept" />
         <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+      </type>
+      <type>
+        <code value="Annotation" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/Annotation" />
       </type>
     </element>
     <element id="BeDiagnosticImagingPrescription.supportingInformation[x]">
@@ -144,15 +155,6 @@
       <type>
         <code value="CodeableConcept" />
         <profile value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
-      </type>
-    </element>
-    <element id="BeDiagnosticImagingPrescription.soberExceptMedication">
-      <path value="BeDiagnosticImagingPrescription.soberExceptMedication" />
-      <min value="0" />
-      <max value="1" />
-      <type>
-        <code value="boolean" />
-        <profile value="http://hl7.org/fhir/StructureDefinition/boolean" />
       </type>
     </element>
     <element id="BeDiagnosticImagingPrescription.contrastFluid">
