@@ -100,12 +100,7 @@
 	</category>
 	<priority value="routine" />
 	<code>
-		<coding>
-			<system value="http://snomed.info/sct" />
-			<code value="2471000087103" />
-			<display
-				value="Magnetic resonance imaging of left knee (procedure)" />
-		</coding>
+		<text value="Some suggestion of what to do (this could also be expressed in a coding system)"/>
 	</code>
 	<subject>
 		<reference value="#Patient1" />
@@ -132,4 +127,18 @@
 		<text
 			value="Patient mobility problems. Possibly arthritis of knee" />
 	</reasonCode>
+	<supportingInfo>
+		<extension url="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-supporting-information">
+		<valueAnnotation>
+		<text value="Some relevant supporting information"/>
+		</valueAnnotation>
+	</extension>
+	
+	</supportingInfo>
+	<extension url="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-contraindication">
+		<valueAnnotation>
+		<text value="Patient has serious kidney problems."/>
+		</valueAnnotation>
+	</extension>
+	
 </ServiceRequest>
