@@ -92,20 +92,24 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="ServiceRequest.supportingInfo.extension:CodeableConcept">
-      <path value="ServiceRequest.supportingInfo.extension" />
-      <sliceName value="CodeableConcept" />
-      <type>
-        <code value="Extension" />
-        <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-supporting-codeableconcept" />
-      </type>
-    </element>
     <element id="ServiceRequest.supportingInfo.extension:Annotation">
       <path value="ServiceRequest.supportingInfo.extension" />
       <sliceName value="Annotation" />
+      <min value="0" />
+      <max value="1" />
       <type>
         <code value="Extension" />
         <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-supporting-annotation" />
+      </type>
+    </element>
+    <element id="ServiceRequest.supportingInfo.extension:codeableConcept">
+      <path value="ServiceRequest.supportingInfo.extension" />
+      <sliceName value="codeableConcept" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-supporting-codeableconcept" />
       </type>
     </element>
   </differential>
