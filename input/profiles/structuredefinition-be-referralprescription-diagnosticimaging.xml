@@ -48,9 +48,10 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="ServiceRequest.extension:contraindication">
+    <element id="ServiceRequest.extension:contraIndication">
       <path value="ServiceRequest.extension" />
-      <sliceName value="contraindication" />
+      <sliceName value="contraIndication" />
+      <short value="Relevant information in the context of this prescription concerning possible contra indication. For example presence of devices or (suspected) pregnancy. When detailed information can be given, it is RECOMMENDED to express it as structured as possible. If prescriber has no knowledge of contra indication, this SHALL be expressed with a 'ASKU' nullFlavor ( = Information was sought but not found ) in codeableConcept." />
       <min value="1" />
       <max value="1" />
       <type>
@@ -58,8 +59,21 @@
         <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-contraindication" />
       </type>
     </element>
+    <element id="ServiceRequest.extension:diagnosticQuestion">
+      <path value="ServiceRequest.extension" />
+      <sliceName value="diagnosticQuestion" />
+      <short value="Either in text or in a coded format. At the discretion of the prescribing party." />
+      <min value="0" />
+      <max value="*" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-diagnosticquestion" />
+      </type>
+      <mustSupport value="true" />
+    </element>
     <element id="ServiceRequest.supportingInfo">
       <path value="ServiceRequest.supportingInfo" />
+      <short value="Relevant information in the context of this prescription concerning for example allergies, kidney function, diabetic. When detailed information can be given, it is RECOMMENDED to express it as structured as possible." />
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Resource" />
@@ -81,20 +95,20 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="ServiceRequest.supportingInfo.extension:Annotation">
-      <path value="ServiceRequest.supportingInfo.extension" />
-      <sliceName value="Annotation" />
-      <type>
-        <code value="Extension" />
-        <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-supporting-information" />
-      </type>
-    </element>
     <element id="ServiceRequest.supportingInfo.extension:CodeableConcept">
       <path value="ServiceRequest.supportingInfo.extension" />
       <sliceName value="CodeableConcept" />
       <type>
         <code value="Extension" />
         <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-supporting-codeableconcept" />
+      </type>
+    </element>
+    <element id="ServiceRequest.supportingInfo.extension:Annotation">
+      <path value="ServiceRequest.supportingInfo.extension" />
+      <sliceName value="Annotation" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-supporting-annotation" />
       </type>
     </element>
   </differential>
