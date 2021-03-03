@@ -26,65 +26,19 @@
       <path value="Extension" />
       <short value="The diagnostic question either in text or codeableConcept." />
     </element>
-	    <element id="Extension.value[x]">
-      <path value="Extension.value[x]" />
-      <type>
-        <code value="Annotation" />
-
-      </type>
-	  <type>
-     
-		 <code value="CodeableConcept" />
-      </type>
-    </element>
-	<!--
-    <element id="Extension.extension">
-      <path value="Extension.extension" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="url" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-    </element>
-   
-    <element id="Extension.extension:Annotation">
-      <path value="Extension.extension" />
-      <sliceName value="Annotation" />
-    </element>
-    <element id="Extension.extension:Annotation.url">
-      <path value="Extension.extension.url" />
-      <fixedUri value="Annotation" />
-    </element>
-    <element id="Extension.extension:Annotation.value[x]">
-      <path value="Extension.extension.value[x]" />
-      <type>
-        <code value="Annotation" />
-      </type>
-    </element>
-    <element id="Extension.extension:CodeableConcept">
-      <path value="Extension.extension" />
-      <sliceName value="CodeableConcept" />
-    </element>
-    <element id="Extension.extension:CodeableConcept.url">
-      <path value="Extension.extension.url" />
-      <fixedUri value="CodeableConcept" />
-    </element>
-    <element id="Extension.extension:CodeableConcept.value[x]">
-      <path value="Extension.extension.value[x]" />
-      <type>
-        <code value="CodeableConcept" />
-      </type>
-    </element>
-    <element id="Extension.extension:CodeableConcept.value[x].coding">
-      <path value="Extension.extension.value[x].coding" />
-    </element>
-	-->
     <element id="Extension.url">
       <path value="Extension.url" />
       <fixedUri value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-diagnosticquestion" />
     </element>
-
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <min value="1" />
+      <type>
+        <code value="Annotation" />
+      </type>
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+    </element>
   </differential>
 </StructureDefinition>

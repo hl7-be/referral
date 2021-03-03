@@ -30,81 +30,10 @@
         <requirements value="A CodeableConcept SHALL be present if (no Reference and no Annotation)" />
         <severity value="error" />
         <human value="A CodeableConcept SHALL be present if (no Reference and no Annotation)" />
-        <expression value="extension.where(url = 'CodeableConcept').exists()" />
+        <expression value="valueCodeableConcept.emptyt() implies (valueReference.exists() or valueAnnotation.exists())" />
         <source value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-contraindication" />
       </constraint>
       <isModifier value="true" />
-    </element>
-    <element id="Extension.extension">
-      <path value="Extension.extension" />
-      <slicing>
-        <discriminator>
-          <type value="value" />
-          <path value="url" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-    </element>
-    <element id="Extension.extension:Reference">
-      <path value="Extension.extension" />
-      <sliceName value="Reference" />
-    </element>
-    <element id="Extension.extension:Reference.url">
-      <path value="Extension.extension.url" />
-      <fixedUri value="Reference" />
-    </element>
-    <element id="Extension.extension:Reference.value[x]">
-      <path value="Extension.extension.value[x]" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Condition" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device" />
-        <targetProfile value="http://hl7.org/fhir/StructureDefinition/MedicationStatement" />
-        <targetProfile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-allergyintolerance" />
-      </type>
-    </element>
-    <element id="Extension.extension:Annotation">
-      <path value="Extension.extension" />
-      <sliceName value="Annotation" />
-    </element>
-    <element id="Extension.extension:Annotation.url">
-      <path value="Extension.extension.url" />
-      <fixedUri value="Annotation" />
-    </element>
-    <element id="Extension.extension:Annotation.value[x]">
-      <path value="Extension.extension.value[x]" />
-      <type>
-        <code value="Annotation" />
-      </type>
-    </element>
-    <element id="Extension.extension:CodeableConcept">
-      <path value="Extension.extension" />
-      <sliceName value="CodeableConcept" />
-      <constraint>
-        <key value="ima-1" />
-        <requirements value="If there is (no Reference and no Annotation): a CodeableConcept SHALL be given." />
-        <severity value="error" />
-        <human value="If there is (no Reference and no Annotation): a CodeableConcept SHALL be given." />
-        <expression value="extension.where(url = 'CodeableConcept').empty() implies (extension.where(url = 'Reference').exists() or extension.where(url = 'Annotation').exists())" />
-        <source value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-contraindication" />
-      </constraint>
-    </element>
-    <element id="Extension.extension:CodeableConcept.url">
-      <path value="Extension.extension.url" />
-      <fixedUri value="CodeableConcept" />
-    </element>
-    <element id="Extension.extension:CodeableConcept.value[x]">
-      <path value="Extension.extension.value[x]" />
-      <type>
-        <code value="CodeableConcept" />
-      </type>
-    </element>
-    <element id="Extension.extension:CodeableConcept.value[x].coding">
-      <path value="Extension.extension.value[x].coding" />
-      <binding>
-        <strength value="extensible" />
-        <valueSet value="http://terminology.hl7.org/ValueSet/v3-NullFlavor" />
-      </binding>
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
@@ -112,153 +41,20 @@
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
-      <max value="0" />
-      <type>
-        <code value="base64Binary" />
-      </type>
-      <type>
-        <code value="boolean" />
-      </type>
-      <type>
-        <code value="canonical" />
-      </type>
-      <type>
-        <code value="code" />
-      </type>
-      <type>
-        <code value="date" />
-      </type>
-      <type>
-        <code value="dateTime" />
-      </type>
-      <type>
-        <code value="decimal" />
-      </type>
-      <type>
-        <code value="id" />
-      </type>
-      <type>
-        <code value="instant" />
-      </type>
-      <type>
-        <code value="integer" />
-      </type>
-      <type>
-        <code value="markdown" />
-      </type>
-      <type>
-        <code value="oid" />
-      </type>
-      <type>
-        <code value="positiveInt" />
-      </type>
-      <type>
-        <code value="string" />
-      </type>
-      <type>
-        <code value="time" />
-      </type>
-      <type>
-        <code value="unsignedInt" />
-      </type>
-      <type>
-        <code value="uri" />
-      </type>
-      <type>
-        <code value="url" />
-      </type>
-      <type>
-        <code value="uuid" />
-      </type>
-      <type>
-        <code value="Address" />
-      </type>
-      <type>
-        <code value="Age" />
-      </type>
+      <min value="1" />
       <type>
         <code value="Annotation" />
-      </type>
-      <type>
-        <code value="Attachment" />
       </type>
       <type>
         <code value="CodeableConcept" />
       </type>
       <type>
-        <code value="Coding" />
-      </type>
-      <type>
-        <code value="ContactPoint" />
-      </type>
-      <type>
-        <code value="Count" />
-      </type>
-      <type>
-        <code value="Distance" />
-      </type>
-      <type>
-        <code value="Duration" />
-      </type>
-      <type>
-        <code value="HumanName" />
-      </type>
-      <type>
-        <code value="Identifier" />
-      </type>
-      <type>
-        <code value="Money" />
-      </type>
-      <type>
-        <code value="Period" />
-      </type>
-      <type>
-        <code value="Quantity" />
-      </type>
-      <type>
-        <code value="Range" />
-      </type>
-      <type>
-        <code value="Ratio" />
-      </type>
-      <type>
         <code value="Reference" />
-      </type>
-      <type>
-        <code value="SampledData" />
-      </type>
-      <type>
-        <code value="Signature" />
-      </type>
-      <type>
-        <code value="Timing" />
-      </type>
-      <type>
-        <code value="ContactDetail" />
-      </type>
-      <type>
-        <code value="Contributor" />
-      </type>
-      <type>
-        <code value="DataRequirement" />
-      </type>
-      <type>
-        <code value="Expression" />
-      </type>
-      <type>
-        <code value="ParameterDefinition" />
-      </type>
-      <type>
-        <code value="RelatedArtifact" />
-      </type>
-      <type>
-        <code value="TriggerDefinition" />
-      </type>
-      <type>
-        <code value="UsageContext" />
-      </type>
-      <type>
-        <code value="Dosage" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Device" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Condition" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/MedicationStatement" />
+        <targetProfile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-observation" />
+        <targetProfile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-allergyintolerance" />
       </type>
     </element>
   </differential>
