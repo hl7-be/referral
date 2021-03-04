@@ -62,25 +62,23 @@
       <path value="ServiceRequest.extension" />
       <sliceName value="relevantSupportingInformationAsAnnotation" />
       <short value="Relevant clinical information in the context of this prescription concerning for example allergies, kidney function, diabetic. This extension allows the use of an Annotation but when more detailed information can be given, it is RECOMMENDED to express it as structured as possible using the appropriate elements. ContraIndications SHALL be expressed using the contraIndication modifierExtension." />
-      <min value="0" />
-      <max value="*" />
       <type>
         <code value="Extension" />
         <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-supporting-annotation" />
       </type>
+      <mustSupport value="true" />
     </element>
     <element id="ServiceRequest.extension:relevantSupportingInformationAsCodeableConcept">
       <path value="ServiceRequest.extension" />
       <sliceName value="relevantSupportingInformationAsCodeableConcept" />
       <short value="Relevant clinical information in the context of this prescription concerning for example allergies, kidney function, diabetic. This extension allows the use of a codeableConcept but when more detailed information can be given, it is RECOMMENDED to express it as structured as possible using the appropriate elements. ContraIndications SHALL be expressed using the contraIndication modifierExtension." />
-      <min value="0" />
-      <max value="*" />
       <type>
         <code value="Extension" />
         <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-supporting-codeableconcept" />
       </type>
+      <mustSupport value="true" />
     </element>
-    <element id="ServiceRequest.modifierExtensionextension">
+    <element id="ServiceRequest.modifierExtension">
       <path value="ServiceRequest.modifierExtension" />
       <slicing>
         <discriminator>
@@ -90,7 +88,7 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="ServiceRequest.modifierExtensionextension:contraIndication">
+    <element id="ServiceRequest.modifierExtension:contraIndication">
       <path value="ServiceRequest.modifierExtension" />
       <sliceName value="contraIndication" />
       <min value="1" />
@@ -102,7 +100,7 @@
     </element>
     <element id="ServiceRequest.supportingInfo">
       <path value="ServiceRequest.supportingInfo" />
-      <short value="Relevant information in the context of this prescription concerning for example allergies, kidney function, diabetic. When detailed information can be given, it is RECOMMENDED to express it as structured as possible." />
+      <short value="Relevant information in the context of this prescription concerning for example allergies, kidney function, diabetic. When detailed information can be given, it is RECOMMENDED to express it as structured as possible. ContraIndications SHALL be expressed using the contraIndication modifierExtension" />
       <type>
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Resource" />

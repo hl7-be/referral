@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ServiceRequest xmlns="http://hl7.org/fhir">
+	<id value="diagnostic-imaging-basic-example"/>
+	<meta>
+		<profile
+			value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-diagnosticimaging" />
+	</meta>
+	<text>
+		<status value="generated" />
+		<div xmlns="http://www.w3.org/1999/xhtml">A human readable form of the request (in HTML) SHALL be
+			provided here to enable systems that cannot process all structured
+			data, to at least present the information to the interactive user.
+			More information on https://www.hl7.org/fhir/R4/narrative.html
+		</div>
+	</text>
+	<!-- In this example some referenced resources are placed here in <contained> tags to be fully 'contained' 
+		within the serviceRequest, depending on the final architectural approach 
+		- this may have to be revisited -->
+	<contained>
+		<Patient xmlns="http://hl7.org/fhir">
+			<id value="Patient1" />
+			<meta>
+				<profile
+					value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient" />
+			</meta>
+			<identifier>
+				<use value="official" />
+				<system
+					value="https://www.ehealth.fgov.be/standards/fhir/NamingSystem/ssin" />
+				<value value="9999999999" />
+			</identifier>
+			<name>
+				<family value="Doe" />
+				<given value="Jane" />
+			</name>
+			<gender value="female" />
+			<birthDate value="1956-05-27" />
+		</Patient>
+	</contained>
+	<contained>
+		<Practitioner xmlns="http://hl7.org/fhir">
+			<id value="Requester1" />
+			<meta>
+				<profile
+					value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner" />
+			</meta>
+			<identifier>
+				<use value="official" />
+				<system
+					value="https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi" />
+				<value value="8888888888" />
+			</identifier>
+			<name>
+				<use value="official" />
+				<family value="McCoy" />
+				<given value="Leonard" />
+			</name>
+			<name>
+				<use value="nickname" />
+				<given value="Bones" />
+			</name>
+		</Practitioner>
+	</contained>
+	<extension
+		url="http://hl7.org/fhir/StructureDefinition/request-statusReason">
+		<valueCodeableConcept>
+			<coding>
+				<system
+					value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason" />
+				<code value="created" />
+				<display value="Created" />
+			</coding>
+		</valueCodeableConcept>
+	</extension>
+	<extension url="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-supporting-annotation">
+		<valueAnnotation>
+			<text value="Darmca in VG, sinds 10 dagen buikpijn rechterfossa, levertesten licht afwijkend, echo verdacht letsel in lever"/>
+		</valueAnnotation>
+	</extension>
+	<extension url="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-supporting-codeableconcept">
+	<valueCodeableConcept>
+			<coding>
+				<system
+					value="http://hl7.org/fhir/sid/icpc-2" />
+				<code value="T89" />
+				<display value="Diabetes insulin dependent" />
+			</coding>
+		</valueCodeableConcept>
+	</extension>
+	<extension url="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-supporting-codeableconcept">
+		<valueCodeableConcept>
+			<coding>
+				<system
+					value="http://hl7.org/fhir/sid/icpc-2" />
+				<code value="A89" />
+				<display value="Effect prosthetic device" />
+			</coding>
+		</valueCodeableConcept>
+	</extension>
+	<extension url="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-supporting-codeableconcept">
+	<valueCodeableConcept>
+			<coding>
+				<system
+					value="http://snomed.info/sct" />
+				<code value="723188008" />
+				<display value="Renal insufficiency (disorder)" />
+			</coding>
+		</valueCodeableConcept>
+	</extension>
+	<extension url="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-diagnosticquestion">
+		<valueAnnotation>
+			<text value="Metastasen? Cyste? Andere GI pathologie?"/>
+		</valueAnnotation>
+	</extension>
+	<modifierExtension url="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-contraindication">
+		<valueAnnotation>
+			<text value="eGFR 45 ml/min."/>
+		</valueAnnotation>
+	</modifierExtension>
+	<status value="active" />
+	<intent value="order" />
+	<category>
+		<coding>
+			<system value="http://snomed.info/sct" />
+			<code value="363679005" />
+			<display value="Clinical imaging" />
+		</coding>
+	</category>
+	<priority value="routine" />
+	<code>
+		<text value="Some suggestion of what to do (this could also be expressed in a coding system)"/>
+	</code>
+	<subject>
+		<reference value="#Patient1" />
+	</subject>
+	<requester>
+		<reference value="#Requester1" />
+	</requester>
+	<performerType>
+		<coding>
+			<system value="http://snomed.info/sct" />
+			<code value="66862007" />
+			<display value="Radiologist" />
+		</coding>
+	</performerType>
+</ServiceRequest>
