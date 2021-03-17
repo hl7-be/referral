@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="be-ext-supporting-codeableconcept" />
-  <url value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-supporting-codeableconcept" />
-  <name value="BeSupportingCodeableConcept" />
-  <title value="BeSupportingCodeableConcept" />
+  <id value="be-ext-supporting-info" />
+  <url value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-supporting-info" />
+  <name value="BeSupportingInfo" />
+  <title value="BeSupportingInfo" />
   <status value="draft" />
-  <description value="Relevant clinical information in the context of this prescription concerning for example allergies, kidney function, diabetic. This extension allows the use of a codeableConcept but when more detailed information can be given, it is RECOMMENDED to express it as structured as possible using the appropriate elements." />
+  <description value="Relevant clinical information in the context of this prescription concerning for example allergies, kidney function, diabetic. This extension allows the use of an Annotation or codeableConcept but when more detailed information can be given, it is RECOMMENDED to express it as structured as possible using the appropriate elements." />
   <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="rim" />
@@ -34,6 +34,9 @@
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
       <min value="1" />
+      <type>
+        <code value="Annotation" />
+      </type>
       <type>
         <code value="CodeableConcept" />
       </type>
