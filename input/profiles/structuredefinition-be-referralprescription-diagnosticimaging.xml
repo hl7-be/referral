@@ -5,7 +5,7 @@
   <version value="1.0.0" />
   <name value="BeReferralPrescriptionDiagnosticImaging" />
   <status value="draft" />
-  <description value="Referral prescription for a generic diagnostic imaging." />
+  <description value="Referral prescription for a generic diagnostic imaging.&#xD;&#xA;Please note in .orderDetail, a specific slicing is available to give guidance how to express acquisition modalities if needed. In future iterations of this profile, more slicing might provide additional guidance." />
   <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="workflow" />
@@ -87,6 +87,34 @@
         <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-contrastfluiduse" />
       </type>
       <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.orderDetail">
+      <path value="ServiceRequest.orderDetail" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="coding.code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.orderDetail:modality">
+      <path value="ServiceRequest.orderDetail" />
+      <sliceName value="modality" />
+      <short value="Acquisition modalities, i.e. those in the DICOM Context Group 29" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.orderDetail:modality.coding">
+      <path value="ServiceRequest.orderDetail.coding" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="ImagingModality" />
+        </extension>
+        <strength value="required" />
+        <description value="Type of acquired data in the instance." />
+        <valueSet value="http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_29.html" />
+      </binding>
     </element>
     <element id="ServiceRequest.reasonCode">
       <path value="ServiceRequest.reasonCode" />
