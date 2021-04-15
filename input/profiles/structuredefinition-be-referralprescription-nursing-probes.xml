@@ -40,9 +40,12 @@
       <path value="ServiceRequest.code.coding.code" />
       <fixedCode value="probes" />
     </element>
-    <element id="ServiceRequest.orderDetail.coding.system">
-      <path value="ServiceRequest.orderDetail.coding.system" />
-      <fixedUri value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-code-probe" />
+    <element id="ServiceRequest.orderDetail.coding">
+      <path value="ServiceRequest.orderDetail.coding" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://build.fhir.org/ig/hl7-be/hl7-be-fhir-referral-prescription/ValueSet-be-vs-type-of-probe.html" />
+      </binding>
     </element>
     <element id="ServiceRequest.supportingInfo">
       <path value="ServiceRequest.supportingInfo" />
