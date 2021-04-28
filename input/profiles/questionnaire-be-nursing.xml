@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Questionnaire xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file:///H:/OLD_DESKTOP/Desktop/LATEST%20AND%20GREATEST/FHIR4/questionnaire.xsd">
+	<id value="be-nursing"/>
+	<url value="https://www.ehealth.fgov.be/standards/fhir/Questionnaire/be-nursing"/>
+	<status value="active"/>
+	<subjectType value="Patient"/>
+	<item>
+		<linkId value="typeNursing"/>
+		<text value="Type of nursing?"/>
+		<type value="open-choice"/>
+		<required value="true"/>
+		<answerOption>
+			<valueCoding>
+				<system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-code"/>
+				<code value="probes"/>
+				<display value="Probes"/>
+			</valueCoding>
+		</answerOption>
+		<answerOption>
+			<valueCoding>
+				<system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-code"/>
+				<code value="compression-therapy"/>
+				<display value="Compression therapy"/>
+			</valueCoding>
+		</answerOption>
+		<answerOption>
+			<valueCoding>
+				<system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-code"/>
+				<code value="medication"/>
+				<display value="Medication"/>
+			</valueCoding>
+		</answerOption>
+		<answerOption>
+			<valueCoding>
+				<system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-code"/>
+				<code value="diabetics"/>
+				<display value="Diabetics"/>
+			</valueCoding>
+		</answerOption>
+	</item>
+	<item>
+		<linkId value="diabeticsLevel1"/>
+		<type value="group"/>
+		<enableWhen>
+			<question value="typeNursing"/>
+			<operator value="="/>
+			<answerCoding>
+				<system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-code"/>
+				<code value="diabetics"/>
+				<display value="Diabetics"/>
+			</answerCoding>
+		</enableWhen>
+		<item>
+			<linkId value="injection"/>
+			<text value="Injection"/>
+			<type value="boolean"/>
+		</item>
+		<item>
+			<linkId value="educationPatient"/>
+			<text value="Education patient without care plan contract"/>
+			<type value="boolean"/>
+		</item>
+		<item>
+			<linkId value="educationPatient"/>
+			<text value="Education patient with care plan contract"/>
+			<type value="boolean"/>
+		</item>
+	</item>
+	<item>
+		<linkId value="amountMl"/>
+		<text value="Amount in ml for the nursing probe procedure?"/>
+		<type value="integer"/>
+		<enableWhen>
+			<question value="typeNursing"/>
+			<operator value="="/>
+			<answerCoding>
+				<system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-code"/>
+				<code value="probes"/>
+				<display value="Probes"/>
+			</answerCoding>
+		</enableWhen>
+		<required value="true"/>
+	</item>
+</Questionnaire>
