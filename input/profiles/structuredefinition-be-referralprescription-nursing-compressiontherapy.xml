@@ -40,9 +40,12 @@
       <path value="ServiceRequest.code.coding.code" />
       <fixedCode value="compression-therapy" />
     </element>
-    <element id="ServiceRequest.orderDetail.coding.system">
-      <path value="ServiceRequest.orderDetail.coding.system" />
-      <fixedUri value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-code-compressiontherapy" />
+    <element id="ServiceRequest.orderDetail">
+      <path value="ServiceRequest.orderDetail" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-type-of-compression" />
+      </binding>
     </element>
   </differential>
 </StructureDefinition>
