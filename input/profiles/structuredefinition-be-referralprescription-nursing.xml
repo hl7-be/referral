@@ -49,16 +49,10 @@
     <element id="ServiceRequest.code">
       <path value="ServiceRequest.code" />
       <min value="1" />
-    </element>
-    <element id="ServiceRequest.code.coding.system">
-      <path value="ServiceRequest.code.coding.system" />
-      <short value="High level nursing codes" />
-      <min value="1" />
-      <fixedUri value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-code" />
-    </element>
-    <element id="ServiceRequest.code.coding.code">
-      <path value="ServiceRequest.code.coding.code" />
-      <min value="1" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-type-of-nursing" />
+      </binding>
     </element>
     <element id="ServiceRequest.orderDetail">
       <path value="ServiceRequest.orderDetail" />
