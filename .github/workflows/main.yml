@@ -48,25 +48,9 @@ jobs:
           # Run the publisher - don't run the batch script but run the line directly
           args: java -jar ./input-cache/publisher.jar publisher -ig .
 
-
-      - name: Deploy candidate_test
-        uses: JamesIves/github-pages-deploy-action@4.1.4
-        if: ${{ steps.branch-name.outputs.current_branch }}  == 'jct_updates'
-        with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: ./output # The folder the action should deploy.
-          commit-message: Deploy candidate branch
-          target-folder: ${{ steps.branch-name.outputs.current_branch }}  
-          clean: false 
-
-      - name: Get branch names
-        id: branch-name
-        uses: tj-actions/branch-names@v4.3
-      
-
       - name: Deploy candidate
         uses: JamesIves/github-pages-deploy-action@4.1.4
-        if: steps.branch-name.outputs.is_default == 'false'
+        if: ${{ steps.branch-name.outputs.is_default }} == 'false'
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: ./output # The folder the action should deploy.
@@ -76,7 +60,7 @@ jobs:
 
       - name: Deploy main
         uses: JamesIves/github-pages-deploy-action@4.1.4
-        if: steps.branch-name.outputs.is_default == 'true'
+        if: ${{ steps.branch-name.outputs.is_default }} == 'true'
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: ./output # The folder the action should deploy.
