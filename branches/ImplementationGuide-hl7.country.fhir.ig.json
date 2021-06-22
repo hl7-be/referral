@@ -11,7 +11,7 @@
   "title": "HL7 BE Referral Prescription WG Implementation Guide (work in progress)",
   "status": "draft",
   "experimental": false,
-  "date": "2021-06-22T15:53:10+00:00",
+  "date": "2021-06-22T16:07:42+00:00",
   "publisher": "HL7 Belgium",
   "contact": [
     {
@@ -373,108 +373,6 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "StructureDefinition:resource"
-          }
-        ],
-        "reference": {
-          "reference": "StructureDefinition/be-referralprescription"
-        },
-        "fhirVersion": [
-          "4.0.1"
-        ],
-        "name": "Referral prescription profile",
-        "description": "Referral prescription profile",
-        "groupingId": "rpc"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "StructureDefinition:resource"
-          }
-        ],
-        "reference": {
-          "reference": "StructureDefinition/be-referralprescription-diagnosticimaging"
-        },
-        "fhirVersion": [
-          "4.0.1"
-        ],
-        "name": "Referral prescription diagnostic imaging profile",
-        "description": "Referral prescription diagnostic imaging profile",
-        "groupingId": "rpc"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "StructureDefinition:resource"
-          }
-        ],
-        "reference": {
-          "reference": "StructureDefinition/be-referralprescription-nursing"
-        },
-        "fhirVersion": [
-          "4.0.1"
-        ],
-        "name": "High level referral prescription nursing profile",
-        "description": "High level referral prescription nursing profile",
-        "groupingId": "rpc"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "StructureDefinition:resource"
-          }
-        ],
-        "reference": {
-          "reference": "StructureDefinition/be-referralprescription-nursing-compressiontherapy"
-        },
-        "fhirVersion": [
-          "4.0.1"
-        ],
-        "name": "Referral prescription nursing profile compression therapy",
-        "description": "Referral prescription nursing profile compression therapy",
-        "groupingId": "rpc"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "StructureDefinition:resource"
-          }
-        ],
-        "reference": {
-          "reference": "StructureDefinition/be-referralprescription-nursing-bladder-care"
-        },
-        "fhirVersion": [
-          "4.0.1"
-        ],
-        "name": "Referral prescription nursing profile bladder care",
-        "description": "Referral prescription nursing profile bladder care",
-        "groupingId": "rpc"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "StructureDefinition:resource"
-          }
-        ],
-        "reference": {
-          "reference": "StructureDefinition/be-lab-prescription"
-        },
-        "fhirVersion": [
-          "4.0.1"
-        ],
-        "name": "Prescription profile for laboratory testing",
-        "description": "Laboratory prescription profile",
-        "groupingId": "rpc"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString": "ServiceRequest"
           }
         ],
@@ -629,7 +527,19 @@
         "reference": {
           "reference": "StructureDefinition/be-referralprescription-nursing-digestive-system-care"
         },
-        "description": "The profile for bladder care. Actual bladder care information lives in the .orderDetail element. If needed to give a quantity (mandatory if bladder instillation): the .quantity element shall be used. If needed to express the product and time to leave the product (mandatory if bladder instillation): please explain in the .note element."
+        "description": "The nursing profile specialized for digestive system care. If needed to give any details (e.g. details around the enteral feeding): please use the .note element."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/be-referralprescription"
+        },
+        "description": "The common structure for referral prescription."
       },
       {
         "extension": [
@@ -661,6 +571,18 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/be-referralprescription-nursing-compressiontherapy"
+        },
+        "description": "The nursing profile specialized for compression therapy."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString": "StructureDefinition:extension"
           }
         ],
@@ -669,6 +591,54 @@
         },
         "name": "BeUrgentCommunication",
         "description": "When there is a need to urgently communicate results of an order."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/be-lab-prescription"
+        },
+        "description": "This is the Belgian profile for a laboratory order."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/be-referralprescription-nursing-bladder-care"
+        },
+        "description": "The nursing profile specialized for bladder care. Actual bladder care information lives in the .orderDetail element. If needed to give a quantity (mandatory if bladder instillation): the .quantity element shall be used. If needed to express the product and time to leave the product (mandatory if bladder instillation): please explain in the .note element."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/be-referralprescription-nursing"
+        },
+        "description": "The nursing profile, generic version."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/be-referralprescription-diagnosticimaging"
+        },
+        "description": "Referral prescription for a generic diagnostic imaging.\r\nPlease note in .orderDetail, a specific slicing is available to give guidance how to express acquisition modalities if needed. In future iterations of this profile, more slicing might provide additional guidance."
       },
       {
         "extension": [
