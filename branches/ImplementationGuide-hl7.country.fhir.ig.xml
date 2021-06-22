@@ -12,7 +12,7 @@
   <title value="HL7 BE Referral Prescription WG Implementation Guide (work in progress)"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <date value="2021-06-22T15:13:43+00:00"/>
+  <date value="2021-06-22T15:53:10+00:00"/>
   <publisher value="HL7 Belgium"/>
   <contact>
     <telecom>
@@ -423,6 +423,15 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-referralprescription-nursing-digestive-system-care"/>
+      </reference>
+      <description value="The profile for bladder care. Actual bladder care information lives in the .orderDetail element. If needed to give a quantity (mandatory if bladder instillation): the .quantity element shall be used. If needed to express the product and time to leave the product (mandatory if bladder instillation): please explain in the .note element."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -558,10 +567,10 @@
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
-        <reference value="CodeSystem/codesystem-be-enteral-feeding-way"/>
+        <reference value="CodeSystem/codesystem-be-digestive-system-care"/>
       </reference>
-      <name value="BeEnteralFeedingWay"/>
-      <description value="Way of enteral feeding"/>
+      <name value="BeDigestiveSystemCare"/>
+      <description value="Digestive system care"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
