@@ -12,7 +12,7 @@
   <title value="HL7 BE Referral Prescription WG Implementation Guide (work in progress)"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <date value="2021-06-22T14:09:11+00:00"/>
+  <date value="2021-06-22T15:13:43+00:00"/>
   <publisher value="HL7 Belgium"/>
   <contact>
     <telecom>
@@ -293,11 +293,11 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/be-referralprescription-nursing-probes"/>
+        <reference value="StructureDefinition/be-referralprescription-nursing-bladder-care"/>
       </reference>
       <fhirVersion value="4.0.1"/>
-      <name value="Referral prescription nursing profile probes"/>
-      <description value="Referral prescription nursing profile probes"/>
+      <name value="Referral prescription nursing profile bladder care"/>
+      <description value="Referral prescription nursing profile bladder care"/>
       <groupingId value="rpc"/>
     </resource>
     <resource>
@@ -490,12 +490,13 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
+        <valueString value="CodeSystem"/>
       </extension>
       <reference>
-        <reference value="ValueSet/be-vs-entera-feeding-way"/>
+        <reference value="CodeSystem/codesystem-be-type-of-bladder-care"/>
       </reference>
-      <description value="Codes to define a way of enteral feeding"/>
+      <name value="BeBladderCareType"/>
+      <description value="Type of bladder care."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -526,13 +527,12 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
+        <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="CodeSystem/codesystem-be-type-of-probe"/>
+        <reference value="ValueSet/be-vs-digestive-system-care"/>
       </reference>
-      <name value="BeProbeType"/>
-      <description value="Type of probe."/>
+      <description value="Codes to define digestive system care"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -552,6 +552,16 @@
         <reference value="ValueSet/be-vs-referral-category"/>
       </reference>
       <description value="Codes to define the high level category for a referral prescription. SNOMED-CT codes in this valueset are just a draft proposal to give a general idea - pending an official valueset."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/codesystem-be-enteral-feeding-way"/>
+      </reference>
+      <name value="BeEnteralFeedingWay"/>
+      <description value="Way of enteral feeding"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -596,9 +606,9 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/be-vs-type-of-probe"/>
+        <reference value="ValueSet/be-vs-type-of-bladder-care"/>
       </reference>
-      <description value="Codes to define a type of probe."/>
+      <description value="Codes to define a type of bladder care."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -609,16 +619,6 @@
       </reference>
       <name value="BeStatusReason"/>
       <description value="Status reason in Belgium. Initially defined as supporting CodeSystem for the referral prescription."/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
-      </extension>
-      <reference>
-        <reference value="CodeSystem/codesystem-be-enteral-feeding-way"/>
-      </reference>
-      <name value="BeEnteralFeedingWay"/>
-      <description value="Way of enteral feeding"/>
     </resource>
     <page>
       <nameUrl value="toc.html"/>

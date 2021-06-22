@@ -11,7 +11,7 @@
   "title": "HL7 BE Referral Prescription WG Implementation Guide (work in progress)",
   "status": "draft",
   "experimental": false,
-  "date": "2021-06-22T14:09:11+00:00",
+  "date": "2021-06-22T15:13:43+00:00",
   "publisher": "HL7 Belgium",
   "contact": [
     {
@@ -445,13 +445,13 @@
           }
         ],
         "reference": {
-          "reference": "StructureDefinition/be-referralprescription-nursing-probes"
+          "reference": "StructureDefinition/be-referralprescription-nursing-bladder-care"
         },
         "fhirVersion": [
           "4.0.1"
         ],
-        "name": "Referral prescription nursing profile probes",
-        "description": "Referral prescription nursing profile probes",
+        "name": "Referral prescription nursing profile bladder care",
+        "description": "Referral prescription nursing profile bladder care",
         "groupingId": "rpc"
       },
       {
@@ -711,13 +711,14 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "ValueSet"
+            "valueString": "CodeSystem"
           }
         ],
         "reference": {
-          "reference": "ValueSet/be-vs-entera-feeding-way"
+          "reference": "CodeSystem/codesystem-be-type-of-bladder-care"
         },
-        "description": "Codes to define a way of enteral feeding"
+        "name": "BeBladderCareType",
+        "description": "Type of bladder care."
       },
       {
         "extension": [
@@ -759,14 +760,13 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "CodeSystem"
+            "valueString": "ValueSet"
           }
         ],
         "reference": {
-          "reference": "CodeSystem/codesystem-be-type-of-probe"
+          "reference": "ValueSet/be-vs-digestive-system-care"
         },
-        "name": "BeProbeType",
-        "description": "Type of probe."
+        "description": "Codes to define digestive system care"
       },
       {
         "extension": [
@@ -792,6 +792,19 @@
           "reference": "ValueSet/be-vs-referral-category"
         },
         "description": "Codes to define the high level category for a referral prescription. SNOMED-CT codes in this valueset are just a draft proposal to give a general idea - pending an official valueset."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "CodeSystem"
+          }
+        ],
+        "reference": {
+          "reference": "CodeSystem/codesystem-be-enteral-feeding-way"
+        },
+        "name": "BeEnteralFeedingWay",
+        "description": "Way of enteral feeding"
       },
       {
         "extension": [
@@ -851,9 +864,9 @@
           }
         ],
         "reference": {
-          "reference": "ValueSet/be-vs-type-of-probe"
+          "reference": "ValueSet/be-vs-type-of-bladder-care"
         },
-        "description": "Codes to define a type of probe."
+        "description": "Codes to define a type of bladder care."
       },
       {
         "extension": [
@@ -867,19 +880,6 @@
         },
         "name": "BeStatusReason",
         "description": "Status reason in Belgium. Initially defined as supporting CodeSystem for the referral prescription."
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "CodeSystem"
-          }
-        ],
-        "reference": {
-          "reference": "CodeSystem/codesystem-be-enteral-feeding-way"
-        },
-        "name": "BeEnteralFeedingWay",
-        "description": "Way of enteral feeding"
       }
     ],
     "page": {
