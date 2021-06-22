@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ServiceRequest xmlns="http://hl7.org/fhir">
+  <id value="diagnostic-imaging-basic-example-concreteWithText"/>
+  <meta>
+    <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-diagnosticimaging"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml">A human readable form of the request (in HTML) SHALL be
+			provided here to enable systems that cannot process all structured
+			data, to at least present the information to the interactive user.
+			More information on https://www.hl7.org/fhir/R4/narrative.html
+		</div>
+  </text>
+  <contained>
+    <Patient>
+      <id value="Patient1"/>
+      <meta>
+        <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient"/>
+      </meta>
+      <identifier>
+        <use value="official"/>
+        <system value="https://www.ehealth.fgov.be/standards/fhir/NamingSystem/ssin"/>
+        <value value="9999999999"/>
+      </identifier>
+      <name>
+        <family value="Doe"/>
+        <given value="Jane"/>
+      </name>
+      <gender value="female"/>
+      <birthDate value="1956-05-27"/>
+    </Patient>
+  </contained>
+  <contained>
+    <Practitioner>
+      <id value="Requester1"/>
+      <meta>
+        <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner"/>
+      </meta>
+      <identifier>
+        <use value="official"/>
+        <system value="https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi"/>
+        <value value="8888888888"/>
+      </identifier>
+      <name>
+        <use value="official"/>
+        <family value="McCoy"/>
+        <given value="Leonard"/>
+      </name>
+      <name>
+        <use value="nickname"/>
+        <given value="Bones"/>
+      </name>
+    </Practitioner>
+  </contained>
+  <extension url="http://hl7.org/fhir/StructureDefinition/request-statusReason">
+    <valueCodeableConcept>
+      <coding>
+        <system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason"/>
+        <code value="created"/>
+        <display value="Created"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-supporting-info">
+    <valueAnnotation>
+      <text value="Inversietrauma rechtervoet 20/1"/>
+    </valueAnnotation>
+  </extension>
+  <modifierExtension url="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-contraindication">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v3-NullFlavor"/>
+        <code value="ASKU"/>
+        <display value="asked but unknown"/>
+      </coding>
+    </valueCodeableConcept>
+  </modifierExtension>
+  <status value="active"/>
+  <intent value="order"/>
+  <category>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="363679005"/>
+      <display value="Clinical imaging"/>
+    </coding>
+  </category>
+  <priority value="routine"/>
+  <code>
+    <text value="Rx + echo rechtervoet"/>
+  </code>
+  <subject>
+    <reference value="#Patient1"/>
+  </subject>
+  <requester>
+    <reference value="#Requester1"/>
+  </requester>
+  <performerType>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="66862007"/>
+      <display value="Radiologist"/>
+    </coding>
+  </performerType>
+  <reasonCode>
+    <text value="Fractuur? Ligamentair letsel?"/>
+  </reasonCode>
+</ServiceRequest>

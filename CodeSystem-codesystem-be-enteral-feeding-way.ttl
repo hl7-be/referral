@@ -1,0 +1,89 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/CodeSystem/codesystem-be-enteral-feeding-way> a fhir:CodeSystem;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "codesystem-be-enteral-feeding-way"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This code system https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-enteral-feeding-way defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">stomach-probe<a name=\"codesystem-be-enteral-feeding-way-stomach-probe\"> </a></td><td>Stomach probe</td></tr><tr><td style=\"white-space:nowrap\">gastrostomy-probe<a name=\"codesystem-be-enteral-feeding-way-gastrostomy-probe\"> </a></td><td>Gastrostomy probe</td></tr><tr><td style=\"white-space:nowrap\">enterostomy-probe<a name=\"codesystem-be-enteral-feeding-way-enterostomy-probe\"> </a></td><td>Enterostomy probe</td></tr></table><p><b>Additional Language Displays</b></p><table class=\"codes\"><tr><td><b>Code</b></td><td><b>French (fr)</b></td><td><b>Nederlands (Dutch, nl)</b></td></tr><tr><td>stomach-probe</td><td>Sonde gastrique</td><td>Maagsonde</td></tr><tr><td>gastrostomy-probe</td><td>Sonde gastrostomie</td><td>Gastrostomie sonde</td></tr><tr><td>enterostomy-probe</td><td>Sonde entérostomie</td><td>Enterostomie sonde</td></tr></table></div>"
+  ];
+  fhir:CodeSystem.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-enteral-feeding-way"];
+  fhir:CodeSystem.version [ fhir:value "0.2.0"];
+  fhir:CodeSystem.name [ fhir:value "BeEnteralFeedingWay"];
+  fhir:CodeSystem.title [ fhir:value "BeEnteralFeedingWay"];
+  fhir:CodeSystem.status [ fhir:value "draft"];
+  fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean];
+  fhir:CodeSystem.date [ fhir:value "2021-06-22T14:00:22+00:00"^^xsd:dateTime];
+  fhir:CodeSystem.publisher [ fhir:value "HL7 Belgium"];
+  fhir:CodeSystem.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7belgium.org" ]
+     ]
+  ];
+  fhir:CodeSystem.description [ fhir:value "Way of enteral feeding"];
+  fhir:CodeSystem.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ];
+  fhir:CodeSystem.caseSensitive [ fhir:value "false"^^xsd:boolean];
+  fhir:CodeSystem.content [ fhir:value "complete"];
+  fhir:CodeSystem.concept [
+     fhir:index 0;
+     fhir:CodeSystem.concept.code [ fhir:value "stomach-probe" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Stomach probe" ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Maagsonde" ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Sonde gastrique" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:CodeSystem.concept.code [ fhir:value "gastrostomy-probe" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Gastrostomy probe" ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Gastrostomie sonde" ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Sonde gastrostomie" ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:CodeSystem.concept.code [ fhir:value "enterostomy-probe" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Enterostomy probe" ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Enterostomie sonde" ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Sonde entérostomie" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/CodeSystem/codesystem-be-enteral-feeding-way.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

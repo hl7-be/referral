@@ -1,0 +1,612 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/StructureDefinition/be-model-laboratoryprescription> a fhir:StructureDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "be-model-laboratoryprescription"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\">\n        <tr style=\"border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\">\n          <th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">\n            <a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"The logical name of the element\">Name</a>\n          </th>\n          <th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">\n            <a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Information about the use of the element\">Flags</a>\n          </th>\n          <th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">\n            <a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Minimum and Maximum # of times the the element can appear in the instance\">Card.</a>\n          </th>\n          <th style=\"width: 100px\" class=\"hierarchy\">\n            <a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Reference to the type of the element\">Type</a>\n          </th>\n          <th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">\n            <a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Additional information about the element\">Description &amp; Constraints</a>\n            <span style=\"float: right\">\n              <a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Legend for this format\">\n                <img src=\"http://hl7.org/fhir/R4/help16.png\" alt=\"doco\" style=\"background-color: inherit\"/>\n              </a>\n            </span>\n          </th>\n        </tr>\n        <tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\">\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)\" class=\"hierarchy\">\n            <img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/>\n            <img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/>\n            <a href=\"StructureDefinition-be-model-laboratoryprescription-definitions.html#BeLaboratoryoratoryPrescription\">BeLaboratoryoratoryPrescription</a>\n            <a name=\"BeLaboratoryoratoryPrescription\"/>\n          </td>\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/>\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..*</td>\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/>\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/>\n        </tr>\n        <tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;\">\n          <td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\">\n            <img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/>\n            <img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/>\n            <img src=\"icon_reference.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Reference to another Resource\" class=\"hierarchy\"/>\n            <a href=\"StructureDefinition-be-model-laboratoryprescription-definitions.html#BeLaboratoryPrescription.prescriber\">prescriber</a>\n            <a name=\"BeLaboratoryPrescription.prescriber\"/>\n          </td>\n          <td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/>\n          <td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td>\n          <td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">\n            <a href=\"http://hl7.org/fhir/R4/references.html\">Reference</a>(https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner)</td>\n          <td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/>\n        </tr>\n        <tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\">\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\">\n            <img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/>\n            <img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/>\n            <img src=\"icon_reference.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Reference to another Resource\" class=\"hierarchy\"/>\n            <a href=\"StructureDefinition-be-model-laboratoryprescription-definitions.html#BeLaboratoryPrescription.signer\">signer</a>\n            <a name=\"BeLaboratoryPrescription.signer\"/>\n          </td>\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/>\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..*</td>\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">\n            <a href=\"http://hl7.org/fhir/R4/references.html\">Reference</a>(https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner)</td>\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/>\n        </tr>\n        <tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;\">\n          <td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\">\n            <img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/>\n            <img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/>\n            <img src=\"icon_reference.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Reference to another Resource\" class=\"hierarchy\"/>\n            <a href=\"StructureDefinition-be-model-laboratoryprescription-definitions.html#BeLaboratoryPrescription.patient\">patient</a>\n            <a name=\"BeLaboratoryPrescription.patient\"/>\n          </td>\n          <td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/>\n          <td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td>\n          <td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">\n            <a href=\"http://hl7.org/fhir/R4/references.html\">Reference</a>(https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient)</td>\n          <td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/>\n        </tr>\n        <tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\">\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)\" class=\"hierarchy\">\n            <img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/>\n            <img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/>\n            <img src=\"icon_reference.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Reference to another Resource\" class=\"hierarchy\"/>\n            <a href=\"StructureDefinition-be-model-laboratoryprescription-definitions.html#BeLaboratoryPrescription.service\">service</a>\n            <a name=\"BeLaboratoryPrescription.service\"/>\n          </td>\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/>\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td>\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">\n            <a href=\"http://hl7.org/fhir/R4/references.html\">Reference</a>(<a href=\"http://hl7.org/fhir/R4/servicerequest.html\">ServiceRequest</a>)</td>\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/>\n        </tr>\n        <tr>\n          <td colspan=\"5\" class=\"hierarchy\">\n            <br/>\n            <a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Legend for this format\">\n              <img src=\"http://hl7.org/fhir/R4/help16.png\" alt=\"doco\" style=\"background-color: inherit\"/> Documentation for this format</a>\n          </td>\n        </tr>\n      </table>\n    </div>"
+  ];
+  fhir:StructureDefinition.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-model-laboratoryprescription"];
+  fhir:StructureDefinition.version [ fhir:value "0.2.0"];
+  fhir:StructureDefinition.name [ fhir:value "BeLaboratoryPrescription"];
+  fhir:StructureDefinition.status [ fhir:value "draft"];
+  fhir:StructureDefinition.date [ fhir:value "2020-05-12T13:07:15+00:00"^^xsd:dateTime];
+  fhir:StructureDefinition.publisher [ fhir:value "HL7 Belgium"];
+  fhir:StructureDefinition.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7belgium.org" ]
+     ]
+  ];
+  fhir:StructureDefinition.description [ fhir:value "Logical model describing the model for the prescription laboratory. This draft is used in the HL7 Belgian workgroup for laboratory."];
+  fhir:StructureDefinition.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ];
+  fhir:StructureDefinition.fhirVersion [ fhir:value "4.0.1"];
+  fhir:StructureDefinition.kind [ fhir:value "logical"];
+  fhir:StructureDefinition.abstract [ fhir:value "false"^^xsd:boolean];
+  fhir:StructureDefinition.type [ fhir:value "BeLaboratoryPrescription"];
+  fhir:StructureDefinition.baseDefinition [
+     fhir:value "http://hl7.org/fhir/StructureDefinition/Base";
+     fhir:link <http://hl7.org/fhir/StructureDefinition/Base>
+  ];
+  fhir:StructureDefinition.derivation [ fhir:value "specialization"];
+  fhir:StructureDefinition.snapshot [
+     fhir:StructureDefinition.snapshot.element [
+       fhir:index 0;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "*" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "Base" ];
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "*" ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 1;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.prescriber" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.prescriber" ];
+       fhir:ElementDefinition.short [ fhir:value "The NIHDI of the prescribing healthcare party" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeLaboratoryPrescription.prescriber" ];
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.co-prescriber" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.co-prescriber" ];
+       fhir:ElementDefinition.short [ fhir:value "Information about co prescribers" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "*" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeLaboratoryPrescription.co-prescriber" ];
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "*" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "BackboneElement" ]
+       ]
+     ], [
+       fhir:index 3;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.co-prescriber.co-prescriber" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.co-prescriber.co-prescriber" ];
+       fhir:ElementDefinition.short [ fhir:value "NIHDI of co prescriber party" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeLaboratoryPrescription.co-prescriber.co-prescriber" ];
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ], [
+       fhir:index 4;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.co-prescriber.co-prescriberSubstitute" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.co-prescriber.co-prescriberSubstitute" ];
+       fhir:ElementDefinition.short [ fhir:value "NIHDI of co prescriber substitute party" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeLaboratoryPrescription.co-prescriber.co-prescriberSubstitute" ];
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ], [
+       fhir:index 5;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.co-prescriber.status" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.co-prescriber.status" ];
+       fhir:ElementDefinition.short [ fhir:value "Status of co prescribing status (to sign, signed or refused)" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeLaboratoryPrescription.co-prescriber.status" ];
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "code" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/code";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/code>
+         ]
+       ]
+     ], [
+       fhir:index 6;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.patient" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.patient" ];
+       fhir:ElementDefinition.short [ fhir:value "The SSIN of the person for which the laboratory is prescribed." ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeLaboratoryPrescription.patient" ];
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ], [
+       fhir:index 7;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.provider" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.provider" ];
+       fhir:ElementDefinition.short [ fhir:value "A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "*" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeLaboratoryPrescription.provider" ];
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "*" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ], [
+       fhir:index 8;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.disciplineProvider" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.disciplineProvider" ];
+       fhir:ElementDefinition.short [ fhir:value "Required discipline of the provider party" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeLaboratoryPrescription.disciplineProvider" ];
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/CodeableConcept";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/CodeableConcept>
+         ]
+       ]
+     ], [
+       fhir:index 9;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.timestampCreation" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.timestampCreation" ];
+       fhir:ElementDefinition.short [ fhir:value "When this prescription was created" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeLaboratoryPrescription.timestampCreation" ];
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "dateTime" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/dateTime";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/dateTime>
+         ]
+       ]
+     ], [
+       fhir:index 10;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.status" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.status" ];
+       fhir:ElementDefinition.short [ fhir:value "Current status" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeLaboratoryPrescription.status" ];
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "code" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/code";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/code>
+         ]
+       ];
+       fhir:ElementDefinition.binding [
+         fhir:ElementDefinition.binding.strength [ fhir:value "required" ];
+         fhir:ElementDefinition.binding.valueSet [
+           fhir:value "http://hl7.org/fhir/ValueSet/request-status";
+           fhir:link <http://hl7.org/fhir/ValueSet/request-status>
+         ]
+       ]
+     ], [
+       fhir:index 11;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.reasonCurrentStatus" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.reasonCurrentStatus" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeLaboratoryPrescription.reasonCurrentStatus" ];
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/CodeableConcept";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/CodeableConcept>
+         ]
+       ]
+     ], [
+       fhir:index 12;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.uhmepIdentifier" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.uhmepIdentifier" ];
+       fhir:ElementDefinition.short [ fhir:value "Reference ID of the UHMEP once availaboratoryle there" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeLaboratoryPrescription.uhmepIdentifier" ];
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Identifier" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/Identifier";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Identifier>
+         ]
+       ]
+     ], [
+       fhir:index 13;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.validityPeriod" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.validityPeriod" ];
+       fhir:ElementDefinition.short [ fhir:value "Period of validity of prescription" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeLaboratoryPrescription.validityPeriod" ];
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Period" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/Period";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Period>
+         ]
+       ]
+     ], [
+       fhir:index 14;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.executionPeriod" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.executionPeriod" ];
+       fhir:ElementDefinition.short [ fhir:value "When this prescription is executed, availaboratoryle after start of execution" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeLaboratoryPrescription.executionPeriod" ];
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Period" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/Period";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Period>
+         ]
+       ]
+     ], [
+       fhir:index 15;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.prescribedService" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.prescribedService" ];
+       fhir:ElementDefinition.short [ fhir:value "What is prescribed" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeLaboratoryPrescription.prescribedService" ];
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/CodeableConcept";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/CodeableConcept>
+         ]
+       ]
+     ], [
+       fhir:index 16;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.resultReceiver" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.resultReceiver" ];
+       fhir:ElementDefinition.short [ fhir:value "Parties that shall be informed of the results of the prescription other then the prescriber." ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "*" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeLaboratoryPrescription.resultReceiver" ];
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "*" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ]
+  ];
+  fhir:StructureDefinition.differential [
+     fhir:StructureDefinition.differential.element [
+       fhir:index 0;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "*" ]
+     ], [
+       fhir:index 1;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.prescriber" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.prescriber" ];
+       fhir:ElementDefinition.short [ fhir:value "The NIHDI of the prescribing healthcare party" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.co-prescriber" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.co-prescriber" ];
+       fhir:ElementDefinition.short [ fhir:value "Information about co prescribers" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "*" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "BackboneElement" ]
+       ]
+     ], [
+       fhir:index 3;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.co-prescriber.co-prescriber" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.co-prescriber.co-prescriber" ];
+       fhir:ElementDefinition.short [ fhir:value "NIHDI of co prescriber party" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ], [
+       fhir:index 4;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.co-prescriber.co-prescriberSubstitute" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.co-prescriber.co-prescriberSubstitute" ];
+       fhir:ElementDefinition.short [ fhir:value "NIHDI of co prescriber substitute party" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ], [
+       fhir:index 5;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.co-prescriber.status" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.co-prescriber.status" ];
+       fhir:ElementDefinition.short [ fhir:value "Status of co prescribing status (to sign, signed or refused)" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "code" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/code";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/code>
+         ]
+       ]
+     ], [
+       fhir:index 6;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.patient" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.patient" ];
+       fhir:ElementDefinition.short [ fhir:value "The SSIN of the person for which the laboratory is prescribed." ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ], [
+       fhir:index 7;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.provider" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.provider" ];
+       fhir:ElementDefinition.short [ fhir:value "A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "*" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ], [
+       fhir:index 8;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.disciplineProvider" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.disciplineProvider" ];
+       fhir:ElementDefinition.short [ fhir:value "Required discipline of the provider party" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/CodeableConcept";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/CodeableConcept>
+         ]
+       ]
+     ], [
+       fhir:index 9;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.timestampCreation" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.timestampCreation" ];
+       fhir:ElementDefinition.short [ fhir:value "When this prescription was created" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "dateTime" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/dateTime";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/dateTime>
+         ]
+       ]
+     ], [
+       fhir:index 10;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.status" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.status" ];
+       fhir:ElementDefinition.short [ fhir:value "Current status" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "code" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/code";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/code>
+         ]
+       ];
+       fhir:ElementDefinition.binding [
+         fhir:ElementDefinition.binding.strength [ fhir:value "required" ];
+         fhir:ElementDefinition.binding.valueSet [
+           fhir:value "http://hl7.org/fhir/ValueSet/request-status";
+           fhir:link <http://hl7.org/fhir/ValueSet/request-status>
+         ]
+       ]
+     ], [
+       fhir:index 11;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.reasonCurrentStatus" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.reasonCurrentStatus" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/CodeableConcept";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/CodeableConcept>
+         ]
+       ]
+     ], [
+       fhir:index 12;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.uhmepIdentifier" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.uhmepIdentifier" ];
+       fhir:ElementDefinition.short [ fhir:value "Reference ID of the UHMEP once availaboratoryle there" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Identifier" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/Identifier";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Identifier>
+         ]
+       ]
+     ], [
+       fhir:index 13;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.validityPeriod" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.validityPeriod" ];
+       fhir:ElementDefinition.short [ fhir:value "Period of validity of prescription" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Period" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/Period";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Period>
+         ]
+       ]
+     ], [
+       fhir:index 14;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.executionPeriod" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.executionPeriod" ];
+       fhir:ElementDefinition.short [ fhir:value "When this prescription is executed, availaboratoryle after start of execution" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Period" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/Period";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Period>
+         ]
+       ]
+     ], [
+       fhir:index 15;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.prescribedService" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.prescribedService" ];
+       fhir:ElementDefinition.short [ fhir:value "What is prescribed" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/CodeableConcept";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/CodeableConcept>
+         ]
+       ]
+     ], [
+       fhir:index 16;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.resultReceiver" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.resultReceiver" ];
+       fhir:ElementDefinition.short [ fhir:value "Parties that shall be informed of the results of the prescription other then the prescriber." ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "*" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/StructureDefinition/be-model-laboratoryprescription.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

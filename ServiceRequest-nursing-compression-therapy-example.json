@@ -1,0 +1,170 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "nursing-compression-therapy-example",
+  "meta": {
+    "profile": [
+      "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-compressiontherapy"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">A human readable form of the request (in HTML) SHALL be\n\t\t\tprovided here to enable systems that cannot process all structured\n\t\t\tdata, to at least present the information to the interactive user.\n\t\t\tMore information on https://www.hl7.org/fhir/R4/narrative.html\n\t\t</div>"
+  },
+  "contained": [
+    {
+      "resourceType": "Patient",
+      "id": "Patient1",
+      "meta": {
+        "profile": [
+          "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient"
+        ]
+      },
+      "identifier": [
+        {
+          "use": "official",
+          "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/ssin",
+          "value": "9999999999"
+        }
+      ],
+      "name": [
+        {
+          "family": "Doe",
+          "given": [
+            "Jane"
+          ]
+        }
+      ],
+      "gender": "female",
+      "birthDate": "1956-05-27"
+    },
+    {
+      "resourceType": "Practitioner",
+      "id": "Requester1",
+      "meta": {
+        "profile": [
+          "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner"
+        ]
+      },
+      "identifier": [
+        {
+          "use": "official",
+          "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi",
+          "value": "8888888888"
+        }
+      ],
+      "name": [
+        {
+          "use": "official",
+          "family": "Seven",
+          "given": [
+            "Henry"
+          ]
+        }
+      ]
+    },
+    {
+      "resourceType": "Practitioner",
+      "id": "Performer1",
+      "meta": {
+        "profile": [
+          "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner"
+        ]
+      },
+      "identifier": [
+        {
+          "use": "official",
+          "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi",
+          "value": "9876543210"
+        }
+      ],
+      "name": [
+        {
+          "use": "official",
+          "family": "Van den Verpleger",
+          "given": [
+            "Victor"
+          ]
+        }
+      ]
+    }
+  ],
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/request-statusReason",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason",
+            "code": "created",
+            "display": "Created"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "active",
+  "intent": "order",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "9632001"
+        }
+      ],
+      "text": "Nursing procedure"
+    }
+  ],
+  "priority": "routine",
+  "code": {
+    "coding": [
+      {
+        "system": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-code",
+        "code": "compression-therapy"
+      }
+    ]
+  },
+  "orderDetail": [
+    {
+      "coding": [
+        {
+          "system": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-code-compressiontherapy",
+          "code": "application-compression-bandage(s)",
+          "display": "Application compression bandage(s)"
+        }
+      ]
+    }
+  ],
+  "subject": {
+    "reference": "#Patient1"
+  },
+  "requester": {
+    "reference": "#Requester1"
+  },
+  "performerType": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "106292003",
+        "display": "Nurse"
+      }
+    ]
+  },
+  "performer": [
+    {
+      "reference": "#Performer1"
+    }
+  ],
+  "bodySite": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "82169009",
+          "display": "Left knee"
+        }
+      ],
+      "text": "Left knee"
+    }
+  ]
+}

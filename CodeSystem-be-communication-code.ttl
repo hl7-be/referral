@@ -1,0 +1,62 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/CodeSystem/be-communication-code> a fhir:CodeSystem;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "be-communication-code"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This code system https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-communication-code defines many codes, of which the following are a subset:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">whatsapp<a name=\"be-communication-code-whatsapp\"> </a></td><td>Whatsapp</td></tr><tr><td style=\"white-space:nowrap\">signal<a name=\"be-communication-code-signal\"> </a></td><td>Signal</td></tr><tr><td style=\"white-space:nowrap\">telegram<a name=\"be-communication-code-telegram\"> </a></td><td>Telegram</td></tr></table></div>"
+  ];
+  fhir:CodeSystem.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-communication-code"];
+  fhir:CodeSystem.version [ fhir:value "0.2.0"];
+  fhir:CodeSystem.name [ fhir:value "BeCommunicationCode"];
+  fhir:CodeSystem.title [ fhir:value "BeCommunicationCode"];
+  fhir:CodeSystem.status [ fhir:value "draft"];
+  fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean];
+  fhir:CodeSystem.date [ fhir:value "2021-06-22T14:00:22+00:00"^^xsd:dateTime];
+  fhir:CodeSystem.publisher [ fhir:value "HL7 Belgium"];
+  fhir:CodeSystem.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7belgium.org" ]
+     ]
+  ];
+  fhir:CodeSystem.description [ fhir:value "Communication codes in Belgium. To define a specific method of communicating. Initially defined as supporting CodeSystem for the referral prescription."];
+  fhir:CodeSystem.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ];
+  fhir:CodeSystem.caseSensitive [ fhir:value "false"^^xsd:boolean];
+  fhir:CodeSystem.content [ fhir:value "fragment"];
+  fhir:CodeSystem.concept [
+     fhir:index 0;
+     fhir:CodeSystem.concept.code [ fhir:value "whatsapp" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Whatsapp" ]
+  ], [
+     fhir:index 1;
+     fhir:CodeSystem.concept.code [ fhir:value "signal" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Signal" ]
+  ], [
+     fhir:index 2;
+     fhir:CodeSystem.concept.code [ fhir:value "telegram" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Telegram" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/CodeSystem/be-communication-code.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

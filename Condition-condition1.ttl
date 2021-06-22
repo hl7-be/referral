@@ -1,0 +1,54 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/Condition/condition1> a fhir:Condition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "condition1"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>verificationStatus</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>code</b>: <span title=\"Codes: {http://snomed.info/sct 13130004}\">Foot inversion</span></p><p><b>bodySite</b>: <span title=\"Codes: {http://snomed.info/sct 7769000}\">Right foot</span></p><p><b>subject</b>: <a href=\"Patient-patient1.html\">Generated Summary: id: 9999999999 (OFFICIAL); Jane Doe ; gender: female; birthDate: 1956-05-27</a></p><p><b>onset</b>: 2012-05-24</p></div>"
+  ];
+  fhir:Condition.verificationStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-ver-status" ];
+       fhir:Coding.code [ fhir:value "confirmed" ]
+     ]
+  ];
+  fhir:Condition.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:13130004;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "13130004" ];
+       fhir:Coding.display [ fhir:value "Foot inversion" ]
+     ]
+  ];
+  fhir:Condition.bodySite [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:7769000;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "7769000" ];
+       fhir:Coding.display [ fhir:value "Right foot" ]
+     ]
+  ];
+  fhir:Condition.subject [
+     fhir:link <http://hl7.country.org/fhir/ig/Patient/patient1>;
+     fhir:Reference.reference [ fhir:value "Patient/patient1" ]
+  ];
+  fhir:Condition.onsetDateTime [ fhir:value "2012-05-24"^^xsd:date] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/Condition/condition1.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

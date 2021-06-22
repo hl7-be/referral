@@ -1,0 +1,722 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/StructureDefinition/be-model-referralprescription> a fhir:StructureDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "be-model-referralprescription"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\">\n        <tr style=\"border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\">\n          <th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">\n            <a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"The logical name of the element\">Name</a>\n          </th>\n          <th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">\n            <a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Information about the use of the element\">Flags</a>\n          </th>\n          <th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">\n            <a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Minimum and Maximum # of times the the element can appear in the instance\">Card.</a>\n          </th>\n          <th style=\"width: 100px\" class=\"hierarchy\">\n            <a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Reference to the type of the element\">Type</a>\n          </th>\n          <th style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">\n            <a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Additional information about the element\">Description &amp; Constraints</a>\n            <span style=\"float: right\">\n              <a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Legend for this format\">\n                <img src=\"http://hl7.org/fhir/R4/help16.png\" alt=\"doco\" style=\"background-color: inherit\"/>\n              </a>\n            </span>\n          </th>\n        </tr>\n        <tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\">\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)\" class=\"hierarchy\">\n            <img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/>\n            <img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/>\n            <a href=\"StructureDefinition-be-model-referralprescription-definitions.html#BeReferralPrescription\">BeReferralPrescription</a>\n            <a name=\"BeReferralPrescription\"/>\n          </td>\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/>\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..*</td>\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/>\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/>\n        </tr>\n        <tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;\">\n          <td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\">\n            <img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/>\n            <img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/>\n            <img src=\"icon_reference.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Reference to another Resource\" class=\"hierarchy\"/>\n            <a href=\"StructureDefinition-be-model-referralprescription-definitions.html#BeReferralPrescription.prescriber\">prescriber</a>\n            <a name=\"BeReferralPrescription.prescriber\"/>\n          </td>\n          <td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/>\n          <td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td>\n          <td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">\n            <a href=\"http://hl7.org/fhir/R4/references.html\">Reference</a>(https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner)</td>\n          <td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/>\n        </tr>\n        <tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\">\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\">\n            <img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/>\n            <img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/>\n            <img src=\"icon_reference.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Reference to another Resource\" class=\"hierarchy\"/>\n            <a href=\"StructureDefinition-be-model-referralprescription-definitions.html#BeReferralPrescription.signer\">signer</a>\n            <a name=\"BeReferralPrescription.signer\"/>\n          </td>\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/>\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..*</td>\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">\n            <a href=\"http://hl7.org/fhir/R4/references.html\">Reference</a>(https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner)</td>\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/>\n        </tr>\n        <tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7;\">\n          <td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\">\n            <img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/>\n            <img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/>\n            <img src=\"icon_reference.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Reference to another Resource\" class=\"hierarchy\"/>\n            <a href=\"StructureDefinition-be-model-referralprescription-definitions.html#BeReferralPrescription.patient\">patient</a>\n            <a name=\"BeReferralPrescription.patient\"/>\n          </td>\n          <td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/>\n          <td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td>\n          <td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">\n            <a href=\"http://hl7.org/fhir/R4/references.html\">Reference</a>(https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient)</td>\n          <td style=\"vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/>\n        </tr>\n        <tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white;\">\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)\" class=\"hierarchy\">\n            <img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/>\n            <img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/>\n            <img src=\"icon_reference.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Reference to another Resource\" class=\"hierarchy\"/>\n            <a href=\"StructureDefinition-be-model-referralprescription-definitions.html#BeReferralPrescription.service\">service</a>\n            <a name=\"BeReferralPrescription.service\"/>\n          </td>\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/>\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td>\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">\n            <a href=\"http://hl7.org/fhir/R4/references.html\">Reference</a>(<a href=\"http://hl7.org/fhir/R4/servicerequest.html\">ServiceRequest</a>)</td>\n          <td style=\"vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/>\n        </tr>\n        <tr>\n          <td colspan=\"5\" class=\"hierarchy\">\n            <br/>\n            <a href=\"http://hl7.org/fhir/R4/formats.html#table\" title=\"Legend for this format\">\n              <img src=\"http://hl7.org/fhir/R4/help16.png\" alt=\"doco\" style=\"background-color: inherit\"/> Documentation for this format</a>\n          </td>\n        </tr>\n      </table>\n    </div>"
+  ];
+  fhir:StructureDefinition.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-model-referralprescription"];
+  fhir:StructureDefinition.version [ fhir:value "0.2.0"];
+  fhir:StructureDefinition.name [ fhir:value "BeReferralPrescription"];
+  fhir:StructureDefinition.status [ fhir:value "draft"];
+  fhir:StructureDefinition.date [ fhir:value "2020-05-12T13:07:15+00:00"^^xsd:dateTime];
+  fhir:StructureDefinition.publisher [ fhir:value "HL7 Belgium"];
+  fhir:StructureDefinition.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7belgium.org" ]
+     ]
+  ];
+  fhir:StructureDefinition.description [ fhir:value "Logical model describing the model for the prescription referral. This draft is used in the HL7 Belgian workgroup for referral."];
+  fhir:StructureDefinition.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ];
+  fhir:StructureDefinition.fhirVersion [ fhir:value "4.0.1"];
+  fhir:StructureDefinition.kind [ fhir:value "logical"];
+  fhir:StructureDefinition.abstract [ fhir:value "false"^^xsd:boolean];
+  fhir:StructureDefinition.type [ fhir:value "BeReferralPrescription"];
+  fhir:StructureDefinition.baseDefinition [
+     fhir:value "http://hl7.org/fhir/StructureDefinition/Base";
+     fhir:link <http://hl7.org/fhir/StructureDefinition/Base>
+  ];
+  fhir:StructureDefinition.derivation [ fhir:value "specialization"];
+  fhir:StructureDefinition.snapshot [
+     fhir:StructureDefinition.snapshot.element [
+       fhir:index 0;
+       fhir:Element.id [ fhir:value "BeReferralPrescription" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "*" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "Base" ];
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "*" ]
+       ];
+       fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 1;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.identifier" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.identifier" ];
+       fhir:ElementDefinition.short [ fhir:value "An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "*" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.identifier" ];
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "*" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Identifier" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/Identifier";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Identifier>
+         ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.status" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.status" ];
+       fhir:ElementDefinition.short [ fhir:value "Current status" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.status" ];
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "code" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/code";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/code>
+         ]
+       ];
+       fhir:ElementDefinition.binding [
+         fhir:ElementDefinition.binding.strength [ fhir:value "required" ];
+         fhir:ElementDefinition.binding.valueSet [
+           fhir:value "http://hl7.org/fhir/ValueSet/request-status";
+           fhir:link <http://hl7.org/fhir/ValueSet/request-status>
+         ]
+       ]
+     ], [
+       fhir:index 3;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.reasonCurrentStatus" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.reasonCurrentStatus" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.reasonCurrentStatus" ];
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/CodeableConcept";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/CodeableConcept>
+         ]
+       ]
+     ], [
+       fhir:index 4;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.authoredOn" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.authoredOn" ];
+       fhir:ElementDefinition.short [ fhir:value "When this prescription was created" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.authoredOn" ];
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "dateTime" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/dateTime";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/dateTime>
+         ]
+       ]
+     ], [
+       fhir:index 5;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.prescriber" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.prescriber" ];
+       fhir:ElementDefinition.short [ fhir:value "The prescribing healthcare party" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.prescriber" ];
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ], [
+       fhir:index 6;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.co-prescriber" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.co-prescriber" ];
+       fhir:ElementDefinition.short [ fhir:value "Information about co prescribers" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "*" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.co-prescriber" ];
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "*" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "BackboneElement" ]
+       ]
+     ], [
+       fhir:index 7;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.co-prescriber.co-prescriber" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.co-prescriber.co-prescriber" ];
+       fhir:ElementDefinition.short [ fhir:value "The co-prescriber party" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.co-prescriber.co-prescriber" ];
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ], [
+       fhir:index 8;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.co-prescriber.co-prescriberSubstitute" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.co-prescriber.co-prescriberSubstitute" ];
+       fhir:ElementDefinition.short [ fhir:value "NIHDI of co prescriber substitute party" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.co-prescriber.co-prescriberSubstitute" ];
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ], [
+       fhir:index 9;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.co-prescriber.status" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.co-prescriber.status" ];
+       fhir:ElementDefinition.short [ fhir:value "Status of co prescribing status (to sign, signed or refused)" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.co-prescriber.status" ];
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "code" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/code";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/code>
+         ]
+       ]
+     ], [
+       fhir:index 10;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.patient" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.patient" ];
+       fhir:ElementDefinition.short [ fhir:value "The SSIN of the person for which the referral is prescribed." ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.patient" ];
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ], [
+       fhir:index 11;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.originalRequest" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.originalRequest" ];
+       fhir:ElementDefinition.short [ fhir:value "The original request or prescription triggered this prescription" ];
+       fhir:ElementDefinition.definition [ fhir:value "The original request or prescription that is the reason for this request - for example when a detailed request is created by a broader request." ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.originalRequest" ];
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ], [
+       fhir:index 12;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.reason" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.reason" ];
+       fhir:ElementDefinition.short [ fhir:value "The problem (code or reference) that is the main reason for this prescription" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "*" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.reason" ];
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "*" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "CodeableReference" ]
+       ]
+     ], [
+       fhir:index 13;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.intendedProvider" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.intendedProvider" ];
+       fhir:ElementDefinition.short [ fhir:value "The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "*" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.intendedProvider" ];
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "*" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "BackboneElement" ]
+       ]
+     ], [
+       fhir:index 14;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.intendedProvider.provider" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.intendedProvider.provider" ];
+       fhir:ElementDefinition.short [ fhir:value "A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "*" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.intendedProvider.provider" ];
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "*" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ], [
+       fhir:index 15;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.intendedProvider.discipline" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.intendedProvider.discipline" ];
+       fhir:ElementDefinition.short [ fhir:value "The required discipline of the provider party" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.intendedProvider.discipline" ];
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/CodeableConcept";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/CodeableConcept>
+         ]
+       ]
+     ], [
+       fhir:index 16;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.validityPeriod" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.validityPeriod" ];
+       fhir:ElementDefinition.short [ fhir:value "Period of validity of prescription" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.validityPeriod" ];
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Period" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/Period";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Period>
+         ]
+       ]
+     ], [
+       fhir:index 17;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.executionPeriod" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.executionPeriod" ];
+       fhir:ElementDefinition.short [ fhir:value "When this prescription is executed, available after start of execution" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.executionPeriod" ];
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Period" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/Period";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Period>
+         ]
+       ]
+     ], [
+       fhir:index 18;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.prescribedService" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.prescribedService" ];
+       fhir:ElementDefinition.short [ fhir:value "What is prescribed" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.prescribedService" ];
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/CodeableConcept";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/CodeableConcept>
+         ]
+       ]
+     ], [
+       fhir:index 19;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.resultReceiver" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.resultReceiver" ];
+       fhir:ElementDefinition.short [ fhir:value "Parties that shall be informed of the results of the prescription other then the prescriber." ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "*" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.resultReceiver" ];
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "*" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ], [
+       fhir:index 20;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.note" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.note" ];
+       fhir:ElementDefinition.short [ fhir:value "Additional text notes about the request." ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.note" ];
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Annotation" ]
+       ]
+     ]
+  ];
+  fhir:StructureDefinition.differential [
+     fhir:StructureDefinition.differential.element [
+       fhir:index 0;
+       fhir:Element.id [ fhir:value "BeReferralPrescription" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "*" ]
+     ], [
+       fhir:index 1;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.identifier" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.identifier" ];
+       fhir:ElementDefinition.short [ fhir:value "An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "*" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Identifier" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/Identifier";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Identifier>
+         ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.status" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.status" ];
+       fhir:ElementDefinition.short [ fhir:value "Current status" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "code" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/code";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/code>
+         ]
+       ];
+       fhir:ElementDefinition.binding [
+         fhir:ElementDefinition.binding.strength [ fhir:value "required" ];
+         fhir:ElementDefinition.binding.valueSet [
+           fhir:value "http://hl7.org/fhir/ValueSet/request-status";
+           fhir:link <http://hl7.org/fhir/ValueSet/request-status>
+         ]
+       ]
+     ], [
+       fhir:index 3;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.reasonCurrentStatus" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.reasonCurrentStatus" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/CodeableConcept";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/CodeableConcept>
+         ]
+       ]
+     ], [
+       fhir:index 4;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.authoredOn" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.authoredOn" ];
+       fhir:ElementDefinition.short [ fhir:value "When this prescription was created" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "dateTime" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/dateTime";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/dateTime>
+         ]
+       ]
+     ], [
+       fhir:index 5;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.prescriber" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.prescriber" ];
+       fhir:ElementDefinition.short [ fhir:value "The prescribing healthcare party" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ], [
+       fhir:index 6;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.co-prescriber" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.co-prescriber" ];
+       fhir:ElementDefinition.short [ fhir:value "Information about co prescribers" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "*" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "BackboneElement" ]
+       ]
+     ], [
+       fhir:index 7;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.co-prescriber.co-prescriber" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.co-prescriber.co-prescriber" ];
+       fhir:ElementDefinition.short [ fhir:value "The co-prescriber party" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ], [
+       fhir:index 8;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.co-prescriber.co-prescriberSubstitute" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.co-prescriber.co-prescriberSubstitute" ];
+       fhir:ElementDefinition.short [ fhir:value "NIHDI of co prescriber substitute party" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ], [
+       fhir:index 9;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.co-prescriber.status" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.co-prescriber.status" ];
+       fhir:ElementDefinition.short [ fhir:value "Status of co prescribing status (to sign, signed or refused)" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "code" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/code";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/code>
+         ]
+       ]
+     ], [
+       fhir:index 10;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.patient" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.patient" ];
+       fhir:ElementDefinition.short [ fhir:value "The SSIN of the person for which the referral is prescribed." ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ], [
+       fhir:index 11;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.originalRequest" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.originalRequest" ];
+       fhir:ElementDefinition.short [ fhir:value "The original request or prescription triggered this prescription" ];
+       fhir:ElementDefinition.definition [ fhir:value "The original request or prescription that is the reason for this request - for example when a detailed request is created by a broader request." ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ], [
+       fhir:index 12;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.reason" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.reason" ];
+       fhir:ElementDefinition.short [ fhir:value "The problem (code or reference) that is the main reason for this prescription" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "*" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "CodeableReference" ]
+       ]
+     ], [
+       fhir:index 13;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.intendedProvider" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.intendedProvider" ];
+       fhir:ElementDefinition.short [ fhir:value "The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "*" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "BackboneElement" ]
+       ]
+     ], [
+       fhir:index 14;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.intendedProvider.provider" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.intendedProvider.provider" ];
+       fhir:ElementDefinition.short [ fhir:value "A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "*" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ], [
+       fhir:index 15;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.intendedProvider.discipline" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.intendedProvider.discipline" ];
+       fhir:ElementDefinition.short [ fhir:value "The required discipline of the provider party" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/CodeableConcept";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/CodeableConcept>
+         ]
+       ]
+     ], [
+       fhir:index 16;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.validityPeriod" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.validityPeriod" ];
+       fhir:ElementDefinition.short [ fhir:value "Period of validity of prescription" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Period" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/Period";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Period>
+         ]
+       ]
+     ], [
+       fhir:index 17;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.executionPeriod" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.executionPeriod" ];
+       fhir:ElementDefinition.short [ fhir:value "When this prescription is executed, available after start of execution" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Period" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/Period";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Period>
+         ]
+       ]
+     ], [
+       fhir:index 18;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.prescribedService" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.prescribedService" ];
+       fhir:ElementDefinition.short [ fhir:value "What is prescribed" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "http://hl7.org/fhir/StructureDefinition/CodeableConcept";
+           fhir:index 0;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/CodeableConcept>
+         ]
+       ]
+     ], [
+       fhir:index 19;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.resultReceiver" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.resultReceiver" ];
+       fhir:ElementDefinition.short [ fhir:value "Parties that shall be informed of the results of the prescription other then the prescriber." ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "*" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ], [
+       fhir:index 20;
+       fhir:Element.id [ fhir:value "BeReferralPrescription.note" ];
+       fhir:ElementDefinition.path [ fhir:value "BeReferralPrescription.note" ];
+       fhir:ElementDefinition.short [ fhir:value "Additional text notes about the request." ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Annotation" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/StructureDefinition/be-model-referralprescription.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

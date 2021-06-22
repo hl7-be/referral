@@ -1,0 +1,157 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/ValueSet/be-vs-referral-category> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "be-vs-referral-category"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>English (English, en)</b></td><td><b>Nederlands (België) (Dutch (Belgium), nl)</b></td><td><b>French (Belgium) (fr)</b></td></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=363679005\">363679005</a></td><td>Imaging</td><td>Imaging</td><td>medische beeldvorming</td><td>imagerie médicale</td></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=91251008\">91251008</a></td><td>Physical therapy procedure</td><td>Physical therapy</td><td>kinesitherapie</td><td>kinésithérapie</td></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=9632001\">9632001</a></td><td>Nursing procedure</td><td>Nursing procedure</td><td>verpleegkundige procedure</td><td>procédure infirmière</td></tr><tr><td><a href=\"http://browser.ihtsdotools.org/?perspective=full&amp;conceptId1=15220000\">15220000</a></td><td>Laboratory test</td><td>Laboratory test</td><td>laboratorium test</td><td>test de laboratoire</td></tr></table></li></ul></div>"
+  ];
+  fhir:ValueSet.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-referral-category"];
+  fhir:ValueSet.version [ fhir:value "0.2.0"];
+  fhir:ValueSet.name [ fhir:value "BeReferralCategory"];
+  fhir:ValueSet.status [ fhir:value "draft"];
+  fhir:ValueSet.date [ fhir:value "2021-06-22T14:00:22+00:00"^^xsd:dateTime];
+  fhir:ValueSet.publisher [ fhir:value "HL7 Belgium"];
+  fhir:ValueSet.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7belgium.org" ]
+     ]
+  ];
+  fhir:ValueSet.description [ fhir:value "Codes to define the high level category for a referral prescription. SNOMED-CT codes in this valueset are just a draft proposal to give a general idea - pending an official valueset."];
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ];
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "363679005" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Imaging" ];
+         fhir:ValueSet.compose.include.concept.designation [
+           fhir:index 0;
+           fhir:ValueSet.compose.include.concept.designation.use [
+             a sct:900000000000003001;
+             fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+             fhir:Coding.code [ fhir:value "900000000000003001" ];
+             fhir:Coding.display [ fhir:value "Fully specified name" ]
+           ];
+           fhir:ValueSet.compose.include.concept.designation.value [ fhir:value "Imaging (procedure)" ]
+         ], [
+           fhir:index 1;
+           fhir:ValueSet.compose.include.concept.designation.language [ fhir:value "en" ];
+           fhir:ValueSet.compose.include.concept.designation.value [ fhir:value "Imaging" ]
+         ], [
+           fhir:index 2;
+           fhir:ValueSet.compose.include.concept.designation.language [ fhir:value "nl-BE" ];
+           fhir:ValueSet.compose.include.concept.designation.value [ fhir:value "medische beeldvorming" ]
+         ], [
+           fhir:index 3;
+           fhir:ValueSet.compose.include.concept.designation.language [ fhir:value "fr-BE" ];
+           fhir:ValueSet.compose.include.concept.designation.value [ fhir:value "imagerie médicale" ]
+         ]
+       ], [
+         fhir:index 1;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "91251008" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Physical therapy procedure" ];
+         fhir:ValueSet.compose.include.concept.designation [
+           fhir:index 0;
+           fhir:ValueSet.compose.include.concept.designation.use [
+             a sct:900000000000003001;
+             fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+             fhir:Coding.code [ fhir:value "900000000000003001" ];
+             fhir:Coding.display [ fhir:value "Fully specified name" ]
+           ];
+           fhir:ValueSet.compose.include.concept.designation.value [ fhir:value "Physical therapy procedure (regime/therapy)" ]
+         ], [
+           fhir:index 1;
+           fhir:ValueSet.compose.include.concept.designation.language [ fhir:value "en" ];
+           fhir:ValueSet.compose.include.concept.designation.value [ fhir:value "Physical therapy" ]
+         ], [
+           fhir:index 2;
+           fhir:ValueSet.compose.include.concept.designation.language [ fhir:value "nl-BE" ];
+           fhir:ValueSet.compose.include.concept.designation.value [ fhir:value "kinesitherapie" ]
+         ], [
+           fhir:index 3;
+           fhir:ValueSet.compose.include.concept.designation.language [ fhir:value "fr-BE" ];
+           fhir:ValueSet.compose.include.concept.designation.value [ fhir:value "kinésithérapie" ]
+         ]
+       ], [
+         fhir:index 2;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "9632001" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Nursing procedure" ];
+         fhir:ValueSet.compose.include.concept.designation [
+           fhir:index 0;
+           fhir:ValueSet.compose.include.concept.designation.use [
+             a sct:900000000000003001;
+             fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+             fhir:Coding.code [ fhir:value "900000000000003001" ];
+             fhir:Coding.display [ fhir:value "Fully specified name" ]
+           ];
+           fhir:ValueSet.compose.include.concept.designation.value [ fhir:value "Nursing procedure (procedure)" ]
+         ], [
+           fhir:index 1;
+           fhir:ValueSet.compose.include.concept.designation.language [ fhir:value "en" ];
+           fhir:ValueSet.compose.include.concept.designation.value [ fhir:value "Nursing procedure" ]
+         ], [
+           fhir:index 2;
+           fhir:ValueSet.compose.include.concept.designation.language [ fhir:value "nl-BE" ];
+           fhir:ValueSet.compose.include.concept.designation.value [ fhir:value "verpleegkundige procedure" ]
+         ], [
+           fhir:index 3;
+           fhir:ValueSet.compose.include.concept.designation.language [ fhir:value "fr-BE" ];
+           fhir:ValueSet.compose.include.concept.designation.value [ fhir:value "procédure infirmière" ]
+         ]
+       ], [
+         fhir:index 3;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "15220000" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Laboratory test" ];
+         fhir:ValueSet.compose.include.concept.designation [
+           fhir:index 0;
+           fhir:ValueSet.compose.include.concept.designation.use [
+             a sct:900000000000003001;
+             fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+             fhir:Coding.code [ fhir:value "900000000000003001" ];
+             fhir:Coding.display [ fhir:value "Fully specified name" ]
+           ];
+           fhir:ValueSet.compose.include.concept.designation.value [ fhir:value "Laboratory test (procedure)" ]
+         ], [
+           fhir:index 1;
+           fhir:ValueSet.compose.include.concept.designation.language [ fhir:value "en" ];
+           fhir:ValueSet.compose.include.concept.designation.value [ fhir:value "Laboratory test" ]
+         ], [
+           fhir:index 2;
+           fhir:ValueSet.compose.include.concept.designation.language [ fhir:value "nl-BE" ];
+           fhir:ValueSet.compose.include.concept.designation.value [ fhir:value "laboratorium test" ]
+         ], [
+           fhir:index 3;
+           fhir:ValueSet.compose.include.concept.designation.language [ fhir:value "fr-BE" ];
+           fhir:ValueSet.compose.include.concept.designation.value [ fhir:value "test de laboratoire" ]
+         ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/ValueSet/be-vs-referral-category.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

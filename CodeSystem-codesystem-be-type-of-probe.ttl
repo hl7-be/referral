@@ -1,0 +1,154 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/CodeSystem/codesystem-be-type-of-probe> a fhir:CodeSystem;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "codesystem-be-type-of-probe"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This code system https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-type-of-probe defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">bladder-probe-indwelling<a name=\"codesystem-be-type-of-probe-bladder-probe-indwelling\"> </a></td><td>bladder-probe-indwelling</td></tr><tr><td style=\"white-space:nowrap\">bladder-probe-intermittent<a name=\"codesystem-be-type-of-probe-bladder-probe-intermittent\"> </a></td><td>bladder-probe-intermittent</td></tr><tr><td style=\"white-space:nowrap\">bladder-instillation<a name=\"codesystem-be-type-of-probe-bladder-instillation\"> </a></td><td>bladder-instillation</td></tr><tr><td style=\"white-space:nowrap\">bladder-flushing-indwelling<a name=\"codesystem-be-type-of-probe-bladder-flushing-indwelling\"> </a></td><td>bladder-flushing-indwelling</td></tr><tr><td style=\"white-space:nowrap\">bladder-flushing-intermittent<a name=\"codesystem-be-type-of-probe-bladder-flushing-intermittent\"> </a></td><td>bladder-flushing-intermittent</td></tr><tr><td style=\"white-space:nowrap\">colonic-cleansing<a name=\"codesystem-be-type-of-probe-colonic-cleansing\"> </a></td><td>colonic-cleansing</td></tr><tr><td style=\"white-space:nowrap\">gastrointestinal-tubing-and-drainage<a name=\"codesystem-be-type-of-probe-gastrointestinal-tubing-and-drainage\"> </a></td><td>gastrointestinal-tubing-and-drainage</td></tr><tr><td style=\"white-space:nowrap\">suprapubic-probe<a name=\"codesystem-be-type-of-probe-suprapubic-probe\"> </a></td><td>suprapubic-probe</td></tr></table><p><b>Additional Language Displays</b></p><table class=\"codes\"><tr><td><b>Code</b></td><td><b>French (fr)</b></td><td><b>Nederlands (Dutch, nl)</b></td></tr><tr><td>bladder-probe-indwelling</td><td>Sondage vésical - à demeure</td><td>Blaassondage - verblijf</td></tr><tr><td>bladder-probe-intermittent</td><td>Sondage vésical - intermittent</td><td>Blaassondage - intermittent</td></tr><tr><td>bladder-instillation</td><td>Instillation vésicale</td><td>Blaasinstillatie</td></tr><tr><td>bladder-flushing-indwelling</td><td>Lavage de vessie - sondage à demeure</td><td>Blaasspoeling - verblijf</td></tr><tr><td>bladder-flushing-intermittent</td><td>Lavage de vessie - intermittent</td><td>Blaasspoeling - intermittent</td></tr><tr><td>colonic-cleansing</td><td>Lavage intestinal</td><td>Darmspoeling</td></tr><tr><td>gastrointestinal-tubing-and-drainage</td><td>Tubage et drainage gastro-intestinal</td><td>Gastro-intestinale tubage en drainage</td></tr><tr><td>suprapubic-probe</td><td>Sonde suprapubic</td><td>Suprapubische sonde</td></tr></table></div>"
+  ];
+  fhir:CodeSystem.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-type-of-probe"];
+  fhir:CodeSystem.version [ fhir:value "0.2.0"];
+  fhir:CodeSystem.name [ fhir:value "BeProbeType"];
+  fhir:CodeSystem.title [ fhir:value "BeProbeType"];
+  fhir:CodeSystem.status [ fhir:value "draft"];
+  fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean];
+  fhir:CodeSystem.date [ fhir:value "2021-06-22T14:00:22+00:00"^^xsd:dateTime];
+  fhir:CodeSystem.publisher [ fhir:value "HL7 Belgium"];
+  fhir:CodeSystem.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7belgium.org" ]
+     ]
+  ];
+  fhir:CodeSystem.description [ fhir:value "Type of probe."];
+  fhir:CodeSystem.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ];
+  fhir:CodeSystem.caseSensitive [ fhir:value "false"^^xsd:boolean];
+  fhir:CodeSystem.content [ fhir:value "complete"];
+  fhir:CodeSystem.concept [
+     fhir:index 0;
+     fhir:CodeSystem.concept.code [ fhir:value "bladder-probe-indwelling" ];
+     fhir:CodeSystem.concept.display [ fhir:value "bladder-probe-indwelling" ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Blaassondage - verblijf" ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Sondage vésical - à demeure" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:CodeSystem.concept.code [ fhir:value "bladder-probe-intermittent" ];
+     fhir:CodeSystem.concept.display [ fhir:value "bladder-probe-intermittent" ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Blaassondage - intermittent" ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Sondage vésical - intermittent" ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:CodeSystem.concept.code [ fhir:value "bladder-instillation" ];
+     fhir:CodeSystem.concept.display [ fhir:value "bladder-instillation" ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Blaasinstillatie" ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Instillation vésicale" ]
+     ]
+  ], [
+     fhir:index 3;
+     fhir:CodeSystem.concept.code [ fhir:value "bladder-flushing-indwelling" ];
+     fhir:CodeSystem.concept.display [ fhir:value "bladder-flushing-indwelling" ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Blaasspoeling - verblijf" ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Lavage de vessie - sondage à demeure" ]
+     ]
+  ], [
+     fhir:index 4;
+     fhir:CodeSystem.concept.code [ fhir:value "bladder-flushing-intermittent" ];
+     fhir:CodeSystem.concept.display [ fhir:value "bladder-flushing-intermittent" ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Blaasspoeling - intermittent" ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Lavage de vessie - intermittent" ]
+     ]
+  ], [
+     fhir:index 5;
+     fhir:CodeSystem.concept.code [ fhir:value "colonic-cleansing" ];
+     fhir:CodeSystem.concept.display [ fhir:value "colonic-cleansing" ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Darmspoeling" ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Lavage intestinal" ]
+     ]
+  ], [
+     fhir:index 6;
+     fhir:CodeSystem.concept.code [ fhir:value "gastrointestinal-tubing-and-drainage" ];
+     fhir:CodeSystem.concept.display [ fhir:value "gastrointestinal-tubing-and-drainage" ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Gastro-intestinale tubage en drainage" ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Tubage et drainage gastro-intestinal" ]
+     ]
+  ], [
+     fhir:index 7;
+     fhir:CodeSystem.concept.code [ fhir:value "suprapubic-probe" ];
+     fhir:CodeSystem.concept.display [ fhir:value "suprapubic-probe" ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Suprapubische sonde" ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Sonde suprapubic" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/CodeSystem/codesystem-be-type-of-probe.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
