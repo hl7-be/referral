@@ -12,7 +12,7 @@
   <title value="HL7 BE Referral Prescription WG Implementation Guide (work in progress)"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <date value="2021-06-22T15:53:10+00:00"/>
+  <date value="2021-06-22T16:07:42+00:00"/>
   <publisher value="HL7 Belgium"/>
   <contact>
     <telecom>
@@ -242,78 +242,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/be-referralprescription"/>
-      </reference>
-      <fhirVersion value="4.0.1"/>
-      <name value="Referral prescription profile"/>
-      <description value="Referral prescription profile"/>
-      <groupingId value="rpc"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/be-referralprescription-diagnosticimaging"/>
-      </reference>
-      <fhirVersion value="4.0.1"/>
-      <name value="Referral prescription diagnostic imaging profile"/>
-      <description value="Referral prescription diagnostic imaging profile"/>
-      <groupingId value="rpc"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/be-referralprescription-nursing"/>
-      </reference>
-      <fhirVersion value="4.0.1"/>
-      <name value="High level referral prescription nursing profile"/>
-      <description value="High level referral prescription nursing profile"/>
-      <groupingId value="rpc"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/be-referralprescription-nursing-compressiontherapy"/>
-      </reference>
-      <fhirVersion value="4.0.1"/>
-      <name value="Referral prescription nursing profile compression therapy"/>
-      <description value="Referral prescription nursing profile compression therapy"/>
-      <groupingId value="rpc"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/be-referralprescription-nursing-bladder-care"/>
-      </reference>
-      <fhirVersion value="4.0.1"/>
-      <name value="Referral prescription nursing profile bladder care"/>
-      <description value="Referral prescription nursing profile bladder care"/>
-      <groupingId value="rpc"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/be-lab-prescription"/>
-      </reference>
-      <fhirVersion value="4.0.1"/>
-      <name value="Prescription profile for laboratory testing"/>
-      <description value="Laboratory prescription profile"/>
-      <groupingId value="rpc"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ServiceRequest"/>
       </extension>
       <reference>
@@ -428,7 +356,16 @@
       <reference>
         <reference value="StructureDefinition/be-referralprescription-nursing-digestive-system-care"/>
       </reference>
-      <description value="The profile for bladder care. Actual bladder care information lives in the .orderDetail element. If needed to give a quantity (mandatory if bladder instillation): the .quantity element shall be used. If needed to express the product and time to leave the product (mandatory if bladder instillation): please explain in the .note element."/>
+      <description value="The nursing profile specialized for digestive system care. If needed to give any details (e.g. details around the enteral feeding): please use the .note element."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-referralprescription"/>
+      </reference>
+      <description value="The common structure for referral prescription."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -452,6 +389,15 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-referralprescription-nursing-compressiontherapy"/>
+      </reference>
+      <description value="The nursing profile specialized for compression therapy."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -459,6 +405,42 @@
       </reference>
       <name value="BeUrgentCommunication"/>
       <description value="When there is a need to urgently communicate results of an order."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-lab-prescription"/>
+      </reference>
+      <description value="This is the Belgian profile for a laboratory order."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-referralprescription-nursing-bladder-care"/>
+      </reference>
+      <description value="The nursing profile specialized for bladder care. Actual bladder care information lives in the .orderDetail element. If needed to give a quantity (mandatory if bladder instillation): the .quantity element shall be used. If needed to express the product and time to leave the product (mandatory if bladder instillation): please explain in the .note element."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-referralprescription-nursing"/>
+      </reference>
+      <description value="The nursing profile, generic version."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-referralprescription-diagnosticimaging"/>
+      </reference>
+      <description value="Referral prescription for a generic diagnostic imaging.&#xD;&#xA;Please note in .orderDetail, a specific slicing is available to give guidance how to express acquisition modalities if needed. In future iterations of this profile, more slicing might provide additional guidance."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
