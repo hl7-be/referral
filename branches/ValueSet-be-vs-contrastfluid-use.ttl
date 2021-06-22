@@ -1,0 +1,51 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/ValueSet/be-vs-contrastfluid-use> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "be-vs-contrastfluid-use"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include all codes defined in <a href=\"CodeSystem-be-contrastfluid-use.html\"><code>https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-contrastfluid-use</code></a></li></ul></div>"
+  ];
+  fhir:ValueSet.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-contrastfluid-use"];
+  fhir:ValueSet.version [ fhir:value "0.2.0"];
+  fhir:ValueSet.name [ fhir:value "BeContrastFluidUse"];
+  fhir:ValueSet.status [ fhir:value "draft"];
+  fhir:ValueSet.date [ fhir:value "2021-06-22T14:00:22+00:00"^^xsd:dateTime];
+  fhir:ValueSet.publisher [ fhir:value "HL7 Belgium"];
+  fhir:ValueSet.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7belgium.org" ]
+     ]
+  ];
+  fhir:ValueSet.description [ fhir:value "Codes to define the use of contrast fluid."];
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ];
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0;
+       fhir:ValueSet.compose.include.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-contrastfluid-use" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/ValueSet/be-vs-contrastfluid-use.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

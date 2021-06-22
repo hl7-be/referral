@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="hl7.country.fhir.ig"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>AffiliateIG</h2><p>The official URL for this implementation guide is: </p><pre>http://hl7.country.org/fhir/ig/ImplementationGuide/hl7.country.fhir.ig</pre><div><p>A barebones ImplementationGuide for HL7 Affiliates</p>
+</div></div>
+  </text>
+  <url value="http://hl7.country.org/fhir/ig/ImplementationGuide/hl7.country.fhir.ig"/>
+  <version value="0.2.0"/>
+  <name value="AffiliateIG"/>
+  <title value="HL7 BE Referral Prescription WG Implementation Guide (work in progress)"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2021-06-22T14:00:22+00:00"/>
+  <publisher value="HL7 Belgium"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7belgium.org"/>
+    </telecom>
+  </contact>
+  <description value="A barebones ImplementationGuide for HL7 Affiliates"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>
+  <packageId value="hl7.country.fhir.ig"/>
+  <license value="CC0-1.0"/>
+  <fhirVersion value="4.0.1"/>
+  <dependsOn>
+    <uri value="https://www.ehealth.fgov.be/standards/fhir"/>
+    <packageId value="ehealthplatform.be.r4.federalprofiles"/>
+    <version value="1.2.1"/>
+  </dependsOn>
+  <definition>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="copyrightyear"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2019+"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="releaselabel"/>
+      </extension>
+      <extension url="value">
+        <valueString value="CI Build"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-binary"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input\cql"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="autoload-resources"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-qa"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/qa"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/pages"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-output"/>
+      </extension>
+      <extension url="value">
+        <valueString value="output"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-suppressed-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/ignoreWarnings.txt"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-md"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page-md.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-contact"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-context"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-copyright"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-jurisdiction"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-publisher"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="active-tables"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <grouping id="logicalmodels">
+      <name value="Logical Models"/>
+      <description value="The Logical Data Models. These are common, functional data descriptions which can be implemented in and mapped to KMEHR, CDA, HL7 v2 and FHIR technical implementations."/>
+    </grouping>
+    <grouping id="rp">
+      <name value="Referral Prescription Logical Models"/>
+      <description value="Referral prescription logical models."/>
+    </grouping>
+    <grouping id="rpc">
+      <name value="Referral Prescription Conformance Resources"/>
+      <description value="Conformance resources defined for this IG."/>
+    </grouping>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-model-referralprescription"/>
+      </reference>
+      <fhirVersion value="4.0.1"/>
+      <name value="Logical Model Referral Prescription"/>
+      <description value="The common logical model for the referral prescription"/>
+      <groupingId value="rp"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-model-diagnosticimagingprescription"/>
+      </reference>
+      <fhirVersion value="4.0.1"/>
+      <name value="Logical Model Diagnostic Imaging Prescription"/>
+      <description value="The logical model for the diagnostic imaging prescription"/>
+      <groupingId value="rp"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-model-physiotherapyprescription"/>
+      </reference>
+      <fhirVersion value="4.0.1"/>
+      <name value="Logical Model Physiotherapy Prescription"/>
+      <description value="The logical model for the physiotherapy prescription"/>
+      <groupingId value="rp"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-model-nursingprescription"/>
+      </reference>
+      <fhirVersion value="4.0.1"/>
+      <name value="Logical Model Nursing Prescription"/>
+      <description value="The logical model for the nursing prescription"/>
+      <groupingId value="rp"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-referralprescription"/>
+      </reference>
+      <fhirVersion value="4.0.1"/>
+      <name value="Referral prescription profile"/>
+      <description value="Referral prescription profile"/>
+      <groupingId value="rpc"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-referralprescription-diagnosticimaging"/>
+      </reference>
+      <fhirVersion value="4.0.1"/>
+      <name value="Referral prescription diagnostic imaging profile"/>
+      <description value="Referral prescription diagnostic imaging profile"/>
+      <groupingId value="rpc"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-referralprescription-nursing"/>
+      </reference>
+      <fhirVersion value="4.0.1"/>
+      <name value="High level referral prescription nursing profile"/>
+      <description value="High level referral prescription nursing profile"/>
+      <groupingId value="rpc"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-referralprescription-nursing-compressiontherapy"/>
+      </reference>
+      <fhirVersion value="4.0.1"/>
+      <name value="Referral prescription nursing profile compression therapy"/>
+      <description value="Referral prescription nursing profile compression therapy"/>
+      <groupingId value="rpc"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-referralprescription-nursing-probes"/>
+      </reference>
+      <fhirVersion value="4.0.1"/>
+      <name value="Referral prescription nursing profile probes"/>
+      <description value="Referral prescription nursing profile probes"/>
+      <groupingId value="rpc"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-lab-prescription"/>
+      </reference>
+      <fhirVersion value="4.0.1"/>
+      <name value="Prescription profile for laboratory testing"/>
+      <description value="Laboratory prescription profile"/>
+      <groupingId value="rpc"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/diagnostic-imaging-basic-example-everything-contained"/>
+      </reference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/patient1"/>
+      </reference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/practitioner1"/>
+      </reference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/nursing-compression-therapy-example"/>
+      </reference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/condition1"/>
+      </reference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/diagnostic-imaging-basic-example-concreteWithDetails"/>
+      </reference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/diagnostic-imaging-basic-example-useOfModality"/>
+      </reference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/diagnostic-imaging-basic-example-concreteWithText"/>
+      </reference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/laboratory-order-example1"/>
+      </reference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CarePlan"/>
+      </extension>
+      <reference>
+        <reference value="CarePlan/gpvisit"/>
+      </reference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-model-laboratoryprescription"/>
+      </reference>
+      <description value="Logical model describing the model for the prescription laboratory. This draft is used in the HL7 Belgian workgroup for laboratory."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-ext-contraindication"/>
+      </reference>
+      <name value="BeContraindication"/>
+      <description value="Contra indication in a prescription referral for diagnostic imaging."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-ext-supporting-info"/>
+      </reference>
+      <name value="BeSupportingInfo"/>
+      <description value="Relevant clinical information in the context of this prescription concerning for example allergies, kidney function, diabetic. This extension allows the use of an Annotation or codeableConcept but when more detailed information can be given, it is RECOMMENDED to express it as structured as possible using the appropriate elements."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-ext-inform-party"/>
+      </reference>
+      <name value="BeInformParty"/>
+      <description value="Extra parties that need to be informed of the outcome, besides the prescriber."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-ext-contrastfluiduse"/>
+      </reference>
+      <name value="BeContrastFluidUse"/>
+      <description value="Whether the use of contrast fluid in diagnostic imaging can be defined as &#39;If necessary&#39; or &#39;Not permitted.&#39;"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-ext-urgent-communication"/>
+      </reference>
+      <name value="BeUrgentCommunication"/>
+      <description value="When there is a need to urgently communicate results of an order."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-reason-referral-status"/>
+      </reference>
+      <description value="Codes to explain the current status of a referral prescription."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-contrastfluid-use"/>
+      </reference>
+      <description value="Codes to define the use of contrast fluid."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/be-contrastfluid-use"/>
+      </reference>
+      <name value="BeContrastFluidUse"/>
+      <description value="Whether use of contrast fluid should be considered."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-type-of-compression"/>
+      </reference>
+      <description value="Codes to define a type of compression therapy."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-entera-feeding-way"/>
+      </reference>
+      <description value="Codes to define a way of enteral feeding"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="NamingSystem"/>
+      </extension>
+      <reference>
+        <reference value="NamingSystem/be-ns-specimen"/>
+      </reference>
+      <description value="National identifier for a specimen when needed."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-communication-method"/>
+      </reference>
+      <description value="Codes to define a communication method."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="NamingSystem"/>
+      </extension>
+      <reference>
+        <reference value="NamingSystem/be-ns-coronalertcode"/>
+      </reference>
+      <description value="Code as generated by the Coronalert app."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/codesystem-be-type-of-probe"/>
+      </reference>
+      <name value="BeProbeType"/>
+      <description value="Type of probe."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/be-cs-nursing-code-compressiontherapy"/>
+      </reference>
+      <name value="BeNursingCodeCompressiontherapy"/>
+      <description value="Nursing codes in Belgium. To define details in nursing activities for compression therapy. Initially defined as supporting CodeSystem for the referral prescription."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-referral-category"/>
+      </reference>
+      <description value="Codes to define the high level category for a referral prescription. SNOMED-CT codes in this valueset are just a draft proposal to give a general idea - pending an official valueset."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/be-cs-nursing-code"/>
+      </reference>
+      <name value="BeNursingCode"/>
+      <description value="Nursing codes in Belgium. To define a high level in nursing activities. Initially defined as supporting CodeSystem for the referral prescription."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-type-of-nursing"/>
+      </reference>
+      <description value="Codes to define a type of nursing."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="NamingSystem"/>
+      </extension>
+      <reference>
+        <reference value="NamingSystem/be-ns-uhmep"/>
+      </reference>
+      <description value="UHMEP naming system"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/be-communication-code"/>
+      </reference>
+      <name value="BeCommunicationCode"/>
+      <description value="Communication codes in Belgium. To define a specific method of communicating. Initially defined as supporting CodeSystem for the referral prescription."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-type-of-probe"/>
+      </reference>
+      <description value="Codes to define a type of probe."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/be-status-reason"/>
+      </reference>
+      <name value="BeStatusReason"/>
+      <description value="Status reason in Belgium. Initially defined as supporting CodeSystem for the referral prescription."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/codesystem-be-enteral-feeding-way"/>
+      </reference>
+      <name value="BeEnteralFeedingWay"/>
+      <description value="Way of enteral feeding"/>
+    </resource>
+    <page>
+      <nameUrl value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <nameUrl value="index.html"/>
+        <title value="Be Referral Prescription IG Home Page"/>
+        <generation value="html"/>
+      </page>
+      <page>
+        <nameUrl value="guidance.html"/>
+        <title value="Guidance"/>
+        <generation value="html"/>
+      </page>
+    </page>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/capabilities"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/examples"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/extensions"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/models"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/operations"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/profiles"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/vocabulary"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="template/config"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="input/images"/>
+    </parameter>
+    <parameter>
+      <code value="path-tx-cache"/>
+      <value value="input-cache/txcache"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>

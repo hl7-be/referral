@@ -1,0 +1,444 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "laboratory-order-example1",
+  "meta": {
+    "profile": [
+      "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-lab-prescription"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">A human readable form of the request (in HTML) SHALL be\tprovided here to enable systems that cannot process all structured\tdata, to at least present the information to the interactive user.\tMore information on https://www.hl7.org/fhir/R4/narrative.html</div>"
+  },
+  "contained": [
+    {
+      "resourceType": "Patient",
+      "id": "Patient1",
+      "meta": {
+        "profile": [
+          "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient"
+        ]
+      },
+      "identifier": [
+        {
+          "use": "official",
+          "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/ssin",
+          "value": "9999999999"
+        }
+      ],
+      "name": [
+        {
+          "family": "Doe",
+          "given": [
+            "Jane"
+          ]
+        }
+      ],
+      "telecom": [
+        {
+          "system": "phone",
+          "value": "322672299",
+          "use": "home"
+        }
+      ],
+      "gender": "female",
+      "birthDate": "1956-05-27",
+      "address": [
+        {
+          "use": "home",
+          "type": "both",
+          "text": "Labradorstraat 26, 1000 Brussel",
+          "line": [
+            "Labradorstraat 26"
+          ],
+          "city": "Brussel",
+          "postalCode": "1000",
+          "country": "BE"
+        }
+      ]
+    },
+    {
+      "resourceType": "Observation",
+      "id": "observation1",
+      "status": "final",
+      "category": [
+        {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+              "code": "vital-signs",
+              "display": "Vital Signs"
+            }
+          ],
+          "text": "Vital Signs"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "8867-4",
+            "display": "Heart rate"
+          },
+          {
+            "system": "http://snomed.info/sct",
+            "code": "364075005",
+            "display": "Heart rate (observable entity)"
+          }
+        ],
+        "text": "Heart rate"
+      },
+      "subject": {
+        "reference": "#Patient1"
+      },
+      "effectiveDateTime": "1999-07-02",
+      "performer": [
+        {
+          "reference": "#Requester1"
+        }
+      ],
+      "valueQuantity": {
+        "value": 51,
+        "unit": "beats/minute",
+        "system": "http://unitsofmeasure.org",
+        "code": "/min"
+      }
+    },
+    {
+      "resourceType": "Condition",
+      "id": "condition1",
+      "clinicalStatus": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+            "code": "active"
+          }
+        ]
+      },
+      "verificationStatus": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+            "code": "provisional"
+          }
+        ]
+      },
+      "code": {
+        "text": "bradycardie"
+      },
+      "subject": {
+        "reference": "#Patient1"
+      },
+      "note": [
+        {
+          "text": "This is a suspicion"
+        }
+      ]
+    },
+    {
+      "resourceType": "DocumentReference",
+      "id": "media1",
+      "status": "current",
+      "content": [
+        {
+          "attachment": {
+            "contentType": "image/gif",
+            "data": "iVBORw0KGgoAAAANSUhEUgAAA+MAAACnCAYAAAB6pY03AAAAAXNSR0IArs4c6QAAAARnQU1BAACx jwv8YQUAAAAJcEhZcwAAEnMAABJzAYwiuQcAADBZSURBVHhe7d09rty218fxrOFfZj/ZQHZgwEiZ gg=="
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Practitioner",
+      "id": "Requester1",
+      "meta": {
+        "profile": [
+          "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner"
+        ]
+      },
+      "identifier": [
+        {
+          "use": "official",
+          "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi",
+          "value": "8888888888"
+        }
+      ],
+      "name": [
+        {
+          "use": "official",
+          "family": "Seven",
+          "given": [
+            "Henry"
+          ]
+        }
+      ],
+      "telecom": [
+        {
+          "system": "phone",
+          "value": "322882299",
+          "use": "home"
+        }
+      ],
+      "address": [
+        {
+          "use": "work",
+          "type": "both",
+          "text": "Werkstraat 26, 1000 Brussel",
+          "line": [
+            "Werkstraat 26"
+          ],
+          "city": "Brussel",
+          "postalCode": "1000",
+          "country": "BE"
+        }
+      ]
+    },
+    {
+      "resourceType": "Organization",
+      "id": "Performer1",
+      "meta": {
+        "profile": [
+          "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization"
+        ]
+      },
+      "identifier": [
+        {
+          "use": "official",
+          "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi",
+          "value": "9876543210"
+        }
+      ],
+      "name": "Labstraatlabo",
+      "telecom": [
+        {
+          "system": "phone",
+          "value": "322884499",
+          "use": "work"
+        }
+      ],
+      "address": [
+        {
+          "use": "work",
+          "type": "both",
+          "text": "Labstraat 101, 1000 Brussel",
+          "line": [
+            "Labstraat 101"
+          ],
+          "city": "Brussel",
+          "postalCode": "1000",
+          "country": "BE"
+        }
+      ]
+    },
+    {
+      "resourceType": "Specimen",
+      "id": "specimen1",
+      "identifier": [
+        {
+          "system": "https://www.GTL-LABO.be/",
+          "value": "1"
+        }
+      ],
+      "type": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "119297000",
+            "display": "Blood specimen"
+          }
+        ],
+        "text": "A string can be added to nuance or explain."
+      },
+      "collection": {
+        "collectedDateTime": "2015-11-03",
+        "method": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "28520004",
+              "display": "Venipuncture for blood test (procedure)"
+            }
+          ]
+        },
+        "bodySite": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "368208006",
+              "display": "Left upper arm structure (body structure)"
+            }
+          ]
+        }
+      },
+      "note": [
+        {
+          "text": "Some extra relevant information concerning the specimen"
+        }
+      ]
+    }
+  ],
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/request-statusReason",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason",
+            "code": "created",
+            "display": "Created"
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-urgent-communication",
+      "extension": [
+        {
+          "url": "party",
+          "valueReference": {
+            "reference": "#Requester1"
+          }
+        },
+        {
+          "url": "instructions",
+          "valueString": "Send the requester an email, when the test is done."
+        },
+        {
+          "url": "contactway",
+          "extension": [
+            {
+              "url": "contactSystem",
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/contact-point-system",
+                    "code": "email",
+                    "display": "email"
+                  }
+                ]
+              }
+            },
+            {
+              "url": "contactSystemValue",
+              "valueString": "doctor@mycabinet.be"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep",
+      "value": "XXXXXX"
+    }
+  ],
+  "status": "active",
+  "intent": "original-order",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "15220000",
+          "display": "Laboratory test"
+        }
+      ]
+    }
+  ],
+  "priority": "stat",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "18723-7",
+        "display": "Hematology studies (set)"
+      }
+    ]
+  },
+  "orderDetail": [
+    {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "30341-2",
+          "display": "Erythrocyte sedimentation rate"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "789-8",
+          "display": "Erythrocytes [#/volume] in Blood by Automated count"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "20563-3",
+          "display": "Carboxyhemoglobin/Hemoglobin.total in Blood"
+        }
+      ]
+    },
+    {
+      "text": "Test described in text only"
+    }
+  ],
+  "subject": {
+    "reference": "#Patient1"
+  },
+  "authoredOn": "2015-11-01T14:41:00+01:00",
+  "requester": {
+    "reference": "#Requester1"
+  },
+  "performerType": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "61246008",
+        "display": "Laboratory medicine specialist"
+      }
+    ]
+  },
+  "performer": [
+    {
+      "reference": "#Performer1"
+    }
+  ],
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "https://www.SOME_NOMENCLATURE_SYSTEM.be/",
+          "code": "123",
+          "display": "TheJustification"
+        }
+      ]
+    }
+  ],
+  "supportingInfo": [
+    {
+      "reference": "#observation1"
+    },
+    {
+      "reference": "#condition1"
+    },
+    {
+      "reference": "#media1"
+    }
+  ],
+  "specimen": [
+    {
+      "reference": "#specimen1"
+    }
+  ],
+  "note": [
+    {
+      "text": "Some free text explaining about these tests that are ordered."
+    }
+  ]
+}

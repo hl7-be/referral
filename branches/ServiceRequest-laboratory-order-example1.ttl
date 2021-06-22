@@ -1,0 +1,439 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/ServiceRequest/laboratory-order-example1> a fhir:ServiceRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "laboratory-order-example1"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-lab-prescription";
+       fhir:index 0;
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-lab-prescription>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">A human readable form of the request (in HTML) SHALL be	provided here to enable systems that cannot process all structured	data, to at least present the information to the interactive user.	More information on https://www.hl7.org/fhir/R4/narrative.html</div>"
+  ];
+  fhir:DomainResource.contained [
+     a fhir:Patient;
+     fhir:index 0;
+     fhir:Resource.id [ fhir:value "Patient1" ];
+     fhir:Resource.meta [
+       fhir:Meta.profile [
+         fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient";
+         fhir:index 0;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient>
+       ]
+     ];
+     fhir:Patient.identifier [
+       fhir:index 0;
+       fhir:Identifier.use [ fhir:value "official" ];
+       fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/ssin" ];
+       fhir:Identifier.value [ fhir:value "9999999999" ]
+     ];
+     fhir:Patient.name [
+       fhir:index 0;
+       fhir:HumanName.family [ fhir:value "Doe" ];
+       fhir:HumanName.given [
+         fhir:value "Jane";
+         fhir:index 0
+       ]
+     ];
+     fhir:Patient.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "phone" ];
+       fhir:ContactPoint.value [ fhir:value "322672299" ];
+       fhir:ContactPoint.use [ fhir:value "home" ]
+     ];
+     fhir:Patient.gender [ fhir:value "female" ];
+     fhir:Patient.birthDate [ fhir:value "1956-05-27"^^xsd:date ];
+     fhir:Patient.address [
+       fhir:index 0;
+       fhir:Address.use [ fhir:value "home" ];
+       fhir:Address.type [ fhir:value "both" ];
+       fhir:Address.text [ fhir:value "Labradorstraat 26, 1000 Brussel" ];
+       fhir:Address.line [
+         fhir:value "Labradorstraat 26";
+         fhir:index 0
+       ];
+       fhir:Address.city [ fhir:value "Brussel" ];
+       fhir:Address.postalCode [ fhir:value "1000" ];
+       fhir:Address.country [ fhir:value "BE" ]
+     ]
+  ], [
+     a fhir:Observation;
+     fhir:index 1;
+     fhir:Resource.id [ fhir:value "observation1" ];
+     fhir:Observation.status [ fhir:value "final" ];
+     fhir:Observation.category [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ];
+         fhir:Coding.code [ fhir:value "vital-signs" ];
+         fhir:Coding.display [ fhir:value "Vital Signs" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "Vital Signs" ]
+     ];
+     fhir:Observation.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a loinc:8867-4;
+         fhir:Coding.system [ fhir:value "http://loinc.org" ];
+         fhir:Coding.code [ fhir:value "8867-4" ];
+         fhir:Coding.display [ fhir:value "Heart rate" ]
+       ], [
+         fhir:index 1;
+         a sct:364075005;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "364075005" ];
+         fhir:Coding.display [ fhir:value "Heart rate (observable entity)" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "Heart rate" ]
+     ];
+     fhir:Observation.subject [
+       fhir:Reference.reference [ fhir:value "#Patient1" ]
+     ];
+     fhir:Observation.effectiveDateTime [ fhir:value "1999-07-02"^^xsd:date ];
+     fhir:Observation.performer [
+       fhir:index 0;
+       fhir:Reference.reference [ fhir:value "#Requester1" ]
+     ];
+     fhir:Observation.valueQuantity [
+       fhir:Quantity.value [ fhir:value "51"^^xsd:decimal ];
+       fhir:Quantity.unit [ fhir:value "beats/minute" ];
+       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+       fhir:Quantity.code [ fhir:value "/min" ]
+     ]
+  ], [
+     a fhir:Condition;
+     fhir:index 2;
+     fhir:Resource.id [ fhir:value "condition1" ];
+     fhir:Condition.clinicalStatus [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-clinical" ];
+         fhir:Coding.code [ fhir:value "active" ]
+       ]
+     ];
+     fhir:Condition.verificationStatus [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-ver-status" ];
+         fhir:Coding.code [ fhir:value "provisional" ]
+       ]
+     ];
+     fhir:Condition.code [
+       fhir:CodeableConcept.text [ fhir:value "bradycardie" ]
+     ];
+     fhir:Condition.subject [
+       fhir:Reference.reference [ fhir:value "#Patient1" ]
+     ];
+     fhir:Condition.note [
+       fhir:index 0;
+       fhir:Annotation.text [ fhir:value "This is a suspicion" ]
+     ]
+  ], [
+     a fhir:DocumentReference;
+     fhir:index 3;
+     fhir:Resource.id [ fhir:value "media1" ];
+     fhir:DocumentReference.status [ fhir:value "current" ];
+     fhir:DocumentReference.content [
+       fhir:index 0;
+       fhir:DocumentReference.content.attachment [
+         fhir:Attachment.contentType [ fhir:value "image/gif" ];
+         fhir:Attachment.data [ fhir:value "iVBORw0KGgoAAAANSUhEUgAAA+MAAACnCAYAAAB6pY03AAAAAXNSR0IArs4c6QAAAARnQU1BAACx jwv8YQUAAAAJcEhZcwAAEnMAABJzAYwiuQcAADBZSURBVHhe7d09rty218fxrOFfZj/ZQHZgwEiZ gg=="^^xsd:base64Binary ]
+       ]
+     ]
+  ], [
+     a fhir:Practitioner;
+     fhir:index 4;
+     fhir:Resource.id [ fhir:value "Requester1" ];
+     fhir:Resource.meta [
+       fhir:Meta.profile [
+         fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner";
+         fhir:index 0;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner>
+       ]
+     ];
+     fhir:Practitioner.identifier [
+       fhir:index 0;
+       fhir:Identifier.use [ fhir:value "official" ];
+       fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi" ];
+       fhir:Identifier.value [ fhir:value "8888888888" ]
+     ];
+     fhir:Practitioner.name [
+       fhir:index 0;
+       fhir:HumanName.use [ fhir:value "official" ];
+       fhir:HumanName.family [ fhir:value "Seven" ];
+       fhir:HumanName.given [
+         fhir:value "Henry";
+         fhir:index 0
+       ]
+     ];
+     fhir:Practitioner.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "phone" ];
+       fhir:ContactPoint.value [ fhir:value "322882299" ];
+       fhir:ContactPoint.use [ fhir:value "home" ]
+     ];
+     fhir:Practitioner.address [
+       fhir:index 0;
+       fhir:Address.use [ fhir:value "work" ];
+       fhir:Address.type [ fhir:value "both" ];
+       fhir:Address.text [ fhir:value "Werkstraat 26, 1000 Brussel" ];
+       fhir:Address.line [
+         fhir:value "Werkstraat 26";
+         fhir:index 0
+       ];
+       fhir:Address.city [ fhir:value "Brussel" ];
+       fhir:Address.postalCode [ fhir:value "1000" ];
+       fhir:Address.country [ fhir:value "BE" ]
+     ]
+  ], [
+     a fhir:Organization;
+     fhir:index 5;
+     fhir:Resource.id [ fhir:value "Performer1" ];
+     fhir:Resource.meta [
+       fhir:Meta.profile [
+         fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization";
+         fhir:index 0;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization>
+       ]
+     ];
+     fhir:Organization.identifier [
+       fhir:index 0;
+       fhir:Identifier.use [ fhir:value "official" ];
+       fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi" ];
+       fhir:Identifier.value [ fhir:value "9876543210" ]
+     ];
+     fhir:Organization.name [ fhir:value "Labstraatlabo" ];
+     fhir:Organization.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "phone" ];
+       fhir:ContactPoint.value [ fhir:value "322884499" ];
+       fhir:ContactPoint.use [ fhir:value "work" ]
+     ];
+     fhir:Organization.address [
+       fhir:index 0;
+       fhir:Address.use [ fhir:value "work" ];
+       fhir:Address.type [ fhir:value "both" ];
+       fhir:Address.text [ fhir:value "Labstraat 101, 1000 Brussel" ];
+       fhir:Address.line [
+         fhir:value "Labstraat 101";
+         fhir:index 0
+       ];
+       fhir:Address.city [ fhir:value "Brussel" ];
+       fhir:Address.postalCode [ fhir:value "1000" ];
+       fhir:Address.country [ fhir:value "BE" ]
+     ]
+  ], [
+     a fhir:Specimen;
+     fhir:index 6;
+     fhir:Resource.id [ fhir:value "specimen1" ];
+     fhir:Specimen.identifier [
+       fhir:index 0;
+       fhir:Identifier.system [ fhir:value "https://www.GTL-LABO.be/" ];
+       fhir:Identifier.value [ fhir:value "1" ]
+     ];
+     fhir:Specimen.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:119297000;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "119297000" ];
+         fhir:Coding.display [ fhir:value "Blood specimen" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "A string can be added to nuance or explain." ]
+     ];
+     fhir:Specimen.collection [
+       fhir:Specimen.collection.collectedDateTime [ fhir:value "2015-11-03"^^xsd:date ];
+       fhir:Specimen.collection.method [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           a sct:28520004;
+           fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+           fhir:Coding.code [ fhir:value "28520004" ];
+           fhir:Coding.display [ fhir:value "Venipuncture for blood test (procedure)" ]
+         ]
+       ];
+       fhir:Specimen.collection.bodySite [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           a sct:368208006;
+           fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+           fhir:Coding.code [ fhir:value "368208006" ];
+           fhir:Coding.display [ fhir:value "Left upper arm structure (body structure)" ]
+         ]
+       ]
+     ];
+     fhir:Specimen.note [
+       fhir:index 0;
+       fhir:Annotation.text [ fhir:value "Some extra relevant information concerning the specimen" ]
+     ]
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/request-statusReason" ];
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason" ];
+         fhir:Coding.code [ fhir:value "created" ];
+         fhir:Coding.display [ fhir:value "Created" ]
+       ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-urgent-communication" ];
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "party" ];
+       fhir:Extension.valueReference [
+         fhir:Reference.reference [ fhir:value "#Requester1" ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Extension.url [ fhir:value "instructions" ];
+       fhir:Extension.valueString [ fhir:value "Send the requester an email, when the test is done." ]
+     ], [
+       fhir:index 2;
+       fhir:Extension.url [ fhir:value "contactway" ];
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "contactSystem" ];
+         fhir:Extension.valueCodeableConcept [
+           fhir:CodeableConcept.coding [
+             fhir:index 0;
+             fhir:Coding.system [ fhir:value "http://hl7.org/fhir/contact-point-system" ];
+             fhir:Coding.code [ fhir:value "email" ];
+             fhir:Coding.display [ fhir:value "email" ]
+           ]
+         ]
+       ], [
+         fhir:index 1;
+         fhir:Extension.url [ fhir:value "contactSystemValue" ];
+         fhir:Extension.valueString [ fhir:value "doctor@mycabinet.be" ]
+       ]
+     ]
+  ];
+  fhir:ServiceRequest.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep" ];
+     fhir:Identifier.value [ fhir:value "XXXXXX" ]
+  ];
+  fhir:ServiceRequest.status [ fhir:value "active"];
+  fhir:ServiceRequest.intent [ fhir:value "original-order"];
+  fhir:ServiceRequest.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:15220000;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "15220000" ];
+       fhir:Coding.display [ fhir:value "Laboratory test" ]
+     ]
+  ];
+  fhir:ServiceRequest.priority [ fhir:value "stat"];
+  fhir:ServiceRequest.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:18723-7;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "18723-7" ];
+       fhir:Coding.display [ fhir:value "Hematology studies (set)" ]
+     ]
+  ];
+  fhir:ServiceRequest.orderDetail [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:30341-2;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "30341-2" ];
+       fhir:Coding.display [ fhir:value "Erythrocyte sedimentation rate" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:789-8;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "789-8" ];
+       fhir:Coding.display [ fhir:value "Erythrocytes [#/volume] in Blood by Automated count" ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:20563-3;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "20563-3" ];
+       fhir:Coding.display [ fhir:value "Carboxyhemoglobin/Hemoglobin.total in Blood" ]
+     ]
+  ], [
+     fhir:index 3;
+     fhir:CodeableConcept.text [ fhir:value "Test described in text only" ]
+  ];
+  fhir:ServiceRequest.subject [
+     fhir:Reference.reference [ fhir:value "#Patient1" ]
+  ];
+  fhir:ServiceRequest.authoredOn [ fhir:value "2015-11-01T14:41:00+01:00"^^xsd:dateTime];
+  fhir:ServiceRequest.requester [
+     fhir:Reference.reference [ fhir:value "#Requester1" ]
+  ];
+  fhir:ServiceRequest.performerType [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:61246008;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "61246008" ];
+       fhir:Coding.display [ fhir:value "Laboratory medicine specialist" ]
+     ]
+  ];
+  fhir:ServiceRequest.performer [
+     fhir:index 0;
+     fhir:Reference.reference [ fhir:value "#Performer1" ]
+  ];
+  fhir:ServiceRequest.reasonCode [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "https://www.SOME_NOMENCLATURE_SYSTEM.be/" ];
+       fhir:Coding.code [ fhir:value "123" ];
+       fhir:Coding.display [ fhir:value "TheJustification" ]
+     ]
+  ];
+  fhir:ServiceRequest.supportingInfo [
+     fhir:index 0;
+     fhir:Reference.reference [ fhir:value "#observation1" ]
+  ], [
+     fhir:index 1;
+     fhir:Reference.reference [ fhir:value "#condition1" ]
+  ], [
+     fhir:index 2;
+     fhir:Reference.reference [ fhir:value "#media1" ]
+  ];
+  fhir:ServiceRequest.specimen [
+     fhir:index 0;
+     fhir:Reference.reference [ fhir:value "#specimen1" ]
+  ];
+  fhir:ServiceRequest.note [
+     fhir:index 0;
+     fhir:Annotation.text [ fhir:value "Some free text explaining about these tests that are ordered." ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/ServiceRequest/laboratory-order-example1.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

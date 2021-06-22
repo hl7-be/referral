@@ -1,0 +1,62 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/CarePlan/gpvisit> a fhir:CarePlan;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "gpvisit"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "additional" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n			<p>Narrative</p>\n		</div>"
+  ];
+  fhir:CarePlan.status [ fhir:value "active"];
+  fhir:CarePlan.intent [ fhir:value "plan"];
+  fhir:CarePlan.subject [
+     fhir:link <http://hl7.country.org/fhir/ig/Patient/100>;
+     fhir:Reference.reference [ fhir:value "Patient/100" ];
+     fhir:Reference.display [ fhir:value "Peter James Chalmers" ]
+  ];
+  fhir:CarePlan.period [
+     fhir:Period.start [ fhir:value "2013-01-01T10:30:00+00:00"^^xsd:dateTime ]
+  ];
+  fhir:CarePlan.activity [
+     fhir:index 0;
+     fhir:CarePlan.activity.outcomeReference [
+       fhir:index 0;
+       fhir:link <http://hl7.country.org/fhir/ig/Encounter/example>;
+       fhir:Reference.reference [ fhir:value "Encounter/example" ]
+     ];
+     fhir:CarePlan.activity.detail [
+       fhir:CarePlan.activity.detail.kind [ fhir:value "Appointment" ];
+       fhir:CarePlan.activity.detail.code [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://example.org/local" ];
+           fhir:Coding.code [ fhir:value "nursecon" ]
+         ];
+         fhir:CodeableConcept.text [ fhir:value "Nurse Consultation" ]
+       ];
+       fhir:CarePlan.activity.detail.status [ fhir:value "scheduled" ];
+       fhir:CarePlan.activity.detail.scheduledPeriod [
+         fhir:Period.start [ fhir:value "2013-01-01T10:38:00+00:00"^^xsd:dateTime ];
+         fhir:Period.end [ fhir:value "2013-01-01T10:50:00+00:00"^^xsd:dateTime ]
+       ];
+       fhir:CarePlan.activity.detail.performer [
+         fhir:index 0;
+         fhir:link <http://hl7.country.org/fhir/ig/Practitioner/13>;
+         fhir:Reference.reference [ fhir:value "Practitioner/13" ];
+         fhir:Reference.display [ fhir:value "Nurse Nancy" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/CarePlan/gpvisit.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

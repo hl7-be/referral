@@ -1,0 +1,68 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/CodeSystem/be-status-reason> a fhir:CodeSystem;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "be-status-reason"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This code system https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason defines many codes, of which the following are a subset:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">created<a name=\"be-status-reason-created\"> </a></td><td>created</td></tr><tr><td style=\"white-space:nowrap\">not-used-by-patient<a name=\"be-status-reason-not-used-by-patient\"> </a></td><td>not-used-by-patient</td></tr></table><p><b>Additional Language Displays</b></p><table class=\"codes\"><tr><td><b>Code</b></td><td><b>English (English, en)</b></td></tr><tr><td>created</td><td>Request was created.</td></tr><tr><td>not-used-by-patient</td><td>Patient does not use it.</td></tr></table></div>"
+  ];
+  fhir:CodeSystem.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason"];
+  fhir:CodeSystem.version [ fhir:value "0.2.0"];
+  fhir:CodeSystem.name [ fhir:value "BeStatusReason"];
+  fhir:CodeSystem.title [ fhir:value "BeStatusReason"];
+  fhir:CodeSystem.status [ fhir:value "draft"];
+  fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean];
+  fhir:CodeSystem.date [ fhir:value "2021-06-22T14:00:22+00:00"^^xsd:dateTime];
+  fhir:CodeSystem.publisher [ fhir:value "HL7 Belgium"];
+  fhir:CodeSystem.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7belgium.org" ]
+     ]
+  ];
+  fhir:CodeSystem.description [ fhir:value "Status reason in Belgium. Initially defined as supporting CodeSystem for the referral prescription."];
+  fhir:CodeSystem.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ];
+  fhir:CodeSystem.caseSensitive [ fhir:value "false"^^xsd:boolean];
+  fhir:CodeSystem.content [ fhir:value "fragment"];
+  fhir:CodeSystem.concept [
+     fhir:index 0;
+     fhir:CodeSystem.concept.code [ fhir:value "created" ];
+     fhir:CodeSystem.concept.display [ fhir:value "created" ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Request was created." ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:CodeSystem.concept.code [ fhir:value "not-used-by-patient" ];
+     fhir:CodeSystem.concept.display [ fhir:value "not-used-by-patient" ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Patient does not use it." ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/CodeSystem/be-status-reason.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

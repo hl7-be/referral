@@ -1,0 +1,668 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>HL7.COUNTRY.FHIR.IG\ - FHIR v4.0.1</title>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+     
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css"/>
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+  
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+    <link rel="stylesheet" href="assets/css/hl7.css"/>
+    <link rel="stylesheet" href="assets/css/fhir.css"/>
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+  
+      <!-- Favicons -->
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body>
+
+    <style type="text/css">h2{--heading-prefix:""}
+    h3,h4,h5,h6{--heading-prefix:""}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+        
+        <div id="hl7-nav">
+          <a no-external="true" id="hl7-logo" href="http://hl7.org">
+            <img src="assets/images/hl7-logo-header.png" alt="Visit the HL7 website" height="50"/>
+          </a>
+        </div>
+        <div id="family-nav">
+          <a no-external="true" id="family-logo" href="http://hl7.org/fhir"><img src="assets/images/fhir-logo-www.png" alt="Visit the FHIR website" height="50"/> </a>
+        </div>
+        <div id="hl7-search">
+          <a no-external="true" id="hl7-search-lnk" href="http://hl7.org/fhir/search.cfm"><img src="assets/images/search.png" alt="Search FHIR"/></a>
+        </div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">HL7 BE Referral Prescription WG Implementation Guide (work in progress)</span><br/>0.2.0 - CI Build</p>
+        </div>
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+    
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+    
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul class="nav navbar-nav">
+	<li>
+		<a href="index.html">IG Home</a>
+	</li>
+	<li>
+		<a href="guidance.html">Guidance</a>
+	</li>
+	<li>
+		<a href="toc.html">Table of Contents</a>
+	</li>
+	<li class="dropdown">
+		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret"></b>
+		</a>
+		<ul class="dropdown-menu">
+			<li><a name="dfd0ccfb-5e58-4fa9-9b8c-c5d752d719cd">​</a>
+				<a href="howto.html">How to use this Publication</a>
+			</li>
+			<li><a name="775e5dc2-18f4-4668-8560-d18c03ea7f93">​</a>
+				<a href="standardsstatus.html">Standards Status</a>
+			</li>
+			<li><a name="c258f3c5-c068-4fc3-8e86-26bc53f0a5b0">​</a>
+				<a href="privacy.html">Privacy considerations</a>
+			</li>
+			<li><a name="74c5d488-96f8-45fa-b1ec-267580eff422">​</a>
+				<a href="security.html">Security considerations</a>
+			</li>
+			<li>
+				<a href="http://hl7.org/fhir/R4/index.html" target="_blank">FHIR Spec<img src="external.png" style="text-align: baseline"/>
+				</a>
+			</li>
+		</ul>
+	</li>
+	<li class="dropdown">
+		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Functional Description<b class="caret"></b>
+		</a>
+		<ul class="dropdown-menu">
+			<li><a name="83aa2b0b-eb02-4203-9c67-a0b3e4e0fa68">​</a>
+				<a href="usecases.html">Use Cases</a>
+			</li>
+			<li><a name="e27d9f0b-e585-41bf-ab2c-5923a3992eaf">​</a>
+				<a href="logical-models.html">Logical Models</a>
+			</li>
+  <!-- <li>
+				<a target="_blank" href="#">Services &amp; Transactions</a>
+			</li> -->
+		</ul>
+
+	</li>
+	<li class="dropdown">
+		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Detailed Specifications<b class="caret"></b>
+		</a>
+		<ul class="dropdown-menu">
+			<li>
+				<a href="artifacts.html">Artifact Index</a>
+			</li>
+		</ul>
+	</li>
+	<li class="dropdown">
+		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Terminology<b class="caret"></b>
+		</a>
+		<ul class="dropdown-menu">
+			<li><a name="bb993fab-3945-49db-9242-4bc2095894b9">​</a>
+				<a href="terminology.html">Terminology Resources</a>
+			</li>
+		</ul>
+	</li>
+  <!-- <li class="dropdown">
+		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Project-specific
+			<b class="caret"></b>
+		</a>
+		<ul class="dropdown-menu">
+			<li>
+				<a href="#">Core Profiles</a>
+			</li>
+			<li class="divider"></li>
+			<li>
+				<a href="#">DZOP</a>
+			</li>
+            <li>
+				<a href="#">EFRO</a>
+			</li>
+		</ul>
+	</li> -->
+	<li class="dropdown">
+		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Implementation<b class="caret"></b></a>
+		<ul class="dropdown-menu">
+			<li><a name="8e7cae15-c1ad-41d4-9760-7e75e5792d13">​</a><a href="testdata.html">Test Data<img src="external.png" style="text-align: baseline"/></a></li>
+			<li><a name="1a91d07b-ce6e-4f2b-b426-4ed85b8e0526">​</a><a href="openapi.html" target="_blank">OpenAPI</a></li>
+			<li><a name="fb594082-ef8f-4062-a558-a6e0cad114ef">​</a><a href="testservers.html">Test Servers<img src="external.png" style="text-align: baseline"/></a></li>
+			<li><a name="4c536d6a-3b78-4a5b-83bc-5119df90a230">​</a><a href="downloads.html">Downloads</a></li>
+		</ul>
+	</li>
+</ul>      
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->  
+        <ul class="breadcrumb">
+          
+        </ul>  
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+    
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+<div class="col-12">
+    <!-- ReleaseHeader --><p id="publish-box">HL7 BE Referral Prescription WG Implementation Guide (work in progress) - Local Development build (v0.2.0). See the <a href="http://hl7.country.org/fhir/ig/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <a name="root"> </a>
+  <h2 id="root"></h2>
+  <p>
+    <a href="StructureDefinition-be-model-nursingprescription.html">(back to description)</a>
+  </p>
+  <p>
+    <a href="StructureDefinition-be-model-nursingprescription.xml">Raw xml</a>
+  </p>
+  
+  
+  
+  <p>
+    <b>Source view</b>
+  </p>
+  
+  <pre class="xml"><code>
+
+&lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition">StructureDefinition</a> xmlns="http://hl7.org/fhir"&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="be-model-nursingprescription"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.text">text</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="extensions"/&gt;
+    &lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;&lt;table border="0" cellpadding="0" cellspacing="0" style="border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;"&gt;&lt;tr style="border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top"&gt;&lt;th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R4/formats.html#table" title="The logical name of the element"&gt;Name&lt;/a&gt;&lt;/th&gt;&lt;th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R4/formats.html#table" title="Information about the use of the element"&gt;Flags&lt;/a&gt;&lt;/th&gt;&lt;th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R4/formats.html#table" title="Minimum and Maximum # of times the the element can appear in the instance"&gt;Card.&lt;/a&gt;&lt;/th&gt;&lt;th style="width: 100px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R4/formats.html#table" title="Reference to the type of the element"&gt;Type&lt;/a&gt;&lt;/th&gt;&lt;th style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R4/formats.html#table" title="Additional information about the element"&gt;Description &amp;amp; Constraints&lt;/a&gt;&lt;span style="float: right"&gt;&lt;a href="http://hl7.org/fhir/R4/formats.html#table" title="Legend for this format"&gt;&lt;img src="http://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/&gt;&lt;/a&gt;&lt;/span&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon_element.gif" alt="." style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/&gt; &lt;a href="StructureDefinition-be-model-nursingprescription-definitions.html#BeNursingPrescription"&gt;BeNursingPrescription&lt;/a&gt;&lt;a name="BeNursingPrescription"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..*&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;/tr&gt;
+&lt;tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon_resource.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Resource" class="hierarchy"/&gt; &lt;a href="StructureDefinition-be-model-nursingprescription-definitions.html#BeNursingPrescription.BeReferralPrescription"&gt;BeReferralPrescription&lt;/a&gt;&lt;a name="BeNursingPrescription.BeReferralPrescription"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;1..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="StructureDefinition-be-model-referralprescription.html"&gt;BeReferralPrescription&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;/tr&gt;
+&lt;tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck11.png)" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon_datatype.gif" alt="." style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/&gt; &lt;a href="StructureDefinition-be-model-nursingprescription-definitions.html#BeNursingPrescription.phoneAvailablityPrescriber"&gt;phoneAvailablityPrescriber&lt;/a&gt;&lt;a name="BeNursingPrescription.phoneAvailablityPrescriber"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R4/datatypes.html#BackboneElement"&gt;BackboneElement&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;/tr&gt;
+&lt;tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon_datatype.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/&gt; &lt;a href="StructureDefinition-be-model-nursingprescription-definitions.html#BeNursingPrescription.phoneAvailablityPrescriber.contactPoint"&gt;contactPoint&lt;/a&gt;&lt;a name="BeNursingPrescription.phoneAvailablityPrescriber.contactPoint"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..*&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint" title="ContactPoint"&gt;ContactPoint&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;/tr&gt;
+&lt;tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck101.png)" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon_datatype.gif" alt="." style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/&gt; &lt;a href="StructureDefinition-be-model-nursingprescription-definitions.html#BeNursingPrescription.phoneAvailablityPrescriber.availability"&gt;availability&lt;/a&gt;&lt;a name="BeNursingPrescription.phoneAvailablityPrescriber.availability"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..*&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R4/datatypes.html#BackboneElement"&gt;BackboneElement&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;/tr&gt;
+&lt;tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1010.png)" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon_element.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/&gt; &lt;a href="StructureDefinition-be-model-nursingprescription-definitions.html#BeNursingPrescription.phoneAvailablityPrescriber.availability.untilHour"&gt;untilHour&lt;/a&gt;&lt;a name="BeNursingPrescription.phoneAvailablityPrescriber.availability.untilHour"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;/tr&gt;
+&lt;tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1010.png)" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon_element.gif" alt="." style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/&gt; &lt;a href="StructureDefinition-be-model-nursingprescription-definitions.html#BeNursingPrescription.phoneAvailablityPrescriber.availability.fromHour"&gt;fromHour&lt;/a&gt;&lt;a name="BeNursingPrescription.phoneAvailablityPrescriber.availability.fromHour"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;/tr&gt;
+&lt;tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1000.png)" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_blank.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon_primitive.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/&gt; &lt;a href="StructureDefinition-be-model-nursingprescription-definitions.html#BeNursingPrescription.phoneAvailablityPrescriber.availability.weekDay"&gt;weekDay&lt;/a&gt;&lt;a name="BeNursingPrescription.phoneAvailablityPrescriber.availability.weekDay"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;1..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R4/datatypes.html#string" title="string"&gt;string&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;/tr&gt;
+&lt;tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck11.png)" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon_datatype.gif" alt="." style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/&gt; &lt;a href="StructureDefinition-be-model-nursingprescription-definitions.html#BeNursingPrescription.feedbackAsked"&gt;feedbackAsked&lt;/a&gt;&lt;a name="BeNursingPrescription.feedbackAsked"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R4/datatypes.html#BackboneElement"&gt;BackboneElement&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;/tr&gt;
+&lt;tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck100.png)" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon_primitive.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/&gt; &lt;a href="StructureDefinition-be-model-nursingprescription-definitions.html#BeNursingPrescription.feedbackAsked.timingFeedback"&gt;timingFeedback&lt;/a&gt;&lt;a name="BeNursingPrescription.feedbackAsked.timingFeedback"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;1..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R4/datatypes.html#code" title="code"&gt;code&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;span style="font-weight:bold"&gt;Fixed Value: &lt;/span&gt;&lt;span style="color: darkgreen"&gt;during|end&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon_datatype.gif" alt="." style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/&gt; &lt;a href="StructureDefinition-be-model-nursingprescription-definitions.html#BeNursingPrescription.signature"&gt;signature&lt;/a&gt;&lt;a name="BeNursingPrescription.signature"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R4/datatypes.html#Signature" title="Signature"&gt;Signature&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;/tr&gt;
+&lt;tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon_primitive.png" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Primitive Data Type" class="hierarchy"/&gt; &lt;a href="StructureDefinition-be-model-nursingprescription-definitions.html#BeNursingPrescription.stampOrIdentification"&gt;stampOrIdentification&lt;/a&gt;&lt;a name="BeNursingPrescription.stampOrIdentification"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R4/datatypes.html#code" title="code"&gt;code&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;What is this?&lt;br/&gt;&lt;span style="font-weight:bold"&gt;Fixed Value: &lt;/span&gt;&lt;span style="color: darkgreen"&gt;stamp|identification&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon_datatype.gif" alt="." style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/&gt; &lt;a href="StructureDefinition-be-model-nursingprescription-definitions.html#BeNursingPrescription.mainNursingCare" title="A high level code to describe the nursing care"&gt;mainNursingCare&lt;/a&gt;&lt;a name="BeNursingPrescription.mainNursingCare"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;1..1&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept" title="CodeableConcept"&gt;CodeableConcept&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;e.g. woundcare, medication administartion, compression therapy,....&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon_datatype.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/&gt; &lt;a href="StructureDefinition-be-model-nursingprescription-definitions.html#BeNursingPrescription.detailedCare" title="Detailed code describing the nursing care demanded"&gt;detailedCare&lt;/a&gt;&lt;a name="BeNursingPrescription.detailedCare"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..*&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept" title="CodeableConcept"&gt;CodeableConcept&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;e.g. burncare, injection of medication,...&lt;br/&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)" class="hierarchy"&gt;&lt;img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/&gt;&lt;img src="icon_datatype.gif" alt="." style="background-color: white; background-color: inherit" title="Data Type" class="hierarchy"/&gt; &lt;a href="StructureDefinition-be-model-nursingprescription-definitions.html#BeNursingPrescription.bodySite"&gt;bodySite&lt;/a&gt;&lt;a name="BeNursingPrescription.bodySite"&gt; &lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;0..*&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;&lt;a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept" title="CodeableConcept"&gt;CodeableConcept&lt;/a&gt;&lt;/td&gt;&lt;td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"&gt;When needed bodySite SHALL be given&lt;br/&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan="5" class="hierarchy"&gt;&lt;br/&gt;&lt;a href="http://hl7.org/fhir/R4/formats.html#table" title="Legend for this format"&gt;&lt;img src="http://hl7.org/fhir/R4/help16.png" alt="doco" style="background-color: inherit"/&gt; Documentation for this format&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;<a name="end-xhtml"></a>
+  &lt;/text&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.url">url</a>
+       <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-model-nursingprescription"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.version">version</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="0.2.0"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="draft"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>="2021-06-22T14:00:22+00:00"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.publisher">publisher</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="HL7 Belgium"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.contact">contact</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="url"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="http://hl7belgium.org"/&gt;
+    &lt;/telecom&gt;
+  &lt;/contact&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.jurisdiction">jurisdiction</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="http://unstats.un.org/unsd/methods/m49/m49.htm"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="001"/&gt;
+    &lt;/coding&gt;
+  &lt;/jurisdiction&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.fhirVersion">fhirVersion</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="4.0.1"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.kind">kind</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="logical"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.abstract">abstract</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>="false"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="BeNursingPrescription"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.baseDefinition">baseDefinition</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>="http://hl7.org/fhir/StructureDefinition/Base"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.derivation">derivation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="specialization"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.snapshot">snapshot</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.snapshot.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="*"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base">base</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="Base"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="*"/&gt;
+      &lt;/base&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.isModifier">isModifier</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>="false"/&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.snapshot.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.BeReferralPrescription"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.BeReferralPrescription"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="1"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base">base</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.BeReferralPrescription"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="1"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;/base&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type">type</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a>
+              <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-model-referralprescription"/&gt;
+      &lt;/type&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.snapshot.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.phoneAvailablityPrescriber"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.phoneAvailablityPrescriber"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base">base</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.phoneAvailablityPrescriber"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;/base&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type">type</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="BackboneElement"/&gt;
+      &lt;/type&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.snapshot.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.phoneAvailablityPrescriber.contactPoint"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a>
+            <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.phoneAvailablityPrescriber.contactPoint"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="*"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base">base</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.path">path</a>
+              <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.phoneAvailablityPrescriber.contactPoint"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="*"/&gt;
+      &lt;/base&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type">type</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="ContactPoint"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.profile">profile</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>="http://hl7.org/fhir/StructureDefinition/ContactPoint"/&gt;
+      &lt;/type&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.snapshot.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.phoneAvailablityPrescriber.availability"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a>
+            <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.phoneAvailablityPrescriber.availability"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="*"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base">base</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.path">path</a>
+              <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.phoneAvailablityPrescriber.availability"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="*"/&gt;
+      &lt;/base&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type">type</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="BackboneElement"/&gt;
+      &lt;/type&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.snapshot.element">element</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.phoneAvailablityPrescriber.availability.untilHour"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a>
+            <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.phoneAvailablityPrescriber.availability.untilHour"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base">base</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.path">path</a>
+              <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.phoneAvailablityPrescriber.availability.untilHour"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;/base&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.snapshot.element">element</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.phoneAvailablityPrescriber.availability.fromHour"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a>
+            <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.phoneAvailablityPrescriber.availability.fromHour"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base">base</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.path">path</a>
+              <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.phoneAvailablityPrescriber.availability.fromHour"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;/base&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.snapshot.element">element</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.phoneAvailablityPrescriber.availability.weekDay"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a>
+            <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.phoneAvailablityPrescriber.availability.weekDay"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="1"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base">base</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.path">path</a>
+              <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.phoneAvailablityPrescriber.availability.weekDay"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="1"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;/base&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type">type</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="string"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.profile">profile</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>="http://hl7.org/fhir/StructureDefinition/string"/&gt;
+      &lt;/type&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.snapshot.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.feedbackAsked"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.feedbackAsked"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base">base</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.feedbackAsked"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;/base&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type">type</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="BackboneElement"/&gt;
+      &lt;/type&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.snapshot.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.feedbackAsked.timingFeedback"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.feedbackAsked.timingFeedback"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="1"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base">base</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.feedbackAsked.timingFeedback"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="1"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;/base&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type">type</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="code"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.profile">profile</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>="http://hl7.org/fhir/StructureDefinition/code"/&gt;
+      &lt;/type&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.fixed[x]">fixedCode</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="during|end"/&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.snapshot.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.signature"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.signature"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base">base</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.signature"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;/base&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type">type</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="Signature"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.profile">profile</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>="http://hl7.org/fhir/StructureDefinition/Signature"/&gt;
+      &lt;/type&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.snapshot.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.stampOrIdentification"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.stampOrIdentification"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.short">short</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="What is this?"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base">base</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.stampOrIdentification"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;/base&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type">type</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="code"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.profile">profile</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>="http://hl7.org/fhir/StructureDefinition/code"/&gt;
+      &lt;/type&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.fixed[x]">fixedCode</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="stamp|identification"/&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.snapshot.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.mainNursingCare"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.mainNursingCare"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.short">short</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="e.g. woundcare, medication administartion, compression therapy,...."/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.definition">definition</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>="A high level code to describe the nursing care"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="1"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base">base</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.mainNursingCare"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="1"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;/base&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type">type</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="CodeableConcept"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.profile">profile</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>="http://hl7.org/fhir/StructureDefinition/CodeableConcept"/&gt;
+      &lt;/type&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.snapshot.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.detailedCare"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.detailedCare"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.short">short</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="e.g. burncare, injection of medication,..."/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.definition">definition</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>="Detailed code describing the nursing care demanded"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="*"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base">base</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.detailedCare"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="*"/&gt;
+      &lt;/base&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type">type</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="CodeableConcept"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.profile">profile</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>="http://hl7.org/fhir/StructureDefinition/CodeableConcept"/&gt;
+      &lt;/type&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.snapshot.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.bodySite"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.bodySite"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.short">short</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="When needed bodySite SHALL be given"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="*"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base">base</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.bodySite"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.base.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="*"/&gt;
+      &lt;/base&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type">type</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="CodeableConcept"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.profile">profile</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>="http://hl7.org/fhir/StructureDefinition/CodeableConcept"/&gt;
+      &lt;/type&gt;
+    &lt;/element&gt;
+  &lt;/snapshot&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.differential">differential</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.differential.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="*"/&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.differential.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.BeReferralPrescription"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.BeReferralPrescription"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="1"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type">type</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a>
+              <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-model-referralprescription"/&gt;
+      &lt;/type&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.differential.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.phoneAvailablityPrescriber"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.phoneAvailablityPrescriber"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type">type</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="BackboneElement"/&gt;
+      &lt;/type&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.differential.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.phoneAvailablityPrescriber.contactPoint"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a>
+            <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.phoneAvailablityPrescriber.contactPoint"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="*"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type">type</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="ContactPoint"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.profile">profile</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>="http://hl7.org/fhir/StructureDefinition/ContactPoint"/&gt;
+      &lt;/type&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.differential.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.phoneAvailablityPrescriber.availability"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a>
+            <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.phoneAvailablityPrescriber.availability"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="*"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type">type</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="BackboneElement"/&gt;
+      &lt;/type&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.differential.element">element</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.phoneAvailablityPrescriber.availability.untilHour"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a>
+            <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.phoneAvailablityPrescriber.availability.untilHour"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.differential.element">element</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.phoneAvailablityPrescriber.availability.fromHour"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a>
+            <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.phoneAvailablityPrescriber.availability.fromHour"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.differential.element">element</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.phoneAvailablityPrescriber.availability.weekDay"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a>
+            <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.phoneAvailablityPrescriber.availability.weekDay"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="1"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type">type</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="string"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.profile">profile</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>="http://hl7.org/fhir/StructureDefinition/string"/&gt;
+      &lt;/type&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.differential.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.feedbackAsked"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.feedbackAsked"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type">type</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="BackboneElement"/&gt;
+      &lt;/type&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.differential.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.feedbackAsked.timingFeedback"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.feedbackAsked.timingFeedback"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="1"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type">type</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="code"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.profile">profile</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>="http://hl7.org/fhir/StructureDefinition/code"/&gt;
+      &lt;/type&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.fixed[x]">fixedCode</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="during|end"/&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.differential.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.signature"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.signature"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type">type</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="Signature"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.profile">profile</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>="http://hl7.org/fhir/StructureDefinition/Signature"/&gt;
+      &lt;/type&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.differential.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.stampOrIdentification"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.stampOrIdentification"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.short">short</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="What is this?"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type">type</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="code"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.profile">profile</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>="http://hl7.org/fhir/StructureDefinition/code"/&gt;
+      &lt;/type&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.fixed[x]">fixedCode</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="stamp|identification"/&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.differential.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.mainNursingCare"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.mainNursingCare"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.short">short</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="e.g. woundcare, medication administartion, compression therapy,...."/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.definition">definition</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>="A high level code to describe the nursing care"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="1"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type">type</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="CodeableConcept"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.profile">profile</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>="http://hl7.org/fhir/StructureDefinition/CodeableConcept"/&gt;
+      &lt;/type&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.differential.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.detailedCare"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.detailedCare"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.short">short</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="e.g. burncare, injection of medication,..."/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.definition">definition</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>="Detailed code describing the nursing care demanded"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="*"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type">type</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="CodeableConcept"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.profile">profile</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>="http://hl7.org/fhir/StructureDefinition/CodeableConcept"/&gt;
+      &lt;/type&gt;
+    &lt;/element&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.differential.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>="BeNursingPrescription.bodySite"&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.path">path</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="BeNursingPrescription.bodySite"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.short">short</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="When needed bodySite SHALL be given"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#unsignedInt">value</a>="0"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="*"/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type">type</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="CodeableConcept"/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.type.profile">profile</a> <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>="http://hl7.org/fhir/StructureDefinition/CodeableConcept"/&gt;
+      &lt;/type&gt;
+    &lt;/element&gt;
+  &lt;/differential&gt;
+&lt;/StructureDefinition&gt;</code></pre>
+
+
+  
+  
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+      <div class="inner-wrapper">
+        <p>
+          IG &copy; 2019+ <a style="color: #81BEF7" href="http://hl7belgium.org">HL7 Belgium</a>.  Package hl7.country.fhir.ig#0.2.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jun 22, 2021 14:00+0000">2021-06-22</span>
+          <br/>
+          <span style="color: #FFFF77">
+                      Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
+                 <a style="color: #81BEF7" href="qa.html">QA Report</a>
+                 | <a style="color: #81BEF7" href="http://hl7.country.org/fhir/ig/history.html" target="_blank">Version History <img src="external.png" alt="external" style="vertical-align: baseline"/></a> |
+                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/R4/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> |
+                   <!-- <a style="color: #81BEF7" href="todo.html">Search</a> | --> 
+                 <a style="color: #81BEF7" href="http://hl7.org/fhir-issues" target="_blank">Propose a change <img src="external.png" alt="external" style="vertical-align: baseline"/></a>
+
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+  
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

@@ -1,0 +1,181 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/ServiceRequest/diagnostic-imaging-basic-example-everything-contained> a fhir:ServiceRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "diagnostic-imaging-basic-example-everything-contained"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-diagnosticimaging";
+       fhir:index 0;
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-diagnosticimaging>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">A human readable form of the request (in HTML) SHALL be\n			provided here to enable systems that cannot process all structured\n			data, to at least present the information to the interactive user.\n			More information on https://www.hl7.org/fhir/R4/narrative.html\n		</div>"
+  ];
+  fhir:DomainResource.contained [
+     a fhir:Patient;
+     fhir:index 0;
+     fhir:Resource.id [ fhir:value "Patient1" ];
+     fhir:Resource.meta [
+       fhir:Meta.profile [
+         fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient";
+         fhir:index 0;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient>
+       ]
+     ];
+     fhir:Patient.identifier [
+       fhir:index 0;
+       fhir:Identifier.use [ fhir:value "official" ];
+       fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/ssin" ];
+       fhir:Identifier.value [ fhir:value "9999999999" ]
+     ];
+     fhir:Patient.name [
+       fhir:index 0;
+       fhir:HumanName.family [ fhir:value "Doe" ];
+       fhir:HumanName.given [
+         fhir:value "Jane";
+         fhir:index 0
+       ]
+     ];
+     fhir:Patient.gender [ fhir:value "female" ];
+     fhir:Patient.birthDate [ fhir:value "1956-05-27"^^xsd:date ]
+  ], [
+     a fhir:Practitioner;
+     fhir:index 1;
+     fhir:Resource.id [ fhir:value "Requester1" ];
+     fhir:Resource.meta [
+       fhir:Meta.profile [
+         fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner";
+         fhir:index 0;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner>
+       ]
+     ];
+     fhir:Practitioner.identifier [
+       fhir:index 0;
+       fhir:Identifier.use [ fhir:value "official" ];
+       fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi" ];
+       fhir:Identifier.value [ fhir:value "8888888888" ]
+     ];
+     fhir:Practitioner.name [
+       fhir:index 0;
+       fhir:HumanName.use [ fhir:value "official" ];
+       fhir:HumanName.family [ fhir:value "Seven" ];
+       fhir:HumanName.given [
+         fhir:value "Henry";
+         fhir:index 0
+       ]
+     ]
+  ], [
+     a fhir:Practitioner;
+     fhir:index 2;
+     fhir:Resource.id [ fhir:value "Performer1" ];
+     fhir:Resource.meta [
+       fhir:Meta.profile [
+         fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner";
+         fhir:index 0;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner>
+       ]
+     ];
+     fhir:Practitioner.identifier [
+       fhir:index 0;
+       fhir:Identifier.use [ fhir:value "official" ];
+       fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi" ];
+       fhir:Identifier.value [ fhir:value "9876543210" ]
+     ];
+     fhir:Practitioner.name [
+       fhir:index 0;
+       fhir:HumanName.use [ fhir:value "official" ];
+       fhir:HumanName.family [ fhir:value "Lisa" ];
+       fhir:HumanName.given [
+         fhir:value "Hermans";
+         fhir:index 0
+       ]
+     ]
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/request-statusReason" ];
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason" ];
+         fhir:Coding.code [ fhir:value "created" ];
+         fhir:Coding.display [ fhir:value "Created" ]
+       ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-supporting-info" ];
+     fhir:Extension.valueAnnotation [
+       fhir:Annotation.text [ fhir:value "Some relevant supporting information" ]
+     ]
+  ];
+  fhir:DomainResource.modifierExtension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-contraindication" ];
+     fhir:Extension.valueAnnotation [
+       fhir:Annotation.text [ fhir:value "Patient has serious kidney problems." ]
+     ]
+  ];
+  fhir:ServiceRequest.status [ fhir:value "active"];
+  fhir:ServiceRequest.intent [ fhir:value "order"];
+  fhir:ServiceRequest.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:363679005;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "363679005" ];
+       fhir:Coding.display [ fhir:value "Clinical imaging" ]
+     ]
+  ];
+  fhir:ServiceRequest.priority [ fhir:value "routine"];
+  fhir:ServiceRequest.code [
+     fhir:CodeableConcept.text [ fhir:value "Some suggestion of what to do (this could also be expressed in a coding system)" ]
+  ];
+  fhir:ServiceRequest.subject [
+     fhir:Reference.reference [ fhir:value "#Patient1" ]
+  ];
+  fhir:ServiceRequest.requester [
+     fhir:Reference.reference [ fhir:value "#Requester1" ]
+  ];
+  fhir:ServiceRequest.performerType [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:66862007;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "66862007" ];
+       fhir:Coding.display [ fhir:value "Radiologist" ]
+     ]
+  ];
+  fhir:ServiceRequest.performer [
+     fhir:index 0;
+     fhir:Reference.reference [ fhir:value "#Performer1" ]
+  ];
+  fhir:ServiceRequest.reasonCode [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:371081002;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "371081002" ];
+       fhir:Coding.display [ fhir:value "Arthritis of knee" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Patient mobility problems. Possibly arthritis of knee" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/ServiceRequest/diagnostic-imaging-basic-example-everything-contained.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

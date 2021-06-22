@@ -1,0 +1,28 @@
+"Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)"
+"BeNursingPrescription","","","",0,*,"","","","","","","","","","","","","","","",,,,,"",,,,"Base",0,*,"",""
+"BeNursingPrescription.BeReferralPrescription","","","",1,1,"","","","https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-model-referralprescription {[]} {[]}
+","","","","","","","","","","","",,,,,"",,,,"BeNursingPrescription.BeReferralPrescription",1,1,"",""
+"BeNursingPrescription.phoneAvailablityPrescriber","","","",0,1,"","","","BackboneElement {[]} {[]}
+","","","","","","","","","","","",,,,,"",,,,"BeNursingPrescription.phoneAvailablityPrescriber",0,1,"",""
+"BeNursingPrescription.phoneAvailablityPrescriber.contactPoint","","","",0,*,"","","","ContactPoint {[CanonicalType[http://hl7.org/fhir/StructureDefinition/ContactPoint]]} {[]}
+","","","","","","","","","","","",,,,,"",,,,"BeNursingPrescription.phoneAvailablityPrescriber.contactPoint",0,*,"",""
+"BeNursingPrescription.phoneAvailablityPrescriber.availability","","","",0,*,"","","","BackboneElement {[]} {[]}
+","","","","","","","","","","","",,,,,"",,,,"BeNursingPrescription.phoneAvailablityPrescriber.availability",0,*,"",""
+"BeNursingPrescription.phoneAvailablityPrescriber.availability.untilHour","","","",0,1,"","","","","","","","","","","","","","","",,,,,"",,,,"BeNursingPrescription.phoneAvailablityPrescriber.availability.untilHour",0,1,"",""
+"BeNursingPrescription.phoneAvailablityPrescriber.availability.fromHour","","","",0,1,"","","","","","","","","","","","","","","",,,,,"",,,,"BeNursingPrescription.phoneAvailablityPrescriber.availability.fromHour",0,1,"",""
+"BeNursingPrescription.phoneAvailablityPrescriber.availability.weekDay","","","",1,1,"","","","string {[CanonicalType[http://hl7.org/fhir/StructureDefinition/string]]} {[]}
+","","","","","","","","","","","",,,,,"",,,,"BeNursingPrescription.phoneAvailablityPrescriber.availability.weekDay",1,1,"",""
+"BeNursingPrescription.feedbackAsked","","","",0,1,"","","","BackboneElement {[]} {[]}
+","","","","","","","","","","","",,,,,"",,,,"BeNursingPrescription.feedbackAsked",0,1,"",""
+"BeNursingPrescription.feedbackAsked.timingFeedback","","","",1,1,"","","","code {[CanonicalType[http://hl7.org/fhir/StructureDefinition/code]]} {[]}
+","","","","","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""during|end""/>","","","","",,,,,"",,,,"BeNursingPrescription.feedbackAsked.timingFeedback",1,1,"",""
+"BeNursingPrescription.signature","","","",0,1,"","","","Signature {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Signature]]} {[]}
+","","","","","","","","","","","",,,,,"",,,,"BeNursingPrescription.signature",0,1,"",""
+"BeNursingPrescription.stampOrIdentification","","","",0,1,"","","","code {[CanonicalType[http://hl7.org/fhir/StructureDefinition/code]]} {[]}
+","What is this?","","","","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""stamp|identification""/>","","","","",,,,,"",,,,"BeNursingPrescription.stampOrIdentification",0,1,"",""
+"BeNursingPrescription.mainNursingCare","","","",1,1,"","","","CodeableConcept {[CanonicalType[http://hl7.org/fhir/StructureDefinition/CodeableConcept]]} {[]}
+","e.g. woundcare, medication administartion, compression therapy,....","A high level code to describe the nursing care","","","","","","","","","",,,,,"",,,,"BeNursingPrescription.mainNursingCare",1,1,"",""
+"BeNursingPrescription.detailedCare","","","",0,*,"","","","CodeableConcept {[CanonicalType[http://hl7.org/fhir/StructureDefinition/CodeableConcept]]} {[]}
+","e.g. burncare, injection of medication,...","Detailed code describing the nursing care demanded","","","","","","","","","",,,,,"",,,,"BeNursingPrescription.detailedCare",0,*,"",""
+"BeNursingPrescription.bodySite","","","",0,*,"","","","CodeableConcept {[CanonicalType[http://hl7.org/fhir/StructureDefinition/CodeableConcept]]} {[]}
+","When needed bodySite SHALL be given","","","","","","","","","","",,,,,"",,,,"BeNursingPrescription.bodySite",0,*,"",""
