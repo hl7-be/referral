@@ -92,16 +92,16 @@
 		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret"></b>
 		</a>
 		<ul class="dropdown-menu">
-			<li><a name="20cbb1b0-11fa-4ec5-8331-9b2b29235cd3">​</a>
+			<li><a name="8bca089c-aa0e-43d0-88c8-41ab94206cc9">​</a>
 				<a href="howto.html">How to use this Publication</a>
 			</li>
-			<li><a name="c28bb82f-4006-4e77-b57e-e81f945cc705">​</a>
+			<li><a name="851c519e-3b0b-483e-8d9b-1d2af7c202d1">​</a>
 				<a href="standardsstatus.html">Standards Status</a>
 			</li>
-			<li><a name="df4666f3-c688-4c43-9f09-016f578509ab">​</a>
+			<li><a name="36b3579f-b0fe-487f-b642-4ebdbe99deec">​</a>
 				<a href="privacy.html">Privacy considerations</a>
 			</li>
-			<li><a name="e29e41fa-9267-46fc-bcc2-d17629b809c3">​</a>
+			<li><a name="72aaca8a-a6dc-4b59-8fc8-b549fd9345d8">​</a>
 				<a href="security.html">Security considerations</a>
 			</li>
 			<li>
@@ -114,10 +114,10 @@
 		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Functional Description<b class="caret"></b>
 		</a>
 		<ul class="dropdown-menu">
-			<li><a name="239ea1b5-4dff-4dda-8147-63b4432ad373">​</a>
+			<li><a name="1dadf381-f1d7-4f40-bdfd-45b45062cfdd">​</a>
 				<a href="usecases.html">Use Cases</a>
 			</li>
-			<li><a name="117d081c-3308-4e74-bfe2-ceb5152d6b2d">​</a>
+			<li><a name="6575401f-3835-461e-9861-5301e94a537b">​</a>
 				<a href="logical-models.html">Logical Models</a>
 			</li>
   <!-- <li>
@@ -139,7 +139,7 @@
 		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Terminology<b class="caret"></b>
 		</a>
 		<ul class="dropdown-menu">
-			<li><a name="00e8c624-ffc7-424e-81e1-39c8680300e4">​</a>
+			<li><a name="0bd195ca-a912-4385-8f2c-8417c37629ae">​</a>
 				<a href="terminology.html">Terminology Resources</a>
 			</li>
 		</ul>
@@ -164,10 +164,10 @@
 	<li class="dropdown">
 		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Implementation<b class="caret"></b></a>
 		<ul class="dropdown-menu">
-			<li><a name="0886c4f7-5162-4448-b368-0225ca23448c">​</a><a href="testdata.html">Test Data<img src="external.png" style="text-align: baseline"/></a></li>
-			<li><a name="a2d3695f-cc39-4ea6-ad70-07a0bbc32a86">​</a><a href="openapi.html" target="_blank">OpenAPI</a></li>
-			<li><a name="6f3e86a1-ed78-4844-b69b-c1d4aec94ca5">​</a><a href="testservers.html">Test Servers<img src="external.png" style="text-align: baseline"/></a></li>
-			<li><a name="4820fa60-e0c2-47fb-a2b1-862590f317cf">​</a><a href="downloads.html">Downloads</a></li>
+			<li><a name="519e64fc-336d-4284-a282-5b1eedb2fa23">​</a><a href="testdata.html">Test Data<img src="external.png" style="text-align: baseline"/></a></li>
+			<li><a name="a23cad0f-5a4a-4d4e-9336-4ca1489c4916">​</a><a href="openapi.html" target="_blank">OpenAPI</a></li>
+			<li><a name="6d0ca087-3c9b-47f4-a8be-a152b941a215">​</a><a href="testservers.html">Test Servers<img src="external.png" style="text-align: baseline"/></a></li>
+			<li><a name="bd5f7131-fa9d-4e6f-aa81-c0f83c6380ac">​</a><a href="downloads.html">Downloads</a></li>
 		</ul>
 	</li>
 </ul>      
@@ -313,6 +313,26 @@
  <tr><td>&nbsp;&nbsp;&nbsp;insurance</td><td>.outboundRelationship[typeCode=COVBY].target</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>.inboundRelationship[typeCode=SUBJ]/source[classCode=OBS,moodCode=EVN,code="annotation"].value</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;dosageInstruction</td><td>see dosageInstruction mapping</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sequence</td><td>.text</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>.text</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;additionalInstruction</td><td>.text</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;patientInstruction</td><td>.text</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timing</td><td>.effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;asNeeded[x]</td><td>.outboundRelationship[typeCode=PRCN].target[classCode=OBS, moodCode=EVN, code="as needed"].value=boolean or codable concept</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;site</td><td>.approachSiteCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;route</td><td>.routeCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;method</td><td>.doseQuantity</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doseAndRate</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dose[x]</td><td>.doseQuantity</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rate[x]</td><td>.rateQuantity</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxDosePerPeriod</td><td>.maxDoseQuantity</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxDosePerAdministration</td><td>not supported</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxDosePerLifetime</td><td>not supported</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;dispenseRequest</td><td>component.supplyEvent</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
@@ -369,6 +389,20 @@
  <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>PV1-19-Visit Number</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;authoredOn</td><td>RXE-32-Original Order Date/Time / ORC-9-Date/Time of Transaction</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>ORC-16-Order Control Code Reason /RXE-27-Give Indication/RXO-20-Indication / RXD-21-Indication / RXG-22-Indication / RXA-19-Indication</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;dosageInstruction</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sequence</td><td>TQ1-1</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>RXO-6; RXE-21</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;additionalInstruction</td><td>RXO-7</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;patientInstruction</td><td>RXO-7</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;asNeeded[x]</td><td>TQ1-9</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;site</td><td>RXR-2</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;route</td><td>RXR-1</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;method</td><td>RXR-4</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doseAndRate</td><td>TQ1-2</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>RXO-21; RXE-23</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dose[x]</td><td>RXO-2, RXE-3</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rate[x]</td><td>RXE22, RXE23, RXE-24</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxDosePerPeriod</td><td>RXO-23, RXE-19</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;dispenseRequest</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;numberOfRepeatsAllowed</td><td>RXE-12-Number of Refills</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quantity</td><td>RXD-4-Actual Dispense Amount / RXD-5.1-Actual Dispense Units.code / RXD-5.3-Actual Dispense Units.name of coding system</td> </tr>
@@ -417,7 +451,7 @@
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2019+ <a style="color: #81BEF7" href="http://hl7belgium.org">HL7 Belgium</a>.  Package hl7.country.fhir.ig#0.2.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 6, 2021 14:23+0000">2021-07-06</span>
+          IG &copy; 2019+ <a style="color: #81BEF7" href="http://hl7belgium.org">HL7 Belgium</a>.  Package hl7.country.fhir.ig#0.2.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 6, 2021 14:29+0000">2021-07-06</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
