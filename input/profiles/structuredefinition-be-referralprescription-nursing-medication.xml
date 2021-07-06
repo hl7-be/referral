@@ -50,8 +50,7 @@
     <element id="MedicationRequest.extension:be-ext-inform-party">
       <path value="MedicationRequest.extension" />
       <sliceName value="be-ext-inform-party" />
-      <min value="0" />
-      <max value="*" />
+      <short value="Parties to inform of fulfillment of the prescription, besides the prescriber." />
       <type>
         <code value="Extension" />
         <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-inform-party" />
@@ -59,6 +58,10 @@
     </element>
     <element id="MedicationRequest.status">
       <path value="MedicationRequest.status" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.statusReason">
+      <path value="MedicationRequest.statusReason" />
       <mustSupport value="true" />
     </element>
     <element id="MedicationRequest.medication[x]">
@@ -96,8 +99,17 @@
       <path value="MedicationRequest.performerType" />
       <mustSupport value="true" />
     </element>
+    <element id="MedicationRequest.groupIdentifier">
+      <path value="MedicationRequest.groupIdentifier" />
+      <short value="If needed to have a common identifier among different prescriptions." />
+      <mustSupport value="true" />
+    </element>
     <element id="MedicationRequest.note">
       <path value="MedicationRequest.note" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.dosageInstruction">
+      <path value="MedicationRequest.dosageInstruction" />
       <mustSupport value="true" />
     </element>
   </differential>
