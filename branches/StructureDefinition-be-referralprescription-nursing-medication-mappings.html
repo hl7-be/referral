@@ -92,16 +92,16 @@
 		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret"></b>
 		</a>
 		<ul class="dropdown-menu">
-			<li><a name="f7f9df36-b6ad-4618-a2f4-795c3bf34400">​</a>
+			<li><a name="d94d8f6a-bafa-4a09-946c-bd4a78441875">​</a>
 				<a href="howto.html">How to use this Publication</a>
 			</li>
-			<li><a name="a47106f1-d574-4e8d-893e-29b40014cbdf">​</a>
+			<li><a name="c6d75730-45c8-4242-a82e-69290ce99279">​</a>
 				<a href="standardsstatus.html">Standards Status</a>
 			</li>
-			<li><a name="5e5beb0f-925d-4fc2-8228-75c36f28ec62">​</a>
+			<li><a name="b5b8c034-0f9d-4123-8682-85139aec2636">​</a>
 				<a href="privacy.html">Privacy considerations</a>
 			</li>
-			<li><a name="343e99b4-0159-42bc-a9c7-36abd8cda594">​</a>
+			<li><a name="d2b3e972-23d5-419f-a522-1173ed018bbe">​</a>
 				<a href="security.html">Security considerations</a>
 			</li>
 			<li>
@@ -114,10 +114,10 @@
 		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Functional Description<b class="caret"></b>
 		</a>
 		<ul class="dropdown-menu">
-			<li><a name="5e15c2af-7156-44f0-b06c-b9beb443e948">​</a>
+			<li><a name="f448e1f5-d888-4dc2-aa87-45a225fd969b">​</a>
 				<a href="usecases.html">Use Cases</a>
 			</li>
-			<li><a name="da6ffad2-63e1-488e-a1f6-1de53c3ea7ee">​</a>
+			<li><a name="4f238f1e-4c12-4684-bafe-a6cc4fbf982d">​</a>
 				<a href="logical-models.html">Logical Models</a>
 			</li>
   <!-- <li>
@@ -139,7 +139,7 @@
 		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Terminology<b class="caret"></b>
 		</a>
 		<ul class="dropdown-menu">
-			<li><a name="2b57be25-111f-401c-bd85-2ec0d65013cf">​</a>
+			<li><a name="b523743b-527a-4eb8-b97f-1e3f91264c60">​</a>
 				<a href="terminology.html">Terminology Resources</a>
 			</li>
 		</ul>
@@ -164,10 +164,10 @@
 	<li class="dropdown">
 		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Implementation<b class="caret"></b></a>
 		<ul class="dropdown-menu">
-			<li><a name="8231a630-4e60-43d7-a2a8-0501cc73b81f">​</a><a href="testdata.html">Test Data<img src="external.png" style="text-align: baseline"/></a></li>
-			<li><a name="3ecb6831-ed81-459f-a221-4bb0d8b6a69a">​</a><a href="openapi.html" target="_blank">OpenAPI</a></li>
-			<li><a name="4b15dd0c-cdec-4b5b-9ce5-c4fa2b16b0b5">​</a><a href="testservers.html">Test Servers<img src="external.png" style="text-align: baseline"/></a></li>
-			<li><a name="9f39efb3-0f64-4584-b693-f7ab9f83d203">​</a><a href="downloads.html">Downloads</a></li>
+			<li><a name="c10bf4fb-ba1a-4676-892a-d5374e8037af">​</a><a href="testdata.html">Test Data<img src="external.png" style="text-align: baseline"/></a></li>
+			<li><a name="e08d6b8b-b9ab-43be-83b0-ca7478260aab">​</a><a href="openapi.html" target="_blank">OpenAPI</a></li>
+			<li><a name="de207b2b-99ac-4b94-9113-219948f87eae">​</a><a href="testservers.html">Test Servers<img src="external.png" style="text-align: baseline"/></a></li>
+			<li><a name="446b83d8-b354-45f2-8262-5da1f0b3b1b6">​</a><a href="downloads.html">Downloads</a></li>
 		</ul>
 	</li>
 </ul>      
@@ -234,6 +234,7 @@
  <tr><td colspan="3"><b>BeReferralPrescriptionNursingMedication</b></td></tr>
  <tr><td>MedicationRequest</td><td>Request</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>Request.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier (UHMEP)</td><td>Request.identifier</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>Request.status</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;statusReason</td><td>Request.statusReason</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;intent</td><td>Request.intent</td> </tr>
@@ -261,8 +262,14 @@
  <tr><td colspan="3"><b>BeReferralPrescriptionNursingMedication</b></td></tr>
  <tr><td>MedicationRequest</td><td>Message/Body/NewRx</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>Message/Header/PrescriberOrderNumber</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier (UHMEP)</td><td>Message/Header/PrescriberOrderNumber</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>no mapping</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>Message/Body/NewRx/MedicationPrescribed/Directionsor Message/Body/NewRx/MedicationPrescribed/StructuredSIG</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (NusingMedicationType)</td><td>Message/Body/NewRx/MedicationPrescribed/Directionsor Message/Body/NewRx/MedicationPrescribed/StructuredSIG</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (Injection)</td><td>Message/Body/NewRx/MedicationPrescribed/Directionsor Message/Body/NewRx/MedicationPrescribed/StructuredSIG</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (Perfusion)</td><td>Message/Body/NewRx/MedicationPrescribed/Directionsor Message/Body/NewRx/MedicationPrescribed/StructuredSIG</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (Percutaneous)</td><td>Message/Body/NewRx/MedicationPrescribed/Directionsor Message/Body/NewRx/MedicationPrescribed/StructuredSIG</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (Other)</td><td>Message/Body/NewRx/MedicationPrescribed/Directionsor Message/Body/NewRx/MedicationPrescribed/StructuredSIG</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;medication[x]</td><td>Message/Body/NewRx/MedicationPrescribedMedication.code.coding.code = Message/Body/NewRx/MedicationPrescribed/DrugCoded/ProductCodeMedication.code.coding.system = Message/Body/NewRx/MedicationPrescribed/DrugCoded/ProductCodeQualifierMedication.code.coding.display = Message/Body/NewRx/MedicationPrescribed/DrugDescription</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>Message/Body/NewRx/Patient(need detail to link to specific patient … Patient.Identification in SCRIPT)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>no mapping</td> </tr>
@@ -287,10 +294,24 @@
  <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>.id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier (UHMEP)</td><td>.id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>Role.code or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>Role.code or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>II.root or Role.id.root</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>Role.effectiveTime or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assigner</td><td>II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>.statusCode</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;statusReason</td><td>.inboundRelationship[typeCode=SUBJ].source[classCode=CACT, moodCode=EVN].reasonCOde</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;intent</td><td>.moodCode (nuances beyond PRP/PLAN/RQO would need to be elsewhere)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>.inboundRelationship[typeCode=COMP].source[classCode=OBS, moodCode=EVN, code="type of medication usage"].value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (NusingMedicationType)</td><td>.inboundRelationship[typeCode=COMP].source[classCode=OBS, moodCode=EVN, code="type of medication usage"].value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (Injection)</td><td>.inboundRelationship[typeCode=COMP].source[classCode=OBS, moodCode=EVN, code="type of medication usage"].value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (Perfusion)</td><td>.inboundRelationship[typeCode=COMP].source[classCode=OBS, moodCode=EVN, code="type of medication usage"].value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (Percutaneous)</td><td>.inboundRelationship[typeCode=COMP].source[classCode=OBS, moodCode=EVN, code="type of medication usage"].value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (Other)</td><td>.inboundRelationship[typeCode=COMP].source[classCode=OBS, moodCode=EVN, code="type of medication usage"].value</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;priority</td><td>.priorityCode</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;doNotPerform</td><td>SubstanceAdministration.actionNegationInd</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reported[x]</td><td>.participation[typeCode=INF].role</td> </tr>
@@ -363,9 +384,15 @@
  <tr><td colspan="3"><b>BeReferralPrescriptionNursingMedication</b></td></tr>
  <tr><td>MedicationRequest</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>FiveWs.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier (UHMEP)</td><td>FiveWs.identifier</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>FiveWs.status</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;intent</td><td>FiveWs.class</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>FiveWs.class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (NusingMedicationType)</td><td>FiveWs.class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (Injection)</td><td>FiveWs.class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (Perfusion)</td><td>FiveWs.class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (Percutaneous)</td><td>FiveWs.class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (Other)</td><td>FiveWs.class</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;priority</td><td>FiveWs.grade</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;medication[x]</td><td>FiveWs.what[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>FiveWs.subject[x], FiveWs.subject</td> </tr>
@@ -384,6 +411,13 @@
  <tr><td colspan="3"><b>BeReferralPrescriptionNursingMedication</b></td></tr>
  <tr><td>MedicationRequest</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>ORC-2-Placer Order Number / ORC-3-Filler Order Number</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier (UHMEP)</td><td>ORC-2-Placer Order Number / ORC-3-Filler Order Number</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>CX.5</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>CX.4 / EI-2-4</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>CX.1 / EI.1</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>CX.7 + CX.8</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assigner</td><td>CX.4 / (CX.4,CX.9,CX.10)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;medication[x]</td><td>RXE-2-Give Code / RXO-1-Requested Give Code / RXC-2-Component Code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>PID-3-Patient ID List</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>PV1-19-Visit Number</td> </tr>
@@ -451,7 +485,7 @@
     <div class="container">    <!-- container -->
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2019+ <a style="color: #81BEF7" href="http://hl7belgium.org">HL7 Belgium</a>.  Package hl7.country.fhir.ig#0.2.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 6, 2021 15:16+0000">2021-07-06</span>
+          IG &copy; 2019+ <a style="color: #81BEF7" href="http://hl7belgium.org">HL7 Belgium</a>.  Package hl7.country.fhir.ig#0.2.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 6, 2021 15:43+0000">2021-07-06</span>
           <br/>
           <span style="color: #FFFF77">
                       Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
