@@ -20,7 +20,8 @@
   <h4>Nursing medication</h4>
  <p>Take note the nursing referral prescription profile is based on the FHIR MedicationRequest resource. The other nursing profiles are based on the ServiceRequest resource.</p>
  <ul>
- <li>When the referral is for administration of eyedrops (or other ointments) in a post-operative context, the date of the operation SHALL always be given using .encounter and providing minimal encounter information. Also, which eye SHALL be defined using .dosageInstruction.site</li>
+  <li>It is expected the actual medication in the initial phase will be described as text using .medicationCodeableConcept.text. Going forward, it is expected more structured use of medication will be leveraged.</li>
+ <li>When the referral is for administration of eyedrops (or other ointments) in a post-operative context, the date of the operation SHALL always be given using .encounter and providing minimal encounter information. Also, which eye SHALL be defined using .dosageInstruction.site. Up to four different medications may be needed per eye, as such multiple referral SHALL be connected by using the .groupIdentifier</li>
  </ul>
  
   <a name="Specifics concerning the referral prescription for diagnostic imaging"> </a>
