@@ -56,6 +56,32 @@
         <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-inform-party" />
       </type>
     </element>
+    <element id="MedicationRequest.identifier">
+      <path value="MedicationRequest.identifier" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.identifier:UHMEP">
+      <path value="MedicationRequest.identifier" />
+      <sliceName value="UHMEP" />
+      <short value="Reference ID of the UHMEP once available there" />
+      <max value="1" />
+    </element>
+    <element id="MedicationRequest.identifier:UHMEP.system">
+      <path value="MedicationRequest.identifier.system" />
+      <min value="1" />
+      <fixedUri value="https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep" />
+    </element>
+    <element id="MedicationRequest.identifier:UHMEP.value">
+      <path value="MedicationRequest.identifier.value" />
+      <min value="1" />
+    </element>
     <element id="MedicationRequest.status">
       <path value="MedicationRequest.status" />
       <mustSupport value="true" />
@@ -66,12 +92,59 @@
     </element>
     <element id="MedicationRequest.category">
       <path value="MedicationRequest.category" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="coding.system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.category:NusingMedicationType">
+      <path value="MedicationRequest.category" />
+      <sliceName value="NusingMedicationType" />
       <min value="1" />
       <max value="1" />
-      <mustSupport value="true" />
       <binding>
         <strength value="required" />
         <valueSet value="https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-nursing-medication-category" />
+      </binding>
+    </element>
+    <element id="MedicationRequest.category:Injection">
+      <path value="MedicationRequest.category" />
+      <sliceName value="Injection" />
+      <max value="1" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-nursing-medication-injection" />
+      </binding>
+    </element>
+    <element id="MedicationRequest.category:Perfusion">
+      <path value="MedicationRequest.category" />
+      <sliceName value="Perfusion" />
+      <max value="1" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-nursing-medication-perfusion" />
+      </binding>
+    </element>
+    <element id="MedicationRequest.category:Percutaneous">
+      <path value="MedicationRequest.category" />
+      <sliceName value="Percutaneous" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-nursing-medication-percutaneous" />
+      </binding>
+    </element>
+    <element id="MedicationRequest.category:Other">
+      <path value="MedicationRequest.category" />
+      <sliceName value="Other" />
+      <max value="1" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-nursing-medication-other" />
       </binding>
     </element>
     <element id="MedicationRequest.medication[x]">
