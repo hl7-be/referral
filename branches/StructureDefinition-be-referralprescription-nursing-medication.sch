@@ -12,7 +12,11 @@
   <sch:pattern>
     <sch:title>f:MedicationRequest</sch:title>
     <sch:rule context="f:MedicationRequest">
+      <sch:assert test="count(f:category) &gt;= 1">category: minimum cardinality of 'category' is 1</sch:assert>
+      <sch:assert test="count(f:category) &lt;= 1">category: maximum cardinality of 'category' is 1</sch:assert>
       <sch:assert test="count(f:requester) &gt;= 1">requester: minimum cardinality of 'requester' is 1</sch:assert>
+      <sch:assert test="count(f:dosageInstruction) &gt;= 1">dosageInstruction: minimum cardinality of 'dosageInstruction' is 1</sch:assert>
+      <sch:assert test="count(f:dosageInstruction) &lt;= 1">dosageInstruction: maximum cardinality of 'dosageInstruction' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
