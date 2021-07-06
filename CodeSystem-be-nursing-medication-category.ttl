@@ -1,0 +1,152 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/CodeSystem/be-nursing-medication-category> a fhir:CodeSystem;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "be-nursing-medication-category"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This code system https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-category defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">injection<a name=\"be-nursing-medication-category-injection\"> </a></td><td>injection</td></tr><tr><td style=\"white-space:nowrap\">eyedrops<a name=\"be-nursing-medication-category-eyedrops\"> </a></td><td>eyedrops.</td></tr><tr><td style=\"white-space:nowrap\">oral<a name=\"be-nursing-medication-category-oral\"> </a></td><td>oral.</td></tr><tr><td style=\"white-space:nowrap\">perfusion<a name=\"be-nursing-medication-category-perfusion\"> </a></td><td>perfusion.</td></tr><tr><td style=\"white-space:nowrap\">percutaneous<a name=\"be-nursing-medication-category-percutaneous\"> </a></td><td>percutaneous.</td></tr><tr><td style=\"white-space:nowrap\">other<a name=\"be-nursing-medication-category-other\"> </a></td><td>other.</td></tr></table><p><b>Additional Language Displays</b></p><table class=\"codes\"><tr><td><b>Code</b></td><td><b>English (English, en)</b></td><td><b>French (fr)</b></td><td><b>Nederlands (Dutch, nl)</b></td></tr><tr><td>injection</td><td>Injection.</td><td>Injection.</td><td>Inspuiting.</td></tr><tr><td>eyedrops</td><td>Eyedrops.</td><td>Applic. gouttes ou pommade ophta phase post-op.</td><td>Aanbrengen oogdruppels of oogzalf postoperatieve.</td></tr><tr><td>oral</td><td>Oral medication.</td><td>Per os.</td><td>Orale medicatie.</td></tr><tr><td>perfusion</td><td>Perfusion.</td><td>Perfusion.</td><td>Perfusie.</td></tr><tr><td>percutaneous</td><td>Percutaneous.</td><td>Percutané.</td><td>Percutaan.</td></tr><tr><td>other</td><td>Other.</td><td>Autre.</td><td>Andere.</td></tr></table></div>"
+  ];
+  fhir:CodeSystem.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-category"];
+  fhir:CodeSystem.version [ fhir:value "0.2.0"];
+  fhir:CodeSystem.name [ fhir:value "BeNursingMedicationCategory"];
+  fhir:CodeSystem.title [ fhir:value "BeNursingMedicationCategory"];
+  fhir:CodeSystem.status [ fhir:value "draft"];
+  fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean];
+  fhir:CodeSystem.date [ fhir:value "2021-07-06T14:23:37+00:00"^^xsd:dateTime];
+  fhir:CodeSystem.publisher [ fhir:value "HL7 Belgium"];
+  fhir:CodeSystem.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7belgium.org" ]
+     ]
+  ];
+  fhir:CodeSystem.description [ fhir:value "Different types of nursing medication category."];
+  fhir:CodeSystem.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ];
+  fhir:CodeSystem.caseSensitive [ fhir:value "false"^^xsd:boolean];
+  fhir:CodeSystem.content [ fhir:value "complete"];
+  fhir:CodeSystem.concept [
+     fhir:index 0;
+     fhir:CodeSystem.concept.code [ fhir:value "injection" ];
+     fhir:CodeSystem.concept.display [ fhir:value "injection" ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Injection." ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Inspuiting." ]
+     ], [
+       fhir:index 2;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Injection." ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:CodeSystem.concept.code [ fhir:value "eyedrops" ];
+     fhir:CodeSystem.concept.display [ fhir:value "eyedrops." ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Eyedrops." ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Aanbrengen oogdruppels of oogzalf postoperatieve." ]
+     ], [
+       fhir:index 2;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Applic. gouttes ou pommade ophta phase post-op." ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:CodeSystem.concept.code [ fhir:value "oral" ];
+     fhir:CodeSystem.concept.display [ fhir:value "oral." ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Oral medication." ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Orale medicatie." ]
+     ], [
+       fhir:index 2;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Per os." ]
+     ]
+  ], [
+     fhir:index 3;
+     fhir:CodeSystem.concept.code [ fhir:value "perfusion" ];
+     fhir:CodeSystem.concept.display [ fhir:value "perfusion." ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Perfusion." ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Perfusie." ]
+     ], [
+       fhir:index 2;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Perfusion." ]
+     ]
+  ], [
+     fhir:index 4;
+     fhir:CodeSystem.concept.code [ fhir:value "percutaneous" ];
+     fhir:CodeSystem.concept.display [ fhir:value "percutaneous." ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Percutaneous." ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Percutaan." ]
+     ], [
+       fhir:index 2;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Percutané." ]
+     ]
+  ], [
+     fhir:index 5;
+     fhir:CodeSystem.concept.code [ fhir:value "other" ];
+     fhir:CodeSystem.concept.display [ fhir:value "other." ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Other." ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Andere." ]
+     ], [
+       fhir:index 2;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Autre." ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/CodeSystem/be-nursing-medication-category.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
