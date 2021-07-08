@@ -1,0 +1,92 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/CodeSystem/be-nursing-medication-perfusion> a fhir:CodeSystem;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "be-nursing-medication-perfusion"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This code system https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-perfusion defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">subcutaneous<a name=\"be-nursing-medication-perfusion-subcutaneous\"> </a></td><td>Subcutaneous</td></tr><tr><td style=\"white-space:nowrap\">intravenous<a name=\"be-nursing-medication-perfusion-intravenous\"> </a></td><td>Intravenous</td></tr><tr><td style=\"white-space:nowrap\">implantable-chamber<a name=\"be-nursing-medication-perfusion-implantable-chamber\"> </a></td><td>Implantable chamber</td></tr></table><p><b>Additional Language Displays</b></p><table class=\"codes\"><tr><td><b>Code</b></td><td><b>English (English, en)</b></td><td><b>French (fr)</b></td><td><b>Nederlands (Dutch, nl)</b></td></tr><tr><td>subcutaneous</td><td/><td/><td/></tr><tr><td>intravenous</td><td/><td/><td/></tr><tr><td>implantable-chamber</td><td/><td/><td/></tr></table></div>"
+  ];
+  fhir:CodeSystem.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-perfusion"];
+  fhir:CodeSystem.version [ fhir:value "0.2.0"];
+  fhir:CodeSystem.name [ fhir:value "BeNursingMedicationPerfusion"];
+  fhir:CodeSystem.title [ fhir:value "BeNursingMedicationPerfusion"];
+  fhir:CodeSystem.status [ fhir:value "draft"];
+  fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean];
+  fhir:CodeSystem.date [ fhir:value "2021-07-08T07:36:35+00:00"^^xsd:dateTime];
+  fhir:CodeSystem.publisher [ fhir:value "HL7 Belgium"];
+  fhir:CodeSystem.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7belgium.org" ]
+     ]
+  ];
+  fhir:CodeSystem.description [ fhir:value "Different types of nursing medication perfusion."];
+  fhir:CodeSystem.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ];
+  fhir:CodeSystem.caseSensitive [ fhir:value "false"^^xsd:boolean];
+  fhir:CodeSystem.content [ fhir:value "complete"];
+  fhir:CodeSystem.concept [
+     fhir:index 0;
+     fhir:CodeSystem.concept.code [ fhir:value "subcutaneous" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Subcutaneous" ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ]
+     ], [
+       fhir:index 2;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:CodeSystem.concept.code [ fhir:value "intravenous" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Intravenous" ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ]
+     ], [
+       fhir:index 2;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:CodeSystem.concept.code [ fhir:value "implantable-chamber" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Implantable chamber" ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ]
+     ], [
+       fhir:index 2;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://hl7.country.org/fhir/ig/CodeSystem/be-nursing-medication-perfusion.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
