@@ -99,53 +99,45 @@
         </discriminator>
         <rules value="open" />
       </slicing>
+      <short value="Type of medication usage - use one code that provide the best detail" />
       <min value="1" />
+      <max value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="MedicationRequest.category:NusingMedicationType">
+    <element id="MedicationRequest.category:NusingMedicationType-highLevelCode">
       <path value="MedicationRequest.category" />
-      <sliceName value="NusingMedicationType" />
-      <min value="1" />
+      <sliceName value="NusingMedicationType-highLevelCode" />
       <max value="1" />
       <binding>
         <strength value="required" />
         <valueSet value="https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-nursing-medication-category" />
       </binding>
     </element>
-    <element id="MedicationRequest.category:Injection">
+    <element id="MedicationRequest.category:InjectionSpecializationCodes">
       <path value="MedicationRequest.category" />
-      <sliceName value="Injection" />
+      <sliceName value="InjectionSpecializationCodes" />
       <max value="1" />
       <binding>
         <strength value="required" />
         <valueSet value="https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-nursing-medication-injection" />
       </binding>
     </element>
-    <element id="MedicationRequest.category:Perfusion">
+    <element id="MedicationRequest.category:PerfusionSpecializationCodes">
       <path value="MedicationRequest.category" />
-      <sliceName value="Perfusion" />
+      <sliceName value="PerfusionSpecializationCodes" />
       <max value="1" />
       <binding>
         <strength value="required" />
         <valueSet value="https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-nursing-medication-perfusion" />
       </binding>
     </element>
-    <element id="MedicationRequest.category:Percutaneous">
+    <element id="MedicationRequest.category:PercutaneousSpecializationCodes">
       <path value="MedicationRequest.category" />
-      <sliceName value="Percutaneous" />
+      <sliceName value="PercutaneousSpecializationCodes" />
       <max value="1" />
       <binding>
         <strength value="required" />
         <valueSet value="https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-nursing-medication-percutaneous" />
-      </binding>
-    </element>
-    <element id="MedicationRequest.category:Other">
-      <path value="MedicationRequest.category" />
-      <sliceName value="Other" />
-      <max value="1" />
-      <binding>
-        <strength value="required" />
-        <valueSet value="https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-nursing-medication-other" />
       </binding>
     </element>
     <element id="MedicationRequest.medication[x]">
