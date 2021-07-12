@@ -12,7 +12,7 @@
   <title value="HL7 BE Referral Prescription WG Implementation Guide (work in progress)"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <date value="2021-07-12T12:34:30+00:00"/>
+  <date value="2021-07-12T13:54:48+00:00"/>
   <publisher value="HL7 Belgium"/>
   <contact>
     <telecom>
@@ -433,6 +433,15 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-referralprescription-nursing-other"/>
+      </reference>
+      <description value="The nursing profile specialized for other care. Use the .note element to provide any extra information."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -459,6 +468,16 @@
         <reference value="ValueSet/be-vs-nursing-medication-category"/>
       </reference>
       <description value="Codes to define a type of nursing medication category."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/be-cs-nursing-code-other"/>
+      </reference>
+      <name value="BeNursingCodeOther"/>
+      <description value="Nursing codes in Belgium. To define details in nursing activities for the other category. Initially defined as supporting CodeSystem for the referral prescription."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -608,6 +627,15 @@
         <reference value="ValueSet/be-vs-reason-referral-status"/>
       </reference>
       <description value="Codes to explain the current status of a referral prescription."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-type-of-other-nursing"/>
+      </reference>
+      <description value="Codes to define a type of other nursing category."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
