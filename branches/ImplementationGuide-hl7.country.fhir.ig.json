@@ -11,7 +11,7 @@
   "title": "HL7 BE Referral Prescription WG Implementation Guide (work in progress)",
   "status": "draft",
   "experimental": false,
-  "date": "2021-07-12T12:34:30+00:00",
+  "date": "2021-07-12T13:54:48+00:00",
   "publisher": "HL7 Belgium",
   "contact": [
     {
@@ -630,6 +630,18 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/be-referralprescription-nursing-other"
+        },
+        "description": "The nursing profile specialized for other care. Use the .note element to provide any extra information."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString": "StructureDefinition:extension"
           }
         ],
@@ -663,6 +675,19 @@
           "reference": "ValueSet/be-vs-nursing-medication-category"
         },
         "description": "Codes to define a type of nursing medication category."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "CodeSystem"
+          }
+        ],
+        "reference": {
+          "reference": "CodeSystem/be-cs-nursing-code-other"
+        },
+        "name": "BeNursingCodeOther",
+        "description": "Nursing codes in Belgium. To define details in nursing activities for the other category. Initially defined as supporting CodeSystem for the referral prescription."
       },
       {
         "extension": [
@@ -860,6 +885,18 @@
           "reference": "ValueSet/be-vs-reason-referral-status"
         },
         "description": "Codes to explain the current status of a referral prescription."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/be-vs-type-of-other-nursing"
+        },
+        "description": "Codes to define a type of other nursing category."
       },
       {
         "extension": [
