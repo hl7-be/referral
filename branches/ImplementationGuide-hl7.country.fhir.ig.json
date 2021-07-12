@@ -11,7 +11,7 @@
   "title": "HL7 BE Referral Prescription WG Implementation Guide (work in progress)",
   "status": "draft",
   "experimental": false,
-  "date": "2021-07-12T14:00:14+00:00",
+  "date": "2021-07-12T14:16:25+00:00",
   "publisher": "HL7 Belgium",
   "contact": [
     {
@@ -499,6 +499,18 @@
           }
         ],
         "reference": {
+          "reference": "StructureDefinition/be-referralprescription-nursing-non-reimbursable"
+        },
+        "description": "The nursing profile specialized for non reimbursable care. Use the .note element to provide any extra information."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
           "reference": "StructureDefinition/be-referralprescription-nursing"
         },
         "description": "The nursing profile, generic version. Please note the nursing referral for medication does NOT depend on this generic version but is a FHIR prodfile on a different FHIR resource (MedicationRequest)"
@@ -857,6 +869,19 @@
           }
         ],
         "reference": {
+          "reference": "CodeSystem/be-cs-nursing-code-non-reimbursable"
+        },
+        "name": "BeNursingCodeNonReimbursable",
+        "description": "Nursing codes in Belgium. To define details in nursing activities for the non reimbursable category. Initially defined as supporting CodeSystem for the referral prescription."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "CodeSystem"
+          }
+        ],
+        "reference": {
           "reference": "CodeSystem/be-communication-code"
         },
         "name": "BeCommunicationCode",
@@ -948,6 +973,18 @@
         },
         "name": "BeNursingMedicationInjection",
         "description": "Different types of nursing medication injection."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/be-vs-type-of-non-reimbursable-nursing"
+        },
+        "description": "Codes to define a type of non reimbursable nursing category."
       },
       {
         "extension": [

@@ -12,7 +12,7 @@
   <title value="HL7 BE Referral Prescription WG Implementation Guide (work in progress)"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <date value="2021-07-12T14:00:14+00:00"/>
+  <date value="2021-07-12T14:16:25+00:00"/>
   <publisher value="HL7 Belgium"/>
   <contact>
     <telecom>
@@ -334,6 +334,15 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/be-referralprescription-nursing-non-reimbursable"/>
+      </reference>
+      <description value="The nursing profile specialized for non reimbursable care. Use the .note element to provide any extra information."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/be-referralprescription-nursing"/>
       </reference>
       <description value="The nursing profile, generic version. Please note the nursing referral for medication does NOT depend on this generic version but is a FHIR prodfile on a different FHIR resource (MedicationRequest)"/>
@@ -605,6 +614,16 @@
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
+        <reference value="CodeSystem/be-cs-nursing-code-non-reimbursable"/>
+      </reference>
+      <name value="BeNursingCodeNonReimbursable"/>
+      <description value="Nursing codes in Belgium. To define details in nursing activities for the non reimbursable category. Initially defined as supporting CodeSystem for the referral prescription."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
         <reference value="CodeSystem/be-communication-code"/>
       </reference>
       <name value="BeCommunicationCode"/>
@@ -675,6 +694,15 @@
       </reference>
       <name value="BeNursingMedicationInjection"/>
       <description value="Different types of nursing medication injection."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-type-of-non-reimbursable-nursing"/>
+      </reference>
+      <description value="Codes to define a type of non reimbursable nursing category."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
