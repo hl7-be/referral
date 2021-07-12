@@ -11,7 +11,7 @@
   "title": "HL7 BE Referral Prescription WG Implementation Guide (work in progress)",
   "status": "draft",
   "experimental": false,
-  "date": "2021-07-12T14:44:10+00:00",
+  "date": "2021-07-12T15:52:40+00:00",
   "publisher": "HL7 Belgium",
   "contact": [
     {
@@ -572,6 +572,18 @@
           }
         ],
         "reference": {
+          "reference": "StructureDefinition/be-referralprescription-nursing-annex81"
+        },
+        "description": "The nursing profile specialized for preparation of medication. Use the .note element to provide any extra information."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
           "reference": "StructureDefinition/be-referralprescription"
         },
         "description": "The common structure for referral prescription."
@@ -587,6 +599,18 @@
           "reference": "StructureDefinition/be-referralprescription-nursing-medication"
         },
         "description": "The nursing profile specialized for medication. Note this profile is based on the FHIR resource MedicationRequest.\r\nDosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements)"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/be-referralprescription-nursing-diabetic"
+        },
+        "description": "The nursing profile specialized for diabetic services. Use the .note element to provide any extra information."
       },
       {
         "extension": [
@@ -674,6 +698,18 @@
         },
         "name": "BeUrgentCommunication",
         "description": "When there is a need to urgently communicate results of an order."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/be-referralprescription-nursing-woundcare"
+        },
+        "description": "The nursing profile specialized for wound care. Use the .note element to provide any extra information."
       },
       {
         "extension": [

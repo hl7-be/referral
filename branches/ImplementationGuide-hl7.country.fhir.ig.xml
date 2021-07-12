@@ -12,7 +12,7 @@
   <title value="HL7 BE Referral Prescription WG Implementation Guide (work in progress)"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <date value="2021-07-12T14:44:10+00:00"/>
+  <date value="2021-07-12T15:52:40+00:00"/>
   <publisher value="HL7 Belgium"/>
   <contact>
     <telecom>
@@ -389,6 +389,15 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/be-referralprescription-nursing-annex81"/>
+      </reference>
+      <description value="The nursing profile specialized for preparation of medication. Use the .note element to provide any extra information."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/be-referralprescription"/>
       </reference>
       <description value="The common structure for referral prescription."/>
@@ -401,6 +410,15 @@
         <reference value="StructureDefinition/be-referralprescription-nursing-medication"/>
       </reference>
       <description value="The nursing profile specialized for medication. Note this profile is based on the FHIR resource MedicationRequest.&#xD;&#xA;Dosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements)"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-referralprescription-nursing-diabetic"/>
+      </reference>
+      <description value="The nursing profile specialized for diabetic services. Use the .note element to provide any extra information."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -467,6 +485,15 @@
       </reference>
       <name value="BeUrgentCommunication"/>
       <description value="When there is a need to urgently communicate results of an order."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-referralprescription-nursing-woundcare"/>
+      </reference>
+      <description value="The nursing profile specialized for wound care. Use the .note element to provide any extra information."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
