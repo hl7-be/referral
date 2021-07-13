@@ -18,7 +18,7 @@
   fhir:ImplementationGuide.title [ fhir:value "HL7 BE Referral Prescription WG Implementation Guide (work in progress)"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
   fhir:ImplementationGuide.experimental [ fhir:value "false"^^xsd:boolean];
-  fhir:ImplementationGuide.date [ fhir:value "2021-07-12T15:52:40+00:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2021-07-13T12:31:44+00:00"^^xsd:dateTime];
   fhir:ImplementationGuide.publisher [ fhir:value "HL7 Belgium"];
   fhir:ImplementationGuide.contact [
      fhir:index 0;
@@ -50,7 +50,7 @@
        fhir:link <https://www.ehealth.fgov.be/standards/fhir>
      ];
      fhir:ImplementationGuide.dependsOn.packageId [ fhir:value "ehealthplatform.be.r4.federalprofiles" ];
-     fhir:ImplementationGuide.dependsOn.version [ fhir:value "1.2.2" ]
+     fhir:ImplementationGuide.dependsOn.version [ fhir:value "1.2.x" ]
   ];
   fhir:ImplementationGuide.definition [
      fhir:Element.extension [
@@ -291,78 +291,6 @@
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "StructureDefinition:logical" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.country.org/fhir/ig/StructureDefinition/be-model-referralprescription>;
-         fhir:Reference.reference [ fhir:value "StructureDefinition/be-model-referralprescription" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.fhirVersion [
-         fhir:value "4.0.1";
-         fhir:index 0
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Logical Model Referral Prescription" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "The common logical model for the referral prescription" ];
-       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "rp" ]
-     ], [
-       fhir:index 1;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "StructureDefinition:logical" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.country.org/fhir/ig/StructureDefinition/be-model-diagnosticimagingprescription>;
-         fhir:Reference.reference [ fhir:value "StructureDefinition/be-model-diagnosticimagingprescription" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.fhirVersion [
-         fhir:value "4.0.1";
-         fhir:index 0
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Logical Model Diagnostic Imaging Prescription" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "The logical model for the diagnostic imaging prescription" ];
-       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "rp" ]
-     ], [
-       fhir:index 2;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "StructureDefinition:logical" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.country.org/fhir/ig/StructureDefinition/be-model-physiotherapyprescription>;
-         fhir:Reference.reference [ fhir:value "StructureDefinition/be-model-physiotherapyprescription" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.fhirVersion [
-         fhir:value "4.0.1";
-         fhir:index 0
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Logical Model Physiotherapy Prescription" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "The logical model for the physiotherapy prescription" ];
-       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "rp" ]
-     ], [
-       fhir:index 3;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "StructureDefinition:logical" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://hl7.country.org/fhir/ig/StructureDefinition/be-model-nursingprescription>;
-         fhir:Reference.reference [ fhir:value "StructureDefinition/be-model-nursingprescription" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.fhirVersion [
-         fhir:value "4.0.1";
-         fhir:index 0
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Logical Model Nursing Prescription" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "The logical model for the nursing prescription" ];
-       fhir:ImplementationGuide.definition.resource.groupingId [ fhir:value "rp" ]
-     ], [
-       fhir:index 4;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "ServiceRequest" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
@@ -370,7 +298,7 @@
          fhir:Reference.reference [ fhir:value "ServiceRequest/nursing-compression-therapy-example" ]
        ]
      ], [
-       fhir:index 5;
+       fhir:index 1;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -381,7 +309,7 @@
          fhir:Reference.reference [ fhir:value "ServiceRequest/laboratory-order-example1" ]
        ]
      ], [
-       fhir:index 6;
+       fhir:index 2;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -392,7 +320,7 @@
          fhir:Reference.reference [ fhir:value "ServiceRequest/diagnostic-imaging-basic-example-concreteWithDetails" ]
        ]
      ], [
-       fhir:index 7;
+       fhir:index 3;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -403,7 +331,7 @@
          fhir:Reference.reference [ fhir:value "ServiceRequest/diagnostic-imaging-basic-example-concreteWithText" ]
        ]
      ], [
-       fhir:index 8;
+       fhir:index 4;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -414,7 +342,7 @@
          fhir:Reference.reference [ fhir:value "Practitioner/practitioner1" ]
        ]
      ], [
-       fhir:index 9;
+       fhir:index 5;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -425,7 +353,7 @@
          fhir:Reference.reference [ fhir:value "ServiceRequest/diagnostic-imaging-basic-example-everything-contained" ]
        ]
      ], [
-       fhir:index 10;
+       fhir:index 6;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -436,7 +364,7 @@
          fhir:Reference.reference [ fhir:value "Patient/patient1" ]
        ]
      ], [
-       fhir:index 11;
+       fhir:index 7;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -447,7 +375,7 @@
          fhir:Reference.reference [ fhir:value "CarePlan/gpvisit" ]
        ]
      ], [
-       fhir:index 12;
+       fhir:index 8;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -458,7 +386,7 @@
          fhir:Reference.reference [ fhir:value "Condition/condition1" ]
        ]
      ], [
-       fhir:index 13;
+       fhir:index 9;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -469,7 +397,18 @@
          fhir:Reference.reference [ fhir:value "ServiceRequest/diagnostic-imaging-basic-example-useOfModality" ]
        ]
      ], [
-       fhir:index 14;
+       fhir:index 10;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:logical" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.country.org/fhir/ig/StructureDefinition/be-model-physiotherapyprescription>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/be-model-physiotherapyprescription" ]
+       ]
+     ], [
+       fhir:index 11;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -480,6 +419,41 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/be-model-laboratoryprescription" ]
        ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Logical model describing the model for the prescription laboratory. This draft is used in the HL7 Belgian workgroup for laboratory." ]
+     ], [
+       fhir:index 12;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:logical" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.country.org/fhir/ig/StructureDefinition/be-model-nursingprescription>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/be-model-nursingprescription" ]
+       ]
+     ], [
+       fhir:index 13;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:logical" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.country.org/fhir/ig/StructureDefinition/be-model-referralprescription>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/be-model-referralprescription" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Logical model describing the model for the prescription referral. This draft is used in the HL7 Belgian workgroup for referral." ]
+     ], [
+       fhir:index 14;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:logical" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://hl7.country.org/fhir/ig/StructureDefinition/be-model-diagnosticimagingprescription>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/be-model-diagnosticimagingprescription" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Logical model describing the model for the diagnostic imaging prescription. This draft is used in the HL7 Belgian workgroup for referral." ]
      ], [
        fhir:index 15;
        fhir:Element.extension [
