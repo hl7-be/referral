@@ -11,7 +11,7 @@
   "title": "HL7 BE Referral Prescription WG Implementation Guide (work in progress)",
   "status": "draft",
   "experimental": false,
-  "date": "2021-07-12T15:52:40+00:00",
+  "date": "2021-07-13T12:31:44+00:00",
   "publisher": "HL7 Belgium",
   "contact": [
     {
@@ -43,7 +43,7 @@
     {
       "uri": "https://www.ehealth.fgov.be/standards/fhir",
       "packageId": "ehealthplatform.be.r4.federalprofiles",
-      "version": "1.2.2"
+      "version": "1.2.x"
     }
   ],
   "definition": {
@@ -305,74 +305,6 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "StructureDefinition:logical"
-          }
-        ],
-        "reference": {
-          "reference": "StructureDefinition/be-model-referralprescription"
-        },
-        "fhirVersion": [
-          "4.0.1"
-        ],
-        "name": "Logical Model Referral Prescription",
-        "description": "The common logical model for the referral prescription",
-        "groupingId": "rp"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "StructureDefinition:logical"
-          }
-        ],
-        "reference": {
-          "reference": "StructureDefinition/be-model-diagnosticimagingprescription"
-        },
-        "fhirVersion": [
-          "4.0.1"
-        ],
-        "name": "Logical Model Diagnostic Imaging Prescription",
-        "description": "The logical model for the diagnostic imaging prescription",
-        "groupingId": "rp"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "StructureDefinition:logical"
-          }
-        ],
-        "reference": {
-          "reference": "StructureDefinition/be-model-physiotherapyprescription"
-        },
-        "fhirVersion": [
-          "4.0.1"
-        ],
-        "name": "Logical Model Physiotherapy Prescription",
-        "description": "The logical model for the physiotherapy prescription",
-        "groupingId": "rp"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "StructureDefinition:logical"
-          }
-        ],
-        "reference": {
-          "reference": "StructureDefinition/be-model-nursingprescription"
-        },
-        "fhirVersion": [
-          "4.0.1"
-        ],
-        "name": "Logical Model Nursing Prescription",
-        "description": "The logical model for the nursing prescription",
-        "groupingId": "rp"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString": "ServiceRequest"
           }
         ],
@@ -487,9 +419,55 @@
           }
         ],
         "reference": {
+          "reference": "StructureDefinition/be-model-physiotherapyprescription"
+        }
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:logical"
+          }
+        ],
+        "reference": {
           "reference": "StructureDefinition/be-model-laboratoryprescription"
         },
         "description": "Logical model describing the model for the prescription laboratory. This draft is used in the HL7 Belgian workgroup for laboratory."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:logical"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/be-model-nursingprescription"
+        }
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:logical"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/be-model-referralprescription"
+        },
+        "description": "Logical model describing the model for the prescription referral. This draft is used in the HL7 Belgian workgroup for referral."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:logical"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/be-model-diagnosticimagingprescription"
+        },
+        "description": "Logical model describing the model for the diagnostic imaging prescription. This draft is used in the HL7 Belgian workgroup for referral."
       },
       {
         "extension": [
