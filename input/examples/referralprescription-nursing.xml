@@ -2,31 +2,22 @@
 <ServiceRequest xmlns="http://hl7.org/fhir">
 	<id value="nursing-compression-therapy-example"/>
 	<meta>
-		<profile
-			value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-compressiontherapy" />
+		<profile	value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-compressiontherapy" />
 	</meta>
 	<text>
 		<status value="generated" />
-		<div xmlns="http://www.w3.org/1999/xhtml">A human readable form of the request (in HTML) SHALL be
-			provided here to enable systems that cannot process all structured
-			data, to at least present the information to the interactive user.
-			More information on https://www.hl7.org/fhir/R4/narrative.html
-		</div>
+		<div xmlns="http://www.w3.org/1999/xhtml">A human readable form of the request (in HTML) SHALL be	provided here to enable systems that cannot process all structured	data, to at least present the information to the interactive user.	More information on https://www.hl7.org/fhir/R4/narrative.html</div>
 	</text>
-	<!-- In this example some referenced resources are placed here in <contained> tags to be fully 'contained' 
-		within the serviceRequest, depending on the final architectural approach 
-		- this may have to be revisited -->
+	<!-- In this example some referenced resources are placed here in <contained> tags to be fully 'contained' 	within the serviceRequest, depending on the final architectural approach 	- this may have to be revisited -->
 	<contained>
 		<Patient xmlns="http://hl7.org/fhir">
 			<id value="Patient1" />
 			<meta>
-				<profile
-					value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient" />
+				<profile	value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient" />
 			</meta>
 			<identifier>
 				<use value="official" />
-				<system
-					value="https://www.ehealth.fgov.be/standards/fhir/NamingSystem/ssin" />
+				<system	value="https://www.ehealth.fgov.be/standards/fhir/NamingSystem/ssin" />
 				<value value="9999999999" />
 			</identifier>
 			<name>
@@ -40,14 +31,12 @@
 	<contained>
 		<Practitioner xmlns="http://hl7.org/fhir">
 			<id value="Requester1" />
-				<meta>
-				<profile
-					value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner" />
+			<meta>
+				<profile	value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner" />
 			</meta>
 			<identifier>
 				<use value="official" />
-				<system
-					value="https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi" />
+				<system	value="https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi" />
 				<value value="8888888888" />
 			</identifier>
 			<name>
@@ -61,13 +50,11 @@
 		<Practitioner xmlns="http://hl7.org/fhir">
 			<id value="Performer1" />
 			<meta>
-				<profile
-					value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner" />
+				<profile	value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner" />
 			</meta>
 			<identifier>
 				<use value="official" />
-				<system
-					value="https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi" />
+				<system	value="https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi" />
 				<value value="9876543210" />
 			</identifier>
 			<name>
@@ -77,40 +64,34 @@
 			</name>
 		</Practitioner>
 	</contained>
-	
-	<extension
-		url="http://hl7.org/fhir/StructureDefinition/request-statusReason">
+	<extension	url="http://hl7.org/fhir/StructureDefinition/request-statusReason">
 		<valueCodeableConcept>
 			<coding>
-				<system
-					value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason" />
+				<system	value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason" />
 				<code value="created" />
 				<display value="Created" />
 			</coding>
 		</valueCodeableConcept>
 	</extension>
-	
 	<status value="active" />
 	<intent value="order" />
 	<category>
 		<coding>
-	<system value="http://snomed.info/sct" />
+			<system value="http://snomed.info/sct" />
 			<code value="9632001" />
-			
 		</coding>
 		<text value="Nursing procedure" />
 	</category>
-
 	<priority value="routine" />
 	<code>
 		<coding>
-	<system value="	https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code" />
+			<system value="	https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code" />
 			<code value="compression-therapy" />
 		</coding>
 	</code>
 	<orderDetail>
 		<coding>
-	<system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code-compressiontherapy" />
+			<system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code-compressiontherapy" />
 			<code value="compression-bandage(s)-short-strech" />
 		</coding>
 	</orderDetail>
@@ -130,12 +111,12 @@
 	<performer>
 		<reference value="#Performer1" />
 	</performer>
-	  <bodySite> 
-    <coding> 
-      <system value="http://snomed.info/sct"/> 
-      <code value="82169009"/> 
-      <display value="Left knee"/> 
-    </coding> 
-    <text value="Left knee"/> 
-  </bodySite>
+	<bodySite>
+		<coding>
+			<system value="http://snomed.info/sct"/>
+			<code value="82169009"/>
+			<display value="Left knee"/>
+		</coding>
+		<text value="Left knee"/>
+	</bodySite>
 </ServiceRequest>
