@@ -12,7 +12,7 @@
   <title value="HL7 BE Referral Prescription WG Implementation Guide (work in progress)"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <date value="2021-07-13T13:40:44+00:00"/>
+  <date value="2021-07-13T14:29:12+00:00"/>
   <publisher value="HL7 Belgium"/>
   <contact>
     <telecom>
@@ -357,6 +357,15 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/be-referralprescription-nursing-chronical-psychiatric-patient"/>
+      </reference>
+      <description value="The nursing profile specialized for preparation and administration of medication to chronical pshychiatric patient. Use the .note element to provide any extra information. The prescriber SHALL give a start and end date &amp; SHALL give a frequency, these informations live in the .occurrence element."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/be-referralprescription-nursing-bladder-care"/>
       </reference>
       <description value="The nursing profile specialized for bladder care. Actual bladder care information lives in the .orderDetail element. If needed to give a quantity (mandatory if bladder instillation): the .quantity element shall be used. If needed to express the product and time to leave the product (mandatory if bladder instillation): please explain in the .note element."/>
@@ -433,15 +442,6 @@
       </reference>
       <name value="BeContrastFluidUse"/>
       <description value="Whether the use of contrast fluid in diagnostic imaging can be defined as &#39;If necessary&#39; or &#39;Not permitted.&#39;"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/be-referralprescription-nursing-chronical-psychiatric-patient"/>
-      </reference>
-      <description value="The nursing profile specialized for preparation and administration of medication to chronical pshychiatric patient. Use the .note element to provide any extra information."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">

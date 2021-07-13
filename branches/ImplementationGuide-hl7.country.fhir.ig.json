@@ -11,7 +11,7 @@
   "title": "HL7 BE Referral Prescription WG Implementation Guide (work in progress)",
   "status": "draft",
   "experimental": false,
-  "date": "2021-07-13T13:40:44+00:00",
+  "date": "2021-07-13T14:29:12+00:00",
   "publisher": "HL7 Belgium",
   "contact": [
     {
@@ -526,6 +526,18 @@
           }
         ],
         "reference": {
+          "reference": "StructureDefinition/be-referralprescription-nursing-chronical-psychiatric-patient"
+        },
+        "description": "The nursing profile specialized for preparation and administration of medication to chronical pshychiatric patient. Use the .note element to provide any extra information. The prescriber SHALL give a start and end date & SHALL give a frequency, these informations live in the .occurrence element."
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
           "reference": "StructureDefinition/be-referralprescription-nursing-bladder-care"
         },
         "description": "The nursing profile specialized for bladder care. Actual bladder care information lives in the .orderDetail element. If needed to give a quantity (mandatory if bladder instillation): the .quantity element shall be used. If needed to express the product and time to leave the product (mandatory if bladder instillation): please explain in the .note element."
@@ -626,18 +638,6 @@
         },
         "name": "BeContrastFluidUse",
         "description": "Whether the use of contrast fluid in diagnostic imaging can be defined as 'If necessary' or 'Not permitted.'"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "StructureDefinition:resource"
-          }
-        ],
-        "reference": {
-          "reference": "StructureDefinition/be-referralprescription-nursing-chronical-psychiatric-patient"
-        },
-        "description": "The nursing profile specialized for preparation and administration of medication to chronical pshychiatric patient. Use the .note element to provide any extra information."
       },
       {
         "extension": [
