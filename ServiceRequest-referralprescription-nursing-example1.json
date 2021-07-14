@@ -3,12 +3,12 @@
   "id": "referralprescription-nursing-example1",
   "meta": {
     "profile": [
-      "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-compressiontherapy"
+      "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-digestive-system-care"
     ]
   },
   "text": {
     "status": "extensions",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>Reason for current status</b>: <span title=\"Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason created}\">Created</span></p><p><b>status</b>: active</p><p><b>intent</b>: order</p><p><b>category</b>: <span title=\"Codes: {http://snomed.info/sct 9632001}\">Nursing procedure</span></p><p><b>priority</b>: routine</p><p><b>code</b>: <span title=\"Codes: { https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code digestive-system-care}\">digestive-system-care</span></p><p><b>orderDetail</b>: <span title=\"Codes: { https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-digestive-system-care enteral-feeding-stomach-probe}\">enteral-feeding-stomach-probe</span>, <span title=\"Codes: { https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-digestive-system-care clyster}\">clyster</span></p><p><b>subject</b>: <a href=\"https://simplifier.net/resolve?scope=ehealthplatform.be.r4.federalprofiles@1.2.2&amp;canonical=https://www.ehealth.fgov.be/standards/fhir/Patient/Patient1\">Patient/Patient1</a></p><p><b>requester</b>: <a href=\"https://simplifier.net/resolve?scope=ehealthplatform.be.r4.federalprofiles@1.2.2&amp;canonical=https://www.ehealth.fgov.be/standards/fhir/Practitioner/Practitioner1\">Practitioner/Practitioner1</a></p><p><b>performerType</b>: <span title=\"Codes: {http://snomed.info/sct 106292003}\">Nurse</span></p><p><b>performer</b>: <a href=\"https://simplifier.net/resolve?scope=ehealthplatform.be.r4.federalprofiles@1.2.2&amp;canonical=https://www.ehealth.fgov.be/standards/fhir/Practitioner/Practitioner2\">Practitioner/Practitioner2</a></p><p><b>note</b>: Apply5 mg milozilan subcutaan</p></div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>Reason for current status</b>: <span title=\"Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason created}\">Created</span></p><p><b>status</b>: active</p><p><b>intent</b>: order</p><p><b>category</b>: <span title=\"Codes: {http://snomed.info/sct 9632001}\">Nursing procedure</span></p><p><b>priority</b>: routine</p><p><b>code</b>: <span title=\"Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code digestive-system-care}\">Digestive system care</span></p><p><b>orderDetail</b>: <span title=\"Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-digestive-system-care enteral-feeding-stomach-probe}\">Enteral feeding stomach probe</span></p><p><b>subject</b>: <a href=\"Patient-patient1.html\">Generated Summary: id: 9999999999 (OFFICIAL); Jane Doe ; gender: female; birthDate: 1956-05-27</a></p><p></p><p><b style=\"color: maroon\">Exception generating Narrative: Invalid date/time format: \"20210708\": Expected character '-' at index 4 but found 0</b></p></div>"
   },
   "extension": [
     {
@@ -41,7 +41,7 @@
   "code": {
     "coding": [
       {
-        "system": " https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code",
+        "system": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code",
         "code": "digestive-system-care"
       }
     ]
@@ -50,25 +50,28 @@
     {
       "coding": [
         {
-          "system": " https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-digestive-system-care",
+          "system": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-digestive-system-care",
           "code": "enteral-feeding-stomach-probe"
-        }
-      ]
-    },
-    {
-      "coding": [
-        {
-          "system": " https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-digestive-system-care",
-          "code": "clyster"
         }
       ]
     }
   ],
   "subject": {
-    "reference": "Patient/Patient1"
+    "reference": "Patient/patient1"
+  },
+  "occurrenceTiming": {
+    "repeat": {
+      "boundsPeriod": {
+        "start": "20210708",
+        "end": "20220707"
+      },
+      "frequency": 2,
+      "period": 1,
+      "periodUnit": "d"
+    }
   },
   "requester": {
-    "reference": "Practitioner/Practitioner1"
+    "reference": "Practitioner/practitioner1"
   },
   "performerType": {
     "coding": [
@@ -81,12 +84,12 @@
   },
   "performer": [
     {
-      "reference": "Practitioner/Practitioner2"
+      "reference": "Practitioner/practitioner2"
     }
   ],
   "note": [
     {
-      "text": "Apply5 mg milozilan subcutaan"
+      "text": "Patient cannot move"
     }
   ]
 }
