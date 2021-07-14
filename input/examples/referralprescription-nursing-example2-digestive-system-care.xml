@@ -35,15 +35,25 @@
 			<code value="enteral-feeding-stomach-probe"/>
 		</coding>
 	</orderDetail>
-	<orderDetail>
-		<coding>
-			<system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-digestive-system-care"/>
-			<code value="clyster"/>
-		</coding>
-	</orderDetail>
 	<subject>
 		<reference value="Patient/patient1"/>
 	</subject>
+<occurrenceTiming>
+<repeat>
+<boundsPeriod>
+<start value="20210708"></start>
+<end value="20220707"></end>
+</boundsPeriod>
+
+
+<frequency value="2"></frequency>
+<period value="1"></period>
+<periodUnit value="d"></periodUnit>
+
+</repeat>
+
+
+</occurrenceTiming>
 	<requester>
 		<reference value="Practitioner/practitioner1"/>
 	</requester>
@@ -58,6 +68,6 @@
 		<reference value="Practitioner/practitioner2"/>
 	</performer>
 	<note>
-		<text value="Apply5 mg milozilan subcutaan"/>
+		<text value="Patient cannot move"/>
 	</note>
 </ServiceRequest>
