@@ -1,9 +1,9 @@
 ﻿AffiliateIG : Validation Results
 =========================================
 
-err = 201, warn = 62, info = 4
+err = 199, warn = 61, info = 3
 IG Publisher Version: 1.1.76
-Generated Wed Jul 14 14:34:43 UTC 2021. FHIR version 4.0.1 for hl7.country.fhir.ig#0.2.0 (canonical = http://hl7.country.org/fhir/ig)
+Generated Wed Jul 14 14:44:28 UTC 2021. FHIR version 4.0.1 for hl7.country.fhir.ig#0.2.0 (canonical = http://hl7.country.org/fhir/ig)
 
  Build Errors : 4414 / 17 / 0
  /github/workspace/input/examples/CareplanNursingProbes : 3 / 0 / 2
@@ -18,7 +18,7 @@ Generated Wed Jul 14 14:34:43 UTC 2021. FHIR version 4.0.1 for hl7.country.fhir.
  /github/workspace/input/examples/referralprescription-medicalimagingdiagnostic-imaging-basic-example-everything-contained : 0 / 0 / 8
  /github/workspace/input/examples/referralprescription-nursing : 3 / 0 / 9
  /github/workspace/input/examples/referralprescription-nursing-example2-digestive-system-care : 0 / 0 / 2
- /github/workspace/input/examples/referralprescription-nursing-example3-compression-therapy : 2 / 1 / 2
+ /github/workspace/input/examples/referralprescription-nursing-example3-compression-therapy : 0 / 0 / 2
  /github/workspace/input/ig : 0 / 0 / 1
  /github/workspace/input/models/structuredefinition-be-model-diagnosticimagingprescription : 4 / 3 / 1
  /github/workspace/input/models/structuredefinition-be-model-laboratoryprescription : 4 / 9 / 1
@@ -4531,10 +4531,6 @@ ERROR: ServiceRequest/nursing-compression-therapy-example: ServiceRequest.code.c
 ERROR: ServiceRequest/nursing-compression-therapy-example: ServiceRequest.code: None of the codings provided are in the value set https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-type-of-nursing (https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-type-of-nursing), and a coding from this value set is required) (codes =  https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code#compression-therapy)
 == /github/workspace/input/examples/referralprescription-nursing-example2-digestive-system-care.xml ==
 == /github/workspace/input/examples/referralprescription-nursing-example3-compression-therapy.xml ==
-INFORMATION: ServiceRequest/referralprescription-nursing-example3-compression-therapy: ServiceRequest.orderDetail[0].coding[0]: Code System URI 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-compressiontherapy' is unknown so the code cannot be validated
-ERROR: ServiceRequest/referralprescription-nursing-example3-compression-therapy: ServiceRequest.occurrence.ofType(Timing).repeat.bounds.ofType(Duration): drt-1: 'There SHALL be a code if there is a value and it SHALL be an expression of time.  If system is present, it SHALL be UCUM.' Rule 'There SHALL be a code if there is a value and it SHALL be an expression of time.  If system is present, it SHALL be UCUM.' Failed
-ERROR: ServiceRequest/referralprescription-nursing-example3-compression-therapy: ServiceRequest.occurrence.ofType(Timing).repeat.bounds.ofType(Duration).system: URI values cannot have whitespace(' http://unitsofmeasure.org')
-WARNING: ServiceRequest/referralprescription-nursing-example3-compression-therapy: ServiceRequest.meta.profile[0]: Profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-compression-therapy' has not been checked because it is unknown, and the validator is set to not fetch unknown profiles
 == /github/workspace/input/ig.xml ==
 == /github/workspace/input/models/structuredefinition-be-model-diagnosticimagingprescription.xml ==
 ERROR: StructureDefinition.where(url = 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-model-diagnosticimagingprescription'): Conformance resource /github/workspace/input/models/structuredefinition-be-model-diagnosticimagingprescription.xml - the canonical URL (http://hl7.country.org/fhir/ig/StructureDefinition/be-model-diagnosticimagingprescription) does not match the URL (https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-model-diagnosticimagingprescription)
