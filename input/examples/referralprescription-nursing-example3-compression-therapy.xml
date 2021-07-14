@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ServiceRequest xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<id value="referralprescription-nursing-example2-digestive-system-care"/>
+	<id value="referralprescription-nursing-example3-compression-therapy"/>
 	<meta>
-		<profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-digestive-system-care"/>
+		<profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-compression-therapy"/>
 	</meta>
 	<extension url="http://hl7.org/fhir/StructureDefinition/request-statusReason">
 		<valueCodeableConcept>
@@ -26,13 +26,13 @@
 	<code>
 		<coding>
 			<system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code"/>
-			<code value="digestive-system-care"/>
+			<code value="compression-therapy"/>
 		</coding>
 	</code>
 	<orderDetail>
 		<coding>
-			<system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-digestive-system-care"/>
-			<code value="enteral-feeding-stomach-probe"/>
+			<system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-compressiontherapy"/>
+			<code value="compression-bandage(s)-short-strech"/>
 		</coding>
 	</orderDetail>
 	<subject>
@@ -40,10 +40,11 @@
 	</subject>
 	<occurrenceTiming>
 		<repeat>
-			<boundsPeriod>
-				<start value="2021-07-08"/>
-				<end value="2022-07-07"/>
-			</boundsPeriod>
+		<boundsDuration>
+<value value="1"></value>
+<system value=" http://unitsofmeasure.org"/>
+<code value="mo"></code>		
+		</boundsDuration>
 			<frequency value="2"/>
 			<period value="1"/>
 			<periodUnit value="d"/>
@@ -63,6 +64,6 @@
 		<reference value="Practitioner/practitioner2"/>
 	</performer>
 	<note>
-		<text value="Patient cannot move"/>
+		<text value="Extra info: Rosidal zwachtels → aan- en uitdoen / both underlegs"/>
 	</note>
 </ServiceRequest>
