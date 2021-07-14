@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ServiceRequest xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<id value="referralprescription-nursing-example1-digestive-system-care"/>
+	<meta>
+		<profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-compressiontherapy"/>
+	</meta>
+	<extension url="http://hl7.org/fhir/StructureDefinition/request-statusReason">
+		<valueCodeableConcept>
+			<coding>
+				<system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason"/>
+				<code value="created"/>
+				<display value="Created"/>
+			</coding>
+		</valueCodeableConcept>
+	</extension>
+	<status value="active"/>
+	<intent value="order"/>
+	<category>
+		<coding>
+			<system value="http://snomed.info/sct"/>
+			<code value="9632001"/>
+		</coding>
+		<text value="Nursing procedure"/>
+	</category>
+	<priority value="routine"/>
+	<code>
+		<coding>
+			<system value="	https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code"/>
+			<code value="digestive-system-care"/>
+		</coding>
+	</code>
+	<orderDetail>
+		<coding>
+			<system value="	https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-digestive-system-care"/>
+			<code value="enteral-feeding-stomach-probe"/>
+		</coding>
+	</orderDetail>
+	<orderDetail>
+		<coding>
+			<system value="	https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-digestive-system-care"/>
+			<code value="clyster"/>
+		</coding>
+	</orderDetail>
+	
+	<subject>
+		<reference value="Patient/Patient1"/>
+	</subject>
+	<requester>
+		<reference value="Practitioner/Practitioner1"/>
+	</requester>
+	<performerType>
+		<coding>
+			<system value="http://snomed.info/sct"/>
+			<code value="106292003"/>
+			<display value="Nurse"/>
+		</coding>
+	</performerType>
+	<performer>
+		<reference value="Practitioner/Practitioner2"/>
+	</performer>
+	<note>
+		<text value="Apply5 mg milozilan subcutaan"/>
+	</note>
+</ServiceRequest>
