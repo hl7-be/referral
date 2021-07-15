@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ServiceRequest xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<id value="referralprescription-nursing-example3-compression-therapy"/>
+	<id value="referralprescription-nursing-example5-digestive-system-care"/>
 	<meta>
-		<profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-compressiontherapy"/>
+		<profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-digestive-system-care"/>
 	</meta>
 	<extension url="http://hl7.org/fhir/StructureDefinition/request-statusReason">
 		<valueCodeableConcept>
@@ -26,13 +26,13 @@
 	<code>
 		<coding>
 			<system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code"/>
-			<code value="compression-therapy"/>
+			<code value="digestive-system-care"/>
 		</coding>
 	</code>
 	<orderDetail>
 		<coding>
-			<system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code-compressiontherapy"/>
-			<code value="compression-bandage(s)-short-strech"/>
+			<system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-digestive-system-care"/>
+			<code value="manual-removal-of-faecal-omen"/>
 		</coding>
 	</orderDetail>
 	<subject>
@@ -40,13 +40,11 @@
 	</subject>
 	<occurrenceTiming>
 		<repeat>
-			<boundsDuration>
-				<value value="2"/>
-				<unit value="month"></unit>
-				<system value="http://unitsofmeasure.org"/>
-				<code value="mo"/>
-			</boundsDuration>
-			<frequency value="2"/>
+			<boundsPeriod>
+				<start value="2021-04-23"/>
+				<end value="2022-04-22"/>
+			</boundsPeriod>
+			<frequency value="1"/>
 			<period value="1"/>
 			<periodUnit value="d"/>
 		</repeat>
@@ -64,7 +62,4 @@
 	<performer>
 		<reference value="Practitioner/practitioner2"/>
 	</performer>
-	<note>
-		<text value="Extra info: Rosidal zwachtels → aan- en uitdoen / both underlegs"/>
-	</note>
 </ServiceRequest>
