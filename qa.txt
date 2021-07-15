@@ -1,9 +1,9 @@
 ﻿AffiliateIG : Validation Results
 =========================================
 
-err = 171, warn = 62, info = 2
+err = 174, warn = 62, info = 3
 IG Publisher Version: 1.1.76
-Generated Thu Jul 15 08:55:19 UTC 2021. FHIR version 4.0.1 for hl7.country.fhir.ig#0.2.0 (canonical = http://hl7.country.org/fhir/ig)
+Generated Thu Jul 15 08:57:50 UTC 2021. FHIR version 4.0.1 for hl7.country.fhir.ig#0.2.0 (canonical = http://hl7.country.org/fhir/ig)
 
  Build Errors : 4459 / 18 / 0
  /github/workspace/input/examples/CareplanNursingProbes : 3 / 0 / 2
@@ -19,7 +19,7 @@ Generated Thu Jul 15 08:55:19 UTC 2021. FHIR version 4.0.1 for hl7.country.fhir.
  /github/workspace/input/examples/referralprescription-nursing-example2-digestive-system-care : 0 / 0 / 2
  /github/workspace/input/examples/referralprescription-nursing-example3-compression-therapy : 0 / 0 / 2
  /github/workspace/input/examples/referralprescription-nursing-example5-digestive-system-care : 0 / 0 / 2
- /github/workspace/input/examples/referralprescription-nursing-example6-compression-therapy : 0 / 0 / 2
+ /github/workspace/input/examples/referralprescription-nursing-example6-compression-therapy : 3 / 0 / 3
  /github/workspace/input/ig : 0 / 0 / 1
  /github/workspace/input/models/structuredefinition-be-model-diagnosticimagingprescription : 4 / 3 / 1
  /github/workspace/input/models/structuredefinition-be-model-laboratoryprescription : 4 / 9 / 1
@@ -4575,6 +4575,10 @@ WARNING: ServiceRequest/diagnostic-imaging-basic-example-useOfModality: ServiceR
 == /github/workspace/input/examples/referralprescription-nursing-example3-compression-therapy.xml ==
 == /github/workspace/input/examples/referralprescription-nursing-example5-digestive-system-care.xml ==
 == /github/workspace/input/examples/referralprescription-nursing-example6-compression-therapy.xml ==
+ERROR: ServiceRequest/referralprescription-nursing-example6-compression-therapy: ServiceRequest.orderDetail[0].coding[0]: Coding.system must be an absolute reference, not a local reference
+INFORMATION: ServiceRequest/referralprescription-nursing-example6-compression-therapy: ServiceRequest.orderDetail[0].coding[0]: Code System URI ' https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code-compressiontherapy' is unknown so the code cannot be validated
+ERROR: ServiceRequest/referralprescription-nursing-example6-compression-therapy: ServiceRequest.orderDetail[0].coding[0].system: URI values cannot have whitespace(' https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code-compressiontherapy')
+ERROR: ServiceRequest/referralprescription-nursing-example6-compression-therapy: ServiceRequest.orderDetail[0]: None of the codings provided are in the value set https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-type-of-compression (https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-type-of-compression), and a coding from this value set is required) (codes =  https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code-compressiontherapy#compression-stockings)
 == /github/workspace/input/ig.xml ==
 == /github/workspace/input/models/structuredefinition-be-model-diagnosticimagingprescription.xml ==
 ERROR: StructureDefinition.where(url = 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-model-diagnosticimagingprescription'): Conformance resource /github/workspace/input/models/structuredefinition-be-model-diagnosticimagingprescription.xml - the canonical URL (http://hl7.country.org/fhir/ig/StructureDefinition/be-model-diagnosticimagingprescription) does not match the URL (https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-model-diagnosticimagingprescription)
