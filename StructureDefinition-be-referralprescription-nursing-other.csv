@@ -28,20 +28,6 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Reason for current status","Captures the reason for the current state of the resource.","This is generally only used for ""exception"" statuses such as ""suspended"" or ""cancelled"".  The reason for performing the request at all is captured in reasonCode, not here.  (Distinct reason codes for different statuses can be enforced using invariants if they are universal bindings).","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","Varies by domain",".inboundRelationship[typeCode=SUBJ].source[classCode=CACT, moodCode=EVN].reasonCOde"
-"ServiceRequest.extension.id","","","",0,1,"","","","string {[]} {[]}
-","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
-"ServiceRequest.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
-","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"ServiceRequest.extension.url","","","",1,1,"","","","uri {[]} {[]}
-","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://hl7.org/fhir/StructureDefinition/request-statusReason""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
-"ServiceRequest.extension.value[x]","","","",1,1,"","","","","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/extensibility.html) for a list).","","","","","","","","","",,"example","Codes identifying the reason for the current state of an event.","","","type:$this}
-","",,"closed","Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","N/A"
-"ServiceRequest.extension.value[x]","valueCodeableConcept","","",1,1,"","","","CodeableConcept {[]} {[]}
-","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/extensibility.html) for a list).","","","","","","","","","",,"example","Codes identifying the reason for the current state of an event.","","",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","N/A"
 "ServiceRequest.extension","informParty","","",0,*,"Y","","","Extension {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-inform-party]]} {[]}
 ","Parties to inform of fulfillment of the prescription, besides the prescriber.","An Extension","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
