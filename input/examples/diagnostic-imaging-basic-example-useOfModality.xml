@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ServiceRequest xmlns="http://hl7.org/fhir">
+	<id value="diagnostic-imaging-basic-example-useOfModality"/>
+	<meta>
+		<profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-diagnosticimaging"/>
+	</meta>
+	<extension url="http://hl7.org/fhir/StructureDefinition/request-statusReason">
+		<valueCodeableConcept>
+			<coding>
+				<system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason"/>
+				<code value="created"/>
+				<display value="Created"/>
+			</coding>
+		</valueCodeableConcept>
+	</extension>
+	<modifierExtension url="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-contraindication">
+		<valueCodeableConcept>
+			<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/v3-NullFlavor"/>
+				<code value="ASKU"/>
+				<display value="asked but unknown"/>
+			</coding>
+		</valueCodeableConcept>
+	</modifierExtension>
+	<modifierExtension url="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-contrastfluiduse">
+		<valueCode value="if-necessary"/>
+	</modifierExtension>
+	<status value="active"/>
+	<intent value="order"/>
+	<category>
+		<coding>
+			<system value="http://snomed.info/sct"/>
+			<code value="363679005"/>
+			<display value="Clinical imaging"/>
+		</coding>
+	</category>
+	<priority value="routine"/>
+	<code>
+		<text value="Rx + echo rechtervoet"/>
+	</code>
+	<orderDetail>
+		<coding>
+			<system value="http://dicom.nema.org/resources/ontology/DCM"/>
+			<code value="DX"/>
+		</coding>
+	</orderDetail>
+	<orderDetail>
+		<coding>
+			<system value="http://dicom.nema.org/resources/ontology/DCM"/>
+			<code value="US"/>
+			<display value="Ultrasound"></display>
+		</coding>
+	</orderDetail>
+	<subject>
+		<reference value="Patient/patient1"/>
+	</subject>
+	<requester>
+		<reference value="Practitioner/practitioner1"/>
+	</requester>
+	<performerType>
+		<coding>
+			<system value="http://snomed.info/sct"/>
+			<code value="66862007"/>
+			<display value="Radiologist"/>
+		</coding>
+	</performerType>
+	<reasonCode>
+		<text value="Fractuur? Ligamentair letsel?"/>
+	</reasonCode>
+	<supportingInfo>
+		<reference value="Condition/condition1"/>
+	</supportingInfo>
+	<bodySite>
+		<coding>
+			<system value="http://snomed.info/sct"/>
+			<code value="7769000"/>
+			<display value="Structure of right foot (body structure)"/>
+		</coding>
+		<text value="The right foot"/>
+	</bodySite>
+</ServiceRequest>
