@@ -27,7 +27,7 @@ This information includes diagnosis, clinical findings and other observations.  
   <version value="0.2.0"/>
   <name value="BeLabPrescription"/>
   <status value="draft"/>
-  <date value="2021-07-15T08:56:52+00:00"/>
+  <date value="2021-07-15T08:52:50+00:00"/>
   <publisher value="HL7 Belgium"/>
   <contact>
     <telecom>
@@ -1409,6 +1409,7 @@ This information includes diagnosis, clinical findings and other observations.  
       <short value="High level code to describe the tests - if needed to detail within orderDetail - consult comment for more detail."/>
       <definition value="A code that identifies a particular service (i.e., procedure, diagnostic investigation, or panel of investigations) that have been requested."/>
       <comment value="Many laboratory and radiology procedure codes embed the specimen/organ system in the test order name, for example,  serum or serum/plasma glucose, or a chest x-ray. The specimen might not be recorded separately from the test code.&#xD;&#xA;The implementer SHALL adhere to the preferred codes to use.&#xD;&#xA;The recommended codification used is LOINC as per the subset defined by the FPS Health, for the majority of commonly used lab measurements and demands. This subset is available on https://www.vas.ehealth.fgov.be/webretam/retam/home.htm&#xD;&#xA;&#xD;&#xA;It is allowed to use multiple codes within the FHIR CodeableConcept datatype. But the first code given must follow the following rules.(Other codes given will be for information purposes.)&#xD;&#xA;&#xD;&#xA;The actual observation is preferably coded in LOINC (subset as defined by FPS Health)&#xD;&#xA;&#xD;&#xA;If that is not possible , ALBERT codes are used (subset as defined by FPS Health.) &#xD;&#xA;&#xD;&#xA;If that is not possible,laboratory may send its own code plus obligatory a text element to further explain. For a laboratory order, this SHALL be used with caution as the laboratory fulfilling the order needs to understand what is ordered - as such it SHALL only be used when the order is sent adressed.&#xD;&#xA;&#xD;&#xA;If that is not possible the kind of observation is expressed only in text (allowed but NOT RECOMMENDED - although if considered sufficient the .code element could be just a .text element e.g. &quot;Diabetes?&quot;)"/>
+      <alias value="service requested"/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -1420,7 +1421,6 @@ This information includes diagnosis, clinical findings and other observations.  
         <code value="CodeableConcept"/>
         <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-observationcodeableconcept"/>
       </type>
-      <condition value="ele-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1431,33 +1431,39 @@ This information includes diagnosis, clinical findings and other observations.  
       </constraint>
       <mustSupport value="true"/>
       <isModifier value="false"/>
+      <isSummary value="true"/>
       <binding>
         <strength value="example"/>
         <description value="Codes for tests or services that can be carried out by a designated individual, organization or healthcare service."/>
         <valueSet value="http://hl7.org/fhir/ValueSet/procedure-code"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
+        <identity value="workflow"/>
+        <map value="Request.code"/>
+      </mapping>
+      <mapping>
+        <identity value="w5"/>
+        <map value="FiveWs.what[x]"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
-        <map value="CE/CNE/CWE"/>
+        <map value="PR1-3 / OBR-4  (varies by domain)"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
-        <map value="CD"/>
+        <map value=".code"/>
       </mapping>
       <mapping>
-        <identity value="orim"/>
-        <map value="fhir:CodeableConcept rdfs:subClassOf dt:CD"/>
+        <identity value="quick"/>
+        <map value="Procedure.procedureCode"/>
       </mapping>
     </element>
     <element id="ServiceRequest.orderDetail">
       <path value="ServiceRequest.orderDetail"/>
       <short value="Additional order information - consult comment for more information"/>
-      <definition value="A concept that may be defined by a formal reference to a terminology or ontology or may be provided by text."/>
+      <definition value="Additional details and instructions about the how the services are to be delivered.   For example, and order for a urinary catheter may have an order detail for an external or indwelling catheter, or an order for a bandage may require additional instructions specifying how the bandage should be applied."/>
       <comment value="For information from the medical record intended to support the delivery of the requested services, use the `supportingInformation` element.&#xD;&#xA;The implementer SHALL adhere to the preferred codes to use.&#xD;&#xA;The recommended codification used is LOINC as per the subset defined by the FPS Health, for the majority of commonly used lab measurements and demands. This subset is available on https://www.vas.ehealth.fgov.be/webretam/retam/home.htm&#xD;&#xA;&#xD;&#xA;It is allowed to use multiple codes within the FHIR CodeableConcept datatype. But the first code given must follow the following rules.(Other codes given will be for information purposes.)&#xD;&#xA;&#xD;&#xA;The actual observation is preferably coded in LOINC (subset as defined by FPS Health)&#xD;&#xA;&#xD;&#xA;If that is not possible , ALBERT codes are used (subset as defined by FPS Health.) &#xD;&#xA;&#xD;&#xA;If that is not possible,laboratory may send its own code plus obligatory a text element to further explain. For a laboratory order, this SHALL be used with caution as the laboratory fulfilling the order needs to understand what is ordered - as such it SHALL only be used when the order is sent adressed.&#xD;&#xA;&#xD;&#xA;If that is not possible the kind of observation is expressed only in text (allowed but NOT RECOMMENDED)"/>
+      <alias value="detailed instructions"/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -1469,7 +1475,7 @@ This information includes diagnosis, clinical findings and other observations.  
         <code value="CodeableConcept"/>
         <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-observationcodeableconcept"/>
       </type>
-      <condition value="ele-1"/>
+      <condition value="prr-1"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1480,6 +1486,7 @@ This information includes diagnosis, clinical findings and other observations.  
       </constraint>
       <mustSupport value="true"/>
       <isModifier value="false"/>
+      <isSummary value="true"/>
       <binding>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="OrderDetail"/>
@@ -1489,20 +1496,16 @@ This information includes diagnosis, clinical findings and other observations.  
         <valueSet value="http://hl7.org/fhir/ValueSet/servicerequest-orderdetail"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
         <identity value="v2"/>
-        <map value="CE/CNE/CWE"/>
+        <map value="NTE"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
-        <map value="CD"/>
+        <map value=".code"/>
       </mapping>
       <mapping>
-        <identity value="orim"/>
-        <map value="fhir:CodeableConcept rdfs:subClassOf dt:CD"/>
+        <identity value="quick"/>
+        <map value="Procedure.procedureCode"/>
       </mapping>
     </element>
     <element id="ServiceRequest.quantity[x]">
@@ -1849,7 +1852,7 @@ This information includes diagnosis, clinical findings and other observations.  
       <path value="ServiceRequest.performerType"/>
       <short value="Discipline of provider"/>
       <definition value="Desired type of performer for doing the requested service."/>
-      <comment value="This is a  role, not  a participation type.  In other words, does not describe the task but describes the capacity.  For example, &#x201C;compounding pharmacy&#x201D;, &#x201C;psychiatrist&#x201D; or &#x201C;internal referral&#x201D;."/>
+      <comment value="This is a  role, not  a participation type.  In other words, does not describe the task but describes the capacity.  For example, “compounding pharmacy”, “psychiatrist” or “internal referral”."/>
       <alias value="specialty"/>
       <min value="0"/>
       <max value="1"/>
@@ -2367,7 +2370,7 @@ This information includes diagnosis, clinical findings and other observations.  
       <path value="ServiceRequest.relevantHistory"/>
       <short value="Request provenance"/>
       <definition value="Key events in the history of the request."/>
-      <comment value="This might not include provenances for all versions of the request &#x2013; only those deemed &#x201C;relevant&#x201D; or important.&#xD;This SHALL NOT include the Provenance associated with this current version of the resource.  (If that provenance is deemed to be a &#x201C;relevant&#x201D; change, it will need to be added as part of a later update.  Until then, it can be queried directly as the Provenance that points to this version using _revinclude&#xD;All Provenances should have some historical version of this Request as their subject."/>
+      <comment value="This might not include provenances for all versions of the request – only those deemed “relevant” or important.&#xD;This SHALL NOT include the Provenance associated with this current version of the resource.  (If that provenance is deemed to be a “relevant” change, it will need to be added as part of a later update.  Until then, it can be queried directly as the Provenance that points to this version using _revinclude&#xD;All Provenances should have some historical version of this Request as their subject."/>
       <min value="0"/>
       <max value="*"/>
       <base>
