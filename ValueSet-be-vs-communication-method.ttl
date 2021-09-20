@@ -5,7 +5,7 @@
 
 # - resource -------------------------------------------------------------------
 
-<http://hl7.country.org/fhir/ig/ValueSet/be-vs-communication-method> a fhir:ValueSet;
+<http://example.com/fhir/example/ValueSet/be-vs-communication-method> a fhir:ValueSet;
   fhir:nodeRole fhir:treeRoot;
   fhir:Resource.id [ fhir:value "be-vs-communication-method"];
   fhir:DomainResource.text [
@@ -16,14 +16,24 @@
   fhir:ValueSet.version [ fhir:value "0.2.0"];
   fhir:ValueSet.name [ fhir:value "BeCommunicationMethod"];
   fhir:ValueSet.status [ fhir:value "draft"];
-  fhir:ValueSet.date [ fhir:value "2021-09-20T13:23:12+00:00"^^xsd:dateTime];
+  fhir:ValueSet.date [ fhir:value "2021-09-20T17:40:53+00:00"^^xsd:dateTime];
   fhir:ValueSet.publisher [ fhir:value "HL7 Belgium"];
   fhir:ValueSet.contact [
      fhir:index 0;
+     fhir:ContactDetail.name [ fhir:value "HL7 Belgium" ];
      fhir:ContactDetail.telecom [
        fhir:index 0;
        fhir:ContactPoint.system [ fhir:value "url" ];
        fhir:ContactPoint.value [ fhir:value "http://hl7belgium.org" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:ContactDetail.name [ fhir:value "Bart Decuypere" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "email" ];
+       fhir:ContactPoint.value [ fhir:value "bart.decuypere@ehealth.fgov.be" ];
+       fhir:ContactPoint.use [ fhir:value "work" ]
      ]
   ];
   fhir:ValueSet.description [ fhir:value "Codes to define a communication method."];
@@ -32,7 +42,8 @@
      fhir:CodeableConcept.coding [
        fhir:index 0;
        fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
-       fhir:Coding.code [ fhir:value "001" ]
+       fhir:Coding.code [ fhir:value "001" ];
+       fhir:Coding.display [ fhir:value "World" ]
      ]
   ];
   fhir:ValueSet.compose [
@@ -47,7 +58,7 @@
 
 # - ontology header ------------------------------------------------------------
 
-<http://hl7.country.org/fhir/ig/ValueSet/be-vs-communication-method.ttl> a owl:Ontology;
+<http://example.com/fhir/example/ValueSet/be-vs-communication-method.ttl> a owl:Ontology;
   owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
