@@ -12,7 +12,7 @@
   <title value="HL7 BE Referral Prescription WG Implementation Guide (work in progress)"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <date value="2021-07-15T08:56:52+00:00"/>
+  <date value="2021-09-20T13:23:12+00:00"/>
   <publisher value="HL7 Belgium"/>
   <contact>
     <telecom>
@@ -30,11 +30,6 @@
   <packageId value="hl7.country.fhir.ig"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.1"/>
-  <dependsOn>
-    <uri value="https://www.ehealth.fgov.be/standards/fhir"/>
-    <packageId value="ehealthplatform.be.r4.federalprofiles"/>
-    <version value="1.2.x"/>
-  </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
@@ -194,50 +189,10 @@
     </grouping>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Practitioner"/>
-      </extension>
-      <reference>
-        <reference value="Practitioner/practitioner2"/>
-      </reference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ServiceRequest"/>
       </extension>
       <reference>
         <reference value="ServiceRequest/laboratory-order-example1"/>
-      </reference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ServiceRequest"/>
-      </extension>
-      <reference>
-        <reference value="ServiceRequest/diagnostic-imaging-basic-example-concreteWithDetails"/>
-      </reference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ServiceRequest"/>
-      </extension>
-      <reference>
-        <reference value="ServiceRequest/referralprescription-nursing-example6-compression-therapy"/>
-      </reference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ServiceRequest"/>
-      </extension>
-      <reference>
-        <reference value="ServiceRequest/diagnostic-imaging-basic-example-concreteWithText"/>
-      </reference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Practitioner"/>
-      </extension>
-      <reference>
-        <reference value="Practitioner/practitioner1"/>
       </reference>
     </resource>
     <resource>
@@ -250,10 +205,26 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Patient"/>
+        <valueString value="ServiceRequest"/>
       </extension>
       <reference>
-        <reference value="Patient/patient1"/>
+        <reference value="ServiceRequest/diagnostic-imaging-basic-example-concreteWithText"/>
+      </reference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/referralprescription-nursing-example3-compression-therapy"/>
+      </reference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/diagnostic-imaging-basic-example-concreteWithDetails"/>
       </reference>
     </resource>
     <resource>
@@ -266,18 +237,10 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Condition"/>
+        <valueString value="Patient"/>
       </extension>
       <reference>
-        <reference value="Condition/condition1"/>
-      </reference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ServiceRequest"/>
-      </extension>
-      <reference>
-        <reference value="ServiceRequest/diagnostic-imaging-basic-example-useOfModality"/>
+        <reference value="Patient/patient1"/>
       </reference>
     </resource>
     <resource>
@@ -293,7 +256,7 @@
         <valueString value="ServiceRequest"/>
       </extension>
       <reference>
-        <reference value="ServiceRequest/referralprescription-nursing-example2-digestive-system-care"/>
+        <reference value="ServiceRequest/diagnostic-imaging-basic-example-useOfModality"/>
       </reference>
     </resource>
     <resource>
@@ -301,32 +264,39 @@
         <valueString value="ServiceRequest"/>
       </extension>
       <reference>
-        <reference value="ServiceRequest/referralprescription-nursing-example3-compression-therapy"/>
+        <reference value="ServiceRequest/referralprescription-nursing-example6-compression-therapy"/>
       </reference>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:logical"/>
+        <valueString value="ServiceRequest"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/be-model-physiotherapyprescription"/>
+        <reference value="ServiceRequest/referralprescription-nursing-example2-digestive-system-care"/>
       </reference>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:logical"/>
+        <valueString value="Practitioner"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/be-model-laboratoryprescription"/>
+        <reference value="Practitioner/practitioner1"/>
       </reference>
-      <description value="Logical model describing the model for the prescription laboratory. This draft is used in the HL7 Belgian workgroup for laboratory."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:logical"/>
+        <valueString value="Practitioner"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/be-model-nursingprescription"/>
+        <reference value="Practitioner/practitioner2"/>
+      </reference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/condition1"/>
       </reference>
     </resource>
     <resource>
@@ -343,18 +313,34 @@
         <valueString value="StructureDefinition:logical"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/be-model-physiotherapyprescription"/>
+      </reference>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/be-model-diagnosticimagingprescription"/>
       </reference>
       <description value="Logical model describing the model for the diagnostic imaging prescription. This draft is used in the HL7 Belgian workgroup for referral."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
+        <valueString value="StructureDefinition:logical"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/be-referralprescription-nursing-non-reimbursable"/>
+        <reference value="StructureDefinition/be-model-nursingprescription"/>
       </reference>
-      <description value="The nursing profile specialized for non reimbursable care. Use the .note element to provide any extra information."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-model-laboratoryprescription"/>
+      </reference>
+      <description value="Logical model describing the model for the prescription laboratory. This draft is used in the HL7 Belgian workgroup for laboratory."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -367,76 +353,12 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:extension"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/be-ext-contraindication"/>
-      </reference>
-      <name value="BeContraindication"/>
-      <description value="Contra indication in a prescription referral for diagnostic imaging."/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/be-lab-prescription"/>
+        <reference value="StructureDefinition/be-referralprescription-nursing-other"/>
       </reference>
-      <description value="This is the Belgian profile for a laboratory order."/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/be-referralprescription-nursing-chronical-psychiatric-patient"/>
-      </reference>
-      <description value="The nursing profile specialized for preparation and administration of medication to chronical pshychiatric patient. Use the .note element to provide any extra information. The prescriber SHALL give a start and end date &amp; SHALL give a frequency, these informations live in the .occurrence element."/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/be-referralprescription-nursing-bladder-care"/>
-      </reference>
-      <description value="The nursing profile specialized for bladder care. Actual bladder care information lives in the .orderDetail element. If needed to give a quantity (mandatory if bladder instillation): the .quantity element shall be used. If needed to express the product and time to leave the product (mandatory if bladder instillation): please explain in the .note element."/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/be-referralprescription-diagnosticimaging"/>
-      </reference>
-      <description value="Referral prescription for a generic diagnostic imaging.&#xD;&#xA;Please note in .orderDetail, a specific slicing is available to give guidance how to express acquisition modalities if needed. In future iterations of this profile, more slicing might provide additional guidance."/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/be-referralprescription-nursing-annex81"/>
-      </reference>
-      <description value="The nursing profile specialized for preparation of medication. Use the .note element to provide any extra information."/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/be-referralprescription"/>
-      </reference>
-      <description value="The common structure for referral prescription."/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/be-referralprescription-nursing-medication"/>
-      </reference>
-      <description value="The nursing profile specialized for medication. Note this profile is based on the FHIR resource MedicationRequest.&#xD;&#xA;Dosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements)"/>
+      <description value="The nursing profile specialized for other care. Use the .note element to provide any extra information."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -452,9 +374,9 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/be-referralprescription-nursing-digestive-system-care"/>
+        <reference value="StructureDefinition/be-referralprescription-nursing-chronical-psychiatric-patient"/>
       </reference>
-      <description value="The nursing profile specialized for digestive system care. If needed to give any details (e.g. details around the enteral feeding): please use the .note element."/>
+      <description value="The nursing profile specialized for preparation and administration of medication to chronical pshychiatric patient. Use the .note element to provide any extra information. The prescriber SHALL give a start and end date &amp; SHALL give a frequency, these informations live in the .occurrence element."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -464,6 +386,24 @@
         <reference value="StructureDefinition/be-referralprescription-nursing-compressiontherapy"/>
       </reference>
       <description value="The nursing profile specialized for compression therapy."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-referralprescription-nursing-medication"/>
+      </reference>
+      <description value="The nursing profile specialized for medication. Note this profile is based on the FHIR resource MedicationRequest.&#xD;&#xA;Dosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements)"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-referralprescription-nursing-digestive-system-care"/>
+      </reference>
+      <description value="The nursing profile specialized for digestive system care. If needed to give any details (e.g. details around the enteral feeding): please use the .note element."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -477,32 +417,21 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:extension"/>
+        <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/be-ext-inform-party"/>
+        <reference value="StructureDefinition/be-referralprescription"/>
       </reference>
-      <name value="BeInformParty"/>
-      <description value="Extra parties that need to be informed of the outcome, besides the prescriber."/>
+      <description value="The common structure for referral prescription."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/be-referralprescription-nursing-other"/>
+        <reference value="StructureDefinition/be-referralprescription-nursing-annex81"/>
       </reference>
-      <description value="The nursing profile specialized for other care. Use the .note element to provide any extra information."/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:extension"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/be-ext-urgent-communication"/>
-      </reference>
-      <name value="BeUrgentCommunication"/>
-      <description value="When there is a need to urgently communicate results of an order."/>
+      <description value="The nursing profile specialized for preparation of medication. Use the .note element to provide any extra information."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -525,69 +454,69 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
+        <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="ValueSet/be-vs-nursing-medication-category"/>
+        <reference value="StructureDefinition/be-ext-contraindication"/>
       </reference>
-      <description value="Codes to define a type of nursing medication category."/>
+      <name value="BeContraindication"/>
+      <description value="Contra indication in a prescription referral for diagnostic imaging."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
+        <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="CodeSystem/be-cs-nursing-code-other"/>
+        <reference value="StructureDefinition/be-ext-inform-party"/>
       </reference>
-      <name value="BeNursingCodeOther"/>
-      <description value="Nursing codes in Belgium. To define details in nursing activities for the other category. Initially defined as supporting CodeSystem for the referral prescription."/>
+      <name value="BeInformParty"/>
+      <description value="Extra parties that need to be informed of the outcome, besides the prescriber."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="NamingSystem"/>
+        <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="NamingSystem/be-ns-specimen"/>
+        <reference value="StructureDefinition/be-lab-prescription"/>
       </reference>
-      <description value="National identifier for a specimen when needed."/>
+      <description value="This is the Belgian profile for a laboratory order."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
+        <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="CodeSystem/be-status-reason"/>
+        <reference value="StructureDefinition/be-referralprescription-nursing-non-reimbursable"/>
       </reference>
-      <name value="BeStatusReason"/>
-      <description value="Status reason in Belgium. Initially defined as supporting CodeSystem for the referral prescription."/>
+      <description value="The nursing profile specialized for non reimbursable care. Use the .note element to provide any extra information."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
+        <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="ValueSet/be-vs-nursing-medication-injection"/>
+        <reference value="StructureDefinition/be-referralprescription-diagnosticimaging"/>
       </reference>
-      <description value="Codes to define a type of nursing medication injection."/>
+      <description value="Referral prescription for a generic diagnostic imaging.&#xD;&#xA;Please note in .orderDetail, a specific slicing is available to give guidance how to express acquisition modalities if needed. In future iterations of this profile, more slicing might provide additional guidance."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
+        <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
-        <reference value="CodeSystem/be-nursing-medication-percutaneous"/>
+        <reference value="StructureDefinition/be-ext-urgent-communication"/>
       </reference>
-      <name value="BeNursingMedicationPercutaneous"/>
-      <description value="Nursing codes in Belgium. To define details in nursing activities for the medication percutaneous category. Initially defined as supporting CodeSystem for the referral prescription."/>
+      <name value="BeUrgentCommunication"/>
+      <description value="When there is a need to urgently communicate results of an order."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
+        <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="ValueSet/be-vs-nursing-medication-percutaneous"/>
+        <reference value="StructureDefinition/be-referralprescription-nursing-bladder-care"/>
       </reference>
-      <description value="Codes to define a type of nursing medication percutaneous."/>
+      <description value="The nursing profile specialized for bladder care. Actual bladder care information lives in the .orderDetail element. If needed to give a quantity (mandatory if bladder instillation): the .quantity element shall be used. If needed to express the product and time to leave the product (mandatory if bladder instillation): please explain in the .note element."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -597,34 +526,6 @@
         <reference value="ValueSet/be-vs-communication-method"/>
       </reference>
       <description value="Codes to define a communication method."/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="NamingSystem"/>
-      </extension>
-      <reference>
-        <reference value="NamingSystem/be-ns-coronalertcode"/>
-      </reference>
-      <description value="Code as generated by the Coronalert app."/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/be-vs-type-of-nursing"/>
-      </reference>
-      <description value="Codes to define a type of nursing."/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
-      </extension>
-      <reference>
-        <reference value="CodeSystem/be-contrastfluid-use"/>
-      </reference>
-      <name value="BeContrastFluidUse"/>
-      <description value="Whether use of contrast fluid should be considered."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -640,18 +541,48 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/be-vs-contrastfluid-use"/>
+        <reference value="ValueSet/be-vs-referral-category"/>
       </reference>
-      <description value="Codes to define the use of contrast fluid."/>
+      <description value="Codes to define the high level category for a referral prescription. SNOMED-CT codes in this valueset are just a draft proposal to give a general idea - pending an official valueset."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/be-cs-nursing-code-other"/>
+      </reference>
+      <name value="BeNursingCodeOther"/>
+      <description value="Nursing codes in Belgium. To define details in nursing activities for the other category. Initially defined as supporting CodeSystem for the referral prescription."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/codesystem-be-type-of-bladder-care"/>
+      </reference>
+      <name value="BeBladderCareType"/>
+      <description value="Nursing codes in Belgium. To define details in nursing activities for the bladder care category. Initially defined as supporting CodeSystem for the referral prescription."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/be-cs-nursing-code-non-reimbursable"/>
+      </reference>
+      <name value="BeNursingCodeNonReimbursable"/>
+      <description value="Nursing codes in Belgium. To define details in nursing activities for the non reimbursable category. Initially defined as supporting CodeSystem for the referral prescription."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/be-vs-digestive-system-care"/>
+        <reference value="ValueSet/be-vs-nursing-medication-category"/>
       </reference>
-      <description value="Codes to define digestive system care"/>
+      <description value="Codes to define a type of nursing medication category."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -668,10 +599,10 @@
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
-        <reference value="CodeSystem/be-cs-nursing-code-non-reimbursable"/>
+        <reference value="CodeSystem/be-status-reason"/>
       </reference>
-      <name value="BeNursingCodeNonReimbursable"/>
-      <description value="Nursing codes in Belgium. To define details in nursing activities for the non reimbursable category. Initially defined as supporting CodeSystem for the referral prescription."/>
+      <name value="BeStatusReason"/>
+      <description value="Status reason in Belgium. Initially defined as supporting CodeSystem for the referral prescription."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -688,56 +619,19 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/be-vs-type-of-bladder-care"/>
+        <reference value="ValueSet/be-vs-contrastfluid-use"/>
       </reference>
-      <description value="Codes to define a type of bladder care."/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/be-vs-reason-referral-status"/>
-      </reference>
-      <description value="Codes to explain the current status of a referral prescription."/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/be-vs-type-of-other-nursing"/>
-      </reference>
-      <description value="Codes to define a type of other nursing category."/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="NamingSystem"/>
-      </extension>
-      <reference>
-        <reference value="NamingSystem/be-ns-uhmep"/>
-      </reference>
-      <description value="UHMEP naming system"/>
+      <description value="Codes to define the use of contrast fluid."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
-        <reference value="CodeSystem/be-cs-nursing-code-compressiontherapy"/>
+        <reference value="CodeSystem/be-nursing-medication-percutaneous"/>
       </reference>
-      <name value="BeNursingCodeCompressiontherapy"/>
-      <description value="Nursing codes in Belgium. To define details in nursing activities for compression therapy. Initially defined as supporting CodeSystem for the referral prescription."/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
-      </extension>
-      <reference>
-        <reference value="CodeSystem/be-nursing-medication-perfusion"/>
-      </reference>
-      <name value="BeNursingMedicationPerfusion"/>
-      <description value="Nursing codes in Belgium. To define details in nursing activities for the medication perfusion category. Initially defined as supporting CodeSystem for the referral prescription."/>
+      <name value="BeNursingMedicationPercutaneous"/>
+      <description value="Nursing codes in Belgium. To define details in nursing activities for the medication percutaneous category. Initially defined as supporting CodeSystem for the referral prescription."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -754,9 +648,28 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/be-vs-type-of-non-reimbursable-nursing"/>
+        <reference value="ValueSet/be-vs-digestive-system-care"/>
       </reference>
-      <description value="Codes to define a type of non reimbursable nursing category."/>
+      <description value="Codes to define digestive system care"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-type-of-other-nursing"/>
+      </reference>
+      <description value="Codes to define a type of other nursing category."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/be-cs-nursing-code-compressiontherapy"/>
+      </reference>
+      <name value="BeNursingCodeCompressiontherapy"/>
+      <description value="Nursing codes in Belgium. To define details in nursing activities for compression therapy. Initially defined as supporting CodeSystem for the referral prescription."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -766,6 +679,80 @@
         <reference value="ValueSet/be-vs-nursing-medication-perfusion"/>
       </reference>
       <description value="Codes to define a type of nursing medication perfusion."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-reason-referral-status"/>
+      </reference>
+      <description value="Codes to explain the current status of a referral prescription."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/be-contrastfluid-use"/>
+      </reference>
+      <name value="BeContrastFluidUse"/>
+      <description value="Whether use of contrast fluid should be considered."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-nursing-medication-percutaneous"/>
+      </reference>
+      <description value="Codes to define a type of nursing medication percutaneous."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-type-of-nursing"/>
+      </reference>
+      <description value="Codes to define a type of nursing."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="NamingSystem"/>
+      </extension>
+      <reference>
+        <reference value="NamingSystem/be-ns-coronalertcode"/>
+      </reference>
+      <description value="Code as generated by the Coronalert app."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="NamingSystem"/>
+      </extension>
+      <reference>
+        <reference value="NamingSystem/be-ns-specimen"/>
+      </reference>
+      <description value="National identifier for a specimen when needed."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-nursing-medication-other"/>
+      </reference>
+      <description value="Codes to define a type of nursing medication other."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/be-nursing-medication-category"/>
+      </reference>
+      <name value="BeNursingMedicationCategory"/>
+      <description value="Nursing codes in Belgium. To define details in nursing activities for the medication category. Initially defined as supporting CodeSystem for the referral prescription."/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -779,31 +766,49 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/be-vs-nursing-medication-other"/>
-      </reference>
-      <description value="Codes to define a type of nursing medication other."/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/be-vs-referral-category"/>
-      </reference>
-      <description value="Codes to define the high level category for a referral prescription. SNOMED-CT codes in this valueset are just a draft proposal to give a general idea - pending an official valueset."/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
-        <reference value="CodeSystem/codesystem-be-type-of-bladder-care"/>
+        <reference value="CodeSystem/be-nursing-medication-perfusion"/>
       </reference>
-      <name value="BeBladderCareType"/>
-      <description value="Nursing codes in Belgium. To define details in nursing activities for the bladder care category. Initially defined as supporting CodeSystem for the referral prescription."/>
+      <name value="BeNursingMedicationPerfusion"/>
+      <description value="Nursing codes in Belgium. To define details in nursing activities for the medication perfusion category. Initially defined as supporting CodeSystem for the referral prescription."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-type-of-non-reimbursable-nursing"/>
+      </reference>
+      <description value="Codes to define a type of non reimbursable nursing category."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-type-of-bladder-care"/>
+      </reference>
+      <description value="Codes to define a type of bladder care."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="NamingSystem"/>
+      </extension>
+      <reference>
+        <reference value="NamingSystem/be-ns-uhmep"/>
+      </reference>
+      <description value="UHMEP naming system"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-nursing-medication-injection"/>
+      </reference>
+      <description value="Codes to define a type of nursing medication injection."/>
     </resource>
     <page>
       <nameUrl value="toc.html"/>
