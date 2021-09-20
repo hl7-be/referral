@@ -3,33 +3,38 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>HL7.COUNTRY.FHIR.IG\Artifacts Summary - FHIR v4.0.1</title>
-  
+    <title>MY-IG\Artifacts Summary - FHIR v4.0.1</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
 
     <link rel="stylesheet" href="fhir.css"/>
-     
+
       <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.css"/>
     <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
-  
+
       <!-- Project extras -->
     <link rel="stylesheet" href="assets/css/project.css"/>
     <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
     <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
       <!-- Placeholder for child template CSS declarations -->
-    <link rel="stylesheet" href="assets/css/hl7.css"/>
-    <link rel="stylesheet" href="assets/css/fhir.css"/>
+<link rel="stylesheet" href="assets/css/hl7-be.css"/>
+<link rel="stylesheet" href="assets/css/affiliate.css"/>
 
     <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+  <!-- Questionnaire: -->
+    <link rel="stylesheet" href="assets/css/lforms.min.css"/>
+
+
+
 
       <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
       <!-- [if lt IE 9]>
     <script src="assets/js/html5shiv.js"></script>
     <script src="assets/js/respond.min.js"></script>
     <![endif] -->
-  
+
       <!-- Favicons -->
     <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
     <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
@@ -37,37 +42,46 @@
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
-  <body>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
 
     <style type="text/css">h2{--heading-prefix:"3"}
     h3,h4,h5,h6{--heading-prefix:"3.0"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
-        
-        <div id="hl7-nav">
-          <a no-external="true" id="hl7-logo" href="http://hl7.org">
-            <img src="assets/images/hl7-logo-header.png" alt="Visit the HL7 website" height="50"/>
+          <!-- Placeholder for child template header declarations -->
+
+        <div id="ig-nav">
+          <a no-external="true" id="hl7-logo" href="https://hl7-be.github.io">
+            <img src="assets/images/hl7be-logo-header.png" alt="HL7 Belgium" height="65"/>
           </a>
         </div>
-        <div id="family-nav">
-          <a no-external="true" id="family-logo" href="http://hl7.org/fhir"><img src="assets/images/fhir-logo-www.png" alt="Visit the FHIR website" height="50"/> </a>
+        <div id="fhir-nav">
+          <a no-external="true" id="fhir-logo" href="http://hl7.org/fhir"><img src="assets/images/fhir-logo-www.png" alt="Visit the FHIR website" height="50"/> </a>
         </div>
-        <div id="hl7-search">
+        <div id="ig-search">
           <a no-external="true" id="hl7-search-lnk" href="http://hl7.org/fhir/search.cfm"><img src="assets/images/search.png" alt="Search FHIR"/></a>
+        </div>
+  <!-- Left logo - typically the publisher's logo - project or affiliate -->
+        <div id="project-nav">
+          <a no-external="true" id="project-logo" href="http://hl7.eu">
+            <img src="assets/images/scribe.png" alt="Project home" height="71"/>
+          </a>
         </div>
 
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">HL7 BE Referral Prescription WG Implementation Guide (work in progress)</span><br/>0.2.0 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">HL7 BE Referral Prescription WG Implementation Guide (work in progress)</span><br/>0.2.0 - CI</p>
         </div>
       </div>   <!-- /container -->
     </div>    <!-- /segment-header -->
-    
+
     <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
       <div id="stripe"> </div>
       <div class="container">    <!-- container -->
           <!-- HEADER CONTENT -->
-    
+
         <nav class="navbar navbar-inverse">
             <!-- status-bar -->
           <div class="container">
@@ -92,16 +106,16 @@
 		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret"></b>
 		</a>
 		<ul class="dropdown-menu">
-			<li><a name="l173">​</a>
+			<li><a name="l191">​</a>
 				<a href="howto.html">How to use this Publication</a>
 			</li>
-			<li><a name="l179">​</a>
+			<li><a name="l197">​</a>
 				<a href="standardsstatus.html">Standards Status</a>
 			</li>
-			<li><a name="l185">​</a>
+			<li><a name="l203">​</a>
 				<a href="privacy.html">Privacy considerations</a>
 			</li>
-			<li><a name="l191">​</a>
+			<li><a name="l209">​</a>
 				<a href="security.html">Security considerations</a>
 			</li>
 			<li>
@@ -114,10 +128,10 @@
 		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Functional Description<b class="caret"></b>
 		</a>
 		<ul class="dropdown-menu">
-			<li><a name="l216">​</a>
+			<li><a name="l234">​</a>
 				<a href="usecases.html">Use Cases</a>
 			</li>
-			<li><a name="l222">​</a>
+			<li><a name="l240">​</a>
 				<a href="logical-models.html">Logical Models</a>
 			</li>
   <!-- <li>
@@ -139,7 +153,7 @@
 		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Terminology<b class="caret"></b>
 		</a>
 		<ul class="dropdown-menu">
-			<li><a name="l258">​</a>
+			<li><a name="l276">​</a>
 				<a href="terminology.html">Terminology Resources</a>
 			</li>
 		</ul>
@@ -164,10 +178,10 @@
 	<li class="dropdown">
 		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Implementation<b class="caret"></b></a>
 		<ul class="dropdown-menu">
-			<li><a name="l276">​</a><a href="testdata.html">Test Data<img src="external.png" style="text-align: baseline"/></a></li>
-			<li><a name="l281">​</a><a href="openapi.html" target="_blank">OpenAPI</a></li>
-			<li><a name="l285">​</a><a href="testservers.html">Test Servers<img src="external.png" style="text-align: baseline"/></a></li>
-			<li><a name="l290">​</a><a href="downloads.html">Downloads</a></li>
+			<li><a name="l294">​</a><a href="testdata.html">Test Data<img src="external.png" style="text-align: baseline"/></a></li>
+			<li><a name="l299">​</a><a href="openapi.html" target="_blank">OpenAPI</a></li>
+			<li><a name="l303">​</a><a href="testservers.html">Test Servers<img src="external.png" style="text-align: baseline"/></a></li>
+			<li><a name="l308">​</a><a href="downloads.html">Downloads</a></li>
 		</ul>
 	</li>
 </ul>      
@@ -178,18 +192,22 @@
       </div>    <!-- /container -->
     </div>    <!-- /segment-navbar -->
       <!-- status-bar -->
+    
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
-      <div class="container">    <!-- container -->  
+      <div class="container">    <!-- container -->
         <ul class="breadcrumb">
           <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Artifacts Summary</b></li>
-        </ul>  
+          
+        </ul>
       </div>    <!-- /container -->
     </div>    <!-- /segment-breadcrumb -->
-    
+
+    <a name="top"> </a>
     <div id="segment-content" class="segment">    <!-- segment-content -->
       <div class="container">    <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
+
 <style type="text/css">
 h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
 h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
@@ -198,7 +216,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">HL7 BE Referral Prescription WG Implementation Guide (work in progress) - Local Development build (v0.2.0). See the <a href="http://hl7.country.org/fhir/ig/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">HL7 BE Referral Prescription WG Implementation Guide (work in progress) - Local Development build (v0.2.0). See the <a href="http://example.com/fhir/example/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   <h2>Artifacts Summary</h2>
   
     <!-- DO NOT EDIT THIS FILE - It is generated and any changes made will be overwritten --><div class="markdown-toc">
@@ -223,7 +241,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <a href="#6">Terminology: Naming Systems</a>
       </li>
       <li>
-         <a href="#7">Other</a>
+         <a href="#7">Example: Example Instances</a>
       </li>
    </ul>
 </div>
@@ -231,486 +249,606 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
    <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
    <a name="1"> </a>
    <h3>Structures: Logical Models </h3>
-   <p>These define data models that represent the domain covered by this implementation guide in more business-friendly terms than the underlying FHIR resources.</p>
+   <p>
+    <p>These define data models that represent the domain covered by this implementation guide in more business-friendly terms than the underlying FHIR resources.</p>
+</p>
    <p>
       <table class="grid">
          <col style="width:20%"/>
          <tbody>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-be-model-referralprescription.html" title="StructureDefinition/be-model-referralprescription">StructureDefinition/be-model-referralprescription</a>
+                  <a href="StructureDefinition-be-model-diagnosticimagingprescription.html" title="StructureDefinition/be-model-diagnosticimagingprescription">BeDiagnosticImagingPrescription</a>
                </td>
-               <td>Logical model describing the model for the prescription referral. This draft is used in the HL7 Belgian workgroup for referral.</td>
+               <td>
+<p>Logical model describing the model for the diagnostic imaging prescription. This draft is used in the HL7 Belgian workgroup for referral.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-be-model-physiotherapyprescription.html" title="StructureDefinition/be-model-physiotherapyprescription">StructureDefinition/be-model-physiotherapyprescription</a>
+                  <a href="StructureDefinition-be-model-laboratoryprescription.html" title="StructureDefinition/be-model-laboratoryprescription">BeLaboratoryPrescription</a>
                </td>
-               <td></td>
+               <td>
+<p>Logical model describing the model for the prescription laboratory. This draft is used in the HL7 Belgian workgroup for laboratory.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-be-model-diagnosticimagingprescription.html" title="StructureDefinition/be-model-diagnosticimagingprescription">StructureDefinition/be-model-diagnosticimagingprescription</a>
+                  <a href="StructureDefinition-be-model-nursingprescription.html" title="StructureDefinition/be-model-nursingprescription">BeNursingPrescription</a>
                </td>
-               <td>Logical model describing the model for the diagnostic imaging prescription. This draft is used in the HL7 Belgian workgroup for referral.</td>
+               <td>
+
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-be-model-nursingprescription.html" title="StructureDefinition/be-model-nursingprescription">StructureDefinition/be-model-nursingprescription</a>
+                  <a href="StructureDefinition-be-model-physiotherapyprescription.html" title="StructureDefinition/be-model-physiotherapyprescription">BePhysiotherapyPrescription</a>
                </td>
-               <td></td>
+               <td>
+
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-be-model-laboratoryprescription.html" title="StructureDefinition/be-model-laboratoryprescription">StructureDefinition/be-model-laboratoryprescription</a>
+                  <a href="StructureDefinition-be-model-referralprescription.html" title="StructureDefinition/be-model-referralprescription">BeReferralPrescription</a>
                </td>
-               <td>Logical model describing the model for the prescription laboratory. This draft is used in the HL7 Belgian workgroup for laboratory.</td>
+               <td>
+<p>Logical model describing the model for the prescription referral. This draft is used in the HL7 Belgian workgroup for referral.</p>
+</td>
             </tr>
          </tbody>
       </table>
    </p>
    <a name="2"> </a>
    <h3>Structures: Resource Profiles </h3>
-   <p>These define constraints on FHIR resources that need to be complied with by conformant implementations</p>
+   <p>
+    <p>These define constraints on FHIR resources for systems conforming to this implementation guide</p>
+</p>
    <p>
       <table class="grid">
          <col style="width:20%"/>
          <tbody>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-be-referralprescription-nursing.html" title="StructureDefinition/be-referralprescription-nursing">StructureDefinition/be-referralprescription-nursing</a>
+                  <a href="StructureDefinition-be-lab-prescription.html" title="StructureDefinition/be-lab-prescription">BeLabPrescription</a>
                </td>
-               <td>The nursing profile, generic version. Please note the nursing referral for medication does NOT depend on this generic version but is a FHIR prodfile on a different FHIR resource (MedicationRequest)</td>
+               <td>
+<p>This is the Belgian profile for a laboratory order.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-be-referralprescription-nursing-other.html" title="StructureDefinition/be-referralprescription-nursing-other">StructureDefinition/be-referralprescription-nursing-other</a>
+                  <a href="StructureDefinition-be-referralprescription-diagnosticimaging.html" title="StructureDefinition/be-referralprescription-diagnosticimaging">BeReferralPrescriptionDiagnosticImaging</a>
                </td>
-               <td>The nursing profile specialized for other care. Use the .note element to provide any extra information.</td>
+               <td>
+<p>Referral prescription for a generic diagnostic imaging.
+Please note in .orderDetail, a specific slicing is available to give guidance how to express acquisition modalities if needed. In future iterations of this profile, more slicing might provide additional guidance.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-be-referralprescription-nursing-diabetic.html" title="StructureDefinition/be-referralprescription-nursing-diabetic">StructureDefinition/be-referralprescription-nursing-diabetic</a>
+                  <a href="StructureDefinition-be-referralprescription-nursing-annex81.html" title="StructureDefinition/be-referralprescription-nursing-annex81">BeReferralPrescriptionNursingAnnex81PreparationOfMedication</a>
                </td>
-               <td>The nursing profile specialized for diabetic services. Use the .note element to provide any extra information.</td>
+               <td>
+<p>The nursing profile specialized for preparation of medication. Use the .note element to provide any extra information.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-be-referralprescription-nursing-chronical-psychiatric-patient.html" title="StructureDefinition/be-referralprescription-nursing-chronical-psychiatric-patient">StructureDefinition/be-referralprescription-nursing-chronical-psychiatric-patient</a>
+                  <a href="StructureDefinition-be-referralprescription-nursing-bladder-care.html" title="StructureDefinition/be-referralprescription-nursing-bladder-care">BeReferralPrescriptionNursingBladderCare</a>
                </td>
-               <td>The nursing profile specialized for preparation and administration of medication to chronical pshychiatric patient. Use the .note element to provide any extra information. The prescriber SHALL give a start and end date &amp; SHALL give a frequency, these informations live in the .occurrence element.</td>
+               <td>
+<p>The nursing profile specialized for bladder care. Actual bladder care information lives in the .orderDetail element. If needed to give a quantity (mandatory if bladder instillation): the .quantity element shall be used. If needed to express the product and time to leave the product (mandatory if bladder instillation): please explain in the .note element.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-be-referralprescription-nursing-compressiontherapy.html" title="StructureDefinition/be-referralprescription-nursing-compressiontherapy">StructureDefinition/be-referralprescription-nursing-compressiontherapy</a>
+                  <a href="StructureDefinition-be-referralprescription-nursing-chronical-psychiatric-patient.html" title="StructureDefinition/be-referralprescription-nursing-chronical-psychiatric-patient">BeReferralPrescriptionNursingPreparationAdministrationMedicationChronicalPsychiatricPatient</a>
                </td>
-               <td>The nursing profile specialized for compression therapy.</td>
+               <td>
+<p>The nursing profile specialized for preparation and administration of medication to chronical pshychiatric patient. Use the .note element to provide any extra information. The prescriber SHALL give a start and end date &amp; SHALL give a frequency, these informations live in the .occurrence element.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-be-referralprescription-nursing-medication.html" title="StructureDefinition/be-referralprescription-nursing-medication">StructureDefinition/be-referralprescription-nursing-medication</a>
+                  <a href="StructureDefinition-be-referralprescription-nursing-compressiontherapy.html" title="StructureDefinition/be-referralprescription-nursing-compressiontherapy">BeReferralPrescriptionNursingCompressionTherapy</a>
                </td>
-               <td>The nursing profile specialized for medication. Note this profile is based on the FHIR resource MedicationRequest.
-Dosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements)</td>
+               <td>
+<p>The nursing profile specialized for compression therapy.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-be-referralprescription-nursing-digestive-system-care.html" title="StructureDefinition/be-referralprescription-nursing-digestive-system-care">StructureDefinition/be-referralprescription-nursing-digestive-system-care</a>
+                  <a href="StructureDefinition-be-referralprescription-nursing-diabetic.html" title="StructureDefinition/be-referralprescription-nursing-diabetic">BeReferralPrescriptionNursingDiabetic</a>
                </td>
-               <td>The nursing profile specialized for digestive system care. If needed to give any details (e.g. details around the enteral feeding): please use the .note element.</td>
+               <td>
+<p>The nursing profile specialized for diabetic services. Use the .note element to provide any extra information.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-be-referralprescription.html" title="StructureDefinition/be-referralprescription">StructureDefinition/be-referralprescription</a>
+                  <a href="StructureDefinition-be-referralprescription-nursing-digestive-system-care.html" title="StructureDefinition/be-referralprescription-nursing-digestive-system-care">BeReferralPrescriptionNursingDigestiveSystemCare</a>
                </td>
-               <td>The common structure for referral prescription.</td>
+               <td>
+<p>The nursing profile specialized for digestive system care. If needed to give any details (e.g. details around the enteral feeding): please use the .note element.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-be-referralprescription-nursing-annex81.html" title="StructureDefinition/be-referralprescription-nursing-annex81">StructureDefinition/be-referralprescription-nursing-annex81</a>
+                  <a href="StructureDefinition-be-referralprescription-nursing-medication.html" title="StructureDefinition/be-referralprescription-nursing-medication">BeReferralPrescriptionNursingMedication</a>
                </td>
-               <td>The nursing profile specialized for preparation of medication. Use the .note element to provide any extra information.</td>
+               <td>
+<p>The nursing profile specialized for medication. Note this profile is based on the FHIR resource MedicationRequest.
+Dosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements)</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-be-referralprescription-nursing-woundcare.html" title="StructureDefinition/be-referralprescription-nursing-woundcare">StructureDefinition/be-referralprescription-nursing-woundcare</a>
+                  <a href="StructureDefinition-be-referralprescription-nursing-non-reimbursable.html" title="StructureDefinition/be-referralprescription-nursing-non-reimbursable">BeReferralPrescriptionNursingNonReimbursable</a>
                </td>
-               <td>The nursing profile specialized for wound care. Use the .note element to provide any extra information.</td>
+               <td>
+<p>The nursing profile specialized for non reimbursable care. Use the .note element to provide any extra information.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-be-lab-prescription.html" title="StructureDefinition/be-lab-prescription">StructureDefinition/be-lab-prescription</a>
+                  <a href="StructureDefinition-be-referralprescription-nursing-other.html" title="StructureDefinition/be-referralprescription-nursing-other">BeReferralPrescriptionNursingOther</a>
                </td>
-               <td>This is the Belgian profile for a laboratory order.</td>
+               <td>
+<p>The nursing profile specialized for other care. Use the .note element to provide any extra information.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-be-referralprescription-nursing-non-reimbursable.html" title="StructureDefinition/be-referralprescription-nursing-non-reimbursable">StructureDefinition/be-referralprescription-nursing-non-reimbursable</a>
+                  <a href="StructureDefinition-be-referralprescription-nursing-woundcare.html" title="StructureDefinition/be-referralprescription-nursing-woundcare">BeReferralPrescriptionNursingWoundcare</a>
                </td>
-               <td>The nursing profile specialized for non reimbursable care. Use the .note element to provide any extra information.</td>
+               <td>
+<p>The nursing profile specialized for wound care. Use the .note element to provide any extra information.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-be-referralprescription-diagnosticimaging.html" title="StructureDefinition/be-referralprescription-diagnosticimaging">StructureDefinition/be-referralprescription-diagnosticimaging</a>
+                  <a href="StructureDefinition-be-referralprescription-nursing.html" title="StructureDefinition/be-referralprescription-nursing">BeReferralPrescriptionNursing</a>
                </td>
-               <td>Referral prescription for a generic diagnostic imaging.
-Please note in .orderDetail, a specific slicing is available to give guidance how to express acquisition modalities if needed. In future iterations of this profile, more slicing might provide additional guidance.</td>
+               <td>
+<p>The nursing profile, generic version. Please note the nursing referral for medication does NOT depend on this generic version but is a FHIR prodfile on a different FHIR resource (MedicationRequest)</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-be-referralprescription-nursing-bladder-care.html" title="StructureDefinition/be-referralprescription-nursing-bladder-care">StructureDefinition/be-referralprescription-nursing-bladder-care</a>
+                  <a href="StructureDefinition-be-referralprescription.html" title="StructureDefinition/be-referralprescription">BeReferralPrescription</a>
                </td>
-               <td>The nursing profile specialized for bladder care. Actual bladder care information lives in the .orderDetail element. If needed to give a quantity (mandatory if bladder instillation): the .quantity element shall be used. If needed to express the product and time to leave the product (mandatory if bladder instillation): please explain in the .note element.</td>
+               <td>
+<p>The common structure for referral prescription.</p>
+</td>
             </tr>
          </tbody>
       </table>
    </p>
    <a name="3"> </a>
    <h3>Structures: Extension Definitions </h3>
-   <p>These define constraints on FHIR data types that need to be complied with by conformant implementations</p>
+   <p>
+    <p>These define constraints on FHIR data types for systems conforming to this implementation guide</p>
+</p>
    <p>
       <table class="grid">
          <col style="width:20%"/>
          <tbody>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-be-ext-contrastfluiduse.html" title="StructureDefinition/be-ext-contrastfluiduse">BeContrastFluidUse</a>
-               </td>
-               <td>Whether the use of contrast fluid in diagnostic imaging can be defined as 'If necessary' or 'Not permitted.'</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-be-ext-supporting-info.html" title="StructureDefinition/be-ext-supporting-info">BeSupportingInfo</a>
-               </td>
-               <td>Relevant clinical information in the context of this prescription concerning for example allergies, kidney function, diabetic. This extension allows the use of an Annotation or codeableConcept but when more detailed information can be given, it is RECOMMENDED to express it as structured as possible using the appropriate elements.</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
                   <a href="StructureDefinition-be-ext-contraindication.html" title="StructureDefinition/be-ext-contraindication">BeContraindication</a>
                </td>
-               <td>Contra indication in a prescription referral for diagnostic imaging.</td>
+               <td>
+<p>Contra indication in a prescription referral for diagnostic imaging.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-be-ext-contrastfluiduse.html" title="StructureDefinition/be-ext-contrastfluiduse">BeContrastFluidUse</a>
+               </td>
+               <td>
+<p>Whether the use of contrast fluid in diagnostic imaging can be defined as ‘If necessary’ or ‘Not permitted.’</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
                   <a href="StructureDefinition-be-ext-inform-party.html" title="StructureDefinition/be-ext-inform-party">BeInformParty</a>
                </td>
-               <td>Extra parties that need to be informed of the outcome, besides the prescriber.</td>
+               <td>
+<p>Extra parties that need to be informed of the outcome, besides the prescriber.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-be-ext-supporting-info.html" title="StructureDefinition/be-ext-supporting-info">BeSupportingInfo</a>
+               </td>
+               <td>
+<p>Relevant clinical information in the context of this prescription concerning for example allergies, kidney function, diabetic. This extension allows the use of an Annotation or codeableConcept but when more detailed information can be given, it is RECOMMENDED to express it as structured as possible using the appropriate elements.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
                   <a href="StructureDefinition-be-ext-urgent-communication.html" title="StructureDefinition/be-ext-urgent-communication">BeUrgentCommunication</a>
                </td>
-               <td>When there is a need to urgently communicate results of an order.</td>
+               <td>
+<p>When there is a need to urgently communicate results of an order.</p>
+</td>
             </tr>
          </tbody>
       </table>
    </p>
    <a name="4"> </a>
    <h3>Terminology: Value Sets </h3>
-   <p>These define sets of codes used by systems conforming with this implementation guide</p>
+   <p>
+    <p>These define sets of codes used by systems conforming to this implementation guide</p>
+</p>
    <p>
       <table class="grid">
          <col style="width:20%"/>
          <tbody>
             <tr>
                <td style="column-width:30%">
-                  <a href="ValueSet-be-vs-communication-method.html" title="ValueSet/be-vs-communication-method">ValueSet/be-vs-communication-method</a>
+                  <a href="ValueSet-be-vs-communication-method.html" title="ValueSet/be-vs-communication-method">BeCommunicationMethod</a>
                </td>
-               <td>Codes to define a communication method.</td>
+               <td>
+<p>Codes to define a communication method.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="ValueSet-be-vs-type-of-compression.html" title="ValueSet/be-vs-type-of-compression">ValueSet/be-vs-type-of-compression</a>
+                  <a href="ValueSet-be-vs-contrastfluid-use.html" title="ValueSet/be-vs-contrastfluid-use">BeContrastFluidUse</a>
                </td>
-               <td>Codes to define a type of compression therapy.</td>
+               <td>
+<p>Codes to define the use of contrast fluid.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="ValueSet-be-vs-referral-category.html" title="ValueSet/be-vs-referral-category">ValueSet/be-vs-referral-category</a>
+                  <a href="ValueSet-be-vs-digestive-system-care.html" title="ValueSet/be-vs-digestive-system-care">BeDigestiveSystemCare</a>
                </td>
-               <td>Codes to define the high level category for a referral prescription. SNOMED-CT codes in this valueset are just a draft proposal to give a general idea - pending an official valueset.</td>
+               <td>
+<p>Codes to define digestive system care</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="ValueSet-be-vs-nursing-medication-category.html" title="ValueSet/be-vs-nursing-medication-category">ValueSet/be-vs-nursing-medication-category</a>
+                  <a href="ValueSet-be-vs-nursing-medication-category.html" title="ValueSet/be-vs-nursing-medication-category">BeNursingMedicationCategory</a>
                </td>
-               <td>Codes to define a type of nursing medication category.</td>
+               <td>
+<p>Codes to define a type of nursing medication category.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="ValueSet-be-vs-contrastfluid-use.html" title="ValueSet/be-vs-contrastfluid-use">ValueSet/be-vs-contrastfluid-use</a>
+                  <a href="ValueSet-be-vs-nursing-medication-injection.html" title="ValueSet/be-vs-nursing-medication-injection">BeNursingMedicationInjection</a>
                </td>
-               <td>Codes to define the use of contrast fluid.</td>
+               <td>
+<p>Codes to define a type of nursing medication injection.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="ValueSet-be-vs-digestive-system-care.html" title="ValueSet/be-vs-digestive-system-care">ValueSet/be-vs-digestive-system-care</a>
+                  <a href="ValueSet-be-vs-nursing-medication-other.html" title="ValueSet/be-vs-nursing-medication-other">BeNursingMedicationOther</a>
                </td>
-               <td>Codes to define digestive system care</td>
+               <td>
+<p>Codes to define a type of nursing medication other.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="ValueSet-be-vs-type-of-other-nursing.html" title="ValueSet/be-vs-type-of-other-nursing">ValueSet/be-vs-type-of-other-nursing</a>
+                  <a href="ValueSet-be-vs-nursing-medication-percutaneous.html" title="ValueSet/be-vs-nursing-medication-percutaneous">BeNursingMedicationPercutaneous</a>
                </td>
-               <td>Codes to define a type of other nursing category.</td>
+               <td>
+<p>Codes to define a type of nursing medication percutaneous.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="ValueSet-be-vs-nursing-medication-perfusion.html" title="ValueSet/be-vs-nursing-medication-perfusion">ValueSet/be-vs-nursing-medication-perfusion</a>
+                  <a href="ValueSet-be-vs-nursing-medication-perfusion.html" title="ValueSet/be-vs-nursing-medication-perfusion">BeNursingMedicationPerfusion</a>
                </td>
-               <td>Codes to define a type of nursing medication perfusion.</td>
+               <td>
+<p>Codes to define a type of nursing medication perfusion.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="ValueSet-be-vs-reason-referral-status.html" title="ValueSet/be-vs-reason-referral-status">ValueSet/be-vs-reason-referral-status</a>
+                  <a href="ValueSet-be-vs-reason-referral-status.html" title="ValueSet/be-vs-reason-referral-status">BeReasonReferralStatus</a>
                </td>
-               <td>Codes to explain the current status of a referral prescription.</td>
+               <td>
+<p>Codes to explain the current status of a referral prescription.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="ValueSet-be-vs-nursing-medication-percutaneous.html" title="ValueSet/be-vs-nursing-medication-percutaneous">ValueSet/be-vs-nursing-medication-percutaneous</a>
+                  <a href="ValueSet-be-vs-referral-category.html" title="ValueSet/be-vs-referral-category">BeReferralCategory</a>
                </td>
-               <td>Codes to define a type of nursing medication percutaneous.</td>
+               <td>
+<p>Codes to define the high level category for a referral prescription. SNOMED-CT codes in this valueset are just a draft proposal to give a general idea - pending an official valueset.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="ValueSet-be-vs-type-of-nursing.html" title="ValueSet/be-vs-type-of-nursing">ValueSet/be-vs-type-of-nursing</a>
+                  <a href="ValueSet-be-vs-type-of-bladder-care.html" title="ValueSet/be-vs-type-of-bladder-care">BeBladderCareType</a>
                </td>
-               <td>Codes to define a type of nursing.</td>
+               <td>
+<p>Codes to define a type of bladder care.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="ValueSet-be-vs-nursing-medication-other.html" title="ValueSet/be-vs-nursing-medication-other">ValueSet/be-vs-nursing-medication-other</a>
+                  <a href="ValueSet-be-vs-type-of-compression.html" title="ValueSet/be-vs-type-of-compression">BeCompressionType</a>
                </td>
-               <td>Codes to define a type of nursing medication other.</td>
+               <td>
+<p>Codes to define a type of compression therapy.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="ValueSet-be-vs-type-of-non-reimbursable-nursing.html" title="ValueSet/be-vs-type-of-non-reimbursable-nursing">ValueSet/be-vs-type-of-non-reimbursable-nursing</a>
+                  <a href="ValueSet-be-vs-type-of-non-reimbursable-nursing.html" title="ValueSet/be-vs-type-of-non-reimbursable-nursing">BeNonReimbursableNursing</a>
                </td>
-               <td>Codes to define a type of non reimbursable nursing category.</td>
+               <td>
+<p>Codes to define a type of non reimbursable nursing category.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="ValueSet-be-vs-type-of-bladder-care.html" title="ValueSet/be-vs-type-of-bladder-care">ValueSet/be-vs-type-of-bladder-care</a>
+                  <a href="ValueSet-be-vs-type-of-nursing.html" title="ValueSet/be-vs-type-of-nursing">BeNursingType</a>
                </td>
-               <td>Codes to define a type of bladder care.</td>
+               <td>
+<p>Codes to define a type of nursing.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="ValueSet-be-vs-nursing-medication-injection.html" title="ValueSet/be-vs-nursing-medication-injection">ValueSet/be-vs-nursing-medication-injection</a>
+                  <a href="ValueSet-be-vs-type-of-other-nursing.html" title="ValueSet/be-vs-type-of-other-nursing">BeOtherNursing</a>
                </td>
-               <td>Codes to define a type of nursing medication injection.</td>
+               <td>
+<p>Codes to define a type of other nursing category.</p>
+</td>
             </tr>
          </tbody>
       </table>
    </p>
    <a name="5"> </a>
    <h3>Terminology: Code Systems </h3>
-   <p>These define new code systems used by systems conforming with this implementation guide</p>
+   <p>
+    <p>These define new code systems used by systems conforming to this implementation guide</p>
+</p>
    <p>
       <table class="grid">
          <col style="width:20%"/>
          <tbody>
             <tr>
                <td style="column-width:30%">
-                  <a href="CodeSystem-be-cs-nursing-code-other.html" title="CodeSystem/be-cs-nursing-code-other">BeNursingCodeOther</a>
+                  <a href="CodeSystem-be-cs-nursing-code-compressiontherapy.html" title="CodeSystem/be-cs-nursing-code-compressiontherapy">BeNursingCodeCompressiontherapy</a>
                </td>
-               <td>Nursing codes in Belgium. To define details in nursing activities for the other category. Initially defined as supporting CodeSystem for the referral prescription.</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="CodeSystem-codesystem-be-type-of-bladder-care.html" title="CodeSystem/codesystem-be-type-of-bladder-care">BeBladderCareType</a>
-               </td>
-               <td>Nursing codes in Belgium. To define details in nursing activities for the bladder care category. Initially defined as supporting CodeSystem for the referral prescription.</td>
+               <td>
+<p>Nursing codes in Belgium. To define details in nursing activities for compression therapy. Initially defined as supporting CodeSystem for the referral prescription.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
                   <a href="CodeSystem-be-cs-nursing-code-non-reimbursable.html" title="CodeSystem/be-cs-nursing-code-non-reimbursable">BeNursingCodeNonReimbursable</a>
                </td>
-               <td>Nursing codes in Belgium. To define details in nursing activities for the non reimbursable category. Initially defined as supporting CodeSystem for the referral prescription.</td>
+               <td>
+<p>Nursing codes in Belgium. To define details in nursing activities for the non reimbursable category. Initially defined as supporting CodeSystem for the referral prescription.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="CodeSystem-codesystem-be-digestive-system-care.html" title="CodeSystem/codesystem-be-digestive-system-care">BeDigestiveSystemCare</a>
+                  <a href="CodeSystem-be-cs-nursing-code-other.html" title="CodeSystem/be-cs-nursing-code-other">BeNursingCodeOther</a>
                </td>
-               <td>Nursing codes in Belgium. To define details in nursing activities for the digestive system care category. Initially defined as supporting CodeSystem for the referral prescription.</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="CodeSystem-be-status-reason.html" title="CodeSystem/be-status-reason">BeStatusReason</a>
-               </td>
-               <td>Status reason in Belgium. Initially defined as supporting CodeSystem for the referral prescription.</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="CodeSystem-be-communication-code.html" title="CodeSystem/be-communication-code">BeCommunicationCode</a>
-               </td>
-               <td>Communication codes in Belgium. To define a specific method of communicating. Initially defined as supporting CodeSystem for the referral prescription.</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="CodeSystem-be-nursing-medication-percutaneous.html" title="CodeSystem/be-nursing-medication-percutaneous">BeNursingMedicationPercutaneous</a>
-               </td>
-               <td>Nursing codes in Belgium. To define details in nursing activities for the medication percutaneous category. Initially defined as supporting CodeSystem for the referral prescription.</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="CodeSystem-be-nursing-medication-injection.html" title="CodeSystem/be-nursing-medication-injection">BeNursingMedicationInjection</a>
-               </td>
-               <td>Nursing codes in Belgium. To define details in nursing activities for the medication injection category. Initially defined as supporting CodeSystem for the referral prescription.</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="CodeSystem-be-cs-nursing-code-compressiontherapy.html" title="CodeSystem/be-cs-nursing-code-compressiontherapy">BeNursingCodeCompressiontherapy</a>
-               </td>
-               <td>Nursing codes in Belgium. To define details in nursing activities for compression therapy. Initially defined as supporting CodeSystem for the referral prescription.</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="CodeSystem-be-contrastfluid-use.html" title="CodeSystem/be-contrastfluid-use">BeContrastFluidUse</a>
-               </td>
-               <td>Whether use of contrast fluid should be considered.</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="CodeSystem-be-nursing-medication-category.html" title="CodeSystem/be-nursing-medication-category">BeNursingMedicationCategory</a>
-               </td>
-               <td>Nursing codes in Belgium. To define details in nursing activities for the medication category. Initially defined as supporting CodeSystem for the referral prescription.</td>
+               <td>
+<p>Nursing codes in Belgium. To define details in nursing activities for the other category. Initially defined as supporting CodeSystem for the referral prescription.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
                   <a href="CodeSystem-be-cs-nursing-code.html" title="CodeSystem/be-cs-nursing-code">BeNursingCode</a>
                </td>
-               <td>Nursing codes in Belgium. To define a high level in nursing activities. Initially defined as supporting CodeSystem for the referral prescription.</td>
+               <td>
+<p>Nursing codes in Belgium. To define a high level in nursing activities. Initially defined as supporting CodeSystem for the referral prescription.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-be-communication-code.html" title="CodeSystem/be-communication-code">BeCommunicationCode</a>
+               </td>
+               <td>
+<p>Communication codes in Belgium. To define a specific method of communicating. Initially defined as supporting CodeSystem for the referral prescription.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-be-contrastfluid-use.html" title="CodeSystem/be-contrastfluid-use">BeContrastFluidUse</a>
+               </td>
+               <td>
+<p>Whether use of contrast fluid should be considered.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-codesystem-be-digestive-system-care.html" title="CodeSystem/codesystem-be-digestive-system-care">BeDigestiveSystemCare</a>
+               </td>
+               <td>
+<p>Nursing codes in Belgium. To define details in nursing activities for the digestive system care category. Initially defined as supporting CodeSystem for the referral prescription.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-be-nursing-medication-category.html" title="CodeSystem/be-nursing-medication-category">BeNursingMedicationCategory</a>
+               </td>
+               <td>
+<p>Nursing codes in Belgium. To define details in nursing activities for the medication category. Initially defined as supporting CodeSystem for the referral prescription.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-be-nursing-medication-injection.html" title="CodeSystem/be-nursing-medication-injection">BeNursingMedicationInjection</a>
+               </td>
+               <td>
+<p>Nursing codes in Belgium. To define details in nursing activities for the medication injection category. Initially defined as supporting CodeSystem for the referral prescription.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-be-nursing-medication-percutaneous.html" title="CodeSystem/be-nursing-medication-percutaneous">BeNursingMedicationPercutaneous</a>
+               </td>
+               <td>
+<p>Nursing codes in Belgium. To define details in nursing activities for the medication percutaneous category. Initially defined as supporting CodeSystem for the referral prescription.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
                   <a href="CodeSystem-be-nursing-medication-perfusion.html" title="CodeSystem/be-nursing-medication-perfusion">BeNursingMedicationPerfusion</a>
                </td>
-               <td>Nursing codes in Belgium. To define details in nursing activities for the medication perfusion category. Initially defined as supporting CodeSystem for the referral prescription.</td>
+               <td>
+<p>Nursing codes in Belgium. To define details in nursing activities for the medication perfusion category. Initially defined as supporting CodeSystem for the referral prescription.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-be-status-reason.html" title="CodeSystem/be-status-reason">BeStatusReason</a>
+               </td>
+               <td>
+<p>Status reason in Belgium. Initially defined as supporting CodeSystem for the referral prescription.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="CodeSystem-codesystem-be-type-of-bladder-care.html" title="CodeSystem/codesystem-be-type-of-bladder-care">BeBladderCareType</a>
+               </td>
+               <td>
+<p>Nursing codes in Belgium. To define details in nursing activities for the bladder care category. Initially defined as supporting CodeSystem for the referral prescription.</p>
+</td>
             </tr>
          </tbody>
       </table>
    </p>
    <a name="6"> </a>
    <h3>Terminology: Naming Systems </h3>
-   <p>These define identifier and/or code system identities used by systems conforming with this implementation guide</p>
+   <p>
+    <p>These define identifier and/or code system identities used by systems conforming to this implementation guide</p>
+</p>
    <p>
       <table class="grid">
          <col style="width:20%"/>
          <tbody>
             <tr>
                <td style="column-width:30%">
-                  <a href="NamingSystem-be-ns-coronalertcode.html" title="NamingSystem/be-ns-coronalertcode">NamingSystem/be-ns-coronalertcode</a>
+                  <a href="NamingSystem-be-ns-coronalertcode.html" title="NamingSystem/be-ns-coronalertcode">BeNSCoronalertcode</a>
                </td>
-               <td>Code as generated by the Coronalert app.</td>
+               <td>
+<p>Code as generated by the Coronalert app.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="NamingSystem-be-ns-specimen.html" title="NamingSystem/be-ns-specimen">NamingSystem/be-ns-specimen</a>
+                  <a href="NamingSystem-be-ns-specimen.html" title="NamingSystem/be-ns-specimen">BeNSSpecimen</a>
                </td>
-               <td>National identifier for a specimen when needed.</td>
+               <td>
+<p>National identifier for a specimen when needed.</p>
+</td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="NamingSystem-be-ns-uhmep.html" title="NamingSystem/be-ns-uhmep">NamingSystem/be-ns-uhmep</a>
+                  <a href="NamingSystem-be-ns-uhmep.html" title="NamingSystem/be-ns-uhmep">BeUnadressedHealthMessageExchangePlatform</a>
                </td>
-               <td>UHMEP naming system</td>
+               <td>
+<p>UHMEP naming system</p>
+</td>
             </tr>
          </tbody>
       </table>
    </p>
    <a name="7"> </a>
-   <h3>Other </h3>
-   <p>These are resources that are used within this implementation guide that don't fit into one of the other categories</p>
+   <h3>Example: Example Instances </h3>
+   <p>
+    <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like</p>
+</p>
    <p>
       <table class="grid">
          <col style="width:20%"/>
          <tbody>
             <tr>
                <td style="column-width:30%">
-                  <a href="ServiceRequest-laboratory-order-example1.html" title="ServiceRequest/laboratory-order-example1">ServiceRequest/laboratory-order-example1</a>
+                  <a href="ServiceRequest-example3-referralprescription-nursing-compressiontherapy.html" title="ServiceRequest/example3-referralprescription-nursing-compressiontherapy">example3-referralprescription-nursing-compressiontherapy</a>
                </td>
-               <td></td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="ServiceRequest-diagnostic-imaging-basic-example-everything-contained.html" title="ServiceRequest/diagnostic-imaging-basic-example-everything-contained">ServiceRequest/diagnostic-imaging-basic-example-everything-contained</a>
+                  <a href="ServiceRequest-example5-referralprescription-nursing-digestive-system-care.html" title="ServiceRequest/example5-referralprescription-nursing-digestive-system-care">example5-referralprescription-nursing-digestive-system-care</a>
                </td>
-               <td></td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="ServiceRequest-diagnostic-imaging-basic-example-concreteWithText.html" title="ServiceRequest/diagnostic-imaging-basic-example-concreteWithText">ServiceRequest/diagnostic-imaging-basic-example-concreteWithText</a>
+                  <a href="CarePlan-gpvisit.html" title="CarePlan/gpvisit">gpvisit</a>
                </td>
-               <td></td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="ServiceRequest-referralprescription-nursing-example3-compression-therapy.html" title="ServiceRequest/referralprescription-nursing-example3-compression-therapy">ServiceRequest/referralprescription-nursing-example3-compression-therapy</a>
+                  <a href="Condition-condition1.html" title="Condition/condition1">condition1</a>
                </td>
-               <td></td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="ServiceRequest-diagnostic-imaging-basic-example-concreteWithDetails.html" title="ServiceRequest/diagnostic-imaging-basic-example-concreteWithDetails">ServiceRequest/diagnostic-imaging-basic-example-concreteWithDetails</a>
+                  <a href="ServiceRequest-diagnostic-imaging-basic-example-concreteWithDetails.html" title="ServiceRequest/diagnostic-imaging-basic-example-concreteWithDetails">diagnostic-imaging-basic-example-concreteWithDetails</a>
                </td>
-               <td></td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="CarePlan-gpvisit.html" title="CarePlan/gpvisit">CarePlan/gpvisit</a>
+                  <a href="ServiceRequest-diagnostic-imaging-basic-example-concreteWithText.html" title="ServiceRequest/diagnostic-imaging-basic-example-concreteWithText">diagnostic-imaging-basic-example-concreteWithText</a>
                </td>
-               <td></td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Patient-patient1.html" title="Patient/patient1">Patient/patient1</a>
+                  <a href="ServiceRequest-diagnostic-imaging-basic-example-everything-contained.html" title="ServiceRequest/diagnostic-imaging-basic-example-everything-contained">diagnostic-imaging-basic-example-everything-contained</a>
                </td>
-               <td></td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="ServiceRequest-referralprescription-nursing-example5-digestive-system-care.html" title="ServiceRequest/referralprescription-nursing-example5-digestive-system-care">ServiceRequest/referralprescription-nursing-example5-digestive-system-care</a>
+                  <a href="ServiceRequest-diagnostic-imaging-basic-example-useOfModality.html" title="ServiceRequest/diagnostic-imaging-basic-example-useOfModality">diagnostic-imaging-basic-example-useOfModality</a>
                </td>
-               <td></td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="ServiceRequest-diagnostic-imaging-basic-example-useOfModality.html" title="ServiceRequest/diagnostic-imaging-basic-example-useOfModality">ServiceRequest/diagnostic-imaging-basic-example-useOfModality</a>
+                  <a href="ServiceRequest-laboratory-order-example1.html" title="ServiceRequest/laboratory-order-example1">laboratory-order-example1</a>
                </td>
-               <td></td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="ServiceRequest-referralprescription-nursing-example6-compression-therapy.html" title="ServiceRequest/referralprescription-nursing-example6-compression-therapy">ServiceRequest/referralprescription-nursing-example6-compression-therapy</a>
+                  <a href="Patient-patient1.html" title="Patient/patient1">patient1</a>
                </td>
-               <td></td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="ServiceRequest-referralprescription-nursing-example2-digestive-system-care.html" title="ServiceRequest/referralprescription-nursing-example2-digestive-system-care">ServiceRequest/referralprescription-nursing-example2-digestive-system-care</a>
+                  <a href="Practitioner-practitioner1.html" title="Practitioner/practitioner1">practitioner1</a>
                </td>
-               <td></td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Practitioner-practitioner1.html" title="Practitioner/practitioner1">Practitioner/practitioner1</a>
+                  <a href="Practitioner-practitioner2.html" title="Practitioner/practitioner2">practitioner2</a>
                </td>
-               <td></td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Practitioner-practitioner2.html" title="Practitioner/practitioner2">Practitioner/practitioner2</a>
+                  <a href="ServiceRequest-referralprescription-nursing-example2-digestive-system-care.html" title="ServiceRequest/referralprescription-nursing-example2-digestive-system-care">referralprescription-nursing-example2-digestive-system-care</a>
                </td>
-               <td></td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Condition-condition1.html" title="Condition/condition1">Condition/condition1</a>
+                  <a href="ServiceRequest-referralprescription-nursing-example3-compression-therapy.html" title="ServiceRequest/referralprescription-nursing-example3-compression-therapy">referralprescription-nursing-example3-compression-therapy</a>
                </td>
-               <td></td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ServiceRequest-referralprescription-nursing-example5-digestive-system-care.html" title="ServiceRequest/referralprescription-nursing-example5-digestive-system-care">referralprescription-nursing-example5-digestive-system-care</a>
+               </td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ServiceRequest-referralprescription-nursing-example6-compression-therapy.html" title="ServiceRequest/referralprescription-nursing-example6-compression-therapy">referralprescription-nursing-example6-compression-therapy</a>
+               </td>
             </tr>
          </tbody>
       </table>
@@ -723,22 +861,30 @@ Please note in .orderDetail, a specific slicing is available to give guidance ho
     </div>    <!-- /container -->
   </div>    <!-- /segment-content -->
 
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
 
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <a name="bottom"> </a>
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
+
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2019+ <a style="color: #81BEF7" href="http://hl7belgium.org">HL7 Belgium</a>.  Package hl7.country.fhir.ig#0.2.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Sep 20, 2021 13:23+0000">2021-09-20</span>
+          IG &copy; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7belgium.org">HL7 Belgium</a>.  Package my-ig#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Sep 20, 2021 17:40+0000">2021-09-20</span>
           <br/>
-          <span style="color: #FFFF77">
-                      Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
-                 <a style="color: #81BEF7" href="qa.html">QA Report</a>
-                 | <a style="color: #81BEF7" href="http://hl7.country.org/fhir/ig/history.html" target="_blank">Version History <img src="external.png" alt="external" style="vertical-align: baseline"/></a> |
-                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/R4/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> |
-                   <!-- <a style="color: #81BEF7" href="todo.html">Search</a> | --> 
-                 <a style="color: #81BEF7" href="http://hl7.org/fhir-issues" target="_blank">Propose a change <img src="external.png" alt="external" style="vertical-align: baseline"/></a>
-
-          </span>
+          <span style="color: var(--footer-highlight-text-color)"></span>
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          
         </p>
       </div>    <!-- /inner-wrapper -->
     </div>    <!-- /container -->
@@ -753,13 +899,19 @@ Please note in .orderDetail, a specific slicing is available to give guidance ho
     <!-- Bootstrap core JavaScript
   ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
   <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
   <script src="assets/js/respond.min.js" type="text/javascript"> </script>
   <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
   <script>anchors.options.visible = 'hover'
 anchors.add()</script>
   
+  <!-- feedback form - Google forms -->
+  <!-- v0.1, 2021-01-09 -->
+
+
+
+  <!-- / feedback form -->
+
     <!-- Analytics Below
   ================================================== -->
   </body>

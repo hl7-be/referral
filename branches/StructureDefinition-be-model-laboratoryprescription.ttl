@@ -5,7 +5,7 @@
 
 # - resource -------------------------------------------------------------------
 
-<http://hl7.country.org/fhir/ig/StructureDefinition/be-model-laboratoryprescription> a fhir:StructureDefinition;
+<http://example.com/fhir/example/StructureDefinition/be-model-laboratoryprescription> a fhir:StructureDefinition;
   fhir:nodeRole fhir:treeRoot;
   fhir:Resource.id [ fhir:value "be-model-laboratoryprescription"];
   fhir:DomainResource.text [
@@ -20,10 +20,20 @@
   fhir:StructureDefinition.publisher [ fhir:value "HL7 Belgium"];
   fhir:StructureDefinition.contact [
      fhir:index 0;
+     fhir:ContactDetail.name [ fhir:value "HL7 Belgium" ];
      fhir:ContactDetail.telecom [
        fhir:index 0;
        fhir:ContactPoint.system [ fhir:value "url" ];
        fhir:ContactPoint.value [ fhir:value "http://hl7belgium.org" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:ContactDetail.name [ fhir:value "Bart Decuypere" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "email" ];
+       fhir:ContactPoint.value [ fhir:value "bart.decuypere@ehealth.fgov.be" ];
+       fhir:ContactPoint.use [ fhir:value "work" ]
      ]
   ];
   fhir:StructureDefinition.description [ fhir:value "Logical model describing the model for the prescription laboratory. This draft is used in the HL7 Belgian workgroup for laboratory."];
@@ -32,7 +42,8 @@
      fhir:CodeableConcept.coding [
        fhir:index 0;
        fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
-       fhir:Coding.code [ fhir:value "001" ]
+       fhir:Coding.code [ fhir:value "001" ];
+       fhir:Coding.display [ fhir:value "World" ]
      ]
   ];
   fhir:StructureDefinition.fhirVersion [ fhir:value "4.0.1"];
@@ -605,7 +616,7 @@
 
 # - ontology header ------------------------------------------------------------
 
-<http://hl7.country.org/fhir/ig/StructureDefinition/be-model-laboratoryprescription.ttl> a owl:Ontology;
+<http://example.com/fhir/example/StructureDefinition/be-model-laboratoryprescription.ttl> a owl:Ontology;
   owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------

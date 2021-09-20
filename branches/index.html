@@ -3,33 +3,38 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>HL7.COUNTRY.FHIR.IG\Be Referral Prescription IG Home Page - FHIR v4.0.1</title>
-  
+    <title>MY-IG\Home - FHIR v4.0.1</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
 
     <link rel="stylesheet" href="fhir.css"/>
-     
+
       <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.css"/>
     <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
-  
+
       <!-- Project extras -->
     <link rel="stylesheet" href="assets/css/project.css"/>
     <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
     <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
       <!-- Placeholder for child template CSS declarations -->
-    <link rel="stylesheet" href="assets/css/hl7.css"/>
-    <link rel="stylesheet" href="assets/css/fhir.css"/>
+<link rel="stylesheet" href="assets/css/hl7-be.css"/>
+<link rel="stylesheet" href="assets/css/affiliate.css"/>
 
     <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+  <!-- Questionnaire: -->
+    <link rel="stylesheet" href="assets/css/lforms.min.css"/>
+
+
+
 
       <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
       <!-- [if lt IE 9]>
     <script src="assets/js/html5shiv.js"></script>
     <script src="assets/js/respond.min.js"></script>
     <![endif] -->
-  
+
       <!-- Favicons -->
     <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
     <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
@@ -37,37 +42,46 @@
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
-  <body>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
 
     <style type="text/css">h2{--heading-prefix:"1"}
     h3,h4,h5,h6{--heading-prefix:"1"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
-        
-        <div id="hl7-nav">
-          <a no-external="true" id="hl7-logo" href="http://hl7.org">
-            <img src="assets/images/hl7-logo-header.png" alt="Visit the HL7 website" height="50"/>
+          <!-- Placeholder for child template header declarations -->
+
+        <div id="ig-nav">
+          <a no-external="true" id="hl7-logo" href="https://hl7-be.github.io">
+            <img src="assets/images/hl7be-logo-header.png" alt="HL7 Belgium" height="65"/>
           </a>
         </div>
-        <div id="family-nav">
-          <a no-external="true" id="family-logo" href="http://hl7.org/fhir"><img src="assets/images/fhir-logo-www.png" alt="Visit the FHIR website" height="50"/> </a>
+        <div id="fhir-nav">
+          <a no-external="true" id="fhir-logo" href="http://hl7.org/fhir"><img src="assets/images/fhir-logo-www.png" alt="Visit the FHIR website" height="50"/> </a>
         </div>
-        <div id="hl7-search">
+        <div id="ig-search">
           <a no-external="true" id="hl7-search-lnk" href="http://hl7.org/fhir/search.cfm"><img src="assets/images/search.png" alt="Search FHIR"/></a>
+        </div>
+  <!-- Left logo - typically the publisher's logo - project or affiliate -->
+        <div id="project-nav">
+          <a no-external="true" id="project-logo" href="http://hl7.eu">
+            <img src="assets/images/scribe.png" alt="Project home" height="71"/>
+          </a>
         </div>
 
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">HL7 BE Referral Prescription WG Implementation Guide (work in progress)</span><br/>0.2.0 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">HL7 BE Referral Prescription WG Implementation Guide (work in progress)</span><br/>0.2.0 - CI</p>
         </div>
       </div>   <!-- /container -->
     </div>    <!-- /segment-header -->
-    
+
     <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
       <div id="stripe"> </div>
       <div class="container">    <!-- container -->
           <!-- HEADER CONTENT -->
-    
+
         <nav class="navbar navbar-inverse">
             <!-- status-bar -->
           <div class="container">
@@ -92,16 +106,16 @@
 		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret"></b>
 		</a>
 		<ul class="dropdown-menu">
-			<li><a name="l173">​</a>
+			<li><a name="l191">​</a>
 				<a href="howto.html">How to use this Publication</a>
 			</li>
-			<li><a name="l179">​</a>
+			<li><a name="l197">​</a>
 				<a href="standardsstatus.html">Standards Status</a>
 			</li>
-			<li><a name="l185">​</a>
+			<li><a name="l203">​</a>
 				<a href="privacy.html">Privacy considerations</a>
 			</li>
-			<li><a name="l191">​</a>
+			<li><a name="l209">​</a>
 				<a href="security.html">Security considerations</a>
 			</li>
 			<li>
@@ -114,10 +128,10 @@
 		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Functional Description<b class="caret"></b>
 		</a>
 		<ul class="dropdown-menu">
-			<li><a name="l216">​</a>
+			<li><a name="l234">​</a>
 				<a href="usecases.html">Use Cases</a>
 			</li>
-			<li><a name="l222">​</a>
+			<li><a name="l240">​</a>
 				<a href="logical-models.html">Logical Models</a>
 			</li>
   <!-- <li>
@@ -139,7 +153,7 @@
 		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Terminology<b class="caret"></b>
 		</a>
 		<ul class="dropdown-menu">
-			<li><a name="l258">​</a>
+			<li><a name="l276">​</a>
 				<a href="terminology.html">Terminology Resources</a>
 			</li>
 		</ul>
@@ -164,10 +178,10 @@
 	<li class="dropdown">
 		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Implementation<b class="caret"></b></a>
 		<ul class="dropdown-menu">
-			<li><a name="l276">​</a><a href="testdata.html">Test Data<img src="external.png" style="text-align: baseline"/></a></li>
-			<li><a name="l281">​</a><a href="openapi.html" target="_blank">OpenAPI</a></li>
-			<li><a name="l285">​</a><a href="testservers.html">Test Servers<img src="external.png" style="text-align: baseline"/></a></li>
-			<li><a name="l290">​</a><a href="downloads.html">Downloads</a></li>
+			<li><a name="l294">​</a><a href="testdata.html">Test Data<img src="external.png" style="text-align: baseline"/></a></li>
+			<li><a name="l299">​</a><a href="openapi.html" target="_blank">OpenAPI</a></li>
+			<li><a name="l303">​</a><a href="testservers.html">Test Servers<img src="external.png" style="text-align: baseline"/></a></li>
+			<li><a name="l308">​</a><a href="downloads.html">Downloads</a></li>
 		</ul>
 	</li>
 </ul>      
@@ -178,18 +192,22 @@
       </div>    <!-- /container -->
     </div>    <!-- /segment-navbar -->
       <!-- status-bar -->
+    
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
-      <div class="container">    <!-- container -->  
+      <div class="container">    <!-- container -->
         <ul class="breadcrumb">
-          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Be Referral Prescription IG Home Page</b></li>
-        </ul>  
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Home</b></li>
+          
+        </ul>
       </div>    <!-- /container -->
     </div>    <!-- /segment-breadcrumb -->
-    
+
+    <a name="top"> </a>
     <div id="segment-content" class="segment">    <!-- segment-content -->
       <div class="container">    <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
+
 <style type="text/css">
 h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
 h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
@@ -198,106 +216,90 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">HL7 BE Referral Prescription WG Implementation Guide (work in progress) - Local Development build (v0.2.0). See the <a href="http://hl7.country.org/fhir/ig/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
-  <h2>Be Referral Prescription IG Home Page</h2>
+    <!-- ReleaseHeader --><p id="publish-box">HL7 BE Referral Prescription WG Implementation Guide (work in progress) - Local Development build (v0.2.0). See the <a href="http://example.com/fhir/example/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <h2>Home</h2>
   
-  <div lang="en">
-   <div class="markdown-toc">
-      <p>Contents:</p>
-      <ul>
-         <li>
-            <a href="#1">Content</a>
-         </li>
-         <li>
-            <a href="#navigation">Navigation</a>
-         </li>
-         <li>
-            <a href="#ip">Intellectual Property Considerations</a>
-         </li>
-         <li>
-            <a href="#disclaimer">Disclaimer</a>
-         </li>
-      </ul>
-   </div>
+  <div lang="en"><div class="markdown-toc"><p>Contents:</p><ul><li><a href="#1">Content</a></li><li><a href="#navigation">Navigation</a></li><li><a href="#ip">Intellectual Property Considerations</a></li><li><a href="#disclaimer">Disclaimer</a></li></ul></div>
   <a name="scope">  </a>
-	  <p>
+	<p>
     This is the HL7 Belgium FHIR Implementation Guide for the Referral prescription workgroup
  <a href="https://wiki.hl7belgium.org/index.php?title=Procedure_Referral_Workgroup">which can be consulted here</a>. First work in progress is available in this guide on the <a href="artifacts.html">Artifacts page</a> General guidance work in progress information is on the <a href="guidance.html">Guidance page</a>
    </p>
-	  <blockquote class="stu-note">
-	     <strong>This documentation and set of artefacts are still undergoing development.</strong>
+	<blockquote class="stu-note">
+	<strong>This documentation and set of artefacts are still undergoing development.</strong>
 	The working groups of HL7 and the different interested parties are working on this specification. This publication is a development version that has not yet been validated by HL7 nor by the users and implementers.
 	</blockquote>
-	  <p>&nbsp;</p>
-  <a name="1"></a>
-   <h3>Content</h3>
-	  <p></p>
+	<p>&nbsp;</p>
+  <a name="1"></a><h3>Content</h3>
+	<p></p>
 
-   <p>This publication contains the specifications related to the referral prescription areas and is structured in the following content sections:</p>
-   <p></p>
-   <p>
-      <strong>Background:</strong> Information about the HL7 Belgium specifications, or what you should know to be able to best navigate and use these specifications. Contains a general introduction to the publication structure and content, the artefact types, common privacy and security specifications and the official HL7 FHIR release that this specification is based upon.</p>
-   <p></p>
-   <p>
-      <strong>Functional Description:</strong> Functional content, more relevant for business or functional analysts, as well as health professionals. Contains the context around these specifications (relevant projects, legal and implementation aspects), the interoperability actors and transactions, and especially the use cases that have been considered in the specification and the logical data models – the functional (i.e. non-technical) data sets that are used in data exchange.</p>
-   <p></p>
-   <p>
-      <strong>Detailed Specifications:</strong> The actual technical specifications – the FHIR conformance resources that are defined in this specification – profiles, data types, capability statements. This is targeted at (technical) implementers.</p>
-   <p></p>
-   <p>
-      <strong>Terminology:</strong> The vocabulary resources – Code Systems and value sets, that support semantic interoperability. These resources promote the use of standard, controlled terminologies (e.g. SNOMED-CT) and define internal codes for Belgium, e.g. official codes for Civil Status).</p>
-   <p></p>
-   <p>
-      <strong>Implementation:</strong> Content, Tools and resources to help in implementation – test data (example resources), currently available test servers, and other tools to validate the compatibility between systems and these specifications.</p>
-   <p>&nbsp;</p>
-   <p>There is also an overview of the projects and motivation for the specifications.</p>
-   <p></p>
+<p>This publication contains the specifications related to the referral prescription areas and is structured in the following content sections:</p>
+<p></p>
+<p><strong>Background:</strong> Information about the HL7 Belgium specifications, or what you should know to be able to best navigate and use these specifications. Contains a general introduction to the publication structure and content, the artefact types, common privacy and security specifications and the official HL7 FHIR release that this specification is based upon.</p>
+<p></p>
+<p><strong>Functional Description:</strong> Functional content, more relevant for business or functional analysts, as well as health professionals. Contains the context around these specifications (relevant projects, legal and implementation aspects), the interoperability actors and transactions, and especially the use cases that have been considered in the specification and the logical data models – the functional (i.e. non-technical) data sets that are used in data exchange.</p>
+<p></p>
+<p><strong>Detailed Specifications:</strong> The actual technical specifications – the FHIR conformance resources that are defined in this specification – profiles, data types, capability statements. This is targeted at (technical) implementers.</p>
+<p></p>
+<p><strong>Terminology:</strong> The vocabulary resources – Code Systems and value sets, that support semantic interoperability. These resources promote the use of standard, controlled terminologies (e.g. SNOMED-CT) and define internal codes for Belgium, e.g. official codes for Civil Status).</p>
+<p></p>
+<p><strong>Implementation:</strong> Content, Tools and resources to help in implementation – test data (example resources), currently available test servers, and other tools to validate the compatibility between systems and these specifications.</p>
+<p>&nbsp;</p>
+<p>There is also an overview of the projects and motivation for the specifications.</p>
+<p></p>
 
-   <a name="navigation">  </a>
-   <h3 id="navigation">Navigation</h3>
-   <p>This implementation guide uses the FHIR web-based publication. This allows easy navigation between the Belgium-specific portion of the implementation guide and the resources, data types, value sets and other specification components leveraged from the FHIR core specification. This approach also allows implementers to easily navigate to the information needed to perform a task.</p>
-   <p>The top menu allows quick navigation to the different sections, and a <a href="toc.html">Table of Contents</a>&nbsp; is provided with the entire content of this Implementation Guide. (Be aware that some pages have multiple tabs).</p>
-   <p></p>
-	  <a name="ip">  </a>
-	  <h3>Intellectual Property Considerations</h3>
-	  <p>
+<a name="navigation">  </a>
+<h3 id="navigation">Navigation</h3>
+<p>This implementation guide uses the FHIR web-based publication. This allows easy navigation between the Belgium-specific portion of the implementation guide and the resources, data types, value sets and other specification components leveraged from the FHIR core specification. This approach also allows implementers to easily navigate to the information needed to perform a task.</p>
+<p>The top menu allows quick navigation to the different sections, and a <a href="toc.html">Table of Contents</a>&nbsp; is provided with the entire content of this Implementation Guide. (Be aware that some pages have multiple tabs).</p>
+<p></p>
+	<a name="ip">  </a>
+	<h3>Intellectual Property Considerations</h3>
+	<p>
     While this implementation guide and the underlying FHIR are licensed as public domain, this guide includes examples making use of terminologies such 
     as LOINC, SNOMED CT and others which have more restrictive licensing requirements. Implementers should make themselves familiar with licensing and 
     any other constraints of terminologies, questionnaires, and other components used as part of their implementation process. In some cases, 
     licensing requirements may limit the systems that data captured using certain questionnaires may be shared with.
   </p>
 
-	  <a name="disclaimer">  </a>
-	  <h3>Disclaimer</h3>
-	  <p>
+	<a name="disclaimer">  </a>
+	<h3>Disclaimer</h3>
+	<p>
     The specification herewith documented is a draft working specification, and may not be used for any implementation purposes. 
     This draft is provided without warranty of completeness or consistency, and the official publication supersedes this draft.
     No liability can be inferred from the use or misuse of this specification, or its consequences.
   </p>
 </div>
-
 </div>
         </div>    <!-- /inner-wrapper -->
       </div>    <!-- /row -->
     </div>    <!-- /container -->
   </div>    <!-- /segment-content -->
 
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
 
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <a name="bottom"> </a>
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
+
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2019+ <a style="color: #81BEF7" href="http://hl7belgium.org">HL7 Belgium</a>.  Package hl7.country.fhir.ig#0.2.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Sep 20, 2021 13:23+0000">2021-09-20</span>
+          IG &copy; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7belgium.org">HL7 Belgium</a>.  Package my-ig#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Sep 20, 2021 17:40+0000">2021-09-20</span>
           <br/>
-          <span style="color: #FFFF77">
-                      Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
-                 <a style="color: #81BEF7" href="qa.html">QA Report</a>
-                 | <a style="color: #81BEF7" href="http://hl7.country.org/fhir/ig/history.html" target="_blank">Version History <img src="external.png" alt="external" style="vertical-align: baseline"/></a> |
-                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/R4/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> |
-                   <!-- <a style="color: #81BEF7" href="todo.html">Search</a> | --> 
-                 <a style="color: #81BEF7" href="http://hl7.org/fhir-issues" target="_blank">Propose a change <img src="external.png" alt="external" style="vertical-align: baseline"/></a>
-
-          </span>
+          <span style="color: var(--footer-highlight-text-color)"></span>
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          
         </p>
       </div>    <!-- /inner-wrapper -->
     </div>    <!-- /container -->
@@ -312,13 +314,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <!-- Bootstrap core JavaScript
   ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
   <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
   <script src="assets/js/respond.min.js" type="text/javascript"> </script>
   <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
   <script>anchors.options.visible = 'hover'
 anchors.add()</script>
   
+  <!-- feedback form - Google forms -->
+  <!-- v0.1, 2021-01-09 -->
+
+
+
+  <!-- / feedback form -->
+
     <!-- Analytics Below
   ================================================== -->
   </body>

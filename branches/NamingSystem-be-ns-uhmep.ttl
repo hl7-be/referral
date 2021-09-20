@@ -5,12 +5,12 @@
 
 # - resource -------------------------------------------------------------------
 
-<http://hl7.country.org/fhir/ig/NamingSystem/be-ns-uhmep> a fhir:NamingSystem;
+<http://example.com/fhir/example/NamingSystem/be-ns-uhmep> a fhir:NamingSystem;
   fhir:nodeRole fhir:treeRoot;
   fhir:Resource.id [ fhir:value "be-ns-uhmep"];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Summary</h3><table class=\"grid\"><tr><td>Defining URL</td><td>http://hl7.country.org/fhir/ig/NamingSystem/be-ns-uhmep</td></tr><tr><td>Version</td><td>0.2.0</td></tr><tr><td>Name</td><td>BeUnadressedHealthMessageExchangePlatform</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>Definition</td><td><div><p>UHMEP naming system</p>\n</div></td></tr><tr><td>Publisher</td><td>HL7 Belgium</td></tr></table><h3>Identifiers</h3><table class=\"grid\"><tr><td><b>Type</b></td><td><b>Value</b></td><td><b>Preferred</b></td></tr><tr><td>URI</td><td>https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep</td><td>true</td></tr></table></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Summary</h3><table class=\"grid\"><tr><td>Defining URL</td><td>http://example.com/fhir/example/NamingSystem/be-ns-uhmep</td></tr><tr><td>Version</td><td>0.2.0</td></tr><tr><td>Name</td><td>BeUnadressedHealthMessageExchangePlatform</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>Definition</td><td><div><p>UHMEP naming system</p>\n</div></td></tr><tr><td>Publisher</td><td>HL7 Belgium</td></tr></table><h3>Identifiers</h3><table class=\"grid\"><tr><td><b>Type</b></td><td><b>Value</b></td><td><b>Preferred</b></td></tr><tr><td>URI</td><td>https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep</td><td>true</td></tr></table></div>"
   ];
   fhir:NamingSystem.name [ fhir:value "BeUnadressedHealthMessageExchangePlatform"];
   fhir:NamingSystem.status [ fhir:value "active"];
@@ -19,10 +19,20 @@
   fhir:NamingSystem.publisher [ fhir:value "HL7 Belgium"];
   fhir:NamingSystem.contact [
      fhir:index 0;
+     fhir:ContactDetail.name [ fhir:value "HL7 Belgium" ];
      fhir:ContactDetail.telecom [
        fhir:index 0;
        fhir:ContactPoint.system [ fhir:value "url" ];
        fhir:ContactPoint.value [ fhir:value "http://hl7belgium.org" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:ContactDetail.name [ fhir:value "Bart Decuypere" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "email" ];
+       fhir:ContactPoint.value [ fhir:value "bart.decuypere@ehealth.fgov.be" ];
+       fhir:ContactPoint.use [ fhir:value "work" ]
      ]
   ];
   fhir:NamingSystem.description [ fhir:value "UHMEP naming system"];
@@ -31,7 +41,8 @@
      fhir:CodeableConcept.coding [
        fhir:index 0;
        fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
-       fhir:Coding.code [ fhir:value "001" ]
+       fhir:Coding.code [ fhir:value "001" ];
+       fhir:Coding.display [ fhir:value "World" ]
      ]
   ];
   fhir:NamingSystem.uniqueId [
@@ -43,7 +54,7 @@
 
 # - ontology header ------------------------------------------------------------
 
-<http://hl7.country.org/fhir/ig/NamingSystem/be-ns-uhmep.ttl> a owl:Ontology;
+<http://example.com/fhir/example/NamingSystem/be-ns-uhmep.ttl> a owl:Ontology;
   owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------

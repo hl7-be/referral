@@ -3,33 +3,38 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>HL7.COUNTRY.FHIR.IG\Guidance - FHIR v4.0.1</title>
-  
+    <title>MY-IG\Guidance - FHIR v4.0.1</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
 
     <link rel="stylesheet" href="fhir.css"/>
-     
+
       <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.css"/>
     <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
-  
+
       <!-- Project extras -->
     <link rel="stylesheet" href="assets/css/project.css"/>
     <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
     <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
       <!-- Placeholder for child template CSS declarations -->
-    <link rel="stylesheet" href="assets/css/hl7.css"/>
-    <link rel="stylesheet" href="assets/css/fhir.css"/>
+<link rel="stylesheet" href="assets/css/hl7-be.css"/>
+<link rel="stylesheet" href="assets/css/affiliate.css"/>
 
     <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+  <!-- Questionnaire: -->
+    <link rel="stylesheet" href="assets/css/lforms.min.css"/>
+
+
+
 
       <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
       <!-- [if lt IE 9]>
     <script src="assets/js/html5shiv.js"></script>
     <script src="assets/js/respond.min.js"></script>
     <![endif] -->
-  
+
       <!-- Favicons -->
     <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
     <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
@@ -37,37 +42,46 @@
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
-  <body>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
 
     <style type="text/css">h2{--heading-prefix:"2"}
     h3,h4,h5,h6{--heading-prefix:"2"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
-        
-        <div id="hl7-nav">
-          <a no-external="true" id="hl7-logo" href="http://hl7.org">
-            <img src="assets/images/hl7-logo-header.png" alt="Visit the HL7 website" height="50"/>
+          <!-- Placeholder for child template header declarations -->
+
+        <div id="ig-nav">
+          <a no-external="true" id="hl7-logo" href="https://hl7-be.github.io">
+            <img src="assets/images/hl7be-logo-header.png" alt="HL7 Belgium" height="65"/>
           </a>
         </div>
-        <div id="family-nav">
-          <a no-external="true" id="family-logo" href="http://hl7.org/fhir"><img src="assets/images/fhir-logo-www.png" alt="Visit the FHIR website" height="50"/> </a>
+        <div id="fhir-nav">
+          <a no-external="true" id="fhir-logo" href="http://hl7.org/fhir"><img src="assets/images/fhir-logo-www.png" alt="Visit the FHIR website" height="50"/> </a>
         </div>
-        <div id="hl7-search">
+        <div id="ig-search">
           <a no-external="true" id="hl7-search-lnk" href="http://hl7.org/fhir/search.cfm"><img src="assets/images/search.png" alt="Search FHIR"/></a>
+        </div>
+  <!-- Left logo - typically the publisher's logo - project or affiliate -->
+        <div id="project-nav">
+          <a no-external="true" id="project-logo" href="http://hl7.eu">
+            <img src="assets/images/scribe.png" alt="Project home" height="71"/>
+          </a>
         </div>
 
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">HL7 BE Referral Prescription WG Implementation Guide (work in progress)</span><br/>0.2.0 - CI Build</p>
+          <p><span style="font-size:12pt;font-weight:bold">HL7 BE Referral Prescription WG Implementation Guide (work in progress)</span><br/>0.2.0 - CI</p>
         </div>
       </div>   <!-- /container -->
     </div>    <!-- /segment-header -->
-    
+
     <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
       <div id="stripe"> </div>
       <div class="container">    <!-- container -->
           <!-- HEADER CONTENT -->
-    
+
         <nav class="navbar navbar-inverse">
             <!-- status-bar -->
           <div class="container">
@@ -92,16 +106,16 @@
 		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret"></b>
 		</a>
 		<ul class="dropdown-menu">
-			<li><a name="l173">​</a>
+			<li><a name="l191">​</a>
 				<a href="howto.html">How to use this Publication</a>
 			</li>
-			<li><a name="l179">​</a>
+			<li><a name="l197">​</a>
 				<a href="standardsstatus.html">Standards Status</a>
 			</li>
-			<li><a name="l185">​</a>
+			<li><a name="l203">​</a>
 				<a href="privacy.html">Privacy considerations</a>
 			</li>
-			<li><a name="l191">​</a>
+			<li><a name="l209">​</a>
 				<a href="security.html">Security considerations</a>
 			</li>
 			<li>
@@ -114,10 +128,10 @@
 		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Functional Description<b class="caret"></b>
 		</a>
 		<ul class="dropdown-menu">
-			<li><a name="l216">​</a>
+			<li><a name="l234">​</a>
 				<a href="usecases.html">Use Cases</a>
 			</li>
-			<li><a name="l222">​</a>
+			<li><a name="l240">​</a>
 				<a href="logical-models.html">Logical Models</a>
 			</li>
   <!-- <li>
@@ -139,7 +153,7 @@
 		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Terminology<b class="caret"></b>
 		</a>
 		<ul class="dropdown-menu">
-			<li><a name="l258">​</a>
+			<li><a name="l276">​</a>
 				<a href="terminology.html">Terminology Resources</a>
 			</li>
 		</ul>
@@ -164,10 +178,10 @@
 	<li class="dropdown">
 		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Implementation<b class="caret"></b></a>
 		<ul class="dropdown-menu">
-			<li><a name="l276">​</a><a href="testdata.html">Test Data<img src="external.png" style="text-align: baseline"/></a></li>
-			<li><a name="l281">​</a><a href="openapi.html" target="_blank">OpenAPI</a></li>
-			<li><a name="l285">​</a><a href="testservers.html">Test Servers<img src="external.png" style="text-align: baseline"/></a></li>
-			<li><a name="l290">​</a><a href="downloads.html">Downloads</a></li>
+			<li><a name="l294">​</a><a href="testdata.html">Test Data<img src="external.png" style="text-align: baseline"/></a></li>
+			<li><a name="l299">​</a><a href="openapi.html" target="_blank">OpenAPI</a></li>
+			<li><a name="l303">​</a><a href="testservers.html">Test Servers<img src="external.png" style="text-align: baseline"/></a></li>
+			<li><a name="l308">​</a><a href="downloads.html">Downloads</a></li>
 		</ul>
 	</li>
 </ul>      
@@ -178,18 +192,22 @@
       </div>    <!-- /container -->
     </div>    <!-- /segment-navbar -->
       <!-- status-bar -->
+    
     <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
-      <div class="container">    <!-- container -->  
+      <div class="container">    <!-- container -->
         <ul class="breadcrumb">
           <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Guidance</b></li>
-        </ul>  
+          
+        </ul>
       </div>    <!-- /container -->
     </div>    <!-- /segment-breadcrumb -->
-    
+
+    <a name="top"> </a>
     <div id="segment-content" class="segment">    <!-- segment-content -->
       <div class="container">    <!-- container -->
         <div class="row">
           <div class="inner-wrapper">
+
 <style type="text/css">
 h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
 h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
@@ -198,76 +216,53 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">HL7 BE Referral Prescription WG Implementation Guide (work in progress) - Local Development build (v0.2.0). See the <a href="http://hl7.country.org/fhir/ig/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">HL7 BE Referral Prescription WG Implementation Guide (work in progress) - Local Development build (v0.2.0). See the <a href="http://example.com/fhir/example/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   <h2>Guidance</h2>
   
-  <div>
-   <div class="markdown-toc">
-      <p>Contents:</p>
-      <ul>
-         <li>
-            <a href="#Related persons as performer of the prescription">Related persons as performer of the prescription</a>
-         </li>
-         <li>
-            <a href="#The procedure or observation executing the referral prescription">The procedure or observation executing the referral prescription</a>
-         </li>
-         <li>
-            <a href="#Specifics concerning the referral prescription for nursing">Specifics concerning the referral prescription for nursing</a>
-         </li>
-         <li>
-            <a href="#Specifics concerning the referral prescription for diagnostic imaging">Specifics concerning the referral prescription for diagnostic imaging</a>
-         </li>
-         <li>
-            <a href="#Specifics concerning the referral prescription for physiotherapy">Specifics concerning the referral prescription for physiotherapy</a>
-         </li>
-         <li>
-            <a href="#Specifics concerning the referral prescription for laboratory">Specifics concerning the referral prescription for laboratory</a>
-         </li>
-      </ul>
-   </div>
+  <div><div class="markdown-toc"><p>Contents:</p><ul><li><a href="#Related persons as performer of the prescription">Related persons as performer of the prescription</a></li><li><a href="#The procedure or observation executing the referral prescription">The procedure or observation executing the referral prescription</a></li><li><a href="#Specifics concerning the referral prescription for nursing">Specifics concerning the referral prescription for nursing</a></li><li><a href="#Specifics concerning the referral prescription for diagnostic imaging">Specifics concerning the referral prescription for diagnostic imaging</a></li><li><a href="#Specifics concerning the referral prescription for physiotherapy">Specifics concerning the referral prescription for physiotherapy</a></li><li><a href="#Specifics concerning the referral prescription for laboratory">Specifics concerning the referral prescription for laboratory</a></li></ul></div>
   
 
-   <a name="Related persons as performer of the prescription">  </a>
+<a name="Related persons as performer of the prescription">  </a>
 
 
 
 
-   <h3>Related persons as performer of the prescription</h3>
-   <p>The requested performer in a referral prescription is typically a reference to a practitioner but it could also be reference to related person.  Typically the performer shall be referred by a business identifier or Reference.display.</p>
-   <p>It is RECOMMENDED in case of a related person as performer, the related person is included using the <a href="https://www.hl7.org/fhir/references.html#contained">contained mechanism</a>.</p>
-   <a name="The procedure or observation executing the referral prescription">  </a>
-   <h3>The procedure or observation executing the referral prescription</h3>
-   <p>A procedure or observation resource typically execute the referral prescription. As such, they shall be made available on the system where the ServiceRequest resides and refer to the ServiceRequest resource using their basedOn field.</p> 
-   <a name="Specifics concerning the referral prescription for nursing">  </a>
-   <h3>Specifics concerning the referral prescription for nursing</h3>
-   <a name="Availability of prescriber">  </a>
+<h3>Related persons as performer of the prescription</h3>
+<p>The requested performer in a referral prescription is typically a reference to a practitioner but it could also be reference to related person.  Typically the performer shall be referred by a business identifier or Reference.display.</p>
+<p>It is RECOMMENDED in case of a related person as performer, the related person is included using the <a href="https://www.hl7.org/fhir/references.html#contained">contained mechanism</a>.</p>
+ <a name="The procedure or observation executing the referral prescription">  </a>
+ <h3>The procedure or observation executing the referral prescription</h3>
+ <p>A procedure or observation resource typically execute the referral prescription. As such, they shall be made available on the system where the ServiceRequest resides and refer to the ServiceRequest resource using their basedOn field.</p> 
+<a name="Specifics concerning the referral prescription for nursing">  </a>
+ <h3>Specifics concerning the referral prescription for nursing</h3>
+ <a name="Availability of prescriber">  </a>
    <h4>Availability of prescriber</h4>
-   <p>If needed, the availability of a prescriber SHALL be given using a PractitionerRole resource referring to the Practitioner that is the prescriber of the ServiceRequest.</p> 
+ <p>If needed, the availability of a prescriber SHALL be given using a PractitionerRole resource referring to the Practitioner that is the prescriber of the ServiceRequest.</p> 
   <a name="Signature and date of signature">  </a>
   <h4>Signature and date of signature</h4>
-   <p>If needed, a signature SHALL be given using a Provenance resource referring to the ServiceRequest.</p> 
+ <p>If needed, a signature SHALL be given using a Provenance resource referring to the ServiceRequest.</p> 
    <a name="Nursing medication">  </a>
   <h4>Nursing medication</h4>
-   <p>Take note the nursing medication referral prescription profile is based on the FHIR MedicationRequest resource. The other nursing profiles are based on the ServiceRequest resource.</p>
-   <ul>
-      <li>It is expected the actual medication in the initial phase will be described as text using .medicationCodeableConcept.text. Going forward, it is expected more structured use of medication will be leveraged.</li>
-      <li>When the referral is for administration of eyedrops (or other ointments) in a post-operative context, the date of the operation SHALL always be given using .encounter and providing minimal encounter information. Also, which eye SHALL be defined using .dosageInstruction.site. Up to four different medications may be needed per eye, as such multiple referral SHALL be connected by using the .groupIdentifier</li>
-   </ul>
+ <p>Take note the nursing medication referral prescription profile is based on the FHIR MedicationRequest resource. The other nursing profiles are based on the ServiceRequest resource.</p>
+ <ul>
+  <li>It is expected the actual medication in the initial phase will be described as text using .medicationCodeableConcept.text. Going forward, it is expected more structured use of medication will be leveraged.</li>
+ <li>When the referral is for administration of eyedrops (or other ointments) in a post-operative context, the date of the operation SHALL always be given using .encounter and providing minimal encounter information. Also, which eye SHALL be defined using .dosageInstruction.site. Up to four different medications may be needed per eye, as such multiple referral SHALL be connected by using the .groupIdentifier</li>
+ </ul>
  
   <a name="Specifics concerning the referral prescription for diagnostic imaging">  </a>
   <h3>Specifics concerning the referral prescription for diagnostic imaging</h3>
   <a name="Contactinformation of the requester">  </a>
       <h4>Contactinformation of the requester</h4>
-   <p>The creator of the diagnostic imaging referral prescription SHALL take extra note to
+ <p>The creator of the diagnostic imaging referral prescription SHALL take extra note to
  provide contact information of the requesting party. Typically,
  a phone number is expected to be available.</p> 
 
-   <a name="Referring to previous imaging studies">  </a>
+<a name="Referring to previous imaging studies">  </a>
       <h4>Referring to previous imaging studies</h4>
-   <p>The imaging request is not intended to give an exhaustive overview of previous imaging studies concerning the patient.
+ <p>The imaging request is not intended to give an exhaustive overview of previous imaging studies concerning the patient.
  However, when a reference to a previous imaging is relevant to the current one, this SHALL be referenced.</p> 
 
-   <a name="Guidance around supporting information">  </a>
+<a name="Guidance around supporting information">  </a>
       <h4>Guidance around supporting information</h4>
 	  <p>The profile contains a few elements that can contain supporting information. It SHALL be clear, these
 	  elements are there to only include information that is considered relevant within the context of
@@ -275,10 +270,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 	 
   <a name="Specifics concerning the referral prescription for physiotherapy">  </a>
   <h3>Specifics concerning the referral prescription for physiotherapy</h3>
-   <p>N/A</p> 
-   <a name="Specifics concerning the referral prescription for laboratory">  </a>
+ <p>N/A</p> 
+ <a name="Specifics concerning the referral prescription for laboratory">  </a>
    <h3>Specifics concerning the referral prescription for laboratory</h3>
-   <a name="Priority of the order">  </a>
+<a name="Priority of the order">  </a>
       <h4>Priority of the order</h4>
       <p>The priority is expressed in the .priority element giving 4 priority codes. 
       It SHALL be noted these different codes have a <a href="https://hl7.org/fhir/R4/valueset-request-priority.html">clear definition</a> in the FHIR specification.
@@ -305,9 +300,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
    references to multiple specimen the implementer SHALL be aware
    of the following to ensure there is no ambiguity in the order. The order SHALL fall in one of the following categories:</p>
   <ul>
-      <li>No references to specimen are given but the testing codes given are clear on the specimen.</li>
-      <li>One or more references to a specimen are given and from the testing code(s) given it is clear what test uses what specimen.</li>
-      <li>A connection between a testing code and a specimen cannot be deduced from the testing code: for every specimen
+  <li>No references to specimen are given but the testing codes given are clear on the specimen.</li>
+  <li>One or more references to a specimen are given and from the testing code(s) given it is clear what test uses what specimen.</li>
+  <li>A connection between a testing code and a specimen cannot be deduced from the testing code: for every specimen
    there is one order created only containing the testing code(s) for that specimen. 
    If still needed to combine multiple orders 
    that are created in such a way: the .requisition element SHALL be used where a common Identifier is given.</li>
@@ -324,37 +319,44 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
    <h4>Intent/status of prescription</h4>
    <p>A laboratory prescription might use different specific elements depending on the workflow. It SHALL be noted this is of
 course limited to what is possible concerning when the specimen was accepted</p>
-   <ul>
-      <li>The .status normally remains 'active' until the request is fulfilled. If needed the status can be changed to 'revoked' or 'entered-in-error' to cancel the request.</li>
-      <li>The original order of a laboratory prescription SHALL be made by having .intent as 'original-order'</li>
-      <li>Appending the request with extra orders can be done by using the intent 'order' and referencing the original order using the .basedOn element </li>
-      <li>Replacing the order can be done by using the intent 'order' and referencing the original order using the .replaces element</li>
-      <li>If needed, the .intent can be 'reflex-order' or 'filler-order' with a reference to the original order using the .basedOn element</li>
-   </ul>  
+<ul>
+   <li>The .status normally remains 'active' until the request is fulfilled. If needed the status can be changed to 'revoked' or 'entered-in-error' to cancel the request.</li>
+<li>The original order of a laboratory prescription SHALL be made by having .intent as 'original-order'</li>
+<li>Appending the request with extra orders can be done by using the intent 'order' and referencing the original order using the .basedOn element </li>
+<li>Replacing the order can be done by using the intent 'order' and referencing the original order using the .replaces element</li>
+<li>If needed, the .intent can be 'reflex-order' or 'filler-order' with a reference to the original order using the .basedOn element</li>
+</ul>  
 </div>
-
 </div>
         </div>    <!-- /inner-wrapper -->
       </div>    <!-- /row -->
     </div>    <!-- /container -->
   </div>    <!-- /segment-content -->
 
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
 
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <a name="bottom"> </a>
   <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
     <div class="container">    <!-- container -->
+
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2019+ <a style="color: #81BEF7" href="http://hl7belgium.org">HL7 Belgium</a>.  Package hl7.country.fhir.ig#0.2.0 based on <a style="color: #81BEF7" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Sep 20, 2021 13:23+0000">2021-09-20</span>
+          IG &copy; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7belgium.org">HL7 Belgium</a>.  Package my-ig#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Sep 20, 2021 17:40+0000">2021-09-20</span>
           <br/>
-          <span style="color: #FFFF77">
-                      Links: <a style="color: #81BEF7" href="toc.html">Table of Contents</a> |
-                 <a style="color: #81BEF7" href="qa.html">QA Report</a>
-                 | <a style="color: #81BEF7" href="http://hl7.country.org/fhir/ig/history.html" target="_blank">Version History <img src="external.png" alt="external" style="vertical-align: baseline"/></a> |
-                 <a rel="license" style="color: #81BEF7" href="http://hl7.org/fhir/R4/license.html"><img src="cc0.png" alt="CC0" style="border-style: none;"/></a> |
-                   <!-- <a style="color: #81BEF7" href="todo.html">Search</a> | --> 
-                 <a style="color: #81BEF7" href="http://hl7.org/fhir-issues" target="_blank">Propose a change <img src="external.png" alt="external" style="vertical-align: baseline"/></a>
-
-          </span>
+          <span style="color: var(--footer-highlight-text-color)"></span>
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          
         </p>
       </div>    <!-- /inner-wrapper -->
     </div>    <!-- /container -->
@@ -369,13 +371,19 @@ course limited to what is possible concerning when the specimen was accepted</p>
     <!-- Bootstrap core JavaScript
   ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
   <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
   <script src="assets/js/respond.min.js" type="text/javascript"> </script>
   <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
   <script>anchors.options.visible = 'hover'
 anchors.add()</script>
   
+  <!-- feedback form - Google forms -->
+  <!-- v0.1, 2021-01-09 -->
+
+
+
+  <!-- / feedback form -->
+
     <!-- Analytics Below
   ================================================== -->
   </body>
