@@ -11,7 +11,7 @@ Alias: $some_nomenclature_system = https://www.SOME_NOMENCLATURE_SYSTEM.be/
 Alias: $cnk_product_codes = https://cnk.apb.be/codings/cnk_product_codes
 
 Instance: example3-referralprescription-nursing-compressiontherapy
-InstanceOf: BeReferralPrescriptionNursing
+InstanceOf: BeReferralPrescriptionNursingCompressionTherapy
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-compressiontherapy"
 * extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
@@ -23,7 +23,7 @@ Usage: #example
 * category = $sct#9632001
 * category.text = "Nursing procedure"
 * priority = #routine
-* code = $be-cs-nursing-code#compressiontherapy
+* code = $be-cs-nursing-code#compression-therapy
 * orderDetail = https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code-compressiontherapy#compression-bandage(s)-short-strech
 * subject = Reference(Patient/patient1)
 * occurrenceTiming.repeat.boundsPeriod.start = "2022-04-19"
@@ -37,7 +37,7 @@ Usage: #example
 * note.text = "Rosidal zwachtels ->  aan- en uitdoen / both underlegs"
 
 Instance: example5-referralprescription-nursing-digestive-system-care
-InstanceOf: BeReferralPrescriptionNursing
+InstanceOf: BeReferralPrescriptionNursingDigestiveSystemCare
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-digestive-system-care"
 * extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
@@ -87,3 +87,29 @@ Usage: #example
 * requester = Reference(Practitioner/practitioner1)
 * performerType = $sct#106292003 "Nurse"
 * performer = Reference(Practitioner/practitioner2)
+
+Instance: example9-referralprescription-nursing-woundcare
+InstanceOf: BeReferralPrescriptionNursingWoundcare
+Usage: #example
+* meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-woundcare"
+* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
+* extension.valueCodeableConcept = $be-status-reason#created "Created"
+* identifier.system = "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"
+* identifier.value = "UHMEPVALUE"
+* status = #active
+* intent = #order
+* category = $sct#9632001
+* category.text = "Nursing procedure"
+* priority = #routine
+* code = $be-cs-nursing-code#wound-care
+* occurrenceTiming.repeat.boundsPeriod.start = "2022-10-31"
+* occurrenceTiming.repeat.boundsPeriod.end = "2022-11-14"
+* occurrenceTiming.repeat.frequency = 1
+* occurrenceTiming.repeat.period = 1
+* occurrenceTiming.repeat.periodUnit = #d
+* requester = Reference(Practitioner/practitioner1)
+* performerType = $sct#106292003 "Nurse"
+* performer = Reference(Practitioner/practitioner2)
+* note.text = "wound care codeset/valueset is still missing (see orderDetail)"
+* orderDetail = https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-digestive-system-care#manual-removal-of-faecal-omen
+* subject = Reference(Patient/patient1)

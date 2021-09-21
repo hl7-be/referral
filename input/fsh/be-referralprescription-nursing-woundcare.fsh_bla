@@ -1,0 +1,15 @@
+Alias: $m49.htm = http://unstats.un.org/unsd/methods/m49/m49.htm
+Alias: $be-referralprescription-nursing = https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing
+
+Profile: BeReferralPrescriptionNursingWoundcare
+Parent: $be-referralprescription-nursing
+Id: be-referralprescription-nursing-woundcare
+Description: "The nursing profile specialized for woundcare."
+* ^status = #draft
+* ^date = "2021-07-15T08:52:50+00:00"
+* ^publisher = "HL7 Belgium"
+* ^contact.telecom.system = #url
+* ^contact.telecom.value = "http://hl7belgium.org"
+* ^jurisdiction = $m49.htm#001
+* code.coding.code = #woundcare (exactly)
+* orderDetail from "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code-woundcare" (required)
