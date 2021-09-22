@@ -10,6 +10,35 @@ Alias: $contact-point-system = http://hl7.org/fhir/contact-point-system
 Alias: $some_nomenclature_system = https://www.SOME_NOMENCLATURE_SYSTEM.be/
 Alias: $cnk_product_codes = https://cnk.apb.be/codings/cnk_product_codes
 
+
+Instance: example2-referralprescription-nursing-digestive-system-care
+InstanceOf: BeReferralPrescriptionNursing
+Usage: #example
+* meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-digestive-system-care"
+* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
+* extension.valueCodeableConcept = $be-status-reason#created "Created"
+* status = #active
+* intent = #order
+* category = $sct#9632001
+* category.text = "Nursing procedure"
+* priority = #routine
+* code = $be-cs-nursing-code#digestive-system-care
+* orderDetail = https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-digestive-system-care#enteral-feeding-gastrostomy-probe
+* subject = Reference(Patient/patient1)
+* occurrenceTiming.repeat.boundsPeriod.start = "2022-04-19"
+* occurrenceTiming.repeat.boundsPeriod.end = "2023-04-19"
+* occurrenceTiming.repeat.frequency = 2
+* occurrenceTiming.repeat.period = 1
+* occurrenceTiming.repeat.periodUnit = #d
+* requester = Reference(Practitioner/practitioner1)
+* performerType = $sct#106292003 "Nurse"
+* performer = Reference(Practitioner/practitioner2)
+* note.text = "patient can not move (niet verplaatsen)"
+
+
+
+
+
 Instance: example3-referralprescription-nursing-compressiontherapy
 InstanceOf: BeReferralPrescriptionNursingCompressionTherapy
 Usage: #example
