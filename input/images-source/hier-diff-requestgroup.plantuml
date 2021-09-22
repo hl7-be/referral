@@ -1,0 +1,39 @@
+@startuml
+
+abstract class BeReferralPrescription
+
+BeReferralPrescription <|-- BeNursingPrescription
+BeReferralPrescription <|-- BeDiagnosticImagingPrescription	
+BeReferralPrescription <|-- BeLaboratoryPrescription
+BeReferralPrescription <|-- BePhysiotherapyPrescription
+
+BeNursingPrescription <|-- BeNursingPrescriptionBladderCare
+BeNursingPrescriptionGroup --> BeNursingPrescription : contains inline
+BeDiagnosticImagingPrescriptionGroup --> BeDiagnosticImagingPrescription : contains inline
+BeLaboratoryPrescriptionGroup --> BeLaboratoryPrescription : contains inline
+BePhysiotherapyPrescriptionGroup --> BePhysiotherapyPrescription : contains inline
+
+
+class BeNursingPrescriptionGroup {
+ UHMEP identifier
+ BeNursingPrescription[] prescriptions
+}
+
+class  BeDiagnosticImagingPrescriptionGroup{
+ UHMEP identifier
+ BeDiagnosticImagingPrescription[] prescriptions
+}
+
+class BeLaboratoryPrescriptionGroup {
+ UHMEP identifier
+ BeLaboratoryPrescription[] prescriptions
+}
+
+class BePhysiotherapyPrescriptionGroup { 
+    UHMEP identifier
+ BePhysiotherapyPrescription[] prescriptions
+}
+
+
+
+@enduml
