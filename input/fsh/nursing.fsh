@@ -36,9 +36,6 @@ Usage: #example
 * note.text = "patient can not move (niet verplaatsen)"
 
 
-
-
-
 Instance: example3-referralprescription-nursing-compressiontherapy
 InstanceOf: BeReferralPrescriptionNursingCompressionTherapy
 Usage: #example
@@ -64,6 +61,30 @@ Usage: #example
 * performerType = $sct#106292003 "Nurse"
 * performer = Reference(Practitioner/practitioner2)
 * note.text = "Rosidal zwachtels ->  aan- en uitdoen / both underlegs"
+
+Instance: example4-referralprescription-nursing-bladder-care
+InstanceOf: BeReferralPrescriptionNursing
+Usage: #example
+* meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-bladder-care"
+* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
+* extension.valueCodeableConcept = $be-status-reason#created "Created"
+* status = #active
+* intent = #order
+* category = $sct#9632001
+* category.text = "Nursing procedure"
+* priority = #routine
+* code = $be-cs-nursing-code#bladder-care
+* orderDetail = $be-cs-nursing-code-bladder-care-type#suprapubic-probe
+* subject = Reference(Patient/patient1)
+* occurrenceTiming.repeat.boundsPeriod.start = "2021-04-01"
+* occurrenceTiming.repeat.boundsPeriod.end = "2022-03-31"
+* occurrenceTiming.repeat.frequency = 1
+* occurrenceTiming.repeat.period = 6
+* occurrenceTiming.repeat.periodUnit = #wk
+* requester = Reference(Practitioner/practitioner1)
+* performerType = $sct#106292003 "Nurse"
+* performer = Reference(Practitioner/practitioner2)
+
 
 Instance: example5-referralprescription-nursing-digestive-system-care
 InstanceOf: BeReferralPrescriptionNursingDigestiveSystemCare
