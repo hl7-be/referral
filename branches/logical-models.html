@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>MY-IG\Logical Models - FHIR v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+<link rel="stylesheet" href="assets/css/hl7-be.css"/>
+<link rel="stylesheet" href="assets/css/affiliate.css"/>
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+  <!-- Questionnaire: -->
+    <link rel="stylesheet" href="assets/css/lforms.min.css"/>
+
+
+
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"3"}
+    h3,h4,h5,h6{--heading-prefix:"3"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+          <!-- Placeholder for child template header declarations -->
+
+        <div id="ig-nav">
+          <a no-external="true" id="hl7-logo" href="https://hl7-be.github.io">
+            <img src="assets/images/hl7be-logo-header.png" alt="HL7 Belgium" height="65"/>
+          </a>
+        </div>
+        <div id="fhir-nav">
+          <a no-external="true" id="fhir-logo" href="http://hl7.org/fhir"><img src="assets/images/fhir-logo-www.png" alt="Visit the FHIR website" height="50"/> </a>
+        </div>
+        <div id="ig-search">
+          <a no-external="true" id="hl7-search-lnk" href="http://hl7.org/fhir/search.cfm"><img src="assets/images/search.png" alt="Search FHIR"/></a>
+        </div>
+  <!-- Left logo - typically the publisher's logo - project or affiliate -->
+        <div id="project-nav">
+          <a no-external="true" id="project-logo" href="http://hl7.eu">
+            <img src="assets/images/scribe.png" alt="Project home" height="71"/>
+          </a>
+        </div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">HL7 BE Referral Prescription WG Implementation Guide (work in progress)</span><br/>0.2.0 - CI</p>
+        </div>
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul class="nav navbar-nav">
+	<li>
+		<a href="index.html">IG Home</a>
+	</li>
+	<li>
+		<a href="guidance.html">Guidance</a>
+	</li>
+	<li>
+		<a href="toc.html">Table of Contents</a>
+	</li>
+	<li class="dropdown">
+		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret"></b>
+		</a>
+		<ul class="dropdown-menu">
+			<li><a name="l191">​</a>
+				<a href="howto.html">How to use this Publication</a>
+			</li>
+			<li><a name="l197">​</a>
+				<a href="standardsstatus.html">Standards Status</a>
+			</li>
+			<li><a name="l203">​</a>
+				<a href="privacy.html">Privacy considerations</a>
+			</li>
+			<li><a name="l209">​</a>
+				<a href="security.html">Security considerations</a>
+			</li>
+			<li>
+				<a href="http://hl7.org/fhir/R4/index.html" target="_blank">FHIR Spec<img src="external.png" style="text-align: baseline"/>
+				</a>
+			</li>
+		</ul>
+	</li>
+	<li class="dropdown">
+		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Functional Description<b class="caret"></b>
+		</a>
+		<ul class="dropdown-menu">
+			<li><a name="l234">​</a>
+				<a href="usecases.html">Use Cases</a>
+			</li>
+			<li>
+				<a href="logical-models.html">Logical Models</a>
+			</li>
+  <!-- <li>
+				<a target="_blank" href="#">Services &amp; Transactions</a>
+			</li> -->
+		</ul>
+
+	</li>
+	<li class="dropdown">
+		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Detailed Specifications<b class="caret"></b>
+		</a>
+		<ul class="dropdown-menu">
+			<li>
+				<a href="artifacts.html">Artifact Index</a>
+			</li>
+		</ul>
+	</li>
+	<li class="dropdown">
+		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Terminology<b class="caret"></b>
+		</a>
+		<ul class="dropdown-menu">
+			<li><a name="l276">​</a>
+				<a href="terminology.html">Terminology Resources</a>
+			</li>
+		</ul>
+	</li>
+  <!-- <li class="dropdown">
+		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Project-specific
+			<b class="caret"></b>
+		</a>
+		<ul class="dropdown-menu">
+			<li>
+				<a href="#">Core Profiles</a>
+			</li>
+			<li class="divider"></li>
+			<li>
+				<a href="#">DZOP</a>
+			</li>
+            <li>
+				<a href="#">EFRO</a>
+			</li>
+		</ul>
+	</li> -->
+	<li class="dropdown">
+		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Implementation<b class="caret"></b></a>
+		<ul class="dropdown-menu">
+			<li><a name="l294">​</a><a href="testdata.html">Test Data<img src="external.png" style="text-align: baseline"/></a></li>
+			<li><a name="l299">​</a><a href="openapi.html" target="_blank">OpenAPI</a></li>
+			<li><a name="l303">​</a><a href="testservers.html">Test Servers<img src="external.png" style="text-align: baseline"/></a></li>
+			<li><a name="l308">​</a><a href="downloads.html">Downloads</a></li>
+		</ul>
+	</li>
+</ul>      
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+    
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Logical Models</b></li>
+          
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- ReleaseHeader --><p id="publish-box">HL7 BE Referral Prescription WG Implementation Guide (work in progress) - Local Development build (v0.2.0). See the <a href="http://example.com/fhir/example/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <h2>Logical Models</h2>
+  
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div>
+  <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown. -->
+</div>
+<p>Current hierarchy, only allowing 1 prescription per message</p>
+
+<ul>
+  <li>it is possible to link prescriptions (using requisition on the level of ServiceRequest)</li>
+  <li>indicating an order is not possible</li>
+  <li>because BeReferralPrescriptionNursingMedication is of type MedicationRequest, there is no requisition, but groupIdentfier is used here in that way 
+&lt;?xml version=”1.0” encoding=”UTF-8” standalone=”no”?&gt;<svg contentStyleType="text/css" viewBox="0 0 975 298" zoomAndPan="magnify" preserveAspectRatio="none" width="975px" style="width:975px;height:298px;" contentScriptType="application/ecmascript" version="1.1" height="298px"><defs><filter width="300%" x="-1" y="-1" id="fxxcmtavc9lya" height="300%"><feGaussianBlur result="blurOut" stdDeviation="2.0"></feGaussianBlur><feColorMatrix result="blurOut2" in="blurOut" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" type="matrix"></feColorMatrix><feOffset result="blurOut3" dx="4.0" dy="4.0" in="blurOut2"></feOffset><feBlend mode="normal" in="SourceGraphic" in2="blurOut3"></feBlend></filter></defs><g>  <!-- MD5=[359721788ec939e1ab6735adf9ae7251]
+class BeReferralPrescription --><rect filter="url(#fxxcmtavc9lya)" width="172" x="409" y="7" style="stroke:#A80036;stroke-width:1.5;" id="BeReferralPrescription" fill="#FEFECE" height="60.8047"></rect><ellipse cx="424" cy="23" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M426.9688,28.6406 Q426.3906,28.9375 425.75,29.0781 Q425.1094,29.2344 424.4063,29.2344 Q421.9063,29.2344 420.5781,27.5938 Q419.2656,25.9375 419.2656,22.8125 Q419.2656,19.6875 420.5781,18.0313 Q421.9063,16.375 424.4063,16.375 Q425.1094,16.375 425.75,16.5313 Q426.4063,16.6875 426.9688,16.9844 L426.9688,19.7031 Q426.3438,19.125 425.75,18.8594 Q425.1563,18.5781 424.5313,18.5781 Q423.1875,18.5781 422.5,19.6563 Q421.8125,20.7188 421.8125,22.8125 Q421.8125,24.9063 422.5,25.9844 Q423.1875,27.0469 424.5313,27.0469 Q425.1563,27.0469 425.75,26.7813 Q426.3438,26.5 426.9688,25.9219 L426.9688,28.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="438" font-size="12" textLength="140" y="27.1543" font-family="sans-serif" fill="#000000">BeReferralPrescription</text><line y1="39" x1="410" y2="39" style="stroke:#A80036;stroke-width:1.5;" x2="580"></line><text lengthAdjust="spacing" x="415" font-size="11" textLength="93" y="53.2104" font-family="sans-serif" fill="#000000">UHMEP identifier</text><line y1="59.8047" x1="410" y2="59.8047" style="stroke:#A80036;stroke-width:1.5;" x2="580"></line>  <!-- MD5=[d4c45c964e5bd919737061b4f67e532a]
+class BeNursingPrescription --><rect filter="url(#fxxcmtavc9lya)" width="171" x="45.5" y="128" style="stroke:#A80036;stroke-width:1.5;" id="BeNursingPrescription" fill="#FEFECE" height="48"></rect><ellipse cx="60.5" cy="144" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M63.4688,149.6406 Q62.8906,149.9375 62.25,150.0781 Q61.6094,150.2344 60.9063,150.2344 Q58.4063,150.2344 57.0781,148.5938 Q55.7656,146.9375 55.7656,143.8125 Q55.7656,140.6875 57.0781,139.0313 Q58.4063,137.375 60.9063,137.375 Q61.6094,137.375 62.25,137.5313 Q62.9063,137.6875 63.4688,137.9844 L63.4688,140.7031 Q62.8438,140.125 62.25,139.8594 Q61.6563,139.5781 61.0313,139.5781 Q59.6875,139.5781 59,140.6563 Q58.3125,141.7188 58.3125,143.8125 Q58.3125,145.9063 59,146.9844 Q59.6875,148.0469 61.0313,148.0469 Q61.6563,148.0469 62.25,147.7813 Q62.8438,147.5 63.4688,146.9219 L63.4688,149.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="74.5" font-size="12" textLength="139" y="148.1543" font-family="sans-serif" fill="#000000">BeNursingPrescription</text><line y1="160" x1="46.5" y2="160" style="stroke:#A80036;stroke-width:1.5;" x2="215.5"></line><line y1="168" x1="46.5" y2="168" style="stroke:#A80036;stroke-width:1.5;" x2="215.5"></line>  <!-- MD5=[a54779efc2025b5bc3450d1756142bcc]
+class BeDiagnosticImagingPrescription --><rect filter="url(#fxxcmtavc9lya)" width="238" x="252" y="128" style="stroke:#A80036;stroke-width:1.5;" id="BeDiagnosticImagingPrescription" fill="#FEFECE" height="48"></rect><ellipse cx="267" cy="144" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M269.9688,149.6406 Q269.3906,149.9375 268.75,150.0781 Q268.1094,150.2344 267.4063,150.2344 Q264.9063,150.2344 263.5781,148.5938 Q262.2656,146.9375 262.2656,143.8125 Q262.2656,140.6875 263.5781,139.0313 Q264.9063,137.375 267.4063,137.375 Q268.1094,137.375 268.75,137.5313 Q269.4063,137.6875 269.9688,137.9844 L269.9688,140.7031 Q269.3438,140.125 268.75,139.8594 Q268.1563,139.5781 267.5313,139.5781 Q266.1875,139.5781 265.5,140.6563 Q264.8125,141.7188 264.8125,143.8125 Q264.8125,145.9063 265.5,146.9844 Q266.1875,148.0469 267.5313,148.0469 Q268.1563,148.0469 268.75,147.7813 Q269.3438,147.5 269.9688,146.9219 L269.9688,149.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="281" font-size="12" textLength="206" y="148.1543" font-family="sans-serif" fill="#000000">BeDiagnosticImagingPrescription</text><line y1="160" x1="253" y2="160" style="stroke:#A80036;stroke-width:1.5;" x2="489"></line><line y1="168" x1="253" y2="168" style="stroke:#A80036;stroke-width:1.5;" x2="489"></line>  <!-- MD5=[266452077b323be7bca9a1df21ae8ef1]
+class BeLaboratoryPrescription --><rect filter="url(#fxxcmtavc9lya)" width="190" x="525" y="128" style="stroke:#A80036;stroke-width:1.5;" id="BeLaboratoryPrescription" fill="#FEFECE" height="48"></rect><ellipse cx="540" cy="144" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M542.9688,149.6406 Q542.3906,149.9375 541.75,150.0781 Q541.1094,150.2344 540.4063,150.2344 Q537.9063,150.2344 536.5781,148.5938 Q535.2656,146.9375 535.2656,143.8125 Q535.2656,140.6875 536.5781,139.0313 Q537.9063,137.375 540.4063,137.375 Q541.1094,137.375 541.75,137.5313 Q542.4063,137.6875 542.9688,137.9844 L542.9688,140.7031 Q542.3438,140.125 541.75,139.8594 Q541.1563,139.5781 540.5313,139.5781 Q539.1875,139.5781 538.5,140.6563 Q537.8125,141.7188 537.8125,143.8125 Q537.8125,145.9063 538.5,146.9844 Q539.1875,148.0469 540.5313,148.0469 Q541.1563,148.0469 541.75,147.7813 Q542.3438,147.5 542.9688,146.9219 L542.9688,149.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="554" font-size="12" textLength="158" y="148.1543" font-family="sans-serif" fill="#000000">BeLaboratoryPrescription</text><line y1="160" x1="526" y2="160" style="stroke:#A80036;stroke-width:1.5;" x2="714"></line><line y1="168" x1="526" y2="168" style="stroke:#A80036;stroke-width:1.5;" x2="714"></line>  <!-- MD5=[d2970cbb0ce44044b1ced11155609ca5]
+class BePhysiotherapyPrescription --><rect filter="url(#fxxcmtavc9lya)" width="211" x="750.5" y="128" style="stroke:#A80036;stroke-width:1.5;" id="BePhysiotherapyPrescription" fill="#FEFECE" height="48"></rect><ellipse cx="765.5" cy="144" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M768.4688,149.6406 Q767.8906,149.9375 767.25,150.0781 Q766.6094,150.2344 765.9063,150.2344 Q763.4063,150.2344 762.0781,148.5938 Q760.7656,146.9375 760.7656,143.8125 Q760.7656,140.6875 762.0781,139.0313 Q763.4063,137.375 765.9063,137.375 Q766.6094,137.375 767.25,137.5313 Q767.9063,137.6875 768.4688,137.9844 L768.4688,140.7031 Q767.8438,140.125 767.25,139.8594 Q766.6563,139.5781 766.0313,139.5781 Q764.6875,139.5781 764,140.6563 Q763.3125,141.7188 763.3125,143.8125 Q763.3125,145.9063 764,146.9844 Q764.6875,148.0469 766.0313,148.0469 Q766.6563,148.0469 767.25,147.7813 Q767.8438,147.5 768.4688,146.9219 L768.4688,149.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="779.5" font-size="12" textLength="179" y="148.1543" font-family="sans-serif" fill="#000000">BePhysiotherapyPrescription</text><line y1="160" x1="751.5" y2="160" style="stroke:#A80036;stroke-width:1.5;" x2="960.5"></line><line y1="168" x1="751.5" y2="168" style="stroke:#A80036;stroke-width:1.5;" x2="960.5"></line>  <!-- MD5=[420815f1a4c19bc688e5f2e758ce1fef]
+class BeNursingPrescriptionBladderCare --><rect filter="url(#fxxcmtavc9lya)" width="248" x="7" y="236" style="stroke:#A80036;stroke-width:1.5;" id="BeNursingPrescriptionBladderCare" fill="#FEFECE" height="48"></rect><ellipse cx="22" cy="252" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M24.9688,257.6406 Q24.3906,257.9375 23.75,258.0781 Q23.1094,258.2344 22.4063,258.2344 Q19.9063,258.2344 18.5781,256.5938 Q17.2656,254.9375 17.2656,251.8125 Q17.2656,248.6875 18.5781,247.0313 Q19.9063,245.375 22.4063,245.375 Q23.1094,245.375 23.75,245.5313 Q24.4063,245.6875 24.9688,245.9844 L24.9688,248.7031 Q24.3438,248.125 23.75,247.8594 Q23.1563,247.5781 22.5313,247.5781 Q21.1875,247.5781 20.5,248.6563 Q19.8125,249.7188 19.8125,251.8125 Q19.8125,253.9063 20.5,254.9844 Q21.1875,256.0469 22.5313,256.0469 Q23.1563,256.0469 23.75,255.7813 Q24.3438,255.5 24.9688,254.9219 L24.9688,257.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="36" font-size="12" textLength="216" y="256.1543" font-family="sans-serif" fill="#000000">BeNursingPrescriptionBladderCare</text><line y1="268" x1="8" y2="268" style="stroke:#A80036;stroke-width:1.5;" x2="254"></line><line y1="276" x1="8" y2="276" style="stroke:#A80036;stroke-width:1.5;" x2="254"></line>  <!-- MD5=[126dd7d5c103e643f444912a0c0e969b]
+reverse link BeReferralPrescription to BeNursingPrescription --><path codeLine="1" d="M389.5173,70.6807 C331.2663,89.0041 260.2299,111.3494 207.3722,127.9763 " style="stroke:#A80036;stroke-width:1.0;" id="BeReferralPrescription-backto-BeNursingPrescription" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="none" points="387.5582,63.9588,408.7371,64.6349,391.7592,77.3137,387.5582,63.9588"></polygon>  <!-- MD5=[fc1b46c64c0500510100602c29194880]
+reverse link BeReferralPrescription to BeDiagnosticImagingPrescription --><path codeLine="2" d="M446.8339,81.9759 C429.9619,97.5553 411.6497,114.4646 397.2475,127.7634 " style="stroke:#A80036;stroke-width:1.0;" id="BeReferralPrescription-backto-BeDiagnosticImagingPrescription" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="none" points="442.3276,76.6092,461.7703,68.1839,451.8253,86.8948,442.3276,76.6092"></polygon>  <!-- MD5=[7d6f6dd1369cbdd1b3c05501e37e1387]
+reverse link BeReferralPrescription to BeLaboratoryPrescription --><path codeLine="3" d="M543.2943,81.7376 C560.3741,97.3827 578.9484,114.3968 593.5409,127.7634 " style="stroke:#A80036;stroke-width:1.0;" id="BeReferralPrescription-backto-BeLaboratoryPrescription" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="none" points="538.5175,86.8549,528.4977,68.1839,547.9739,76.5313,538.5175,86.8549"></polygon>  <!-- MD5=[8b42a179c75e575de92441be9d497985]
+reverse link BeReferralPrescription to BePhysiotherapyPrescription --><path codeLine="4" d="M600.413,70.9343 C657.9926,89.1971 727.978,111.3947 780.1468,127.9413 " style="stroke:#A80036;stroke-width:1.0;" id="BeReferralPrescription-backto-BePhysiotherapyPrescription" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="none" points="597.9576,77.4993,581.0099,64.7801,602.1903,64.1544,597.9576,77.4993"></polygon>  <!-- MD5=[81fdff61dc59d0a807ade81e26b68961]
+reverse link BeNursingPrescription to BeNursingPrescriptionBladderCare --><path codeLine="6" d="M131,196.2911 C131,209.8171 131,224.1835 131,235.8436 " style="stroke:#A80036;stroke-width:1.0;" id="BeNursingPrescription-backto-BeNursingPrescriptionBladderCare" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="none" points="124.0001,196.2373,131,176.2373,138.0001,196.2373,124.0001,196.2373"></polygon></g></svg></li>
+</ul>
+
+<p>Alternative 1: using PrescriptionGroup for all ReferralPrescriptions</p>
+
+<ul>
+  <li>nursing, imaging, physiotherapy and laboratory prescriptions can be mixed in one group, and they cannot be executed by one performer</li>
+</ul>
+
+<p>&lt;?xml version=”1.0” encoding=”UTF-8” standalone=”no”?&gt;<svg contentStyleType="text/css" viewBox="0 0 975 438" zoomAndPan="magnify" preserveAspectRatio="none" width="975px" style="width:975px;height:438px;" contentScriptType="application/ecmascript" version="1.1" height="438px"><defs><filter width="300%" x="-1" y="-1" id="fa1xsjq33oxbm" height="300%"><feGaussianBlur result="blurOut" stdDeviation="2.0"></feGaussianBlur><feColorMatrix result="blurOut2" in="blurOut" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" type="matrix"></feColorMatrix><feOffset result="blurOut3" dx="4.0" dy="4.0" in="blurOut2"></feOffset><feBlend mode="normal" in="SourceGraphic" in2="blurOut3"></feBlend></filter></defs><g>  <!-- MD5=[359721788ec939e1ab6735adf9ae7251]
+class BeReferralPrescription --><rect filter="url(#fa1xsjq33oxbm)" width="172" x="409" y="158" style="stroke:#A80036;stroke-width:1.5;" id="BeReferralPrescription" fill="#FEFECE" height="48"></rect><ellipse cx="424" cy="174" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M426.9688,179.6406 Q426.3906,179.9375 425.75,180.0781 Q425.1094,180.2344 424.4063,180.2344 Q421.9063,180.2344 420.5781,178.5938 Q419.2656,176.9375 419.2656,173.8125 Q419.2656,170.6875 420.5781,169.0313 Q421.9063,167.375 424.4063,167.375 Q425.1094,167.375 425.75,167.5313 Q426.4063,167.6875 426.9688,167.9844 L426.9688,170.7031 Q426.3438,170.125 425.75,169.8594 Q425.1563,169.5781 424.5313,169.5781 Q423.1875,169.5781 422.5,170.6563 Q421.8125,171.7188 421.8125,173.8125 Q421.8125,175.9063 422.5,176.9844 Q423.1875,178.0469 424.5313,178.0469 Q425.1563,178.0469 425.75,177.7813 Q426.3438,177.5 426.9688,176.9219 L426.9688,179.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="438" font-size="12" textLength="140" y="178.1543" font-family="sans-serif" fill="#000000">BeReferralPrescription</text><line y1="190" x1="410" y2="190" style="stroke:#A80036;stroke-width:1.5;" x2="580"></line><line y1="198" x1="410" y2="198" style="stroke:#A80036;stroke-width:1.5;" x2="580"></line>  <!-- MD5=[d4c45c964e5bd919737061b4f67e532a]
+class BeNursingPrescription --><rect filter="url(#fa1xsjq33oxbm)" width="171" x="45.5" y="267" style="stroke:#A80036;stroke-width:1.5;" id="BeNursingPrescription" fill="#FEFECE" height="48"></rect><ellipse cx="60.5" cy="283" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M63.4688,288.6406 Q62.8906,288.9375 62.25,289.0781 Q61.6094,289.2344 60.9063,289.2344 Q58.4063,289.2344 57.0781,287.5938 Q55.7656,285.9375 55.7656,282.8125 Q55.7656,279.6875 57.0781,278.0313 Q58.4063,276.375 60.9063,276.375 Q61.6094,276.375 62.25,276.5313 Q62.9063,276.6875 63.4688,276.9844 L63.4688,279.7031 Q62.8438,279.125 62.25,278.8594 Q61.6563,278.5781 61.0313,278.5781 Q59.6875,278.5781 59,279.6563 Q58.3125,280.7188 58.3125,282.8125 Q58.3125,284.9063 59,285.9844 Q59.6875,287.0469 61.0313,287.0469 Q61.6563,287.0469 62.25,286.7813 Q62.8438,286.5 63.4688,285.9219 L63.4688,288.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="74.5" font-size="12" textLength="139" y="287.1543" font-family="sans-serif" fill="#000000">BeNursingPrescription</text><line y1="299" x1="46.5" y2="299" style="stroke:#A80036;stroke-width:1.5;" x2="215.5"></line><line y1="307" x1="46.5" y2="307" style="stroke:#A80036;stroke-width:1.5;" x2="215.5"></line>  <!-- MD5=[a54779efc2025b5bc3450d1756142bcc]
+class BeDiagnosticImagingPrescription --><rect filter="url(#fa1xsjq33oxbm)" width="238" x="252" y="267" style="stroke:#A80036;stroke-width:1.5;" id="BeDiagnosticImagingPrescription" fill="#FEFECE" height="48"></rect><ellipse cx="267" cy="283" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M269.9688,288.6406 Q269.3906,288.9375 268.75,289.0781 Q268.1094,289.2344 267.4063,289.2344 Q264.9063,289.2344 263.5781,287.5938 Q262.2656,285.9375 262.2656,282.8125 Q262.2656,279.6875 263.5781,278.0313 Q264.9063,276.375 267.4063,276.375 Q268.1094,276.375 268.75,276.5313 Q269.4063,276.6875 269.9688,276.9844 L269.9688,279.7031 Q269.3438,279.125 268.75,278.8594 Q268.1563,278.5781 267.5313,278.5781 Q266.1875,278.5781 265.5,279.6563 Q264.8125,280.7188 264.8125,282.8125 Q264.8125,284.9063 265.5,285.9844 Q266.1875,287.0469 267.5313,287.0469 Q268.1563,287.0469 268.75,286.7813 Q269.3438,286.5 269.9688,285.9219 L269.9688,288.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="281" font-size="12" textLength="206" y="287.1543" font-family="sans-serif" fill="#000000">BeDiagnosticImagingPrescription</text><line y1="299" x1="253" y2="299" style="stroke:#A80036;stroke-width:1.5;" x2="489"></line><line y1="307" x1="253" y2="307" style="stroke:#A80036;stroke-width:1.5;" x2="489"></line>  <!-- MD5=[266452077b323be7bca9a1df21ae8ef1]
+class BeLaboratoryPrescription --><rect filter="url(#fa1xsjq33oxbm)" width="190" x="525" y="267" style="stroke:#A80036;stroke-width:1.5;" id="BeLaboratoryPrescription" fill="#FEFECE" height="48"></rect><ellipse cx="540" cy="283" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M542.9688,288.6406 Q542.3906,288.9375 541.75,289.0781 Q541.1094,289.2344 540.4063,289.2344 Q537.9063,289.2344 536.5781,287.5938 Q535.2656,285.9375 535.2656,282.8125 Q535.2656,279.6875 536.5781,278.0313 Q537.9063,276.375 540.4063,276.375 Q541.1094,276.375 541.75,276.5313 Q542.4063,276.6875 542.9688,276.9844 L542.9688,279.7031 Q542.3438,279.125 541.75,278.8594 Q541.1563,278.5781 540.5313,278.5781 Q539.1875,278.5781 538.5,279.6563 Q537.8125,280.7188 537.8125,282.8125 Q537.8125,284.9063 538.5,285.9844 Q539.1875,287.0469 540.5313,287.0469 Q541.1563,287.0469 541.75,286.7813 Q542.3438,286.5 542.9688,285.9219 L542.9688,288.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="554" font-size="12" textLength="158" y="287.1543" font-family="sans-serif" fill="#000000">BeLaboratoryPrescription</text><line y1="299" x1="526" y2="299" style="stroke:#A80036;stroke-width:1.5;" x2="714"></line><line y1="307" x1="526" y2="307" style="stroke:#A80036;stroke-width:1.5;" x2="714"></line>  <!-- MD5=[d2970cbb0ce44044b1ced11155609ca5]
+class BePhysiotherapyPrescription --><rect filter="url(#fa1xsjq33oxbm)" width="211" x="750.5" y="267" style="stroke:#A80036;stroke-width:1.5;" id="BePhysiotherapyPrescription" fill="#FEFECE" height="48"></rect><ellipse cx="765.5" cy="283" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M768.4688,288.6406 Q767.8906,288.9375 767.25,289.0781 Q766.6094,289.2344 765.9063,289.2344 Q763.4063,289.2344 762.0781,287.5938 Q760.7656,285.9375 760.7656,282.8125 Q760.7656,279.6875 762.0781,278.0313 Q763.4063,276.375 765.9063,276.375 Q766.6094,276.375 767.25,276.5313 Q767.9063,276.6875 768.4688,276.9844 L768.4688,279.7031 Q767.8438,279.125 767.25,278.8594 Q766.6563,278.5781 766.0313,278.5781 Q764.6875,278.5781 764,279.6563 Q763.3125,280.7188 763.3125,282.8125 Q763.3125,284.9063 764,285.9844 Q764.6875,287.0469 766.0313,287.0469 Q766.6563,287.0469 767.25,286.7813 Q767.8438,286.5 768.4688,285.9219 L768.4688,288.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="779.5" font-size="12" textLength="179" y="287.1543" font-family="sans-serif" fill="#000000">BePhysiotherapyPrescription</text><line y1="299" x1="751.5" y2="299" style="stroke:#A80036;stroke-width:1.5;" x2="960.5"></line><line y1="307" x1="751.5" y2="307" style="stroke:#A80036;stroke-width:1.5;" x2="960.5"></line>  <!-- MD5=[420815f1a4c19bc688e5f2e758ce1fef]
+class BeNursingPrescriptionBladderCare --><rect filter="url(#fa1xsjq33oxbm)" width="248" x="7" y="376" style="stroke:#A80036;stroke-width:1.5;" id="BeNursingPrescriptionBladderCare" fill="#FEFECE" height="48"></rect><ellipse cx="22" cy="392" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M24.9688,397.6406 Q24.3906,397.9375 23.75,398.0781 Q23.1094,398.2344 22.4063,398.2344 Q19.9063,398.2344 18.5781,396.5938 Q17.2656,394.9375 17.2656,391.8125 Q17.2656,388.6875 18.5781,387.0313 Q19.9063,385.375 22.4063,385.375 Q23.1094,385.375 23.75,385.5313 Q24.4063,385.6875 24.9688,385.9844 L24.9688,388.7031 Q24.3438,388.125 23.75,387.8594 Q23.1563,387.5781 22.5313,387.5781 Q21.1875,387.5781 20.5,388.6563 Q19.8125,389.7188 19.8125,391.8125 Q19.8125,393.9063 20.5,394.9844 Q21.1875,396.0469 22.5313,396.0469 Q23.1563,396.0469 23.75,395.7813 Q24.3438,395.5 24.9688,394.9219 L24.9688,397.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="36" font-size="12" textLength="216" y="396.1543" font-family="sans-serif" fill="#000000">BeNursingPrescriptionBladderCare</text><line y1="408" x1="8" y2="408" style="stroke:#A80036;stroke-width:1.5;" x2="254"></line><line y1="416" x1="8" y2="416" style="stroke:#A80036;stroke-width:1.5;" x2="254"></line>  <!-- MD5=[4349f1a1840a3cee0a08a41b74834461]
+class BeReferralPrescriptionGroup --><rect filter="url(#fa1xsjq33oxbm)" width="227" x="381.5" y="7" style="stroke:#A80036;stroke-width:1.5;" id="BeReferralPrescriptionGroup" fill="#FEFECE" height="73.6094"></rect><ellipse cx="404.15" cy="23" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M407.1188,28.6406 Q406.5406,28.9375 405.9,29.0781 Q405.2594,29.2344 404.5563,29.2344 Q402.0563,29.2344 400.7281,27.5938 Q399.4156,25.9375 399.4156,22.8125 Q399.4156,19.6875 400.7281,18.0313 Q402.0563,16.375 404.5563,16.375 Q405.2594,16.375 405.9,16.5313 Q406.5563,16.6875 407.1188,16.9844 L407.1188,19.7031 Q406.4938,19.125 405.9,18.8594 Q405.3063,18.5781 404.6813,18.5781 Q403.3375,18.5781 402.65,19.6563 Q401.9625,20.7188 401.9625,22.8125 Q401.9625,24.9063 402.65,25.9844 Q403.3375,27.0469 404.6813,27.0469 Q405.3063,27.0469 405.9,26.7813 Q406.4938,26.5 407.1188,25.9219 L407.1188,28.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="419.85" font-size="12" textLength="178" y="27.1543" font-family="sans-serif" fill="#000000">BeReferralPrescriptionGroup</text><line y1="39" x1="382.5" y2="39" style="stroke:#A80036;stroke-width:1.5;" x2="607.5"></line><text lengthAdjust="spacing" x="387.5" font-size="11" textLength="93" y="53.2104" font-family="sans-serif" fill="#000000">UHMEP identifier</text><text lengthAdjust="spacing" x="387.5" font-size="11" textLength="215" y="66.0151" font-family="sans-serif" fill="#000000">BeReferralPrescription[] prescriptions</text><line y1="72.6094" x1="382.5" y2="72.6094" style="stroke:#A80036;stroke-width:1.5;" x2="607.5"></line>  <!-- MD5=[126dd7d5c103e643f444912a0c0e969b]
+reverse link BeReferralPrescription to BeNursingPrescription --><path codeLine="1" d="M395.2522,211.8695 C337.4431,229.1805 265.6133,250.69 211.4408,266.912 " style="stroke:#A80036;stroke-width:1.0;" id="BeReferralPrescription-backto-BeNursingPrescription" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="none" points="393.5005,205.087,414.668,206.0555,397.5167,218.4986,393.5005,205.087"></polygon>  <!-- MD5=[fc1b46c64c0500510100602c29194880]
+reverse link BeReferralPrescription to BeDiagnosticImagingPrescription --><path codeLine="2" d="M452.2737,219.5578 C434.4389,235.2351 414.2415,252.9894 398.4427,266.877 " style="stroke:#A80036;stroke-width:1.0;" id="BeReferralPrescription-backto-BeDiagnosticImagingPrescription" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="none" points="447.8373,214.1375,467.4804,206.1906,457.0804,224.6526,447.8373,214.1375"></polygon>  <!-- MD5=[7d6f6dd1369cbdd1b3c05501e37e1387]
+reverse link BeReferralPrescription to BeLaboratoryPrescription --><path codeLine="3" d="M538.0709,219.5578 C556.0495,235.2351 576.4098,252.9894 592.336,266.877 " style="stroke:#A80036;stroke-width:1.0;" id="BeReferralPrescription-backto-BeLaboratoryPrescription" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="none" points="533.2149,224.611,522.7416,206.1906,542.4161,214.0592,533.2149,224.611"></polygon>  <!-- MD5=[8b42a179c75e575de92441be9d497985]
+reverse link BeReferralPrescription to BePhysiotherapyPrescription --><path codeLine="4" d="M593.9257,211.8695 C651.2584,229.1805 722.4961,250.69 776.2222,266.912 " style="stroke:#A80036;stroke-width:1.0;" id="BeReferralPrescription-backto-BePhysiotherapyPrescription" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="none" points="591.7928,218.5377,574.6699,206.0555,595.8395,205.1353,591.7928,218.5377"></polygon>  <!-- MD5=[81fdff61dc59d0a807ade81e26b68961]
+reverse link BeNursingPrescription to BeNursingPrescriptionBladderCare --><path codeLine="6" d="M131,335.5974 C131,349.3785 131,364.0337 131,375.877 " style="stroke:#A80036;stroke-width:1.0;" id="BeNursingPrescription-backto-BeNursingPrescriptionBladderCare" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="none" points="124.0001,335.1907,131,315.1906,138.0001,335.1906,124.0001,335.1907"></polygon>  <!-- MD5=[5fb2e2115037449133a180c464fe6280]
+link BeReferralPrescriptionGroup to BeReferralPrescription --><path codeLine="7" d="M495,81.3448 C495,103.7151 495,131.753 495,152.5518 " style="stroke:#A80036;stroke-width:1.0;" id="BeReferralPrescriptionGroup-to-BeReferralPrescription" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="#A80036" points="495,157.6757,499,148.6757,495,152.6757,491,148.6757,495,157.6757"></polygon><text lengthAdjust="spacing" x="496" font-size="13" textLength="91" y="124.0669" font-family="sans-serif" fill="#000000">contains inline</text></g></svg></p>
+
+<p>Alternative 2: using different PrescriptionGroup for nursing, imaging, physiotherapy and laboratory prescriptions</p>
+
+<ul>
+  <li>The prescriptions are grouped by the type of performer that can execute them</li>
+</ul>
+
+<p>&lt;?xml version=”1.0” encoding=”UTF-8” standalone=”no”?&gt;<svg contentStyleType="text/css" viewBox="0 0 1351 329" zoomAndPan="magnify" preserveAspectRatio="none" width="1351px" style="width:1351px;height:329px;" contentScriptType="application/ecmascript" version="1.1" height="329px"><defs><filter width="300%" x="-1" y="-1" id="f18tos6vn8dcho" height="300%"><feGaussianBlur result="blurOut" stdDeviation="2.0"></feGaussianBlur><feColorMatrix result="blurOut2" in="blurOut" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" type="matrix"></feColorMatrix><feOffset result="blurOut3" dx="4.0" dy="4.0" in="blurOut2"></feOffset><feBlend mode="normal" in="SourceGraphic" in2="blurOut3"></feBlend></filter></defs><g>  <!-- MD5=[359721788ec939e1ab6735adf9ae7251]
+class BeReferralPrescription --><rect filter="url(#f18tos6vn8dcho)" codeLine="2" width="172" x="589" y="20" style="stroke:#A80036;stroke-width:1.5;" id="BeReferralPrescription" fill="#FEFECE" height="48"></rect><ellipse cx="604" cy="36" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#A9DCDF"></ellipse><path d="M604.1094,31.3438 L602.9531,36.4219 L605.2813,36.4219 L604.1094,31.3438 Z M602.625,29.1094 L605.6094,29.1094 L608.9688,41.5 L606.5156,41.5 L605.75,38.4375 L602.4688,38.4375 L601.7188,41.5 L599.2813,41.5 L602.625,29.1094 Z " fill="#000000"></path><text lengthAdjust="spacing" x="618" font-size="12" textLength="140" y="40.1543" font-family="sans-serif" font-style="italic" fill="#000000">BeReferralPrescription</text><line y1="52" x1="590" y2="52" style="stroke:#A80036;stroke-width:1.5;" x2="760"></line><line y1="60" x1="590" y2="60" style="stroke:#A80036;stroke-width:1.5;" x2="760"></line>  <!-- MD5=[d4c45c964e5bd919737061b4f67e532a]
+class BeNursingPrescription --><rect filter="url(#f18tos6vn8dcho)" width="171" x="383.5" y="158" style="stroke:#A80036;stroke-width:1.5;" id="BeNursingPrescription" fill="#FEFECE" height="48"></rect><ellipse cx="398.5" cy="174" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M401.4688,179.6406 Q400.8906,179.9375 400.25,180.0781 Q399.6094,180.2344 398.9063,180.2344 Q396.4063,180.2344 395.0781,178.5938 Q393.7656,176.9375 393.7656,173.8125 Q393.7656,170.6875 395.0781,169.0313 Q396.4063,167.375 398.9063,167.375 Q399.6094,167.375 400.25,167.5313 Q400.9063,167.6875 401.4688,167.9844 L401.4688,170.7031 Q400.8438,170.125 400.25,169.8594 Q399.6563,169.5781 399.0313,169.5781 Q397.6875,169.5781 397,170.6563 Q396.3125,171.7188 396.3125,173.8125 Q396.3125,175.9063 397,176.9844 Q397.6875,178.0469 399.0313,178.0469 Q399.6563,178.0469 400.25,177.7813 Q400.8438,177.5 401.4688,176.9219 L401.4688,179.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="412.5" font-size="12" textLength="139" y="178.1543" font-family="sans-serif" fill="#000000">BeNursingPrescription</text><line y1="190" x1="384.5" y2="190" style="stroke:#A80036;stroke-width:1.5;" x2="553.5"></line><line y1="198" x1="384.5" y2="198" style="stroke:#A80036;stroke-width:1.5;" x2="553.5"></line>  <!-- MD5=[a54779efc2025b5bc3450d1756142bcc]
+class BeDiagnosticImagingPrescription --><rect filter="url(#f18tos6vn8dcho)" width="238" x="85" y="158" style="stroke:#A80036;stroke-width:1.5;" id="BeDiagnosticImagingPrescription" fill="#FEFECE" height="48"></rect><ellipse cx="100" cy="174" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M102.9688,179.6406 Q102.3906,179.9375 101.75,180.0781 Q101.1094,180.2344 100.4063,180.2344 Q97.9063,180.2344 96.5781,178.5938 Q95.2656,176.9375 95.2656,173.8125 Q95.2656,170.6875 96.5781,169.0313 Q97.9063,167.375 100.4063,167.375 Q101.1094,167.375 101.75,167.5313 Q102.4063,167.6875 102.9688,167.9844 L102.9688,170.7031 Q102.3438,170.125 101.75,169.8594 Q101.1563,169.5781 100.5313,169.5781 Q99.1875,169.5781 98.5,170.6563 Q97.8125,171.7188 97.8125,173.8125 Q97.8125,175.9063 98.5,176.9844 Q99.1875,178.0469 100.5313,178.0469 Q101.1563,178.0469 101.75,177.7813 Q102.3438,177.5 102.9688,176.9219 L102.9688,179.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="114" font-size="12" textLength="206" y="178.1543" font-family="sans-serif" fill="#000000">BeDiagnosticImagingPrescription</text><line y1="190" x1="86" y2="190" style="stroke:#A80036;stroke-width:1.5;" x2="322"></line><line y1="198" x1="86" y2="198" style="stroke:#A80036;stroke-width:1.5;" x2="322"></line>  <!-- MD5=[266452077b323be7bca9a1df21ae8ef1]
+class BeLaboratoryPrescription --><rect filter="url(#f18tos6vn8dcho)" width="190" x="721" y="158" style="stroke:#A80036;stroke-width:1.5;" id="BeLaboratoryPrescription" fill="#FEFECE" height="48"></rect><ellipse cx="736" cy="174" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M738.9688,179.6406 Q738.3906,179.9375 737.75,180.0781 Q737.1094,180.2344 736.4063,180.2344 Q733.9063,180.2344 732.5781,178.5938 Q731.2656,176.9375 731.2656,173.8125 Q731.2656,170.6875 732.5781,169.0313 Q733.9063,167.375 736.4063,167.375 Q737.1094,167.375 737.75,167.5313 Q738.4063,167.6875 738.9688,167.9844 L738.9688,170.7031 Q738.3438,170.125 737.75,169.8594 Q737.1563,169.5781 736.5313,169.5781 Q735.1875,169.5781 734.5,170.6563 Q733.8125,171.7188 733.8125,173.8125 Q733.8125,175.9063 734.5,176.9844 Q735.1875,178.0469 736.5313,178.0469 Q737.1563,178.0469 737.75,177.7813 Q738.3438,177.5 738.9688,176.9219 L738.9688,179.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="750" font-size="12" textLength="158" y="178.1543" font-family="sans-serif" fill="#000000">BeLaboratoryPrescription</text><line y1="190" x1="722" y2="190" style="stroke:#A80036;stroke-width:1.5;" x2="910"></line><line y1="198" x1="722" y2="198" style="stroke:#A80036;stroke-width:1.5;" x2="910"></line>  <!-- MD5=[d2970cbb0ce44044b1ced11155609ca5]
+class BePhysiotherapyPrescription --><rect filter="url(#f18tos6vn8dcho)" width="211" x="1043.5" y="158" style="stroke:#A80036;stroke-width:1.5;" id="BePhysiotherapyPrescription" fill="#FEFECE" height="48"></rect><ellipse cx="1058.5" cy="174" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M1061.4688,179.6406 Q1060.8906,179.9375 1060.25,180.0781 Q1059.6094,180.2344 1058.9063,180.2344 Q1056.4063,180.2344 1055.0781,178.5938 Q1053.7656,176.9375 1053.7656,173.8125 Q1053.7656,170.6875 1055.0781,169.0313 Q1056.4063,167.375 1058.9063,167.375 Q1059.6094,167.375 1060.25,167.5313 Q1060.9063,167.6875 1061.4688,167.9844 L1061.4688,170.7031 Q1060.8438,170.125 1060.25,169.8594 Q1059.6563,169.5781 1059.0313,169.5781 Q1057.6875,169.5781 1057,170.6563 Q1056.3125,171.7188 1056.3125,173.8125 Q1056.3125,175.9063 1057,176.9844 Q1057.6875,178.0469 1059.0313,178.0469 Q1059.6563,178.0469 1060.25,177.7813 Q1060.8438,177.5 1061.4688,176.9219 L1061.4688,179.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="1072.5" font-size="12" textLength="179" y="178.1543" font-family="sans-serif" fill="#000000">BePhysiotherapyPrescription</text><line y1="190" x1="1044.5" y2="190" style="stroke:#A80036;stroke-width:1.5;" x2="1253.5"></line><line y1="198" x1="1044.5" y2="198" style="stroke:#A80036;stroke-width:1.5;" x2="1253.5"></line>  <!-- MD5=[420815f1a4c19bc688e5f2e758ce1fef]
+class BeNursingPrescriptionBladderCare --><rect filter="url(#f18tos6vn8dcho)" width="248" x="345" y="267" style="stroke:#A80036;stroke-width:1.5;" id="BeNursingPrescriptionBladderCare" fill="#FEFECE" height="48"></rect><ellipse cx="360" cy="283" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M362.9688,288.6406 Q362.3906,288.9375 361.75,289.0781 Q361.1094,289.2344 360.4063,289.2344 Q357.9063,289.2344 356.5781,287.5938 Q355.2656,285.9375 355.2656,282.8125 Q355.2656,279.6875 356.5781,278.0313 Q357.9063,276.375 360.4063,276.375 Q361.1094,276.375 361.75,276.5313 Q362.4063,276.6875 362.9688,276.9844 L362.9688,279.7031 Q362.3438,279.125 361.75,278.8594 Q361.1563,278.5781 360.5313,278.5781 Q359.1875,278.5781 358.5,279.6563 Q357.8125,280.7188 357.8125,282.8125 Q357.8125,284.9063 358.5,285.9844 Q359.1875,287.0469 360.5313,287.0469 Q361.1563,287.0469 361.75,286.7813 Q362.3438,286.5 362.9688,285.9219 L362.9688,288.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="374" font-size="12" textLength="216" y="287.1543" font-family="sans-serif" fill="#000000">BeNursingPrescriptionBladderCare</text><line y1="299" x1="346" y2="299" style="stroke:#A80036;stroke-width:1.5;" x2="592"></line><line y1="307" x1="346" y2="307" style="stroke:#A80036;stroke-width:1.5;" x2="592"></line>  <!-- MD5=[f7613e70ed0f782cb8b638a130e92f87]
+class BeNursingPrescriptionGroup --><rect filter="url(#f18tos6vn8dcho)" codeLine="16" width="226" x="328" y="7" style="stroke:#A80036;stroke-width:1.5;" id="BeNursingPrescriptionGroup" fill="#FEFECE" height="73.6094"></rect><ellipse cx="350.65" cy="23" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M353.6188,28.6406 Q353.0406,28.9375 352.4,29.0781 Q351.7594,29.2344 351.0563,29.2344 Q348.5563,29.2344 347.2281,27.5938 Q345.9156,25.9375 345.9156,22.8125 Q345.9156,19.6875 347.2281,18.0313 Q348.5563,16.375 351.0563,16.375 Q351.7594,16.375 352.4,16.5313 Q353.0563,16.6875 353.6188,16.9844 L353.6188,19.7031 Q352.9938,19.125 352.4,18.8594 Q351.8063,18.5781 351.1813,18.5781 Q349.8375,18.5781 349.15,19.6563 Q348.4625,20.7188 348.4625,22.8125 Q348.4625,24.9063 349.15,25.9844 Q349.8375,27.0469 351.1813,27.0469 Q351.8063,27.0469 352.4,26.7813 Q352.9938,26.5 353.6188,25.9219 L353.6188,28.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="366.35" font-size="12" textLength="177" y="27.1543" font-family="sans-serif" fill="#000000">BeNursingPrescriptionGroup</text><line y1="39" x1="329" y2="39" style="stroke:#A80036;stroke-width:1.5;" x2="553"></line><text lengthAdjust="spacing" x="334" font-size="11" textLength="93" y="53.2104" font-family="sans-serif" fill="#000000">UHMEP identifier</text><text lengthAdjust="spacing" x="334" font-size="11" textLength="214" y="66.0151" font-family="sans-serif" fill="#000000">BeNursingPrescription[] prescriptions</text><line y1="72.6094" x1="329" y2="72.6094" style="stroke:#A80036;stroke-width:1.5;" x2="553"></line>  <!-- MD5=[e5f330829f743cc75b0e8d43fa56da19]
+class BeDiagnosticImagingPrescriptionGroup --><rect filter="url(#f18tos6vn8dcho)" codeLine="21" width="286" x="7" y="7" style="stroke:#A80036;stroke-width:1.5;" id="BeDiagnosticImagingPrescriptionGroup" fill="#FEFECE" height="73.6094"></rect><ellipse cx="26.5" cy="23" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M29.4688,28.6406 Q28.8906,28.9375 28.25,29.0781 Q27.6094,29.2344 26.9063,29.2344 Q24.4063,29.2344 23.0781,27.5938 Q21.7656,25.9375 21.7656,22.8125 Q21.7656,19.6875 23.0781,18.0313 Q24.4063,16.375 26.9063,16.375 Q27.6094,16.375 28.25,16.5313 Q28.9063,16.6875 29.4688,16.9844 L29.4688,19.7031 Q28.8438,19.125 28.25,18.8594 Q27.6563,18.5781 27.0313,18.5781 Q25.6875,18.5781 25,19.6563 Q24.3125,20.7188 24.3125,22.8125 Q24.3125,24.9063 25,25.9844 Q25.6875,27.0469 27.0313,27.0469 Q27.6563,27.0469 28.25,26.7813 Q28.8438,26.5 29.4688,25.9219 L29.4688,28.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="41.5" font-size="12" textLength="244" y="27.1543" font-family="sans-serif" fill="#000000">BeDiagnosticImagingPrescriptionGroup</text><line y1="39" x1="8" y2="39" style="stroke:#A80036;stroke-width:1.5;" x2="292"></line><text lengthAdjust="spacing" x="13" font-size="11" textLength="93" y="53.2104" font-family="sans-serif" fill="#000000">UHMEP identifier</text><text lengthAdjust="spacing" x="13" font-size="11" textLength="274" y="66.0151" font-family="sans-serif" fill="#000000">BeDiagnosticImagingPrescription[] prescriptions</text><line y1="72.6094" x1="8" y2="72.6094" style="stroke:#A80036;stroke-width:1.5;" x2="292"></line>  <!-- MD5=[8a65bf2481e029b5188d92527e88f6e7]
+class BeLaboratoryPrescriptionGroup --><rect filter="url(#f18tos6vn8dcho)" codeLine="26" width="243" x="796.5" y="7" style="stroke:#A80036;stroke-width:1.5;" id="BeLaboratoryPrescriptionGroup" fill="#FEFECE" height="73.6094"></rect><ellipse cx="818.25" cy="23" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M821.2188,28.6406 Q820.6406,28.9375 820,29.0781 Q819.3594,29.2344 818.6563,29.2344 Q816.1563,29.2344 814.8281,27.5938 Q813.5156,25.9375 813.5156,22.8125 Q813.5156,19.6875 814.8281,18.0313 Q816.1563,16.375 818.6563,16.375 Q819.3594,16.375 820,16.5313 Q820.6563,16.6875 821.2188,16.9844 L821.2188,19.7031 Q820.5938,19.125 820,18.8594 Q819.4063,18.5781 818.7813,18.5781 Q817.4375,18.5781 816.75,19.6563 Q816.0625,20.7188 816.0625,22.8125 Q816.0625,24.9063 816.75,25.9844 Q817.4375,27.0469 818.7813,27.0469 Q819.4063,27.0469 820,26.7813 Q820.5938,26.5 821.2188,25.9219 L821.2188,28.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="833.75" font-size="12" textLength="196" y="27.1543" font-family="sans-serif" fill="#000000">BeLaboratoryPrescriptionGroup</text><line y1="39" x1="797.5" y2="39" style="stroke:#A80036;stroke-width:1.5;" x2="1038.5"></line><text lengthAdjust="spacing" x="802.5" font-size="11" textLength="93" y="53.2104" font-family="sans-serif" fill="#000000">UHMEP identifier</text><text lengthAdjust="spacing" x="802.5" font-size="11" textLength="231" y="66.0151" font-family="sans-serif" fill="#000000">BeLaboratoryPrescription[] prescriptions</text><line y1="72.6094" x1="797.5" y2="72.6094" style="stroke:#A80036;stroke-width:1.5;" x2="1038.5"></line>  <!-- MD5=[41b40cdfc32d389f63065720c82376ea]
+class BePhysiotherapyPrescriptionGroup --><rect filter="url(#f18tos6vn8dcho)" codeLine="31" width="262" x="1075" y="7" style="stroke:#A80036;stroke-width:1.5;" id="BePhysiotherapyPrescriptionGroup" fill="#FEFECE" height="73.6094"></rect><ellipse cx="1095.85" cy="23" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" fill="#ADD1B2"></ellipse><path d="M1098.8188,28.6406 Q1098.2406,28.9375 1097.6,29.0781 Q1096.9594,29.2344 1096.2563,29.2344 Q1093.7563,29.2344 1092.4281,27.5938 Q1091.1156,25.9375 1091.1156,22.8125 Q1091.1156,19.6875 1092.4281,18.0313 Q1093.7563,16.375 1096.2563,16.375 Q1096.9594,16.375 1097.6,16.5313 Q1098.2563,16.6875 1098.8188,16.9844 L1098.8188,19.7031 Q1098.1938,19.125 1097.6,18.8594 Q1097.0063,18.5781 1096.3813,18.5781 Q1095.0375,18.5781 1094.35,19.6563 Q1093.6625,20.7188 1093.6625,22.8125 Q1093.6625,24.9063 1094.35,25.9844 Q1095.0375,27.0469 1096.3813,27.0469 Q1097.0063,27.0469 1097.6,26.7813 Q1098.1938,26.5 1098.8188,25.9219 L1098.8188,28.6406 Z " fill="#000000"></path><text lengthAdjust="spacing" x="1111.15" font-size="12" textLength="217" y="27.1543" font-family="sans-serif" fill="#000000">BePhysiotherapyPrescriptionGroup</text><line y1="39" x1="1076" y2="39" style="stroke:#A80036;stroke-width:1.5;" x2="1336"></line><text lengthAdjust="spacing" x="1081" font-size="11" textLength="93" y="53.2104" font-family="sans-serif" fill="#000000">UHMEP identifier</text><text lengthAdjust="spacing" x="1081" font-size="11" textLength="250" y="66.0151" font-family="sans-serif" fill="#000000">BePhysiotherapyPrescription[] prescriptions</text><line y1="72.6094" x1="1076" y2="72.6094" style="stroke:#A80036;stroke-width:1.5;" x2="1336"></line>  <!-- MD5=[126dd7d5c103e643f444912a0c0e969b]
+reverse link BeReferralPrescription to BeNursingPrescription --><path codeLine="4" d="M626.7649,80.3547 C606.1714,95.501 581.6946,113.0148 559,128 C543.642,138.1409 526.3935,148.6853 511.1367,157.7364 " style="stroke:#A80036;stroke-width:1.0;" id="BeReferralPrescription-backto-BeNursingPrescription" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="none" points="622.7913,74.5867,643.0257,68.2961,631.1305,85.832,622.7913,74.5867"></polygon>  <!-- MD5=[fc1b46c64c0500510100602c29194880]
+reverse link BeReferralPrescription to BeDiagnosticImagingPrescription --><path codeLine="5" d="M591.7533,74.4775 C584.7622,76.7744 577.7776,78.9805 571,81 C516.6599,97.1915 501.7834,96.3783 447,111 C391.9018,125.7058 330.2326,143.7434 282.807,157.9578 " style="stroke:#A80036;stroke-width:1.0;" id="BeReferralPrescription-backto-BeDiagnosticImagingPrescription" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="none" points="589.5249,67.8417,610.7135,68.0501,594.0196,81.1006,589.5249,67.8417"></polygon>  <!-- MD5=[7d6f6dd1369cbdd1b3c05501e37e1387]
+reverse link BeReferralPrescription to BeLaboratoryPrescription --><path codeLine="6" d="M713.9574,82.1285 C738.6667,106.3121 769.8879,136.8691 791.248,157.7747 " style="stroke:#A80036;stroke-width:1.0;" id="BeReferralPrescription-backto-BeLaboratoryPrescription" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="none" points="708.9575,87.0297,699.5603,68.0378,718.75,77.0244,708.9575,87.0297"></polygon>  <!-- MD5=[8b42a179c75e575de92441be9d497985]
+reverse link BeReferralPrescription to BePhysiotherapyPrescription --><path codeLine="7" d="M755.7318,74.3469 C763.5376,76.789 771.3833,79.0583 779,81 C861.4157,102.0101 885.9311,88.6734 968,111 C1012.4594,123.095 1060.9663,142.4776 1096.5644,157.9374 " style="stroke:#A80036;stroke-width:1.0;" id="BeReferralPrescription-backto-BePhysiotherapyPrescription" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="none" points="753.3553,80.9339,736.5641,68.0089,757.7505,67.6417,753.3553,80.9339"></polygon>  <!-- MD5=[81fdff61dc59d0a807ade81e26b68961]
+reverse link BeNursingPrescription to BeNursingPrescriptionBladderCare --><path codeLine="9" d="M469,226.5974 C469,240.3785 469,255.0337 469,266.877 " style="stroke:#A80036;stroke-width:1.0;" id="BeNursingPrescription-backto-BeNursingPrescriptionBladderCare" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="none" points="462.0001,226.1907,469,206.1906,476.0001,226.1906,462.0001,226.1907"></polygon>  <!-- MD5=[d89649c9a345908c062e7cfaa9e29955]
+link BeNursingPrescriptionGroup to BeNursingPrescription --><path codeLine="10" d="M448.5772,81.3448 C453.1161,103.7151 458.805,131.753 463.025,152.5518 " style="stroke:#A80036;stroke-width:1.0;" id="BeNursingPrescriptionGroup-to-BeNursingPrescription" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="#A80036" points="464.0646,157.6757,466.195,148.06,463.0703,152.7756,458.3548,149.6509,464.0646,157.6757"></polygon><text lengthAdjust="spacing" x="459" font-size="13" textLength="91" y="124.0669" font-family="sans-serif" fill="#000000">contains inline</text>  <!-- MD5=[50f5cdaed030f4876c7a501af7ab1617]
+link BeDiagnosticImagingPrescriptionGroup to BeDiagnosticImagingPrescription --><path codeLine="11" d="M164.6132,81.3448 C173.4039,103.8099 184.4312,131.9907 192.5801,152.8158 " style="stroke:#A80036;stroke-width:1.0;" id="BeDiagnosticImagingPrescriptionGroup-to-BeDiagnosticImagingPrescription" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="#A80036" points="194.4818,157.6757,194.9271,147.8369,192.6598,153.0195,187.4772,150.7522,194.4818,157.6757"></polygon><text lengthAdjust="spacing" x="183" font-size="13" textLength="91" y="124.0669" font-family="sans-serif" fill="#000000">contains inline</text>  <!-- MD5=[c1dd59c719a6672962d1ee1fa98df5de]
+link BeLaboratoryPrescriptionGroup to BeLaboratoryPrescription --><path codeLine="12" d="M890.3973,81.3448 C873.5825,104.0943 852.4354,132.7051 836.9891,153.603 " style="stroke:#A80036;stroke-width:1.0;" id="BeLaboratoryPrescriptionGroup-to-BeLaboratoryPrescription" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="#A80036" points="833.9788,157.6757,842.5451,152.8158,836.9508,153.6548,836.1117,148.0606,833.9788,157.6757"></polygon><text lengthAdjust="spacing" x="868" font-size="13" textLength="91" y="124.0669" font-family="sans-serif" fill="#000000">contains inline</text>  <!-- MD5=[23e5766d4aec23fc5926c02c8ec08ad7]
+link BePhysiotherapyPrescriptionGroup to BePhysiotherapyPrescription --><path codeLine="13" d="M1190.575,81.3448 C1181.2959,103.8099 1169.656,131.9907 1161.0544,152.8158 " style="stroke:#A80036;stroke-width:1.0;" id="BePhysiotherapyPrescriptionGroup-to-BePhysiotherapyPrescription" fill="none"></path><polygon style="stroke:#A80036;stroke-width:1.0;" fill="#A80036" points="1159.047,157.6757,1166.18,150.8845,1160.9559,153.0544,1158.7859,147.8303,1159.047,157.6757"></polygon><text lengthAdjust="spacing" x="1179" font-size="13" textLength="91" y="124.0669" font-family="sans-serif" fill="#000000">contains inline</text></g></svg></p>
+
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &copy; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7belgium.org">HL7 Belgium</a>.  Package my-ig#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Sep 22, 2021 13:43+0000">2021-09-22</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)"></span>
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+  
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+  <!-- feedback form - Google forms -->
+  <!-- v0.1, 2021-01-09 -->
+
+
+
+  <!-- / feedback form -->
+
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
