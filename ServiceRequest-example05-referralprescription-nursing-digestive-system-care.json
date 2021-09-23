@@ -1,0 +1,96 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "example05-referralprescription-nursing-digestive-system-care",
+  "meta": {
+    "profile": [
+      "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-digestive-system-care"
+    ]
+  },
+  "text": {
+    "status": "extensions",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>Reason for current status</b>: <span title=\"Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason created}\">Created</span></p><p><b>identifier</b>: id: UHMEPVALUE</p><p><b>status</b>: active</p><p><b>intent</b>: order</p><p><b>category</b>: <span title=\"Codes: {http://snomed.info/sct 9632001}\">Nursing procedure</span></p><p><b>priority</b>: routine</p><p><b>code</b>: <span title=\"Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code digestive-system-care}\">Digestive system care</span></p><p><b>orderDetail</b>: <span title=\"Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-digestive-system-care manual-removal-of-faecal-omen}\">Manual removal of faecal omen</span></p><p><b>subject</b>: <a href=\"Patient-patient1.html\">Generated Summary: id: 9999999999 (OFFICIAL); Jane Doe ; gender: female; birthDate: 1956-05-27</a></p><p><b>occurrence</b>: Starting 2021-04-23, Do Once per 1 days, Until 2022-04-22</p><p><b>requester</b>: <a href=\"Practitioner-practitioner1.html\">Generated Summary: id: 8888888888 (OFFICIAL); Leonard McCoy (OFFICIAL), Bones (NICKNAME)</a></p><p><b>performerType</b>: <span title=\"Codes: {http://snomed.info/sct 106292003}\">Nurse</span></p><p><b>performer</b>: <a href=\"Practitioner-practitioner2.html\">Generated Summary: id: 8888888888 (OFFICIAL); Christopher Chapel (OFFICIAL), Mr.Nurse (NICKNAME)</a></p></div>"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/request-statusReason",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason",
+            "code": "created",
+            "display": "Created"
+          }
+        ]
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep",
+      "value": "UHMEPVALUE"
+    }
+  ],
+  "status": "active",
+  "intent": "order",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "9632001"
+        }
+      ],
+      "text": "Nursing procedure"
+    }
+  ],
+  "priority": "routine",
+  "code": {
+    "coding": [
+      {
+        "system": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code",
+        "code": "digestive-system-care"
+      }
+    ]
+  },
+  "orderDetail": [
+    {
+      "coding": [
+        {
+          "system": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-digestive-system-care",
+          "code": "manual-removal-of-faecal-omen"
+        }
+      ]
+    }
+  ],
+  "subject": {
+    "reference": "Patient/patient1"
+  },
+  "occurrenceTiming": {
+    "repeat": {
+      "boundsPeriod": {
+        "start": "2021-04-23",
+        "end": "2022-04-22"
+      },
+      "frequency": 1,
+      "period": 1,
+      "periodUnit": "d"
+    }
+  },
+  "requester": {
+    "reference": "Practitioner/practitioner1"
+  },
+  "performerType": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "106292003",
+        "display": "Nurse"
+      }
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner2"
+    }
+  ]
+}
