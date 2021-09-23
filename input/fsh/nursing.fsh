@@ -115,14 +115,15 @@ Instance: example7-referralprescription-nursing-medication
 InstanceOf: BeReferralPrescriptionNursingMedication
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"
-* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
-* extension.valueCodeableConcept = $be-status-reason#created "Created"
+//* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
+//* extension.valueCodeableConcept = $be-status-reason#created "Created"
+* statusReason = $be-status-reason#created "Created"
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"
 * identifier.value = "UHMEPVALUE"
 * status = #active
 * intent = #order
-* category[InjectionSpecializationCodes] = https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-injection#SC
-* category[InjectionSpecializationCodes].text = "Subcutaan"
+* category[0].coding = https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-injection#SC
+* category[0].text = "Subcutaan"
 * medicationCodeableConcept = $cnk_product_codes#1728104 "Neupogen inj./inf. oploss. (conc.) i.v./s.c. [voorgev. spuit] 5 x 48 ME / 0,5 ml"
 * priority = #routine
 * subject = Reference(Patient/patient1)
