@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MedicationRequest xmlns="http://hl7.org/fhir">
+  <id value="example17-referralprescription-nursing-medication"/>
+  <meta>
+    <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>identifier</b>: id: UHMEPVALUE</p><p><b>status</b>: active</p><p><b>statusReason</b>: <span title="Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason created}">Created</span></p><p><b>intent</b>: order</p><p><b>category</b>: <span title="Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-injection SC}">Subcutaan</span></p><p><b>priority</b>: routine</p><p><b>medication</b>: <span title="Codes: {https://cnk.apb.be/codings/cnk_product_codes 2727196}">Metoject inj. oploss. s.c. [voorgev. spuit] 12 x 15 mg / 0,3 ml</span></p><p><b>subject</b>: <a href="Patient-patient1.html">Generated Summary: id: 9999999999 (OFFICIAL); Jane Doe ; gender: female; birthDate: 1956-05-27</a></p><p><b>requester</b>: <a href="Practitioner-practitioner1.html">Generated Summary: id: 8888888888 (OFFICIAL); Leonard McCoy (OFFICIAL), Bones (NICKNAME)</a></p><p><b>performer</b>: <a href="Practitioner-practitioner2.html">Generated Summary: id: 8888888888 (OFFICIAL); Christopher Chapel (OFFICIAL), Mr.Nurse (NICKNAME)</a></p><p><b>performerType</b>: <span title="Codes: {http://snomed.info/sct 106292003}">Nurse</span></p><p><b>note</b>: toedienen Metoject 15mg</p></div>
+  </text>
+  <identifier>
+    <system value="https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"/>
+    <value value="UHMEPVALUE"/>
+  </identifier>
+  <status value="active"/>
+  <statusReason>
+    <coding>
+      <system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason"/>
+      <code value="created"/>
+      <display value="Created"/>
+    </coding>
+  </statusReason>
+  <intent value="order"/>
+  <category>
+    <coding>
+      <system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-injection"/>
+      <code value="SC"/>
+    </coding>
+    <text value="Subcutaan"/>
+  </category>
+  <priority value="routine"/>
+  <medicationCodeableConcept>
+    <coding>
+      <system value="https://cnk.apb.be/codings/cnk_product_codes"/>
+      <code value="2727196"/>
+      <display value="Metoject inj. oploss. s.c. [voorgev. spuit] 12 x 15 mg / 0,3 ml"/>
+    </coding>
+  </medicationCodeableConcept>
+  <subject>
+    <reference value="Patient/patient1"/>
+  </subject>
+  <requester>
+    <reference value="Practitioner/practitioner1"/>
+  </requester>
+  <performer>
+    <reference value="Practitioner/practitioner2"/>
+  </performer>
+  <performerType>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="106292003"/>
+      <display value="Nurse"/>
+    </coding>
+  </performerType>
+  <note>
+    <text value="toedienen Metoject 15mg"/>
+  </note>
+  <dosageInstruction>
+    <text value="Frequency: 1x per week, gedurende 12 weken, vanaf 29/6/2021"/>
+    <timing>
+      <repeat>
+        <boundsDuration>
+          <value value="12"/>
+          <unit value="wk"/>
+          <system value="http://hl7.org/fhir/ValueSet/ucum-units"/>
+        </boundsDuration>
+        <frequency value="1"/>
+        <period value="1"/>
+        <periodUnit value="wk"/>
+      </repeat>
+    </timing>
+  </dosageInstruction>
+</MedicationRequest>
