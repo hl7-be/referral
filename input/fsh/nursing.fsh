@@ -11,7 +11,7 @@ Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation
 Alias: $sct = http://snomed.info/sct
 Alias: $some_nomenclature_system = https://www.SOME_NOMENCLATURE_SYSTEM.be/
 
-Instance: example2-referralprescription-nursing-digestive-system-care
+Instance: example02-referralprescription-nursing-digestive-system-care
 InstanceOf: BeReferralPrescriptionNursing
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-digestive-system-care"
@@ -36,7 +36,7 @@ Usage: #example
 * note.text = "patient can not move (niet verplaatsen)"
 
 
-Instance: example3-referralprescription-nursing-compressiontherapy
+Instance: example03-referralprescription-nursing-compressiontherapy
 InstanceOf: BeReferralPrescriptionNursingCompressionTherapy
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-compressiontherapy"
@@ -62,7 +62,7 @@ Usage: #example
 * performer = Reference(Practitioner/practitioner2)
 * note.text = "Rosidal zwachtels ->  aan- en uitdoen / both underlegs"
 
-Instance: example4-referralprescription-nursing-bladder-care
+Instance: example04-referralprescription-nursing-bladder-care
 InstanceOf: BeReferralPrescriptionNursing
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-bladder-care"
@@ -86,7 +86,7 @@ Usage: #example
 * performer = Reference(Practitioner/practitioner2)
 
 
-Instance: example5-referralprescription-nursing-digestive-system-care
+Instance: example05-referralprescription-nursing-digestive-system-care
 InstanceOf: BeReferralPrescriptionNursingDigestiveSystemCare
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-digestive-system-care"
@@ -111,7 +111,7 @@ Usage: #example
 * performerType = $sct#106292003 "Nurse"
 * performer = Reference(Practitioner/practitioner2)
 
-Instance: example6-referralprescription-nursing-compression-therapy
+Instance: example06-referralprescription-nursing-compression-therapy
 InstanceOf: BeReferralPrescriptionNursingCompressionTherapy
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-compressiontherapy"
@@ -134,7 +134,7 @@ Usage: #example
 * performerType = $sct#106292003 "Nurse"
 * performer = Reference(Practitioner/practitioner2)
 
-Instance: example7-referralprescription-nursing-medication
+Instance: example07-referralprescription-nursing-medication
 InstanceOf: BeReferralPrescriptionNursingMedication
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"
@@ -162,7 +162,7 @@ Usage: #example
 * performerType = $sct#106292003 "Nurse"
 * performer = Reference(Practitioner/practitioner2)
 
-Instance: example8-referralprescription-nursing-medication
+Instance: example08-referralprescription-nursing-medication
 InstanceOf: BeReferralPrescriptionNursingMedication
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"
@@ -184,14 +184,13 @@ Usage: #example
 * dosageInstruction.timing.repeat.frequency = 1
 * dosageInstruction.timing.repeat.period = 3
 * dosageInstruction.timing.repeat.periodUnit = #wk
-* dosageInstruction.timing.repeat.timeOfDay = "20:00:00"
 * dosageInstruction.text = "Frequency: 6 months - 1 X every 3 weeks"
 * requester = Reference(Practitioner/practitioner1)
 * performerType = $sct#106292003 "Nurse"
 * performer = Reference(Practitioner/practitioner2)
-* note = "Vitamine B12"
+* note.text = "Vitamine B12"
 
-Instance: example9-referralprescription-nursing-woundcare
+Instance: example09-referralprescription-nursing-woundcare
 InstanceOf: BeReferralPrescriptionNursingWoundcare
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-woundcare"
@@ -216,3 +215,51 @@ Usage: #example
 * note.text = "wound care codeset/valueset is still missing (see orderDetail)"
 * orderDetail = https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-digestive-system-care#manual-removal-of-faecal-omen
 * subject = Reference(Patient/patient1)
+
+Instance: example10-referralprescription-nursing-medication
+InstanceOf: BeReferralPrescriptionNursingMedication
+Usage: #example
+* meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"
+* statusReason = $be-status-reason#created "Created"
+* identifier.system = "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"
+* identifier.value = "UHMEPVALUE"
+* status = #active
+* intent = #order
+* category[0].coding = https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-category#vaginal
+* category[0].text = "vaginal"
+* medicationCodeableConcept = $cnk_product_codes#2966893 "Vagifem vag. tabl. 18 x 10 µg"
+* priority = #routine
+* subject = Reference(Patient/patient1)
+* dosageInstruction.timing.repeat.boundsPeriod.start = "2021-06-30"
+* dosageInstruction.timing.repeat.boundsPeriod.end = "2021-12-31"
+* dosageInstruction.timing.repeat.frequency = 1
+* dosageInstruction.timing.repeat.period = 1
+* dosageInstruction.timing.repeat.periodUnit = #d
+* dosageInstruction.text = "Frequency: 6 months - 1 X every 3 weeks"
+* requester = Reference(Practitioner/practitioner1)
+* performerType = $sct#106292003 "Nurse"
+* performer = Reference(Practitioner/practitioner2)
+* note.text = "vagifem vaginaal inbrengen"
+
+Instance: example12-referralprescription-nursing-annex81
+InstanceOf: BeReferralPrescriptionNursingAnnex81PreparationOfMedication
+Usage: #example
+* meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-annex81"
+* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
+* extension.valueCodeableConcept = $be-status-reason#created "Created"
+* status = #active
+* intent = #order
+* category = $sct#9632001
+* category.text = "Nursing procedure"
+* priority = #routine
+* code = $be-cs-nursing-code#appendix-81-preparation-of-medications
+* orderDetail =  http://snomed.info/sct#710574004
+* subject = Reference(Patient/patient1)
+* occurrenceTiming.repeat.boundsPeriod.start = "2021-07-02"
+* occurrenceTiming.repeat.boundsPeriod.end = "2022-06-30"
+* occurrenceTiming.repeat.frequency = 1
+* occurrenceTiming.repeat.period = 1
+* occurrenceTiming.repeat.periodUnit = #d
+* requester = Reference(Practitioner/practitioner1)
+* performerType = $sct#106292003 "Nurse"
+* performer = Reference(Practitioner/practitioner2)
