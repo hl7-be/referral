@@ -1,13 +1,13 @@
 ﻿ExampleIG : Validation Results
 =========================================
 
-err = 228, warn = 267, info = 3
+err = 227, warn = 267, info = 3
 IG Publisher Version: 1.1.80
-Generated Wed Sep 22 15:58:29 UTC 2021. FHIR version 4.0.1 for my-ig#0.2.0 (canonical = http://example.com/fhir/example)
+Generated Thu Sep 23 11:41:42 UTC 2021. FHIR version 4.0.1 for my-ig#0.2.0 (canonical = http://example.com/fhir/example)
 
  Build Errors : 14 / 23 / 0
  /github/workspace/fsh-generated/resources/ImplementationGuide-my-ig : 3 / 0 / 1
- /github/workspace/fsh-generated/resources/MedicationRequest-example7-referralprescription-nursing-medication : 14 / 0 / 3
+ /github/workspace/fsh-generated/resources/MedicationRequest-example7-referralprescription-nursing-medication : 13 / 0 / 3
  /github/workspace/fsh-generated/resources/ServiceRequest-example2-referralprescription-nursing-digestive-system-care : 15 / 0 / 3
  /github/workspace/fsh-generated/resources/ServiceRequest-example3-referralprescription-nursing-compressiontherapy : 15 / 0 / 2
  /github/workspace/fsh-generated/resources/ServiceRequest-example4-referralprescription-nursing-bladder-care : 15 / 0 / 3
@@ -126,7 +126,6 @@ ERROR: ImplementationGuide.where(url = 'http://example.com/fhir/example'): Confo
 ERROR: ImplementationGuide.url: Resource id/url mismatch: my-ig/http://example.com/fhir/example
 ERROR: /github/workspace/fsh-generated/resources/ImplementationGuide-my-ig: URL Mismatch http://example.com/fhir/example/ImplementationGuide/my-ig vs http://example.com/fhir/example
 == fsh-generated/resources/MedicationRequest-example7-referralprescription-nursing-medication.json ==
-ERROR: MedicationRequest/example7-referralprescription-nursing-medication: MedicationRequest: The extension http://hl7.org/fhir/StructureDefinition/request-statusReason is not allowed to be used at this point (allowed = e:DeviceRequest, e:ServiceRequest, e:NutritionOrder, e:SupplyRequest; this element is [[MedicationRequest])
 INFORMATION: MedicationRequest/example7-referralprescription-nursing-medication: MedicationRequest.medication.ofType(CodeableConcept).coding[0]: Code System URI 'https://cnk.apb.be/codings/cnk_product_codes' is unknown so the code cannot be validated
 ERROR: MedicationRequest/example7-referralprescription-nursing-medication: MedicationRequest.category[0]: Slicing cannot be evaluated: Could not match discriminator ([coding.system]) for slice MedicationRequest.category:NusingMedicationType-highLevelCode in profile https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication - the discriminator [coding.system] does not have fixed value, binding or existence assertions
 ERROR: MedicationRequest/example7-referralprescription-nursing-medication: MedicationRequest.category[0]: Slicing cannot be evaluated: Could not match discriminator ([coding.system]) for slice MedicationRequest.category:InjectionSpecializationCodes in profile https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication - the discriminator [coding.system] does not have fixed value, binding or existence assertions

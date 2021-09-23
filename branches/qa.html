@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<!-- broken links = 11, errors = 228, warn = 267, info = 3 -->
+<!-- broken links = 11, errors = 227, warn = 267, info = 3 -->
 <head>
   <title>ExampleIG : Validation Results</title>
   <link href="fhir.css" rel="stylesheet"/>
@@ -36,7 +36,7 @@
 </head>
 <body style="margin: 20px; background-color: #ffffff">
  <h1>Validation Results for ExampleIG</h1>
- <p>Generated Wed Sep 22 15:58:27 UTC 2021, FHIR version 4.0.1 for my-ig#0.2.0 (canonical = <a href="http://example.com/fhir/example">http://example.com/fhir/example</a> (<a href="http://example.com/fhir/example/history.html">history</a>)). See <a href="/github/workspace/output/qa.min.html">Errors Only</a></p>
+ <p>Generated Thu Sep 23 11:41:41 UTC 2021, FHIR version 4.0.1 for my-ig#0.2.0 (canonical = <a href="http://example.com/fhir/example">http://example.com/fhir/example</a> (<a href="http://example.com/fhir/example/history.html">history</a>)). See <a href="/github/workspace/output/qa.min.html">Errors Only</a></p>
 <table class="grid"> <tr><td colspan=2><b>Quality Checks</b></td></tr>
  <tr><td>Publisher Version:</td><td><span>IG Publisher Version: v1.1.80</span></td></tr>
  <tr><td>Publication Code:</td><td>n/a<span style="color: maroon; font-weight: bold"> </span>. PackageId = my-ig, Canonical = http://example.com/fhir/example</td></tr>
@@ -50,7 +50,7 @@
  <br/><br/>The copyrightYear parameter ('2021+') in the IG resource is good</td></tr>
  <tr><td>HTA Analysis:</td><td><i>Non-HL7 Igs are exempt from terminology dependency analysis</i></td></tr>
  <tr><td>Previous Version Comparison:</td><td> Unable to compare with previous version: Unable to find version history at http://example.com/fhir/example (Problem #1 with package-list.json at http://example.com/fhir/example: http://example.com/fhir/example/package-list.json)</td></tr>
- <tr><td>Summary:</td><td> broken links = 11, errors = 228, warn = 267, info = 3</td></tr>
+ <tr><td>Summary:</td><td> broken links = 11, errors = 227, warn = 267, info = 3</td></tr>
 </table>
  <table class="grid">
    <tr>
@@ -63,7 +63,7 @@
      <td><a href="#_github_workspace_fsh-generated_resources_ImplementationGuide-my-ig"><b>/github/workspace/fsh-generated/resources/ImplementationGuide-my-ig</b></a></td><td><b>3</b></td><td><b>0</b></td><td><b>0</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><a href="#_github_workspace_fsh-generated_resources_MedicationRequest-example7-referralprescription-nursing-medication"><b>/github/workspace/fsh-generated/resources/MedicationRequest-example7-referralprescription-nursing-medication</b></a></td><td><b>14</b></td><td><b>0</b></td><td><b>1</b></td>
+     <td><a href="#_github_workspace_fsh-generated_resources_MedicationRequest-example7-referralprescription-nursing-medication"><b>/github/workspace/fsh-generated/resources/MedicationRequest-example7-referralprescription-nursing-medication</b></a></td><td><b>13</b></td><td><b>0</b></td><td><b>1</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
      <td><a href="#_github_workspace_fsh-generated_resources_ServiceRequest-example2-referralprescription-nursing-digestive-system-care"><b>/github/workspace/fsh-generated/resources/ServiceRequest-example2-referralprescription-nursing-digestive-system-care</b></a></td><td><b>15</b></td><td><b>0</b></td><td><b>0</b></td>
@@ -432,50 +432,47 @@
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
    </tr>
-   <tr style="background-color: #ffcccc">
-     <td><b>MedicationRequest (l1/c2)</b></td><td><b>error</b></td><td title="Extension_EXT_Context_Wrong"><b>The extension http://hl7.org/fhir/StructureDefinition/request-statusReason is not allowed to be used at this point (allowed = e:DeviceRequest, e:ServiceRequest, e:NutritionOrder, e:SupplyRequest; this element is [[MedicationRequest])</b></td>
-   </tr>
    <tr style="background-color: #ffffe6">
-     <td><b>MedicationRequest.medication.ofType(CodeableConcept).coding[0] (l44/c8)</b></td><td><b>information</b></td><td title="Terminology_TX_System_NotKnown"><b>Code System URI 'https://cnk.apb.be/codings/cnk_product_codes' is unknown so the code cannot be validated</b></td>
+     <td><b>MedicationRequest.medication.ofType(CodeableConcept).coding[0] (l39/c8)</b></td><td><b>information</b></td><td title="Terminology_TX_System_NotKnown"><b>Code System URI 'https://cnk.apb.be/codings/cnk_product_codes' is unknown so the code cannot be validated</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b>MedicationRequest.category[0] (l32/c6)</b></td><td><b>error</b></td><td title="SLICING_CANNOT_BE_EVALUATED"><b>Slicing cannot be evaluated: Could not match discriminator ([coding.system]) for slice MedicationRequest.category:NusingMedicationType-highLevelCode in profile https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication - the discriminator [coding.system] does not have fixed value, binding or existence assertions</b></td>
+     <td><b>MedicationRequest.category[0] (l27/c6)</b></td><td><b>error</b></td><td title="SLICING_CANNOT_BE_EVALUATED"><b>Slicing cannot be evaluated: Could not match discriminator ([coding.system]) for slice MedicationRequest.category:NusingMedicationType-highLevelCode in profile https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication - the discriminator [coding.system] does not have fixed value, binding or existence assertions</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b>MedicationRequest.category[0] (l32/c6)</b></td><td><b>error</b></td><td title="SLICING_CANNOT_BE_EVALUATED"><b>Slicing cannot be evaluated: Could not match discriminator ([coding.system]) for slice MedicationRequest.category:InjectionSpecializationCodes in profile https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication - the discriminator [coding.system] does not have fixed value, binding or existence assertions</b></td>
+     <td><b>MedicationRequest.category[0] (l27/c6)</b></td><td><b>error</b></td><td title="SLICING_CANNOT_BE_EVALUATED"><b>Slicing cannot be evaluated: Could not match discriminator ([coding.system]) for slice MedicationRequest.category:InjectionSpecializationCodes in profile https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication - the discriminator [coding.system] does not have fixed value, binding or existence assertions</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b>MedicationRequest.category[0] (l32/c6)</b></td><td><b>error</b></td><td title="SLICING_CANNOT_BE_EVALUATED"><b>Slicing cannot be evaluated: Could not match discriminator ([coding.system]) for slice MedicationRequest.category:PerfusionSpecializationCodes in profile https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication - the discriminator [coding.system] does not have fixed value, binding or existence assertions</b></td>
+     <td><b>MedicationRequest.category[0] (l27/c6)</b></td><td><b>error</b></td><td title="SLICING_CANNOT_BE_EVALUATED"><b>Slicing cannot be evaluated: Could not match discriminator ([coding.system]) for slice MedicationRequest.category:PerfusionSpecializationCodes in profile https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication - the discriminator [coding.system] does not have fixed value, binding or existence assertions</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b>MedicationRequest.category[0] (l32/c6)</b></td><td><b>error</b></td><td title="SLICING_CANNOT_BE_EVALUATED"><b>Slicing cannot be evaluated: Could not match discriminator ([coding.system]) for slice MedicationRequest.category:PercutaneousSpecializationCodes in profile https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication - the discriminator [coding.system] does not have fixed value, binding or existence assertions</b></td>
+     <td><b>MedicationRequest.category[0] (l27/c6)</b></td><td><b>error</b></td><td title="SLICING_CANNOT_BE_EVALUATED"><b>Slicing cannot be evaluated: Could not match discriminator ([coding.system]) for slice MedicationRequest.category:PercutaneousSpecializationCodes in profile https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication - the discriminator [coding.system] does not have fixed value, binding or existence assertions</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b>MedicationRequest.subject (l54/c4)</b></td><td><b>error</b></td><td title="Reference_REF_CantResolveProfile"><b>Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient'</b></td>
+     <td><b>MedicationRequest.subject (l49/c4)</b></td><td><b>error</b></td><td title="Reference_REF_CantResolveProfile"><b>Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient'</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b>MedicationRequest.subject (l54/c4)</b></td><td><b>error</b></td><td title="Reference_REF_CantMatchType"><b>Unable to find a match for profile Patient/patient1 (by type) among choices: ; [CanonicalType[http://hl7.org/fhir/StructureDefinition/Group], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient]]</b></td>
+     <td><b>MedicationRequest.subject (l49/c4)</b></td><td><b>error</b></td><td title="Reference_REF_CantMatchType"><b>Unable to find a match for profile Patient/patient1 (by type) among choices: ; [CanonicalType[http://hl7.org/fhir/StructureDefinition/Group], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient]]</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b>MedicationRequest.subject (l54/c4)</b></td><td><b>error</b></td><td title="Reference_REF_BadTargetType"><b>Invalid Resource target type. Found Patient, but expected one of ([Group])</b></td>
+     <td><b>MedicationRequest.subject (l49/c4)</b></td><td><b>error</b></td><td title="Reference_REF_BadTargetType"><b>Invalid Resource target type. Found Patient, but expected one of ([Group])</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b>MedicationRequest.requester (l77/c4)</b></td><td><b>error</b></td><td title="Reference_REF_CantResolveProfile"><b>Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient'</b></td>
+     <td><b>MedicationRequest.requester (l72/c4)</b></td><td><b>error</b></td><td title="Reference_REF_CantResolveProfile"><b>Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient'</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b>MedicationRequest.requester (l77/c4)</b></td><td><b>error</b></td><td title="Reference_REF_CantResolveProfile"><b>Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner'</b></td>
+     <td><b>MedicationRequest.requester (l72/c4)</b></td><td><b>error</b></td><td title="Reference_REF_CantResolveProfile"><b>Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner'</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b>MedicationRequest.requester (l77/c4)</b></td><td><b>error</b></td><td title="Reference_REF_CantResolveProfile"><b>Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitionerrole'</b></td>
+     <td><b>MedicationRequest.requester (l72/c4)</b></td><td><b>error</b></td><td title="Reference_REF_CantResolveProfile"><b>Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitionerrole'</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b>MedicationRequest.requester (l77/c4)</b></td><td><b>error</b></td><td title="Reference_REF_CantResolveProfile"><b>Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization'</b></td>
+     <td><b>MedicationRequest.requester (l72/c4)</b></td><td><b>error</b></td><td title="Reference_REF_CantResolveProfile"><b>Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization'</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b>MedicationRequest.requester (l77/c4)</b></td><td><b>error</b></td><td title="Reference_REF_CantMatchType"><b>Unable to find a match for profile Practitioner/practitioner1 (by type) among choices: ; [CanonicalType[http://hl7.org/fhir/StructureDefinition/RelatedPerson], CanonicalType[http://hl7.org/fhir/StructureDefinition/Device], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitionerrole], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization]]</b></td>
+     <td><b>MedicationRequest.requester (l72/c4)</b></td><td><b>error</b></td><td title="Reference_REF_CantMatchType"><b>Unable to find a match for profile Practitioner/practitioner1 (by type) among choices: ; [CanonicalType[http://hl7.org/fhir/StructureDefinition/RelatedPerson], CanonicalType[http://hl7.org/fhir/StructureDefinition/Device], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitionerrole], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization]]</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><b>MedicationRequest.requester (l77/c4)</b></td><td><b>error</b></td><td title="Reference_REF_BadTargetType"><b>Invalid Resource target type. Found Practitioner, but expected one of ([Device, RelatedPerson])</b></td>
+     <td><b>MedicationRequest.requester (l72/c4)</b></td><td><b>error</b></td><td title="Reference_REF_BadTargetType"><b>Invalid Resource target type. Found Practitioner, but expected one of ([Device, RelatedPerson])</b></td>
    </tr>
 </table>
 <hr/>
@@ -2596,14 +2593,6 @@
 </ul>
 <p>No suppressed messsages</p><a name="sorted"> </a>
 <p><b>Errors sorted by type</b></p>
-<hr/>
-<a name="Extension_EXT_Context_Wrong"> </a>
-<h2>Extension_EXT_Context_Wrong</h2>
- <table class="grid">
-   <tr style="background-color: #ffeeee">
-     <td><a href="MedicationRequest-example7-referralprescription-nursing-medication.html">fsh-generated/resources/MedicationRequest-example7-referralprescription-nursing-medication.json</a></td><td><b>The extension http://hl7.org/fhir/StructureDefinition/request-statusReason is not allowed to be used at this point (allowed = e:DeviceRequest, e:ServiceRequest, e:NutritionOrder, e:SupplyRequest; this element is [[MedicationRequest])</b></td>
-   </tr>
-</table>
 <hr/>
 <a name="RESOURCE_CANONICAL_MISMATCH"> </a>
 <h2>RESOURCE_CANONICAL_MISMATCH</h2>
