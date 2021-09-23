@@ -263,3 +263,28 @@ Usage: #example
 * requester = Reference(Practitioner/practitioner1)
 * performerType = $sct#106292003 "Nurse"
 * performer = Reference(Practitioner/practitioner2)
+
+Instance: example13-referralprescription-nursing-medication
+InstanceOf: BeReferralPrescriptionNursingMedication
+Usage: #example
+* meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"
+* statusReason = $be-status-reason#created "Created"
+* identifier.system = "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"
+* identifier.value = "UHMEPVALUE"
+* status = #active
+* intent = #order
+* category[0].coding = https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-percutaneous#patch
+* category[0].text = "Patch"
+* medicationCodeableConcept = $cnk_product_codes#2218253 "Durogesic transderm. pleister 10 x 50 µg / 1 u"
+* priority = #routine
+* subject = Reference(Patient/patient1)
+* dosageInstruction.timing.repeat.boundsPeriod.start = "2021-07-05"
+* dosageInstruction.timing.repeat.boundsPeriod.end = "2022-07-04"
+* dosageInstruction.timing.repeat.frequency = 1
+* dosageInstruction.timing.repeat.period = 3
+* dosageInstruction.timing.repeat.periodUnit = #d
+* dosageInstruction.text = "daily on yearly basis, 05/07/2021-04/07/2022, om de 72u (om de 3d)"
+* requester = Reference(Practitioner/practitioner1)
+* performerType = $sct#106292003 "Nurse"
+* performer = Reference(Practitioner/practitioner2)
+* note.text = "pijnpleister Durogesic 50 microgram (patch)"
