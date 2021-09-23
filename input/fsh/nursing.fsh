@@ -162,6 +162,35 @@ Usage: #example
 * performerType = $sct#106292003 "Nurse"
 * performer = Reference(Practitioner/practitioner2)
 
+Instance: example8-referralprescription-nursing-medication
+InstanceOf: BeReferralPrescriptionNursingMedication
+Usage: #example
+* meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"
+//* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
+//* extension.valueCodeableConcept = $be-status-reason#created "Created"
+* statusReason = $be-status-reason#created "Created"
+* identifier.system = "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"
+* identifier.value = "UHMEPVALUE"
+* status = #active
+* intent = #order
+* category[0].coding = https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-injection#IM
+* category[0].text = "Intramusculair"
+* medicationCodeableConcept = $cnk_product_codes#0048454 "Hydroxocobalamine Acetate Sterop inj./drinkb. oploss. i.m./i.v./or. [amp.] 3 x 10 mg / 2 ml"
+* priority = #routine
+* subject = Reference(Patient/patient1)
+* dosageInstruction.timing.repeat.boundsDuration.value = 6
+* dosageInstruction.timing.repeat.boundsDuration.unit = "mo"
+* dosageInstruction.timing.repeat.boundsDuration.system = "http://hl7.org/fhir/ValueSet/ucum-units"
+* dosageInstruction.timing.repeat.frequency = 1
+* dosageInstruction.timing.repeat.period = 3
+* dosageInstruction.timing.repeat.periodUnit = #wk
+* dosageInstruction.timing.repeat.timeOfDay = "20:00:00"
+* dosageInstruction.text = "Frequency: 6 months - 1 X every 3 weeks"
+* requester = Reference(Practitioner/practitioner1)
+* performerType = $sct#106292003 "Nurse"
+* performer = Reference(Practitioner/practitioner2)
+* note = "Vitamine B12"
+
 Instance: example9-referralprescription-nursing-woundcare
 InstanceOf: BeReferralPrescriptionNursingWoundcare
 Usage: #example
