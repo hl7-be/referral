@@ -288,3 +288,53 @@ Usage: #example
 * performerType = $sct#106292003 "Nurse"
 * performer = Reference(Practitioner/practitioner2)
 * note.text = "pijnpleister Durogesic 50 microgram (patch)"
+
+Instance: example16-referralprescription-nursing-bladder-care
+InstanceOf: BeReferralPrescriptionNursing
+Usage: #example
+* meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-bladder-care"
+* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
+* extension.valueCodeableConcept = $be-status-reason#created "Created"
+* status = #active
+* intent = #order
+* category = $sct#9632001
+* category.text = "Nursing procedure"
+* priority = #routine
+* code = $be-cs-nursing-code#bladder-care
+* orderDetail = $be-cs-nursing-code-bladder-care-type#bladder-probe-in-out
+* subject = Reference(Patient/patient1)
+* occurrenceTiming.repeat.boundsPeriod.start = "2021-07-06"
+* occurrenceTiming.repeat.boundsPeriod.end = "2022-07-20"
+* occurrenceTiming.repeat.frequency = 2
+* occurrenceTiming.repeat.period = 1
+* occurrenceTiming.repeat.periodUnit = #d
+* requester = Reference(Practitioner/practitioner1)
+* performerType = $sct#106292003 "Nurse"
+* performer = Reference(Practitioner/practitioner2)
+
+Instance: example17-referralprescription-nursing-medication
+InstanceOf: BeReferralPrescriptionNursingMedication
+Usage: #example
+* meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"
+* statusReason = $be-status-reason#created "Created"
+* identifier.system = "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"
+* identifier.value = "UHMEPVALUE"
+* status = #active
+* intent = #order
+* category[0].coding = https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-injection#SC
+* category[0].text = "Subcutaan"
+* medicationCodeableConcept = $cnk_product_codes#2727196 "Metoject inj. oploss. s.c. [voorgev. spuit] 12 x 15 mg / 0,3 ml"
+* priority = #routine
+* subject = Reference(Patient/patient1)
+//* dosageInstruction.timing.repeat.boundsPeriod.start = "2021-06-29"
+* dosageInstruction.timing.repeat.boundsDuration.value = 12
+* dosageInstruction.timing.repeat.boundsDuration.unit = #wk
+* dosageInstruction.timing.repeat.boundsDuration.system = "http://hl7.org/fhir/ValueSet/ucum-units"
+* dosageInstruction.timing.repeat.frequency = 1
+* dosageInstruction.timing.repeat.period = 1
+* dosageInstruction.timing.repeat.periodUnit = #wk
+* dosageInstruction.text = "Frequency: 1x per week, gedurende 12 weken, vanaf 29/6/2021"
+* requester = Reference(Practitioner/practitioner1)
+* performerType = $sct#106292003 "Nurse"
+* performer = Reference(Practitioner/practitioner2)
+* note.text = "toedienen Metoject 15mg"
