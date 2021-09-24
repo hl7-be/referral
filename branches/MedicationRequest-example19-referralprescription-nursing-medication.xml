@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MedicationRequest xmlns="http://hl7.org/fhir">
+  <id value="example19-referralprescription-nursing-medication"/>
+  <meta>
+    <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>identifier</b>: id: UHMEPVALUE</p><p><b>status</b>: active</p><p><b>statusReason</b>: <span title="Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason created}">Created</span></p><p><b>intent</b>: order</p><p><b>category</b>: <span title="Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-injection SC}">Subcutaan</span></p><p><b>priority</b>: routine</p><p><b>medication</b>: <span title="Codes: {https://cnk.apb.be/codings/cnk_product_codes 0278192}">Clexane inj. oploss. i.v./s.c. [voorgev. spuit] 10 x 4 000 IE anti-Xa / 0,4 ml</span></p><p><b>subject</b>: <a href="Patient-patient1.html">Generated Summary: id: 9999999999 (OFFICIAL); Jane Doe ; gender: female; birthDate: 1956-05-27</a></p><p><b>requester</b>: <a href="Practitioner-practitioner1.html">Generated Summary: id: 8888888888 (OFFICIAL); Leonard McCoy (OFFICIAL), Bones (NICKNAME)</a></p><p><b>performer</b>: <a href="Practitioner-practitioner2.html">Generated Summary: id: 8888888888 (OFFICIAL); Christopher Chapel (OFFICIAL), Mr.Nurse (NICKNAME)</a></p><p><b>performerType</b>: <span title="Codes: {http://snomed.info/sct 106292003}">Nurse</span></p></div>
+  </text>
+  <identifier>
+    <system value="https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"/>
+    <value value="UHMEPVALUE"/>
+  </identifier>
+  <status value="active"/>
+  <statusReason>
+    <coding>
+      <system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason"/>
+      <code value="created"/>
+      <display value="Created"/>
+    </coding>
+  </statusReason>
+  <intent value="order"/>
+  <category>
+    <coding>
+      <system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-injection"/>
+      <code value="SC"/>
+    </coding>
+    <text value="Subcutaan"/>
+  </category>
+  <priority value="routine"/>
+  <medicationCodeableConcept>
+    <coding>
+      <system value="https://cnk.apb.be/codings/cnk_product_codes"/>
+      <code value="0278192"/>
+      <display value="Clexane inj. oploss. i.v./s.c. [voorgev. spuit] 10 x 4 000 IE anti-Xa / 0,4 ml"/>
+    </coding>
+  </medicationCodeableConcept>
+  <subject>
+    <reference value="Patient/patient1"/>
+  </subject>
+  <requester>
+    <reference value="Practitioner/practitioner1"/>
+  </requester>
+  <performer>
+    <reference value="Practitioner/practitioner2"/>
+  </performer>
+  <performerType>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="106292003"/>
+      <display value="Nurse"/>
+    </coding>
+  </performerType>
+  <dosageInstruction>
+    <text value="frequency: 2x/dag subcutaan toedienen, vanaf operatie tot 20/8/2021 of tot INR &gt; 2"/>
+    <timing>
+      <repeat>
+        <boundsPeriod>
+          <start value="1900-01-01"/>
+          <end value="2021-08-20"/>
+        </boundsPeriod>
+        <frequency value="2"/>
+        <period value="1"/>
+        <periodUnit value="d"/>
+      </repeat>
+    </timing>
+  </dosageInstruction>
+</MedicationRequest>
