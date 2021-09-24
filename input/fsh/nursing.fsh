@@ -393,3 +393,76 @@ Usage: #example
 * performerType = $sct#106292003 "Nurse"
 * performer = Reference(Practitioner/practitioner2)
 * note.text = "thv m.trapezius en rechterelleboog"
+
+Instance: example22-referralprescription-nursing-medication
+InstanceOf: BeReferralPrescriptionNursingMedication
+Usage: #example
+* meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"
+* statusReason = $be-status-reason#created "Created"
+* identifier.system = "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"
+* identifier.value = "UHMEPVALUE"
+* status = #active
+* intent = #order
+* category[0].coding = https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-category#oral
+* category[0].text = "Oral"
+* medicationCodeableConcept = $cnk_product_codes#2727196 "Metoject inj. oploss. s.c. [voorgev. spuit] 12 x 15 mg / 0,3 ml"
+* priority = #routine
+* subject = Reference(Patient/patient1)
+//* dosageInstruction.timing.repeat.boundsPeriod.start = "2021-06-29"
+* dosageInstruction[0].timing.repeat.boundsDuration.value = 4
+* dosageInstruction[0].timing.repeat.boundsDuration.unit = #d
+* dosageInstruction[0].timing.repeat.boundsDuration.system = "http://hl7.org/fhir/ValueSet/ucum-units"
+* dosageInstruction[0].timing.repeat.frequency = 1
+* dosageInstruction[0].timing.repeat.period = 1
+* dosageInstruction[0].timing.repeat.periodUnit = #d
+* dosageInstruction[0].text = "gedurende 4 dagen 2 tabl in 1 inname/dag"
+* dosageInstruction[+].timing.repeat.boundsDuration.value = 4
+* dosageInstruction[=].timing.repeat.boundsDuration.unit = #d
+* dosageInstruction[=].timing.repeat.boundsDuration.system = "http://hl7.org/fhir/ValueSet/ucum-units"
+* dosageInstruction[=].timing.repeat.frequency = 1
+* dosageInstruction[=].timing.repeat.period = 1
+* dosageInstruction[=].timing.repeat.periodUnit = #d
+* dosageInstruction[=].text = "daarna gedurende 4 dagen 1 tabl/dag"
+* dosageInstruction[+].timing.repeat.boundsDuration.value = 4
+* dosageInstruction[=].timing.repeat.boundsDuration.unit = #d
+* dosageInstruction[=].timing.repeat.boundsDuration.system = "http://hl7.org/fhir/ValueSet/ucum-units"
+* dosageInstruction[=].timing.repeat.frequency = 1
+* dosageInstruction[=].timing.repeat.period = 1
+* dosageInstruction[=].timing.repeat.periodUnit = #d
+* dosageInstruction[=].text = "daarna gedurende 4 dagen 0.5 tabl/dag"
+* requester = Reference(Practitioner/practitioner1)
+* performerType = $sct#106292003 "Nurse"
+* performer = Reference(Practitioner/practitioner2)
+* note.text = "medrol per os in afbouwschema, gedurende 4 dagen 2 tabl in 1 inname/dag, daarna gedurende 4 dagen 1 tabl/dag, daarna gedurende 4 dagen 0.5 tabl/dag"
+
+
+Instance: example23-referralprescription-nursing-medication
+InstanceOf: BeReferralPrescriptionNursingMedication
+Usage: #example
+* meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"
+//* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
+//* extension.valueCodeableConcept = $be-status-reason#created "Created"
+* statusReason = $be-status-reason#created "Created"
+* identifier.system = "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"
+* identifier.value = "UHMEPVALUE"
+* status = #active
+* intent = #order
+* category[0].coding = https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-category#auricular
+* category[0].text = "Auricular"
+* medicationCodeableConcept = $cnk_product_codes#0105965 "Cerulyx auric. druppels oploss. 10 ml 455 mg / 10 ml"
+* priority = #routine
+* subject = Reference(Patient/patient1)
+* dosageInstruction.timing.repeat.boundsDuration.value = 5
+* dosageInstruction.timing.repeat.boundsDuration.unit = #d
+* dosageInstruction.timing.repeat.boundsDuration.system = "http://hl7.org/fhir/ValueSet/ucum-units"
+* dosageInstruction.timing.repeat.frequency = 3
+* dosageInstruction.timing.repeat.period = 1
+* dosageInstruction.timing.repeat.periodUnit = #d
+* dosageInstruction.text = "frequency: 3 druppels 3x/dag gedurende 5 dagen"
+* dosageInstruction.site = $sct#34338003
+* dosageInstruction.patientInstruction = "daarna 10 minuten op zij blijven liggen"
+* requester = Reference(Practitioner/practitioner1)
+* performerType = $sct#106292003 "Nurse"
+* performer = Reference(Practitioner/practitioner2)
+* note.text = "in beide oren, daarna 10 minuten op zij blijven liggen"
+
