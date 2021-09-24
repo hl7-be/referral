@@ -1,11 +1,11 @@
 ﻿ExampleIG : Validation Results
 =========================================
 
-err = 376, warn = 277, info = 11
+err = 406, warn = 277, info = 11
 IG Publisher Version: 1.1.80
-Generated Fri Sep 24 07:41:06 UTC 2021. FHIR version 4.0.1 for my-ig#0.2.0 (canonical = http://example.com/fhir/example)
+Generated Fri Sep 24 08:27:29 UTC 2021. FHIR version 4.0.1 for my-ig#0.2.0 (canonical = http://example.com/fhir/example)
 
- Build Errors : 14 / 34 / 0
+ Build Errors : 14 / 36 / 0
  /github/workspace/fsh-generated/resources/ImplementationGuide-my-ig : 3 / 0 / 1
  /github/workspace/fsh-generated/resources/MedicationRequest-example07-referralprescription-nursing-medication : 13 / 0 / 3
  /github/workspace/fsh-generated/resources/MedicationRequest-example08-referralprescription-nursing-medication : 13 / 0 / 3
@@ -24,6 +24,8 @@ Generated Fri Sep 24 07:41:06 UTC 2021. FHIR version 4.0.1 for my-ig#0.2.0 (cano
  /github/workspace/fsh-generated/resources/ServiceRequest-example09-referralprescription-nursing-woundcare : 15 / 0 / 2
  /github/workspace/fsh-generated/resources/ServiceRequest-example12-referralprescription-nursing-annex81 : 15 / 0 / 2
  /github/workspace/fsh-generated/resources/ServiceRequest-example16-referralprescription-nursing-bladder-care : 15 / 0 / 3
+ /github/workspace/fsh-generated/resources/ServiceRequest-example24-referralprescription-nursing-non-reimbursable : 15 / 0 / 2
+ /github/workspace/fsh-generated/resources/ServiceRequest-example26-referralprescription-nursing-other : 15 / 0 / 2
  /github/workspace/input/examples/CarePlan-gpvisit : 3 / 0 / 2
  /github/workspace/input/examples/condition1 : 0 / 0 / 1
  /github/workspace/input/examples/diagnostic-imaging-basic-example-concreteWithDetails : 9 / 0 / 1
@@ -59,8 +61,8 @@ Generated Fri Sep 24 07:41:06 UTC 2021. FHIR version 4.0.1 for my-ig#0.2.0 (cano
  /github/workspace/input/profiles/StructureDefinition-be-referralprescription-nursing-diabetic : 0 / 10 / 1
  /github/workspace/input/profiles/StructureDefinition-be-referralprescription-nursing-digestive-system-care : 0 / 9 / 1
  /github/workspace/input/profiles/StructureDefinition-be-referralprescription-nursing-medication : 0 / 20 / 1
- /github/workspace/input/profiles/StructureDefinition-be-referralprescription-nursing-non-reimbursable : 0 / 10 / 1
- /github/workspace/input/profiles/StructureDefinition-be-referralprescription-nursing-other : 0 / 10 / 1
+ /github/workspace/input/profiles/StructureDefinition-be-referralprescription-nursing-non-reimbursable : 0 / 9 / 1
+ /github/workspace/input/profiles/StructureDefinition-be-referralprescription-nursing-other : 0 / 9 / 1
  /github/workspace/input/profiles/StructureDefinition-be-referralprescription-nursing-woundcare : 0 / 9 / 1
  /github/workspace/input/vocabulary/NamingSystem-be-ns-coronalertcode : 0 / 0 / 1
  /github/workspace/input/vocabulary/NamingSystem-be-ns-specimen : 0 / 0 / 1
@@ -114,6 +116,8 @@ WARNING: Unable to find ImplementationGuide.definition.resource.description for 
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource MedicationRequest/example20-referralprescription-nursing-medication.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource MedicationRequest/example22-referralprescription-nursing-medication.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource MedicationRequest/example23-referralprescription-nursing-medication.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource ServiceRequest/example24-referralprescription-nursing-non-reimbursable.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource ServiceRequest/example26-referralprescription-nursing-other.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource StructureDefinition/be-model-nursingprescription.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource StructureDefinition/be-model-physiotherapyprescription.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource CarePlan/gpvisit.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
@@ -410,6 +414,38 @@ ERROR: ServiceRequest/example16-referralprescription-nursing-bladder-care: Servi
 ERROR: ServiceRequest/example16-referralprescription-nursing-bladder-care: ServiceRequest.performer[0]: Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization'
 ERROR: ServiceRequest/example16-referralprescription-nursing-bladder-care: ServiceRequest.performer[0]: Unable to find a match for profile Practitioner/practitioner2 (by type) among choices: ; [CanonicalType[http://hl7.org/fhir/StructureDefinition/CareTeam], CanonicalType[http://hl7.org/fhir/StructureDefinition/HealthcareService], CanonicalType[http://hl7.org/fhir/StructureDefinition/Device], CanonicalType[http://hl7.org/fhir/StructureDefinition/RelatedPerson], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitionerrole], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization]]
 ERROR: ServiceRequest/example16-referralprescription-nursing-bladder-care: ServiceRequest.performer[0]: Invalid Resource target type. Found Practitioner, but expected one of ([CareTeam, Device, HealthcareService, RelatedPerson])
+== fsh-generated/resources/ServiceRequest-example24-referralprescription-nursing-non-reimbursable.json ==
+ERROR: ServiceRequest/example24-referralprescription-nursing-non-reimbursable: ServiceRequest.subject: Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient'
+ERROR: ServiceRequest/example24-referralprescription-nursing-non-reimbursable: ServiceRequest.subject: Unable to find a match for profile Patient/patient1 (by type) among choices: ; [CanonicalType[http://hl7.org/fhir/StructureDefinition/Group], CanonicalType[http://hl7.org/fhir/StructureDefinition/Location], CanonicalType[http://hl7.org/fhir/StructureDefinition/Device], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient]]
+ERROR: ServiceRequest/example24-referralprescription-nursing-non-reimbursable: ServiceRequest.subject: Invalid Resource target type. Found Patient, but expected one of ([Group, Device, Location])
+ERROR: ServiceRequest/example24-referralprescription-nursing-non-reimbursable: ServiceRequest.requester: Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient'
+ERROR: ServiceRequest/example24-referralprescription-nursing-non-reimbursable: ServiceRequest.requester: Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization'
+ERROR: ServiceRequest/example24-referralprescription-nursing-non-reimbursable: ServiceRequest.requester: Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner'
+ERROR: ServiceRequest/example24-referralprescription-nursing-non-reimbursable: ServiceRequest.requester: Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitionerrole'
+ERROR: ServiceRequest/example24-referralprescription-nursing-non-reimbursable: ServiceRequest.requester: Unable to find a match for profile Practitioner/practitioner1 (by type) among choices: ; [CanonicalType[http://hl7.org/fhir/StructureDefinition/RelatedPerson], CanonicalType[http://hl7.org/fhir/StructureDefinition/Device], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitionerrole]]
+ERROR: ServiceRequest/example24-referralprescription-nursing-non-reimbursable: ServiceRequest.requester: Invalid Resource target type. Found Practitioner, but expected one of ([Device, RelatedPerson])
+ERROR: ServiceRequest/example24-referralprescription-nursing-non-reimbursable: ServiceRequest.performer[0]: Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner'
+ERROR: ServiceRequest/example24-referralprescription-nursing-non-reimbursable: ServiceRequest.performer[0]: Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitionerrole'
+ERROR: ServiceRequest/example24-referralprescription-nursing-non-reimbursable: ServiceRequest.performer[0]: Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient'
+ERROR: ServiceRequest/example24-referralprescription-nursing-non-reimbursable: ServiceRequest.performer[0]: Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization'
+ERROR: ServiceRequest/example24-referralprescription-nursing-non-reimbursable: ServiceRequest.performer[0]: Unable to find a match for profile Practitioner/practitioner2 (by type) among choices: ; [CanonicalType[http://hl7.org/fhir/StructureDefinition/CareTeam], CanonicalType[http://hl7.org/fhir/StructureDefinition/HealthcareService], CanonicalType[http://hl7.org/fhir/StructureDefinition/Device], CanonicalType[http://hl7.org/fhir/StructureDefinition/RelatedPerson], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitionerrole], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization]]
+ERROR: ServiceRequest/example24-referralprescription-nursing-non-reimbursable: ServiceRequest.performer[0]: Invalid Resource target type. Found Practitioner, but expected one of ([CareTeam, Device, HealthcareService, RelatedPerson])
+== fsh-generated/resources/ServiceRequest-example26-referralprescription-nursing-other.json ==
+ERROR: ServiceRequest/example26-referralprescription-nursing-other: ServiceRequest.subject: Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient'
+ERROR: ServiceRequest/example26-referralprescription-nursing-other: ServiceRequest.subject: Unable to find a match for profile Patient/patient1 (by type) among choices: ; [CanonicalType[http://hl7.org/fhir/StructureDefinition/Group], CanonicalType[http://hl7.org/fhir/StructureDefinition/Location], CanonicalType[http://hl7.org/fhir/StructureDefinition/Device], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient]]
+ERROR: ServiceRequest/example26-referralprescription-nursing-other: ServiceRequest.subject: Invalid Resource target type. Found Patient, but expected one of ([Group, Device, Location])
+ERROR: ServiceRequest/example26-referralprescription-nursing-other: ServiceRequest.requester: Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient'
+ERROR: ServiceRequest/example26-referralprescription-nursing-other: ServiceRequest.requester: Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization'
+ERROR: ServiceRequest/example26-referralprescription-nursing-other: ServiceRequest.requester: Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner'
+ERROR: ServiceRequest/example26-referralprescription-nursing-other: ServiceRequest.requester: Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitionerrole'
+ERROR: ServiceRequest/example26-referralprescription-nursing-other: ServiceRequest.requester: Unable to find a match for profile Practitioner/practitioner1 (by type) among choices: ; [CanonicalType[http://hl7.org/fhir/StructureDefinition/RelatedPerson], CanonicalType[http://hl7.org/fhir/StructureDefinition/Device], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitionerrole]]
+ERROR: ServiceRequest/example26-referralprescription-nursing-other: ServiceRequest.requester: Invalid Resource target type. Found Practitioner, but expected one of ([Device, RelatedPerson])
+ERROR: ServiceRequest/example26-referralprescription-nursing-other: ServiceRequest.performer[0]: Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner'
+ERROR: ServiceRequest/example26-referralprescription-nursing-other: ServiceRequest.performer[0]: Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitionerrole'
+ERROR: ServiceRequest/example26-referralprescription-nursing-other: ServiceRequest.performer[0]: Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient'
+ERROR: ServiceRequest/example26-referralprescription-nursing-other: ServiceRequest.performer[0]: Unable to resolve the profile reference 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization'
+ERROR: ServiceRequest/example26-referralprescription-nursing-other: ServiceRequest.performer[0]: Unable to find a match for profile Practitioner/practitioner2 (by type) among choices: ; [CanonicalType[http://hl7.org/fhir/StructureDefinition/CareTeam], CanonicalType[http://hl7.org/fhir/StructureDefinition/HealthcareService], CanonicalType[http://hl7.org/fhir/StructureDefinition/Device], CanonicalType[http://hl7.org/fhir/StructureDefinition/RelatedPerson], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitionerrole], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization]]
+ERROR: ServiceRequest/example26-referralprescription-nursing-other: ServiceRequest.performer[0]: Invalid Resource target type. Found Practitioner, but expected one of ([CareTeam, Device, HealthcareService, RelatedPerson])
 == input/examples/CarePlan-gpvisit.xml ==
 ERROR: CarePlan/gpvisit: CarePlan.subject: Unable to resolve resource 'Patient/100'
 ERROR: CarePlan/gpvisit: CarePlan.activity[0].outcomeReference[0]: Unable to resolve resource 'Encounter/example'
@@ -802,7 +838,6 @@ WARNING: StructureDefinition/be-referralprescription-nursing-non-reimbursable: S
 WARNING: StructureDefinition/be-referralprescription-nursing-non-reimbursable: StructureDefinition.snapshot.element[63].type[0].targetProfile[0]: Unable to resolve profile https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitionerrole
 WARNING: StructureDefinition/be-referralprescription-nursing-non-reimbursable: StructureDefinition.snapshot.element[63].type[0].targetProfile[0]: Unable to resolve profile https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient
 WARNING: StructureDefinition/be-referralprescription-nursing-non-reimbursable: StructureDefinition.snapshot.element[63].type[0].targetProfile[0]: Unable to resolve profile https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization
-WARNING: StructureDefinition.where(url = 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-non-reimbursable'): The Implementation Guide contains no examples for this profile
 == input/profiles/StructureDefinition-be-referralprescription-nursing-other.json ==
 WARNING: StructureDefinition/be-referralprescription-nursing-other: StructureDefinition.snapshot.element[56].type[0].targetProfile[0]: Unable to resolve profile https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient
 WARNING: StructureDefinition/be-referralprescription-nursing-other: StructureDefinition.snapshot.element[61].type[0].targetProfile[0]: Unable to resolve profile https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient
@@ -813,7 +848,6 @@ WARNING: StructureDefinition/be-referralprescription-nursing-other: StructureDef
 WARNING: StructureDefinition/be-referralprescription-nursing-other: StructureDefinition.snapshot.element[63].type[0].targetProfile[0]: Unable to resolve profile https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitionerrole
 WARNING: StructureDefinition/be-referralprescription-nursing-other: StructureDefinition.snapshot.element[63].type[0].targetProfile[0]: Unable to resolve profile https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient
 WARNING: StructureDefinition/be-referralprescription-nursing-other: StructureDefinition.snapshot.element[63].type[0].targetProfile[0]: Unable to resolve profile https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization
-WARNING: StructureDefinition.where(url = 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-other'): The Implementation Guide contains no examples for this profile
 == input/profiles/StructureDefinition-be-referralprescription-nursing-woundcare.json ==
 WARNING: StructureDefinition/be-referralprescription-nursing-woundcare: StructureDefinition.snapshot.element[56].type[0].targetProfile[0]: Unable to resolve profile https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient
 WARNING: StructureDefinition/be-referralprescription-nursing-woundcare: StructureDefinition.snapshot.element[61].type[0].targetProfile[0]: Unable to resolve profile https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient
