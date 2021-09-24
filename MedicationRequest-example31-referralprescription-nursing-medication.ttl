@@ -1,0 +1,116 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.com/fhir/example/MedicationRequest/example31-referralprescription-nursing-medication> a fhir:MedicationRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example31-referralprescription-nursing-medication"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication";
+       fhir:index 0;
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>identifier</b>: id: UHMEPVALUE</p><p><b>status</b>: active</p><p><b>statusReason</b>: <span title=\"Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason created}\">Created</span></p><p><b>intent</b>: order</p><p><b>category</b>: <span title=\"Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-percutaneous ointment-or-medicinal-product}\">Ointment or medicinal product</span></p><p><b>priority</b>: routine</p><p><b>medication</b>: <span title=\"Codes: {https://cnk.apb.be/codings/cnk_product_codes 3499415}\">Clamoxyl inj./inf. oploss. (pdr. + solv.) i.m./i.v. [flac. + amp.] 10 x 1 g</span></p><p><b>subject</b>: <a href=\"Patient-patient1.html\">Generated Summary: id: 9999999999 (OFFICIAL); Jane Doe ; gender: female; birthDate: 1956-05-27</a></p><p><b>requester</b>: <a href=\"Practitioner-practitioner1.html\">Generated Summary: id: 8888888888 (OFFICIAL); Leonard McCoy (OFFICIAL), Bones (NICKNAME)</a></p><p><b>performer</b>: <a href=\"Practitioner-practitioner2.html\">Generated Summary: id: 8888888888 (OFFICIAL); Christopher Chapel (OFFICIAL), Mr.Nurse (NICKNAME)</a></p><p><b>performerType</b>: <span title=\"Codes: {http://snomed.info/sct 106292003}\">Nurse</span></p><p><b>reasonCode</b>: <span title=\"Codes: {http://snomed.info/sct 195450002}\">Infected varicose ulcer</span></p><p><b>note</b>: 1 X per dag aanbrengen op de wonde - ulcer variqueux infecté - MI droit Amoxicilline (antibiotique)</p></div>"
+  ];
+  fhir:MedicationRequest.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep" ];
+     fhir:Identifier.value [ fhir:value "UHMEPVALUE" ]
+  ];
+  fhir:MedicationRequest.status [ fhir:value "active"];
+  fhir:MedicationRequest.statusReason [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason" ];
+       fhir:Coding.code [ fhir:value "created" ];
+       fhir:Coding.display [ fhir:value "Created" ]
+     ]
+  ];
+  fhir:MedicationRequest.intent [ fhir:value "order"];
+  fhir:MedicationRequest.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-percutaneous" ];
+       fhir:Coding.code [ fhir:value "ointment-or-medicinal-product" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Ointment or medicinal product" ]
+  ];
+  fhir:MedicationRequest.priority [ fhir:value "routine"];
+  fhir:MedicationRequest.medicationCodeableConcept [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "https://cnk.apb.be/codings/cnk_product_codes" ];
+       fhir:Coding.code [ fhir:value "3499415" ];
+       fhir:Coding.display [ fhir:value "Clamoxyl inj./inf. oploss. (pdr. + solv.) i.m./i.v. [flac. + amp.] 10 x 1 g" ]
+     ]
+  ];
+  fhir:MedicationRequest.subject [
+     fhir:link <http://example.com/fhir/example/Patient/patient1>;
+     fhir:Reference.reference [ fhir:value "Patient/patient1" ]
+  ];
+  fhir:MedicationRequest.requester [
+     fhir:link <http://example.com/fhir/example/Practitioner/practitioner1>;
+     fhir:Reference.reference [ fhir:value "Practitioner/practitioner1" ]
+  ];
+  fhir:MedicationRequest.performer [
+     fhir:link <http://example.com/fhir/example/Practitioner/practitioner2>;
+     fhir:Reference.reference [ fhir:value "Practitioner/practitioner2" ]
+  ];
+  fhir:MedicationRequest.performerType [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:106292003;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "106292003" ];
+       fhir:Coding.display [ fhir:value "Nurse" ]
+     ]
+  ];
+  fhir:MedicationRequest.reasonCode [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:195450002;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "195450002" ]
+     ]
+  ];
+  fhir:MedicationRequest.note [
+     fhir:index 0;
+     fhir:Annotation.text [ fhir:value "1 X per dag aanbrengen op de wonde - ulcer variqueux infecté - MI droit Amoxicilline (antibiotique)" ]
+  ];
+  fhir:MedicationRequest.dosageInstruction [
+     fhir:index 0;
+     fhir:Dosage.text [ fhir:value "1 X per dag" ];
+     fhir:Dosage.timing [
+       fhir:Timing.repeat [
+         fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ];
+         fhir:Timing.repeat.period [ fhir:value "1"^^xsd:decimal ];
+         fhir:Timing.repeat.periodUnit [ fhir:value "d" ]
+       ]
+     ];
+     fhir:Dosage.site [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:771354004;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "771354004" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://example.com/fhir/example/MedicationRequest/example31-referralprescription-nursing-medication.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
