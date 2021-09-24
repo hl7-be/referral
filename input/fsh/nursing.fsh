@@ -466,3 +466,46 @@ Usage: #example
 * performer = Reference(Practitioner/practitioner2)
 * note.text = "in beide oren, daarna 10 minuten op zij blijven liggen"
 
+Instance: example24-referralprescription-nursing-non-reimbursable
+InstanceOf: BeReferralPrescriptionNursingNonReimbursable
+Usage: #example
+* meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-non-reimbursable"
+* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
+* extension.valueCodeableConcept = $be-status-reason#created "Created"
+* status = #active
+* intent = #order
+* category = $sct#9632001
+* category.text = "Nursing procedure"
+* priority = #routine
+* code = $be-cs-nursing-code#non-reimbursed-services
+* orderDetail =  https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code-non-reimbursable#bloodpressure-measure
+* subject = Reference(Patient/patient1)
+* occurrenceTiming.repeat.boundsPeriod.start = "2021-02-25"
+* occurrenceTiming.repeat.boundsPeriod.end = "2021-12-31"
+* occurrenceTiming.repeat.frequency = 1
+* occurrenceTiming.repeat.period = 1
+* occurrenceTiming.repeat.periodUnit = #wk
+* requester = Reference(Practitioner/practitioner1)
+* performerType = $sct#106292003 "Nurse"
+* performer = Reference(Practitioner/practitioner2)
+* note.text = "Frequency: 1x per week, startdatum 25/02/2021, einddatum 31/12/2021"
+
+Instance: example26-referralprescription-nursing-other
+InstanceOf: BeReferralPrescriptionNursingOther
+Usage: #example
+* meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-other"
+* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
+* extension.valueCodeableConcept = $be-status-reason#created "Created"
+* status = #active
+* intent = #order
+* category = $sct#9632001
+* category.text = "Nursing procedure"
+* priority = #routine
+* code = $be-cs-nursing-code#other
+* orderDetail =  https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code-other#sample-collection
+* subject = Reference(Patient/patient1)
+* occurrenceDateTime = "2021-02-25T00:00:00.000Z"
+* requester = Reference(Practitioner/practitioner1)
+* performerType = $sct#106292003 "Nurse"
+* performer = Reference(Practitioner/practitioner2)
+* note.text = "bloedafname, Frequency: eenmalig, nuchter"
