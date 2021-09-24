@@ -1,0 +1,104 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "example31-referralprescription-nursing-medication",
+  "meta": {
+    "profile": [
+      "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>identifier</b>: id: UHMEPVALUE</p><p><b>status</b>: active</p><p><b>statusReason</b>: <span title=\"Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason created}\">Created</span></p><p><b>intent</b>: order</p><p><b>category</b>: <span title=\"Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-percutaneous ointment-or-medicinal-product}\">Ointment or medicinal product</span></p><p><b>priority</b>: routine</p><p><b>medication</b>: <span title=\"Codes: {https://cnk.apb.be/codings/cnk_product_codes 3499415}\">Clamoxyl inj./inf. oploss. (pdr. + solv.) i.m./i.v. [flac. + amp.] 10 x 1 g</span></p><p><b>subject</b>: <a href=\"Patient-patient1.html\">Generated Summary: id: 9999999999 (OFFICIAL); Jane Doe ; gender: female; birthDate: 1956-05-27</a></p><p><b>requester</b>: <a href=\"Practitioner-practitioner1.html\">Generated Summary: id: 8888888888 (OFFICIAL); Leonard McCoy (OFFICIAL), Bones (NICKNAME)</a></p><p><b>performer</b>: <a href=\"Practitioner-practitioner2.html\">Generated Summary: id: 8888888888 (OFFICIAL); Christopher Chapel (OFFICIAL), Mr.Nurse (NICKNAME)</a></p><p><b>performerType</b>: <span title=\"Codes: {http://snomed.info/sct 106292003}\">Nurse</span></p><p><b>reasonCode</b>: <span title=\"Codes: {http://snomed.info/sct 195450002}\">Infected varicose ulcer</span></p><p><b>note</b>: 1 X per dag aanbrengen op de wonde - ulcer variqueux infecté - MI droit Amoxicilline (antibiotique)</p></div>"
+  },
+  "identifier": [
+    {
+      "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep",
+      "value": "UHMEPVALUE"
+    }
+  ],
+  "status": "active",
+  "statusReason": {
+    "coding": [
+      {
+        "system": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason",
+        "code": "created",
+        "display": "Created"
+      }
+    ]
+  },
+  "intent": "order",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-percutaneous",
+          "code": "ointment-or-medicinal-product"
+        }
+      ],
+      "text": "Ointment or medicinal product"
+    }
+  ],
+  "priority": "routine",
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "system": "https://cnk.apb.be/codings/cnk_product_codes",
+        "code": "3499415",
+        "display": "Clamoxyl inj./inf. oploss. (pdr. + solv.) i.m./i.v. [flac. + amp.] 10 x 1 g"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient1"
+  },
+  "requester": {
+    "reference": "Practitioner/practitioner1"
+  },
+  "performer": {
+    "reference": "Practitioner/practitioner2"
+  },
+  "performerType": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "106292003",
+        "display": "Nurse"
+      }
+    ]
+  },
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "195450002"
+        }
+      ]
+    }
+  ],
+  "note": [
+    {
+      "text": "1 X per dag aanbrengen op de wonde - ulcer variqueux infecté - MI droit Amoxicilline (antibiotique)"
+    }
+  ],
+  "dosageInstruction": [
+    {
+      "text": "1 X per dag",
+      "timing": {
+        "repeat": {
+          "frequency": 1,
+          "period": 1,
+          "periodUnit": "d"
+        }
+      },
+      "site": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "771354004"
+          }
+        ]
+      }
+    }
+  ]
+}
