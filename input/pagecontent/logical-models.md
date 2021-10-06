@@ -9,14 +9,19 @@ Current hierarchy, only allowing 1 prescription per message
 Alternative 1: using PrescriptionGroup for all ReferralPrescriptions
 
 * nursing, imaging, physiotherapy and laboratory prescriptions can be mixed in one group, and they cannot be executed by one performer
-
+<div>
 {%include hier-requestgroup.svg%}
+</div>
+<br clear="ALL">
 
 Alternative 2: using different PrescriptionGroup for nursing, imaging, physiotherapy and laboratory prescriptions
 
 * The prescriptions are grouped by the type of performer that can execute them
 
+<div>
 {%include hier-diff-requestgroup.svg%}
+</div>
+<br clear="ALL">
 
 
 
