@@ -1,5 +1,6 @@
+
 Instance: Patient1
-InstanceOf: Patient
+InstanceOf: BePatient
 Usage: #inline
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient"
 * identifier.use = #official
@@ -19,6 +20,7 @@ Usage: #inline
 * address.city = "Brussel"
 * address.postalCode = "1000"
 * address.country = "BE"
+
 
 Instance: observation1
 InstanceOf: Observation
@@ -51,7 +53,7 @@ Usage: #inline
 * content.attachment.data = "iVBORw0KGgoAAAANSUhEUgAAA+MAAACnCAYAAAB6pY03AAAAAXNSR0IArs4c6QAAAARnQU1BAACx jwv8YQUAAAAJcEhZcwAAEnMAABJzAYwiuQcAADBZSURBVHhe7d09rty218fxrOFfZj/ZQHZgwEiZ gg=="
 
 Instance: Requester1
-InstanceOf: Practitioner
+InstanceOf: BePractitioner
 Usage: #inline
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner"
 * identifier.use = #official
@@ -71,8 +73,9 @@ Usage: #inline
 * address.postalCode = "1000"
 * address.country = "BE"
 
+
 Instance: Performer1
-InstanceOf: Organization
+InstanceOf: BeOrganization
 Usage: #inline
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization"
 * identifier.use = #official
@@ -101,3 +104,22 @@ Usage: #inline
 * collection.method = $sct#28520004 "Venipuncture for blood test (procedure)"
 * collection.bodySite = $sct#368208006 "Left upper arm structure (body structure)"
 * note.text = "Some extra relevant information concerning the specimen"
+
+Instance: medication1
+InstanceOf: Medication
+Usage: #inline
+* contained = org7
+* code = $ndc#0206-8862-02 "Zosyn (piperacillin/tazobactam) 4.5gm injection"
+* manufacturer = Reference(org7)
+* form = $sct#385219001 "Injection solution (qualifier vallue)"
+* ingredient[0].itemCodeableConcept = $rxnorm#203134 "Piperacillin Sodium"
+* ingredient[=].strength.numerator = 4 'g'
+* ingredient[=].strength.denominator = 20 'mL'
+* ingredient[+].itemCodeableConcept = $rxnorm#221167 "Tazobactam Sodium"
+* ingredient[=].strength.numerator = 0.5 'g'
+* ingredient[=].strength.denominator = 20 'mL'
+
+Instance: org7
+InstanceOf: Organization
+Usage: #inline
+* name = "Wyeth Pharmaceuticals Inc"

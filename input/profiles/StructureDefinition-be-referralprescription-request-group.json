@@ -1,0 +1,127 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "be-referralprescription-request-group",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Clinical.Care Provision"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "business"
+    }
+  ],
+  "url": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-request-group",
+  "version": "0.2.0",
+  "name": "BeReferralPrescriptionRequestGroup",
+  "status": "draft",
+  "date": "2021-10-07T08:52:50+00:00",
+  "publisher": "HL7 Belgium",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7belgium.org"
+        }
+      ]
+    }
+  ],
+  "description": "Envelope that allows different referralprescriptions to have an order",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "code": "001",
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "RequestGroup",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/RequestGroup",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "RequestGroup.identifier",
+        "path": "RequestGroup.identifier",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "RequestGroup.identifier:UHMEP",
+        "path": "RequestGroup.identifier",
+        "sliceName": "UHMEP",
+        "short": "Reference ID of the UHMEP once available there",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "RequestGroup.identifier:UHMEP.system",
+        "path": "RequestGroup.identifier.system",
+        "min": 1,
+        "fixedUri": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"
+      },
+      {
+        "id": "RequestGroup.identifier:UHMEP.value",
+        "path": "RequestGroup.identifier.value",
+        "min": 1
+      },
+      {
+        "id": "RequestGroup.action",
+        "path": "RequestGroup.action",
+        "short": "At least one referral prescription",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "RequestGroup.action.relatedAction",
+        "path": "RequestGroup.action.relatedAction",
+        "mustSupport": true
+      },
+      {
+        "id": "RequestGroup.action.resource",
+        "path": "RequestGroup.action.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription",
+              "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"
+            ]
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}
