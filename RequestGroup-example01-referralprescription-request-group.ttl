@@ -1,0 +1,428 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.com/fhir/example/RequestGroup/example01-referralprescription-request-group> a fhir:RequestGroup;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example01-referralprescription-request-group"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-request-group";
+       fhir:index 0;
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-request-group>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>identifier</b>: id: UHMEPVALUE</p><p><b>status</b>: active</p><p><b>intent</b>: order</p><p><b>subject</b>: <a name=\"Patient1\"> </a></p><blockquote><p><b>identifier</b>: id: 9999999999 (OFFICIAL)</p><p><b>name</b>: Jane Doe </p><p><b>telecom</b>: ph: 322672299(HOME)</p><p><b>gender</b>: female</p><p><b>birthDate</b>: 1956-05-27</p><p><b>address</b>: Labradorstraat 26, 1000 Brussel(HOME)</p></blockquote><blockquote><p><b>action</b></p><h3>RelatedActions</h3><table class=\"grid\"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>care03</td><td>after-end</td></tr></table><p><b>resource</b>: <a name=\"example01-care01-referralprescription-nursing-bladder-care\"> </a></p><blockquote><p><b>Reason for current status</b>: <span title=\"Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason created}\">Created</span></p><p><b>status</b>: active</p><p><b>intent</b>: order</p><p><b>category</b>: <span title=\"Codes: {http://snomed.info/sct 9632001}\">Nursing procedure</span></p><p><b>priority</b>: routine</p><p><b>code</b>: <span title=\"Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code bladder-care}\">Bladder care</span></p><p><b>orderDetail</b>: <span title=\"Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-type-of-bladder-care bladder-probe-in-out}\">Bladder probe in/out</span></p><p><b>subject</b>: <a href=\"#Patient1\">#Patient1</a></p><p><b>occurrence</b>: Do Once per 1 days</p><p><b>requester</b>: <a href=\"#Requester1\">#Requester1</a></p><p><b>performerType</b>: <span title=\"Codes: {http://snomed.info/sct 106292003}\">Nurse</span></p><p><b>performer</b>: <a href=\"#Performer1\">#Performer1</a></p></blockquote></blockquote><blockquote><p><b>action</b></p><h3>RelatedActions</h3><table class=\"grid\"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>care03</td><td>after-end</td></tr></table><p><b>resource</b>: <a name=\"example01-care02-colon-cleansing\"> </a></p><blockquote><p><b>Reason for current status</b>: <span title=\"Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason created}\">Created</span></p><p><b>status</b>: active</p><p><b>intent</b>: order</p><p><b>category</b>: <span title=\"Codes: {http://snomed.info/sct 9632001}\">Nursing procedure</span></p><p><b>priority</b>: routine</p><p><b>code</b>: <span title=\"Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code digestive-system-care}\">Digestive system care</span></p><p><b>orderDetail</b>: <span title=\"Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-digestive-system-care colonic-cleansing}\">colonic-cleansing</span></p><p><b>subject</b>: <a href=\"#Patient1\">#Patient1</a></p><p><b>occurrence</b>: Do Once per 1 days</p><p><b>requester</b>: <a href=\"#Requester1\">#Requester1</a></p><p><b>performerType</b>: <span title=\"Codes: {http://snomed.info/sct 106292003}\">Nurse</span></p><p><b>performer</b>: <a href=\"#Performer1\">#Performer1</a></p></blockquote></blockquote><blockquote><p><b>action</b></p><p><b>resource</b>: <a name=\"example01-care03-referralprescription-nursing-medication\"> </a></p><blockquote><p><b>status</b>: active</p><p><b>statusReason</b>: <span title=\"Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason created}\">Created</span></p><p><b>intent</b>: order</p><p><b>category</b>: <span title=\"Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-injection SC}\">Subcutaan</span></p><p><b>priority</b>: routine</p><p><b>medication</b>: <span title=\"Codes: {https://cnk.apb.be/codings/cnk_product_codes 2661098}\">Midazolam Mylan inj./inf./instill. oploss. i.m./i.v./rect. [amp.] 10 x 5 mg / 5 ml</span></p><p><b>subject</b>: <a href=\"#Patient1\">#Patient1</a></p><p><b>requester</b>: <a href=\"#Requester1\">#Requester1</a></p><p><b>performer</b>: <a href=\"#Performer1\">#Performer1</a></p><p><b>performerType</b>: <span title=\"Codes: {http://snomed.info/sct 106292003}\">Nurse</span></p></blockquote></blockquote></div>"
+  ];
+  fhir:DomainResource.contained [
+     a fhir:Patient;
+     fhir:index 0;
+     fhir:Resource.id [ fhir:value "Patient1" ];
+     fhir:Resource.meta [
+       fhir:Meta.profile [
+         fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient";
+         fhir:index 0;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient>
+       ]
+     ];
+     fhir:Patient.identifier [
+       fhir:index 0;
+       fhir:Identifier.use [ fhir:value "official" ];
+       fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/ssin" ];
+       fhir:Identifier.value [ fhir:value "9999999999" ]
+     ];
+     fhir:Patient.name [
+       fhir:index 0;
+       fhir:HumanName.family [ fhir:value "Doe" ];
+       fhir:HumanName.given [
+         fhir:value "Jane";
+         fhir:index 0
+       ]
+     ];
+     fhir:Patient.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "phone" ];
+       fhir:ContactPoint.value [ fhir:value "322672299" ];
+       fhir:ContactPoint.use [ fhir:value "home" ]
+     ];
+     fhir:Patient.gender [ fhir:value "female" ];
+     fhir:Patient.birthDate [ fhir:value "1956-05-27"^^xsd:date ];
+     fhir:Patient.address [
+       fhir:index 0;
+       fhir:Address.use [ fhir:value "home" ];
+       fhir:Address.type [ fhir:value "both" ];
+       fhir:Address.text [ fhir:value "Labradorstraat 26, 1000 Brussel" ];
+       fhir:Address.line [
+         fhir:value "Labradorstraat 26";
+         fhir:index 0
+       ];
+       fhir:Address.city [ fhir:value "Brussel" ];
+       fhir:Address.postalCode [ fhir:value "1000" ];
+       fhir:Address.country [ fhir:value "BE" ]
+     ]
+  ], [
+     a fhir:Practitioner;
+     fhir:index 1;
+     fhir:Resource.id [ fhir:value "Requester1" ];
+     fhir:Resource.meta [
+       fhir:Meta.profile [
+         fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner";
+         fhir:index 0;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner>
+       ]
+     ];
+     fhir:Practitioner.identifier [
+       fhir:index 0;
+       fhir:Identifier.use [ fhir:value "official" ];
+       fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi" ];
+       fhir:Identifier.value [ fhir:value "8888888888" ]
+     ];
+     fhir:Practitioner.name [
+       fhir:index 0;
+       fhir:HumanName.use [ fhir:value "official" ];
+       fhir:HumanName.family [ fhir:value "Seven" ];
+       fhir:HumanName.given [
+         fhir:value "Henry";
+         fhir:index 0
+       ]
+     ];
+     fhir:Practitioner.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "phone" ];
+       fhir:ContactPoint.value [ fhir:value "322882299" ];
+       fhir:ContactPoint.use [ fhir:value "home" ]
+     ];
+     fhir:Practitioner.address [
+       fhir:index 0;
+       fhir:Address.use [ fhir:value "work" ];
+       fhir:Address.type [ fhir:value "both" ];
+       fhir:Address.text [ fhir:value "Werkstraat 26, 1000 Brussel" ];
+       fhir:Address.line [
+         fhir:value "Werkstraat 26";
+         fhir:index 0
+       ];
+       fhir:Address.city [ fhir:value "Brussel" ];
+       fhir:Address.postalCode [ fhir:value "1000" ];
+       fhir:Address.country [ fhir:value "BE" ]
+     ]
+  ], [
+     a fhir:Organization;
+     fhir:index 2;
+     fhir:Resource.id [ fhir:value "Performer1" ];
+     fhir:Resource.meta [
+       fhir:Meta.profile [
+         fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization";
+         fhir:index 0;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization>
+       ]
+     ];
+     fhir:Organization.identifier [
+       fhir:index 0;
+       fhir:Identifier.use [ fhir:value "official" ];
+       fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi" ];
+       fhir:Identifier.value [ fhir:value "9876543210" ]
+     ];
+     fhir:Organization.name [ fhir:value "Labstraatlabo" ];
+     fhir:Organization.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "phone" ];
+       fhir:ContactPoint.value [ fhir:value "322884499" ];
+       fhir:ContactPoint.use [ fhir:value "work" ]
+     ];
+     fhir:Organization.address [
+       fhir:index 0;
+       fhir:Address.use [ fhir:value "work" ];
+       fhir:Address.type [ fhir:value "both" ];
+       fhir:Address.text [ fhir:value "Labstraat 101, 1000 Brussel" ];
+       fhir:Address.line [
+         fhir:value "Labstraat 101";
+         fhir:index 0
+       ];
+       fhir:Address.city [ fhir:value "Brussel" ];
+       fhir:Address.postalCode [ fhir:value "1000" ];
+       fhir:Address.country [ fhir:value "BE" ]
+     ]
+  ], [
+     a fhir:ServiceRequest;
+     fhir:index 3;
+     fhir:Resource.id [ fhir:value "example01-care01-referralprescription-nursing-bladder-care" ];
+     fhir:Resource.meta [
+       fhir:Meta.profile [
+         fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing";
+         fhir:index 0;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing>
+       ], [
+         fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-bladder-care";
+         fhir:index 1;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-bladder-care>
+       ]
+     ];
+     fhir:DomainResource.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/request-statusReason" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason" ];
+           fhir:Coding.code [ fhir:value "created" ];
+           fhir:Coding.display [ fhir:value "Created" ]
+         ]
+       ]
+     ];
+     fhir:ServiceRequest.status [ fhir:value "active" ];
+     fhir:ServiceRequest.intent [ fhir:value "order" ];
+     fhir:ServiceRequest.category [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:9632001;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "9632001" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "Nursing procedure" ]
+     ];
+     fhir:ServiceRequest.priority [ fhir:value "routine" ];
+     fhir:ServiceRequest.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code" ];
+         fhir:Coding.code [ fhir:value "bladder-care" ]
+       ]
+     ];
+     fhir:ServiceRequest.orderDetail [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-type-of-bladder-care" ];
+         fhir:Coding.code [ fhir:value "bladder-probe-in-out" ]
+       ]
+     ];
+     fhir:ServiceRequest.subject [
+       fhir:Reference.reference [ fhir:value "#Patient1" ]
+     ];
+     fhir:ServiceRequest.occurrenceTiming [
+       fhir:Timing.repeat [
+         fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ];
+         fhir:Timing.repeat.period [ fhir:value "1"^^xsd:decimal ];
+         fhir:Timing.repeat.periodUnit [ fhir:value "d" ]
+       ]
+     ];
+     fhir:ServiceRequest.requester [
+       fhir:Reference.reference [ fhir:value "#Requester1" ]
+     ];
+     fhir:ServiceRequest.performerType [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:106292003;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "106292003" ];
+         fhir:Coding.display [ fhir:value "Nurse" ]
+       ]
+     ];
+     fhir:ServiceRequest.performer [
+       fhir:index 0;
+       fhir:Reference.reference [ fhir:value "#Performer1" ]
+     ]
+  ], [
+     a fhir:ServiceRequest;
+     fhir:index 4;
+     fhir:Resource.id [ fhir:value "example01-care02-colon-cleansing" ];
+     fhir:Resource.meta [
+       fhir:Meta.profile [
+         fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing";
+         fhir:index 0;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing>
+       ], [
+         fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-digestive-system-care";
+         fhir:index 1;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-digestive-system-care>
+       ]
+     ];
+     fhir:DomainResource.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/request-statusReason" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason" ];
+           fhir:Coding.code [ fhir:value "created" ];
+           fhir:Coding.display [ fhir:value "Created" ]
+         ]
+       ]
+     ];
+     fhir:ServiceRequest.status [ fhir:value "active" ];
+     fhir:ServiceRequest.intent [ fhir:value "order" ];
+     fhir:ServiceRequest.category [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:9632001;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "9632001" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "Nursing procedure" ]
+     ];
+     fhir:ServiceRequest.priority [ fhir:value "routine" ];
+     fhir:ServiceRequest.code [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code" ];
+         fhir:Coding.code [ fhir:value "digestive-system-care" ]
+       ]
+     ];
+     fhir:ServiceRequest.orderDetail [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-digestive-system-care" ];
+         fhir:Coding.code [ fhir:value "colonic-cleansing" ]
+       ]
+     ];
+     fhir:ServiceRequest.subject [
+       fhir:Reference.reference [ fhir:value "#Patient1" ]
+     ];
+     fhir:ServiceRequest.occurrenceTiming [
+       fhir:Timing.repeat [
+         fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ];
+         fhir:Timing.repeat.period [ fhir:value "1"^^xsd:decimal ];
+         fhir:Timing.repeat.periodUnit [ fhir:value "d" ]
+       ]
+     ];
+     fhir:ServiceRequest.requester [
+       fhir:Reference.reference [ fhir:value "#Requester1" ]
+     ];
+     fhir:ServiceRequest.performerType [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:106292003;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "106292003" ];
+         fhir:Coding.display [ fhir:value "Nurse" ]
+       ]
+     ];
+     fhir:ServiceRequest.performer [
+       fhir:index 0;
+       fhir:Reference.reference [ fhir:value "#Performer1" ]
+     ]
+  ], [
+     a fhir:MedicationRequest;
+     fhir:index 5;
+     fhir:Resource.id [ fhir:value "example01-care03-referralprescription-nursing-medication" ];
+     fhir:Resource.meta [
+       fhir:Meta.profile [
+         fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication";
+         fhir:index 0;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication>
+       ]
+     ];
+     fhir:MedicationRequest.status [ fhir:value "active" ];
+     fhir:MedicationRequest.statusReason [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason" ];
+         fhir:Coding.code [ fhir:value "created" ];
+         fhir:Coding.display [ fhir:value "Created" ]
+       ]
+     ];
+     fhir:MedicationRequest.intent [ fhir:value "order" ];
+     fhir:MedicationRequest.category [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-injection" ];
+         fhir:Coding.code [ fhir:value "SC" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "Subcutaan" ]
+     ];
+     fhir:MedicationRequest.priority [ fhir:value "routine" ];
+     fhir:MedicationRequest.medicationCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "https://cnk.apb.be/codings/cnk_product_codes" ];
+         fhir:Coding.code [ fhir:value "2661098" ];
+         fhir:Coding.display [ fhir:value "Midazolam Mylan inj./inf./instill. oploss. i.m./i.v./rect. [amp.] 10 x 5 mg / 5 ml" ]
+       ]
+     ];
+     fhir:MedicationRequest.subject [
+       fhir:Reference.reference [ fhir:value "#Patient1" ]
+     ];
+     fhir:MedicationRequest.requester [
+       fhir:Reference.reference [ fhir:value "#Requester1" ]
+     ];
+     fhir:MedicationRequest.performer [
+       fhir:Reference.reference [ fhir:value "#Performer1" ]
+     ];
+     fhir:MedicationRequest.performerType [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:106292003;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "106292003" ];
+         fhir:Coding.display [ fhir:value "Nurse" ]
+       ]
+     ];
+     fhir:MedicationRequest.dosageInstruction [
+       fhir:index 0;
+       fhir:Dosage.text [ fhir:value "opzet hier: éénmalige sondage en lavement uitvoeren, maar persoon op voorhand verdoven met 5mg Midzaolan via subcutane inspuiting" ];
+       fhir:Dosage.timing [
+         fhir:Timing.repeat [
+           fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ];
+           fhir:Timing.repeat.period [ fhir:value "1"^^xsd:decimal ];
+           fhir:Timing.repeat.periodUnit [ fhir:value "d" ]
+         ]
+       ]
+     ]
+  ];
+  fhir:RequestGroup.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep" ];
+     fhir:Identifier.value [ fhir:value "UHMEPVALUE" ]
+  ];
+  fhir:RequestGroup.status [ fhir:value "active"];
+  fhir:RequestGroup.intent [ fhir:value "order"];
+  fhir:RequestGroup.subject [
+     fhir:Reference.reference [ fhir:value "#Patient1" ]
+  ];
+  fhir:RequestGroup.action [
+     fhir:index 0;
+     fhir:Element.id [ fhir:value "care01" ];
+     fhir:RequestGroup.action.relatedAction [
+       fhir:index 0;
+       fhir:RequestGroup.action.relatedAction.actionId [ fhir:value "care03" ];
+       fhir:RequestGroup.action.relatedAction.relationship [ fhir:value "after-end" ]
+     ];
+     fhir:RequestGroup.action.resource [
+       fhir:Reference.reference [ fhir:value "#example01-care01-referralprescription-nursing-bladder-care" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Element.id [ fhir:value "care02" ];
+     fhir:RequestGroup.action.relatedAction [
+       fhir:index 0;
+       fhir:RequestGroup.action.relatedAction.actionId [ fhir:value "care03" ];
+       fhir:RequestGroup.action.relatedAction.relationship [ fhir:value "after-end" ]
+     ];
+     fhir:RequestGroup.action.resource [
+       fhir:Reference.reference [ fhir:value "#example01-care02-colon-cleansing" ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:Element.id [ fhir:value "care03" ];
+     fhir:RequestGroup.action.resource [
+       fhir:Reference.reference [ fhir:value "#example01-care03-referralprescription-nursing-medication" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://example.com/fhir/example/RequestGroup/example01-referralprescription-request-group.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
