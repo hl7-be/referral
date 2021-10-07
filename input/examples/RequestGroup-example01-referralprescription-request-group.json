@@ -1,0 +1,419 @@
+{
+  "resourceType": "RequestGroup",
+  "id": "example01-referralprescription-request-group",
+  "meta": {
+    "profile": [
+      "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-request-group"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep",
+      "value": "UHMEPVALUE"
+    }
+  ],
+  "contained": [
+    {
+      "resourceType": "Patient",
+      "id": "Patient1",
+      "meta": {
+        "profile": [
+          "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient"
+        ]
+      },
+      "identifier": [
+        {
+          "use": "official",
+          "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/ssin",
+          "value": "9999999999"
+        }
+      ],
+      "name": [
+        {
+          "family": "Doe",
+          "given": [
+            "Jane"
+          ]
+        }
+      ],
+      "telecom": [
+        {
+          "system": "phone",
+          "value": "322672299",
+          "use": "home"
+        }
+      ],
+      "gender": "female",
+      "birthDate": "1956-05-27",
+      "address": [
+        {
+          "use": "home",
+          "type": "both",
+          "text": "Labradorstraat 26, 1000 Brussel",
+          "line": [
+            "Labradorstraat 26"
+          ],
+          "city": "Brussel",
+          "postalCode": "1000",
+          "country": "BE"
+        }
+      ]
+    },
+    {
+      "resourceType": "Practitioner",
+      "id": "Requester1",
+      "meta": {
+        "profile": [
+          "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner"
+        ]
+      },
+      "identifier": [
+        {
+          "use": "official",
+          "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi",
+          "value": "8888888888"
+        }
+      ],
+      "name": [
+        {
+          "use": "official",
+          "family": "Seven",
+          "given": [
+            "Henry"
+          ]
+        }
+      ],
+      "telecom": [
+        {
+          "system": "phone",
+          "value": "322882299",
+          "use": "home"
+        }
+      ],
+      "address": [
+        {
+          "use": "work",
+          "type": "both",
+          "text": "Werkstraat 26, 1000 Brussel",
+          "line": [
+            "Werkstraat 26"
+          ],
+          "city": "Brussel",
+          "postalCode": "1000",
+          "country": "BE"
+        }
+      ]
+    },
+    {
+      "resourceType": "Organization",
+      "id": "Performer1",
+      "meta": {
+        "profile": [
+          "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization"
+        ]
+      },
+      "identifier": [
+        {
+          "use": "official",
+          "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi",
+          "value": "9876543210"
+        }
+      ],
+      "name": "Labstraatlabo",
+      "telecom": [
+        {
+          "system": "phone",
+          "value": "322884499",
+          "use": "work"
+        }
+      ],
+      "address": [
+        {
+          "use": "work",
+          "type": "both",
+          "text": "Labstraat 101, 1000 Brussel",
+          "line": [
+            "Labstraat 101"
+          ],
+          "city": "Brussel",
+          "postalCode": "1000",
+          "country": "BE"
+        }
+      ]
+    },
+    {
+      "resourceType": "ServiceRequest",
+      "id": "example01-care01-referralprescription-nursing-bladder-care",
+      "meta": {
+        "profile": [
+          "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing",
+          "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-bladder-care"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/request-statusReason",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "created",
+                "system": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason",
+                "display": "Created"
+              }
+            ]
+          }
+        }
+      ],
+      "status": "active",
+      "intent": "order",
+      "category": [
+        {
+          "coding": [
+            {
+              "code": "9632001",
+              "system": "http://snomed.info/sct"
+            }
+          ],
+          "text": "Nursing procedure"
+        }
+      ],
+      "priority": "routine",
+      "code": {
+        "coding": [
+          {
+            "code": "bladder-care",
+            "system": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code"
+          }
+        ]
+      },
+      "orderDetail": [
+        {
+          "coding": [
+            {
+              "code": "bladder-probe-in-out",
+              "system": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-type-of-bladder-care"
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "reference": "#Patient1"
+      },
+      "occurrenceTiming": {
+        "repeat": {
+          "frequency": 1,
+          "period": 1,
+          "periodUnit": "d"
+        }
+      },
+      "requester": {
+        "reference": "#Requester1"
+      },
+      "performerType": {
+        "coding": [
+          {
+            "code": "106292003",
+            "system": "http://snomed.info/sct",
+            "display": "Nurse"
+          }
+        ]
+      },
+      "performer": [
+        {
+          "reference": "#Performer1"
+        }
+      ]
+    },
+    {
+      "resourceType": "ServiceRequest",
+      "id": "example01-care02-colon-cleansing",
+      "meta": {
+        "profile": [
+          "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing",
+          "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-digestive-system-care"
+        ]
+      },
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/request-statusReason",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "created",
+                "system": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason",
+                "display": "Created"
+              }
+            ]
+          }
+        }
+      ],
+      "status": "active",
+      "intent": "order",
+      "category": [
+        {
+          "coding": [
+            {
+              "code": "9632001",
+              "system": "http://snomed.info/sct"
+            }
+          ],
+          "text": "Nursing procedure"
+        }
+      ],
+      "priority": "routine",
+      "code": {
+        "coding": [
+          {
+            "code": "digestive-system-care",
+            "system": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code"
+          }
+        ]
+      },
+      "orderDetail": [
+        {
+          "coding": [
+            {
+              "code": "colonic-cleansing",
+              "system": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-digestive-system-care"
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "reference": "#Patient1"
+      },
+      "occurrenceTiming": {
+        "repeat": {
+          "frequency": 1,
+          "period": 1,
+          "periodUnit": "d"
+        }
+      },
+      "requester": {
+        "reference": "#Requester1"
+      },
+      "performerType": {
+        "coding": [
+          {
+            "code": "106292003",
+            "system": "http://snomed.info/sct",
+            "display": "Nurse"
+          }
+        ]
+      },
+      "performer": [
+        {
+          "reference": "#Performer1"
+        }
+      ]
+    },
+    {
+      "resourceType": "MedicationRequest",
+      "id": "example01-care03-referralprescription-nursing-medication",
+      "meta": {
+        "profile": [
+          "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"
+        ]
+      },
+      "statusReason": {
+        "coding": [
+          {
+            "code": "created",
+            "system": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason",
+            "display": "Created"
+          }
+        ]
+      },
+      "status": "active",
+      "intent": "order",
+      "category": [
+        {
+          "coding": [
+            {
+              "code": "SC",
+              "system": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-injection"
+            }
+          ],
+          "text": "Subcutaan"
+        }
+      ],
+      "medicationCodeableConcept": {
+        "coding": [
+          {
+            "code": "2661098",
+            "system": "https://cnk.apb.be/codings/cnk_product_codes",
+            "display": "Midazolam Mylan inj./inf./instill. oploss. i.m./i.v./rect. [amp.] 10 x 5 mg / 5 ml"
+          }
+        ]
+      },
+      "priority": "routine",
+      "subject": {
+        "reference": "#Patient1"
+      },
+      "dosageInstruction": [
+        {
+          "timing": {
+            "repeat": {
+              "frequency": 1,
+              "period": 1,
+              "periodUnit": "d"
+            }
+          },
+          "text": "opzet hier: éénmalige sondage en lavement uitvoeren, maar persoon op voorhand verdoven met 5mg Midzaolan via subcutane inspuiting"
+        }
+      ],
+      "requester": {
+        "reference": "#Requester1"
+      },
+      "performerType": {
+        "coding": [
+          {
+            "code": "106292003",
+            "system": "http://snomed.info/sct",
+            "display": "Nurse"
+          }
+        ]
+      },
+      "performer": {
+        "reference": "#Performer1"
+      }
+    }
+  ],
+  "action": [
+    {
+      "resource": {
+        "reference": "#example01-care01-referralprescription-nursing-bladder-care"
+      },
+      "relatedAction": [
+        {
+          "relationship": "after-end",
+          "actionId": "care03"
+        }
+      ],
+      "id": "care01"
+    },
+    {
+      "resource": {
+        "reference": "#example01-care02-colon-cleansing"
+      },
+      "relatedAction": [
+        {
+          "relationship": "after-end",
+          "actionId": "care03"
+        }
+      ],
+      "id": "care02"
+    },
+    {
+      "resource": {
+        "reference": "#example01-care03-referralprescription-nursing-medication"
+      },
+      "id": "care03"
+    }
+  ],
+  "intent": "order",
+  "status": "active",
+  "subject": {
+    "reference": "#Patient1"
+  }
+}
