@@ -7,8 +7,41 @@
     <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-digestive-system-care"/>
   </meta>
   <text>
-    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>Reason for current status</b>: <span title="Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason created}">Created</span></p><p><b>status</b>: active</p><p><b>intent</b>: order</p><p><b>category</b>: <span title="Codes: {http://snomed.info/sct 9632001}">Nursing procedure</span></p><p><b>priority</b>: routine</p><p><b>code</b>: <span title="Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code digestive-system-care}">Digestive system care</span></p><p><b>orderDetail</b>: <span title="Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-digestive-system-care enteral-feeding-gastrostomy-probe}">Enteral feeding gastrostomy probe</span></p><p><b>subject</b>: <a href="Patient-patient1.html">Generated Summary: id: 9999999999 (OFFICIAL); Jane Doe ; gender: female; birthDate: 1956-05-27</a></p><p><b>occurrence</b>: Starting 2022-04-19, Do 2 per 1 days, Until 2023-04-19</p><p><b>requester</b>: <a href="Practitioner-practitioner1.html">Generated Summary: id: 8888888888 (OFFICIAL); Leonard McCoy (OFFICIAL), Bones (NICKNAME)</a></p><p><b>performerType</b>: <span title="Codes: {http://snomed.info/sct 106292003}">Nurse</span></p><p><b>performer</b>: <a href="Practitioner-practitioner2.html">Generated Summary: id: 8888888888 (OFFICIAL); Christopher Chapel (OFFICIAL), Mr.Nurse (NICKNAME)</a></p><p><b>note</b>: patient can not move (niet verplaatsen)</p></div>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>Reason for current status</b>: <span title="Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason created}">Created</span></p><p><b>status</b>: active</p><p><b>intent</b>: order</p><p><b>category</b>: <span title="Codes: {http://snomed.info/sct 9632001}">Nursing procedure</span></p><p><b>priority</b>: routine</p><p><b>code</b>: <span title="Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code digestive-system-care}">Digestive system care</span></p><p><b>orderDetail</b>: <span title="Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-digestive-system-care enteral-feeding-gastrostomy-probe}">Enteral feeding gastrostomy probe</span></p><p><b>subject</b>: <a name="Patient1"> </a></p><blockquote><p><b>identifier</b>: id: 9999999999 (OFFICIAL)</p><p><b>name</b>: Jane Doe </p><p><b>telecom</b>: ph: 322672299(HOME)</p><p><b>gender</b>: female</p><p><b>birthDate</b>: 1956-05-27</p><p><b>address</b>: Labradorstraat 26, 1000 Brussel(HOME)</p></blockquote><p><b>occurrence</b>: Starting 2022-04-19, Do 2 per 1 days, Until 2023-04-19</p><p><b>requester</b>: <a href="Practitioner-practitioner1.html">Generated Summary: id: 8888888888 (OFFICIAL); Leonard McCoy (OFFICIAL), Bones (NICKNAME)</a></p><p><b>performerType</b>: <span title="Codes: {http://snomed.info/sct 106292003}">Nurse</span></p><p><b>performer</b>: <a href="Practitioner-practitioner2.html">Generated Summary: id: 8888888888 (OFFICIAL); Christopher Chapel (OFFICIAL), Mr.Nurse (NICKNAME)</a></p><p><b>note</b>: patient can not move (niet verplaatsen)</p></div>
   </text>
+  <contained>
+    <Patient>
+      <id value="Patient1"/>
+      <meta>
+        <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient"/>
+      </meta>
+      <identifier>
+        <use value="official"/>
+        <system value="https://www.ehealth.fgov.be/standards/fhir/NamingSystem/ssin"/>
+        <value value="9999999999"/>
+      </identifier>
+      <name>
+        <family value="Doe"/>
+        <given value="Jane"/>
+      </name>
+      <telecom>
+        <system value="phone"/>
+        <value value="322672299"/>
+        <use value="home"/>
+      </telecom>
+      <gender value="female"/>
+      <birthDate value="1956-05-27"/>
+      <address>
+        <use value="home"/>
+        <type value="both"/>
+        <text value="Labradorstraat 26, 1000 Brussel"/>
+        <line value="Labradorstraat 26"/>
+        <city value="Brussel"/>
+        <postalCode value="1000"/>
+        <country value="BE"/>
+      </address>
+    </Patient>
+  </contained>
   <extension url="http://hl7.org/fhir/StructureDefinition/request-statusReason">
     <valueCodeableConcept>
       <coding>
@@ -41,7 +74,7 @@
     </coding>
   </orderDetail>
   <subject>
-    <reference value="Patient/patient1"/>
+    <reference value="#Patient1"/>
   </subject>
   <occurrenceTiming>
     <repeat>
