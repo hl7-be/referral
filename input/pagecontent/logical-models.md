@@ -1,29 +1,43 @@
-Current hierarchy, only allowing 1 prescription per message
+# Referral Prescriptions
+## Prescription: one step or multiple steps
+Practical examples (example 1) indicate that a (nursing) prescription can consist of multiple steps:
+* First, administer a painkiller
+* Secondly, do a colonic cleansing
+* Thirdly, put in a bladder probe
+
+NIHDI stores the prescriptions on a UHMEP system. Every item on the UHMEP system exists on its own and there are no meaningful links between the items on the UHMEP system. They can be executed by different performers.
+If we allow only 1 prescription per message, this will be the situation:
 
 * it is possible to link prescriptions (using requisition on the level of ServiceRequest)
-* indicating an order is not possible
-* because BeReferralPrescriptionNursingMedication is of type MedicationRequest, there is no requisition, but groupIdentfier is used here in that way 
+* because BeReferralPrescriptionNursingMedication is of type MedicationRequest, there is no requisition, but groupIdentfier is used here in that way
+
+* indicating an order or a sequence is not possible
+
+<div>
+
 {%include test.svg%}
 
+</div>
 
-Alternative 1: using PrescriptionGroup for all ReferralPrescriptions
+<br  clear="ALL">
 
-* nursing, imaging, physiotherapy and laboratory prescriptions can be mixed in one group, and they cannot be executed by one performer
+  
+
+## Using BeReferralPrescriptionGroup for all ReferralPrescriptions
+
+
+
 <div>
+
 {%include hier-requestgroup.svg%}
+
 </div>
-<br clear="ALL">
 
-Alternative 2: using different PrescriptionGroup for nursing, imaging, physiotherapy and laboratory prescriptions
+<br  clear="ALL">
 
-* The prescriptions are grouped by the type of performer that can execute them
+Nursing, imaging, physiotherapy and laboratory prescriptions can be mixed in one group, use cases (NIHDI) indicate that a prescription can be handed over from performer to performer.
 
-<div>
-{%include hier-diff-requestgroup.svg%}
-</div>
-<br clear="ALL">
+# Open issues: how to handle the administer medication service
 
-
-
-
-
+* Is this a subtype of MedicationRequest?
+* Is this a ServiceRequest, referring to a MedicationRequest?

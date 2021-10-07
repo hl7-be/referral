@@ -7,11 +7,19 @@ BeReferralPrescription <|-- BeLaboratoryPrescription
 BeReferralPrescription <|-- BePhysiotherapyPrescription
 
 BeNursingPrescription <|-- BeNursingPrescriptionBladderCare
+BeNursingPrescription <|-- BeNursingPrescriptionDigestiveSystemCare
 BeReferralPrescriptionGroup --> BeReferralPrescription : contains inline
 
-BeReferralPrescriptionGroup : UHMEP identifier
-BeReferralPrescriptionGroup : BeReferralPrescription[] prescriptions
+class BeReferralPrescriptionGroup {
+  |_UHMEP identifier
+  |_BeReferralPrescription[] prescriptions
+}
 
-
-
+class BeNursingPrescriptionBladderCare{
+  |_BladderCare orderDetail
+  
+}
+class BeNursingPrescriptionDigestiveSystemCare{
+  |_DigestiveSystemCare orderDetail
+}
 @enduml
