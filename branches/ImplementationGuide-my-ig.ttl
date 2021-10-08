@@ -53,6 +53,16 @@
      fhir:value "4.0.1";
      fhir:index 0
   ];
+  fhir:ImplementationGuide.dependsOn [
+     fhir:index 0;
+     fhir:Element.id [ fhir:value "hl7_be_fhir_core" ];
+     fhir:ImplementationGuide.dependsOn.uri [
+       fhir:value "https://www.hl7belgium.org/fhir/ImplementationGuide/hl7.be.fhir.core";
+       fhir:link <https://www.hl7belgium.org/fhir/ImplementationGuide/hl7.be.fhir.core>
+     ];
+     fhir:ImplementationGuide.dependsOn.packageId [ fhir:value "hl7.be.fhir.core" ];
+     fhir:ImplementationGuide.dependsOn.version [ fhir:value "dev" ]
+  ];
   fhir:ImplementationGuide.definition [
      fhir:Element.extension [
        fhir:index 0;
@@ -1472,7 +1482,10 @@
          fhir:Reference.reference [ fhir:value "Patient/patient1" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "patient1" ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient";
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient>
+       ]
      ], [
        fhir:index 86;
        fhir:Element.extension [
@@ -1485,7 +1498,10 @@
          fhir:Reference.reference [ fhir:value "Practitioner/practitioner1" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "practitioner1" ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner";
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner>
+       ]
      ], [
        fhir:index 87;
        fhir:Element.extension [
@@ -1498,7 +1514,10 @@
          fhir:Reference.reference [ fhir:value "Practitioner/practitioner2" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "practitioner2" ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner";
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner>
+       ]
      ], [
        fhir:index 88;
        fhir:Element.extension [
