@@ -5,7 +5,6 @@ Alias: $be-status-reason = https://www.ehealth.fgov.be/standards/fhir/CodeSystem
 Alias: $cnk_product_codes = https://cnk.apb.be/codings/cnk_product_codes
 Alias: $condition-clinical = http://terminology.hl7.org/CodeSystem/condition-clinical
 Alias: $condition-ver-status = http://terminology.hl7.org/CodeSystem/condition-ver-status
-Alias: $contact-point-system = http://hl7.org/fhir/contact-point-system
 Alias: $loinc = http://loinc.org
 Alias: $observation-category = http://terminology.hl7.org/CodeSystem/observation-category
 Alias: $sct = http://snomed.info/sct

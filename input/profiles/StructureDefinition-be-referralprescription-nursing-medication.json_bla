@@ -1,0 +1,283 @@
+{
+    "resourceType": "StructureDefinition",
+    "id": "be-referralprescription-nursing-medication",
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+        "valueString": "Clinical.Medications"
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+        "valueCode": "patient"
+      }
+    ],
+    "url": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication",
+    "version": "0.2.0",
+    "name": "BeReferralPrescriptionNursingMedication",
+    "status": "draft",
+    "publisher": "HL7 Belgium",
+    "contact": [
+      {
+        "name": "HL7 Belgium",
+        "telecom": [
+          {
+            "system": "url",
+            "value": "http://hl7belgium.org"
+          }
+        ]
+      },
+      {
+        "name": "Bart Decuypere",
+        "telecom": [
+          {
+            "system": "email",
+            "value": "bart.decuypere@ehealth.fgov.be",
+            "use": "work"
+          }
+        ]
+      }
+    ],
+    "description": "The nursing profile specialized for medication. Note this profile is based on the FHIR resource MedicationRequest.\nDosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements)",
+    "jurisdiction": [
+      {
+        "coding": [
+          {
+            "code": "001",
+            "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+            "display": "World"
+          }
+        ]
+      }
+    ],
+    "fhirVersion": "4.0.1",
+    "mapping": [
+      {
+        "identity": "workflow",
+        "uri": "http://hl7.org/fhir/workflow",
+        "name": "Workflow Pattern"
+      },
+      {
+        "identity": "script10.6",
+        "uri": "http://ncpdp.org/SCRIPT10_6",
+        "name": "Mapping to NCPDP SCRIPT 10.6"
+      },
+      {
+        "identity": "rim",
+        "uri": "http://hl7.org/v3",
+        "name": "RIM Mapping"
+      },
+      {
+        "identity": "w5",
+        "uri": "http://hl7.org/fhir/fivews",
+        "name": "FiveWs Pattern Mapping"
+      },
+      {
+        "identity": "v2",
+        "uri": "http://hl7.org/v2",
+        "name": "HL7 v2 Mapping"
+      }
+    ],
+    "kind": "resource",
+    "abstract": false,
+    "type": "MedicationRequest",
+    "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
+    "derivation": "constraint",
+    "differential": {
+      "element": [
+        {
+          "id": "MedicationRequest.extension",
+          "path": "MedicationRequest.extension",
+          "slicing": {
+            "discriminator": [
+              {
+                "type": "value",
+                "path": "url"
+              }
+            ],
+            "rules": "open"
+          }
+        },
+        {
+          "id": "MedicationRequest.identifier",
+          "path": "MedicationRequest.identifier",
+          "slicing": {
+            "discriminator": [
+              {
+                "type": "value",
+                "path": "system"
+              }
+            ],
+            "rules": "open"
+          },
+          "mustSupport": true
+        },
+        {
+          "id": "MedicationRequest.identifier:UHMEP",
+          "path": "MedicationRequest.identifier",
+          "sliceName": "UHMEP",
+          "short": "Reference ID of the UHMEP once available there",
+          "min": 0,
+          "max": "1"
+        },
+        {
+          "id": "MedicationRequest.identifier:UHMEP.system",
+          "path": "MedicationRequest.identifier.system",
+          "min": 1,
+          "fixedUri": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"
+        },
+        {
+          "id": "MedicationRequest.identifier:UHMEP.value",
+          "path": "MedicationRequest.identifier.value",
+          "min": 1
+        },
+        {
+          "id": "MedicationRequest.status",
+          "path": "MedicationRequest.status",
+          "mustSupport": true
+        },
+        {
+          "id": "MedicationRequest.statusReason",
+          "path": "MedicationRequest.statusReason",
+          "mustSupport": true
+        },
+        {
+          "id": "MedicationRequest.category",
+          "path": "MedicationRequest.category",
+          "slicing": {
+            "discriminator": [
+              {
+                "type": "value",
+                "path": "coding.system"
+              }
+            ],
+            "rules": "open"
+          },
+          "short": "Type of medication usage - use one code that provide the best detail",
+          "min": 1,
+          "max": "1",
+          "mustSupport": true
+        },
+        {
+          "id": "MedicationRequest.category:NusingMedicationType-highLevelCode",
+          "path": "MedicationRequest.category",
+          "sliceName": "NusingMedicationType-highLevelCode",
+          "min": 0,
+          "max": "1",
+          "binding": {
+            "strength": "required",
+            "valueSet": "https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-nursing-medication-category"
+          }
+        },
+        {
+          "id": "MedicationRequest.category:NusingMedicationType-highLevelCode.coding.system",
+          "path": "MedicationRequest.category.coding.system",
+          "min": 1,
+          "patternUri": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-category"
+        },
+        {
+          "id": "MedicationRequest.category:InjectionSpecializationCodes",
+          "path": "MedicationRequest.category",
+          "sliceName": "InjectionSpecializationCodes",
+          "min": 0,
+          "max": "1",
+          "binding": {
+            "strength": "required",
+            "valueSet": "https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-nursing-medication-injection"
+          }
+        },
+        {
+          "id": "MedicationRequest.category:InjectionSpecializationCodes.coding.system",
+          "path": "MedicationRequest.category.coding.system",
+          "min": 1,
+          "patternUri": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-injection"
+        },
+        {
+          "id": "MedicationRequest.category:PerfusionSpecializationCodes",
+          "path": "MedicationRequest.category",
+          "sliceName": "PerfusionSpecializationCodes",
+          "min": 0,
+          "max": "1",
+          "binding": {
+            "strength": "required",
+            "valueSet": "https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-nursing-medication-perfusion"
+          }
+        },
+        {
+          "id": "MedicationRequest.category:PerfusionSpecializationCodes.coding.system",
+          "path": "MedicationRequest.category.coding.system",
+          "min": 1,
+          "patternUri": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-perfusion"
+        },
+        {
+          "id": "MedicationRequest.category:PercutaneousSpecializationCodes",
+          "path": "MedicationRequest.category",
+          "sliceName": "PercutaneousSpecializationCodes",
+          "min": 0,
+          "max": "1",
+          "binding": {
+            "strength": "required",
+            "valueSet": "https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-nursing-medication-percutaneous"
+          }
+        },
+        {
+          "id": "MedicationRequest.category:PercutaneousSpecializationCodes.coding.system",
+          "path": "MedicationRequest.category.coding.system",
+          "min": 1,
+          "patternUri": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-percutaneous"
+        },
+        {
+          "id": "MedicationRequest.medication[x]",
+          "path": "MedicationRequest.medication[x]",
+          "mustSupport": true
+        },
+        {
+          "id": "MedicationRequest.subject",
+          "path": "MedicationRequest.subject",
+          "mustSupport": true
+        },
+        {
+          "id": "MedicationRequest.encounter",
+          "path": "MedicationRequest.encounter",
+          "mustSupport": true
+        },
+        {
+          "id": "MedicationRequest.requester",
+          "path": "MedicationRequest.requester",
+          "min": 1,
+          "mustSupport": true
+        },
+        {
+          "id": "MedicationRequest.performer",
+          "path": "MedicationRequest.performer",
+          "mustSupport": true
+        },
+        {
+          "id": "MedicationRequest.performerType",
+          "path": "MedicationRequest.performerType",
+          "mustSupport": true
+        },
+        {
+          "id": "MedicationRequest.groupIdentifier",
+          "path": "MedicationRequest.groupIdentifier",
+          "short": "If needed to have a common identifier among different prescriptions.",
+          "mustSupport": true
+        },
+        {
+          "id": "MedicationRequest.note",
+          "path": "MedicationRequest.note",
+          "mustSupport": true
+        },
+        {
+          "id": "MedicationRequest.dosageInstruction.text",
+          "path": "MedicationRequest.dosageInstruction.text",
+          "min": 1,
+          "mustSupport": true
+        },
+        {
+          "id": "MedicationRequest.dosageInstruction.site",
+          "path": "MedicationRequest.dosageInstruction.site",
+          "mustSupport": true
+        }
+      ]
+    }
+  }
