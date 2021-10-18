@@ -202,6 +202,17 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/be-referralprescription-nursing-annex81"/>
+      </reference>
+      <name value="BeReferralPrescriptionNursingAnnex81PreparationOfMedication"/>
+      <description value="The nursing profile specialized for preparation of medication. Use the .note element to provide any extra information."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/be-referralprescription-nursing-medication"/>
       </reference>
       <name value="BeReferralPrescriptionNursingMedication"/>
@@ -217,6 +228,50 @@
       </reference>
       <name value="BeReferralPrescriptionNursingMedicationService"/>
       <description value="The nursing profile specialized for medication. This ServiceRequest refers to a MedicationRequest&#xA;Dosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-nursing-annex81-inadequate-adherence"/>
+      </reference>
+      <name value="BeNursingAnnex81InadequateAdherence"/>
+      <description value="Codes to define a type of nursing annex81 inadequate adherence."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-nursing-annex81-inadequate-adherence-link"/>
+      </reference>
+      <name value="BeNursingAnnex81InadequateAdherenceLink"/>
+      <description value="Codes to define a type of nursing annex81 inadequate adherence link."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/be-nursing-annex81-inadequate-adherence"/>
+      </reference>
+      <name value="BeNursingAnnex81InadequateAdherence"/>
+      <description value="Nursing codes in Belgium. To define details in nursing activities for the annex 81 diagnostics of inadequate adherence. Initially defined as supporting CodeSystem for the referral prescription."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/be-nursing-annex81-inadequate-adherence-link"/>
+      </reference>
+      <name value="BeNursingAnnex81InadequateAdherenceLink"/>
+      <description value="Nursing codes in Belgium. To define details in nursing activities for the annex 81 diagnostics of inadequate adherence. Initially defined as supporting CodeSystem for the referral prescription."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -317,7 +372,7 @@
         <reference value="ServiceRequest/example12-referralprescription-nursing-annex81"/>
       </reference>
       <name value="example12-referralprescription-nursing-annex81"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-annex81"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -557,17 +612,6 @@
       </reference>
       <name value="BeReferralPrescriptionDiagnosticImaging"/>
       <description value="Referral prescription for a generic diagnostic imaging.&#xD;&#xA;Please note in .orderDetail, a specific slicing is available to give guidance how to express acquisition modalities if needed. In future iterations of this profile, more slicing might provide additional guidance."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/be-referralprescription-nursing-annex81"/>
-      </reference>
-      <name value="BeReferralPrescriptionNursingAnnex81PreparationOfMedication"/>
-      <description value="The nursing profile specialized for preparation of medication. Use the .note element to provide any extra information."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
