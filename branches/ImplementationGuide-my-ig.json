@@ -317,6 +317,20 @@
           }
         ],
         "reference": {
+          "reference": "StructureDefinition/be-referralprescription-nursing-annex81"
+        },
+        "name": "BeReferralPrescriptionNursingAnnex81PreparationOfMedication",
+        "description": "The nursing profile specialized for preparation of medication. Use the .note element to provide any extra information.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
           "reference": "StructureDefinition/be-referralprescription-nursing-medication"
         },
         "name": "BeReferralPrescriptionNursingMedication",
@@ -335,6 +349,62 @@
         },
         "name": "BeReferralPrescriptionNursingMedicationService",
         "description": "The nursing profile specialized for medication. This ServiceRequest refers to a MedicationRequest\nDosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements)",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/be-vs-nursing-annex81-inadequate-adherence"
+        },
+        "name": "BeNursingAnnex81InadequateAdherence",
+        "description": "Codes to define a type of nursing annex81 inadequate adherence.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/be-vs-nursing-annex81-inadequate-adherence-link"
+        },
+        "name": "BeNursingAnnex81InadequateAdherenceLink",
+        "description": "Codes to define a type of nursing annex81 inadequate adherence link.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "CodeSystem"
+          }
+        ],
+        "reference": {
+          "reference": "CodeSystem/be-nursing-annex81-inadequate-adherence"
+        },
+        "name": "BeNursingAnnex81InadequateAdherence",
+        "description": "Nursing codes in Belgium. To define details in nursing activities for the annex 81 diagnostics of inadequate adherence. Initially defined as supporting CodeSystem for the referral prescription.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "CodeSystem"
+          }
+        ],
+        "reference": {
+          "reference": "CodeSystem/be-nursing-annex81-inadequate-adherence-link"
+        },
+        "name": "BeNursingAnnex81InadequateAdherenceLink",
+        "description": "Nursing codes in Belgium. To define details in nursing activities for the annex 81 diagnostics of inadequate adherence. Initially defined as supporting CodeSystem for the referral prescription.",
         "exampleBoolean": false
       },
       {
@@ -465,7 +535,7 @@
           "reference": "ServiceRequest/example12-referralprescription-nursing-annex81"
         },
         "name": "example12-referralprescription-nursing-annex81",
-        "exampleBoolean": true
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-annex81"
       },
       {
         "extension": [
@@ -774,20 +844,6 @@
         },
         "name": "BeReferralPrescriptionDiagnosticImaging",
         "description": "Referral prescription for a generic diagnostic imaging.\r\nPlease note in .orderDetail, a specific slicing is available to give guidance how to express acquisition modalities if needed. In future iterations of this profile, more slicing might provide additional guidance.",
-        "exampleBoolean": false
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "StructureDefinition:resource"
-          }
-        ],
-        "reference": {
-          "reference": "StructureDefinition/be-referralprescription-nursing-annex81"
-        },
-        "name": "BeReferralPrescriptionNursingAnnex81PreparationOfMedication",
-        "description": "The nursing profile specialized for preparation of medication. Use the .note element to provide any extra information.",
         "exampleBoolean": false
       },
       {
