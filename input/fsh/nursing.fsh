@@ -253,7 +253,8 @@ Usage: #example
 * category.text = "Nursing procedure"
 * priority = #routine
 * code = $be-cs-nursing-code#appendix-81-preparation-of-medications
-* orderDetail =  http://snomed.info/sct#710574004
+* orderDetail[0] =  #confused
+* orderDetail[+] = #dementia
 * subject = Reference(Patient/patient1)
 * occurrenceTiming.repeat.boundsPeriod.start = "2021-07-02"
 * occurrenceTiming.repeat.boundsPeriod.end = "2022-06-30"

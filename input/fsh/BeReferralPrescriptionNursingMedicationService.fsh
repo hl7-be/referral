@@ -10,13 +10,13 @@ Dosage is expected initially to be given in the corresponding text and optional 
 * orderDetail ^slicing.rules = #open
 * orderDetail ^short = "Type of medication usage - use one code that provide the best detail"
 * orderDetail contains
-    NusingMedicationType-highLevelCode 0..1 and
+    NursingMedicationType-highLevelCode 0..1 and
     InjectionSpecializationCodes 0..1 and
     PerfusionSpecializationCodes 0..1 and
     PercutaneousSpecializationCodes 0..1
-* orderDetail[NusingMedicationType-highLevelCode] from BeNursingMedicationCategory (required)
-* orderDetail[NusingMedicationType-highLevelCode].coding.system 1..
-* orderDetail[NusingMedicationType-highLevelCode].coding.system = "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-category"
+* orderDetail[NursingMedicationType-highLevelCode] from BeNursingMedicationCategory (required)
+* orderDetail[NursingMedicationType-highLevelCode].coding.system 1..
+* orderDetail[NursingMedicationType-highLevelCode].coding.system = "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-category"
 * orderDetail[InjectionSpecializationCodes] from BeNursingMedicationInjection (required)
 * orderDetail[InjectionSpecializationCodes].coding.system 1..
 * orderDetail[InjectionSpecializationCodes].coding.system = "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-injection"
