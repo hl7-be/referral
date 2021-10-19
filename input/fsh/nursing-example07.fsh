@@ -16,7 +16,7 @@ Usage: #example
 * code = $be-cs-nursing-code#medication
 * orderDetail[0].coding = https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-injection#SC
 * orderDetail[0].text = "Subcutaan"
-* basedOn = Reference(example07-medication01-referralprescription-nursing-medication)
+* basedOn = Reference(example07-medication01-minimal)
 * subject = Reference(Patient/patient1)
 * requester = Reference(Practitioner/practitioner1)
 * occurrencePeriod.start = "2022-04-19"

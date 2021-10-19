@@ -253,8 +253,8 @@ Usage: #example
 * category.text = "Nursing procedure"
 * priority = #routine
 * code = $be-cs-nursing-code#appendix-81-preparation-of-medications
-* orderDetail[0] =  #confused
-* orderDetail[+] = #dementia
+* orderDetail[0] =  https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-annex81-inadequate-adherence#confused
+* orderDetail[+] = https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-annex81-inadequate-adherence-link#dementia
 * subject = Reference(Patient/patient1)
 * occurrenceTiming.repeat.boundsPeriod.start = "2021-07-02"
 * occurrenceTiming.repeat.boundsPeriod.end = "2022-06-30"
