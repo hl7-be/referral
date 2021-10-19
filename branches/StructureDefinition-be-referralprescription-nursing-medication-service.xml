@@ -27,7 +27,7 @@
   <version value="0.2.0"/>
   <name value="BeReferralPrescriptionNursingMedicationService"/>
   <status value="active"/>
-  <date value="2021-10-19T12:13:26+00:00"/>
+  <date value="2021-10-19T12:28:21+00:00"/>
   <publisher value="HL7 Belgium"/>
   <contact>
     <name value="HL7 Belgium"/>
@@ -4346,74 +4346,24 @@
     </element>
     <element id="ServiceRequest.occurrence[x]">
       <path value="ServiceRequest.occurrence[x]"/>
-      <slicing>
-        <discriminator>
-          <type value="type"/>
-          <path value="$this"/>
-        </discriminator>
-        <ordered value="false"/>
-        <rules value="closed"/>
-      </slicing>
       <short value="When service shall occur - once this is past, this prescription is no longer valid and the status shall reflect this."/>
       <definition value="The date/time at which the requested service should occur."/>
       <alias value="schedule"/>
-      <min value="1"/>
+      <min value="0"/>
       <max value="1"/>
       <base>
         <path value="ServiceRequest.occurrence[x]"/>
         <min value="0"/>
         <max value="1"/>
       </base>
+      <type>
+        <code value="dateTime"/>
+      </type>
       <type>
         <code value="Period"/>
       </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
-      <isSummary value="true"/>
-      <mapping>
-        <identity value="workflow"/>
-        <map value="Request.occurrence[x]"/>
-      </mapping>
-      <mapping>
-        <identity value="w5"/>
-        <map value="FiveWs.planned"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="TQ1/TQ2, OBR-7/OBR-8"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value=".effectiveTime"/>
-      </mapping>
-      <mapping>
-        <identity value="quick"/>
-        <map value="Procedure.procedureSchedule"/>
-      </mapping>
-    </element>
-    <element id="ServiceRequest.occurrence[x]:occurrencePeriod">
-      <path value="ServiceRequest.occurrence[x]"/>
-      <sliceName value="occurrencePeriod"/>
-      <short value="When service shall occur - once this is past, this prescription is no longer valid and the status shall reflect this."/>
-      <definition value="The date/time at which the requested service should occur."/>
-      <alias value="schedule"/>
-      <min value="1"/>
-      <max value="1"/>
-      <base>
-        <path value="ServiceRequest.occurrence[x]"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
       <type>
-        <code value="Period"/>
+        <code value="Timing"/>
       </type>
       <constraint>
         <key value="ele-1"/>
