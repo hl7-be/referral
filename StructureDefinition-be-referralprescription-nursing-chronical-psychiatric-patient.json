@@ -2976,22 +2976,12 @@
       {
         "id": "ServiceRequest.occurrence[x]",
         "path": "ServiceRequest.occurrence[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "$this"
-            }
-          ],
-          "ordered": false,
-          "rules": "closed"
-        },
         "short": "When service shall occur - once this is past, this prescription is no longer valid and the status shall reflect this.",
         "definition": "The date/time at which the requested service should occur.",
         "alias": [
           "schedule"
         ],
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "ServiceRequest.occurrence[x]",
@@ -3000,64 +2990,13 @@
         },
         "type": [
           {
-            "code": "Period"
-          }
-        ],
-        "constraint": [
-          {
-            "key": "ele-1",
-            "severity": "error",
-            "human": "All FHIR elements must have a @value or children",
-            "expression": "hasValue() or (children().count() > id.count())",
-            "xpath": "@value|f:*|h:div",
-            "source": "http://hl7.org/fhir/StructureDefinition/Element"
-          }
-        ],
-        "mustSupport": true,
-        "isModifier": false,
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "workflow",
-            "map": "Request.occurrence[x]"
+            "code": "dateTime"
           },
-          {
-            "identity": "w5",
-            "map": "FiveWs.planned"
-          },
-          {
-            "identity": "v2",
-            "map": "TQ1/TQ2, OBR-7/OBR-8"
-          },
-          {
-            "identity": "rim",
-            "map": ".effectiveTime"
-          },
-          {
-            "identity": "quick",
-            "map": "Procedure.procedureSchedule"
-          }
-        ]
-      },
-      {
-        "id": "ServiceRequest.occurrence[x]:occurrencePeriod",
-        "path": "ServiceRequest.occurrence[x]",
-        "sliceName": "occurrencePeriod",
-        "short": "When service shall occur - once this is past, this prescription is no longer valid and the status shall reflect this.",
-        "definition": "The date/time at which the requested service should occur.",
-        "alias": [
-          "schedule"
-        ],
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "ServiceRequest.occurrence[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
           {
             "code": "Period"
+          },
+          {
+            "code": "Timing"
           }
         ],
         "constraint": [
