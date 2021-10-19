@@ -2,7 +2,6 @@ Alias: $be-cs-nursing-code = https://www.ehealth.fgov.be/standards/fhir/CodeSyst
 Alias: $be-cs-nursing-code-bladder-care-type = https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-type-of-bladder-care
 Alias: $be-cs-nursing-code-compressiontherapy = https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code-compressiontherapy
 Alias: $be-status-reason = https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason
-Alias: $cnk_product_codes = https://cnk.apb.be/codings/cnk_product_codes
 Alias: $condition-clinical = http://terminology.hl7.org/CodeSystem/condition-clinical
 Alias: $condition-ver-status = http://terminology.hl7.org/CodeSystem/condition-ver-status
 Alias: $loinc = http://loinc.org
