@@ -19,4 +19,3 @@ Description: "The nursing profile, generic version. Please note the nursing refe
 * supportingInfo MS
 * bodySite MS
 * note MS
-* occurrencePeriod 1..1
