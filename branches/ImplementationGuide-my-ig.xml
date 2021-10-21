@@ -227,7 +227,7 @@
         <reference value="StructureDefinition/be-referralprescription-nursing-medication"/>
       </reference>
       <name value="BeReferralPrescriptionNursingMedication"/>
-      <description value="The nursing profile specialized for medication. Note this profile is based on the FHIR resource MedicationRequest.&#xA;Dosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements)"/>
+      <description value="The nursing profile specialized for medication. Note this profile is based on the FHIR resource MedicationRequest.&#xA;Dosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements). This MedicationRequest should be used in the basedOn field of the BeReferralPrescriptionNursingMedicationService."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -350,6 +350,16 @@
       <name value="be-ns-vtm-codes"/>
       <description value="Naming System - vtm Product Codes"/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="RequestGroup"/>
+      </extension>
+      <reference>
+        <reference value="RequestGroup/example01-referralprescription-request-group"/>
+      </reference>
+      <name value="example01-referralprescription-request-group"/>
+      <exampleBoolean value="true"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1151,16 +1161,6 @@
       </reference>
       <name value="gpvisit"/>
       <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="RequestGroup"/>
-      </extension>
-      <reference>
-        <reference value="RequestGroup/example01-referralprescription-request-group"/>
-      </reference>
-      <name value="example01-referralprescription-request-group"/>
-      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-request-group"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">

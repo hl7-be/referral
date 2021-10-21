@@ -3,7 +3,7 @@
 
 err = 20, warn = 76, info = 13
 IG Publisher Version: 1.1.82
-Generated Tue Oct 19 15:14:48 UTC 2021. FHIR version 4.0.1 for my-ig#0.2.0 (canonical = http://example.com/fhir/example)
+Generated Thu Oct 21 11:59:33 UTC 2021. FHIR version 4.0.1 for my-ig#0.2.0 (canonical = http://example.com/fhir/example)
  Build Errors : 9 / 39 / 0
  /github/workspace/fsh-generated/resources/CodeSystem-be-nursing-annex81-inadequate-adherence : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/CodeSystem-be-nursing-annex81-inadequate-adherence-link : 0 / 0 / 1
@@ -23,6 +23,7 @@ Generated Tue Oct 19 15:14:48 UTC 2021. FHIR version 4.0.1 for my-ig#0.2.0 (cano
  /github/workspace/fsh-generated/resources/NamingSystem-be-ns-vmp-codes : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/NamingSystem-be-ns-vmpg-codes : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/NamingSystem-be-ns-vtm-codes : 0 / 0 / 1
+ /github/workspace/fsh-generated/resources/RequestGroup-example01-referralprescription-request-group : 0 / 0 / 19
  /github/workspace/fsh-generated/resources/ServiceRequest-example02-referralprescription-nursing-digestive-system-care : 0 / 0 / 4
  /github/workspace/fsh-generated/resources/ServiceRequest-example03-referralprescription-nursing-compressiontherapy : 0 / 0 / 2
  /github/workspace/fsh-generated/resources/ServiceRequest-example04-referralprescription-nursing-bladder-care : 0 / 0 / 2
@@ -42,7 +43,6 @@ Generated Tue Oct 19 15:14:48 UTC 2021. FHIR version 4.0.1 for my-ig#0.2.0 (cano
  /github/workspace/fsh-generated/resources/ValueSet-be-vs-nursing-annex81-inadequate-adherence : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/ValueSet-be-vs-nursing-annex81-inadequate-adherence-link : 0 / 0 / 1
  /github/workspace/input/examples/CarePlan-gpvisit : 3 / 0 / 2
- /github/workspace/input/examples/RequestGroup-example01-referralprescription-request-group : 0 / 0 / 16
  /github/workspace/input/examples/condition1 : 0 / 0 / 1
  /github/workspace/input/examples/diagnostic-imaging-basic-example-concreteWithDetails : 0 / 0 / 1
  /github/workspace/input/examples/diagnostic-imaging-basic-example-concreteWithText : 0 / 0 / 5
@@ -113,6 +113,7 @@ Generated Tue Oct 19 15:14:48 UTC 2021. FHIR version 4.0.1 for my-ig#0.2.0 (cano
 == n/a ==
 ERROR: ImplementationGuide.definition.parameter[22].value: Supressed messages file is not using the new format (see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters)
 WARNING: ImplementationGuide.url: The canonical URL for an Implementation Guide must point directly to the implementation guide resource, not to the Implementation Guide as a whole
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource RequestGroup/example01-referralprescription-request-group.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource ServiceRequest/example02-referralprescription-nursing-digestive-system-care.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource ServiceRequest/example03-referralprescription-nursing-compressiontherapy.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource ServiceRequest/example04-referralprescription-nursing-bladder-care.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
@@ -137,7 +138,6 @@ WARNING: Unable to find ImplementationGuide.definition.resource.description for 
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource StructureDefinition/be-model-nursingprescription.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource StructureDefinition/be-model-physiotherapyprescription.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource CarePlan/gpvisit.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
-WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource RequestGroup/example01-referralprescription-request-group.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Condition/condition1.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource ServiceRequest/diagnostic-imaging-basic-example-concreteWithDetails.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource ServiceRequest/diagnostic-imaging-basic-example-concreteWithText.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
@@ -156,8 +156,8 @@ ERROR: /github/workspace/output/RequestGroup-example01-referralprescription-requ
 ERROR: /github/workspace/output/RequestGroup-example01-referralprescription-request-group.html#/html/body/div/div/div/div/div/div/blockquote/blockquote/p/a at Line 272, column 1759: The link '#Performer1' for "#Performer1" cannot be resolved (valid targets: [example01-care03-referralprescription-nursing-medication, project-nav, publish-box, fhir-nav, segment-post-footer, hl7-search-lnk, top, example01-care02-colon-cleansing, root, stripe, segment-footer, ig-nav, segment-content, project-logo, segment-header, bottom, hl7-logo, example-requestgroup-example01-referralprescription-request-group, ig-search, fhir-logo, Patient1, ig-status, example01-care01-referralprescription-nursing-bladder-care, relatedactions, segment-navbar, segment-breadcrumb])
 ERROR: /github/workspace/output/RequestGroup-example01-referralprescription-request-group.html#/html/body/div/div/div/div/div/div/blockquote/blockquote/p/a at Line 272, column 2922: The link '#Requester1' for "#Requester1" cannot be resolved (valid targets: [example01-care03-referralprescription-nursing-medication, project-nav, publish-box, fhir-nav, segment-post-footer, hl7-search-lnk, top, example01-care02-colon-cleansing, root, stripe, segment-footer, ig-nav, segment-content, project-logo, segment-header, bottom, hl7-logo, example-requestgroup-example01-referralprescription-request-group, ig-search, fhir-logo, Patient1, ig-status, example01-care01-referralprescription-nursing-bladder-care, relatedactions, segment-navbar, segment-breadcrumb])
 ERROR: /github/workspace/output/RequestGroup-example01-referralprescription-request-group.html#/html/body/div/div/div/div/div/div/blockquote/blockquote/p/a at Line 272, column 3081: The link '#Performer1' for "#Performer1" cannot be resolved (valid targets: [example01-care03-referralprescription-nursing-medication, project-nav, publish-box, fhir-nav, segment-post-footer, hl7-search-lnk, top, example01-care02-colon-cleansing, root, stripe, segment-footer, ig-nav, segment-content, project-logo, segment-header, bottom, hl7-logo, example-requestgroup-example01-referralprescription-request-group, ig-search, fhir-logo, Patient1, ig-status, example01-care01-referralprescription-nursing-bladder-care, relatedactions, segment-navbar, segment-breadcrumb])
-ERROR: /github/workspace/output/RequestGroup-example01-referralprescription-request-group.html#/html/body/div/div/div/div/div/div/blockquote/blockquote/p/a at Line 272, column 3938: The link '#Requester1' for "#Requester1" cannot be resolved (valid targets: [example01-care03-referralprescription-nursing-medication, project-nav, publish-box, fhir-nav, segment-post-footer, hl7-search-lnk, top, example01-care02-colon-cleansing, root, stripe, segment-footer, ig-nav, segment-content, project-logo, segment-header, bottom, hl7-logo, example-requestgroup-example01-referralprescription-request-group, ig-search, fhir-logo, Patient1, ig-status, example01-care01-referralprescription-nursing-bladder-care, relatedactions, segment-navbar, segment-breadcrumb])
-ERROR: /github/workspace/output/RequestGroup-example01-referralprescription-request-group.html#/html/body/div/div/div/div/div/div/blockquote/blockquote/p/a at Line 272, column 4000: The link '#Performer1' for "#Performer1" cannot be resolved (valid targets: [example01-care03-referralprescription-nursing-medication, project-nav, publish-box, fhir-nav, segment-post-footer, hl7-search-lnk, top, example01-care02-colon-cleansing, root, stripe, segment-footer, ig-nav, segment-content, project-logo, segment-header, bottom, hl7-logo, example-requestgroup-example01-referralprescription-request-group, ig-search, fhir-logo, Patient1, ig-status, example01-care01-referralprescription-nursing-bladder-care, relatedactions, segment-navbar, segment-breadcrumb])
+ERROR: /github/workspace/output/RequestGroup-example01-referralprescription-request-group.html#/html/body/div/div/div/div/div/div/blockquote/blockquote/p/a at Line 272, column 3504: The link '#example01-case03-minimal' for "#example01-case03-minimal" cannot be resolved (valid targets: [example01-care03-referralprescription-nursing-medication, project-nav, publish-box, fhir-nav, segment-post-footer, hl7-search-lnk, top, example01-care02-colon-cleansing, root, stripe, segment-footer, ig-nav, segment-content, project-logo, segment-header, bottom, hl7-logo, example-requestgroup-example01-referralprescription-request-group, ig-search, fhir-logo, Patient1, ig-status, example01-care01-referralprescription-nursing-bladder-care, relatedactions, segment-navbar, segment-breadcrumb])
+ERROR: /github/workspace/output/RequestGroup-example01-referralprescription-request-group.html#/html/body/div/div/div/div/div/div/blockquote/blockquote/p/a at Line 272, column 4173: The link '#Requester1' for "#Requester1" cannot be resolved (valid targets: [example01-care03-referralprescription-nursing-medication, project-nav, publish-box, fhir-nav, segment-post-footer, hl7-search-lnk, top, example01-care02-colon-cleansing, root, stripe, segment-footer, ig-nav, segment-content, project-logo, segment-header, bottom, hl7-logo, example-requestgroup-example01-referralprescription-request-group, ig-search, fhir-logo, Patient1, ig-status, example01-care01-referralprescription-nursing-bladder-care, relatedactions, segment-navbar, segment-breadcrumb])
 ERROR: /github/workspace/output/StructureDefinition-be-model-referralprescription-definitions.html#/html/body/div/div/div/div/div/table/tr/td/a at Line 336, column 78: The link 'CodeableReference.html' for "CodeableReference" cannot be resolved
 == fsh-generated/resources/CodeSystem-be-nursing-annex81-inadequate-adherence.json ==
 == fsh-generated/resources/CodeSystem-be-nursing-annex81-inadequate-adherence-link.json ==
@@ -189,6 +189,8 @@ INFORMATION: MedicationRequest/example31-referralprescription-nursing-medication
 == fsh-generated/resources/NamingSystem-be-ns-vmp-codes.json ==
 == fsh-generated/resources/NamingSystem-be-ns-vmpg-codes.json ==
 == fsh-generated/resources/NamingSystem-be-ns-vtm-codes.json ==
+== fsh-generated/resources/RequestGroup-example01-referralprescription-request-group.json ==
+INFORMATION: RequestGroup/example01-referralprescription-request-group: RequestGroup.contained[6].ofType(RequestGroup).medication.ofType(CodeableConcept).coding[0]: Code System URI 'https://www.ehealth.fgov.be/standards/fhir/NamingSystem/cnk-codes' is unknown so the code cannot be validated
 == fsh-generated/resources/ServiceRequest-example02-referralprescription-nursing-digestive-system-care.json ==
 == fsh-generated/resources/ServiceRequest-example03-referralprescription-nursing-compressiontherapy.json ==
 == fsh-generated/resources/ServiceRequest-example04-referralprescription-nursing-bladder-care.json ==
@@ -213,8 +215,6 @@ ERROR: CarePlan/gpvisit: CarePlan.subject: Unable to resolve resource 'Patient/1
 ERROR: CarePlan/gpvisit: CarePlan.activity[0].outcomeReference[0]: Unable to resolve resource 'Encounter/example'
 INFORMATION: CarePlan/gpvisit: CarePlan.activity[0].detail.code.coding[0]: Code System URI 'http://example.org/local' is unknown so the code cannot be validated
 ERROR: CarePlan/gpvisit: CarePlan.activity[0].detail.performer[0]: Unable to resolve resource 'Practitioner/13'
-== input/examples/RequestGroup-example01-referralprescription-request-group.json ==
-INFORMATION: RequestGroup/example01-referralprescription-request-group: RequestGroup.contained[5].ofType(MedicationRequest).medication.ofType(CodeableConcept).coding[0]: Code System URI 'https://cnk.apb.be/codings/cnk_product_codes' is unknown so the code cannot be validated
 == input/examples/condition1.xml ==
 == input/examples/diagnostic-imaging-basic-example-concreteWithDetails.xml ==
 == input/examples/diagnostic-imaging-basic-example-concreteWithText.xml ==
