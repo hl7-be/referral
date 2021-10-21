@@ -348,7 +348,7 @@
           "reference": "StructureDefinition/be-referralprescription-nursing-medication"
         },
         "name": "BeReferralPrescriptionNursingMedication",
-        "description": "The nursing profile specialized for medication. Note this profile is based on the FHIR resource MedicationRequest.\nDosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements)",
+        "description": "The nursing profile specialized for medication. Note this profile is based on the FHIR resource MedicationRequest.\nDosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements). This MedicationRequest should be used in the basedOn field of the BeReferralPrescriptionNursingMedicationService.",
         "exampleBoolean": false
       },
       {
@@ -504,6 +504,19 @@
         "name": "be-ns-vtm-codes",
         "description": "Naming System - vtm Product Codes",
         "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "RequestGroup"
+          }
+        ],
+        "reference": {
+          "reference": "RequestGroup/example01-referralprescription-request-group"
+        },
+        "name": "example01-referralprescription-request-group",
+        "exampleBoolean": true
       },
       {
         "extension": [
@@ -1530,19 +1543,6 @@
         },
         "name": "gpvisit",
         "exampleBoolean": true
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "RequestGroup"
-          }
-        ],
-        "reference": {
-          "reference": "RequestGroup/example01-referralprescription-request-group"
-        },
-        "name": "example01-referralprescription-request-group",
-        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-request-group"
       },
       {
         "extension": [
