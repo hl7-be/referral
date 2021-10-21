@@ -1,6 +1,6 @@
 
 Instance: Patient1
-InstanceOf: Patient
+InstanceOf: BePatient
 Usage: #inline
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient"
 * identifier.use = #official
@@ -53,7 +53,7 @@ Usage: #inline
 * content.attachment.data = "iVBORw0KGgoAAAANSUhEUgAAA+MAAACnCAYAAAB6pY03AAAAAXNSR0IArs4c6QAAAARnQU1BAACx jwv8YQUAAAAJcEhZcwAAEnMAABJzAYwiuQcAADBZSURBVHhe7d09rty218fxrOFfZj/ZQHZgwEiZ gg=="
 
 Instance: Requester1
-InstanceOf: Practitioner
+InstanceOf: BePractitioner
 Usage: #inline
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner"
 * identifier.use = #official
@@ -75,7 +75,7 @@ Usage: #inline
 
 
 Instance: Performer1
-InstanceOf: Organization
+InstanceOf: BeOrganization
 Usage: #inline
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization"
 * identifier.use = #official
