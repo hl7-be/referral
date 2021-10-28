@@ -21,7 +21,7 @@ Usage: #example
 * contained[+] = example01-care01-referralprescription-nursing-bladder-care
 * contained[+] = example01-care02-colon-cleansing
 * contained[+] = example01-care03-referralprescription-nursing-medication
-* contained[+] = example01-case03-minimal
+//* contained[+] = example01-case03-minimal
 * action[0].resource = Reference(example01-care01-referralprescription-nursing-bladder-care)
 * action[=].relatedAction.relationship = #after-end
 * action[=].relatedAction.actionId = "care03"
@@ -79,6 +79,35 @@ Usage: #inline
 * performer = Reference(Performer1)
 
 Instance: example01-care03-referralprescription-nursing-medication
+InstanceOf: BeReferralPrescriptionNursingMedication
+Usage: #inline
+* meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"
+//* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
+//* extension.valueCodeableConcept = $be-status-reason#created "Created"
+* statusReason = $be-status-reason#created "Created"
+* identifier.system = "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"
+* identifier.value = "UHMEPVALUE"
+* status = #active
+* intent = #order
+* category[0].coding = https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-injection#SC
+* category[0].text = "Subcutaan"
+* medicationCodeableConcept = $cnk_product_codes#2661098 "Midazolam Mylan inj./inf./instill. oploss. i.m./i.v./rect. [amp.] 10 x 5 mg / 5 ml"
+* priority = #routine
+* dosageInstruction.timing.repeat.frequency = 1
+* dosageInstruction.timing.repeat.period = 1
+* dosageInstruction.timing.repeat.periodUnit = #d
+* dosageInstruction.text = "opzet hier: éénmalige sondage en lavement uitvoeren, maar persoon op voorhand verdoven met 5mg Midzaolan via subcutane inspuiting"
+* subject = Reference(Patient1)
+* requester = Reference(Requester1)
+* performerType = $sct#106292003 "Nurse"
+* performer = Reference(Performer1)
+
+
+
+
+
+/*
+Instance: example01-care03-referralprescription-nursing-medication
 InstanceOf: BeReferralPrescriptionNursingMedicationService
 Usage: #inline
 * basedOn = Reference(example01-case03-minimal)
@@ -112,3 +141,4 @@ Usage: #inline
 * subject = Reference(Patient1)
 * status = #active
 * intent = #order
+*/
