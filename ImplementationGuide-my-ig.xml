@@ -42,7 +42,7 @@
   <dependsOn id="hl7_be_fhir_core">
     <uri value="https://www.hl7belgium.org/fhir/ImplementationGuide/hl7.be.fhir.core"/>
     <packageId value="hl7.be.fhir.core"/>
-    <version value="dev"/>
+    <version value="current"/>
   </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -227,18 +227,7 @@
         <reference value="StructureDefinition/be-referralprescription-nursing-medication"/>
       </reference>
       <name value="BeReferralPrescriptionNursingMedication"/>
-      <description value="The nursing profile specialized for medication. Note this profile is based on the FHIR resource MedicationRequest.&#xA;Dosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements). This MedicationRequest should be used in the basedOn field of the BeReferralPrescriptionNursingMedicationService."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/be-referralprescription-nursing-medication-service"/>
-      </reference>
-      <name value="BeReferralPrescriptionNursingMedicationService"/>
-      <description value="The nursing profile specialized for medication. This ServiceRequest refers to a MedicationRequest&#xA;Dosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements)"/>
+      <description value="The nursing profile specialized for medication. Note this profile is based on the FHIR resource MedicationRequest. Dosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements). This MedicationRequest should be used in the basedOn field of the BeReferralPrescriptionNursingMedicationService."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -413,13 +402,13 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ServiceRequest"/>
+        <valueString value="MedicationRequest"/>
       </extension>
       <reference>
-        <reference value="ServiceRequest/example07-referralprescription-nursing-medication-service"/>
+        <reference value="MedicationRequest/example07-referralprescription-nursing-medication"/>
       </reference>
-      <name value="example07-referralprescription-nursing-medication-service"/>
-      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication-service"/>
+      <name value="example07-referralprescription-nursing-medication"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">

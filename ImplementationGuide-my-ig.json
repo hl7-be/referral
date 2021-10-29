@@ -55,7 +55,7 @@
       "id": "hl7_be_fhir_core",
       "uri": "https://www.hl7belgium.org/fhir/ImplementationGuide/hl7.be.fhir.core",
       "packageId": "hl7.be.fhir.core",
-      "version": "dev"
+      "version": "current"
     }
   ],
   "definition": {
@@ -348,21 +348,7 @@
           "reference": "StructureDefinition/be-referralprescription-nursing-medication"
         },
         "name": "BeReferralPrescriptionNursingMedication",
-        "description": "The nursing profile specialized for medication. Note this profile is based on the FHIR resource MedicationRequest.\nDosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements). This MedicationRequest should be used in the basedOn field of the BeReferralPrescriptionNursingMedicationService.",
-        "exampleBoolean": false
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "StructureDefinition:resource"
-          }
-        ],
-        "reference": {
-          "reference": "StructureDefinition/be-referralprescription-nursing-medication-service"
-        },
-        "name": "BeReferralPrescriptionNursingMedicationService",
-        "description": "The nursing profile specialized for medication. This ServiceRequest refers to a MedicationRequest\nDosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements)",
+        "description": "The nursing profile specialized for medication. Note this profile is based on the FHIR resource MedicationRequest. Dosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements). This MedicationRequest should be used in the basedOn field of the BeReferralPrescriptionNursingMedicationService.",
         "exampleBoolean": false
       },
       {
@@ -587,14 +573,14 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "ServiceRequest"
+            "valueString": "MedicationRequest"
           }
         ],
         "reference": {
-          "reference": "ServiceRequest/example07-referralprescription-nursing-medication-service"
+          "reference": "MedicationRequest/example07-referralprescription-nursing-medication"
         },
-        "name": "example07-referralprescription-nursing-medication-service",
-        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication-service"
+        "name": "example07-referralprescription-nursing-medication",
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"
       },
       {
         "extension": [

@@ -1,13 +1,9 @@
-<!-- layouts\layout-changehistory.html -->
-<!-- get modelType -->
-
-
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE HTML>
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>MY-IG\ - FHIR v4.0.1</title>
+    <title>MY-IG\example07-referralprescription-nursing-medication - FHIR v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -52,8 +48,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:""}
-    h3,h4,h5,h6{--heading-prefix:""}</style>
+    <style type="text/css">h2{--heading-prefix:"14.73"}
+    h3,h4,h5,h6{--heading-prefix:"14.73"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -207,7 +203,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>example07-referralprescription-nursing-medication</b></li>
           
         </ul>
       </div>  <!-- /container -->
@@ -219,9 +215,9 @@
         <div class="row">
           <div class="inner-wrapper">
 
-
-<div style="counter-reset: section 10" class="col-12">
+<div class="col-12">
   <!--ReleaseHeader--><p id="publish-box">HL7 BE Referral Prescription WG Implementation Guide (work in progress) - Local Development build (v0.2.0). See the <a href="http://example.com/fhir/example/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+
   
 
 
@@ -231,28 +227,28 @@
 
 <ul class="nav nav-tabs">
 
-  <li>
-    <a href="ServiceRequest-example07-referralprescription-nursing-medication-service.html">Narrative Content</a>
+  <li class="active">
+    <a href="#">Narrative Content</a>
   </li>
 
 
   
     <li>
-      <a href="ServiceRequest-example07-referralprescription-nursing-medication-service.xml.html">XML</a>
+      <a href="MedicationRequest-example07-referralprescription-nursing-medication.xml.html">XML</a>
     </li>
   
 
 
   
     <li>
-      <a href="ServiceRequest-example07-referralprescription-nursing-medication-service.json.html">JSON</a>
+      <a href="MedicationRequest-example07-referralprescription-nursing-medication.json.html">JSON</a>
     </li>
   
 
 
   
     <li>
-      <a href="ServiceRequest-example07-referralprescription-nursing-medication-service.ttl.html">TTL</a>
+      <a href="MedicationRequest-example07-referralprescription-nursing-medication.ttl.html">TTL</a>
     </li>
   
 
@@ -262,13 +258,25 @@
 
 
   <a name="root"> </a>
-  <h2 id="root">: ServiceRequest/example07-referralprescription-nursing-medication-service - Change History</h2>
-  <p>History of changes for example07-referralprescription-nursing-medication-service .</p>
 
+
+  <h2 id="root">Example MedicationRequest: example07-referralprescription-nursing-medication</h2>
+
+
+
+  <!-- insert intro if present -->
   
 
-</div>
 
+
+  <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><p><b>identifier</b>: id: UHMEPVALUE</p><p><b>status</b>: active</p><p><b>statusReason</b>: <span title="Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason created}">Created</span></p><p><b>intent</b>: order</p><p><b>category</b>: <span title="Codes: {https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-injection SC}">Subcutaan</span></p><p><b>priority</b>: routine</p><p><b>medication</b>: <span title="Codes: {https://www.ehealth.fgov.be/standards/fhir/NamingSystem/cnk-codes 1728104}">Neupogen inj./inf. oploss. (conc.) i.v./s.c. [voorgev. spuit] 5 x 48 ME / 0,5 ml</span></p><p><b>subject</b>: <a href="Patient-patient1.html">Generated Summary: id: 9999999999 (OFFICIAL); Jane Doe ; gender: female; birthDate: 1956-05-27</a></p><p><b>requester</b>: <a href="Practitioner-practitioner1.html">Generated Summary: id: 8888888888 (OFFICIAL); Leonard McCoy (OFFICIAL), Bones (NICKNAME)</a></p><p><b>performer</b>: <a href="Practitioner-practitioner2.html">Generated Summary: id: 8888888888 (OFFICIAL); Christopher Chapel (OFFICIAL), Mr.Nurse (NICKNAME)</a></p><p><b>performerType</b>: <span title="Codes: {http://snomed.info/sct 106292003}">Nurse</span></p></div>
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
         </div>  <!-- /inner-wrapper -->
       </div>  <!-- /row -->
     </div>  <!-- /container -->
@@ -276,29 +284,6 @@
 
   <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
   <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
-
-  <script type="text/javascript">
-    try {
-      var currentTabIndex = sessionStorage.getItem('fhir-resource-tab-index');
-    } catch(exception) {
-    }
-
-    if (!currentTabIndex)
-      currentTabIndex = '0';
-
-    $( '#tabs' ).tabs({
-      active: currentTabIndex,
-      activate: function( event, ui ) {
-        var active = $('.selector').tabs('option', 'active');
-        currentTabIndex = ui.newTab.index();
-        document.activeElement.blur();
-        try {
-          sessionStorage.setItem('fhir-resource-tab-index', currentTabIndex);
-        } catch(exception) {
-        }
-      }
-    });
-  </script>
 
   <script type="text/javascript">
     $(document).ready(function(){
@@ -313,7 +298,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7belgium.org">HL7 Belgium</a>.  Package my-ig#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Oct 21, 2021 11:58+0000">2021-10-21</span>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7belgium.org">HL7 Belgium</a>.  Package my-ig#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 29, 2021 12:52+0000">2021-10-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
