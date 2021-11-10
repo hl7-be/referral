@@ -12,7 +12,7 @@ Alias: $be-vs-nursing-medication-percutaneous = https://www.ehealth.fgov.be/stan
 Profile: BeReferralPrescriptionNursingMedication
 Parent: MedicationRequest
 Id: be-referralprescription-nursing-medication
-Description: """The nursing profile specialized for medication. Note this profile is based on the FHIR resource MedicationRequest. Dosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements). This MedicationRequest should be used in the basedOn field of the BeReferralPrescriptionNursingMedicationService."""
+Description: """The nursing profile specialized for medication. Note this profile is based on the FHIR resource MedicationRequest. Dosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements)."""
 * ^version = "0.2.0"
 * ^status = #draft
 * ^publisher = "HL7 Belgium"
