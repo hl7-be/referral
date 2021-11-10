@@ -1,34 +1,34 @@
-"Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)"
-"BeLaboratoryPrescription","","","",0,*,"","","","","","","","","","","","","","","",,,,,"",,,,"Base",0,*,"",""
+"Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)","Mapping: RIM Mapping"
+"BeLaboratoryPrescription","","","",0,*,"","","","","","Logical model describing the model for the prescription laboratory. This draft is used in the HL7 Belgian workgroup for laboratory.","","","","","","","","","",,,,,"",,,,"Base",0,*,"",""
 "BeLaboratoryPrescription.prescriber","","","",1,1,"","","","Reference {[]} {[]}
-","The NIHDI of the prescribing healthcare party","","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.prescriber",1,1,"",""
+","The NIHDI of the prescribing healthcare party","The NIHDI of the prescribing healthcare party","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.prescriber",1,1,"",""
 "BeLaboratoryPrescription.co-prescriber","","","",0,*,"","","","BackboneElement {[]} {[]}
-","Information about co prescribers","","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.co-prescriber",0,*,"",""
+","Information about co prescribers","Information about co prescribers","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.co-prescriber",0,*,"",""
 "BeLaboratoryPrescription.co-prescriber.co-prescriber","","","",1,1,"","","","Reference {[]} {[]}
-","NIHDI of co prescriber party","","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.co-prescriber.co-prescriber",1,1,"",""
+","NIHDI of co prescriber party","NIHDI of co prescriber party","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.co-prescriber.co-prescriber",1,1,"",""
 "BeLaboratoryPrescription.co-prescriber.co-prescriberSubstitute","","","",0,1,"","","","Reference {[]} {[]}
-","NIHDI of co prescriber substitute party","","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.co-prescriber.co-prescriberSubstitute",0,1,"",""
-"BeLaboratoryPrescription.co-prescriber.status","","","",1,1,"","","","code {[CanonicalType[http://hl7.org/fhir/StructureDefinition/code]]} {[]}
-","Status of co prescribing status (to sign, signed or refused)","","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.co-prescriber.status",1,1,"",""
+","NIHDI of co prescriber substitute party","NIHDI of co prescriber substitute party","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.co-prescriber.co-prescriberSubstitute",0,1,"",""
+"BeLaboratoryPrescription.co-prescriber.status","","","",1,1,"","","","code {[]} {[]}
+","Status of co prescribing status (to sign, signed or refused)","Status of co prescribing status (to sign, signed or refused)","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.co-prescriber.status",1,1,"",""
 "BeLaboratoryPrescription.patient","","","",1,1,"","","","Reference {[]} {[]}
-","The SSIN of the person for which the laboratory is prescribed.","","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.patient",1,1,"",""
+","The SSIN of the person for which the laboratory is prescribed.","The SSIN of the person for which the laboratory is prescribed.","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.patient",1,1,"",""
 "BeLaboratoryPrescription.provider","","","",0,*,"","","","Reference {[]} {[]}
-","A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)","","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.provider",0,*,"",""
-"BeLaboratoryPrescription.disciplineProvider","","","",1,1,"","","","CodeableConcept {[CanonicalType[http://hl7.org/fhir/StructureDefinition/CodeableConcept]]} {[]}
-","Required discipline of the provider party","","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.disciplineProvider",1,1,"",""
-"BeLaboratoryPrescription.timestampCreation","","","",1,1,"","","","dateTime {[CanonicalType[http://hl7.org/fhir/StructureDefinition/dateTime]]} {[]}
-","When this prescription was created","","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.timestampCreation",1,1,"",""
-"BeLaboratoryPrescription.status","","","",1,1,"","","","code {[CanonicalType[http://hl7.org/fhir/StructureDefinition/code]]} {[]}
-","Current status","","","","","","","","","","",,"required","","http://hl7.org/fhir/ValueSet/request-status","",,,,"BeLaboratoryPrescription.status",1,1,"",""
-"BeLaboratoryPrescription.reasonCurrentStatus","","","",1,1,"","","","CodeableConcept {[CanonicalType[http://hl7.org/fhir/StructureDefinition/CodeableConcept]]} {[]}
-","","","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.reasonCurrentStatus",1,1,"",""
-"BeLaboratoryPrescription.uhmepIdentifier","","","",0,1,"","","","Identifier {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Identifier]]} {[]}
-","Reference ID of the UHMEP once availaboratoryle there","","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.uhmepIdentifier",0,1,"",""
-"BeLaboratoryPrescription.validityPeriod","","","",1,1,"","","","Period {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Period]]} {[]}
-","Period of validity of prescription","","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.validityPeriod",1,1,"",""
-"BeLaboratoryPrescription.executionPeriod","","","",0,1,"","","","Period {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Period]]} {[]}
-","When this prescription is executed, availaboratoryle after start of execution","","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.executionPeriod",0,1,"",""
-"BeLaboratoryPrescription.prescribedService","","","",1,1,"","","","CodeableConcept {[CanonicalType[http://hl7.org/fhir/StructureDefinition/CodeableConcept]]} {[]}
-","What is prescribed","","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.prescribedService",1,1,"",""
+","A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)","A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.provider",0,*,"",""
+"BeLaboratoryPrescription.disciplineProvider","","","",1,1,"","","","CodeableConcept {[]} {[]}
+","Required discipline of the provider party","Required discipline of the provider party","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.disciplineProvider",1,1,"",""
+"BeLaboratoryPrescription.timestampCreation","","","",1,1,"","","","dateTime {[]} {[]}
+","When this prescription was created","When this prescription was created","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.timestampCreation",1,1,"",""
+"BeLaboratoryPrescription.status","","","",1,1,"","","","code {[]} {[]}
+","Current status","Current status","","","","","","","","","",,"required","","http://hl7.org/fhir/ValueSet/request-status","",,,,"BeLaboratoryPrescription.status",1,1,"",""
+"BeLaboratoryPrescription.reasonCurrentStatus","","","",1,1,"","","","CodeableConcept {[]} {[]}
+","test","test","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.reasonCurrentStatus",1,1,"",""
+"BeLaboratoryPrescription.uhmepIdentifier","","","",0,1,"","","","Identifier {[]} {[]}
+","Reference ID of the UHMEP once availaboratoryle there","Reference ID of the UHMEP once availaboratoryle there","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.uhmepIdentifier",0,1,"",""
+"BeLaboratoryPrescription.validityPeriod","","","",1,1,"","","","Period {[]} {[]}
+","Period of validity of prescription","Period of validity of prescription","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.validityPeriod",1,1,"",""
+"BeLaboratoryPrescription.executionPeriod","","","",0,1,"","","","Period {[]} {[]}
+","When this prescription is executed, availaboratoryle after start of execution","When this prescription is executed, availaboratoryle after start of execution","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.executionPeriod",0,1,"",""
+"BeLaboratoryPrescription.prescribedService","","","",1,1,"","","","CodeableConcept {[]} {[]}
+","What is prescribed","What is prescribed","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.prescribedService",1,1,"",""
 "BeLaboratoryPrescription.resultReceiver","","","",0,*,"","","","Reference {[]} {[]}
-","Parties that shall be informed of the results of the prescription other then the prescriber.","","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.resultReceiver",0,*,"",""
+","Parties that shall be informed of the results of the prescription other then the prescriber.","Parties that shall be informed of the results of the prescription other then the prescriber.","","","","","","","","","",,,,,"",,,,"BeLaboratoryPrescription.resultReceiver",0,*,"",""
