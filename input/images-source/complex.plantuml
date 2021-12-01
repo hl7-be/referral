@@ -1,0 +1,141 @@
+@startuml
+hide circle
+
+BeReferralPrescription <|-- BeNursingPrescription
+BeNursingPrescription <|-- BeModelPerfusie
+BeNursingPrescription <|-- BeModelParameters
+BeNursingPrescription <|-- BeModelSpijsverteringsstelsel
+BeNursingPrescription <|-- BeModelAdemhalingsstelsel
+BeNursingPrescription <|-- BeModelVulvazorgen
+BeNursingPrescription <|-- BeModelBlaaszorgen
+BeNursingPrescription <|-- BeModelSTVV
+BeNursingPrescription <|-- BeModelCompressietherapie
+BeNursingPrescription <|-- BeModelOgen
+BeNursingPrescription <|-- BeModelHeparineSlot
+BeNursingPrescription <|-- BeModelToiletzorg
+BeNursingPrescription <|-- BeModelInspuiting
+BeNursingPrescription <|-- BeModelBloedname
+BeNursingPrescription <|-- BeModelPoortcatheter
+BeNursingPrescription <|-- BeModelCoagucheck
+
+
+class BeReferralPrescription{
+  |_identifier 0..*  "An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available"
+  |_status 1..1  "Current status"
+  |_reasonCurrentStatus 1..1  "Reason current status"
+  |_authoredOn 1..1  "When this prescription was created"
+  |_prescriber 1..1 Reference  "The prescribing healthcare party"
+  |_co-prescriber 0..* BackboneElement  "Information about co prescribers"
+  |_co-prescriber.co-prescriber 1..1 Reference  "The co-prescriber party"
+  |_co-prescriber.co-prescriberSubstitute 0..1 Reference "NIHDI of co prescriber substitute party"
+  |_co-prescriber.status 1..1  "Status of co prescribing status (to sign, signed or refused)"
+  |_patient 1..1 Reference  "The SSIN of the person for which the referral is prescribed."
+  |_originalRequest 0..1 Reference "The original request or prescription that is the reason for this request - for example when a detailed request is created by a broader request."
+  |_reason 0..* Reference "The problem (code or reference) that is the main reason for this prescription"
+  |_intendedProvider 0..* BackboneElement "The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality"
+  |_intendedProvider.provider 0..* Reference "A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)"
+  |_intendedProvider.discipline 1..1  "The required discipline of the provider party"
+  |_validityPeriod 1..1  "Period of validity of prescription"
+  |_executionPeriod 0..1  "When this prescription is executed, available after start of execution"
+  |_prescribedService 1..1  "What is prescribed"
+  |_resultReceiver 0..* Reference "Parties that shall be informed of the results of the prescription other then the prescriber."
+  |_note 0..1 Annotation  "Additional text notes about the request."
+}
+
+class BeNursingPrescription{
+  |_phoneAvailablityPrescriber 0..1 BackboneElement 
+  |_phoneAvailablityPrescriber.contactPoint 0..* ContactPoint 
+  |_phoneAvailablityPrescriber.availability 0..* BackboneElement 
+  |_phoneAvailablityPrescriber.availability.untilHour 0..1 BackboneElement 
+  |_phoneAvailablityPrescriber.availability.fromHour 0..1 BackboneElement 
+  |_phoneAvailablityPrescriber.availability.weekDay 1..1 string 
+  |_feedbackAsked 0..1 BackboneElement 
+  |_feedbackAsked.timingFeedback 1..1 code 
+  |_signature 0..1 Signature 
+  |_stampOrIdentification 0..1 code "What is this?" "What is this?"
+  |_mainNursingCare 1..1 CodeableConcept  "A high level code to describe the nursing care"
+  |_detailedCare 0..* CodeableConcept  "Detailed code describing the nursing care demanded"
+  |_bodySite 0..* CodeableConcept "When needed bodySite SHALL be given" "When needed bodySite SHALL be given"
+  |_asNeeded 0..1
+  |_occurence 0..1
+}
+
+class BeModelToiletzorg{
+  |_frequentie 1..1 Timing "How many times must this be executed"
+}
+
+class BeModelInspuiting{
+  |_type 1..1 CodeableConcept	 "SC - IV - ID - Hypodermaal"
+  |_medication 1..1
+  |_dosisInstruction 0..1
+}
+
+
+class BeModelVervangenHeparineSlot{
+}
+
+class BeModelOgen{
+  |_bodySite 1..1 CodeableConcept	 "SnoMedCT code"
+  |_medication 1..1
+  |_dosisInstruction 0..1
+}
+
+class BeModelCompressietherapie{
+  |_bodySite 1..1 CodeableConcept	 "SnoMedCT code"
+  |_action 1..1 CodeableConcept	 "Compressieverband - Steunkousen aandoen en uittrekken"
+}
+
+class BeModelSTVV{
+  |_action 1..1 CodeableConcept	 "STVV actie"
+  |_perfusionType 0..1 CodeableConcept	 "Perfusion type - alleen als er een perfusie gekozen is"
+  |_quantity 0..1 Quantity "debiet van perfusie of pompsysteem"
+  |_frequentie 0..1 Timing "vervanging van de sonde"
+  |_perfusionType 0..1 CodeableConcept	 "Sonde type - alleen als er een sonde gekozen is"
+  |_medication 1..1
+  |_dosisInstruction 0..1
+}
+
+class BeModelBlaaszorgen{
+  |_action 1..1 CodeableConcept	 "Blaaszorgen actie"
+  |_frequentie 0..1 Timing "How many times must this be executed"
+}
+
+class BeModelVulvazorgen{
+  |_action 1..1 CodeableConcept	 "Vulvazorgen actie"
+  |_frequentie 1..1 Timing "How many times must this be executed"
+}
+
+class BeModelAdemhalingsstelsel{
+  |_action 1..* CodeableConcept	 "ademhalingsstelsel actie"
+  |_frequentie 0..1 Timing "duur van zuurstof toediening"
+  |_quantity 0..1 Quantity "debiet van zuurstof"
+  |_medication 0..1
+  |_dosisInstruction 0..1
+}
+
+class BeModelSpijsverteringsstelsel{
+  |_action 1..1 CodeableConcept	 "Spijsverteringsstelsel actie"
+  |_frequentie 1..1 Timing "How many times must this be executed"
+}
+
+class BeModelBloedname{
+}
+class BeModelParameters{
+  |_action 1..* CodeableConcept "op te volgen parameters"
+}
+
+class BeModelCoagucheck{
+}
+
+class BeModelPoortcatheter{
+  |_action 1..1 CodeableConcept	 "Poortcatheter actie"
+  |_poortCatheterType 1..1 CodeableConcept	 "Poortcatheter type"
+}
+
+class BeModelPerfusie{
+  |_action 1..1 CodeableConcept	 "Plaatsen/toezicht perfusie actie"
+  |_medication 1..1
+  |_dosisInstruction 0..1
+}
+
+@enduml
