@@ -12,7 +12,7 @@ Alias: $some_nomenclature_system = https://www.SOME_NOMENCLATURE_SYSTEM.be/
 Instance: example02-referralprescription-nursing-digestive-system-care
 InstanceOf: BeReferralPrescriptionNursing
 Usage: #example
-* contained[0] = Patient1
+//* contained[0] = Patient1
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-digestive-system-care"
 * extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
 * extension.valueCodeableConcept = $be-status-reason#created "Created"
@@ -23,7 +23,9 @@ Usage: #example
 * priority = #routine
 * code = $be-cs-nursing-code#digestive-system-care
 * orderDetail = https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-digestive-system-care#enteral-feeding-gastrostomy-probe
-* subject = Reference(Patient/Patient1)
+//* subject = Reference(Patient/Patient1)
+* subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/ssin"
+* subject.identifier.value = "9999999999"
 * occurrenceTiming.repeat.boundsPeriod.start = "2022-04-19"
 * occurrenceTiming.repeat.boundsPeriod.end = "2023-04-19"
 * occurrenceTiming.repeat.frequency = 2

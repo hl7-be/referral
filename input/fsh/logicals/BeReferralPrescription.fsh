@@ -9,13 +9,13 @@ Description: "Logical model describing the model for the prescription referral. 
 * ^contact[0].name = "HL7 Belgium"
 * ^contact[=].telecom.system = #url
 * ^contact[=].telecom.value = "http://hl7belgium.org"
-* ^contact[+].name = "Bart Decuypere"
+* ^contact[+].name = "Message Structure"
 * ^contact[=].telecom.system = #email
-* ^contact[=].telecom.value = "bart.decuypere@ehealth.fgov.be"
+* ^contact[=].telecom.value = "message-structure@ehealth.fgov.be"
 * ^contact[=].telecom.use = #work
 * ^jurisdiction.coding.system = "http://unstats.un.org/unsd/methods/m49/m49.htm"
-* ^jurisdiction.coding.code = #001
-* ^jurisdiction.coding.display = "World"
+* ^jurisdiction.coding.code = #056
+* ^jurisdiction.coding.display = "Belgium"
 * ^type = "BeReferralPrescription"
 * identifier 0..* http://hl7.org/fhir/StructureDefinition/Identifier "An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available" "An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available"
 * status 1..1 http://hl7.org/fhir/StructureDefinition/code "Current status" "Current status"
