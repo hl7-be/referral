@@ -12,4 +12,4 @@ Description: "The generic nursing profile without medication. Use the .note elem
 * code.coding.code = #other (exactly)
 * note ^short = "If needed to give further details"
 * orderDetail ^short = "Type of activity - use one code that provide the best detail"
-* orderDetail from http://hl7.org/fhir/ValueSet/procedure-code (required)
+* orderDetail from http://hl7.org/fhir/ValueSet/procedure-code (example)

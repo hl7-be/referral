@@ -4,10 +4,6 @@ Alias: $be-patient = https://www.ehealth.fgov.be/standards/fhir/StructureDefinit
 Alias: $be-practitioner = https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner
 Alias: $be-practitionerrole = https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitionerrole
 Alias: $be-organization = https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization
-Alias: $be-vs-nursing-medication-category = https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-nursing-medication-category
-Alias: $be-vs-nursing-medication-injection = https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-nursing-medication-injection
-Alias: $be-vs-nursing-medication-perfusion = https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-nursing-medication-perfusion
-Alias: $be-vs-nursing-medication-percutaneous = https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-nursing-medication-percutaneous
 
 Profile: BeReferralPrescriptionNursingGenMedication
 Parent: MedicationRequest
@@ -27,8 +23,16 @@ Description: """The nursing profile specialized for medication. Note this profil
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
-* extension contains $be-ext-inform-party named be-ext-inform-party 0..*
-* extension[be-ext-inform-party] ^short = "Parties to inform of fulfillment of the prescription, besides the prescriber."
+* extension contains
+    //$request-statusReason named statusReason 1..1 MS and
+    BeInformParty named informParty 0..* MS and
+	BeCoPrescriber named coprescriber 0..* MS and
+    http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod named validity 0..1 MS
+//* extension[statusReason].value[x] only CodeableConcept
+//* extension[statusReason].valueCodeableConcept from BeReasonReferralStatus (extensible)
+* extension[informParty] ^short = "Parties to inform of fulfillment of the prescription, besides the prescriber."
+* extension[coprescriber] ^short = "Other parties that have to take part in the prescription."
+* extension[validity] ^short = "Validity period of the prescription"
 * identifier MS
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
