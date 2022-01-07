@@ -23,11 +23,11 @@
       ]
     },
     {
-      "name": "Bart Decuypere",
+      "name": "Message-Structure",
       "telecom": [
         {
           "system": "email",
-          "value": "bart.decuypere@ehealth.fgov.be",
+          "value": "message-structure@ehealth.fgov.be",
           "use": "work"
         }
       ]
@@ -39,8 +39,8 @@
       "coding": [
         {
           "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
-          "code": "001",
-          "display": "World"
+          "code": "056",
+          "display": "Belgium"
         }
       ]
     }
@@ -317,6 +317,20 @@
           }
         ],
         "reference": {
+          "reference": "StructureDefinition/be-referralprescription"
+        },
+        "name": "BeReferralPrescription",
+        "description": "The common structure for referral prescription.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
           "reference": "StructureDefinition/be-referralprescription-nursing"
         },
         "name": "BeReferralPrescriptionNursing",
@@ -383,6 +397,20 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/be-co-prescriber"
+        },
+        "name": "BeCoPrescriber",
+        "description": "Other practitioners that must take part in this prescripiton",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString": "StructureDefinition:logical"
           }
         ],
@@ -431,20 +459,6 @@
           "reference": "StructureDefinition/be-model-physiotherapyprescription"
         },
         "name": "BePhysiotherapyPrescription",
-        "exampleBoolean": false
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "StructureDefinition:logical"
-          }
-        ],
-        "reference": {
-          "reference": "StructureDefinition/be-model-referralprescription"
-        },
-        "name": "BeReferralPrescription",
-        "description": "Logical model describing the model for the prescription referral. This draft is used in the HL7 Belgian workgroup for referral.",
         "exampleBoolean": false
       },
       {
@@ -591,6 +605,20 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/be-vs-referral-category"
+        },
+        "name": "BeReferralCategory",
+        "description": "Codes to define the high level category for a referral prescription. SNOMED-CT codes in this valueset are just a draft proposal to give a general idea - pending an official valueset.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString": "RequestGroup"
           }
         ],
@@ -624,7 +652,7 @@
           "reference": "ServiceRequest/example02-referralprescription-nursing-digestive-system-care"
         },
         "name": "example02-referralprescription-nursing-digestive-system-care",
-        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing"
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"
       },
       {
         "extension": [
@@ -637,7 +665,7 @@
           "reference": "ServiceRequest/example03-referralprescription-nursing-compressiontherapy"
         },
         "name": "example03-referralprescription-nursing-compressiontherapy",
-        "exampleBoolean": true
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"
       },
       {
         "extension": [
@@ -650,7 +678,7 @@
           "reference": "ServiceRequest/example04-referralprescription-nursing-bladder-care"
         },
         "name": "example04-referralprescription-nursing-bladder-care",
-        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing"
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"
       },
       {
         "extension": [
@@ -663,7 +691,7 @@
           "reference": "ServiceRequest/example05-referralprescription-nursing-digestive-system-care"
         },
         "name": "example05-referralprescription-nursing-digestive-system-care",
-        "exampleBoolean": true
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"
       },
       {
         "extension": [
@@ -676,7 +704,7 @@
           "reference": "ServiceRequest/example06-referralprescription-nursing-compression-therapy"
         },
         "name": "example06-referralprescription-nursing-compression-therapy",
-        "exampleBoolean": true
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"
       },
       {
         "extension": [
@@ -702,7 +730,7 @@
           "reference": "MedicationRequest/example08-referralprescription-nursing-medication"
         },
         "name": "example08-referralprescription-nursing-medication",
-        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"
       },
       {
         "extension": [
@@ -715,7 +743,7 @@
           "reference": "ServiceRequest/example09-referralprescription-nursing-woundcare"
         },
         "name": "example09-referralprescription-nursing-woundcare",
-        "exampleBoolean": true
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"
       },
       {
         "extension": [
@@ -728,7 +756,7 @@
           "reference": "MedicationRequest/example10-referralprescription-nursing-medication"
         },
         "name": "example10-referralprescription-nursing-medication",
-        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"
       },
       {
         "extension": [
@@ -754,7 +782,7 @@
           "reference": "MedicationRequest/example13-referralprescription-nursing-medication"
         },
         "name": "example13-referralprescription-nursing-medication",
-        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"
       },
       {
         "extension": [
@@ -780,7 +808,7 @@
           "reference": "MedicationRequest/example17-referralprescription-nursing-medication"
         },
         "name": "example17-referralprescription-nursing-medication",
-        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"
       },
       {
         "extension": [
@@ -793,7 +821,7 @@
           "reference": "MedicationRequest/example19-referralprescription-nursing-medication"
         },
         "name": "example19-referralprescription-nursing-medication",
-        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"
       },
       {
         "extension": [
@@ -806,7 +834,7 @@
           "reference": "MedicationRequest/example20-referralprescription-nursing-medication"
         },
         "name": "example20-referralprescription-nursing-medication",
-        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"
       },
       {
         "extension": [
@@ -819,7 +847,7 @@
           "reference": "MedicationRequest/example22-referralprescription-nursing-medication"
         },
         "name": "example22-referralprescription-nursing-medication",
-        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"
       },
       {
         "extension": [
@@ -832,7 +860,7 @@
           "reference": "MedicationRequest/example23-referralprescription-nursing-medication"
         },
         "name": "example23-referralprescription-nursing-medication",
-        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"
       },
       {
         "extension": [
@@ -845,7 +873,7 @@
           "reference": "ServiceRequest/example24-referralprescription-nursing-non-reimbursable"
         },
         "name": "example24-referralprescription-nursing-non-reimbursable",
-        "exampleBoolean": true
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"
       },
       {
         "extension": [
@@ -858,7 +886,7 @@
           "reference": "ServiceRequest/example26-referralprescription-nursing-other"
         },
         "name": "example26-referralprescription-nursing-other",
-        "exampleBoolean": true
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"
       },
       {
         "extension": [
@@ -871,7 +899,7 @@
           "reference": "ServiceRequest/example30-referralprescription-nursing-woundcare"
         },
         "name": "example30-referralprescription-nursing-woundcare",
-        "exampleBoolean": true
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"
       },
       {
         "extension": [
@@ -884,7 +912,7 @@
           "reference": "MedicationRequest/example31-referralprescription-nursing-medication"
         },
         "name": "example31-referralprescription-nursing-medication",
-        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"
       },
       {
         "extension": [
@@ -1108,20 +1136,6 @@
         },
         "name": "BeReferralPrescriptionRequestGroup",
         "description": "Envelope that allows different referralprescriptions to have an order",
-        "exampleBoolean": false
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "StructureDefinition:resource"
-          }
-        ],
-        "reference": {
-          "reference": "StructureDefinition/be-referralprescription"
-        },
-        "name": "BeReferralPrescription",
-        "description": "The common structure for referral prescription.",
         "exampleBoolean": false
       },
       {
@@ -1472,20 +1486,6 @@
         },
         "name": "BeReasonReferralStatus",
         "description": "Codes to explain the current status of a referral prescription.",
-        "exampleBoolean": false
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "ValueSet"
-          }
-        ],
-        "reference": {
-          "reference": "ValueSet/be-vs-referral-category"
-        },
-        "name": "BeReferralCategory",
-        "description": "Codes to define the high level category for a referral prescription. SNOMED-CT codes in this valueset are just a draft proposal to give a general idea - pending an official valueset.",
         "exampleBoolean": false
       },
       {

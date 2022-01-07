@@ -3,13 +3,13 @@
 <ValueSet xmlns="http://hl7.org/fhir">
   <id value="be-vs-referral-category"/>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><ul><li>Include these codes as defined in <a href="http://www.snomed.org/"><code>http://snomed.info/sct</code></a><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>English (English, en)</b></td><td><b>Nederlands (België) (Dutch (Belgium), nl)</b></td><td><b>French (Belgium) (fr)</b></td></tr><tr><td><a href="http://snomed.info/id/363679005">363679005</a></td><td>Imaging</td><td>Imaging</td><td>medische beeldvorming</td><td>imagerie médicale</td></tr><tr><td><a href="http://snomed.info/id/91251008">91251008</a></td><td>Physical therapy procedure</td><td>Physical therapy</td><td>kinesitherapie</td><td>kinésithérapie</td></tr><tr><td><a href="http://snomed.info/id/9632001">9632001</a></td><td>Nursing procedure</td><td>Nursing procedure</td><td>verpleegkundige procedure</td><td>procédure infirmière</td></tr><tr><td><a href="http://snomed.info/id/15220000">15220000</a></td><td>Laboratory test</td><td>Laboratory test</td><td>laboratorium test</td><td>test de laboratoire</td></tr></table></li></ul></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><ul><li>Include these codes as defined in <a href="http://www.snomed.org/"><code>http://snomed.info/sct</code></a><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>English (English, en)</b></td><td><b>Nederlands (België) (Dutch (Belgium), nl)</b></td><td><b>French (Belgium) (fr)</b></td></tr><tr><td><a href="http://snomed.info/id/363679005">363679005</a></td><td>Imaging</td><td>Imaging</td><td>medische beeldvorming</td><td>imagerie médicale</td></tr><tr><td><a href="http://snomed.info/id/91251008">91251008</a></td><td>Physical therapy procedure</td><td>Physical therapy</td><td>kinesitherapie</td><td>kinésithérapie</td></tr><tr><td><a href="http://snomed.info/id/9632001">9632001</a></td><td>Nursing procedure</td><td>Nursing procedure</td><td>verpleegkundige procedure</td><td>procédure infirmière</td></tr><tr><td><a href="http://snomed.info/id/15220000">15220000</a></td><td>Laboratory test</td><td>Laboratory test</td><td>laboratorium test</td><td>test de laboratoire</td></tr><tr><td><a href="http://snomed.info/id/312856000">312856000</a></td><td>Referral to diabetes nurse</td><td>Referral to diabetes nurse</td><td>Diabetes verwijzing</td><td>Renvoi diabétique</td></tr><tr><td><a href="http://snomed.info/id/183545006">183545006</a></td><td>Orthopedic referral</td><td>Orthopedic referral</td><td>Orthopedische verwijzing</td><td>Renvoi orthopédique</td></tr><tr><td><a href="http://snomed.info/id/69377005">69377005</a></td><td>Patient referral for rehabilitation, psychological (procedure)</td><td>Patient referral for rehabilitation, psychological</td><td>Psychologische of orthopedagogische verwijzing</td><td>Renvoi psychologique ou orthopédagogique</td></tr></table></li></ul></div>
   </text>
   <url value="https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-referral-category"/>
   <version value="0.2.0"/>
   <name value="BeReferralCategory"/>
   <status value="draft"/>
-  <date value="2021-12-01T15:42:29+00:00"/>
+  <date value="2021-10-07T15:14:36+02:00"/>
   <publisher value="HL7 Belgium"/>
   <contact>
     <name value="HL7 Belgium"/>
@@ -19,10 +19,10 @@
     </telecom>
   </contact>
   <contact>
-    <name value="Bart Decuypere"/>
+    <name value="Message-Structure"/>
     <telecom>
       <system value="email"/>
-      <value value="bart.decuypere@ehealth.fgov.be"/>
+      <value value="message-structure@ehealth.fgov.be"/>
       <use value="work"/>
     </telecom>
   </contact>
@@ -30,8 +30,8 @@
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
-      <code value="001"/>
-      <display value="World"/>
+      <code value="056"/>
+      <display value="Belgium"/>
     </coding>
   </jurisdiction>
   <compose>
@@ -131,6 +131,78 @@
         <designation>
           <language value="fr-BE"/>
           <value value="test de laboratoire"/>
+        </designation>
+      </concept>
+      <concept>
+        <code value="312856000"/>
+        <display value="Referral to diabetes nurse"/>
+        <designation>
+          <use>
+            <system value="http://snomed.info/sct"/>
+            <code value="900000000000003001"/>
+            <display value="Fully specified name"/>
+          </use>
+          <value value="Referral to diabetes nurse (procedure)"/>
+        </designation>
+        <designation>
+          <language value="en"/>
+          <value value="Referral to diabetes nurse"/>
+        </designation>
+        <designation>
+          <language value="nl-BE"/>
+          <value value="Diabetes verwijzing"/>
+        </designation>
+        <designation>
+          <language value="fr-BE"/>
+          <value value="Renvoi diabétique"/>
+        </designation>
+      </concept>
+      <concept>
+        <code value="183545006"/>
+        <display value="Orthopedic referral"/>
+        <designation>
+          <use>
+            <system value="http://snomed.info/sct"/>
+            <code value="900000000000003001"/>
+            <display value="Fully specified name"/>
+          </use>
+          <value value="Orthopedic referral (procedure)"/>
+        </designation>
+        <designation>
+          <language value="en"/>
+          <value value="Orthopedic referral"/>
+        </designation>
+        <designation>
+          <language value="nl-BE"/>
+          <value value="Orthopedische verwijzing"/>
+        </designation>
+        <designation>
+          <language value="fr-BE"/>
+          <value value="Renvoi orthopédique"/>
+        </designation>
+      </concept>
+      <concept>
+        <code value="69377005"/>
+        <display value="Patient referral for rehabilitation, psychological (procedure)"/>
+        <designation>
+          <use>
+            <system value="http://snomed.info/sct"/>
+            <code value="900000000000003001"/>
+            <display value="Fully specified name"/>
+          </use>
+          <value value="Patient referral for rehabilitation, psychological (procedure)"/>
+        </designation>
+        <designation>
+          <language value="en"/>
+          <value value="Patient referral for rehabilitation, psychological"/>
+        </designation>
+        <designation>
+          <language value="nl-BE"/>
+          <value value="Psychologische of orthopedagogische verwijzing"/>
+        </designation>
+        <designation>
+          <language value="fr-BE"/>
+          <value value="Renvoi psychologique ou orthopédagogique"/>
         </designation>
       </concept>
     </include>

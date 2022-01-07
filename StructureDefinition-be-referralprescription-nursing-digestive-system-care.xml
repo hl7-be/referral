@@ -25,10 +25,10 @@
     </telecom>
   </contact>
   <contact>
-    <name value="Bart Decuypere"/>
+    <name value="Message-Structure"/>
     <telecom>
       <system value="email"/>
-      <value value="bart.decuypere@ehealth.fgov.be"/>
+      <value value="message-structure@ehealth.fgov.be"/>
       <use value="work"/>
     </telecom>
   </contact>
@@ -36,8 +36,8 @@
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
-      <code value="001"/>
-      <display value="World"/>
+      <code value="056"/>
+      <display value="Belgium"/>
     </coding>
   </jurisdiction>
   <fhirVersion value="4.0.1"/>
@@ -343,7 +343,7 @@
       </slicing>
       <short value="Extension"/>
       <definition value="An Extension"/>
-      <min value="0"/>
+      <min value="1"/>
       <max value="*"/>
       <base>
         <path value="DomainResource.extension"/>
@@ -417,6 +417,177 @@
         <map value=".inboundRelationship[typeCode=SUBJ].source[classCode=CACT, moodCode=EVN].reasonCOde"/>
       </mapping>
     </element>
+    <element id="ServiceRequest.extension:statusReason.id">
+      <path value="ServiceRequest.extension.id"/>
+      <representation value="xmlAttr"/>
+      <short value="Unique id for inter-element referencing"/>
+      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Element.id"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
+          <valueUrl value="string"/>
+        </extension>
+        <code value="http://hl7.org/fhirpath/System.String"/>
+      </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="ServiceRequest.extension:statusReason.extension">
+      <path value="ServiceRequest.extension.extension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url"/>
+        <rules value="open"/>
+      </slicing>
+      <short value="Extension"/>
+      <definition value="An Extension"/>
+      <min value="0"/>
+      <max value="0"/>
+      <base>
+        <path value="Element.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+    </element>
+    <element id="ServiceRequest.extension:statusReason.url">
+      <path value="ServiceRequest.extension.url"/>
+      <representation value="xmlAttr"/>
+      <short value="identifies the meaning of the extension"/>
+      <definition value="Source of the definition for the extension code - a logical name or a URL."/>
+      <comment value="The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension."/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="Extension.url"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
+          <valueUrl value="uri"/>
+        </extension>
+        <code value="http://hl7.org/fhirpath/System.String"/>
+      </type>
+      <fixedUri value="http://hl7.org/fhir/StructureDefinition/request-statusReason"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
+    </element>
+    <element id="ServiceRequest.extension:statusReason.value[x]">
+      <path value="ServiceRequest.extension.value[x]"/>
+      <slicing>
+        <discriminator>
+          <type value="type"/>
+          <path value="$this"/>
+        </discriminator>
+        <ordered value="false"/>
+        <rules value="closed"/>
+      </slicing>
+      <short value="Value of extension"/>
+      <definition value="Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/extensibility.html) for a list)."/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="Extension.value[x]"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="StatusReason"/>
+        </extension>
+        <strength value="example"/>
+        <description value="Codes identifying the reason for the current state of an event."/>
+      </binding>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
+    </element>
+    <element id="ServiceRequest.extension:statusReason.value[x]:valueCodeableConcept">
+      <path value="ServiceRequest.extension.value[x]"/>
+      <sliceName value="valueCodeableConcept"/>
+      <short value="Value of extension"/>
+      <definition value="Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/extensibility.html) for a list)."/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="Extension.value[x]"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <binding>
+        <strength value="extensible"/>
+        <valueSet value="https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-reason-referral-status"/>
+      </binding>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
+    </element>
     <element id="ServiceRequest.extension:informParty">
       <path value="ServiceRequest.extension"/>
       <sliceName value="informParty"/>
@@ -432,6 +603,79 @@
       <type>
         <code value="Extension"/>
         <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-inform-party"/>
+      </type>
+      <condition value="ele-1"/>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &#39;value&#39;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+    </element>
+    <element id="ServiceRequest.extension:coprescriber">
+      <path value="ServiceRequest.extension"/>
+      <sliceName value="coprescriber"/>
+      <short value="Other parties that have to take part in the prescription."/>
+      <definition value="Other practitioners that must take part in this prescripiton"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="DomainResource.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+        <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-co-prescriber"/>
+      </type>
+      <condition value="ele-1"/>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &#39;value&#39;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+    </element>
+    <element id="ServiceRequest.extension:validity">
+      <path value="ServiceRequest.extension"/>
+      <sliceName value="validity"/>
+      <short value="Validity period of the prescription"/>
+      <definition value="The period during which the resource content was or is planned to be effective."/>
+      <comment value="The effective period for a resource  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 would be published in 2015."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="DomainResource.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod"/>
       </type>
       <condition value="ele-1"/>
       <constraint>
@@ -1127,7 +1371,7 @@
       <path value="ServiceRequest.status"/>
       <short value="draft | active | on-hold | revoked | completed | entered-in-error | unknown"/>
       <definition value="The status of the order."/>
-      <comment value="The status is generally fully in the control of the requester - they determine whether the order is draft or active and, after it has been activated, competed, cancelled or suspended. States relating to the activities of the performer are reflected on either the corresponding event (see [Event Pattern](http://hl7.org/fhir/R4/event.html) for general discussion) or using the [Task](http://hl7.org/fhir/R4/task.html) resource."/>
+      <comment value="The status is generally fully in the control of the requester - they determine whether the order is draft or active and, after it has been activated, competed, cancelled or suspended. States relating to the activities of the performer are reflected on either the corresponding event (see [Event Pattern](event.html) for general discussion) or using the [Task](http://hl7.org/fhir/R4/task.html) resource."/>
       <min value="1"/>
       <max value="1"/>
       <base>
@@ -2829,7 +3073,7 @@
       <path value="ServiceRequest.reasonCode"/>
       <short value="Explanation/Justification for procedure or service"/>
       <definition value="An explanation or justification for why this service is being requested in coded or textual form.   This is often for billing purposes.  May relate to the resources referred to in `supportingInfo`."/>
-      <comment value="This element represents why the referral is being made and may be used to decide how the service will be performed, or even if it will be performed at all.   Use `CodeableConcept.text` element if the data is free (uncoded) text as shown in the [CT Scan example](http://hl7.org/fhir/R4/servicerequest-example-di.html)."/>
+      <comment value="This element represents why the referral is being made and may be used to decide how the service will be performed, or even if it will be performed at all.   Use `CodeableConcept.text` element if the data is free (uncoded) text as shown in the [CT Scan example](servicerequest-example-di.html)."/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -2880,7 +3124,7 @@
       <path value="ServiceRequest.reasonReference"/>
       <short value="Explanation/Justification for service or service"/>
       <definition value="Indicates another resource that provides a justification for why this service is being requested.   May relate to the resources referred to in `supportingInfo`."/>
-      <comment value="This element represents why the referral is being made and may be used to decide how the service will be performed, or even if it will be performed at all.    To be as specific as possible,  a reference to  *Observation* or *Condition* should be used if available.  Otherwise when referencing  *DiagnosticReport*  it should contain a finding  in `DiagnosticReport.conclusion` and/or `DiagnosticReport.conclusionCode`.   When using a reference to *DocumentReference*, the target document should contain clear findings language providing the relevant reason for this service request.  Use  the CodeableConcept text element in `ServiceRequest.reasonCode` if the data is free (uncoded) text as shown in the [CT Scan example](http://hl7.org/fhir/R4/servicerequest-example-di.html)."/>
+      <comment value="This element represents why the referral is being made and may be used to decide how the service will be performed, or even if it will be performed at all.    To be as specific as possible,  a reference to  *Observation* or *Condition* should be used if available.  Otherwise when referencing  *DiagnosticReport*  it should contain a finding  in `DiagnosticReport.conclusion` and/or `DiagnosticReport.conclusionCode`.   When using a reference to *DocumentReference*, the target document should contain clear findings language providing the relevant reason for this service request.  Use  the CodeableConcept text element in `ServiceRequest.reasonCode` if the data is free (uncoded) text as shown in the [CT Scan example](servicerequest-example-di.html)."/>
       <min value="0"/>
       <max value="*"/>
       <base>

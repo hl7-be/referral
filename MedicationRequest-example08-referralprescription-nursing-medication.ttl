@@ -11,14 +11,14 @@
   fhir:Resource.id [ fhir:value "example08-referralprescription-nursing-medication"];
   fhir:Resource.meta [
      fhir:Meta.profile [
-       fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication";
+       fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication";
        fhir:index 0;
-       fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication>
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication>
      ]
   ];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"example08-referralprescription-nursing-medication\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referralprescription-nursing-medication.html\">BeReferralPrescriptionNursingMedication</a></p></div><p><b>identifier</b>: id: UHMEPVALUE</p><p><b>status</b>: active</p><p><b>statusReason</b>: Created <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-be-status-reason.html\">BeStatusReason</a>#created)</span></p><p><b>intent</b>: order</p><p><b>category</b>: Intramusculair <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-be-nursing-medication-injection.html\">BeNursingMedicationInjection</a>#IM)</span></p><p><b>priority</b>: routine</p><p><b>medication</b>: Hydroxocobalamine Acetate Sterop inj./drinkb. oploss. i.m./i.v./or. [amp.] 3 x 10 mg / 2 ml <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (cnk-codes#0048454)</span></p><p><b>subject</b>: <a href=\"Patient-patient1.html\">Patient/patient1</a> \" DOE\"</p><p><b>requester</b>: <a href=\"Practitioner-practitioner1.html\">Practitioner/practitioner1</a> \" MCCOY\"</p><p><b>performer</b>: <a href=\"Practitioner-practitioner2.html\">Practitioner/practitioner2</a> \" CHAPEL\"</p><p><b>performerType</b>: Nurse <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#106292003)</span></p><p><b>note</b>: Vitamine B12</p></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"example08-referralprescription-nursing-medication\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referralprescription-nursing-gen-medication.html\">BeReferralPrescriptionNursingGenMedication</a></p></div><p><b>identifier</b>: id: UHMEPVALUE</p><p><b>status</b>: active</p><p><b>statusReason</b>: Created <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-be-status-reason.html\">BeStatusReason</a>#created)</span></p><p><b>intent</b>: order</p><p><b>category</b>: Intramuscular injection <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#76601001)</span></p><p><b>priority</b>: routine</p><p><b>medication</b>: Hydroxocobalamine Acetate Sterop inj./drinkb. oploss. i.m./i.v./or. [amp.] 3 x 10 mg / 2 ml <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (cnk-codes#0048454)</span></p><p><b>subject</b>: <a href=\"Patient-patient1.html\">Patient/patient1</a> \" DOE\"</p><p><b>requester</b>: <a href=\"Practitioner-practitioner1.html\">Practitioner/practitioner1</a> \" MCCOY\"</p><p><b>performer</b>: <a href=\"Practitioner-practitioner2.html\">Practitioner/practitioner2</a> \" CHAPEL\"</p><p><b>performerType</b>: Nurse <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#106292003)</span></p><p><b>note</b>: Vitamine B12</p></div>"
   ];
   fhir:MedicationRequest.identifier [
      fhir:index 0;
@@ -39,10 +39,10 @@
      fhir:index 0;
      fhir:CodeableConcept.coding [
        fhir:index 0;
-       fhir:Coding.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-injection" ];
-       fhir:Coding.code [ fhir:value "IM" ]
-     ];
-     fhir:CodeableConcept.text [ fhir:value "Intramusculair" ]
+       a sct:76601001;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "76601001" ]
+     ]
   ];
   fhir:MedicationRequest.priority [ fhir:value "routine"];
   fhir:MedicationRequest.medicationCodeableConcept [
