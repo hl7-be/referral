@@ -499,7 +499,7 @@ Usage: #example
 * note.text = "Frequency: 1x per week, startdatum 25/02/2021, einddatum 31/12/2021"
 
 Instance: example26-referralprescription-nursing-other
-InstanceOf: BeReferralPrescriptionNursingOther
+InstanceOf: BeReferralPrescriptionNursingGenOther
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"
 * extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
@@ -510,7 +510,8 @@ Usage: #example
 * category.text = "Nursing procedure"
 * priority = #routine
 * code = $be-cs-nursing-code#other
-* orderDetail =  https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code-other#sample-collection
+* orderDetail = $sct#82078001
+//* orderDetail =  https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code-other#sample-collection
 * subject = Reference(Patient/patient1)
 * occurrenceDateTime = "2021-02-25T00:00:00.000Z"
 * requester = Reference(Practitioner/practitioner1)
