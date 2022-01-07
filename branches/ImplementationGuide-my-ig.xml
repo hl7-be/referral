@@ -21,10 +21,10 @@
     </telecom>
   </contact>
   <contact>
-    <name value="Bart Decuypere"/>
+    <name value="Message-Structure"/>
     <telecom>
       <system value="email"/>
-      <value value="bart.decuypere@ehealth.fgov.be"/>
+      <value value="message-structure@ehealth.fgov.be"/>
       <use value="work"/>
     </telecom>
   </contact>
@@ -32,8 +32,8 @@
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
-      <code value="001"/>
-      <display value="World"/>
+      <code value="056"/>
+      <display value="Belgium"/>
     </coding>
   </jurisdiction>
   <packageId value="my-ig"/>
@@ -202,6 +202,17 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/be-referralprescription"/>
+      </reference>
+      <name value="BeReferralPrescription"/>
+      <description value="The common structure for referral prescription."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/be-referralprescription-nursing"/>
       </reference>
       <name value="BeReferralPrescriptionNursing"/>
@@ -254,6 +265,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-co-prescriber"/>
+      </reference>
+      <name value="BeCoPrescriber"/>
+      <description value="Other practitioners that must take part in this prescripiton"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:logical"/>
       </extension>
       <reference>
@@ -292,17 +314,6 @@
         <reference value="StructureDefinition/be-model-physiotherapyprescription"/>
       </reference>
       <name value="BePhysiotherapyPrescription"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:logical"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/be-model-referralprescription"/>
-      </reference>
-      <name value="BeReferralPrescription"/>
-      <description value="Logical model describing the model for the prescription referral. This draft is used in the HL7 Belgian workgroup for referral."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -417,6 +428,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-referral-category"/>
+      </reference>
+      <name value="BeReferralCategory"/>
+      <description value="Codes to define the high level category for a referral prescription. SNOMED-CT codes in this valueset are just a draft proposal to give a general idea - pending an official valueset."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="RequestGroup"/>
       </extension>
       <reference>
@@ -443,7 +465,7 @@
         <reference value="ServiceRequest/example02-referralprescription-nursing-digestive-system-care"/>
       </reference>
       <name value="example02-referralprescription-nursing-digestive-system-care"/>
-      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -453,7 +475,7 @@
         <reference value="ServiceRequest/example03-referralprescription-nursing-compressiontherapy"/>
       </reference>
       <name value="example03-referralprescription-nursing-compressiontherapy"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -463,7 +485,7 @@
         <reference value="ServiceRequest/example04-referralprescription-nursing-bladder-care"/>
       </reference>
       <name value="example04-referralprescription-nursing-bladder-care"/>
-      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -473,7 +495,7 @@
         <reference value="ServiceRequest/example05-referralprescription-nursing-digestive-system-care"/>
       </reference>
       <name value="example05-referralprescription-nursing-digestive-system-care"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -483,7 +505,7 @@
         <reference value="ServiceRequest/example06-referralprescription-nursing-compression-therapy"/>
       </reference>
       <name value="example06-referralprescription-nursing-compression-therapy"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -503,7 +525,7 @@
         <reference value="MedicationRequest/example08-referralprescription-nursing-medication"/>
       </reference>
       <name value="example08-referralprescription-nursing-medication"/>
-      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -513,7 +535,7 @@
         <reference value="ServiceRequest/example09-referralprescription-nursing-woundcare"/>
       </reference>
       <name value="example09-referralprescription-nursing-woundcare"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -523,7 +545,7 @@
         <reference value="MedicationRequest/example10-referralprescription-nursing-medication"/>
       </reference>
       <name value="example10-referralprescription-nursing-medication"/>
-      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -543,7 +565,7 @@
         <reference value="MedicationRequest/example13-referralprescription-nursing-medication"/>
       </reference>
       <name value="example13-referralprescription-nursing-medication"/>
-      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -563,7 +585,7 @@
         <reference value="MedicationRequest/example17-referralprescription-nursing-medication"/>
       </reference>
       <name value="example17-referralprescription-nursing-medication"/>
-      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -573,7 +595,7 @@
         <reference value="MedicationRequest/example19-referralprescription-nursing-medication"/>
       </reference>
       <name value="example19-referralprescription-nursing-medication"/>
-      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -583,7 +605,7 @@
         <reference value="MedicationRequest/example20-referralprescription-nursing-medication"/>
       </reference>
       <name value="example20-referralprescription-nursing-medication"/>
-      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -593,7 +615,7 @@
         <reference value="MedicationRequest/example22-referralprescription-nursing-medication"/>
       </reference>
       <name value="example22-referralprescription-nursing-medication"/>
-      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -603,7 +625,7 @@
         <reference value="MedicationRequest/example23-referralprescription-nursing-medication"/>
       </reference>
       <name value="example23-referralprescription-nursing-medication"/>
-      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -613,7 +635,7 @@
         <reference value="ServiceRequest/example24-referralprescription-nursing-non-reimbursable"/>
       </reference>
       <name value="example24-referralprescription-nursing-non-reimbursable"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -623,7 +645,7 @@
         <reference value="ServiceRequest/example26-referralprescription-nursing-other"/>
       </reference>
       <name value="example26-referralprescription-nursing-other"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -633,7 +655,7 @@
         <reference value="ServiceRequest/example30-referralprescription-nursing-woundcare"/>
       </reference>
       <name value="example30-referralprescription-nursing-woundcare"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -643,7 +665,7 @@
         <reference value="MedicationRequest/example31-referralprescription-nursing-medication"/>
       </reference>
       <name value="example31-referralprescription-nursing-medication"/>
-      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -819,17 +841,6 @@
       </reference>
       <name value="BeReferralPrescriptionRequestGroup"/>
       <description value="Envelope that allows different referralprescriptions to have an order"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/be-referralprescription"/>
-      </reference>
-      <name value="BeReferralPrescription"/>
-      <description value="The common structure for referral prescription."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1105,17 +1116,6 @@
       </reference>
       <name value="BeReasonReferralStatus"/>
       <description value="Codes to explain the current status of a referral prescription."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
-        <reference value="ValueSet/be-vs-referral-category"/>
-      </reference>
-      <name value="BeReferralCategory"/>
-      <description value="Codes to define the high level category for a referral prescription. SNOMED-CT codes in this valueset are just a draft proposal to give a general idea - pending an official valueset."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

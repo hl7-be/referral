@@ -11,65 +11,14 @@
   fhir:Resource.id [ fhir:value "example02-referralprescription-nursing-digestive-system-care"];
   fhir:Resource.meta [
      fhir:Meta.profile [
-       fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing";
+       fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other";
        fhir:index 0;
-       fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing>
-     ], [
-       fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-digestive-system-care";
-       fhir:index 1;
-       fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-digestive-system-care>
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other>
      ]
   ];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "extensions" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"example02-referralprescription-nursing-digestive-system-care\" </p><p style=\"margin-bottom: 0px\">Profiles: <a href=\"StructureDefinition-be-referralprescription-nursing.html\">BeReferralPrescriptionNursing</a>, <a href=\"StructureDefinition-be-referralprescription-nursing-digestive-system-care.html\">BeReferralPrescriptionNursingDigestiveSystemCare</a></p></div><p><b>Reason for current status</b>: Created <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-be-status-reason.html\">BeStatusReason</a>#created)</span></p><p><b>status</b>: active</p><p><b>intent</b>: order</p><p><b>category</b>: Nursing procedure <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#9632001)</span></p><p><b>priority</b>: routine</p><p><b>code</b>: Digestive system care <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-be-cs-nursing-code.html\">BeNursingCode</a>#digestive-system-care)</span></p><p><b>orderDetail</b>: Enteral feeding gastrostomy probe <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-codesystem-be-digestive-system-care.html\">BeDigestiveSystemCare</a>#enteral-feeding-gastrostomy-probe)</span></p><p><b>subject</b>: <a name=\"Patient1\"> </a></p><blockquote><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Patient1\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"https://build.fhir.org/ig/hl7-be/hl7-be-fhir//StructureDefinition-be-patient.html\">BePatient</a></p></div><p><b>identifier</b>: id: 9999999999 (OFFICIAL)</p><p><b>name</b>: Jane Doe </p><p><b>telecom</b>: ph: 322672299(HOME)</p><p><b>gender</b>: female</p><p><b>birthDate</b>: 1956-05-27</p><p><b>address</b>: Labradorstraat 26, 1000 Brussel(HOME)</p></blockquote><p><b>occurrence</b>: Starting 2022-04-19, Do 2 per 1 days, Until 2023-04-19</p><p><b>requester</b>: <a href=\"Practitioner-practitioner1.html\">Practitioner/practitioner1</a> \" MCCOY\"</p><p><b>performerType</b>: Nurse <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#106292003)</span></p><p><b>performer</b>: <a href=\"Practitioner-practitioner2.html\">Practitioner/practitioner2</a> \" CHAPEL\"</p><p><b>note</b>: patient can not move (niet verplaatsen)</p></div>"
-  ];
-  fhir:DomainResource.contained [
-     a fhir:Patient;
-     fhir:index 0;
-     fhir:Resource.id [ fhir:value "Patient1" ];
-     fhir:Resource.meta [
-       fhir:Meta.profile [
-         fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient";
-         fhir:index 0;
-         fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient>
-       ]
-     ];
-     fhir:Patient.identifier [
-       fhir:index 0;
-       fhir:Identifier.use [ fhir:value "official" ];
-       fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/ssin" ];
-       fhir:Identifier.value [ fhir:value "9999999999" ]
-     ];
-     fhir:Patient.name [
-       fhir:index 0;
-       fhir:HumanName.family [ fhir:value "Doe" ];
-       fhir:HumanName.given [
-         fhir:value "Jane";
-         fhir:index 0
-       ]
-     ];
-     fhir:Patient.telecom [
-       fhir:index 0;
-       fhir:ContactPoint.system [ fhir:value "phone" ];
-       fhir:ContactPoint.value [ fhir:value "322672299" ];
-       fhir:ContactPoint.use [ fhir:value "home" ]
-     ];
-     fhir:Patient.gender [ fhir:value "female" ];
-     fhir:Patient.birthDate [ fhir:value "1956-05-27"^^xsd:date ];
-     fhir:Patient.address [
-       fhir:index 0;
-       fhir:Address.use [ fhir:value "home" ];
-       fhir:Address.type [ fhir:value "both" ];
-       fhir:Address.text [ fhir:value "Labradorstraat 26, 1000 Brussel" ];
-       fhir:Address.line [
-         fhir:value "Labradorstraat 26";
-         fhir:index 0
-       ];
-       fhir:Address.city [ fhir:value "Brussel" ];
-       fhir:Address.postalCode [ fhir:value "1000" ];
-       fhir:Address.country [ fhir:value "BE" ]
-     ]
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"example02-referralprescription-nursing-digestive-system-care\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referralprescription-nursing-gen-other.html\">BeReferralPrescriptionNursingGenOther</a></p></div><p><b>Reason for current status</b>: Created <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-be-status-reason.html\">BeStatusReason</a>#created)</span></p><p><b>status</b>: active</p><p><b>intent</b>: order</p><p><b>category</b>: Nursing procedure <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#9632001)</span></p><p><b>priority</b>: routine</p><p><b>code</b>: Other <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-be-cs-nursing-code.html\">BeNursingCode</a>#other)</span></p><p><b>orderDetail</b>: Gastrostomy feeding <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#229917005)</span></p><p><b>subject</b>: <span></span></p><p><b>occurrence</b>: Starting 2022-04-19, Do 2 per 1 days, Until 2023-04-19</p><p><b>requester</b>: <a href=\"Practitioner-practitioner1.html\">Practitioner/practitioner1</a> \" MCCOY\"</p><p><b>performerType</b>: Nurse <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#106292003)</span></p><p><b>performer</b>: <a href=\"Practitioner-practitioner2.html\">Practitioner/practitioner2</a> \" CHAPEL\"</p><p><b>note</b>: patient can not move (niet verplaatsen)</p></div>"
   ];
   fhir:DomainResource.extension [
      fhir:index 0;
@@ -100,19 +49,23 @@
      fhir:CodeableConcept.coding [
        fhir:index 0;
        fhir:Coding.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code" ];
-       fhir:Coding.code [ fhir:value "digestive-system-care" ]
+       fhir:Coding.code [ fhir:value "other" ]
      ]
   ];
   fhir:ServiceRequest.orderDetail [
      fhir:index 0;
      fhir:CodeableConcept.coding [
        fhir:index 0;
-       fhir:Coding.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-digestive-system-care" ];
-       fhir:Coding.code [ fhir:value "enteral-feeding-gastrostomy-probe" ]
+       a sct:229917005;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "229917005" ]
      ]
   ];
   fhir:ServiceRequest.subject [
-     fhir:Reference.reference [ fhir:value "#Patient1" ]
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/ssin" ];
+       fhir:Identifier.value [ fhir:value "9999999999" ]
+     ]
   ];
   fhir:ServiceRequest.occurrenceTiming [
      fhir:Timing.repeat [
