@@ -20,7 +20,7 @@ htmlxhtmldisplay","",0,1,"","","","Narrative {[]} {[]}
 "ServiceRequest.contained","","inline resources
 anonymous resourcescontained resources","",0,*,"","","","Resource {[]} {[]}
 ","Contained, inline Resources","These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.","This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again. Contained resources may have profiles and tags In their meta elements, but SHALL NOT have security labels.","","","","","","","","",,,,,"",,,,"DomainResource.contained",0,*,"","","N/A"
-"ServiceRequest.extension","","","",1,*,"","","","Extension {[]} {[]}
+"ServiceRequest.extension","","","",3,*,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","",,"open","DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
@@ -51,8 +51,12 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Other parties that have to take part in the prescription.","Other practitioners that must take part in this prescripiton","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"ServiceRequest.extension","validity","","",0,1,"Y","","","Extension {[CanonicalType[http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod]]} {[]}
+"ServiceRequest.extension","validity","","",1,1,"Y","","","Extension {[CanonicalType[http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod]]} {[]}
 ","Validity period of the prescription","The period during which the resource content was or is planned to be effective.","The effective period for a resource  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 would be published in 2015.","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ServiceRequest.extension","executed","","",1,*,"Y","","","Extension {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-execution-period]]} {[]}
+","BeExecutionPeriod","Begin and enddate of the execution of the request","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "ServiceRequest.modifierExtension","","extensions
@@ -153,7 +157,7 @@ Period {[]} {[]}Timing {[]} {[]}","When service shall occur - once this is past,
 CodeableConcept {[]} {[]}","Preconditions for service","If a CodeableConcept is present, it indicates the pre-condition for performing the service.  For example ""pain"", ""on flare-up"", etc.","","","","","","","","","",,"example","A coded concept identifying the pre-condition that should hold prior to performing a procedure.  For example ""pain"", ""on flare-up"", etc.","http://hl7.org/fhir/ValueSet/medication-as-needed-reason","",,,,"ServiceRequest.asNeeded[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","boolean: precondition.negationInd (inversed - so negationInd = true means asNeeded=false CodeableConcept: precondition.observationEventCriterion[code=""Assertion""].value","Proposal.prnReason.reason"
 "ServiceRequest.authoredOn","","orderedOn
-","",0,1,"Y","","Y","dateTime {[]} {[]}
+","",1,1,"Y","","Y","dateTime {[]} {[]}
 ","Date request signed","When the request transitioned to being actionable.","","","","","","","","","",,,,,"",,,,"ServiceRequest.authoredOn",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Request.authoredOn","ORC.9,  RF1-7 / RF1-9",".participation[typeCode=AUT].time","FiveWs.recorded","Proposal.proposedAtTime"
 "ServiceRequest.requester","","author
@@ -174,7 +178,7 @@ orderer","",1,1,"Y","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/S
 "ServiceRequest.locationReference","","","",0,*,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Location]]}
 ","Requested location","A reference to the the preferred location(s) where the procedure should actually happen. E.g. at home or nursing day care center.","","","","","","","","","",,,,,"",,,,"ServiceRequest.locationReference",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".participation[typeCode=LOC].role[scoper.determinerCode=INSTANCE]","FiveWs.actor"
-"ServiceRequest.reasonCode","","","",0,*,"Y","","Y","CodeableConcept {[]} {[]}
+"ServiceRequest.reasonCode","","","",1,1,"Y","","Y","CodeableConcept {[]} {[]}
 ","Explanation/Justification for procedure or service","An explanation or justification for why this service is being requested in coded or textual form.   This is often for billing purposes.  May relate to the resources referred to in `supportingInfo`.","This element represents why the referral is being made and may be used to decide how the service will be performed, or even if it will be performed at all.   Use `CodeableConcept.text` element if the data is free (uncoded) text as shown in the [CT Scan example](servicerequest-example-di.html).","","","","","","","","",,"example","Diagnosis or problem codes justifying the reason for requesting the service investigation.","http://hl7.org/fhir/ValueSet/procedure-reason","",,,,"ServiceRequest.reasonCode",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Request.reasonCode","ORC.16, RF1-10",".reasonCode","FiveWs.why[x]"
 "ServiceRequest.reasonReference","","","",0,*,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Condition], CanonicalType[http://hl7.org/fhir/StructureDefinition/Observation], CanonicalType[http://hl7.org/fhir/StructureDefinition/DiagnosticReport], CanonicalType[http://hl7.org/fhir/StructureDefinition/DocumentReference]]}

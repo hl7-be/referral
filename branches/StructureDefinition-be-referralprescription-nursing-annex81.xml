@@ -355,7 +355,7 @@
       </slicing>
       <short value="Extension"/>
       <definition value="An Extension"/>
-      <min value="1"/>
+      <min value="3"/>
       <max value="*"/>
       <base>
         <path value="DomainResource.extension"/>
@@ -678,7 +678,7 @@
       <short value="Validity period of the prescription"/>
       <definition value="The period during which the resource content was or is planned to be effective."/>
       <comment value="The effective period for a resource  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 would be published in 2015."/>
-      <min value="0"/>
+      <min value="1"/>
       <max value="1"/>
       <base>
         <path value="DomainResource.extension"/>
@@ -688,6 +688,42 @@
       <type>
         <code value="Extension"/>
         <profile value="http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod"/>
+      </type>
+      <condition value="ele-1"/>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &#39;value&#39;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+    </element>
+    <element id="ServiceRequest.extension:executed">
+      <path value="ServiceRequest.extension"/>
+      <sliceName value="executed"/>
+      <short value="BeExecutionPeriod"/>
+      <definition value="Begin and enddate of the execution of the request"/>
+      <min value="1"/>
+      <max value="*"/>
+      <base>
+        <path value="DomainResource.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+        <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-execution-period"/>
       </type>
       <condition value="ele-1"/>
       <constraint>
@@ -3754,7 +3790,7 @@
       <short value="Date request signed"/>
       <definition value="When the request transitioned to being actionable."/>
       <alias value="orderedOn"/>
-      <min value="0"/>
+      <min value="1"/>
       <max value="1"/>
       <base>
         <path value="ServiceRequest.authoredOn"/>
@@ -4035,8 +4071,8 @@
       <short value="Explanation/Justification for procedure or service"/>
       <definition value="An explanation or justification for why this service is being requested in coded or textual form.   This is often for billing purposes.  May relate to the resources referred to in `supportingInfo`."/>
       <comment value="This element represents why the referral is being made and may be used to decide how the service will be performed, or even if it will be performed at all.   Use `CodeableConcept.text` element if the data is free (uncoded) text as shown in the [CT Scan example](servicerequest-example-di.html)."/>
-      <min value="0"/>
-      <max value="*"/>
+      <min value="1"/>
+      <max value="1"/>
       <base>
         <path value="ServiceRequest.reasonCode"/>
         <min value="0"/>
