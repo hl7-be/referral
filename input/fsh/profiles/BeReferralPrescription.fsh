@@ -17,7 +17,8 @@ Description: "The common structure for referral prescription."
     $request-statusReason named statusReason 1..1 MS and
     BeInformParty named informParty 0..* MS and
 	BeCoPrescriber named coprescriber 0..* MS and
-    http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod named validity 0..1 MS
+    http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod named validity 1..1 MS and
+    BeExecutionPeriod named executed 1..* MS
 * extension[statusReason].value[x] only CodeableConcept
 * extension[statusReason].valueCodeableConcept from BeReasonReferralStatus (extensible)
 * extension[informParty] ^short = "Parties to inform of fulfillment of the prescription, besides the prescriber."
@@ -44,7 +45,7 @@ Description: "The common structure for referral prescription."
 * subject MS
 * occurrence[x] MS
 * occurrence[x] ^short = "When service shall occur - once this is past, this prescription is no longer valid and the status shall reflect this."
-* authoredOn MS
+* authoredOn 1..1 MS
 * requester 1.. MS
 * requester only Reference(RelatedPerson or Device or BePatient or BeOrganization or BePractitioner or BePractitionerRole)
 * requester ^short = "Prescriber of the requested service"
@@ -53,5 +54,5 @@ Description: "The common structure for referral prescription."
 * performer only Reference(CareTeam or HealthcareService or Device or RelatedPerson or BePractitioner or BePractitionerRole or BePatient or BeOrganization)
 * performer MS
 * performer ^short = "Requested performer - typically reference to practitioner but could also be reference to related person by business identifier or Reference.display"
-* reasonCode MS
+* reasonCode 1..1 MS
 * patientInstruction MS

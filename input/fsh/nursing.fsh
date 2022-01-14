@@ -520,7 +520,7 @@ Usage: #example
 * note.text = "bloedafname, Frequency: eenmalig, nuchter"
 
 Instance: example30-referralprescription-nursing-woundcare
-InstanceOf: BeReferralPrescriptionNursingGenOther
+InstanceOf: BeReferralPrescriptionNursingGenMedication
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"
 * extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
@@ -532,18 +532,19 @@ Usage: #example
 * category = $sct#9632001
 * category.text = "Nursing procedure"
 * priority = #routine
-* code = $be-cs-nursing-code#other
-* occurrenceTiming.repeat.frequency = 1
-* occurrenceTiming.repeat.period = 1
-* occurrenceTiming.repeat.periodUnit = #d
+* category[0].coding = $sct#733925000
+* medicationCodeableConcept = $cnk_product_codes#2501013 "Flaminal gel Hydro 1 x 50 g"
+* priority = #routine
+* subject = Reference(Patient/patient1)
+* dosageInstruction.timing.repeat.frequency = 1
+* dosageInstruction.timing.repeat.period = 1
+* dosageInstruction.timing.repeat.periodUnit = #d
 * requester = Reference(Practitioner/practitioner1)
 * performerType = $sct#106292003 "Nurse"
 * performer = Reference(Practitioner/practitioner2)
 * note.text = "wound care codeset/valueset is still missing (see orderDetail)/ waar komt de medicatie Flaminal Hydro"
-* orderDetail = https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-digestive-system-care#manual-removal-of-faecal-omen
-* subject = Reference(Patient/patient1)
 * reasonCode = $sct#195450002
-* bodySite = $sct#771354004
+* dosageInstruction.site = $sct#771354004
 
 
 
@@ -558,8 +559,7 @@ Usage: #example
 * identifier.value = "UHMEPVALUE"
 * status = #active
 * intent = #order
-* category[0].coding = https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-percutaneous#ointment-or-medicinal-product
-* category[0].text = "Ointment or medicinal product"
+* category[0].coding = $sct#733925000
 * medicationCodeableConcept = $cnk_product_codes#3499415 "Clamoxyl inj./inf. oploss. (pdr. + solv.) i.m./i.v. [flac. + amp.] 10 x 1 g"
 * priority = #routine
 * subject = Reference(Patient/patient1)
