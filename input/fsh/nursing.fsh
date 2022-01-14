@@ -16,6 +16,14 @@ Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"
 * extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
 * extension.valueCodeableConcept = $be-status-reason#created "Created"
+* extension[validity].url = "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod"
+* extension[validity].valuePeriod.start = "2022-04-19"
+* extension[validity].valuePeriod.end = "2023-04-19"
+* extension[executed].url = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-execution-period"
+* extension[executed].valuePeriod.start = "2022-04-19"
+* extension[executed].valuePeriod.end = "2023-04-19"
+* authoredOn = "2022-10-31"
+* reasonCode = $sct#309256001
 * status = #active
 * intent = #order
 * category = $sct#9632001
@@ -44,6 +52,14 @@ Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"
 * extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
 * extension.valueCodeableConcept = $be-status-reason#created "Created"
+* extension[validity].url = "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod"
+* extension[validity].valuePeriod.start = "2022-04-19"
+* extension[validity].valuePeriod.end = "2023-04-19"
+* extension[executed].url = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-execution-period"
+* extension[executed].valuePeriod.start = "2022-04-19"
+* extension[executed].valuePeriod.end = "2023-04-19"
+* authoredOn = "2022-10-31"
+* reasonCode = $sct#309256001
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"
 * identifier.value = "UHMEPVALUE"
 * status = #active
@@ -64,6 +80,7 @@ Usage: #example
 * performerType = $sct#106292003 "Nurse"
 * performer = Reference(Practitioner/practitioner2)
 * note.text = "Rosidal zwachtels ->  aan- en uitdoen / both underlegs"
+* authoredOn = "2022-10-31"
 
 Instance: example04-referralprescription-nursing-bladder-care
 InstanceOf: BeReferralPrescriptionNursingGenOther
@@ -71,6 +88,14 @@ Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"
 * extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
 * extension.valueCodeableConcept = $be-status-reason#created "Created"
+* extension[validity].url = "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod"
+* extension[validity].valuePeriod.start = "2022-04-19"
+* extension[validity].valuePeriod.end = "2023-04-19"
+* extension[executed].url = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-execution-period"
+* extension[executed].valuePeriod.start = "2022-04-19"
+* extension[executed].valuePeriod.end = "2023-04-19"
+* authoredOn = "2022-10-31"
+* reasonCode = $sct#309256001
 * status = #active
 * intent = #order
 * category = $sct#9632001
@@ -88,6 +113,7 @@ Usage: #example
 * requester = Reference(Practitioner/practitioner1)
 * performerType = $sct#106292003 "Nurse"
 * performer = Reference(Practitioner/practitioner2)
+* authoredOn = "2022-10-31"
 
 
 Instance: example05-referralprescription-nursing-digestive-system-care
@@ -96,6 +122,14 @@ Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"
 * extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
 * extension.valueCodeableConcept = $be-status-reason#created "Created"
+* extension[validity].url = "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod"
+* extension[validity].valuePeriod.start = "2022-04-19"
+* extension[validity].valuePeriod.end = "2023-04-19"
+* extension[executed].url = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-execution-period"
+* extension[executed].valuePeriod.start = "2022-04-19"
+* extension[executed].valuePeriod.end = "2023-04-19"
+* authoredOn = "2022-10-31"
+* reasonCode = $sct#309256001
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"
 * identifier.value = "UHMEPVALUE"
 * status = #active
@@ -115,6 +149,7 @@ Usage: #example
 * requester = Reference(Practitioner/practitioner1)
 * performerType = $sct#106292003 "Nurse"
 * performer = Reference(Practitioner/practitioner2)
+* authoredOn = "2022-10-31"
 
 Instance: example06-referralprescription-nursing-compression-therapy
 InstanceOf: BeReferralPrescriptionNursingGenOther
@@ -122,6 +157,14 @@ Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"
 * extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
 * extension.valueCodeableConcept = $be-status-reason#created "Created"
+* extension[validity].url = "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod"
+* extension[validity].valuePeriod.start = "2022-04-19"
+* extension[validity].valuePeriod.end = "2023-04-19"
+* extension[executed].url = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-execution-period"
+* extension[executed].valuePeriod.start = "2022-04-19"
+* extension[executed].valuePeriod.end = "2023-04-19"
+* authoredOn = "2022-10-31"
+* reasonCode = $sct#309256001
 * status = #active
 * intent = #order
 * category = $sct#9632001
@@ -139,6 +182,7 @@ Usage: #example
 * requester = Reference(Practitioner/practitioner1)
 * performerType = $sct#106292003 "Nurse"
 * performer = Reference(Practitioner/practitioner2)
+* authoredOn = "2022-10-31"
 
 //Instance: example07-referralprescription-nursing-medication
 //InstanceOf: BeReferralPrescriptionNursingMedication
@@ -205,6 +249,14 @@ Usage: #example
 * extension.valueCodeableConcept = $be-status-reason#created "Created"
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"
 * identifier.value = "UHMEPVALUE"
+* extension[validity].url = "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod"
+* extension[validity].valuePeriod.start = "2022-04-19"
+* extension[validity].valuePeriod.end = "2023-04-19"
+* extension[executed].url = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-execution-period"
+* extension[executed].valuePeriod.start = "2022-04-19"
+* extension[executed].valuePeriod.end = "2023-04-19"
+* authoredOn = "2022-10-31"
+* reasonCode = $sct#309256001
 * status = #active
 * intent = #order
 * category = $sct#9632001
@@ -222,6 +274,7 @@ Usage: #example
 * note.text = "wound care codeset/valueset is still missing (see orderDetail)"
 * orderDetail = https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-digestive-system-care#manual-removal-of-faecal-omen
 * subject = Reference(Patient/patient1)
+* authoredOn = "2022-10-31"
 
 Instance: example10-referralprescription-nursing-medication
 InstanceOf: BeReferralPrescriptionNursingGenMedication
@@ -254,6 +307,14 @@ Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-annex81"
 * extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
 * extension.valueCodeableConcept = $be-status-reason#created "Created"
+* extension[validity].url = "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod"
+* extension[validity].valuePeriod.start = "2022-04-19"
+* extension[validity].valuePeriod.end = "2023-04-19"
+* extension[executed].url = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-execution-period"
+* extension[executed].valuePeriod.start = "2022-04-19"
+* extension[executed].valuePeriod.end = "2023-04-19"
+* authoredOn = "2022-10-31"
+* reasonCode = $sct#309256001
 * status = #active
 * intent = #order
 * category = $sct#9632001
@@ -303,6 +364,14 @@ Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"
 * extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
 * extension.valueCodeableConcept = $be-status-reason#created "Created"
+* extension[validity].url = "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod"
+* extension[validity].valuePeriod.start = "2022-04-19"
+* extension[validity].valuePeriod.end = "2023-04-19"
+* extension[executed].url = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-execution-period"
+* extension[executed].valuePeriod.start = "2022-04-19"
+* extension[executed].valuePeriod.end = "2023-04-19"
+* authoredOn = "2022-10-31"
+* reasonCode = $sct#309256001
 * status = #active
 * intent = #order
 * category = $sct#9632001
@@ -319,6 +388,7 @@ Usage: #example
 * requester = Reference(Practitioner/practitioner1)
 * performerType = $sct#106292003 "Nurse"
 * performer = Reference(Practitioner/practitioner2)
+* authoredOn = "2022-10-31"
 
 Instance: example17-referralprescription-nursing-medication
 InstanceOf: BeReferralPrescriptionNursingGenMedication
@@ -504,6 +574,14 @@ Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"
 * extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
 * extension.valueCodeableConcept = $be-status-reason#created "Created"
+* extension[validity].url = "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod"
+* extension[validity].valuePeriod.start = "2022-04-19"
+* extension[validity].valuePeriod.end = "2023-04-19"
+* extension[executed].url = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-execution-period"
+* extension[executed].valuePeriod.start = "2022-04-19"
+* extension[executed].valuePeriod.end = "2023-04-19"
+* authoredOn = "2022-10-31"
+* reasonCode = $sct#309256001
 * status = #active
 * intent = #order
 * category = $sct#9632001
@@ -518,6 +596,7 @@ Usage: #example
 * performerType = $sct#106292003 "Nurse"
 * performer = Reference(Practitioner/practitioner2)
 * note.text = "bloedafname, Frequency: eenmalig, nuchter"
+* authoredOn = "2022-10-31"
 
 Instance: example30-referralprescription-nursing-woundcare
 InstanceOf: BeReferralPrescriptionNursingGenMedication
@@ -545,6 +624,7 @@ Usage: #example
 * note.text = "wound care codeset/valueset is still missing (see orderDetail)/ waar komt de medicatie Flaminal Hydro"
 * reasonCode = $sct#195450002
 * dosageInstruction.site = $sct#771354004
+* dosageInstruction.text = "some note about the dose"
 
 
 
