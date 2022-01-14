@@ -406,7 +406,7 @@
         },
         "short": "Extension",
         "definition": "An Extension",
-        "min": 1,
+        "min": 3,
         "max": "*",
         "base": {
           "path": "DomainResource.extension",
@@ -809,7 +809,7 @@
         "short": "Validity period of the prescription",
         "definition": "The period during which the resource content was or is planned to be effective.",
         "comment": "The effective period for a resource  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 would be published in 2015.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "DomainResource.extension",
@@ -821,6 +821,51 @@
             "code": "Extension",
             "profile": [
               "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod"
+            ]
+          }
+        ],
+        "condition": [
+          "ele-1"
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          },
+          {
+            "key": "ext-1",
+            "severity": "error",
+            "human": "Must have either extensions or value[x], not both",
+            "expression": "extension.exists() != value.exists()",
+            "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+            "source": "http://hl7.org/fhir/StructureDefinition/Extension"
+          }
+        ],
+        "mustSupport": true,
+        "isModifier": false
+      },
+      {
+        "id": "ServiceRequest.extension:executed",
+        "path": "ServiceRequest.extension",
+        "sliceName": "executed",
+        "short": "BeExecutionPeriod",
+        "definition": "Begin and enddate of the execution of the request",
+        "min": 1,
+        "max": "*",
+        "base": {
+          "path": "DomainResource.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-execution-period"
             ]
           }
         ],
@@ -3406,7 +3451,7 @@
         "alias": [
           "orderedOn"
         ],
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "ServiceRequest.authoredOn",
@@ -3747,8 +3792,8 @@
         "short": "Explanation/Justification for procedure or service",
         "definition": "An explanation or justification for why this service is being requested in coded or textual form.   This is often for billing purposes.  May relate to the resources referred to in `supportingInfo`.",
         "comment": "This element represents why the referral is being made and may be used to decide how the service will be performed, or even if it will be performed at all.   Use `CodeableConcept.text` element if the data is free (uncoded) text as shown in the [CT Scan example](servicerequest-example-di.html).",
-        "min": 0,
-        "max": "*",
+        "min": 1,
+        "max": "1",
         "base": {
           "path": "ServiceRequest.reasonCode",
           "min": 0,
