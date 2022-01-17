@@ -22,6 +22,10 @@ Usage: #example
 * extension[executed].url = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-execution-period"
 * extension[executed].valuePeriod.start = "2022-04-19"
 * extension[executed].valuePeriod.end = "2023-04-19"
+* extension[coprescriber]
+  * extension[coprescriptionStatus]
+    * url = "coprescriptionStatus"
+    * valueCodeableConcept = http://hl7.org/fhir/task-status#requested 
 * authoredOn = "2022-10-31"
 * reasonCode = $sct#309256001
 * status = #active
