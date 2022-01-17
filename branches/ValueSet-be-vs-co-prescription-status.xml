@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="be-vs-co-prescription-status"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><ul><li>Include these codes as defined in <a href="http://hl7.org/fhir/R4/codesystem-task-status.html"><code>http://hl7.org/fhir/task-status</code></a><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href="http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-requested">requested</a></td><td>Requested</td><td>The task is ready to be acted upon and action is sought.</td></tr><tr><td><a href="http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-accepted">accepted</a></td><td>Accepted</td><td>The potential performer has agreed to execute the task but has not yet started work.</td></tr><tr><td><a href="http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-rejected">rejected</a></td><td>Rejected</td><td>The potential performer who claimed ownership of the task has decided not to execute it prior to performing any action.</td></tr></table></li></ul></div>
+  </text>
+  <url value="https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-co-prescription-status"/>
+  <version value="0.2.0"/>
+  <name value="BeCoPrescriptionStatus"/>
+  <status value="active"/>
+  <date value="2022-01-17T09:35:45+00:00"/>
+  <publisher value="HL7 Belgium"/>
+  <contact>
+    <name value="HL7 Belgium"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7belgium.org"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Message-Structure"/>
+    <telecom>
+      <system value="email"/>
+      <value value="message-structure@ehealth.fgov.be"/>
+      <use value="work"/>
+    </telecom>
+  </contact>
+  <description value="This is the status of the prescription for the coprescriber"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="056"/>
+      <display value="Belgium"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="http://hl7.org/fhir/task-status"/>
+      <concept>
+        <code value="requested"/>
+      </concept>
+      <concept>
+        <code value="accepted"/>
+      </concept>
+      <concept>
+        <code value="rejected"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>
