@@ -14,8 +14,8 @@ InstanceOf: BeReferralPrescriptionNursingGenOther
 Usage: #example
 //* contained[0] = Patient1
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"
-* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
-* extension.valueCodeableConcept = $be-status-reason#created "Created"
+* extension[statusReason].url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#created "Created"
 * extension[validity].url = "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"
@@ -26,6 +26,11 @@ Usage: #example
   * extension[coprescriptionStatus]
     * url = "coprescriptionStatus"
     * valueCodeableConcept = http://hl7.org/fhir/task-status#requested 
+* extension[coprescriber][+]
+  * url = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-co-prescriber"
+  * extension[coprescriptionStatus]
+    * url = "coprescriptionStatus"
+    * valueCodeableConcept = http://hl7.org/fhir/task-status#requested     
 * authoredOn = "2022-10-31"
 * reasonCode = $sct#309256001
 * status = #active
@@ -54,8 +59,8 @@ Instance: example03-referralprescription-nursing-compressiontherapy
 InstanceOf: BeReferralPrescriptionNursingGenOther
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"
-* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
-* extension.valueCodeableConcept = $be-status-reason#created "Created"
+* extension[statusReason].url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#created "Created"
 * extension[validity].url = "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"
@@ -90,8 +95,8 @@ Instance: example04-referralprescription-nursing-bladder-care
 InstanceOf: BeReferralPrescriptionNursingGenOther
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"
-* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
-* extension.valueCodeableConcept = $be-status-reason#created "Created"
+* extension[statusReason].url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#created "Created"
 * extension[validity].url = "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"
@@ -124,8 +129,8 @@ Instance: example05-referralprescription-nursing-digestive-system-care
 InstanceOf: BeReferralPrescriptionNursingGenOther
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"
-* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
-* extension.valueCodeableConcept = $be-status-reason#created "Created"
+* extension[statusReason].url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#created "Created"
 * extension[validity].url = "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"
@@ -159,8 +164,8 @@ Instance: example06-referralprescription-nursing-compression-therapy
 InstanceOf: BeReferralPrescriptionNursingGenOther
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"
-* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
-* extension.valueCodeableConcept = $be-status-reason#created "Created"
+* extension[statusReason].url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#created "Created"
 * extension[validity].url = "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"
@@ -249,8 +254,8 @@ Instance: example09-referralprescription-nursing-woundcare
 InstanceOf: BeReferralPrescriptionNursingGenOther
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"
-* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
-* extension.valueCodeableConcept = $be-status-reason#created "Created"
+* extension[statusReason].url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#created "Created"
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"
 * identifier.value = "UHMEPVALUE"
 * extension[validity].url = "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod"
@@ -309,8 +314,8 @@ Instance: example12-referralprescription-nursing-annex81
 InstanceOf: BeReferralPrescriptionNursingAnnex81PreparationOfMedication
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-annex81"
-* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
-* extension.valueCodeableConcept = $be-status-reason#created "Created"
+* extension[statusReason].url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#created "Created"
 * extension[validity].url = "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"
@@ -366,8 +371,8 @@ Instance: example16-referralprescription-nursing-bladder-care
 InstanceOf: BeReferralPrescriptionNursing
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"
-* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
-* extension.valueCodeableConcept = $be-status-reason#created "Created"
+* extension[statusReason].url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#created "Created"
 * extension[validity].url = "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"
@@ -552,8 +557,8 @@ Instance: example24-referralprescription-nursing-non-reimbursable
 InstanceOf: BeReferralPrescriptionNursingNonReimbursable
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"
-* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
-* extension.valueCodeableConcept = $be-status-reason#created "Created"
+* extension[statusReason].url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#created "Created"
 * status = #active
 * intent = #order
 * category = $sct#9632001
@@ -576,8 +581,8 @@ Instance: example26-referralprescription-nursing-other
 InstanceOf: BeReferralPrescriptionNursingGenOther
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-other"
-* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
-* extension.valueCodeableConcept = $be-status-reason#created "Created"
+* extension[statusReason].url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#created "Created"
 * extension[validity].url = "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"

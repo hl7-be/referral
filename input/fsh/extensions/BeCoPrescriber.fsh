@@ -14,4 +14,4 @@ Description:    "Other practitioners that must take part in this prescripiton"
 * extension[coprescriberType].valueCodeableConcept from http://hl7.org/fhir/ValueSet/participant-role
 * extension[coprescriptionStatus] ^short = "Status of coprescription"
 * extension[coprescriptionStatus].value[x] only CodeableConcept
-//* extension[coprescriptionStatus].valueCodeableConcept from BeCoPrescriptionStatus
+* extension[coprescriptionStatus].valueCodeableConcept from BeCoPrescriptionStatus
