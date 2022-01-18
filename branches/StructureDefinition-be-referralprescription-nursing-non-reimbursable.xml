@@ -155,13 +155,6 @@
         <expression value="ServiceRequest.code.coding.where(system = &#39;https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code&#39;).code != &#39;preparation-and-administration-of-medication-to-chronical-psychiatric-patient&#39;  or ServiceRequest.orderDetail.empty()"/>
         <source value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing"/>
       </constraint>
-      <constraint>
-        <key value="nurs-gen"/>
-        <severity value="error"/>
-        <human value="if other is the code, then orderDetail  SHALL be SNOMED-CT"/>
-        <expression value="ServiceRequest.code.coding.where(system = &#39;https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code&#39;).code != &#39;other&#39;  or ServiceRequest.orderDetail.coding.code.memberOf(&#39;http://snomed.info/sct&#39;)"/>
-        <source value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing"/>
-      </constraint>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>

@@ -203,16 +203,6 @@
            fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing";
            fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing>
          ]
-       ], [
-         fhir:index 8;
-         fhir:ElementDefinition.constraint.key [ fhir:value "nurs-gen" ];
-         fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
-         fhir:ElementDefinition.constraint.human [ fhir:value "if other is the code, then orderDetail  SHALL be SNOMED-CT" ];
-         fhir:ElementDefinition.constraint.expression [ fhir:value "ServiceRequest.code.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code').code != 'other'  or ServiceRequest.orderDetail.coding.code.memberOf('http://snomed.info/sct')" ];
-         fhir:ElementDefinition.constraint.source [
-           fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing";
-           fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing>
-         ]
        ];
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ];
        fhir:ElementDefinition.isSummary [ fhir:value "false"^^xsd:boolean ];
