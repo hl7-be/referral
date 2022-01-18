@@ -1,0 +1,105 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "example32-referralprescription-nursing-chronical-psychiatric",
+  "meta": {
+    "profile": [
+      "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing"
+    ]
+  },
+  "text": {
+    "status": "extensions",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"example32-referralprescription-nursing-chronical-psychiatric\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referralprescription-nursing.html\">BeReferralPrescriptionNursing</a></p></div><p><b>Reason for current status</b>: Created <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-be-status-reason.html\">BeStatusReason</a>#created)</span></p><p><b>BeValidityPeriod</b>: 2022-04-19 --&gt; 2023-04-19</p><p><b>BeExecutionPeriod</b>: 2022-04-19 --&gt; 2023-04-19</p><p><b>status</b>: active</p><p><b>intent</b>: order</p><p><b>category</b>: Nursing procedure <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#9632001)</span></p><p><b>priority</b>: routine</p><p><b>code</b>: Preparation and administration of medication to chronical psychiatric patient <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-be-cs-nursing-code.html\">BeNursingCode</a>#preparation-and-administration-of-medication-to-chronical-psychiatric-patient)</span></p><p><b>subject</b>: <a href=\"Patient-patient1.html\">Patient/patient1</a> \" DOE\"</p><p><b>occurrence</b>: Starting 2021-07-02, Do Once per 1 days, Until 2022-06-30</p><p><b>authoredOn</b>: 2022-10-31</p><p><b>requester</b>: <a href=\"Practitioner-practitioner1.html\">Practitioner/practitioner1</a> \" MCCOY\"</p><p><b>performerType</b>: Nurse <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#106292003)</span></p><p><b>performer</b>: <a href=\"Practitioner-practitioner2.html\">Practitioner/practitioner2</a> \" CHAPEL\"</p><p><b>reasonCode</b>: Cold foot <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#309256001)</span></p></div>"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/request-statusReason",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason",
+            "code": "created",
+            "display": "Created"
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-validity-period",
+      "valuePeriod": {
+        "start": "2022-04-19",
+        "end": "2023-04-19"
+      }
+    },
+    {
+      "url": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-execution-period",
+      "valuePeriod": {
+        "start": "2022-04-19",
+        "end": "2023-04-19"
+      }
+    }
+  ],
+  "status": "active",
+  "intent": "order",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "9632001"
+        }
+      ],
+      "text": "Nursing procedure"
+    }
+  ],
+  "priority": "routine",
+  "code": {
+    "coding": [
+      {
+        "system": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code",
+        "code": "preparation-and-administration-of-medication-to-chronical-psychiatric-patient"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient1"
+  },
+  "occurrenceTiming": {
+    "repeat": {
+      "boundsPeriod": {
+        "start": "2021-07-02",
+        "end": "2022-06-30"
+      },
+      "frequency": 1,
+      "period": 1,
+      "periodUnit": "d"
+    }
+  },
+  "authoredOn": "2022-10-31",
+  "requester": {
+    "reference": "Practitioner/practitioner1"
+  },
+  "performerType": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "106292003",
+        "display": "Nurse"
+      }
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/practitioner2"
+    }
+  ],
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "309256001"
+        }
+      ]
+    }
+  ]
+}

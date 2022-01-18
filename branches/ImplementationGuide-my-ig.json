@@ -345,20 +345,6 @@
           }
         ],
         "reference": {
-          "reference": "StructureDefinition/be-referralprescription-nursing-annex81"
-        },
-        "name": "BeReferralPrescriptionNursingAnnex81PreparationOfMedication",
-        "description": "The nursing profile specialized for preparation of medication. Use the .note element to provide any extra information.",
-        "exampleBoolean": false
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "StructureDefinition:resource"
-          }
-        ],
-        "reference": {
           "reference": "StructureDefinition/be-referralprescription-nursing-gen-medication"
         },
         "name": "BeReferralPrescriptionNursingGenMedication",
@@ -405,6 +391,20 @@
         },
         "name": "BeExecutionPeriod",
         "description": "Begin and enddate of the execution of the request",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/be-ext-validity-period"
+        },
+        "name": "BeValidityPeriod",
+        "description": "Begin and enddate of the validity of the request",
         "exampleBoolean": false
       },
       {
@@ -744,7 +744,7 @@
           "reference": "ServiceRequest/example12-referralprescription-nursing-annex81"
         },
         "name": "example12-referralprescription-nursing-annex81",
-        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-annex81"
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing"
       },
       {
         "extension": [
@@ -893,6 +893,19 @@
         "extension": [
           {
             "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ServiceRequest"
+          }
+        ],
+        "reference": {
+          "reference": "ServiceRequest/example32-referralprescription-nursing-chronical-psychiatric"
+        },
+        "name": "example32-referralprescription-nursing-chronical-psychiatric",
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing"
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
             "valueString": "StructureDefinition:extension"
           }
         ],
@@ -985,20 +998,6 @@
         },
         "name": "BeReferralPrescriptionDiagnosticImaging",
         "description": "Referral prescription for a generic diagnostic imaging.\r\nPlease note in .orderDetail, a specific slicing is available to give guidance how to express acquisition modalities if needed. In future iterations of this profile, more slicing might provide additional guidance.",
-        "exampleBoolean": false
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "StructureDefinition:resource"
-          }
-        ],
-        "reference": {
-          "reference": "StructureDefinition/be-referralprescription-nursing-chronical-psychiatric-patient"
-        },
-        "name": "BeReferralPrescriptionNursingPreparationAdministrationMedicationChronicalPsychiatricPatient",
-        "description": "The nursing profile specialized for preparation and administration of medication to chronical pshychiatric patient. Use the .note element to provide any extra information. The prescriber SHALL give a start and end date & SHALL give a frequency, these informations live in the .occurrence element.",
         "exampleBoolean": false
       },
       {

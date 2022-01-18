@@ -141,6 +141,27 @@
         <xpath value="exists(f:code) or not(exists(f:orderDetail))"/>
         <source value="http://hl7.org/fhir/StructureDefinition/ServiceRequest"/>
       </constraint>
+      <constraint>
+        <key value="annex-81"/>
+        <severity value="error"/>
+        <human value="if annex-81 is the code, then adherence and adherence-link SHALL be present"/>
+        <expression value="ServiceRequest.code.coding.where(system = &#39;https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code&#39;).code != &#39;appendix-81-preparation-of-medications&#39;  or ServiceRequest.orderDetail.coding.where(system = &#39;https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-annex81-inadequate-adherence&#39;).empty() = false and ServiceRequest.orderDetail.coding.where(system = &#39;https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-annex81-inadequate-adherence-link&#39;).empty() = false"/>
+        <source value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing"/>
+      </constraint>
+      <constraint>
+        <key value="chron-psych"/>
+        <severity value="error"/>
+        <human value="if this is preparation-and-administration-of-medication-to-chronical-psychiatric-patient no orderDetail SHALL be present"/>
+        <expression value="ServiceRequest.code.coding.where(system = &#39;https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code&#39;).code != &#39;preparation-and-administration-of-medication-to-chronical-psychiatric-patient&#39;  or ServiceRequest.orderDetail.empty()"/>
+        <source value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing"/>
+      </constraint>
+      <constraint>
+        <key value="nurs-gen"/>
+        <severity value="error"/>
+        <human value="if other is the code, then orderDetail  SHALL be SNOMED-CT"/>
+        <expression value="ServiceRequest.code.coding.where(system = &#39;https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code&#39;).code != &#39;other&#39;  or ServiceRequest.orderDetail.coding.code.memberOf(&#39;http://snomed.info/sct&#39;)"/>
+        <source value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing"/>
+      </constraint>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
@@ -343,7 +364,7 @@
       </slicing>
       <short value="Extension"/>
       <definition value="An Extension"/>
-      <min value="3"/>
+      <min value="2"/>
       <max value="*"/>
       <base>
         <path value="DomainResource.extension"/>
@@ -664,8 +685,7 @@
       <path value="ServiceRequest.extension"/>
       <sliceName value="validity"/>
       <short value="Validity period of the prescription"/>
-      <definition value="The period during which the resource content was or is planned to be effective."/>
-      <comment value="The effective period for a resource  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 would be published in 2015."/>
+      <definition value="Begin and enddate of the validity of the request"/>
       <min value="1"/>
       <max value="1"/>
       <base>
@@ -675,7 +695,7 @@
       </base>
       <type>
         <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod"/>
+        <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-validity-period"/>
       </type>
       <condition value="ele-1"/>
       <constraint>
@@ -702,8 +722,8 @@
       <sliceName value="executed"/>
       <short value="BeExecutionPeriod"/>
       <definition value="Begin and enddate of the execution of the request"/>
-      <min value="1"/>
-      <max value="*"/>
+      <min value="0"/>
+      <max value="1"/>
       <base>
         <path value="DomainResource.extension"/>
         <min value="0"/>
@@ -2546,7 +2566,7 @@
       <definition value="Additional details and instructions about the how the services are to be delivered.   For example, and order for a urinary catheter may have an order detail for an external or indwelling catheter, or an order for a bandage may require additional instructions specifying how the bandage should be applied."/>
       <comment value="For information from the medical record intended to support the delivery of the requested services, use the `supportingInformation` element."/>
       <alias value="detailed instructions"/>
-      <min value="1"/>
+      <min value="0"/>
       <max value="*"/>
       <base>
         <path value="ServiceRequest.orderDetail"/>
@@ -2565,7 +2585,6 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="true"/>
       <binding>
