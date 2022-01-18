@@ -18,13 +18,7 @@ Description: "The nursing profile, generic version. Please note the nursing refe
 * supportingInfo MS
 * bodySite MS
 * note MS
-* obeys annex-81 and chron-psych and nurs-gen
-
-
-Invariant:   nurs-gen
-Description: "if other is the code, then orderDetail  SHALL be SNOMED-CT"
-Expression:  "ServiceRequest.code.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code').code != 'other'  or ServiceRequest.orderDetail.coding.code.memberOf('http://snomed.info/sct')"
-Severity:    #error
+* obeys annex-81 and chron-psych 
 
 
 Invariant:   annex-81
