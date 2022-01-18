@@ -449,7 +449,7 @@
        ];
        fhir:ElementDefinition.short [ fhir:value "Extension" ];
        fhir:ElementDefinition.definition [ fhir:value "An Extension" ];
-       fhir:ElementDefinition.min [ fhir:value "3"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.min [ fhir:value "2"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "*" ];
        fhir:ElementDefinition.base [
          fhir:ElementDefinition.base.path [ fhir:value "DomainResource.extension" ];
@@ -874,8 +874,7 @@
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.extension" ];
        fhir:ElementDefinition.sliceName [ fhir:value "validity" ];
        fhir:ElementDefinition.short [ fhir:value "Validity period of the prescription" ];
-       fhir:ElementDefinition.definition [ fhir:value "The period during which the resource content was or is planned to be effective." ];
-       fhir:ElementDefinition.comment [ fhir:value "The effective period for a resource  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 would be published in 2015." ];
+       fhir:ElementDefinition.definition [ fhir:value "Begin and enddate of the validity of the request" ];
        fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "1" ];
        fhir:ElementDefinition.base [
@@ -887,9 +886,9 @@
          fhir:index 0;
          fhir:ElementDefinition.type.code [ fhir:value "Extension" ];
          fhir:ElementDefinition.type.profile [
-           fhir:value "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod";
+           fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-validity-period";
            fhir:index 0;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod>
+           fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-validity-period>
          ]
        ];
        fhir:ElementDefinition.condition [
@@ -928,8 +927,8 @@
        fhir:ElementDefinition.sliceName [ fhir:value "executed" ];
        fhir:ElementDefinition.short [ fhir:value "BeExecutionPeriod" ];
        fhir:ElementDefinition.definition [ fhir:value "Begin and enddate of the execution of the request" ];
-       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
-       fhir:ElementDefinition.max [ fhir:value "*" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
        fhir:ElementDefinition.base [
          fhir:ElementDefinition.base.path [ fhir:value "DomainResource.extension" ];
          fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];

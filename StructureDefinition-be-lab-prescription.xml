@@ -357,7 +357,7 @@ This information includes diagnosis, clinical findings and other observations.  
       </slicing>
       <short value="Extension"/>
       <definition value="An Extension"/>
-      <min value="3"/>
+      <min value="2"/>
       <max value="*"/>
       <base>
         <path value="DomainResource.extension"/>
@@ -678,8 +678,7 @@ This information includes diagnosis, clinical findings and other observations.  
       <path value="ServiceRequest.extension"/>
       <sliceName value="validity"/>
       <short value="Validity period of the prescription"/>
-      <definition value="The period during which the resource content was or is planned to be effective."/>
-      <comment value="The effective period for a resource  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 would be published in 2015."/>
+      <definition value="Begin and enddate of the validity of the request"/>
       <min value="1"/>
       <max value="1"/>
       <base>
@@ -689,7 +688,7 @@ This information includes diagnosis, clinical findings and other observations.  
       </base>
       <type>
         <code value="Extension"/>
-        <profile value="http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod"/>
+        <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-validity-period"/>
       </type>
       <condition value="ele-1"/>
       <constraint>
@@ -716,8 +715,8 @@ This information includes diagnosis, clinical findings and other observations.  
       <sliceName value="executed"/>
       <short value="BeExecutionPeriod"/>
       <definition value="Begin and enddate of the execution of the request"/>
-      <min value="1"/>
-      <max value="*"/>
+      <min value="0"/>
+      <max value="1"/>
       <base>
         <path value="DomainResource.extension"/>
         <min value="0"/>

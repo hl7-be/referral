@@ -329,20 +329,6 @@
          fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://example.com/fhir/example/StructureDefinition/be-referralprescription-nursing-annex81>;
-         fhir:Reference.reference [ fhir:value "StructureDefinition/be-referralprescription-nursing-annex81" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "BeReferralPrescriptionNursingAnnex81PreparationOfMedication" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "The nursing profile specialized for preparation of medication. Use the .note element to provide any extra information." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
-     ], [
-       fhir:index 3;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <http://example.com/fhir/example/StructureDefinition/be-referralprescription-nursing-gen-medication>;
          fhir:Reference.reference [ fhir:value "StructureDefinition/be-referralprescription-nursing-gen-medication" ]
        ];
@@ -350,7 +336,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "The nursing profile specialized for medication. Note this profile is based on the FHIR resource MedicationRequest. Dosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements)." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 4;
+       fhir:index 3;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -364,7 +350,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "The generic nursing profile without medication. Use the .note element to provide any extra information." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 5;
+       fhir:index 4;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -378,7 +364,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Other practitioners that must take part in this prescripiton" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 6;
+       fhir:index 5;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -390,6 +376,20 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BeExecutionPeriod" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Begin and enddate of the execution of the request" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 6;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:extension" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://example.com/fhir/example/StructureDefinition/be-ext-validity-period>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/be-ext-validity-period" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "BeValidityPeriod" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Begin and enddate of the validity of the request" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 7;
@@ -754,8 +754,8 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "example12-referralprescription-nursing-annex81" ];
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
-         fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-annex81";
-         fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-annex81>
+         fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing";
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing>
        ]
      ], [
        fhir:index 32;
@@ -938,6 +938,22 @@
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ServiceRequest" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://example.com/fhir/example/ServiceRequest/example32-referralprescription-nursing-chronical-psychiatric>;
+         fhir:Reference.reference [ fhir:value "ServiceRequest/example32-referralprescription-nursing-chronical-psychiatric" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "example32-referralprescription-nursing-chronical-psychiatric" ];
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing";
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing>
+       ]
+     ], [
+       fhir:index 44;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "StructureDefinition:extension" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
@@ -948,7 +964,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Contra indication in a prescription referral for diagnostic imaging." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 44;
+       fhir:index 45;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -962,7 +978,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Whether the use of contrast fluid in diagnostic imaging can be defined as 'If necessary' or 'Not permitted.'" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 45;
+       fhir:index 46;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -976,7 +992,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Extra parties that need to be informed of the outcome, besides the prescriber." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 46;
+       fhir:index 47;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -990,7 +1006,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Relevant clinical information in the context of this prescription concerning for example allergies, kidney function, diabetic. This extension allows the use of an Annotation or codeableConcept but when more detailed information can be given, it is RECOMMENDED to express it as structured as possible using the appropriate elements." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 47;
+       fhir:index 48;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1004,7 +1020,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "When there is a need to urgently communicate results of an order." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 48;
+       fhir:index 49;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1018,7 +1034,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "This is the Belgian profile for a laboratory order." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 49;
+       fhir:index 50;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1030,20 +1046,6 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BeReferralPrescriptionDiagnosticImaging" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Referral prescription for a generic diagnostic imaging.\r\nPlease note in .orderDetail, a specific slicing is available to give guidance how to express acquisition modalities if needed. In future iterations of this profile, more slicing might provide additional guidance." ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
-     ], [
-       fhir:index 50;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
-         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <http://example.com/fhir/example/StructureDefinition/be-referralprescription-nursing-chronical-psychiatric-patient>;
-         fhir:Reference.reference [ fhir:value "StructureDefinition/be-referralprescription-nursing-chronical-psychiatric-patient" ]
-       ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "BeReferralPrescriptionNursingPreparationAdministrationMedicationChronicalPsychiatricPatient" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "The nursing profile specialized for preparation and administration of medication to chronical pshychiatric patient. Use the .note element to provide any extra information. The prescriber SHALL give a start and end date & SHALL give a frequency, these informations live in the .occurrence element." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 51;

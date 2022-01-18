@@ -183,6 +183,36 @@
            fhir:value "http://hl7.org/fhir/StructureDefinition/ServiceRequest";
            fhir:link <http://hl7.org/fhir/StructureDefinition/ServiceRequest>
          ]
+       ], [
+         fhir:index 6;
+         fhir:ElementDefinition.constraint.key [ fhir:value "annex-81" ];
+         fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
+         fhir:ElementDefinition.constraint.human [ fhir:value "if annex-81 is the code, then adherence and adherence-link SHALL be present" ];
+         fhir:ElementDefinition.constraint.expression [ fhir:value "ServiceRequest.code.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code').code != 'appendix-81-preparation-of-medications'  or ServiceRequest.orderDetail.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-annex81-inadequate-adherence').empty() = false and ServiceRequest.orderDetail.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-annex81-inadequate-adherence-link').empty() = false" ];
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing";
+           fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing>
+         ]
+       ], [
+         fhir:index 7;
+         fhir:ElementDefinition.constraint.key [ fhir:value "chron-psych" ];
+         fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
+         fhir:ElementDefinition.constraint.human [ fhir:value "if this is preparation-and-administration-of-medication-to-chronical-psychiatric-patient no orderDetail SHALL be present" ];
+         fhir:ElementDefinition.constraint.expression [ fhir:value "ServiceRequest.code.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code').code != 'preparation-and-administration-of-medication-to-chronical-psychiatric-patient'  or ServiceRequest.orderDetail.empty()" ];
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing";
+           fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing>
+         ]
+       ], [
+         fhir:index 8;
+         fhir:ElementDefinition.constraint.key [ fhir:value "nurs-gen" ];
+         fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
+         fhir:ElementDefinition.constraint.human [ fhir:value "if other is the code, then orderDetail  SHALL be SNOMED-CT" ];
+         fhir:ElementDefinition.constraint.expression [ fhir:value "ServiceRequest.code.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code').code != 'other'  or ServiceRequest.orderDetail.coding.code.memberOf('http://snomed.info/sct')" ];
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing";
+           fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing>
+         ]
        ];
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ];
        fhir:ElementDefinition.isSummary [ fhir:value "false"^^xsd:boolean ];
@@ -447,7 +477,7 @@
        ];
        fhir:ElementDefinition.short [ fhir:value "Extension" ];
        fhir:ElementDefinition.definition [ fhir:value "An Extension" ];
-       fhir:ElementDefinition.min [ fhir:value "3"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.min [ fhir:value "2"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "*" ];
        fhir:ElementDefinition.base [
          fhir:ElementDefinition.base.path [ fhir:value "DomainResource.extension" ];
@@ -872,8 +902,7 @@
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.extension" ];
        fhir:ElementDefinition.sliceName [ fhir:value "validity" ];
        fhir:ElementDefinition.short [ fhir:value "Validity period of the prescription" ];
-       fhir:ElementDefinition.definition [ fhir:value "The period during which the resource content was or is planned to be effective." ];
-       fhir:ElementDefinition.comment [ fhir:value "The effective period for a resource  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 would be published in 2015." ];
+       fhir:ElementDefinition.definition [ fhir:value "Begin and enddate of the validity of the request" ];
        fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "1" ];
        fhir:ElementDefinition.base [
@@ -885,9 +914,9 @@
          fhir:index 0;
          fhir:ElementDefinition.type.code [ fhir:value "Extension" ];
          fhir:ElementDefinition.type.profile [
-           fhir:value "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod";
+           fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-validity-period";
            fhir:index 0;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod>
+           fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-validity-period>
          ]
        ];
        fhir:ElementDefinition.condition [
@@ -926,8 +955,8 @@
        fhir:ElementDefinition.sliceName [ fhir:value "executed" ];
        fhir:ElementDefinition.short [ fhir:value "BeExecutionPeriod" ];
        fhir:ElementDefinition.definition [ fhir:value "Begin and enddate of the execution of the request" ];
-       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
-       fhir:ElementDefinition.max [ fhir:value "*" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
        fhir:ElementDefinition.base [
          fhir:ElementDefinition.base.path [ fhir:value "DomainResource.extension" ];
          fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
@@ -3241,7 +3270,7 @@
          fhir:value "detailed instructions";
          fhir:index 0
        ];
-       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "*" ];
        fhir:ElementDefinition.base [
          fhir:ElementDefinition.base.path [ fhir:value "ServiceRequest.orderDetail" ];
@@ -3268,7 +3297,6 @@
            fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
          ]
        ];
-       fhir:ElementDefinition.mustSupport [ fhir:value "true"^^xsd:boolean ];
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ];
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ];
        fhir:ElementDefinition.binding [

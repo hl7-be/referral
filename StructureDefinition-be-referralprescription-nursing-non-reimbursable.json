@@ -155,6 +155,27 @@
             "expression": "orderDetail.empty() or code.exists()",
             "xpath": "exists(f:code) or not(exists(f:orderDetail))",
             "source": "http://hl7.org/fhir/StructureDefinition/ServiceRequest"
+          },
+          {
+            "key": "annex-81",
+            "severity": "error",
+            "human": "if annex-81 is the code, then adherence and adherence-link SHALL be present",
+            "expression": "ServiceRequest.code.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code').code != 'appendix-81-preparation-of-medications'  or ServiceRequest.orderDetail.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-annex81-inadequate-adherence').empty() = false and ServiceRequest.orderDetail.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-annex81-inadequate-adherence-link').empty() = false",
+            "source": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing"
+          },
+          {
+            "key": "chron-psych",
+            "severity": "error",
+            "human": "if this is preparation-and-administration-of-medication-to-chronical-psychiatric-patient no orderDetail SHALL be present",
+            "expression": "ServiceRequest.code.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code').code != 'preparation-and-administration-of-medication-to-chronical-psychiatric-patient'  or ServiceRequest.orderDetail.empty()",
+            "source": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing"
+          },
+          {
+            "key": "nurs-gen",
+            "severity": "error",
+            "human": "if other is the code, then orderDetail  SHALL be SNOMED-CT",
+            "expression": "ServiceRequest.code.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code').code != 'other'  or ServiceRequest.orderDetail.coding.code.memberOf('http://snomed.info/sct')",
+            "source": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing"
           }
         ],
         "isModifier": false,
@@ -406,7 +427,7 @@
         },
         "short": "Extension",
         "definition": "An Extension",
-        "min": 3,
+        "min": 2,
         "max": "*",
         "base": {
           "path": "DomainResource.extension",
@@ -807,8 +828,7 @@
         "path": "ServiceRequest.extension",
         "sliceName": "validity",
         "short": "Validity period of the prescription",
-        "definition": "The period during which the resource content was or is planned to be effective.",
-        "comment": "The effective period for a resource  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 would be published in 2015.",
+        "definition": "Begin and enddate of the validity of the request",
         "min": 1,
         "max": "1",
         "base": {
@@ -820,7 +840,7 @@
           {
             "code": "Extension",
             "profile": [
-              "http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod"
+              "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-validity-period"
             ]
           }
         ],
@@ -854,8 +874,8 @@
         "sliceName": "executed",
         "short": "BeExecutionPeriod",
         "definition": "Begin and enddate of the execution of the request",
-        "min": 1,
-        "max": "*",
+        "min": 0,
+        "max": "1",
         "base": {
           "path": "DomainResource.extension",
           "min": 0,
@@ -3104,7 +3124,7 @@
         "alias": [
           "detailed instructions"
         ],
-        "min": 1,
+        "min": 0,
         "max": "*",
         "base": {
           "path": "ServiceRequest.orderDetail",
@@ -3129,7 +3149,6 @@
             "source": "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
-        "mustSupport": true,
         "isModifier": false,
         "isSummary": true,
         "binding": {
