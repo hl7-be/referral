@@ -13,9 +13,26 @@ Description: "The nursing profile, generic version. Please note the nursing refe
 * category.coding.code = #9632001 (exactly)
 * code 1..
 * code from BeNursingType (required)
-* orderDetail 1.. MS
 * orderDetail ^short = "Details of the nursing activity"
 * asNeeded[x] MS
 * supportingInfo MS
 * bodySite MS
 * note MS
+* obeys annex-81 and chron-psych and nurs-gen
+
+
+Invariant:   nurs-gen
+Description: "if other is the code, then orderDetail  SHALL be SNOMED-CT"
+Expression:  "ServiceRequest.code.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code').code != 'other'  or ServiceRequest.orderDetail.coding.code.memberOf('http://snomed.info/sct')"
+Severity:    #error
+
+
+Invariant:   annex-81
+Description: "if annex-81 is the code, then adherence and adherence-link SHALL be present"
+Expression:  "ServiceRequest.code.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code').code != 'appendix-81-preparation-of-medications'  or ServiceRequest.orderDetail.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-annex81-inadequate-adherence').empty() = false and ServiceRequest.orderDetail.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-annex81-inadequate-adherence-link').empty() = false"
+Severity:    #error
+
+Invariant:   chron-psych
+Description: "if this is preparation-and-administration-of-medication-to-chronical-psychiatric-patient no orderDetail SHALL be present"
+Expression:  "ServiceRequest.code.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code').code != 'preparation-and-administration-of-medication-to-chronical-psychiatric-patient'  or ServiceRequest.orderDetail.empty()"
+Severity:    #error

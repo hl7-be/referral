@@ -27,7 +27,8 @@ Description: """The nursing profile specialized for medication. Note this profil
     //$request-statusReason named statusReason 1..1 MS and
     BeInformParty named informParty 0..* MS and
 	BeCoPrescriber named coprescriber 0..* MS and
-    http://hl7.org/fhir/StructureDefinition/resource-effectivePeriod named validity 0..1 MS
+    BeValidityPeriod named validity 0..1 MS and 
+    BeExecutionPeriod named executed 0..1 MS
 //* extension[statusReason].value[x] only CodeableConcept
 //* extension[statusReason].valueCodeableConcept from BeReasonReferralStatus (extensible)
 * extension[informParty] ^short = "Parties to inform of fulfillment of the prescription, besides the prescriber."
@@ -45,7 +46,7 @@ Description: """The nursing profile specialized for medication. Note this profil
 * status MS
 * statusReason MS
 * category 1..1 MS
-* category from http://hl7.org/fhir/ValueSet/procedure-code (required)
+* category from http://hl7.org/fhir/ValueSet/procedure-code (example)
 * medication[x] MS
 * subject only Reference(Group or $be-patient)
 * subject MS
