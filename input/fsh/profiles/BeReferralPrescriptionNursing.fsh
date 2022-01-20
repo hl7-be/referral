@@ -18,7 +18,7 @@ Description: "The nursing profile, generic version. Please note the nursing refe
 * supportingInfo MS
 * bodySite MS
 * note MS
-* obeys annex-81 and chron-psych 
+* obeys annex-81 and chron-psych and gen
 
 Invariant:   gen
 Description: "if other is the code, then orderDetail SHALL SNOMED-CT"
