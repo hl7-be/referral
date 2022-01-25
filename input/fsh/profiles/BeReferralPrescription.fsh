@@ -56,6 +56,8 @@ Description: "The common structure for referral prescription."
 * performer ^short = "Requested performer - typically reference to practitioner but could also be reference to related person by business identifier or Reference.display"
 * reasonCode 1..1 MS
 * patientInstruction MS
+* orderDetail MS
+* basedOn MS
 
 
 
