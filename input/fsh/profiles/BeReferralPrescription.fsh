@@ -36,6 +36,7 @@ Description: "The common structure for referral prescription."
 * requisition MS
 * requisition ^short = "If needed to have a common identifier among different prescriptions."
 * status MS
+* status from BePrescriptionStatus (required)
 * category 1..1 MS
 * category from $be-referral-category (extensible)
 * code MS
