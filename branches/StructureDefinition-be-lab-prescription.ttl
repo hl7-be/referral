@@ -1911,16 +1911,10 @@
        fhir:ElementDefinition.isModifierReason [ fhir:value "This element is labeled as a modifier because it is a status element that contains status entered-in-error which means that the resource should not be treated as valid" ];
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ];
        fhir:ElementDefinition.binding [
-         fhir:Element.extension [
-           fhir:index 0;
-           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName" ];
-           fhir:Extension.valueString [ fhir:value "ServiceRequestStatus" ]
-         ];
          fhir:ElementDefinition.binding.strength [ fhir:value "required" ];
-         fhir:ElementDefinition.binding.description [ fhir:value "The status of a service order." ];
          fhir:ElementDefinition.binding.valueSet [
-           fhir:value "http://hl7.org/fhir/ValueSet/request-status|4.0.1";
-           fhir:link <http://hl7.org/fhir/ValueSet/request-status|4.0.1>
+           fhir:value "https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-prescription-status";
+           fhir:link <https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-prescription-status>
          ]
        ];
        fhir:ElementDefinition.mapping [
