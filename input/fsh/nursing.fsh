@@ -15,7 +15,7 @@ Usage: #example
 //* contained[0] = Patient1
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing"
 * extension[statusReason].url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
-* extension[statusReason].valueCodeableConcept = $be-status-reason#created "Created"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#refused "Refused"
 * extension[validity].url = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-validity-period"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"
@@ -60,7 +60,7 @@ InstanceOf: BeReferralPrescriptionNursing
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing"
 * extension[statusReason].url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
-* extension[statusReason].valueCodeableConcept = $be-status-reason#created "Created"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#refused "Refused"
 * extension[validity].url = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-validity-period"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"
@@ -96,7 +96,7 @@ InstanceOf: BeReferralPrescriptionNursing
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing"
 * extension[statusReason].url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
-* extension[statusReason].valueCodeableConcept = $be-status-reason#created "Created"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#refused "Refused"
 * extension[validity].url = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-validity-period"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"
@@ -130,7 +130,7 @@ InstanceOf: BeReferralPrescriptionNursing
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing"
 * extension[statusReason].url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
-* extension[statusReason].valueCodeableConcept = $be-status-reason#created "Created"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#refused "Refused"
 * extension[validity].url = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-validity-period"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"
@@ -165,7 +165,7 @@ InstanceOf: BeReferralPrescriptionNursing
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing"
 * extension[statusReason].url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
-* extension[statusReason].valueCodeableConcept = $be-status-reason#created "Created"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#refused "Refused"
 * extension[validity].url = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-validity-period"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"
@@ -199,7 +199,7 @@ Usage: #example
 //* meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"
 //* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
 //* extension.valueCodeableConcept = $be-status-reason#created "Created"
-//* statusReason = $be-status-reason#created "Created"
+//* statusReason = $be-status-reason#refused "Refused"
 //* identifier.system = "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"
 //* identifier.value = "UHMEPVALUE"
 //* status = #active
@@ -227,7 +227,7 @@ Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"
 //* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
 //* extension.valueCodeableConcept = $be-status-reason#created "Created"
-* statusReason = $be-status-reason#created "Created"
+* statusReason = $be-status-reason#refused "Refused"
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"
 * identifier.value = "UHMEPVALUE"
 * status = #active
@@ -255,7 +255,7 @@ InstanceOf: BeReferralPrescriptionNursing
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing"
 * extension[statusReason].url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
-* extension[statusReason].valueCodeableConcept = $be-status-reason#created "Created"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#refused "Refused"
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"
 * identifier.value = "UHMEPVALUE"
 * extension[validity].url = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-validity-period"
@@ -289,7 +289,7 @@ Instance: example10-referralprescription-nursing-medication
 InstanceOf: BeReferralPrescriptionNursingGenMedication
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"
-* statusReason = $be-status-reason#created "Created"
+* statusReason = $be-status-reason#refused "Refused"
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"
 * identifier.value = "UHMEPVALUE"
 * status = #active
@@ -315,7 +315,7 @@ InstanceOf: BeReferralPrescriptionNursing
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing"
 * extension[statusReason].url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
-* extension[statusReason].valueCodeableConcept = $be-status-reason#created "Created"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#refused "Refused"
 * extension[validity].url = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-validity-period"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"
@@ -346,7 +346,7 @@ Instance: example13-referralprescription-nursing-medication
 InstanceOf: BeReferralPrescriptionNursingGenMedication
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"
-* statusReason = $be-status-reason#created "Created"
+* statusReason = $be-status-reason#refused "Refused"
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"
 * identifier.value = "UHMEPVALUE"
 * status = #active
@@ -372,7 +372,7 @@ InstanceOf: BeReferralPrescriptionNursing
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing"
 * extension[statusReason].url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
-* extension[statusReason].valueCodeableConcept = $be-status-reason#created "Created"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#refused "Refused"
 * extension[validity].url = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-validity-period"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"
@@ -403,7 +403,7 @@ Instance: example17-referralprescription-nursing-medication
 InstanceOf: BeReferralPrescriptionNursingGenMedication
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"
-* statusReason = $be-status-reason#created "Created"
+* statusReason = $be-status-reason#refused "Refused"
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"
 * identifier.value = "UHMEPVALUE"
 * status = #active
@@ -432,7 +432,7 @@ Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"
 //* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
 //* extension.valueCodeableConcept = $be-status-reason#created "Created"
-* statusReason = $be-status-reason#created "Created"
+* statusReason = $be-status-reason#refused "Refused"
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"
 * identifier.value = "UHMEPVALUE"
 * status = #active
@@ -458,7 +458,7 @@ Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"
 //* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
 //* extension.valueCodeableConcept = $be-status-reason#created "Created"
-* statusReason = $be-status-reason#created "Created"
+* statusReason = $be-status-reason#refused "Refused"
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"
 * identifier.value = "UHMEPVALUE"
 * status = #active
@@ -485,7 +485,7 @@ Instance: example22-referralprescription-nursing-medication
 InstanceOf: BeReferralPrescriptionNursingGenMedication
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"
-* statusReason = $be-status-reason#created "Created"
+* statusReason = $be-status-reason#refused "Refused"
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"
 * identifier.value = "UHMEPVALUE"
 * status = #active
@@ -529,7 +529,7 @@ Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"
 //* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
 //* extension.valueCodeableConcept = $be-status-reason#created "Created"
-* statusReason = $be-status-reason#created "Created"
+* statusReason = $be-status-reason#refused "Refused"
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"
 * identifier.value = "UHMEPVALUE"
 * status = #active
@@ -558,7 +558,7 @@ InstanceOf: BeReferralPrescriptionNursing
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing"
 * extension[statusReason].url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
-* extension[statusReason].valueCodeableConcept = $be-status-reason#created "Created"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#refused "Refused"
 * extension[validity].url = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-validity-period"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"
@@ -590,7 +590,7 @@ InstanceOf: BeReferralPrescriptionNursing
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing"
 * extension[statusReason].url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
-* extension[statusReason].valueCodeableConcept = $be-status-reason#created "Created"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#refused "Refused"
 * extension[validity].url = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-validity-period"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"
@@ -619,7 +619,7 @@ Instance: example30-referralprescription-nursing-woundcare
 InstanceOf: BeReferralPrescriptionNursingGenMedication
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"
-* statusReason = $be-status-reason#created "Created"
+* statusReason = $be-status-reason#refused "Refused"
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"
 * identifier.value = "UHMEPVALUE"
 * status = #active
@@ -650,7 +650,7 @@ Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-gen-medication"
 //* extension.url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
 //* extension.valueCodeableConcept = $be-status-reason#created "Created"
-* statusReason = $be-status-reason#created "Created"
+* statusReason = $be-status-reason#refused "Refused"
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"
 * identifier.value = "UHMEPVALUE"
 * status = #active
@@ -676,7 +676,7 @@ InstanceOf: BeReferralPrescriptionNursing
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing"
 * extension[statusReason].url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
-* extension[statusReason].valueCodeableConcept = $be-status-reason#created "Created"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#refused "Refused"
 * extension[validity].url = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-validity-period"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"
