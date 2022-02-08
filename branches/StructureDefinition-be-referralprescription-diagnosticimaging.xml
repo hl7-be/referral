@@ -355,7 +355,7 @@
       </slicing>
       <short value="Extension"/>
       <definition value="An Extension"/>
-      <min value="2"/>
+      <min value="3"/>
       <max value="*"/>
       <base>
         <path value="DomainResource.extension"/>
@@ -744,12 +744,12 @@
       <mustSupport value="true"/>
       <isModifier value="false"/>
     </element>
-    <element id="ServiceRequest.extension:latest">
+    <element id="ServiceRequest.extension:performer">
       <path value="ServiceRequest.extension"/>
-      <sliceName value="latest"/>
-      <short value="BeLastestEndDate"/>
-      <definition value="Request must be performed before"/>
-      <min value="0"/>
+      <sliceName value="performer"/>
+      <short value="Takes the place of performer and performerType"/>
+      <definition value="Intended performers for this request"/>
+      <min value="1"/>
       <max value="1"/>
       <base>
         <path value="DomainResource.extension"/>
@@ -758,7 +758,7 @@
       </base>
       <type>
         <code value="Extension"/>
-        <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-lastest-end-date"/>
+        <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-intended-performer"/>
       </type>
       <condition value="ele-1"/>
       <constraint>
@@ -3158,7 +3158,7 @@
       <comment value="This is a  role, not  a participation type.  In other words, does not describe the task but describes the capacity.  For example, “compounding pharmacy”, “psychiatrist” or “internal referral”."/>
       <alias value="specialty"/>
       <min value="0"/>
-      <max value="1"/>
+      <max value="0"/>
       <base>
         <path value="ServiceRequest.performerType"/>
         <min value="0"/>
@@ -3210,7 +3210,7 @@
       <comment value="If multiple performers are present, it is interpreted as a list of *alternative* performers without any preference regardless of order.  If order of preference is needed use the [request-performerOrder extension](http://hl7.org/fhir/R4/extension-request-performerorder.html).  Use CareTeam to represent a group of performers (for example, Practitioner A *and* Practitioner B)."/>
       <alias value="request recipient"/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="ServiceRequest.performer"/>
         <min value="0"/>
