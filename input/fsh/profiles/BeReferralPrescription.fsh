@@ -18,7 +18,8 @@ Description: "The common structure for referral prescription."
     BeInformParty named informParty 0..* MS and
 	BeCoPrescriber named coprescriber 0..* MS and
     BeValidityPeriod named validity 1..1 MS and
-    BeExecutionPeriod named executed 0..1 MS
+    BeExecutionPeriod named executed 0..1 MS and 
+    BeLastestEndDate named latest 0..1 MS
 * extension[statusReason].value[x] only CodeableConcept
 * extension[statusReason].valueCodeableConcept from BeReasonReferralStatus (extensible)
 * extension[informParty] ^short = "Parties to inform of fulfillment of the prescription, besides the prescriber."
