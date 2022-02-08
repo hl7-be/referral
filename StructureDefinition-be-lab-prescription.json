@@ -408,7 +408,7 @@
         },
         "short": "Extension",
         "definition": "An Extension",
-        "min": 2,
+        "min": 3,
         "max": "*",
         "base": {
           "path": "DomainResource.extension",
@@ -895,12 +895,12 @@
         "isModifier": false
       },
       {
-        "id": "ServiceRequest.extension:latest",
+        "id": "ServiceRequest.extension:performer",
         "path": "ServiceRequest.extension",
-        "sliceName": "latest",
-        "short": "BeLastestEndDate",
-        "definition": "Request must be performed before",
-        "min": 0,
+        "sliceName": "performer",
+        "short": "Takes the place of performer and performerType",
+        "definition": "Intended performers for this request",
+        "min": 1,
         "max": "1",
         "base": {
           "path": "DomainResource.extension",
@@ -911,7 +911,7 @@
           {
             "code": "Extension",
             "profile": [
-              "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-lastest-end-date"
+              "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-intended-performer"
             ]
           }
         ],
@@ -2626,7 +2626,7 @@
           "specialty"
         ],
         "min": 0,
-        "max": "1",
+        "max": "0",
         "base": {
           "path": "ServiceRequest.performerType",
           "min": 0,
@@ -2690,7 +2690,7 @@
           "request recipient"
         ],
         "min": 0,
-        "max": "*",
+        "max": "0",
         "base": {
           "path": "ServiceRequest.performer",
           "min": 0,

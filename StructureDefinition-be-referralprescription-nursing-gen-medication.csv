@@ -20,7 +20,7 @@ htmlxhtmldisplay","",0,1,"","","","Narrative {[]} {[]}
 "MedicationRequest.contained","","inline resources
 anonymous resourcescontained resources","",0,*,"","","","Resource {[]} {[]}
 ","Contained, inline Resources","These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.","This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again. Contained resources may have profiles and tags In their meta elements, but SHALL NOT have security labels.","","","","","","","","",,,,,"",,,,"DomainResource.contained",0,*,"","","N/A"
-"MedicationRequest.extension","","","",0,*,"","","","Extension {[]} {[]}
+"MedicationRequest.extension","","","",1,*,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","",,"open","DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
@@ -38,6 +38,10 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "MedicationRequest.extension","executed","","",0,1,"Y","","","Extension {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-execution-period]]} {[]}
 ","BeExecutionPeriod","Begin and enddate of the execution of the request","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MedicationRequest.extension","performer","","",1,1,"Y","","","Extension {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-intended-performer]]} {[]}
+","Takes the place of performer and performerType","Intended performers for this request","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "MedicationRequest.modifierExtension","","extensions
@@ -117,10 +121,10 @@ Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Medicatio
 "MedicationRequest.requester","","","",1,1,"Y","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/RelatedPerson], CanonicalType[http://hl7.org/fhir/StructureDefinition/Device], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitionerrole], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization]]}
 ","Who/What requested the Request","The individual, organization, or device that initiated the request and has responsibility for its activation.","","","","","","","","","",,,,,"",,,,"MedicationRequest.requester",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Request.requester",".participation[typeCode=AUT].role","FiveWs.author"
-"MedicationRequest.performer","","","",0,1,"Y","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Practitioner], CanonicalType[http://hl7.org/fhir/StructureDefinition/PractitionerRole], CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization], CanonicalType[http://hl7.org/fhir/StructureDefinition/Patient], CanonicalType[http://hl7.org/fhir/StructureDefinition/Device], CanonicalType[http://hl7.org/fhir/StructureDefinition/RelatedPerson], CanonicalType[http://hl7.org/fhir/StructureDefinition/CareTeam]]}
+"MedicationRequest.performer","","","",0,0,"Y","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Practitioner], CanonicalType[http://hl7.org/fhir/StructureDefinition/PractitionerRole], CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization], CanonicalType[http://hl7.org/fhir/StructureDefinition/Patient], CanonicalType[http://hl7.org/fhir/StructureDefinition/Device], CanonicalType[http://hl7.org/fhir/StructureDefinition/RelatedPerson], CanonicalType[http://hl7.org/fhir/StructureDefinition/CareTeam]]}
 ","Intended performer of administration","The specified desired performer of the medication treatment (e.g. the performer of the medication administration).","","","","","","","","","",,,,,"",,,,"MedicationRequest.performer",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Request.performer",".participation[typeCode=PRF].role[scoper.determinerCode=INSTANCE]","FiveWs.actor"
-"MedicationRequest.performerType","","","",0,1,"Y","","Y","CodeableConcept {[]} {[]}
+"MedicationRequest.performerType","","","",0,0,"Y","","Y","CodeableConcept {[]} {[]}
 ","Desired kind of performer of the medication administration","Indicates the type of performer of the administration of the medication.","If specified without indicating a performer, this indicates that the performer must be of the specified type. If specified with a performer then it indicates the requirements of the performer if the designated performer is not available.","","","","","","","","",,"example","Identifies the type of individual that is desired to administer the medication.","http://hl7.org/fhir/ValueSet/performer-role","",,,,"MedicationRequest.performerType",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Request.performerType",".participation[typeCode=PRF].role[scoper.determinerCode=KIND].code"
 "MedicationRequest.recorder","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Practitioner], CanonicalType[http://hl7.org/fhir/StructureDefinition/PractitionerRole]]}
