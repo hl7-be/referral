@@ -18,12 +18,14 @@ Description: "The common structure for referral prescription."
     BeInformParty named informParty 0..* MS and
 	BeCoPrescriber named coprescriber 0..* MS and
     BeValidityPeriod named validity 1..1 MS and
-    BeExecutionPeriod named executed 0..1 MS
+    BeExecutionPeriod named executed 0..1 MS and 
+    BeIntendedPerformer named performer 1..1 MS
 * extension[statusReason].value[x] only CodeableConcept
 * extension[statusReason].valueCodeableConcept from BeReasonReferralStatus (extensible)
 * extension[informParty] ^short = "Parties to inform of fulfillment of the prescription, besides the prescriber."
 * extension[coprescriber] ^short = "Other parties that have to take part in the prescription."
 * extension[validity] ^short = "Validity period of the prescription"
+* extension[performer] ^short = "Takes the place of performer and performerType"
 * identifier MS
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
@@ -50,10 +52,10 @@ Description: "The common structure for referral prescription."
 * requester 1.. MS
 * requester only Reference(RelatedPerson or Device or BePatient or BeOrganization or BePractitioner or BePractitionerRole)
 * requester ^short = "Prescriber of the requested service"
-* performerType MS
+* performerType 0..0 MS
 * performerType ^short = "Discipline of provider"
 * performer only Reference(CareTeam or HealthcareService or Device or RelatedPerson or BePractitioner or BePractitionerRole or BePatient or BeOrganization)
-* performer MS
+* performer 0..0 MS
 * performer ^short = "Requested performer - typically reference to practitioner but could also be reference to related person by business identifier or Reference.display"
 * reasonCode 1..1 MS
 * patientInstruction MS
