@@ -18,13 +18,47 @@ Description: "The nursing profile, generic version. Please note the nursing refe
 * supportingInfo MS
 * bodySite MS
 * note MS
-* obeys annex-81 and chron-psych and gen
+* obeys annex-81 and chron-psych and bladder and disgestive and wound and compression and diabetic and non and other
 
-Invariant:   gen
-Description: "if other is the code, then orderDetail SHALL SNOMED-CT"
-Expression:  "ServiceRequest.code.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code').code != 'other'  or ServiceRequest.orderDetail.coding.where(system = 'http://snomed.info/sct').empty() = false"
+//Invariant:   gen
+//Description: "if other is the code, then orderDetail SHALL SNOMED-CT"
+//Expression:  "ServiceRequest.code.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code').code != 'other'  or ServiceRequest.orderDetail.coding.where(system = 'http://snomed.info/sct').empty() = false"
+//Severity:    #error
+
+Invariant:   bladder
+Description: "code and orderDetail SHALL be related"
+Expression:  "ServiceRequest.code.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code').code != 'bladder-care'  or ServiceRequest.orderDetail.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-type-of-bladder-care').empty() = false"
 Severity:    #error
 
+Invariant:   disgestive
+Description: "code and orderDetail SHALL be related"
+Expression:  "ServiceRequest.code.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code').code != 'digestive-system-care'  or ServiceRequest.orderDetail.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-digestive-system-care').empty() = false"
+Severity:    #error
+
+Invariant:   wound
+Description: "code and orderDetail SHALL be related"
+Expression:  "ServiceRequest.code.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code').code != 'wound-care'  or ServiceRequest.orderDetail.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-wound-care').empty() = false"
+Severity:    #error
+
+Invariant:   compression
+Description: "code and orderDetail SHALL be related"
+Expression:  "ServiceRequest.code.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code').code != 'compression-therapy'  or ServiceRequest.orderDetail.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code-compressiontherapy').empty() = false"
+Severity:    #error
+
+Invariant:   diabetic
+Description: "code and orderDetail SHALL be related"
+Expression:  "ServiceRequest.code.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code').code != 'diabetic-patient-services'  or ServiceRequest.orderDetail.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-diabetic-patient-services').empty() = false"
+Severity:    #error
+
+Invariant:   non
+Description: "code and orderDetail SHALL be related"
+Expression:  "ServiceRequest.code.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code').code != 'non-reimbursed-services'  or ServiceRequest.orderDetail.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code-non-reimbursable').empty() = false"
+Severity:    #error
+
+Invariant:   other
+Description: "code and orderDetail SHALL be related"
+Expression:  "ServiceRequest.code.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code').code != 'other'  or ServiceRequest.orderDetail.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-nursing-code-other').empty() = false"
+Severity:    #error
 
 Invariant:   annex-81
 Description: "if annex-81 is the code, then adherence and adherence-link SHALL be present"
