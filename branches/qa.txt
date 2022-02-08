@@ -1,9 +1,9 @@
 ﻿ExampleIG : Validation Results
 =========================================
 
-err = 54, warn = 130, info = 19
+err = 54, warn = 132, info = 19
 IG Publisher Version: 1.1.99
-Generated Tue Feb 08 10:09:36 UTC 2022. FHIR version 4.0.1 for my-ig#0.2.0 (canonical = http://example.com/fhir/example)
+Generated Tue Feb 08 13:48:44 UTC 2022. FHIR version 4.0.1 for my-ig#0.2.0 (canonical = http://example.com/fhir/example)
  Build Errors : 2 / 38 / 0
  /github/workspace/fsh-generated/resources/CodeSystem-be-nursing-annex81-inadequate-adherence : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/CodeSystem-be-nursing-annex81-inadequate-adherence-link : 0 / 1 / 1
@@ -39,6 +39,7 @@ Generated Tue Feb 08 10:09:36 UTC 2022. FHIR version 4.0.1 for my-ig#0.2.0 (cano
  /github/workspace/fsh-generated/resources/ServiceRequest-example32-referralprescription-nursing-chronical-psychiatric : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-be-co-prescriber : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-be-ext-execution-period : 0 / 1 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-be-ext-lastest-end-date : 0 / 2 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-be-ext-validity-period : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-be-intended-performer : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-be-model-diagnosticimagingprescription : 1 / 4 / 1
@@ -208,6 +209,9 @@ ERROR: ServiceRequest/example16-referralprescription-nursing-bladder-care: Servi
 WARNING: StructureDefinition/be-co-prescriber: StructureDefinition.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
 == fsh-generated/resources/StructureDefinition-be-ext-execution-period.json ==
 WARNING: StructureDefinition/be-ext-execution-period: StructureDefinition.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
+== fsh-generated/resources/StructureDefinition-be-ext-lastest-end-date.json ==
+WARNING: StructureDefinition/be-ext-lastest-end-date: StructureDefinition.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
+WARNING: StructureDefinition.where(url = 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-lastest-end-date'): The Implementation Guide contains no examples for this extension
 == fsh-generated/resources/StructureDefinition-be-ext-validity-period.json ==
 WARNING: StructureDefinition/be-ext-validity-period: StructureDefinition.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
 == fsh-generated/resources/StructureDefinition-be-intended-performer.json ==
@@ -248,11 +252,11 @@ WARNING: StructureDefinition/be-model-physiotherapyprescription: StructureDefini
 ERROR: BeReferralPrescription.ServiceRequest.status: Binding https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-prescription-status is not a subset of binding http://hl7.org/fhir/ValueSet/request-status|4.0.1
 WARNING: StructureDefinition/be-referralprescription: StructureDefinition.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
 ERROR: StructureDefinition/be-referralprescription: StructureDefinition: Binding https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-prescription-status is not a subset of binding http://hl7.org/fhir/ValueSet/request-status|4.0.1
-INFORMATION: StructureDefinition/be-referralprescription: StructureDefinition.snapshot.element[46].binding: The element ServiceRequest.asNeeded[x] has a binding, and has multiple types ([boolean, CodeableConcept]). The binding will apply to all the types
+INFORMATION: StructureDefinition/be-referralprescription: StructureDefinition.snapshot.element[47].binding: The element ServiceRequest.asNeeded[x] has a binding, and has multiple types ([boolean, CodeableConcept]). The binding will apply to all the types
 WARNING: StructureDefinition.where(url = 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription'): The Implementation Guide contains no examples for this profile
 == fsh-generated/resources/StructureDefinition-be-referralprescription-nursing.json ==
 WARNING: StructureDefinition/be-referralprescription-nursing: StructureDefinition.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
-INFORMATION: StructureDefinition/be-referralprescription-nursing: StructureDefinition.snapshot.element[57].binding: The element ServiceRequest.asNeeded[x] has a binding, and has multiple types ([boolean, CodeableConcept]). The binding will apply to all the types
+INFORMATION: StructureDefinition/be-referralprescription-nursing: StructureDefinition.snapshot.element[58].binding: The element ServiceRequest.asNeeded[x] has a binding, and has multiple types ([boolean, CodeableConcept]). The binding will apply to all the types
 == fsh-generated/resources/StructureDefinition-be-referralprescription-nursing-gen-medication.json ==
 WARNING: StructureDefinition/be-referralprescription-nursing-gen-medication: StructureDefinition.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
 INFORMATION: StructureDefinition/be-referralprescription-nursing-gen-medication: StructureDefinition.snapshot.element[31].binding: The element MedicationRequest.medication[x] has a binding, and has multiple types ([Reference, CodeableConcept]). The binding will apply to all the types
@@ -342,10 +346,10 @@ WARNING: StructureDefinition/be-ext-supporting-info: StructureDefinition.jurisdi
 WARNING: StructureDefinition/be-ext-urgent-communication: StructureDefinition.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
 == input/profiles/StructureDefinition-be-lab-prescription.json ==
 WARNING: StructureDefinition/be-lab-prescription: StructureDefinition.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
-INFORMATION: StructureDefinition/be-lab-prescription: StructureDefinition.snapshot.element[47].binding: The element ServiceRequest.asNeeded[x] has a binding, and has multiple types ([boolean, CodeableConcept]). The binding will apply to all the types
+INFORMATION: StructureDefinition/be-lab-prescription: StructureDefinition.snapshot.element[48].binding: The element ServiceRequest.asNeeded[x] has a binding, and has multiple types ([boolean, CodeableConcept]). The binding will apply to all the types
 == input/profiles/StructureDefinition-be-referralprescription-diagnosticimaging.json ==
 WARNING: StructureDefinition/be-referralprescription-diagnosticimaging: StructureDefinition.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
-INFORMATION: StructureDefinition/be-referralprescription-diagnosticimaging: StructureDefinition.snapshot.element[72].binding: The element ServiceRequest.asNeeded[x] has a binding, and has multiple types ([boolean, CodeableConcept]). The binding will apply to all the types
+INFORMATION: StructureDefinition/be-referralprescription-diagnosticimaging: StructureDefinition.snapshot.element[73].binding: The element ServiceRequest.asNeeded[x] has a binding, and has multiple types ([boolean, CodeableConcept]). The binding will apply to all the types
 == input/vocabulary/NamingSystem-be-ns-coronalertcode.xml ==
 WARNING: NamingSystem/be-ns-coronalertcode: NamingSystem.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
 == input/vocabulary/NamingSystem-be-ns-specimen.xml ==
