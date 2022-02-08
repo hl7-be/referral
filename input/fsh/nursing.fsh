@@ -50,8 +50,8 @@ Usage: #example
 * occurrenceTiming.repeat.period = 1
 * occurrenceTiming.repeat.periodUnit = #d
 * requester = Reference(Practitioner/practitioner1)
-* performerType = $sct#106292003 "Nurse"
-* performer = Reference(Practitioner/practitioner2)
+* extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
+* extension[performer].extension[actor].valueReference = Reference(Practitioner/practitioner2)
 * note.text = "patient can not move (niet verplaatsen)"
 
 
@@ -86,8 +86,8 @@ Usage: #example
 * occurrenceTiming.repeat.period = 1
 * occurrenceTiming.repeat.periodUnit = #d
 * requester = Reference(Practitioner/practitioner1)
-* performerType = $sct#106292003 "Nurse"
-* performer = Reference(Practitioner/practitioner2)
+* extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
+* extension[performer].extension[actor].valueReference = Reference(Practitioner/practitioner2)
 * note.text = "Rosidal zwachtels ->  aan- en uitdoen / both underlegs"
 * authoredOn = "2022-10-31"
 
@@ -120,8 +120,8 @@ Usage: #example
 * occurrenceTiming.repeat.period = 6
 * occurrenceTiming.repeat.periodUnit = #wk
 * requester = Reference(Practitioner/practitioner1)
-* performerType = $sct#106292003 "Nurse"
-* performer = Reference(Practitioner/practitioner2)
+* extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
+* extension[performer].extension[actor].valueReference = Reference(Practitioner/practitioner2)
 * authoredOn = "2022-10-31"
 
 
@@ -156,8 +156,8 @@ Usage: #example
 * occurrenceTiming.repeat.period = 1
 * occurrenceTiming.repeat.periodUnit = #d
 * requester = Reference(Practitioner/practitioner1)
-* performerType = $sct#106292003 "Nurse"
-* performer = Reference(Practitioner/practitioner2)
+* extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
+* extension[performer].extension[actor].valueReference = Reference(Practitioner/practitioner2)
 * authoredOn = "2022-10-31"
 
 Instance: example06-referralprescription-nursing-compression-therapy
@@ -189,8 +189,8 @@ Usage: #example
 * occurrenceTiming.repeat.period = 1
 * occurrenceTiming.repeat.periodUnit = #d
 * requester = Reference(Practitioner/practitioner1)
-* performerType = $sct#106292003 "Nurse"
-* performer = Reference(Practitioner/practitioner2)
+* extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
+* extension[performer].extension[actor].valueReference = Reference(Practitioner/practitioner2)
 * authoredOn = "2022-10-31"
 
 //Instance: example07-referralprescription-nursing-medication
@@ -218,8 +218,8 @@ Usage: #example
 //* dosageInstruction.timing.repeat.timeOfDay = "20:00:00"
 //* dosageInstruction.text = "2 spuiten simultaan te geven.  5 days ‘s avonds rond 20.00u"
 //* requester = Reference(Practitioner/practitioner1)
-//* performerType = $sct#106292003 "Nurse"
-//* performer = Reference(Practitioner/practitioner2)
+//* extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
+//* extension[performer].extension[actor].valueReference = Reference(Practitioner/practitioner2)
 
 Instance: example08-referralprescription-nursing-medication
 InstanceOf: BeReferralPrescriptionNursingGenMedication
@@ -246,8 +246,8 @@ Usage: #example
 * dosageInstruction.timing.repeat.periodUnit = #wk
 * dosageInstruction.text = "Frequency: 6 months - 1 X every 3 weeks"
 * requester = Reference(Practitioner/practitioner1)
-* performerType = $sct#106292003 "Nurse"
-* performer = Reference(Practitioner/practitioner2)
+* extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
+* extension[performer].extension[actor].valueReference = Reference(Practitioner/practitioner2)
 * note.text = "Vitamine B12"
 
 Instance: example09-referralprescription-nursing-woundcare
@@ -278,8 +278,8 @@ Usage: #example
 * occurrenceTiming.repeat.period = 1
 * occurrenceTiming.repeat.periodUnit = #d
 * requester = Reference(Practitioner/practitioner1)
-* performerType = $sct#106292003 "Nurse"
-* performer = Reference(Practitioner/practitioner2)
+* extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
+* extension[performer].extension[actor].valueReference = Reference(Practitioner/practitioner2)
 * note.text = "wound care codeset/valueset is still missing (see orderDetail)"
 * orderDetail = https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-cs-digestive-system-care#manual-removal-of-faecal-omen
 * subject = Reference(Patient/patient1)
@@ -306,8 +306,8 @@ Usage: #example
 * dosageInstruction.timing.repeat.periodUnit = #d
 * dosageInstruction.text = "Frequency: 6 months - 1 X every 3 weeks"
 * requester = Reference(Practitioner/practitioner1)
-* performerType = $sct#106292003 "Nurse"
-* performer = Reference(Practitioner/practitioner2)
+* extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
+* extension[performer].extension[actor].valueReference = Reference(Practitioner/practitioner2)
 * note.text = "vagifem vaginaal inbrengen"
 
 Instance: example12-referralprescription-nursing-annex81
@@ -339,8 +339,8 @@ Usage: #example
 * occurrenceTiming.repeat.period = 1
 * occurrenceTiming.repeat.periodUnit = #d
 * requester = Reference(Practitioner/practitioner1)
-* performerType = $sct#106292003 "Nurse"
-* performer = Reference(Practitioner/practitioner2)
+* extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
+* extension[performer].extension[actor].valueReference = Reference(Practitioner/practitioner2)
 
 Instance: example13-referralprescription-nursing-medication
 InstanceOf: BeReferralPrescriptionNursingGenMedication
@@ -363,8 +363,8 @@ Usage: #example
 * dosageInstruction.timing.repeat.periodUnit = #d
 * dosageInstruction.text = "daily on yearly basis, 05/07/2021-04/07/2022, om de 72u (om de 3d)"
 * requester = Reference(Practitioner/practitioner1)
-* performerType = $sct#106292003 "Nurse"
-* performer = Reference(Practitioner/practitioner2)
+* extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
+* extension[performer].extension[actor].valueReference = Reference(Practitioner/practitioner2)
 * note.text = "pijnpleister Durogesic 50 microgram (patch)"
 
 Instance: example16-referralprescription-nursing-bladder-care
@@ -395,8 +395,8 @@ Usage: #example
 * occurrenceTiming.repeat.period = 1
 * occurrenceTiming.repeat.periodUnit = #d
 * requester = Reference(Practitioner/practitioner1)
-* performerType = $sct#106292003 "Nurse"
-* performer = Reference(Practitioner/practitioner2)
+* extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
+* extension[performer].extension[actor].valueReference = Reference(Practitioner/practitioner2)
 * authoredOn = "2022-10-31"
 
 Instance: example17-referralprescription-nursing-medication
@@ -422,8 +422,8 @@ Usage: #example
 * dosageInstruction.timing.repeat.periodUnit = #wk
 * dosageInstruction.text = "Frequency: 1x per week, gedurende 12 weken, vanaf 29/6/2021"
 * requester = Reference(Practitioner/practitioner1)
-* performerType = $sct#106292003 "Nurse"
-* performer = Reference(Practitioner/practitioner2)
+* extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
+* extension[performer].extension[actor].valueReference = Reference(Practitioner/practitioner2)
 * note.text = "toedienen Metoject 15mg"
 
 Instance: example19-referralprescription-nursing-medication
@@ -449,8 +449,8 @@ Usage: #example
 * dosageInstruction.timing.repeat.periodUnit = #d
 * dosageInstruction.text = "frequency: 2x/dag subcutaan toedienen, vanaf operatie tot 20/8/2021 of tot INR > 2"
 * requester = Reference(Practitioner/practitioner1)
-* performerType = $sct#106292003 "Nurse"
-* performer = Reference(Practitioner/practitioner2)
+* extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
+* extension[performer].extension[actor].valueReference = Reference(Practitioner/practitioner2)
 
 Instance: example20-referralprescription-nursing-medication
 InstanceOf: BeReferralPrescriptionNursingGenMedication
@@ -477,8 +477,8 @@ Usage: #example
 * dosageInstruction.asNeededBoolean = true
 * dosageInstruction.site = $sct#31764008
 * requester = Reference(Practitioner/practitioner1)
-* performerType = $sct#106292003 "Nurse"
-* performer = Reference(Practitioner/practitioner2)
+* extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
+* extension[performer].extension[actor].valueReference = Reference(Practitioner/practitioner2)
 * note.text = "thv m.trapezius en rechterelleboog"
 
 Instance: example22-referralprescription-nursing-medication
@@ -518,8 +518,8 @@ Usage: #example
 * dosageInstruction[=].timing.repeat.periodUnit = #d
 * dosageInstruction[=].text = "daarna gedurende 4 dagen 0.5 tabl/dag"
 * requester = Reference(Practitioner/practitioner1)
-* performerType = $sct#106292003 "Nurse"
-* performer = Reference(Practitioner/practitioner2)
+* extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
+* extension[performer].extension[actor].valueReference = Reference(Practitioner/practitioner2)
 * note.text = "medrol per os in afbouwschema, gedurende 4 dagen 2 tabl in 1 inname/dag, daarna gedurende 4 dagen 1 tabl/dag, daarna gedurende 4 dagen 0.5 tabl/dag"
 
 
@@ -549,8 +549,8 @@ Usage: #example
 * dosageInstruction.site = $sct#34338003
 * dosageInstruction.patientInstruction = "daarna 10 minuten op zij blijven liggen"
 * requester = Reference(Practitioner/practitioner1)
-* performerType = $sct#106292003 "Nurse"
-* performer = Reference(Practitioner/practitioner2)
+* extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
+* extension[performer].extension[actor].valueReference = Reference(Practitioner/practitioner2)
 * note.text = "in beide oren, daarna 10 minuten op zij blijven liggen"
 
 Instance: example24-referralprescription-nursing-non-reimbursable
@@ -581,8 +581,8 @@ Usage: #example
 * occurrenceTiming.repeat.period = 1
 * occurrenceTiming.repeat.periodUnit = #wk
 * requester = Reference(Practitioner/practitioner1)
-* performerType = $sct#106292003 "Nurse"
-* performer = Reference(Practitioner/practitioner2)
+* extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
+* extension[performer].extension[actor].valueReference = Reference(Practitioner/practitioner2)
 * note.text = "Frequency: 1x per week, startdatum 25/02/2021, einddatum 31/12/2021"
 
 Instance: example26-referralprescription-nursing-other
@@ -610,8 +610,8 @@ Usage: #example
 * subject = Reference(Patient/patient1)
 * occurrenceDateTime = "2021-02-25T00:00:00.000Z"
 * requester = Reference(Practitioner/practitioner1)
-* performerType = $sct#106292003 "Nurse"
-* performer = Reference(Practitioner/practitioner2)
+* extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
+* extension[performer].extension[actor].valueReference = Reference(Practitioner/practitioner2)
 * note.text = "bloedafname, Frequency: eenmalig, nuchter"
 * authoredOn = "2022-10-31"
 
@@ -635,8 +635,8 @@ Usage: #example
 * dosageInstruction.timing.repeat.period = 1
 * dosageInstruction.timing.repeat.periodUnit = #d
 * requester = Reference(Practitioner/practitioner1)
-* performerType = $sct#106292003 "Nurse"
-* performer = Reference(Practitioner/practitioner2)
+* extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
+* extension[performer].extension[actor].valueReference = Reference(Practitioner/practitioner2)
 * note.text = "wound care codeset/valueset is still missing (see orderDetail)/ waar komt de medicatie Flaminal Hydro"
 * reasonCode = $sct#195450002
 * dosageInstruction.site = $sct#771354004
@@ -665,8 +665,8 @@ Usage: #example
 * dosageInstruction.site = $sct#34338003
 * dosageInstruction.text = "1 X per dag"
 * requester = Reference(Practitioner/practitioner1)
-* performerType = $sct#106292003 "Nurse"
-* performer = Reference(Practitioner/practitioner2)
+* extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
+* extension[performer].extension[actor].valueReference = Reference(Practitioner/practitioner2)
 * note.text = "1 X per dag aanbrengen op de wonde - ulcer variqueux infecté - MI droit Amoxicilline (antibiotique)"
 * dosageInstruction.site = $sct#771354004
 * reasonCode = $sct#195450002
@@ -698,5 +698,5 @@ Usage: #example
 * occurrenceTiming.repeat.period = 1
 * occurrenceTiming.repeat.periodUnit = #d
 * requester = Reference(Practitioner/practitioner1)
-* performerType = $sct#106292003 "Nurse"
-* performer = Reference(Practitioner/practitioner2)
+* extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
+* extension[performer].extension[actor].valueReference = Reference(Practitioner/practitioner2)
