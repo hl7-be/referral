@@ -19,6 +19,7 @@ Description: "The common structure for referral prescription."
 	BeCoPrescriber named coprescriber 0..* MS and
     BeValidityPeriod named validity 1..1 MS and
     BeExecutionPeriod named executed 0..1 MS and 
+    BeLastestEndDate named latest 0..1 MS and
     BeIntendedPerformer named performer 1..1 MS
 * extension[statusReason].value[x] only CodeableConcept
 * extension[statusReason].valueCodeableConcept from BeReasonReferralStatus (extensible)
@@ -26,6 +27,7 @@ Description: "The common structure for referral prescription."
 * extension[coprescriber] ^short = "Other parties that have to take part in the prescription."
 * extension[validity] ^short = "Validity period of the prescription"
 * extension[performer] ^short = "Takes the place of performer and performerType"
+* extension[latest] ^short = "Request must be executed before"
 * identifier MS
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
