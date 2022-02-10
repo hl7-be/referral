@@ -239,67 +239,443 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div>
 <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
-<p>Epic 1: Een verwijsvoorschrift elektronisch voorschrijven en uitvoeren
-Pre:
-Requester
-PerformerType
-Validity
-Subject
-Code
-OrderDetail
-Post:
-UHMEP
-Status = planned</p>
 
-<p>Pre:
-Status = planned
-Post:
-Status = active
-Epic 2: Doorverwijzen naar een andere zorgverlener
-Pre:
-Post: 
-Epic 3: De zorgverlener vraagt een verlenging van behandeling
-Quid verlenging van behandeling?
-Epic 3a : De voorschrijver gaat akkoord met het voorstel van verlenging van behandeling
-Epic 3b: De voorschrijver gaat niet akkoord met het voorstel van verlenging van een behandeling
-Epic 4: De zorgverlener stelt een behandeling voor
-Quid voorstel van behandeling?
-Epic 4a: De voorschrijver gaat akkoord met het voorstel van behandeling
-Epic 4b: De voorschrijver gaat niet akkoord met het voorstel van behandeling
-Epic 5: Meerdere zorgverleners voor éénzelfde verwijsvoorschrift
-Pre: aantal performers
-Post: aantal performers + 1
-Epic 6: Uitvoeringsdatum van het verwijsvoorschrift overschreden
-Epic 6a: de patiënt komt bij de voorschrijver
-Pre: nieuw voorschrift + verwijzing oud
-Post: nieuw voorschrift met UHMEP
-Epic 6b: de patiënt komt bij de zorgverlener
-Quid voorstel van behandeling
-Epic 6c: de patiënt onderneemt niets
-Epic 7: Annulering van het verwijsvoorschrift 
-Epic 7a: De voorschrijver annuleert
-Post:
-Status = revoked 
-Epic 7b: de patiënt annuleert
-Post:
-Status = revoked<br />
-Epic 8: Annulering van het medisch voorstel
-Epic 8a: De zorgverlener annuleert 
-Scenario 8b: De patiënt annuleert 
-Epic 9: Substitutierecht bij een verwijsvoorschrift
-Pre:
-aantal orderDetail
-Post:
-aantal orderDetail +1 
-Epic 10: Meerdere zorgverleners moeten een verwijsvoorschrift tekenen 
-Epic 11: Facturatie van een zorgverlening, het bijhorende verwijsvoorschrift werd afgesloten door de zorgverlener
-Pre: 
-status = active
-Post:
-status = completed
-Epic 12: Tussentijdse facturatie van zorgverlening, het bijhorende verwijsvoorschrift werd niet afgesloten door de zorgverlener
-Epic 13: Facturatie van 2 zorgverleningen voor verschillende pathologieën
-Epic 14: Medische controle</p>
+<h2 id="epic-1-prescribe-and-perform-a-referral-prescription">Epic 1: Prescribe and perform a referral prescription</h2>
+<h1 id="prescribe-without-coprescribers">prescribe (without coprescribers)</h1>
+<p>| Pre: ||
+|—–|–|
+|Requester||
+|Performer.role|at least one|
+|Validity|start and end date|
+|Subject
+|Code
+|OrderDetail
+|Intent|order|</p>
+
+<p>|Post:||
+|–|–|
+|UHMEP||
+|Status| open|</p>
+<h1 id="prescribe-with-coprescribers">prescribe (with coprescribers)</h1>
+<p>| Pre: ||
+|—–|–|
+|Requester||
+|Performer.role| at lease one|
+|Validity
+|Subject
+|Code
+|OrderDetail
+|CoPrescriber.CoPrescriberType|at least one|</p>
+
+<p>|Post:||
+|–|–|
+|UHMEP||
+|Status| draft if other coprescribers are mandatory, open if not|</p>
+<h1 id="uitvoeren">uitvoeren</h1>
+<p>|Pre:||
+|–|–|
+|Status| open|</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Post:</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Status</td>
+      <td>active</td>
+    </tr>
+    <tr>
+      <td>Performer.actor</td>
+      <td>Reference to practitioner</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="epic-2-refer-to-other-caregiver">Epic 2: Refer to other caregiver</h2>
+<p>The caregiver consults the prescription, but does not do anything with it</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pre:</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Status</td>
+      <td>open</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Post:</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Status</td>
+      <td>open</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="epic-3-the-caregiver-asks-for-the-prolongation-of-the-treatment">Epic 3: the caregiver asks for the prolongation of the treatment</h2>
+<p>Prolongation of a treatment is a proposal for a treatment to the requester of the referral prescription.</p>
+
+<p>A proposal for a treatment is a referral prescription with intent proposal.</p>
+
+<p>A new referral prescription is made as a copy of an existing one and sent using a different transaction</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pre:</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Status</td>
+      <td>draft</td>
+    </tr>
+    <tr>
+      <td>Intent</td>
+      <td>proposal</td>
+    </tr>
+    <tr>
+      <td>Requester</td>
+      <td>the GP of the original prescription</td>
+    </tr>
+    <tr>
+      <td>Performer.actor</td>
+      <td>the current performer</td>
+    </tr>
+    <tr>
+      <td>Performer.role</td>
+      <td>the current performer role</td>
+    </tr>
+    <tr>
+      <td>basedOn</td>
+      <td>reference to the original prescription</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Post:</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>UHMEP</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Status</td>
+      <td>open</td>
+    </tr>
+    <tr>
+      <td>Intent</td>
+      <td>proposal</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="epic-3a--the-prescriber-agrees-with-the-prolongation-proposal">Epic 3a : The prescriber agrees with the prolongation proposal</h1>
+
+<p>The proposal is copied into a new referral prescription with intent order. See prescribe and perform referral prescription</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pre:</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>UHMEP</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Status</td>
+      <td>open</td>
+    </tr>
+    <tr>
+      <td>Intent</td>
+      <td>proposal</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Post:</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Status</td>
+      <td>completed</td>
+    </tr>
+    <tr>
+      <td>Intent</td>
+      <td>proposal</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>AND</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Post:</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>basedOn</td>
+      <td>reference to the proposal</td>
+    </tr>
+    <tr>
+      <td>Status</td>
+      <td>open or draft</td>
+    </tr>
+    <tr>
+      <td>UHMEP</td>
+      <td>new code</td>
+    </tr>
+    <tr>
+      <td>Intent</td>
+      <td>order</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="epic-3b-the-prescriber-does-not-agree-with-the-prolongation-proposal">Epic 3b: The prescriber does not agree with the prolongation proposal</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pre:</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Status</td>
+      <td>revoked</td>
+    </tr>
+    <tr>
+      <td>Intent</td>
+      <td>proposal</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Post:</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Status</td>
+      <td>revoked</td>
+    </tr>
+    <tr>
+      <td>Intent</td>
+      <td>proposal</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="epic-4-de-zorgverlener-stelt-een-behandeling-voor">Epic 4: De zorgverlener stelt een behandeling voor</h2>
+<p>Quid voorstel van behandeling?</p>
+<h1 id="epic-4a-de-voorschrijver-gaat-akkoord-met-het-voorstel-van-behandeling">Epic 4a: De voorschrijver gaat akkoord met het voorstel van behandeling</h1>
+<h1 id="epic-4b-de-voorschrijver-gaat-niet-akkoord-met-het-voorstel-van-behandeling">Epic 4b: De voorschrijver gaat niet akkoord met het voorstel van behandeling</h1>
+
+<h2 id="epic-5-meerdere-zorgverleners-voor-éénzelfde-verwijsvoorschrift">Epic 5: Meerdere zorgverleners voor éénzelfde verwijsvoorschrift</h2>
+<p>|Pre:||
+|–|–|
+|aantal performers||</p>
+
+<p>|Post:||
+|–|–|
+||aantal performers + 1|</p>
+<h2 id="epic-6-uitvoeringsdatum-van-het-verwijsvoorschrift-overschreden">Epic 6: Uitvoeringsdatum van het verwijsvoorschrift overschreden</h2>
+<p>Epic 6a: de patiënt komt bij de voorschrijver
+|Pre:||
+|–|–|
+||nieuw voorschrift + verwijzing oud|</p>
+
+<p>|Post:||
+|–|–|
+||nieuw voorschrift met UHMEP|</p>
+<h1 id="epic-6b-de-patiënt-komt-bij-de-zorgverlener">Epic 6b: de patiënt komt bij de zorgverlener</h1>
+<p>Quid voorstel van behandeling</p>
+<h1 id="epic-6c-de-patiënt-onderneemt-niets">Epic 6c: de patiënt onderneemt niets</h1>
+<h2 id="epic-7-annulering-van-het-verwijsvoorschrift">Epic 7: Annulering van het verwijsvoorschrift</h2>
+<h1 id="epic-7a-de-voorschrijver-annuleert">Epic 7a: De voorschrijver annuleert</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pre:</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Intent</td>
+      <td>order</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>|Post:||
+|–|–|
+|Status|revoked|</p>
+<h1 id="epic-7b-de-patiënt-annuleert">Epic 7b: de patiënt annuleert</h1>
+<p>|Pre:||
+|–|–|
+|Intent|order|</p>
+
+<p>|Post:||
+|–|–|
+|Status|revoked|</p>
+<h2 id="epic-8-annulering-van-het-medisch-voorstel">Epic 8: Annulering van het medisch voorstel</h2>
+<h1 id="epic-8a-de-zorgverlener-annuleert">Epic 8a: De zorgverlener annuleert</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pre:</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Intent</td>
+      <td>proposal</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>|Post:||
+|–|–|
+|Status|revoked|</p>
+<h1 id="scenario-8b-de-patiënt-annuleert">Scenario 8b: De patiënt annuleert</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pre:</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Intent</td>
+      <td>proposal</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>|Post:||
+|–|–|
+|Status|revoked|</p>
+<h2 id="epic-9-substitutierecht-bij-een-verwijsvoorschrift">Epic 9: Substitutierecht bij een verwijsvoorschrift</h2>
+<p>|Pre:||
+|–|–|
+|aantal orderDetail||</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Post:</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>aantal orderDetail +1</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="epic-10-more-than-one-caregiver-have-to-sign-the-referral-prescription">Epic 10: More than one caregiver have to sign the referral prescription</h2>
+<p>Status becomes open if all mandatory coprescribers have signed</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pre:</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CoPrescriber.coprescriberType</td>
+      <td>equal to the type of the signing caregiver</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>draft or open</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Post:</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CoPrescriber.coprescriber</td>
+      <td>reference naar de coprescriber</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>draft or open</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="epic-11-facturatie-van-een-zorgverlening-het-bijhorende-verwijsvoorschrift-werd-afgesloten-door-de-zorgverlener">Epic 11: Facturatie van een zorgverlening, het bijhorende verwijsvoorschrift werd afgesloten door de zorgverlener</h2>
+<p>|Pre:||
+|–|–|
+|status|active|</p>
+
+<p>|Post:||
+|–|–|
+|status|completed|</p>
+<h2 id="epic-12-tussentijdse-facturatie-van-zorgverlening-het-bijhorende-verwijsvoorschrift-werd-niet-afgesloten-door-de-zorgverlener">Epic 12: Tussentijdse facturatie van zorgverlening, het bijhorende verwijsvoorschrift werd niet afgesloten door de zorgverlener</h2>
+<h2 id="epic-13-facturatie-van-2-zorgverleningen-voor-verschillende-pathologieën">Epic 13: Facturatie van 2 zorgverleningen voor verschillende pathologieën</h2>
+<h2 id="epic-14-medische-controle">Epic 14: Medische controle</h2>
+
 
 
 
@@ -325,7 +701,7 @@ Epic 14: Medische controle</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7belgium.org">HL7 Belgium</a>.  Package my-ig#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Feb 8, 2022 14:21+0000">2022-02-08</span>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7belgium.org">HL7 Belgium</a>.  Package my-ig#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Feb 10, 2022 10:05+0000">2022-02-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
