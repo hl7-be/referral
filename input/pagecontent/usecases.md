@@ -1,7 +1,18 @@
+A referral prescription should in any stage of a usecase at least contain following fields:
+
+: Requester
+: Performer.role
+: Validity
+: Subject
+: Code
+: OrderDetail
+: AuthoredOn
 
 ## Epic 1: Prescribe and perform a referral prescription
 
 # prescribe (without coprescribers)
+
+The client creates a referral prescription with intent order. The server stores a referral prescription with UHMEP id and status open.
 
 | Pre: ||
 |-----|--|
@@ -20,6 +31,8 @@
 
 # prescribe (with coprescribers)
 
+The client creates a referral prescription with intent order and at least one coprescriber.coprescriberType. The server stores a referral prescription with UHMEP id and status draft, if the coprescriber is mandatory, and open if it is optional.
+
 | Pre: ||
 |-----|--|
 |Requester||
@@ -35,7 +48,9 @@
 |UHMEP||
 |Status| draft if other coprescribers are mandatory, open if not|
 
-# uitvoeren
+# perform
+
+Performing a request is adding a Performer.actor to a referral prescription and setting the status to active, if the status of the referral prescription is open.
 
 |Pre:||
 |--|--|
@@ -82,7 +97,9 @@ A new referral prescription is made as a copy of an existing one and sent using 
 
 # Epic 3a : The prescriber agrees with the prolongation proposal
 
-The proposal is copied into a new referral prescription with intent order. See prescribe and perform referral prescription
+The relevant fields of an open proposal is copied into a new referral prescription with intent order. A reference to the original proposal is added to the new referral prescription.
+
+The proposal is set completed.
 
 |Pre:||
 |--|--|
@@ -109,9 +126,11 @@ AND
 
 # Epic 3b: The prescriber does not agree with the prolongation proposal
 
+The prescriber sets the status of the open proposal to revoked.
+
 |Pre:||
 |--|--|
-|Status|revoked|
+|Status|open|
 |Intent|proposal|
 
 
@@ -122,94 +141,155 @@ AND
 
 
 
-## Epic 4: De zorgverlener stelt een behandeling voor
-Quid voorstel van behandeling?
-# Epic 4a: De voorschrijver gaat akkoord met het voorstel van behandeling
-# Epic 4b: De voorschrijver gaat niet akkoord met het voorstel van behandeling
+## Epic 4: The caregiver proposes a treatment
 
+The caregiver creates a proposal (referral prescription with status proposal). The caregiver is the performer, and the requester is the prescriber that should authorise the proposal and make the prescription.
 
-## Epic 5: Meerdere zorgverleners voor éénzelfde verwijsvoorschrift
+# Epic 4a: The prescriber agrees with the proposal of a treatment
+
+Identical to Epic 3a
+
+# Epic 4b: The prescriber does not agree with the proposal of a treatment
+
+Identical to Epic 3b
+
+## Epic 5: Multiple cargivers for one referral prescription
+
+Take the current set of performers and add a new one. 
+
+If as a prescriber, you expect this prescription to be performed by different performer roles, than add roles without actors.
+
+If as a performer, you take a referral prescription from a colleague, add both the role and the actor.
 
 |Pre:||
 |--|--|
-|aantal performers||
+|number performers||
 
 |Post:||
 |--|--|
-||aantal performers + 1|
+||number performers + 1|
 
-## Epic 6: Uitvoeringsdatum van het verwijsvoorschrift overschreden
-# Epic 6a: de patiënt komt bij de voorschrijver
+## Epic 6: Validity date of the prescription has expired
+# Epic 6a: The patient encounters the prescriber
+
+The prescriber creates a new referral prescription with the relevant fields of the expired prescription, and puts the expired prescription in the basedOn field.
 
 |Pre:||
 |--|--|
-||nieuw voorschrift + verwijzing oud|
+|status|open|
+|validity|expired|
+|intent|order|
+
+|Pre:||
+|--|--|
+|status|draft|
+|basedOn|expired prescription|
+|intent|order| 
+
+|Post:||
+|--|--|
+|UHMEP|new UHMEP|
+|status|open|
+|intent|order|
+
+# Epic 6b: The patient encounters the caregiver
+
+The prescriber creates a new proposal with the relevant fields of the expired prescription, and puts the expired prescription in the basedOn field.
+
+|Pre:||
+|--|--|
+|status|open|
+|validity|expired|
+|intent|order|
+
+|Pre:||
+|--|--|
+|status|draft|
+|basedOn|expired prescription|
+|intent|proposal|
  
 
 |Post:||
 |--|--|
-||nieuw voorschrift met UHMEP|
-
-# Epic 6b: de patiënt komt bij de zorgverlener
-Quid voorstel van behandeling
+|UHMEP|new UHMEP|
+|status|open|
+|intent|proposal|
 
 # Epic 6c: de patiënt onderneemt niets
 
-## Epic 7: Annulering van het verwijsvoorschrift 
-# Epic 7a: De voorschrijver annuleert
+|Pre:||
+|--|--|
+|status|open|
+|validity|expired|
+|intent|order|
+
+
+|Post:||
+|--|--|
+|status|not-done|
+|validity|expired|
+|intent|order|
+
+
+## Epic 7: Cancelling of the referral prescription 
+# Epic 7a: The prescriber cancels
 
 |Pre:||
 |--|--|
 |Intent|order| 
-
+|Status|open|
 
 |Post:||
 |--|--|
 |Status|revoked| 
 
-# Epic 7b: de patiënt annuleert
+# Epic 7b: the patient cancels
 
 |Pre:||
 |--|--|
 |Intent|order| 
-
-
-|Post:||
-|--|--|
-|Status|revoked|  
-
-## Epic 8: Annulering van het medisch voorstel
-# Epic 8a: De zorgverlener annuleert
-
-|Pre:||
-|--|--|
-|Intent|proposal| 
+|Status|open|
 
 |Post:||
 |--|--|
 |Status|revoked|  
 
-# Scenario 8b: De patiënt annuleert
+## Epic 8: Cancelling of the proposal
+# Epic 8a: the caregiver cancels
 
 |Pre:||
 |--|--|
-|Intent|proposal| 
+|Intent|proposal|
+|Status|open| 
 
 |Post:||
 |--|--|
 |Status|revoked|  
 
-## Epic 9: Substitutierecht bij een verwijsvoorschrift
+# Scenario 8b: the patient cancels
 
 |Pre:||
 |--|--|
-|aantal orderDetail||
+|Intent|proposal|
+|Status|open| 
 
 |Post:||
 |--|--|
-||aantal orderDetail +1| 
+|Status|revoked|  
 
-## Epic 10: More than one caregiver have to sign the referral prescription
+## Epic 9: Mandate to substitute by a caregiver for a referral prescription
+
+Add a new orderDetail to the referral prescription (only for limited set of caregivers)
+
+|Pre:||
+|--|--|
+|number orderDetail||
+
+|Post:||
+|--|--|
+||number orderDetail +1| 
+
+## Epic 10: More than one caregiver has to sign the referral prescription
 Status becomes open if all mandatory coprescribers have signed
 
 |Pre:||
@@ -227,13 +307,21 @@ Status becomes open if all mandatory coprescribers have signed
 |Pre:||
 |--|--|
 |status|active|
+|intent|order|
 
 |Post:||
 |--|--|
 |status|completed|
+|intent|order|
 
 ## Epic 12: Tussentijdse facturatie van zorgverlening, het bijhorende verwijsvoorschrift werd niet afgesloten door de zorgverlener
 
+There are no changes to the referral prescription
+
 ## Epic 13: Facturatie van 2 zorgverleningen voor verschillende pathologieën
 
+TBD
+
 ## Epic 14: Medische controle
+
+TBD
