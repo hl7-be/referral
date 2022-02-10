@@ -1,6 +1,8 @@
 
 ## Epic 1: Prescribe and perform a referral prescription
+
 # prescribe (without coprescribers)
+
 | Pre: ||
 |-----|--|
 |Requester||
@@ -15,7 +17,9 @@
 |--|--|
 |UHMEP||
 |Status| open|
+
 # prescribe (with coprescribers)
+
 | Pre: ||
 |-----|--|
 |Requester||
@@ -30,7 +34,9 @@
 |--|--|
 |UHMEP||
 |Status| draft if other coprescribers are mandatory, open if not|
+
 # uitvoeren
+
 |Pre:||
 |--|--|
 |Status| open|
@@ -123,6 +129,7 @@ Quid voorstel van behandeling?
 
 
 ## Epic 5: Meerdere zorgverleners voor éénzelfde verwijsvoorschrift
+
 |Pre:||
 |--|--|
 |aantal performers||
@@ -130,8 +137,10 @@ Quid voorstel van behandeling?
 |Post:||
 |--|--|
 ||aantal performers + 1|
+
 ## Epic 6: Uitvoeringsdatum van het verwijsvoorschrift overschreden
-Epic 6a: de patiënt komt bij de voorschrijver
+# Epic 6a: de patiënt komt bij de voorschrijver
+
 |Pre:||
 |--|--|
 ||nieuw voorschrift + verwijzing oud|
@@ -140,9 +149,12 @@ Epic 6a: de patiënt komt bij de voorschrijver
 |Post:||
 |--|--|
 ||nieuw voorschrift met UHMEP|
+
 # Epic 6b: de patiënt komt bij de zorgverlener
 Quid voorstel van behandeling
+
 # Epic 6c: de patiënt onderneemt niets
+
 ## Epic 7: Annulering van het verwijsvoorschrift 
 # Epic 7a: De voorschrijver annuleert
 
@@ -154,7 +166,9 @@ Quid voorstel van behandeling
 |Post:||
 |--|--|
 |Status|revoked| 
+
 # Epic 7b: de patiënt annuleert
+
 |Pre:||
 |--|--|
 |Intent|order| 
@@ -163,6 +177,7 @@ Quid voorstel van behandeling
 |Post:||
 |--|--|
 |Status|revoked|  
+
 ## Epic 8: Annulering van het medisch voorstel
 # Epic 8a: De zorgverlener annuleert
 
@@ -173,6 +188,7 @@ Quid voorstel van behandeling
 |Post:||
 |--|--|
 |Status|revoked|  
+
 # Scenario 8b: De patiënt annuleert
 
 |Pre:||
@@ -182,7 +198,9 @@ Quid voorstel van behandeling
 |Post:||
 |--|--|
 |Status|revoked|  
+
 ## Epic 9: Substitutierecht bij een verwijsvoorschrift
+
 |Pre:||
 |--|--|
 |aantal orderDetail||
@@ -205,6 +223,7 @@ Status becomes open if all mandatory coprescribers have signed
 |status|draft or open| 
 
 ## Epic 11: Facturatie van een zorgverlening, het bijhorende verwijsvoorschrift werd afgesloten door de zorgverlener
+
 |Pre:||
 |--|--|
 |status|active|
@@ -212,6 +231,9 @@ Status becomes open if all mandatory coprescribers have signed
 |Post:||
 |--|--|
 |status|completed|
+
 ## Epic 12: Tussentijdse facturatie van zorgverlening, het bijhorende verwijsvoorschrift werd niet afgesloten door de zorgverlener
+
 ## Epic 13: Facturatie van 2 zorgverleningen voor verschillende pathologieën
+
 ## Epic 14: Medische controle
