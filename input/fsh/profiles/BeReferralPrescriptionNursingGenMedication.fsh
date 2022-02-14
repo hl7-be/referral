@@ -63,4 +63,4 @@ Description: """The nursing profile specialized for medication. Note this profil
 * note MS
 * dosageInstruction.text 1.. MS
 * dosageInstruction.site MS
-* intent MS
+* intent 1..1 MS
