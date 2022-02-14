@@ -63,6 +63,7 @@ Description: "The common structure for referral prescription."
 * patientInstruction MS
 * orderDetail MS
 * basedOn MS
+* intent 1..1 MS
 
 
 

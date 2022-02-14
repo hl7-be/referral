@@ -124,7 +124,6 @@ Usage: #example
 * extension[performer].extension[actor].valueReference = Reference(Practitioner/practitioner2)
 * authoredOn = "2022-10-31"
 
-
 Instance: example05-referralprescription-nursing-digestive-system-care
 InstanceOf: BeReferralPrescriptionNursing
 Usage: #example
@@ -521,7 +520,6 @@ Usage: #example
 * extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
 * extension[performer].extension[actor].valueReference = Reference(Practitioner/practitioner2)
 * note.text = "medrol per os in afbouwschema, gedurende 4 dagen 2 tabl in 1 inname/dag, daarna gedurende 4 dagen 1 tabl/dag, daarna gedurende 4 dagen 0.5 tabl/dag"
-
 
 Instance: example23-referralprescription-nursing-medication
 InstanceOf: BeReferralPrescriptionNursingGenMedication
