@@ -1,4 +1,5 @@
 Logical: BeNursingPrescription
+Parent: BeModelReferralPrescription
 Id: be-model-nursingprescription
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-model-nursingprescription"
 * ^version = "0.2.0"
