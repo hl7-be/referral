@@ -1,4 +1,4 @@
-Logical: BeReferralPrescription
+Logical: BeModelReferralPrescription
 Id: be-model-referralprescription
 Description: "Logical model describing the model for the prescription referral. This draft is used in the HL7 Belgian workgroup for referral."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-model-referralprescription"

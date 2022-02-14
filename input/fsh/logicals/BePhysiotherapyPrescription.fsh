@@ -1,4 +1,5 @@
 Logical: BePhysiotherapyPrescription
+Parent: BeModelReferralPrescription
 Id: be-model-physiotherapyprescription
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-model-physiotherapyprescription"
 * ^version = "0.2.0"

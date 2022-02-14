@@ -1,4 +1,5 @@
 Logical: BeDiagnosticImagingPrescription
+Parent: BeModelReferralPrescription
 Id: be-model-diagnosticimagingprescription
 Description: "Logical model describing the model for the diagnostic imaging prescription. This draft is used in the HL7 Belgian workgroup for referral."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-model-diagnosticimagingprescription"
