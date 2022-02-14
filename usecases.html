@@ -540,16 +540,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td>the GP of the original prescription</td>
     </tr>
     <tr>
-      <td>Performer.actor</td>
-      <td>the current performer</td>
-    </tr>
-    <tr>
-      <td>Performer.role</td>
+      <td>IntendedPerformer.role</td>
       <td>the current performer role</td>
     </tr>
     <tr>
       <td>basedOn</td>
       <td>reference to the original prescription</td>
+    </tr>
+    <tr>
+      <td>proposalType</td>
+      <td>prolongation</td>
     </tr>
   </tbody>
 </table>
@@ -603,6 +603,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td>Intent</td>
       <td>proposal</td>
     </tr>
+    <tr>
+      <td>proposalType</td>
+      <td>prolongation</td>
+    </tr>
   </tbody>
 </table>
 
@@ -621,6 +625,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>Intent</td>
       <td>proposal</td>
+    </tr>
+    <tr>
+      <td>proposalType</td>
+      <td>prolongation</td>
     </tr>
   </tbody>
 </table>
@@ -672,6 +680,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td>Intent</td>
       <td>proposal</td>
     </tr>
+    <tr>
+      <td>proposalType</td>
+      <td>prolongation</td>
+    </tr>
   </tbody>
 </table>
 
@@ -691,6 +703,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td>Intent</td>
       <td>proposal</td>
     </tr>
+    <tr>
+      <td>proposalType</td>
+      <td>prolongation</td>
+    </tr>
   </tbody>
 </table>
 
@@ -698,13 +714,186 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>The caregiver creates a proposal (referral prescription with status proposal). The caregiver is the performer, and the requester is the prescriber that should authorise the proposal and make the prescription.</p>
 
+<table>
+  <thead>
+    <tr>
+      <th>Pre: (proposal)</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Status</td>
+      <td>draft</td>
+    </tr>
+    <tr>
+      <td>Intent</td>
+      <td>proposal</td>
+    </tr>
+    <tr>
+      <td>Requester</td>
+      <td>the GP</td>
+    </tr>
+    <tr>
+      <td>IntendedPerformer.role</td>
+      <td>the current performer role</td>
+    </tr>
+    <tr>
+      <td>proposalType</td>
+      <td>new</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Post:</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>UHMEP</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Status</td>
+      <td>open</td>
+    </tr>
+    <tr>
+      <td>Intent</td>
+      <td>proposal</td>
+    </tr>
+  </tbody>
+</table>
+
 <h1 id="epic-4a-the-prescriber-agrees-with-the-proposal-of-a-treatment">Epic 4a: The prescriber agrees with the proposal of a treatment</h1>
 
-<p>Identical to Epic 3a</p>
+<table>
+  <thead>
+    <tr>
+      <th>Pre: (proposal)</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>UHMEP</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Status</td>
+      <td>open</td>
+    </tr>
+    <tr>
+      <td>Intent</td>
+      <td>proposal</td>
+    </tr>
+    <tr>
+      <td>proposalType</td>
+      <td>new</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Post: (proposal)</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Status</td>
+      <td>completed</td>
+    </tr>
+    <tr>
+      <td>Intent</td>
+      <td>proposal</td>
+    </tr>
+    <tr>
+      <td>proposalType</td>
+      <td>new</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Post: (order)</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>basedOn</td>
+      <td>reference to the proposal</td>
+    </tr>
+    <tr>
+      <td>Status</td>
+      <td>open or draft</td>
+    </tr>
+    <tr>
+      <td>UHMEP</td>
+      <td>new code</td>
+    </tr>
+    <tr>
+      <td>Intent</td>
+      <td>order</td>
+    </tr>
+  </tbody>
+</table>
 
 <h1 id="epic-4b-the-prescriber-does-not-agree-with-the-proposal-of-a-treatment">Epic 4b: The prescriber does not agree with the proposal of a treatment</h1>
 
-<p>Identical to Epic 3b</p>
+<table>
+  <thead>
+    <tr>
+      <th>Pre:</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Status</td>
+      <td>open</td>
+    </tr>
+    <tr>
+      <td>Intent</td>
+      <td>proposal</td>
+    </tr>
+    <tr>
+      <td>proposalType</td>
+      <td>new</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Post:</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Status</td>
+      <td>revoked</td>
+    </tr>
+    <tr>
+      <td>Intent</td>
+      <td>proposal</td>
+    </tr>
+    <tr>
+      <td>proposalType</td>
+      <td>new</td>
+    </tr>
+  </tbody>
+</table>
 
 <h2 id="epic-5-multiple-cargivers-for-one-referral-prescription">Epic 5: Multiple cargivers for one referral prescription</h2>
 
@@ -820,7 +1009,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h1 id="epic-6b-the-patient-encounters-the-caregiver">Epic 6b: The patient encounters the caregiver</h1>
 
-<p>The prescriber creates a new proposal with the relevant fields of the expired prescription, and puts the expired prescription in the basedOn field.</p>
+<p>The caregiver creates a new proposal with the relevant fields of the expired prescription, and puts the expired prescription in the basedOn field.</p>
 
 <table>
   <thead>
@@ -865,6 +1054,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td>intent</td>
       <td>proposal</td>
     </tr>
+    <tr>
+      <td>proposalType</td>
+      <td>new</td>
+    </tr>
   </tbody>
 </table>
 
@@ -887,6 +1080,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>intent</td>
       <td>proposal</td>
+    </tr>
+    <tr>
+      <td>proposalType</td>
+      <td>new</td>
     </tr>
   </tbody>
 </table>
@@ -1101,6 +1298,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td>number orderDetail</td>
       <td> </td>
     </tr>
+    <tr>
+      <td>intent</td>
+      <td>order</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>active</td>
+    </tr>
   </tbody>
 </table>
 
@@ -1115,6 +1320,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td> </td>
       <td>number orderDetail +1</td>
+    </tr>
+    <tr>
+      <td>intent</td>
+      <td>order</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>active</td>
     </tr>
   </tbody>
 </table>
@@ -1236,7 +1449,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7belgium.org">HL7 Belgium</a>.  Package my-ig#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Feb 14, 2022 10:44+0000">2022-02-14</span>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7belgium.org">HL7 Belgium</a>.  Package my-ig#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Feb 14, 2022 11:05+0000">2022-02-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
