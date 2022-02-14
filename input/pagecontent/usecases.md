@@ -1,12 +1,16 @@
 A referral prescription should in any stage of a usecase at least contain following fields:
 
-: Requester
-: Performer.role
-: Validity
-: Subject
-: Code
-: OrderDetail
-: AuthoredOn
+| FHIR |Logical Model |
+|-----|--|
+| Requester|Prescriber|
+| Performer.role|Discipline|
+| Validity|ValidationStartDate-ValidationEndDate|
+| Subject|Patient|
+| Code|ServiceRequested|
+| OrderDetail|ServiceRequested|
+| AuthoredOn|RecordedDate|
+| Status| Status|
+| Intent| Intent|
 
 ## Epic 1: Prescribe and perform a referral prescription
 
@@ -79,7 +83,15 @@ A proposal for a treatment is a referral prescription with intent proposal.
 
 A new referral prescription is made as a copy of an existing one and sent using a different transaction
 
-|Pre:||
+|Pre: (order)||
+|--|--|
+|Status|completed|
+|Intent|order|
+|Requester|the GP |
+|Performer.role|the current performer role|
+
+
+|Pre: (proposal)||
 |--|--|
 |Status|draft|
 |Intent|proposal|
@@ -101,22 +113,20 @@ The relevant fields of an open proposal is copied into a new referral prescripti
 
 The proposal is set completed.
 
-|Pre:||
+|Pre: (proposal)||
 |--|--|
 |UHMEP||
 |Status|open|
 |Intent|proposal|
 
 
-|Post:||
+|Post: (proposal) ||
 |--|--|
 |Status|completed|
 |Intent|proposal|
 
 
-AND
-
-|Post:||
+|Post: (order)||
 |--|--|
 |basedOn|reference to the proposal|
 |Status|open or draft|
