@@ -96,9 +96,9 @@ A new referral prescription is made as a copy of an existing one and sent using 
 |Status|draft|
 |Intent|proposal|
 |Requester|the GP of the original prescription|
-|Performer.actor|the current performer|
-|Performer.role|the current performer role|
+|IntendedPerformer.role|the current performer role|
 |basedOn|reference to the original prescription|
+|proposalType|prolongation|
 
 |Post:||
 |--|--|
@@ -118,12 +118,14 @@ The proposal is set completed.
 |UHMEP||
 |Status|open|
 |Intent|proposal|
+|proposalType|prolongation|
 
 
 |Post: (proposal) ||
 |--|--|
 |Status|completed|
 |Intent|proposal|
+|proposalType|prolongation|
 
 
 |Post: (order)||
@@ -142,12 +144,14 @@ The prescriber sets the status of the open proposal to revoked.
 |--|--|
 |Status|open|
 |Intent|proposal|
+|proposalType|prolongation|
 
 
 |Post:||
 |--|--|
 |Status|revoked|
 |Intent|proposal|
+|proposalType|prolongation|
 
 
 
@@ -155,13 +159,59 @@ The prescriber sets the status of the open proposal to revoked.
 
 The caregiver creates a proposal (referral prescription with status proposal). The caregiver is the performer, and the requester is the prescriber that should authorise the proposal and make the prescription.
 
+|Pre: (proposal)||
+|--|--|
+|Status|draft|
+|Intent|proposal|
+|Requester|the GP|
+|IntendedPerformer.role|the current performer role|
+|proposalType|new|
+
+|Post:||
+|--|--|
+|UHMEP||
+|Status|open|
+|Intent|proposal|
+
+
 # Epic 4a: The prescriber agrees with the proposal of a treatment
 
-Identical to Epic 3a
+|Pre: (proposal)||
+|--|--|
+|UHMEP||
+|Status|open|
+|Intent|proposal|
+|proposalType|new|
+
+
+|Post: (proposal) ||
+|--|--|
+|Status|completed|
+|Intent|proposal|
+|proposalType|new|
+
+
+|Post: (order)||
+|--|--|
+|basedOn|reference to the proposal|
+|Status|open or draft|
+|UHMEP| new code|
+|Intent| order|
 
 # Epic 4b: The prescriber does not agree with the proposal of a treatment
 
-Identical to Epic 3b
+|Pre:||
+|--|--|
+|Status|open|
+|Intent|proposal|
+|proposalType|new|
+
+
+|Post:||
+|--|--|
+|Status|revoked|
+|Intent|proposal|
+|proposalType|new|
 
 ## Epic 5: Multiple cargivers for one referral prescription
 
@@ -178,6 +228,7 @@ If as a performer, you take a referral prescription from a colleague, add both t
 |Post:||
 |--|--|
 ||number performers + 1|
+
 
 ## Epic 6: Validity date of the prescription has expired
 # Epic 6a: The patient encounters the prescriber
@@ -204,7 +255,7 @@ The prescriber creates a new referral prescription with the relevant fields of t
 
 # Epic 6b: The patient encounters the caregiver
 
-The prescriber creates a new proposal with the relevant fields of the expired prescription, and puts the expired prescription in the basedOn field.
+The caregiver creates a new proposal with the relevant fields of the expired prescription, and puts the expired prescription in the basedOn field.
 
 |Pre:||
 |--|--|
@@ -217,6 +268,7 @@ The prescriber creates a new proposal with the relevant fields of the expired pr
 |status|draft|
 |basedOn|expired prescription|
 |intent|proposal|
+|proposalType|new|
  
 
 |Post:||
@@ -224,6 +276,7 @@ The prescriber creates a new proposal with the relevant fields of the expired pr
 |UHMEP|new UHMEP|
 |status|open|
 |intent|proposal|
+|proposalType|new|
 
 # Epic 6c: de patiënt onderneemt niets
 
@@ -294,10 +347,16 @@ Add a new orderDetail to the referral prescription (only for limited set of care
 |Pre:||
 |--|--|
 |number orderDetail||
+|intent|order|
+|status|active|
+
 
 |Post:||
 |--|--|
-||number orderDetail +1| 
+||number orderDetail +1|
+|intent|order|
+|status|active|
+
 
 ## Epic 10: More than one caregiver has to sign the referral prescription
 Status becomes open if all mandatory coprescribers have signed
