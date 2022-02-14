@@ -239,18 +239,54 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div>
 <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
-<dl>
-  <dt>A referral prescription should in any stage of a usecase at least contain following fields:</dt>
-  <dd>
-    <p>Requester</p>
-  </dd>
-  <dd>Performer.role</dd>
-  <dd>Validity</dd>
-  <dd>Subject</dd>
-  <dd>Code</dd>
-  <dd>OrderDetail</dd>
-  <dd>AuthoredOn</dd>
-</dl>
+<p>A referral prescription should in any stage of a usecase at least contain following fields:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>FHIR</th>
+      <th>Logical Model</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Requester</td>
+      <td>Prescriber</td>
+    </tr>
+    <tr>
+      <td>Performer.role</td>
+      <td>Discipline</td>
+    </tr>
+    <tr>
+      <td>Validity</td>
+      <td>ValidationStartDate-ValidationEndDate</td>
+    </tr>
+    <tr>
+      <td>Subject</td>
+      <td>Patient</td>
+    </tr>
+    <tr>
+      <td>Code</td>
+      <td>ServiceRequested</td>
+    </tr>
+    <tr>
+      <td>OrderDetail</td>
+      <td>ServiceRequested</td>
+    </tr>
+    <tr>
+      <td>AuthoredOn</td>
+      <td>RecordedDate</td>
+    </tr>
+    <tr>
+      <td>Status</td>
+      <td>Status</td>
+    </tr>
+    <tr>
+      <td>Intent</td>
+      <td>Intent</td>
+    </tr>
+  </tbody>
+</table>
 
 <h2 id="epic-1-prescribe-and-perform-a-referral-prescription">Epic 1: Prescribe and perform a referral prescription</h2>
 
@@ -459,7 +495,34 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <table>
   <thead>
     <tr>
-      <th>Pre:</th>
+      <th>Pre: (order)</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Status</td>
+      <td>completed</td>
+    </tr>
+    <tr>
+      <td>Intent</td>
+      <td>order</td>
+    </tr>
+    <tr>
+      <td>Requester</td>
+      <td>the GP</td>
+    </tr>
+    <tr>
+      <td>Performer.role</td>
+      <td>the current performer role</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pre: (proposal)</th>
       <th> </th>
     </tr>
   </thead>
@@ -523,7 +586,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <table>
   <thead>
     <tr>
-      <th>Pre:</th>
+      <th>Pre: (proposal)</th>
       <th> </th>
     </tr>
   </thead>
@@ -546,7 +609,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <table>
   <thead>
     <tr>
-      <th>Post:</th>
+      <th>Post: (proposal)</th>
       <th> </th>
     </tr>
   </thead>
@@ -562,12 +625,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </tbody>
 </table>
 
-<p>AND</p>
-
 <table>
   <thead>
     <tr>
-      <th>Post:</th>
+      <th>Post: (order)</th>
       <th> </th>
     </tr>
   </thead>
@@ -1175,7 +1236,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7belgium.org">HL7 Belgium</a>.  Package my-ig#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Feb 10, 2022 14:16+0000">2022-02-10</span>
+          IG &#169; 2021+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7belgium.org">HL7 Belgium</a>.  Package my-ig#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Feb 14, 2022 08:27+0000">2022-02-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
