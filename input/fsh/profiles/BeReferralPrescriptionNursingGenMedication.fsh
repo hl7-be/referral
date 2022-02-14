@@ -29,7 +29,8 @@ Description: """The nursing profile specialized for medication. Note this profil
 	BeCoPrescriber named coprescriber 0..* MS and
     BeValidityPeriod named validity 0..1 MS and 
     BeExecutionPeriod named executed 0..1 MS and 
-    BeIntendedPerformer named performer 1..1 MS
+    BeIntendedPerformer named performer 1..1 MS and 
+    BeProposalType named proposalType 0..1 MS
 //* extension[statusReason].value[x] only CodeableConcept
 //* extension[statusReason].valueCodeableConcept from BeReasonReferralStatus (extensible)
 * extension[informParty] ^short = "Parties to inform of fulfillment of the prescription, besides the prescriber."
@@ -62,3 +63,4 @@ Description: """The nursing profile specialized for medication. Note this profil
 * note MS
 * dosageInstruction.text 1.. MS
 * dosageInstruction.site MS
+* intent MS
