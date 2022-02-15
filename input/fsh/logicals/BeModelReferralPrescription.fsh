@@ -38,3 +38,4 @@ Description: "Logical model describing the model for the prescription referral. 
 * prescribedService 1..1 http://hl7.org/fhir/StructureDefinition/CodeableConcept "What is prescribed" "What is prescribed"
 * resultReceiver 0..* Reference "Parties that shall be informed of the results of the prescription other then the prescriber." "Parties that shall be informed of the results of the prescription other then the prescriber."
 * note 0..1 Annotation "Additional text notes about the request." "Additional text notes about the request."
+* intent 1..1 http://hl7.org/fhir/StructureDefinition/code "Proposal, Prolongation, Prescription" "Proposal, Prolongation, Prescription"
