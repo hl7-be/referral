@@ -1,9 +1,9 @@
 ﻿ExampleIG : Validation Results
 =========================================
 
-err = 49, warn = 147, info = 12
+err = 47, warn = 149, info = 12
 IG Publisher Version: 1.1.104
-Generated Thu Feb 17 08:00:57 UTC 2022. FHIR version 4.0.1 for my-ig#0.2.0 (canonical = http://example.com/fhir/example)
+Generated Thu Feb 17 10:43:43 UTC 2022. FHIR version 4.0.1 for my-ig#0.2.0 (canonical = http://example.com/fhir/example)
  Build Errors : 6 / 39 / 0
  /github/workspace/fsh-generated/resources/CodeSystem-be-nursing-annex81-inadequate-adherence : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/CodeSystem-be-nursing-annex81-inadequate-adherence-link : 0 / 1 / 1
@@ -42,6 +42,7 @@ Generated Thu Feb 17 08:00:57 UTC 2022. FHIR version 4.0.1 for my-ig#0.2.0 (cano
  /github/workspace/fsh-generated/resources/StructureDefinition-be-ext-execution-period : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-be-ext-lastest-end-date : 0 / 2 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-be-ext-proposal-type : 0 / 2 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-be-ext-task-reference : 0 / 2 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-be-ext-validity-period : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-be-intended-performer : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-be-model-diagnosticimagingprescription : 0 / 7 / 1
@@ -49,7 +50,7 @@ Generated Thu Feb 17 08:00:57 UTC 2022. FHIR version 4.0.1 for my-ig#0.2.0 (cano
  /github/workspace/fsh-generated/resources/StructureDefinition-be-model-nursingprescription : 0 / 5 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-be-model-physiotherapyprescription : 0 / 5 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-be-model-referralprescription : 1 / 10 / 1
- /github/workspace/fsh-generated/resources/StructureDefinition-be-referralprescription : 2 / 2 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-be-referralprescription : 0 / 2 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-be-referralprescription-nursing : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-be-referralprescription-nursing-gen-medication : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/ValueSet-be-vs-co-prescription-status : 0 / 1 / 1
@@ -226,6 +227,9 @@ WARNING: StructureDefinition.where(url = 'https://www.ehealth.fgov.be/standards/
 == fsh-generated/resources/StructureDefinition-be-ext-proposal-type.json ==
 WARNING: StructureDefinition/be-ext-proposal-type: StructureDefinition.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
 WARNING: StructureDefinition.where(url = 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-proposal-type'): The Implementation Guide contains no examples for this extension
+== fsh-generated/resources/StructureDefinition-be-ext-task-reference.json ==
+WARNING: StructureDefinition/be-ext-task-reference: StructureDefinition.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
+WARNING: StructureDefinition.where(url = 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-task-reference'): The Implementation Guide contains no examples for this extension
 == fsh-generated/resources/StructureDefinition-be-ext-validity-period.json ==
 WARNING: StructureDefinition/be-ext-validity-period: StructureDefinition.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
 == fsh-generated/resources/StructureDefinition-be-intended-performer.json ==
@@ -269,9 +273,7 @@ WARNING: StructureDefinition/be-model-referralprescription: StructureDefinition.
 WARNING: StructureDefinition/be-model-referralprescription: StructureDefinition.differential.element[9]: eld-20: 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken' Rule 'Element names should be simple alphanumerics with a max of 64 characters, or code generation tools may be broken' Failed
 WARNING: StructureDefinition/be-model-referralprescription: StructureDefinition: Unable to find base http://hl7.org/fhir/StructureDefinition/Base for StructureDefinition, so can't check the differential
 == fsh-generated/resources/StructureDefinition-be-referralprescription.json ==
-ERROR: BeReferralPrescription.ServiceRequest.status: Binding https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-prescription-status is not a subset of binding http://hl7.org/fhir/ValueSet/request-status|4.0.1
 WARNING: StructureDefinition/be-referralprescription: StructureDefinition.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
-ERROR: StructureDefinition/be-referralprescription: StructureDefinition: Binding https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-vs-prescription-status is not a subset of binding http://hl7.org/fhir/ValueSet/request-status|4.0.1
 WARNING: StructureDefinition.where(url = 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription'): The Implementation Guide contains no examples for this profile
 == fsh-generated/resources/StructureDefinition-be-referralprescription-nursing.json ==
 WARNING: StructureDefinition/be-referralprescription-nursing: StructureDefinition.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
