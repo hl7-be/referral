@@ -12,6 +12,19 @@ A referral prescription should in any stage of a usecase at least contain follow
 | Status| Status|
 | Intent| Intent|
 
+A referral prescription has these status transitions:
+
+<div>
+
+{%include servicerequeststatus.svg%}
+
+</div>
+
+<br  clear="ALL">
+
+
+
+
 ## Epic 1: Prescribe and perform a referral prescription
 
 # prescribe (without coprescribers)
@@ -31,7 +44,8 @@ The client creates a referral prescription with intent order. The server stores 
 |Post:||
 |--|--|
 |UHMEP||
-|Status| open|
+|Status| active|
+|Task.status|ready|
 
 # prescribe (with coprescribers)
 
@@ -50,7 +64,8 @@ The client creates a referral prescription with intent order and at least one co
 |Post:||
 |--|--|
 |UHMEP||
-|Status| draft if other coprescribers are mandatory, open if not|
+|Status| draft if other coprescribers are mandatory, active if not|
+|Task.status|ready if other coprescribers are not mandatory|
 
 # perform
 
@@ -58,11 +73,13 @@ Performing a request is adding a Performer.actor to a referral prescription and 
 
 |Pre:||
 |--|--|
-|Status| open|
+|Status| active|
+|Task.status|ready|
 
 |Post:||
 |--|--|
 |Status| active|
+|Task.status|in-progress|
 |Performer.actor| Reference to practitioner|
 
 ## Epic 2: Refer to other caregiver
@@ -70,11 +87,13 @@ The caregiver consults the prescription, but does not do anything with it
 
 |Pre:||
 |--|--|
-|Status|open|
+|Status|active|
+|Task.status|ready|
 
 |Post:||
 |--|--|
-|Status|open|
+|Status|active|
+|Task.status|ready|
 
 ## Epic 3: the caregiver asks for the prolongation of the treatment
 Prolongation of a treatment is a proposal for a treatment to the requester of the referral prescription.
@@ -103,7 +122,8 @@ A new referral prescription is made as a copy of an existing one and sent using 
 |Post:||
 |--|--|
 |UHMEP||
-|Status|open|
+|Status|active|
+|Task.status|ready|
 |Intent|proposal|
 
 
@@ -116,7 +136,8 @@ The proposal is set completed.
 |Pre: (proposal)||
 |--|--|
 |UHMEP||
-|Status|open|
+|Status|active|
+|Task.status|ready|
 |Intent|proposal|
 |proposalType|prolongation|
 
@@ -131,7 +152,8 @@ The proposal is set completed.
 |Post: (order)||
 |--|--|
 |basedOn|reference to the proposal|
-|Status|open or draft|
+|Status|active or draft|
+|Task.status|if status is active, then ready|
 |UHMEP| new code|
 |Intent| order|
 
@@ -142,7 +164,8 @@ The prescriber sets the status of the open proposal to revoked.
 
 |Pre:||
 |--|--|
-|Status|open|
+|Status|active|
+|Task.status|ready|
 |Intent|proposal|
 |proposalType|prolongation|
 
@@ -170,7 +193,8 @@ The caregiver creates a proposal (referral prescription with status proposal). T
 |Post:||
 |--|--|
 |UHMEP||
-|Status|open|
+|Status|active|
+|Task.status|ready|
 |Intent|proposal|
 
 
@@ -179,7 +203,8 @@ The caregiver creates a proposal (referral prescription with status proposal). T
 |Pre: (proposal)||
 |--|--|
 |UHMEP||
-|Status|open|
+|Status|active|
+|Task.status|ready|
 |Intent|proposal|
 |proposalType|new|
 
@@ -194,7 +219,8 @@ The caregiver creates a proposal (referral prescription with status proposal). T
 |Post: (order)||
 |--|--|
 |basedOn|reference to the proposal|
-|Status|open or draft|
+|Status|active or draft|
+|Task.status|if status = active, then ready|
 |UHMEP| new code|
 |Intent| order|
 
@@ -202,7 +228,8 @@ The caregiver creates a proposal (referral prescription with status proposal). T
 
 |Pre:||
 |--|--|
-|Status|open|
+|Status|active|
+|Task.status|ready|
 |Intent|proposal|
 |proposalType|new|
 
@@ -237,8 +264,9 @@ The prescriber creates a new referral prescription with the relevant fields of t
 
 |Pre:||
 |--|--|
-|status|open|
-|validity|expired|
+|status|active|
+|Task.status|failed|
+|validity|the current date is beyond the end date of validity|
 |intent|order|
 
 |Pre:||
@@ -250,7 +278,8 @@ The prescriber creates a new referral prescription with the relevant fields of t
 |Post:||
 |--|--|
 |UHMEP|new UHMEP|
-|status|open|
+|status|active|
+|Task.status|ready|
 |intent|order|
 
 # Epic 6b: The patient encounters the caregiver
@@ -259,8 +288,9 @@ The caregiver creates a new proposal with the relevant fields of the expired pre
 
 |Pre:||
 |--|--|
-|status|open|
-|validity|expired|
+|status|active|
+|Task.status|failed|
+|validity|current date is beyond end date of validity|
 |intent|order|
 
 |Pre:||
@@ -274,7 +304,8 @@ The caregiver creates a new proposal with the relevant fields of the expired pre
 |Post:||
 |--|--|
 |UHMEP|new UHMEP|
-|status|open|
+|status|active|
+|Task.status|ready|
 |intent|proposal|
 |proposalType|new|
 
@@ -282,15 +313,17 @@ The caregiver creates a new proposal with the relevant fields of the expired pre
 
 |Pre:||
 |--|--|
-|status|open|
-|validity|expired|
+|status|active|
+|Task.status|failed|
+|validity|current date beyond end date validity|
 |intent|order|
 
 
 |Post:||
 |--|--|
-|status|not-done|
-|validity|expired|
+|status|revoked|
+|Task.status|failed|
+|validity|current date beyond end date validity|
 |intent|order|
 
 
@@ -300,7 +333,7 @@ The caregiver creates a new proposal with the relevant fields of the expired pre
 |Pre:||
 |--|--|
 |Intent|order| 
-|Status|open|
+|Status|active|
 
 |Post:||
 |--|--|
@@ -311,7 +344,7 @@ The caregiver creates a new proposal with the relevant fields of the expired pre
 |Pre:||
 |--|--|
 |Intent|order| 
-|Status|open|
+|Status|active|
 
 |Post:||
 |--|--|
@@ -323,7 +356,7 @@ The caregiver creates a new proposal with the relevant fields of the expired pre
 |Pre:||
 |--|--|
 |Intent|proposal|
-|Status|open| 
+|Status|active| 
 
 |Post:||
 |--|--|
@@ -334,7 +367,7 @@ The caregiver creates a new proposal with the relevant fields of the expired pre
 |Pre:||
 |--|--|
 |Intent|proposal|
-|Status|open| 
+|Status|active| 
 
 |Post:||
 |--|--|
@@ -349,6 +382,7 @@ Add a new orderDetail to the referral prescription (only for limited set of care
 |number orderDetail||
 |intent|order|
 |status|active|
+|Task.status|in-progress|
 
 
 |Post:||
@@ -356,6 +390,7 @@ Add a new orderDetail to the referral prescription (only for limited set of care
 ||number orderDetail +1|
 |intent|order|
 |status|active|
+|Task.status|in-progress|
 
 
 ## Epic 10: More than one caregiver has to sign the referral prescription
@@ -364,18 +399,21 @@ Status becomes open if all mandatory coprescribers have signed
 |Pre:||
 |--|--|
 |CoPrescriber.coprescriberType| equal to the type of the signing caregiver |
-|status|draft or open|
+|status|draft or active|
+|Task.status|if status = active then ready|
 
 |Post:||
 |--|--|
 |CoPrescriber.coprescriber|reference naar de coprescriber|
 |status|draft or open| 
+|Task.status|if status = active then ready|
 
 ## Epic 11: Facturatie van een zorgverlening, het bijhorende verwijsvoorschrift werd afgesloten door de zorgverlener
 
 |Pre:||
 |--|--|
 |status|active|
+|Task.status|in-progress|
 |intent|order|
 
 |Post:||

@@ -21,7 +21,8 @@ Description: "The common structure for referral prescription."
     BeExecutionPeriod named executed 0..1 MS and 
     BeLastestEndDate named latest 0..1 MS and
     BeIntendedPerformer named performer 1..1 MS and 
-    BeProposalType named proposalType 0..1 MS
+    BeProposalType named proposalType 0..1 MS and 
+    BeTaskReference named task 0..1 MS
 * extension[statusReason].value[x] only CodeableConcept
 * extension[statusReason].valueCodeableConcept from BeReasonReferralStatus (extensible)
 * extension[informParty] ^short = "Parties to inform of fulfillment of the prescription, besides the prescriber."
@@ -41,7 +42,7 @@ Description: "The common structure for referral prescription."
 * requisition MS
 * requisition ^short = "If needed to have a common identifier among different prescriptions."
 * status MS
-* status from BePrescriptionStatus (required)
+//* status from BePrescriptionStatus (required)
 * category 1..1 MS
 * category from $be-referral-category (extensible)
 * code MS
