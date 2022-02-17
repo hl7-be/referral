@@ -17,7 +17,7 @@ Id: be-model-nursingprescription
 * ^jurisdiction.coding.code = #001
 * ^jurisdiction.coding.display = "World"
 * ^type = "BeNursingPrescription"
-* BeReferralPrescription 1..1 https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-model-referralprescription "test"
+//* BeReferralPrescription 1..1 https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-model-referralprescription "test"
 * phoneAvailablityPrescriber 0..1 BackboneElement "test"
 * phoneAvailablityPrescriber.contactPoint 0..* http://hl7.org/fhir/StructureDefinition/ContactPoint "test"
 * phoneAvailablityPrescriber.availability 0..* BackboneElement "test"
