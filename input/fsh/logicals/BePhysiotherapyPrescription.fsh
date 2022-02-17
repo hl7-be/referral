@@ -17,5 +17,5 @@ Id: be-model-physiotherapyprescription
 * ^jurisdiction.coding.code = #001
 * ^jurisdiction.coding.display = "World"
 * ^type = "BePhysiotherapyPrescription"
-* BeReferralPrescription 1..1 https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-model-referralprescription "test"
+//* BeReferralPrescription 1..1 https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-model-referralprescription "test"
 * numberOfSessions 0..1 http://hl7.org/fhir/StructureDefinition/integer "Number of pt sessions that are prescribed" "Number of pt sessions that are prescribed"
