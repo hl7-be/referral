@@ -20,3 +20,21 @@ If we allow only 1 prescription per message, this will be the situation:
 </div>
 
 <br  clear="ALL">
+
+## Prescription or proposal: the difference
+
+The difference between a prescription and a proposal depends on the legal authority of the caregivers. By law, only a limited number of caregivers (such as medical doctors, mid-wives, ...) can create a prescription.
+
+If another caregiver (without the authority to prescribe) wants to suggest a treatment for a patient, or a prolongation of a treatment, then this will be a proposal.
+
+A proposal can be recognised by the content of the intent field: a prescription contains "order", a proposal contains "proposal"
+
+## Status transitions of prescriptions and proposals
+
+<div>
+
+{%include servicerequeststatus.svg%}
+
+</div>
+
+<br  clear="ALL">
