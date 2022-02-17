@@ -2136,7 +2136,7 @@
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.status" ];
        fhir:ElementDefinition.short [ fhir:value "draft | active | on-hold | revoked | completed | entered-in-error | unknown" ];
        fhir:ElementDefinition.definition [ fhir:value "The status of the order." ];
-       fhir:ElementDefinition.comment [ fhir:value "The status is generally fully in the control of the requester - they determine whether the order is draft or active and, after it has been activated, competed, cancelled or suspended. States relating to the activities of the performer are reflected on either the corresponding event (see [Event Pattern](event.html) for general discussion) or using the [Task](http://hl7.org/fhir/R4/task.html) resource." ];
+       fhir:ElementDefinition.comment [ fhir:value "The status is generally fully in the control of the requester - they determine whether the order is draft or active and, after it has been activated, competed, cancelled or suspended. States relating to the activities of the performer are reflected on either the corresponding event (see [Event Pattern](http://hl7.org/fhir/R4/event.html) for general discussion) or using the [Task](http://hl7.org/fhir/R4/task.html) resource." ];
        fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "1" ];
        fhir:ElementDefinition.base [
@@ -4394,7 +4394,7 @@
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.reasonCode" ];
        fhir:ElementDefinition.short [ fhir:value "Diagnostic question, explanation/Justification for procedure or service" ];
        fhir:ElementDefinition.definition [ fhir:value "An explanation or justification for why this service is being requested in coded or textual form.   This is often for billing purposes.  May relate to the resources referred to in `supportingInfo`." ];
-       fhir:ElementDefinition.comment [ fhir:value "This element represents why the referral is being made and may be used to decide how the service will be performed, or even if it will be performed at all.   Use `CodeableConcept.text` element if the data is free (uncoded) text as shown in the [CT Scan example](servicerequest-example-di.html)." ];
+       fhir:ElementDefinition.comment [ fhir:value "This element represents why the referral is being made and may be used to decide how the service will be performed, or even if it will be performed at all.   Use `CodeableConcept.text` element if the data is free (uncoded) text as shown in the [CT Scan example](http://hl7.org/fhir/R4/servicerequest-example-di.html)." ];
        fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "1" ];
        fhir:ElementDefinition.base [
@@ -4457,7 +4457,7 @@
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.reasonReference" ];
        fhir:ElementDefinition.short [ fhir:value "Explanation/Justification for service or service" ];
        fhir:ElementDefinition.definition [ fhir:value "Indicates another resource that provides a justification for why this service is being requested.   May relate to the resources referred to in `supportingInfo`." ];
-       fhir:ElementDefinition.comment [ fhir:value "This element represents why the referral is being made and may be used to decide how the service will be performed, or even if it will be performed at all.    To be as specific as possible,  a reference to  *Observation* or *Condition* should be used if available.  Otherwise when referencing  *DiagnosticReport*  it should contain a finding  in `DiagnosticReport.conclusion` and/or `DiagnosticReport.conclusionCode`.   When using a reference to *DocumentReference*, the target document should contain clear findings language providing the relevant reason for this service request.  Use  the CodeableConcept text element in `ServiceRequest.reasonCode` if the data is free (uncoded) text as shown in the [CT Scan example](servicerequest-example-di.html)." ];
+       fhir:ElementDefinition.comment [ fhir:value "This element represents why the referral is being made and may be used to decide how the service will be performed, or even if it will be performed at all.    To be as specific as possible,  a reference to  *Observation* or *Condition* should be used if available.  Otherwise when referencing  *DiagnosticReport*  it should contain a finding  in `DiagnosticReport.conclusion` and/or `DiagnosticReport.conclusionCode`.   When using a reference to *DocumentReference*, the target document should contain clear findings language providing the relevant reason for this service request.  Use  the CodeableConcept text element in `ServiceRequest.reasonCode` if the data is free (uncoded) text as shown in the [CT Scan example](http://hl7.org/fhir/R4/servicerequest-example-di.html)." ];
        fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "*" ];
        fhir:ElementDefinition.base [
