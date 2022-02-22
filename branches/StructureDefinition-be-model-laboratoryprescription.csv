@@ -1,43 +1,45 @@
 "Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)","Mapping: RIM Mapping"
 "BeLaboratoryPrescription","","","",0,*,"","","","","","Logical model describing the model for the prescription laboratory. This draft is used in the HL7 Belgian workgroup for laboratory.","","","","","","","","","",,,,,"",,,,"Base",0,*,"",""
-"BeLaboratoryPrescription.identifier","","","",0,*,"","","","Identifier {[]} {[]}
-","An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available","An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.identifier",0,*,"",""
-"BeLaboratoryPrescription.status","","","",1,1,"","","","code {[]} {[]}
-","Current status","Current status","","","","","","","","","",,"required","","http://hl7.org/fhir/ValueSet/request-status","",,,,"BeReferralPrescription.status",1,1,"",""
-"BeLaboratoryPrescription.reasonCurrentStatus","","","",1,1,"","","","CodeableConcept {[]} {[]}
-","Reason current status","Reason current status","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.reasonCurrentStatus",1,1,"",""
-"BeLaboratoryPrescription.authoredOn","","","",1,1,"","","","dateTime {[]} {[]}
-","When this prescription was created","When this prescription was created","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.authoredOn",1,1,"",""
+"BeLaboratoryPrescription.recordedDate","","","",1,1,"","","","dateTime {[]} {[]}
+","When this prescription was created","When this prescription was created","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.recordedDate",1,1,"",""
 "BeLaboratoryPrescription.prescriber","","","",1,1,"","","","Reference {[]} {[]}
 ","The prescribing healthcare party","The prescribing healthcare party","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.prescriber",1,1,"",""
 "BeLaboratoryPrescription.co-prescriber","","","",0,*,"","","","BackboneElement {[]} {[]}
 ","Information about co prescribers","Information about co prescribers","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.co-prescriber",0,*,"",""
-"BeLaboratoryPrescription.co-prescriber.co-prescriber","","","",1,1,"","","","Reference {[]} {[]}
-","The co-prescriber party","The co-prescriber party","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.co-prescriber.co-prescriber",1,1,"",""
-"BeLaboratoryPrescription.co-prescriber.co-prescriberSubstitute","","","",0,1,"","","","Reference {[]} {[]}
-","NIHDI of co prescriber substitute party","NIHDI of co prescriber substitute party","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.co-prescriber.co-prescriberSubstitute",0,1,"",""
-"BeLaboratoryPrescription.co-prescriber.status","","","",1,1,"","","","code {[]} {[]}
-","Status of co prescribing status (to sign, signed or refused)","Status of co prescribing status (to sign, signed or refused)","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.co-prescriber.status",1,1,"",""
+"BeLaboratoryPrescription.co-prescriber.co-prescriber","","","",0,1,"","","","Reference {[]} {[]}
+","The co-prescriber party","The co-prescriber party","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.co-prescriber.co-prescriber",0,1,"",""
+"BeLaboratoryPrescription.co-prescriber.co-prescriberType","","","",0,1,"","","","code {[]} {[]}
+","Type of the practitioner","Type of the practitioner","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.co-prescriber.co-prescriberType",0,1,"",""
+"BeLaboratoryPrescription.co-prescriber.status","","","",0,1,"","","","code {[]} {[]}
+","Status of co prescribing status (to sign, signed or refused)","Status of co prescribing status (to sign, signed or refused)","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.co-prescriber.status",0,1,"",""
 "BeLaboratoryPrescription.patient","","","",1,1,"","","","Reference {[]} {[]}
 ","The SSIN of the person for which the referral is prescribed.","The SSIN of the person for which the referral is prescribed.","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.patient",1,1,"",""
-"BeLaboratoryPrescription.originalRequest","","","",0,1,"","","","Reference {[]} {[]}
-","The original request or prescription triggered this prescription","The original request or prescription that is the reason for this request - for example when a detailed request is created by a broader request.","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.originalRequest",0,1,"",""
-"BeLaboratoryPrescription.reason","","","",0,*,"","","","Reference {[]} {[]}
-","The problem (code or reference) that is the main reason for this prescription","The problem (code or reference) that is the main reason for this prescription","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.reason",0,*,"",""
+"BeLaboratoryPrescription.prescriptionNumber","","","",0,*,"","","","Identifier {[]} {[]}
+","An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available","An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.prescriptionNumber",0,*,"",""
+"BeLaboratoryPrescription.basedOn","","","",0,1,"","","","Reference {[]} {[]}
+","The original request or prescription triggered this prescription","The original request or prescription that is the reason for this request - for example when a detailed request is created by a broader request.","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.basedOn",0,1,"",""
+"BeLaboratoryPrescription.validitionPeriod","","","",1,1,"","","","Period {[]} {[]}
+","Period of validity of prescription","Period of validity of prescription","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.validitionPeriod",1,1,"",""
+"BeLaboratoryPrescription.treatmentPeriod","","","",0,1,"","","","Period {[]} {[]}
+","When this prescription is executed, available after start of execution","When this prescription is executed, available after start of execution","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.treatmentPeriod",0,1,"",""
+"BeLaboratoryPrescription.treatmentValidationEndDate","","","",0,1,"","","","dateTime {[]} {[]}
+","The latest moment to end this treatment","The latest moment to end this treatment","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.treatmentValidationEndDate",0,1,"",""
 "BeLaboratoryPrescription.intendedProvider","","","",0,*,"","","","BackboneElement {[]} {[]}
 ","The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality","The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedProvider",0,*,"",""
 "BeLaboratoryPrescription.intendedProvider.provider","","","",0,*,"","","","Reference {[]} {[]}
 ","A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)","A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedProvider.provider",0,*,"",""
 "BeLaboratoryPrescription.intendedProvider.discipline","","","",1,1,"","","","CodeableConcept {[]} {[]}
 ","The required discipline of the provider party","The required discipline of the provider party","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedProvider.discipline",1,1,"",""
-"BeLaboratoryPrescription.validityPeriod","","","",1,1,"","","","Period {[]} {[]}
-","Period of validity of prescription","Period of validity of prescription","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.validityPeriod",1,1,"",""
-"BeLaboratoryPrescription.executionPeriod","","","",0,1,"","","","Period {[]} {[]}
-","When this prescription is executed, available after start of execution","When this prescription is executed, available after start of execution","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.executionPeriod",0,1,"",""
-"BeLaboratoryPrescription.prescribedService","","","",1,1,"","","","CodeableConcept {[]} {[]}
-","What is prescribed","What is prescribed","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.prescribedService",1,1,"",""
+"BeLaboratoryPrescription.serviceRequested","","","",1,1,"","","","CodeableConcept {[]} {[]}
+","What is prescribed","What is prescribed","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.serviceRequested",1,1,"",""
+"BeLaboratoryPrescription.problemCode","","","",0,*,"","","","Reference {[]} {[]}
+","The problem (code or reference) that is the main reason for this prescription","The problem (code or reference) that is the main reason for this prescription","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.problemCode",0,*,"",""
 "BeLaboratoryPrescription.resultReceiver","","","",0,*,"","","","Reference {[]} {[]}
 ","Parties that shall be informed of the results of the prescription other then the prescriber.","Parties that shall be informed of the results of the prescription other then the prescriber.","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.resultReceiver",0,*,"",""
+"BeLaboratoryPrescription.status","","","",1,1,"","","","code {[]} {[]}
+","Current status","Current status","","","","","","","","","",,"required","","http://hl7.org/fhir/ValueSet/request-status","",,,,"BeReferralPrescription.status",1,1,"",""
+"BeLaboratoryPrescription.statusReason","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Reason current status","Reason current status","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.statusReason",0,1,"",""
 "BeLaboratoryPrescription.note","","","",0,1,"","","","Annotation {[]} {[]}
 ","Additional text notes about the request.","Additional text notes about the request.","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.note",0,1,"",""
 "BeLaboratoryPrescription.intent","","","",1,1,"","","","code {[]} {[]}

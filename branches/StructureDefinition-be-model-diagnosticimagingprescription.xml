@@ -78,63 +78,14 @@
       </base>
       <isModifier value="false"/>
     </element>
-    <element id="BeDiagnosticImagingPrescription.identifier">
-      <path value="BeDiagnosticImagingPrescription.identifier"/>
-      <short value="An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available"/>
-      <definition value="An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available"/>
-      <min value="0"/>
-      <max value="*"/>
-      <base>
-        <path value="BeReferralPrescription.identifier"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="Identifier"/>
-      </type>
-    </element>
-    <element id="BeDiagnosticImagingPrescription.status">
-      <path value="BeDiagnosticImagingPrescription.status"/>
-      <short value="Current status"/>
-      <definition value="Current status"/>
-      <min value="1"/>
-      <max value="1"/>
-      <base>
-        <path value="BeReferralPrescription.status"/>
-        <min value="1"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="code"/>
-      </type>
-      <binding>
-        <strength value="required"/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/request-status"/>
-      </binding>
-    </element>
-    <element id="BeDiagnosticImagingPrescription.reasonCurrentStatus">
-      <path value="BeDiagnosticImagingPrescription.reasonCurrentStatus"/>
-      <short value="Reason current status"/>
-      <definition value="Reason current status"/>
-      <min value="1"/>
-      <max value="1"/>
-      <base>
-        <path value="BeReferralPrescription.reasonCurrentStatus"/>
-        <min value="1"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="CodeableConcept"/>
-      </type>
-    </element>
-    <element id="BeDiagnosticImagingPrescription.authoredOn">
-      <path value="BeDiagnosticImagingPrescription.authoredOn"/>
+    <element id="BeDiagnosticImagingPrescription.recordedDate">
+      <path value="BeDiagnosticImagingPrescription.recordedDate"/>
       <short value="When this prescription was created"/>
       <definition value="When this prescription was created"/>
       <min value="1"/>
       <max value="1"/>
       <base>
-        <path value="BeReferralPrescription.authoredOn"/>
+        <path value="BeReferralPrescription.recordedDate"/>
         <min value="1"/>
         <max value="1"/>
       </base>
@@ -176,25 +127,10 @@
       <path value="BeDiagnosticImagingPrescription.co-prescriber.co-prescriber"/>
       <short value="The co-prescriber party"/>
       <definition value="The co-prescriber party"/>
-      <min value="1"/>
-      <max value="1"/>
-      <base>
-        <path value="BeReferralPrescription.co-prescriber.co-prescriber"/>
-        <min value="1"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="Reference"/>
-      </type>
-    </element>
-    <element id="BeDiagnosticImagingPrescription.co-prescriber.co-prescriberSubstitute">
-      <path value="BeDiagnosticImagingPrescription.co-prescriber.co-prescriberSubstitute"/>
-      <short value="NIHDI of co prescriber substitute party"/>
-      <definition value="NIHDI of co prescriber substitute party"/>
       <min value="0"/>
       <max value="1"/>
       <base>
-        <path value="BeReferralPrescription.co-prescriber.co-prescriberSubstitute"/>
+        <path value="BeReferralPrescription.co-prescriber.co-prescriber"/>
         <min value="0"/>
         <max value="1"/>
       </base>
@@ -202,15 +138,30 @@
         <code value="Reference"/>
       </type>
     </element>
+    <element id="BeDiagnosticImagingPrescription.co-prescriber.co-prescriberType">
+      <path value="BeDiagnosticImagingPrescription.co-prescriber.co-prescriberType"/>
+      <short value="Type of the practitioner"/>
+      <definition value="Type of the practitioner"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.co-prescriber.co-prescriberType"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="code"/>
+      </type>
+    </element>
     <element id="BeDiagnosticImagingPrescription.co-prescriber.status">
       <path value="BeDiagnosticImagingPrescription.co-prescriber.status"/>
       <short value="Status of co prescribing status (to sign, signed or refused)"/>
       <definition value="Status of co prescribing status (to sign, signed or refused)"/>
-      <min value="1"/>
+      <min value="0"/>
       <max value="1"/>
       <base>
         <path value="BeReferralPrescription.co-prescriber.status"/>
-        <min value="1"/>
+        <min value="0"/>
         <max value="1"/>
       </base>
       <type>
@@ -232,14 +183,29 @@
         <code value="Reference"/>
       </type>
     </element>
-    <element id="BeDiagnosticImagingPrescription.originalRequest">
-      <path value="BeDiagnosticImagingPrescription.originalRequest"/>
+    <element id="BeDiagnosticImagingPrescription.prescriptionNumber">
+      <path value="BeDiagnosticImagingPrescription.prescriptionNumber"/>
+      <short value="An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available"/>
+      <definition value="An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="BeReferralPrescription.prescriptionNumber"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Identifier"/>
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.basedOn">
+      <path value="BeDiagnosticImagingPrescription.basedOn"/>
       <short value="The original request or prescription triggered this prescription"/>
       <definition value="The original request or prescription that is the reason for this request - for example when a detailed request is created by a broader request."/>
       <min value="0"/>
       <max value="1"/>
       <base>
-        <path value="BeReferralPrescription.originalRequest"/>
+        <path value="BeReferralPrescription.basedOn"/>
         <min value="0"/>
         <max value="1"/>
       </base>
@@ -247,19 +213,49 @@
         <code value="Reference"/>
       </type>
     </element>
-    <element id="BeDiagnosticImagingPrescription.reason">
-      <path value="BeDiagnosticImagingPrescription.reason"/>
-      <short value="The problem (code or reference) that is the main reason for this prescription"/>
-      <definition value="The problem (code or reference) that is the main reason for this prescription"/>
-      <min value="0"/>
-      <max value="*"/>
+    <element id="BeDiagnosticImagingPrescription.validitionPeriod">
+      <path value="BeDiagnosticImagingPrescription.validitionPeriod"/>
+      <short value="Period of validity of prescription"/>
+      <definition value="Period of validity of prescription"/>
+      <min value="1"/>
+      <max value="1"/>
       <base>
-        <path value="BeReferralPrescription.reason"/>
-        <min value="0"/>
-        <max value="*"/>
+        <path value="BeReferralPrescription.validitionPeriod"/>
+        <min value="1"/>
+        <max value="1"/>
       </base>
       <type>
-        <code value="Reference"/>
+        <code value="Period"/>
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.treatmentPeriod">
+      <path value="BeDiagnosticImagingPrescription.treatmentPeriod"/>
+      <short value="When this prescription is executed, available after start of execution"/>
+      <definition value="When this prescription is executed, available after start of execution"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.treatmentPeriod"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Period"/>
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.treatmentValidationEndDate">
+      <path value="BeDiagnosticImagingPrescription.treatmentValidationEndDate"/>
+      <short value="The latest moment to end this treatment"/>
+      <definition value="The latest moment to end this treatment"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.treatmentValidationEndDate"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="dateTime"/>
       </type>
     </element>
     <element id="BeDiagnosticImagingPrescription.intendedProvider">
@@ -307,49 +303,34 @@
         <code value="CodeableConcept"/>
       </type>
     </element>
-    <element id="BeDiagnosticImagingPrescription.validityPeriod">
-      <path value="BeDiagnosticImagingPrescription.validityPeriod"/>
-      <short value="Period of validity of prescription"/>
-      <definition value="Period of validity of prescription"/>
-      <min value="1"/>
-      <max value="1"/>
-      <base>
-        <path value="BeReferralPrescription.validityPeriod"/>
-        <min value="1"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="Period"/>
-      </type>
-    </element>
-    <element id="BeDiagnosticImagingPrescription.executionPeriod">
-      <path value="BeDiagnosticImagingPrescription.executionPeriod"/>
-      <short value="When this prescription is executed, available after start of execution"/>
-      <definition value="When this prescription is executed, available after start of execution"/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="BeReferralPrescription.executionPeriod"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="Period"/>
-      </type>
-    </element>
-    <element id="BeDiagnosticImagingPrescription.prescribedService">
-      <path value="BeDiagnosticImagingPrescription.prescribedService"/>
+    <element id="BeDiagnosticImagingPrescription.serviceRequested">
+      <path value="BeDiagnosticImagingPrescription.serviceRequested"/>
       <short value="What is prescribed"/>
       <definition value="What is prescribed"/>
       <min value="1"/>
       <max value="1"/>
       <base>
-        <path value="BeReferralPrescription.prescribedService"/>
+        <path value="BeReferralPrescription.serviceRequested"/>
         <min value="1"/>
         <max value="1"/>
       </base>
       <type>
         <code value="CodeableConcept"/>
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.problemCode">
+      <path value="BeDiagnosticImagingPrescription.problemCode"/>
+      <short value="The problem (code or reference) that is the main reason for this prescription"/>
+      <definition value="The problem (code or reference) that is the main reason for this prescription"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="BeReferralPrescription.problemCode"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Reference"/>
       </type>
     </element>
     <element id="BeDiagnosticImagingPrescription.resultReceiver">
@@ -365,6 +346,40 @@
       </base>
       <type>
         <code value="Reference"/>
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.status">
+      <path value="BeDiagnosticImagingPrescription.status"/>
+      <short value="Current status"/>
+      <definition value="Current status"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.status"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="code"/>
+      </type>
+      <binding>
+        <strength value="required"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/request-status"/>
+      </binding>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.statusReason">
+      <path value="BeDiagnosticImagingPrescription.statusReason"/>
+      <short value="Reason current status"/>
+      <definition value="Reason current status"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.statusReason"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="CodeableConcept"/>
       </type>
     </element>
     <element id="BeDiagnosticImagingPrescription.note">

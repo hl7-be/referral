@@ -59,63 +59,14 @@
       </base>
       <isModifier value="false"/>
     </element>
-    <element id="BePhysiotherapyPrescription.identifier">
-      <path value="BePhysiotherapyPrescription.identifier"/>
-      <short value="An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available"/>
-      <definition value="An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available"/>
-      <min value="0"/>
-      <max value="*"/>
-      <base>
-        <path value="BeReferralPrescription.identifier"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="Identifier"/>
-      </type>
-    </element>
-    <element id="BePhysiotherapyPrescription.status">
-      <path value="BePhysiotherapyPrescription.status"/>
-      <short value="Current status"/>
-      <definition value="Current status"/>
-      <min value="1"/>
-      <max value="1"/>
-      <base>
-        <path value="BeReferralPrescription.status"/>
-        <min value="1"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="code"/>
-      </type>
-      <binding>
-        <strength value="required"/>
-        <valueSet value="http://hl7.org/fhir/ValueSet/request-status"/>
-      </binding>
-    </element>
-    <element id="BePhysiotherapyPrescription.reasonCurrentStatus">
-      <path value="BePhysiotherapyPrescription.reasonCurrentStatus"/>
-      <short value="Reason current status"/>
-      <definition value="Reason current status"/>
-      <min value="1"/>
-      <max value="1"/>
-      <base>
-        <path value="BeReferralPrescription.reasonCurrentStatus"/>
-        <min value="1"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="CodeableConcept"/>
-      </type>
-    </element>
-    <element id="BePhysiotherapyPrescription.authoredOn">
-      <path value="BePhysiotherapyPrescription.authoredOn"/>
+    <element id="BePhysiotherapyPrescription.recordedDate">
+      <path value="BePhysiotherapyPrescription.recordedDate"/>
       <short value="When this prescription was created"/>
       <definition value="When this prescription was created"/>
       <min value="1"/>
       <max value="1"/>
       <base>
-        <path value="BeReferralPrescription.authoredOn"/>
+        <path value="BeReferralPrescription.recordedDate"/>
         <min value="1"/>
         <max value="1"/>
       </base>
@@ -157,25 +108,10 @@
       <path value="BePhysiotherapyPrescription.co-prescriber.co-prescriber"/>
       <short value="The co-prescriber party"/>
       <definition value="The co-prescriber party"/>
-      <min value="1"/>
-      <max value="1"/>
-      <base>
-        <path value="BeReferralPrescription.co-prescriber.co-prescriber"/>
-        <min value="1"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="Reference"/>
-      </type>
-    </element>
-    <element id="BePhysiotherapyPrescription.co-prescriber.co-prescriberSubstitute">
-      <path value="BePhysiotherapyPrescription.co-prescriber.co-prescriberSubstitute"/>
-      <short value="NIHDI of co prescriber substitute party"/>
-      <definition value="NIHDI of co prescriber substitute party"/>
       <min value="0"/>
       <max value="1"/>
       <base>
-        <path value="BeReferralPrescription.co-prescriber.co-prescriberSubstitute"/>
+        <path value="BeReferralPrescription.co-prescriber.co-prescriber"/>
         <min value="0"/>
         <max value="1"/>
       </base>
@@ -183,15 +119,30 @@
         <code value="Reference"/>
       </type>
     </element>
+    <element id="BePhysiotherapyPrescription.co-prescriber.co-prescriberType">
+      <path value="BePhysiotherapyPrescription.co-prescriber.co-prescriberType"/>
+      <short value="Type of the practitioner"/>
+      <definition value="Type of the practitioner"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.co-prescriber.co-prescriberType"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="code"/>
+      </type>
+    </element>
     <element id="BePhysiotherapyPrescription.co-prescriber.status">
       <path value="BePhysiotherapyPrescription.co-prescriber.status"/>
       <short value="Status of co prescribing status (to sign, signed or refused)"/>
       <definition value="Status of co prescribing status (to sign, signed or refused)"/>
-      <min value="1"/>
+      <min value="0"/>
       <max value="1"/>
       <base>
         <path value="BeReferralPrescription.co-prescriber.status"/>
-        <min value="1"/>
+        <min value="0"/>
         <max value="1"/>
       </base>
       <type>
@@ -213,14 +164,29 @@
         <code value="Reference"/>
       </type>
     </element>
-    <element id="BePhysiotherapyPrescription.originalRequest">
-      <path value="BePhysiotherapyPrescription.originalRequest"/>
+    <element id="BePhysiotherapyPrescription.prescriptionNumber">
+      <path value="BePhysiotherapyPrescription.prescriptionNumber"/>
+      <short value="An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available"/>
+      <definition value="An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="BeReferralPrescription.prescriptionNumber"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Identifier"/>
+      </type>
+    </element>
+    <element id="BePhysiotherapyPrescription.basedOn">
+      <path value="BePhysiotherapyPrescription.basedOn"/>
       <short value="The original request or prescription triggered this prescription"/>
       <definition value="The original request or prescription that is the reason for this request - for example when a detailed request is created by a broader request."/>
       <min value="0"/>
       <max value="1"/>
       <base>
-        <path value="BeReferralPrescription.originalRequest"/>
+        <path value="BeReferralPrescription.basedOn"/>
         <min value="0"/>
         <max value="1"/>
       </base>
@@ -228,19 +194,49 @@
         <code value="Reference"/>
       </type>
     </element>
-    <element id="BePhysiotherapyPrescription.reason">
-      <path value="BePhysiotherapyPrescription.reason"/>
-      <short value="The problem (code or reference) that is the main reason for this prescription"/>
-      <definition value="The problem (code or reference) that is the main reason for this prescription"/>
-      <min value="0"/>
-      <max value="*"/>
+    <element id="BePhysiotherapyPrescription.validitionPeriod">
+      <path value="BePhysiotherapyPrescription.validitionPeriod"/>
+      <short value="Period of validity of prescription"/>
+      <definition value="Period of validity of prescription"/>
+      <min value="1"/>
+      <max value="1"/>
       <base>
-        <path value="BeReferralPrescription.reason"/>
-        <min value="0"/>
-        <max value="*"/>
+        <path value="BeReferralPrescription.validitionPeriod"/>
+        <min value="1"/>
+        <max value="1"/>
       </base>
       <type>
-        <code value="Reference"/>
+        <code value="Period"/>
+      </type>
+    </element>
+    <element id="BePhysiotherapyPrescription.treatmentPeriod">
+      <path value="BePhysiotherapyPrescription.treatmentPeriod"/>
+      <short value="When this prescription is executed, available after start of execution"/>
+      <definition value="When this prescription is executed, available after start of execution"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.treatmentPeriod"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Period"/>
+      </type>
+    </element>
+    <element id="BePhysiotherapyPrescription.treatmentValidationEndDate">
+      <path value="BePhysiotherapyPrescription.treatmentValidationEndDate"/>
+      <short value="The latest moment to end this treatment"/>
+      <definition value="The latest moment to end this treatment"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.treatmentValidationEndDate"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="dateTime"/>
       </type>
     </element>
     <element id="BePhysiotherapyPrescription.intendedProvider">
@@ -288,49 +284,34 @@
         <code value="CodeableConcept"/>
       </type>
     </element>
-    <element id="BePhysiotherapyPrescription.validityPeriod">
-      <path value="BePhysiotherapyPrescription.validityPeriod"/>
-      <short value="Period of validity of prescription"/>
-      <definition value="Period of validity of prescription"/>
-      <min value="1"/>
-      <max value="1"/>
-      <base>
-        <path value="BeReferralPrescription.validityPeriod"/>
-        <min value="1"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="Period"/>
-      </type>
-    </element>
-    <element id="BePhysiotherapyPrescription.executionPeriod">
-      <path value="BePhysiotherapyPrescription.executionPeriod"/>
-      <short value="When this prescription is executed, available after start of execution"/>
-      <definition value="When this prescription is executed, available after start of execution"/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="BeReferralPrescription.executionPeriod"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="Period"/>
-      </type>
-    </element>
-    <element id="BePhysiotherapyPrescription.prescribedService">
-      <path value="BePhysiotherapyPrescription.prescribedService"/>
+    <element id="BePhysiotherapyPrescription.serviceRequested">
+      <path value="BePhysiotherapyPrescription.serviceRequested"/>
       <short value="What is prescribed"/>
       <definition value="What is prescribed"/>
       <min value="1"/>
       <max value="1"/>
       <base>
-        <path value="BeReferralPrescription.prescribedService"/>
+        <path value="BeReferralPrescription.serviceRequested"/>
         <min value="1"/>
         <max value="1"/>
       </base>
       <type>
         <code value="CodeableConcept"/>
+      </type>
+    </element>
+    <element id="BePhysiotherapyPrescription.problemCode">
+      <path value="BePhysiotherapyPrescription.problemCode"/>
+      <short value="The problem (code or reference) that is the main reason for this prescription"/>
+      <definition value="The problem (code or reference) that is the main reason for this prescription"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="BeReferralPrescription.problemCode"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Reference"/>
       </type>
     </element>
     <element id="BePhysiotherapyPrescription.resultReceiver">
@@ -346,6 +327,40 @@
       </base>
       <type>
         <code value="Reference"/>
+      </type>
+    </element>
+    <element id="BePhysiotherapyPrescription.status">
+      <path value="BePhysiotherapyPrescription.status"/>
+      <short value="Current status"/>
+      <definition value="Current status"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.status"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="code"/>
+      </type>
+      <binding>
+        <strength value="required"/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/request-status"/>
+      </binding>
+    </element>
+    <element id="BePhysiotherapyPrescription.statusReason">
+      <path value="BePhysiotherapyPrescription.statusReason"/>
+      <short value="Reason current status"/>
+      <definition value="Reason current status"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.statusReason"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="CodeableConcept"/>
       </type>
     </element>
     <element id="BePhysiotherapyPrescription.note">
