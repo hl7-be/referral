@@ -73,72 +73,14 @@
         "isModifier": false
       },
       {
-        "id": "BeLaboratoryPrescription.identifier",
-        "path": "BeLaboratoryPrescription.identifier",
-        "short": "An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available",
-        "definition": "An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available",
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "BeReferralPrescription.identifier",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Identifier"
-          }
-        ]
-      },
-      {
-        "id": "BeLaboratoryPrescription.status",
-        "path": "BeLaboratoryPrescription.status",
-        "short": "Current status",
-        "definition": "Current status",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "BeReferralPrescription.status",
-          "min": 1,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "code"
-          }
-        ],
-        "binding": {
-          "strength": "required",
-          "valueSet": "http://hl7.org/fhir/ValueSet/request-status"
-        }
-      },
-      {
-        "id": "BeLaboratoryPrescription.reasonCurrentStatus",
-        "path": "BeLaboratoryPrescription.reasonCurrentStatus",
-        "short": "Reason current status",
-        "definition": "Reason current status",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "BeReferralPrescription.reasonCurrentStatus",
-          "min": 1,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "CodeableConcept"
-          }
-        ]
-      },
-      {
-        "id": "BeLaboratoryPrescription.authoredOn",
-        "path": "BeLaboratoryPrescription.authoredOn",
+        "id": "BeLaboratoryPrescription.recordedDate",
+        "path": "BeLaboratoryPrescription.recordedDate",
         "short": "When this prescription was created",
         "definition": "When this prescription was created",
         "min": 1,
         "max": "1",
         "base": {
-          "path": "BeReferralPrescription.authoredOn",
+          "path": "BeReferralPrescription.recordedDate",
           "min": 1,
           "max": "1"
         },
@@ -189,28 +131,10 @@
         "path": "BeLaboratoryPrescription.co-prescriber.co-prescriber",
         "short": "The co-prescriber party",
         "definition": "The co-prescriber party",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "BeReferralPrescription.co-prescriber.co-prescriber",
-          "min": 1,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "Reference"
-          }
-        ]
-      },
-      {
-        "id": "BeLaboratoryPrescription.co-prescriber.co-prescriberSubstitute",
-        "path": "BeLaboratoryPrescription.co-prescriber.co-prescriberSubstitute",
-        "short": "NIHDI of co prescriber substitute party",
-        "definition": "NIHDI of co prescriber substitute party",
         "min": 0,
         "max": "1",
         "base": {
-          "path": "BeReferralPrescription.co-prescriber.co-prescriberSubstitute",
+          "path": "BeReferralPrescription.co-prescriber.co-prescriber",
           "min": 0,
           "max": "1"
         },
@@ -221,15 +145,33 @@
         ]
       },
       {
+        "id": "BeLaboratoryPrescription.co-prescriber.co-prescriberType",
+        "path": "BeLaboratoryPrescription.co-prescriber.co-prescriberType",
+        "short": "Type of the practitioner",
+        "definition": "Type of the practitioner",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.co-prescriber.co-prescriberType",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
         "id": "BeLaboratoryPrescription.co-prescriber.status",
         "path": "BeLaboratoryPrescription.co-prescriber.status",
         "short": "Status of co prescribing status (to sign, signed or refused)",
         "definition": "Status of co prescribing status (to sign, signed or refused)",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "BeReferralPrescription.co-prescriber.status",
-          "min": 1,
+          "min": 0,
           "max": "1"
         },
         "type": [
@@ -257,14 +199,32 @@
         ]
       },
       {
-        "id": "BeLaboratoryPrescription.originalRequest",
-        "path": "BeLaboratoryPrescription.originalRequest",
+        "id": "BeLaboratoryPrescription.prescriptionNumber",
+        "path": "BeLaboratoryPrescription.prescriptionNumber",
+        "short": "An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available",
+        "definition": "An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "BeReferralPrescription.prescriptionNumber",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ]
+      },
+      {
+        "id": "BeLaboratoryPrescription.basedOn",
+        "path": "BeLaboratoryPrescription.basedOn",
         "short": "The original request or prescription triggered this prescription",
         "definition": "The original request or prescription that is the reason for this request - for example when a detailed request is created by a broader request.",
         "min": 0,
         "max": "1",
         "base": {
-          "path": "BeReferralPrescription.originalRequest",
+          "path": "BeReferralPrescription.basedOn",
           "min": 0,
           "max": "1"
         },
@@ -275,20 +235,56 @@
         ]
       },
       {
-        "id": "BeLaboratoryPrescription.reason",
-        "path": "BeLaboratoryPrescription.reason",
-        "short": "The problem (code or reference) that is the main reason for this prescription",
-        "definition": "The problem (code or reference) that is the main reason for this prescription",
-        "min": 0,
-        "max": "*",
+        "id": "BeLaboratoryPrescription.validitionPeriod",
+        "path": "BeLaboratoryPrescription.validitionPeriod",
+        "short": "Period of validity of prescription",
+        "definition": "Period of validity of prescription",
+        "min": 1,
+        "max": "1",
         "base": {
-          "path": "BeReferralPrescription.reason",
-          "min": 0,
-          "max": "*"
+          "path": "BeReferralPrescription.validitionPeriod",
+          "min": 1,
+          "max": "1"
         },
         "type": [
           {
-            "code": "Reference"
+            "code": "Period"
+          }
+        ]
+      },
+      {
+        "id": "BeLaboratoryPrescription.treatmentPeriod",
+        "path": "BeLaboratoryPrescription.treatmentPeriod",
+        "short": "When this prescription is executed, available after start of execution",
+        "definition": "When this prescription is executed, available after start of execution",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.treatmentPeriod",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Period"
+          }
+        ]
+      },
+      {
+        "id": "BeLaboratoryPrescription.treatmentValidationEndDate",
+        "path": "BeLaboratoryPrescription.treatmentValidationEndDate",
+        "short": "The latest moment to end this treatment",
+        "definition": "The latest moment to end this treatment",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.treatmentValidationEndDate",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "dateTime"
           }
         ]
       },
@@ -347,56 +343,38 @@
         ]
       },
       {
-        "id": "BeLaboratoryPrescription.validityPeriod",
-        "path": "BeLaboratoryPrescription.validityPeriod",
-        "short": "Period of validity of prescription",
-        "definition": "Period of validity of prescription",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "BeReferralPrescription.validityPeriod",
-          "min": 1,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "Period"
-          }
-        ]
-      },
-      {
-        "id": "BeLaboratoryPrescription.executionPeriod",
-        "path": "BeLaboratoryPrescription.executionPeriod",
-        "short": "When this prescription is executed, available after start of execution",
-        "definition": "When this prescription is executed, available after start of execution",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "BeReferralPrescription.executionPeriod",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "Period"
-          }
-        ]
-      },
-      {
-        "id": "BeLaboratoryPrescription.prescribedService",
-        "path": "BeLaboratoryPrescription.prescribedService",
+        "id": "BeLaboratoryPrescription.serviceRequested",
+        "path": "BeLaboratoryPrescription.serviceRequested",
         "short": "What is prescribed",
         "definition": "What is prescribed",
         "min": 1,
         "max": "1",
         "base": {
-          "path": "BeReferralPrescription.prescribedService",
+          "path": "BeReferralPrescription.serviceRequested",
           "min": 1,
           "max": "1"
         },
         "type": [
           {
             "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "BeLaboratoryPrescription.problemCode",
+        "path": "BeLaboratoryPrescription.problemCode",
+        "short": "The problem (code or reference) that is the main reason for this prescription",
+        "definition": "The problem (code or reference) that is the main reason for this prescription",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "BeReferralPrescription.problemCode",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference"
           }
         ]
       },
@@ -415,6 +393,46 @@
         "type": [
           {
             "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "BeLaboratoryPrescription.status",
+        "path": "BeLaboratoryPrescription.status",
+        "short": "Current status",
+        "definition": "Current status",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.status",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/request-status"
+        }
+      },
+      {
+        "id": "BeLaboratoryPrescription.statusReason",
+        "path": "BeLaboratoryPrescription.statusReason",
+        "short": "Reason current status",
+        "definition": "Reason current status",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.statusReason",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
           }
         ]
       },
