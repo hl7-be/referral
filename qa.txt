@@ -3,7 +3,7 @@
 
 err = 47, warn = 151, info = 12
 IG Publisher Version: 1.1.106
-Generated Wed Feb 23 09:47:31 UTC 2022. FHIR version 4.0.1 for my-ig#0.2.0 (canonical = http://example.com/fhir/example)
+Generated Wed Feb 23 15:31:41 UTC 2022. FHIR version 4.0.1 for my-ig#0.2.0 (canonical = http://example.com/fhir/example)
  Build Errors : 6 / 39 / 0
  /github/workspace/fsh-generated/resources/CodeSystem-be-nursing-annex81-inadequate-adherence : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/CodeSystem-be-nursing-annex81-inadequate-adherence-link : 0 / 1 / 1
@@ -27,6 +27,7 @@ Generated Wed Feb 23 09:47:31 UTC 2022. FHIR version 4.0.1 for my-ig#0.2.0 (cano
  /github/workspace/fsh-generated/resources/NamingSystem-be-ns-vmp-codes : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/NamingSystem-be-ns-vmpg-codes : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/NamingSystem-be-ns-vtm-codes : 0 / 1 / 1
+ /github/workspace/fsh-generated/resources/OperationDefinition-be-op-cancel : 0 / 2 / 1
  /github/workspace/fsh-generated/resources/ServiceRequest-example02-referralprescription-nursing-digestive-system-care : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/ServiceRequest-example03-referralprescription-nursing-compressiontherapy : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/ServiceRequest-example04-referralprescription-nursing-bladder-care : 0 / 0 / 1
@@ -40,7 +41,6 @@ Generated Wed Feb 23 09:47:31 UTC 2022. FHIR version 4.0.1 for my-ig#0.2.0 (cano
  /github/workspace/fsh-generated/resources/ServiceRequest-example32-referralprescription-nursing-chronical-psychiatric : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-be-co-prescriber : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-be-ext-execution-period : 0 / 1 / 1
- /github/workspace/fsh-generated/resources/StructureDefinition-be-ext-extends : 0 / 2 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-be-ext-lastest-end-date : 0 / 2 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-be-ext-proposal-type : 0 / 2 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-be-ext-task-reference : 0 / 2 / 1
@@ -59,6 +59,7 @@ Generated Wed Feb 23 09:47:31 UTC 2022. FHIR version 4.0.1 for my-ig#0.2.0 (cano
  /github/workspace/fsh-generated/resources/ValueSet-be-vs-nursing-annex81-inadequate-adherence-link : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/ValueSet-be-vs-prescription-status : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/ValueSet-be-vs-proposal-type : 0 / 1 / 1
+ /github/workspace/fsh-generated/resources/ValueSet-be-vs-reason-referral-status : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/ValueSet-be-vs-referral-category : 0 / 1 / 1
  /github/workspace/input/examples/CarePlan-gpvisit : 3 / 0 / 2
  /github/workspace/input/examples/condition1 : 0 / 0 / 1
@@ -104,7 +105,6 @@ Generated Wed Feb 23 09:47:31 UTC 2022. FHIR version 4.0.1 for my-ig#0.2.0 (cano
  /github/workspace/input/vocabulary/valueset-be-vs-nursing-medication-other : 0 / 2 / 1
  /github/workspace/input/vocabulary/valueset-be-vs-nursing-medication-percutaneous : 0 / 1 / 1
  /github/workspace/input/vocabulary/valueset-be-vs-nursing-medication-perfusion : 0 / 1 / 1
- /github/workspace/input/vocabulary/valueset-be-vs-reason-referral-status : 0 / 1 / 1
  /github/workspace/input/vocabulary/valueset-be-vs-type-of-bladder-care : 0 / 1 / 1
  /github/workspace/input/vocabulary/valueset-be-vs-type-of-compression : 0 / 1 / 1
  /github/workspace/input/vocabulary/valueset-be-vs-type-of-non-reimbursable-nursing : 0 / 1 / 1
@@ -204,6 +204,9 @@ WARNING: NamingSystem/be-ns-vmp-codes: NamingSystem.jurisdiction[0].coding[0]: T
 WARNING: NamingSystem/be-ns-vmpg-codes: NamingSystem.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
 == fsh-generated/resources/NamingSystem-be-ns-vtm-codes.json ==
 WARNING: NamingSystem/be-ns-vtm-codes: NamingSystem.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
+== fsh-generated/resources/OperationDefinition-be-op-cancel.json ==
+WARNING: OperationDefinition/be-op-cancel: OperationDefinition: opd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Rule 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed
+WARNING: OperationDefinition/be-op-cancel: OperationDefinition.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
 == fsh-generated/resources/ServiceRequest-example02-referralprescription-nursing-digestive-system-care.json ==
 == fsh-generated/resources/ServiceRequest-example03-referralprescription-nursing-compressiontherapy.json ==
 == fsh-generated/resources/ServiceRequest-example04-referralprescription-nursing-bladder-care.json ==
@@ -222,9 +225,6 @@ ERROR: ServiceRequest/example16-referralprescription-nursing-bladder-care: Servi
 WARNING: StructureDefinition/be-co-prescriber: StructureDefinition.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
 == fsh-generated/resources/StructureDefinition-be-ext-execution-period.json ==
 WARNING: StructureDefinition/be-ext-execution-period: StructureDefinition.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
-== fsh-generated/resources/StructureDefinition-be-ext-extends.json ==
-WARNING: StructureDefinition/be-ext-extends: StructureDefinition.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
-WARNING: StructureDefinition.where(url = 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-extends'): The Implementation Guide contains no examples for this extension
 == fsh-generated/resources/StructureDefinition-be-ext-lastest-end-date.json ==
 WARNING: StructureDefinition/be-ext-lastest-end-date: StructureDefinition.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
 WARNING: StructureDefinition.where(url = 'https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-lastest-end-date'): The Implementation Guide contains no examples for this extension
@@ -293,6 +293,8 @@ WARNING: ValueSet/be-vs-nursing-annex81-inadequate-adherence-link: ValueSet.juri
 WARNING: ValueSet/be-vs-prescription-status: ValueSet.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
 == fsh-generated/resources/ValueSet-be-vs-proposal-type.json ==
 WARNING: ValueSet/be-vs-proposal-type: ValueSet.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
+== fsh-generated/resources/ValueSet-be-vs-reason-referral-status.json ==
+WARNING: ValueSet/be-vs-reason-referral-status: ValueSet.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
 == fsh-generated/resources/ValueSet-be-vs-referral-category.json ==
 WARNING: ValueSet/be-vs-referral-category: ValueSet.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
 == input/examples/CarePlan-gpvisit.xml ==
@@ -419,8 +421,6 @@ WARNING: ValueSet.where(id = 'be-vs-nursing-medication-other'): Error from serve
 WARNING: ValueSet/be-vs-nursing-medication-percutaneous: ValueSet.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
 == input/vocabulary/valueset-be-vs-nursing-medication-perfusion.xml ==
 WARNING: ValueSet/be-vs-nursing-medication-perfusion: ValueSet.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
-== input/vocabulary/valueset-be-vs-reason-referral-status.xml ==
-WARNING: ValueSet/be-vs-reason-referral-status: ValueSet.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
 == input/vocabulary/valueset-be-vs-type-of-bladder-care.xml ==
 WARNING: ValueSet/be-vs-type-of-bladder-care: ValueSet.jurisdiction[0].coding[0]: The display "Belgium" is not a valid display for the code {http://unstats.un.org/unsd/methods/m49/m49.htm}056 - should be one of ['Belgium (BEL)'] (from http://tx.fhir.org/r4) for 'http://unstats.un.org/unsd/methods/m49/m49.htm#056'
 == input/vocabulary/valueset-be-vs-type-of-compression.xml ==

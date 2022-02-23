@@ -1,0 +1,72 @@
+{
+  "resourceType": "OperationDefinition",
+  "id": "be-op-cancel",
+  "text": {
+    "status": "extensions",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>cancel</h2><p>OPERATION: cancel</p><p>The official URL for this operation definition is: </p><pre>https://www.ehealth.fgov.be/standards/fhir/OperationDefinition/cancel</pre><div><p>Cancel Referral Prescription or Proposal</p>\n</div><p>Parameters</p><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>reasonCode</td><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#code\">code</a></td><td><a href=\"ValueSet-be-vs-reason-referral-status.html\">https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-reason-referral-status</a> (Required)</td><td><div><p>reason for the cancelling</p>\n</div></td></tr></table></div>"
+  },
+  "url": "https://www.ehealth.fgov.be/standards/fhir/OperationDefinition/cancel",
+  "version": "0.2.0",
+  "name": "cancel",
+  "title": "Cancel Referral Prescription or Proposal",
+  "status": "draft",
+  "kind": "operation",
+  "experimental": true,
+  "date": "2020-07-24",
+  "publisher": "HL7 Belgium",
+  "contact": [
+    {
+      "name": "HL7 Belgium",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://hl7belgium.org"
+        }
+      ]
+    },
+    {
+      "name": "Message-Structure",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "message-structure@ehealth.fgov.be",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "description": "Cancel Referral Prescription or Proposal",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code": "056",
+          "display": "Belgium"
+        }
+      ]
+    }
+  ],
+  "affectsState": true,
+  "code": "cancel",
+  "resource": [
+    "ServiceRequest"
+  ],
+  "system": false,
+  "type": false,
+  "instance": false,
+  "parameter": [
+    {
+      "name": "reasonCode",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "documentation": "reason for the cancelling",
+      "type": "code",
+      "binding": {
+        "strength": "required",
+        "valueSet": "https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-reason-referral-status"
+      }
+    }
+  ]
+}
