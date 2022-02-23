@@ -1,0 +1,84 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://example.com/fhir/example/OperationDefinition/be-op-cancel> a fhir:OperationDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "be-op-cancel"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>cancel</h2><p>OPERATION: cancel</p><p>The official URL for this operation definition is: </p><pre>https://www.ehealth.fgov.be/standards/fhir/OperationDefinition/cancel</pre><div><p>Cancel Referral Prescription or Proposal</p>\n</div><p>Parameters</p><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>reasonCode</td><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#code\">code</a></td><td><a href=\"ValueSet-be-vs-reason-referral-status.html\">https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-reason-referral-status</a> (Required)</td><td><div><p>reason for the cancelling</p>\n</div></td></tr></table></div>"
+  ];
+  fhir:OperationDefinition.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/OperationDefinition/cancel"];
+  fhir:OperationDefinition.version [ fhir:value "0.2.0"];
+  fhir:OperationDefinition.name [ fhir:value "cancel"];
+  fhir:OperationDefinition.title [ fhir:value "Cancel Referral Prescription or Proposal"];
+  fhir:OperationDefinition.status [ fhir:value "draft"];
+  fhir:OperationDefinition.kind [ fhir:value "operation"];
+  fhir:OperationDefinition.experimental [ fhir:value "true"^^xsd:boolean];
+  fhir:OperationDefinition.date [ fhir:value "2020-07-24"^^xsd:date];
+  fhir:OperationDefinition.publisher [ fhir:value "HL7 Belgium"];
+  fhir:OperationDefinition.contact [
+     fhir:index 0;
+     fhir:ContactDetail.name [ fhir:value "HL7 Belgium" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7belgium.org" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:ContactDetail.name [ fhir:value "Message-Structure" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "email" ];
+       fhir:ContactPoint.value [ fhir:value "message-structure@ehealth.fgov.be" ];
+       fhir:ContactPoint.use [ fhir:value "work" ]
+     ]
+  ];
+  fhir:OperationDefinition.description [ fhir:value "Cancel Referral Prescription or Proposal"];
+  fhir:OperationDefinition.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "056" ];
+       fhir:Coding.display [ fhir:value "Belgium" ]
+     ]
+  ];
+  fhir:OperationDefinition.affectsState [ fhir:value "true"^^xsd:boolean];
+  fhir:OperationDefinition.code [ fhir:value "cancel"];
+  fhir:OperationDefinition.resource [
+     fhir:value "ServiceRequest";
+     fhir:index 0
+  ];
+  fhir:OperationDefinition.system [ fhir:value "false"^^xsd:boolean];
+  fhir:OperationDefinition.type [ fhir:value "false"^^xsd:boolean];
+  fhir:OperationDefinition.instance [ fhir:value "false"^^xsd:boolean];
+  fhir:OperationDefinition.parameter [
+     fhir:index 0;
+     fhir:OperationDefinition.parameter.name [ fhir:value "reasonCode" ];
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ];
+     fhir:OperationDefinition.parameter.min [ fhir:value "0"^^xsd:integer ];
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ];
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "reason for the cancelling" ];
+     fhir:OperationDefinition.parameter.type [ fhir:value "code" ];
+     fhir:OperationDefinition.parameter.binding [
+       fhir:OperationDefinition.parameter.binding.strength [ fhir:value "required" ];
+       fhir:OperationDefinition.parameter.binding.valueSet [
+         fhir:value "https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-reason-referral-status";
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-reason-referral-status>
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://example.com/fhir/example/OperationDefinition/be-op-cancel.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
