@@ -31,7 +31,8 @@ Description: """The nursing profile specialized for medication. Note this profil
     BeExecutionPeriod named executed 0..1 MS and 
     BeIntendedPerformer named performer 1..1 MS and 
     BeProposalType named proposalType 0..1 MS and 
-    BeTaskReference named task 0..1 MS 
+    BeTaskReference named task 0..1 MS and
+    BeExtends named extends 0..1 MS
 //* extension[statusReason].value[x] only CodeableConcept
 //* extension[statusReason].valueCodeableConcept from BeReasonReferralStatus (extensible)
 * extension[informParty] ^short = "Parties to inform of fulfillment of the prescription, besides the prescriber."

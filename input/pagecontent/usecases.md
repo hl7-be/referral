@@ -116,7 +116,7 @@ A new referral prescription is made as a copy of an existing one and sent using 
 |Intent|proposal|
 |Requester|the GP of the original prescription|
 |IntendedPerformer.role|the current performer role|
-|basedOn|reference to the original prescription|
+|extends|reference to the original prescription|
 |proposalType|prolongation|
 
 |Post:||
