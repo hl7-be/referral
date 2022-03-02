@@ -35,8 +35,9 @@ Description: "Logical model describing the model for the prescription referral. 
 * serviceRequested 1..1 http://hl7.org/fhir/StructureDefinition/CodeableConcept "What is prescribed" "What is prescribed"
 * problemCode 0..* Reference "The problem (code or reference) that is the main reason for this prescription" "The problem (code or reference) that is the main reason for this prescription"
 * resultReceiver 0..* Reference "Parties that shall be informed of the results of the prescription other then the prescriber." "Parties that shall be informed of the results of the prescription other then the prescriber."
-* status 1..1 http://hl7.org/fhir/StructureDefinition/code "Current status" "Current status"
+* status 1..1 http://hl7.org/fhir/StructureDefinition/code "Status of the requisition" "Status of the requisition"
 * status from http://hl7.org/fhir/ValueSet/request-status (required)
+* clinicalStatus 0..1 http://hl7.org/fhir/StructureDefinition/code "Status of the execution" "Status of the execution"
 * statusReason 0..1 http://hl7.org/fhir/StructureDefinition/CodeableConcept "Reason current status"
 * note 0..1 Annotation "Additional text notes about the request." "Additional text notes about the request."
 * intent 1..1 http://hl7.org/fhir/StructureDefinition/code "Proposal, Prolongation, Prescription" "Proposal, Prolongation, Prescription"
