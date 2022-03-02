@@ -384,8 +384,8 @@
        fhir:index 19;
        fhir:Element.id [ fhir:value "BeNursingPrescription.status" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.status" ];
-       fhir:ElementDefinition.short [ fhir:value "Current status" ];
-       fhir:ElementDefinition.definition [ fhir:value "Current status" ];
+       fhir:ElementDefinition.short [ fhir:value "Status of the requisition" ];
+       fhir:ElementDefinition.definition [ fhir:value "Status of the requisition" ];
        fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "1" ];
        fhir:ElementDefinition.base [
@@ -406,6 +406,23 @@
        ]
      ], [
        fhir:index 20;
+       fhir:Element.id [ fhir:value "BeNursingPrescription.clinicalStatus" ];
+       fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.clinicalStatus" ];
+       fhir:ElementDefinition.short [ fhir:value "Status of the execution" ];
+       fhir:ElementDefinition.definition [ fhir:value "Status of the execution" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.clinicalStatus" ];
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "code" ]
+       ]
+     ], [
+       fhir:index 21;
        fhir:Element.id [ fhir:value "BeNursingPrescription.statusReason" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.statusReason" ];
        fhir:ElementDefinition.short [ fhir:value "Reason current status" ];
@@ -422,7 +439,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 21;
+       fhir:index 22;
        fhir:Element.id [ fhir:value "BeNursingPrescription.note" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.note" ];
        fhir:ElementDefinition.short [ fhir:value "Additional text notes about the request." ];
@@ -439,7 +456,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "Annotation" ]
        ]
      ], [
-       fhir:index 22;
+       fhir:index 23;
        fhir:Element.id [ fhir:value "BeNursingPrescription.intent" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.intent" ];
        fhir:ElementDefinition.short [ fhir:value "Proposal, Prolongation, Prescription" ];
@@ -456,7 +473,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "code" ]
        ]
      ], [
-       fhir:index 23;
+       fhir:index 24;
        fhir:Element.id [ fhir:value "BeNursingPrescription.phoneAvailablityPrescriber" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.phoneAvailablityPrescriber" ];
        fhir:ElementDefinition.short [ fhir:value "test" ];
@@ -473,7 +490,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "BackboneElement" ]
        ]
      ], [
-       fhir:index 24;
+       fhir:index 25;
        fhir:Element.id [ fhir:value "BeNursingPrescription.phoneAvailablityPrescriber.contactPoint" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.phoneAvailablityPrescriber.contactPoint" ];
        fhir:ElementDefinition.short [ fhir:value "test" ];
@@ -490,7 +507,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "ContactPoint" ]
        ]
      ], [
-       fhir:index 25;
+       fhir:index 26;
        fhir:Element.id [ fhir:value "BeNursingPrescription.phoneAvailablityPrescriber.availability" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.phoneAvailablityPrescriber.availability" ];
        fhir:ElementDefinition.short [ fhir:value "test" ];
@@ -507,7 +524,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "BackboneElement" ]
        ]
      ], [
-       fhir:index 26;
+       fhir:index 27;
        fhir:Element.id [ fhir:value "BeNursingPrescription.phoneAvailablityPrescriber.availability.untilHour" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.phoneAvailablityPrescriber.availability.untilHour" ];
        fhir:ElementDefinition.short [ fhir:value "test" ];
@@ -524,7 +541,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "BackboneElement" ]
        ]
      ], [
-       fhir:index 27;
+       fhir:index 28;
        fhir:Element.id [ fhir:value "BeNursingPrescription.phoneAvailablityPrescriber.availability.fromHour" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.phoneAvailablityPrescriber.availability.fromHour" ];
        fhir:ElementDefinition.short [ fhir:value "test" ];
@@ -541,7 +558,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "BackboneElement" ]
        ]
      ], [
-       fhir:index 28;
+       fhir:index 29;
        fhir:Element.id [ fhir:value "BeNursingPrescription.phoneAvailablityPrescriber.availability.weekDay" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.phoneAvailablityPrescriber.availability.weekDay" ];
        fhir:ElementDefinition.short [ fhir:value "test" ];
@@ -558,7 +575,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "string" ]
        ]
      ], [
-       fhir:index 29;
+       fhir:index 30;
        fhir:Element.id [ fhir:value "BeNursingPrescription.feedbackAsked" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.feedbackAsked" ];
        fhir:ElementDefinition.short [ fhir:value "test" ];
@@ -575,7 +592,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "BackboneElement" ]
        ]
      ], [
-       fhir:index 30;
+       fhir:index 31;
        fhir:Element.id [ fhir:value "BeNursingPrescription.feedbackAsked.timingFeedback" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.feedbackAsked.timingFeedback" ];
        fhir:ElementDefinition.short [ fhir:value "test" ];
@@ -592,7 +609,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "code" ]
        ]
      ], [
-       fhir:index 31;
+       fhir:index 32;
        fhir:Element.id [ fhir:value "BeNursingPrescription.signature" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.signature" ];
        fhir:ElementDefinition.short [ fhir:value "test" ];
@@ -609,7 +626,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "Signature" ]
        ]
      ], [
-       fhir:index 32;
+       fhir:index 33;
        fhir:Element.id [ fhir:value "BeNursingPrescription.stampOrIdentification" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.stampOrIdentification" ];
        fhir:ElementDefinition.short [ fhir:value "What is this?" ];
@@ -626,7 +643,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "code" ]
        ]
      ], [
-       fhir:index 33;
+       fhir:index 34;
        fhir:Element.id [ fhir:value "BeNursingPrescription.mainNursingCare" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.mainNursingCare" ];
        fhir:ElementDefinition.short [ fhir:value "e.g. woundcare, medication administartion, compression therapy,...." ];
@@ -643,7 +660,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 34;
+       fhir:index 35;
        fhir:Element.id [ fhir:value "BeNursingPrescription.detailedCare" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.detailedCare" ];
        fhir:ElementDefinition.short [ fhir:value "e.g. burncare, injection of medication,..." ];
@@ -660,7 +677,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 35;
+       fhir:index 36;
        fhir:Element.id [ fhir:value "BeNursingPrescription.bodySite" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.bodySite" ];
        fhir:ElementDefinition.short [ fhir:value "When needed bodySite SHALL be given" ];

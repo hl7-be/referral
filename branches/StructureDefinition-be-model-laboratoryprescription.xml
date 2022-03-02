@@ -331,8 +331,8 @@
     </element>
     <element id="BeLaboratoryPrescription.status">
       <path value="BeLaboratoryPrescription.status"/>
-      <short value="Current status"/>
-      <definition value="Current status"/>
+      <short value="Status of the requisition"/>
+      <definition value="Status of the requisition"/>
       <min value="1"/>
       <max value="1"/>
       <base>
@@ -347,6 +347,21 @@
         <strength value="required"/>
         <valueSet value="http://hl7.org/fhir/ValueSet/request-status"/>
       </binding>
+    </element>
+    <element id="BeLaboratoryPrescription.clinicalStatus">
+      <path value="BeLaboratoryPrescription.clinicalStatus"/>
+      <short value="Status of the execution"/>
+      <definition value="Status of the execution"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.clinicalStatus"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="code"/>
+      </type>
     </element>
     <element id="BeLaboratoryPrescription.statusReason">
       <path value="BeLaboratoryPrescription.statusReason"/>

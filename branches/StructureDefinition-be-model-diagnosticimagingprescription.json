@@ -399,8 +399,8 @@
       {
         "id": "BeDiagnosticImagingPrescription.status",
         "path": "BeDiagnosticImagingPrescription.status",
-        "short": "Current status",
-        "definition": "Current status",
+        "short": "Status of the requisition",
+        "definition": "Status of the requisition",
         "min": 1,
         "max": "1",
         "base": {
@@ -417,6 +417,24 @@
           "strength": "required",
           "valueSet": "http://hl7.org/fhir/ValueSet/request-status"
         }
+      },
+      {
+        "id": "BeDiagnosticImagingPrescription.clinicalStatus",
+        "path": "BeDiagnosticImagingPrescription.clinicalStatus",
+        "short": "Status of the execution",
+        "definition": "Status of the execution",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.clinicalStatus",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
       },
       {
         "id": "BeDiagnosticImagingPrescription.statusReason",
