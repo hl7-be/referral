@@ -14,10 +14,10 @@
 ","Status of co prescribing status (to sign, signed or refused)","Status of co prescribing status (to sign, signed or refused)","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.co-prescriber.status",0,1,"",""
 "BeDiagnosticImagingPrescription.patient","","","",1,1,"","","","Reference {[]} {[]}
 ","The SSIN of the person for which the referral is prescribed.","The SSIN of the person for which the referral is prescribed.","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.patient",1,1,"",""
-"BeDiagnosticImagingPrescription.prescriptionNumber","","","",0,*,"","","","Identifier {[]} {[]}
-","An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available","An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.prescriptionNumber",0,*,"",""
-"BeDiagnosticImagingPrescription.basedOn","","","",0,1,"","","","Reference {[]} {[]}
-","The original request or prescription triggered this prescription","The original request or prescription that is the reason for this request - for example when a detailed request is created by a broader request.","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.basedOn",0,1,"",""
+"BeDiagnosticImagingPrescription.prescriptionNumber","","","",0,1,"","","","Identifier {[]} {[]}
+","An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available","An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.prescriptionNumber",0,1,"",""
+"BeDiagnosticImagingPrescription.basedOn","","","",0,*,"","","","Reference {[]} {[]}
+","The original request or prescription triggered this prescription","The original request or prescription that is the reason for this request - for example when a detailed request is created by a broader request.","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.basedOn",0,*,"",""
 "BeDiagnosticImagingPrescription.validitionPeriod","","","",1,1,"","","","Period {[]} {[]}
 ","Period of validity of prescription","Period of validity of prescription","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.validitionPeriod",1,1,"",""
 "BeDiagnosticImagingPrescription.treatmentPeriod","","","",0,1,"","","","Period {[]} {[]}
@@ -32,18 +32,20 @@
 ","The required discipline of the provider party","The required discipline of the provider party","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedProvider.discipline",1,1,"",""
 "BeDiagnosticImagingPrescription.serviceRequested","","","",1,1,"","","","CodeableConcept {[]} {[]}
 ","What is prescribed","What is prescribed","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.serviceRequested",1,1,"",""
-"BeDiagnosticImagingPrescription.problemCode","","","",0,*,"","","","Reference {[]} {[]}
-","The problem (code or reference) that is the main reason for this prescription","The problem (code or reference) that is the main reason for this prescription","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.problemCode",0,*,"",""
+"BeDiagnosticImagingPrescription.problemCode","","","",1,1,"","","","Reference {[]} {[]}
+","The problem (code or reference) that is the main reason for this prescription","The problem (code or reference) that is the main reason for this prescription","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.problemCode",1,1,"",""
+"BeDiagnosticImagingPrescription.supportingInfo","","","",0,1,"","","","Reference {[]} {[]}
+","Care Set Problem","Care Set Problem","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.supportingInfo",0,1,"",""
 "BeDiagnosticImagingPrescription.resultReceiver","","","",0,*,"","","","Reference {[]} {[]}
 ","Parties that shall be informed of the results of the prescription other then the prescriber.","Parties that shall be informed of the results of the prescription other then the prescriber.","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.resultReceiver",0,*,"",""
-"BeDiagnosticImagingPrescription.status","","","",1,1,"","","","code {[]} {[]}
-","Status of the requisition","Status of the requisition","","","","","","","","","",,"required","","http://hl7.org/fhir/ValueSet/request-status","",,,,"BeReferralPrescription.status",1,1,"",""
-"BeDiagnosticImagingPrescription.clinicalStatus","","","",0,1,"","","","code {[]} {[]}
-","Status of the execution","Status of the execution","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.clinicalStatus",0,1,"",""
+"BeDiagnosticImagingPrescription.status","","","",0,1,"","","","code {[]} {[]}
+","Current status","Current status","","","","","","","","","",,"required","","http://hl7.org/fhir/ValueSet/request-status","",,,,"BeReferralPrescription.status",0,1,"",""
 "BeDiagnosticImagingPrescription.statusReason","","","",0,1,"","","","CodeableConcept {[]} {[]}
 ","Reason current status","Reason current status","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.statusReason",0,1,"",""
-"BeDiagnosticImagingPrescription.note","","","",0,1,"","","","Annotation {[]} {[]}
-","Additional text notes about the request.","Additional text notes about the request.","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.note",0,1,"",""
+"BeDiagnosticImagingPrescription.bodySite","","","",0,*,"","","","CodeableConcept {[]} {[]}
+","bodySite, e.g. using a SNOMED-CT code","bodySite, e.g. using a SNOMED-CT code","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.bodySite",0,*,"",""
+"BeDiagnosticImagingPrescription.note","","","",0,*,"","","","Annotation {[]} {[]}
+","Additional text notes about the request.","Additional text notes about the request.","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.note",0,*,"",""
 "BeDiagnosticImagingPrescription.intent","","","",1,1,"","","","code {[]} {[]}
 ","Proposal, Prolongation, Prescription","Proposal, Prolongation, Prescription","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intent",1,1,"",""
 "BeDiagnosticImagingPrescription.BeReferralPrescription","","","",1,1,"","","","BeReferralPrescription {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-model-referralprescription]]} {[]}
@@ -62,8 +64,6 @@ Annotation {[]} {[]}Reference {[]} {[CanonicalType[http://hl7.org/fhir/Structure
 ","Any document added as extra information","Any document added as extra information","","","","","","","","","",,,,,"",,,,"BeDiagnosticImagingPrescription.supportingInformation[x].document",0,*,"",""
 "BeDiagnosticImagingPrescription.supportingInformation[x].imagingStudy","","","",0,*,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/ImagingStudy]]}
 ","If vital to this request, references may be given to previous diagnostic imaging","If vital to this request, references may be given to previous diagnostic imaging","","","","","","","","","",,,,,"",,,,"BeDiagnosticImagingPrescription.supportingInformation[x].imagingStudy",0,*,"",""
-"BeDiagnosticImagingPrescription.bodySite","","","",0,*,"","","","CodeableConcept {[]} {[]}
-","bodySite, e.g. using a SNOMED-CT code","bodySite, e.g. using a SNOMED-CT code","","","","","","","","","",,,,,"",,,,"BeDiagnosticImagingPrescription.bodySite",0,*,"",""
 "BeDiagnosticImagingPrescription.proposedInvestigation","","","",0,*,"","","","CodeableConcept {[]} {[]}
 ","What to do - coded or as text within the codeableConcept","What to do - coded or as text within the codeableConcept","","","","","","","","","",,,,,"",,,,"BeDiagnosticImagingPrescription.proposedInvestigation",0,*,"",""
 "BeDiagnosticImagingPrescription.contrastFluid","","","",0,1,"","","","code {[]} {[]}
