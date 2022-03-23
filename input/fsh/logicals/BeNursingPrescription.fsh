@@ -17,19 +17,7 @@ Id: be-model-nursingprescription
 * ^jurisdiction.coding.code = #001
 * ^jurisdiction.coding.display = "World"
 * ^type = "BeNursingPrescription"
-//* BeReferralPrescription 1..1 https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-model-referralprescription "test"
-* phoneAvailablityPrescriber 0..1 BackboneElement "test"
-* phoneAvailablityPrescriber.contactPoint 0..* http://hl7.org/fhir/StructureDefinition/ContactPoint "test"
-* phoneAvailablityPrescriber.availability 0..* BackboneElement "test"
-* phoneAvailablityPrescriber.availability.untilHour 0..1 BackboneElement "test"
-* phoneAvailablityPrescriber.availability.fromHour 0..1 BackboneElement "test"
-* phoneAvailablityPrescriber.availability.weekDay 1..1 http://hl7.org/fhir/StructureDefinition/string "test"
-* feedbackAsked 0..1 BackboneElement "test"
-* feedbackAsked.timingFeedback 1..1 http://hl7.org/fhir/StructureDefinition/code "test"
-//* feedbackAsked.timingFeedback = #during|end (exactly) 
-* signature 0..1 http://hl7.org/fhir/StructureDefinition/Signature "test"
-* stampOrIdentification 0..1 http://hl7.org/fhir/StructureDefinition/code "What is this?" "What is this?"
-//* stampOrIdentification = #stamp|identification (exactly) 
-* mainNursingCare 1..1 http://hl7.org/fhir/StructureDefinition/CodeableConcept "e.g. woundcare, medication administartion, compression therapy,...." "A high level code to describe the nursing care"
-* detailedCare 0..* http://hl7.org/fhir/StructureDefinition/CodeableConcept "e.g. burncare, injection of medication,..." "Detailed code describing the nursing care demanded"
-* bodySite 0..* http://hl7.org/fhir/StructureDefinition/CodeableConcept "When needed bodySite SHALL be given" "When needed bodySite SHALL be given"
+* serviceRequestNumber 0..1 positiveInt "number of sessions prescribed" "number of sessions prescribed"
+* serviceRequestFrequency 0..1 http://hl7.org/fhir/StructureDefinition/CodeableConcept "frequency of the treatment" "frequency of the treatment"
+* serviceRequestDayPeriod 0..* http://hl7.org/fhir/StructureDefinition/CodeableConcept "period of the day on which the treatment must take place" "period of the day on which the treatment must take place"
+* route 0..1 http://hl7.org/fhir/StructureDefinition/CodeableConcept "administration route of the treatment" "administration route of the treatment"
