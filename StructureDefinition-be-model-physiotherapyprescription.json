@@ -203,11 +203,11 @@
         "short": "An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available",
         "definition": "An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "base": {
           "path": "BeReferralPrescription.prescriptionNumber",
           "min": 0,
-          "max": "*"
+          "max": "1"
         },
         "type": [
           {
@@ -221,11 +221,11 @@
         "short": "The original request or prescription triggered this prescription",
         "definition": "The original request or prescription that is the reason for this request - for example when a detailed request is created by a broader request.",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "base": {
           "path": "BeReferralPrescription.basedOn",
           "min": 0,
-          "max": "1"
+          "max": "*"
         },
         "type": [
           {
@@ -364,12 +364,30 @@
         "path": "BePhysiotherapyPrescription.problemCode",
         "short": "The problem (code or reference) that is the main reason for this prescription",
         "definition": "The problem (code or reference) that is the main reason for this prescription",
-        "min": 0,
-        "max": "*",
+        "min": 1,
+        "max": "1",
         "base": {
           "path": "BeReferralPrescription.problemCode",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "BePhysiotherapyPrescription.supportingInfo",
+        "path": "BePhysiotherapyPrescription.supportingInfo",
+        "short": "Care Set Problem",
+        "definition": "Care Set Problem",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.supportingInfo",
           "min": 0,
-          "max": "*"
+          "max": "1"
         },
         "type": [
           {
@@ -398,13 +416,13 @@
       {
         "id": "BePhysiotherapyPrescription.status",
         "path": "BePhysiotherapyPrescription.status",
-        "short": "Status of the requisition",
-        "definition": "Status of the requisition",
-        "min": 1,
+        "short": "Current status",
+        "definition": "Current status",
+        "min": 0,
         "max": "1",
         "base": {
           "path": "BeReferralPrescription.status",
-          "min": 1,
+          "min": 0,
           "max": "1"
         },
         "type": [
@@ -416,24 +434,6 @@
           "strength": "required",
           "valueSet": "http://hl7.org/fhir/ValueSet/request-status"
         }
-      },
-      {
-        "id": "BePhysiotherapyPrescription.clinicalStatus",
-        "path": "BePhysiotherapyPrescription.clinicalStatus",
-        "short": "Status of the execution",
-        "definition": "Status of the execution",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "BeReferralPrescription.clinicalStatus",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "code"
-          }
-        ]
       },
       {
         "id": "BePhysiotherapyPrescription.statusReason",
@@ -454,16 +454,34 @@
         ]
       },
       {
+        "id": "BePhysiotherapyPrescription.bodySite",
+        "path": "BePhysiotherapyPrescription.bodySite",
+        "short": "Anatomical place where the treatment should be executed",
+        "definition": "Anatomical place where the treatment should be executed",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "BeReferralPrescription.bodySite",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
         "id": "BePhysiotherapyPrescription.note",
         "path": "BePhysiotherapyPrescription.note",
         "short": "Additional text notes about the request.",
         "definition": "Additional text notes about the request.",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "base": {
           "path": "BeReferralPrescription.note",
           "min": 0,
-          "max": "1"
+          "max": "*"
         },
         "type": [
           {

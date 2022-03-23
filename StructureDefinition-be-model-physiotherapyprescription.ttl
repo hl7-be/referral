@@ -200,11 +200,11 @@
        fhir:ElementDefinition.short [ fhir:value "An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available" ];
        fhir:ElementDefinition.definition [ fhir:value "An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available" ];
        fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
-       fhir:ElementDefinition.max [ fhir:value "*" ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
        fhir:ElementDefinition.base [
          fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.prescriptionNumber" ];
          fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
-         fhir:ElementDefinition.base.max [ fhir:value "*" ]
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
        ];
        fhir:ElementDefinition.type [
          fhir:index 0;
@@ -217,11 +217,11 @@
        fhir:ElementDefinition.short [ fhir:value "The original request or prescription triggered this prescription" ];
        fhir:ElementDefinition.definition [ fhir:value "The original request or prescription that is the reason for this request - for example when a detailed request is created by a broader request." ];
        fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
-       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.max [ fhir:value "*" ];
        fhir:ElementDefinition.base [
          fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.basedOn" ];
          fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
-         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+         fhir:ElementDefinition.base.max [ fhir:value "*" ]
        ];
        fhir:ElementDefinition.type [
          fhir:index 0;
@@ -352,12 +352,12 @@
        fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.problemCode" ];
        fhir:ElementDefinition.short [ fhir:value "The problem (code or reference) that is the main reason for this prescription" ];
        fhir:ElementDefinition.definition [ fhir:value "The problem (code or reference) that is the main reason for this prescription" ];
-       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
-       fhir:ElementDefinition.max [ fhir:value "*" ];
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
        fhir:ElementDefinition.base [
          fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.problemCode" ];
-         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
-         fhir:ElementDefinition.base.max [ fhir:value "*" ]
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
        ];
        fhir:ElementDefinition.type [
          fhir:index 0;
@@ -365,6 +365,23 @@
        ]
      ], [
        fhir:index 18;
+       fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.supportingInfo" ];
+       fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.supportingInfo" ];
+       fhir:ElementDefinition.short [ fhir:value "Care Set Problem" ];
+       fhir:ElementDefinition.definition [ fhir:value "Care Set Problem" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.supportingInfo" ];
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ], [
+       fhir:index 19;
        fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.resultReceiver" ];
        fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.resultReceiver" ];
        fhir:ElementDefinition.short [ fhir:value "Parties that shall be informed of the results of the prescription other then the prescriber." ];
@@ -381,16 +398,16 @@
          fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
        ]
      ], [
-       fhir:index 19;
+       fhir:index 20;
        fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.status" ];
        fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.status" ];
-       fhir:ElementDefinition.short [ fhir:value "Status of the requisition" ];
-       fhir:ElementDefinition.definition [ fhir:value "Status of the requisition" ];
-       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.short [ fhir:value "Current status" ];
+       fhir:ElementDefinition.definition [ fhir:value "Current status" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "1" ];
        fhir:ElementDefinition.base [
          fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.status" ];
-         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
          fhir:ElementDefinition.base.max [ fhir:value "1" ]
        ];
        fhir:ElementDefinition.type [
@@ -403,23 +420,6 @@
            fhir:value "http://hl7.org/fhir/ValueSet/request-status";
            fhir:link <http://hl7.org/fhir/ValueSet/request-status>
          ]
-       ]
-     ], [
-       fhir:index 20;
-       fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.clinicalStatus" ];
-       fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.clinicalStatus" ];
-       fhir:ElementDefinition.short [ fhir:value "Status of the execution" ];
-       fhir:ElementDefinition.definition [ fhir:value "Status of the execution" ];
-       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
-       fhir:ElementDefinition.max [ fhir:value "1" ];
-       fhir:ElementDefinition.base [
-         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.clinicalStatus" ];
-         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
-         fhir:ElementDefinition.base.max [ fhir:value "1" ]
-       ];
-       fhir:ElementDefinition.type [
-         fhir:index 0;
-         fhir:ElementDefinition.type.code [ fhir:value "code" ]
        ]
      ], [
        fhir:index 21;
@@ -440,23 +440,40 @@
        ]
      ], [
        fhir:index 22;
+       fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.bodySite" ];
+       fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.bodySite" ];
+       fhir:ElementDefinition.short [ fhir:value "Anatomical place where the treatment should be executed" ];
+       fhir:ElementDefinition.definition [ fhir:value "Anatomical place where the treatment should be executed" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "*" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.bodySite" ];
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "*" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
+       ]
+     ], [
+       fhir:index 23;
        fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.note" ];
        fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.note" ];
        fhir:ElementDefinition.short [ fhir:value "Additional text notes about the request." ];
        fhir:ElementDefinition.definition [ fhir:value "Additional text notes about the request." ];
        fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
-       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.max [ fhir:value "*" ];
        fhir:ElementDefinition.base [
          fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.note" ];
          fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
-         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+         fhir:ElementDefinition.base.max [ fhir:value "*" ]
        ];
        fhir:ElementDefinition.type [
          fhir:index 0;
          fhir:ElementDefinition.type.code [ fhir:value "Annotation" ]
        ]
      ], [
-       fhir:index 23;
+       fhir:index 24;
        fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.intent" ];
        fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.intent" ];
        fhir:ElementDefinition.short [ fhir:value "Proposal, Prolongation, Prescription" ];
@@ -473,7 +490,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "code" ]
        ]
      ], [
-       fhir:index 24;
+       fhir:index 25;
        fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.numberOfSessions" ];
        fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.numberOfSessions" ];
        fhir:ElementDefinition.short [ fhir:value "Number of pt sessions that are prescribed" ];

@@ -169,11 +169,11 @@
       <short value="An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available"/>
       <definition value="An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available"/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="1"/>
       <base>
         <path value="BeReferralPrescription.prescriptionNumber"/>
         <min value="0"/>
-        <max value="*"/>
+        <max value="1"/>
       </base>
       <type>
         <code value="Identifier"/>
@@ -184,11 +184,11 @@
       <short value="The original request or prescription triggered this prescription"/>
       <definition value="The original request or prescription that is the reason for this request - for example when a detailed request is created by a broader request."/>
       <min value="0"/>
-      <max value="1"/>
+      <max value="*"/>
       <base>
         <path value="BeReferralPrescription.basedOn"/>
         <min value="0"/>
-        <max value="1"/>
+        <max value="*"/>
       </base>
       <type>
         <code value="Reference"/>
@@ -303,12 +303,27 @@
       <path value="BePhysiotherapyPrescription.problemCode"/>
       <short value="The problem (code or reference) that is the main reason for this prescription"/>
       <definition value="The problem (code or reference) that is the main reason for this prescription"/>
-      <min value="0"/>
-      <max value="*"/>
+      <min value="1"/>
+      <max value="1"/>
       <base>
         <path value="BeReferralPrescription.problemCode"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Reference"/>
+      </type>
+    </element>
+    <element id="BePhysiotherapyPrescription.supportingInfo">
+      <path value="BePhysiotherapyPrescription.supportingInfo"/>
+      <short value="Care Set Problem"/>
+      <definition value="Care Set Problem"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.supportingInfo"/>
         <min value="0"/>
-        <max value="*"/>
+        <max value="1"/>
       </base>
       <type>
         <code value="Reference"/>
@@ -331,13 +346,13 @@
     </element>
     <element id="BePhysiotherapyPrescription.status">
       <path value="BePhysiotherapyPrescription.status"/>
-      <short value="Status of the requisition"/>
-      <definition value="Status of the requisition"/>
-      <min value="1"/>
+      <short value="Current status"/>
+      <definition value="Current status"/>
+      <min value="0"/>
       <max value="1"/>
       <base>
         <path value="BeReferralPrescription.status"/>
-        <min value="1"/>
+        <min value="0"/>
         <max value="1"/>
       </base>
       <type>
@@ -347,21 +362,6 @@
         <strength value="required"/>
         <valueSet value="http://hl7.org/fhir/ValueSet/request-status"/>
       </binding>
-    </element>
-    <element id="BePhysiotherapyPrescription.clinicalStatus">
-      <path value="BePhysiotherapyPrescription.clinicalStatus"/>
-      <short value="Status of the execution"/>
-      <definition value="Status of the execution"/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="BeReferralPrescription.clinicalStatus"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="code"/>
-      </type>
     </element>
     <element id="BePhysiotherapyPrescription.statusReason">
       <path value="BePhysiotherapyPrescription.statusReason"/>
@@ -378,16 +378,31 @@
         <code value="CodeableConcept"/>
       </type>
     </element>
+    <element id="BePhysiotherapyPrescription.bodySite">
+      <path value="BePhysiotherapyPrescription.bodySite"/>
+      <short value="Anatomical place where the treatment should be executed"/>
+      <definition value="Anatomical place where the treatment should be executed"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="BeReferralPrescription.bodySite"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+    </element>
     <element id="BePhysiotherapyPrescription.note">
       <path value="BePhysiotherapyPrescription.note"/>
       <short value="Additional text notes about the request."/>
       <definition value="Additional text notes about the request."/>
       <min value="0"/>
-      <max value="1"/>
+      <max value="*"/>
       <base>
         <path value="BeReferralPrescription.note"/>
         <min value="0"/>
-        <max value="1"/>
+        <max value="*"/>
       </base>
       <type>
         <code value="Annotation"/>
