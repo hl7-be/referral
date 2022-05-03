@@ -3,21 +3,38 @@
 <ServiceRequest xmlns="http://hl7.org/fhir">
   <id value="diagnostic-imaging-basic-example-concreteWithDetails"/>
   <meta>
-    <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-diagnosticimaging"/>
+    <profile value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-diagnosticimaging"/>
   </meta>
   <text>
-    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "diagnostic-imaging-basic-example-concreteWithDetails" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-be-referralprescription-diagnosticimaging.html">BeReferralPrescriptionDiagnosticImaging</a></p></div><p><b>Reason for current status</b>: Created <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-be-status-reason.html">BeStatusReason</a>#created)</span></p><p><b>status</b>: active</p><p><b>intent</b>: order</p><p><b>category</b>: Clinical imaging <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#363679005)</span></p><p><b>priority</b>: routine</p><p><b>code</b>: Rx + echo rechtervoet <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> ()</span></p><p><b>subject</b>: <a href="Patient-patient1.html">Patient/patient1</a> " DOE"</p><p><b>requester</b>: <a href="Practitioner-practitioner1.html">Practitioner/practitioner1</a> " MCCOY"</p><p><b>performerType</b>: Radiologist <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#66862007)</span></p><p><b>reasonCode</b>: Fractuur? Ligamentair letsel? <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> ()</span></p><p><b>supportingInfo</b>: <a href="Condition-condition1.html">Condition/condition1</a></p></div>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "diagnostic-imaging-basic-example-concreteWithDetails" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-be-referralprescription-diagnosticimaging.html">BeReferralPrescriptionDiagnosticImaging</a></p></div><p><b>Reason for current status</b>: Other <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-be-status-reason.html">BeStatusReason</a>#other)</span></p><p><b>BeValidityPeriod</b>: 2020-01-01 --&gt; 2021-01-01</p><blockquote><p><b>BeIntendedPerformer</b></p><p><b>value</b>: Radiologist <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#66862007)</span></p></blockquote><p><b>status</b>: active</p><p><b>intent</b>: order</p><p><b>category</b>: Clinical imaging <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#363679005)</span></p><p><b>priority</b>: routine</p><p><b>code</b>: Rx + echo rechtervoet <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> ()</span></p><p><b>subject</b>: <a href="Patient-patient1.html">Patient/patient1</a> " DOE"</p><p><b>authoredOn</b>: 2020-01-01</p><p><b>requester</b>: <a href="Practitioner-practitioner1.html">Practitioner/practitioner1</a> " MCCOY"</p><p><b>reasonCode</b>: Fractuur? Ligamentair letsel? <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> ()</span></p><p><b>supportingInfo</b>: <a href="Condition-condition1.html">Condition/condition1</a></p></div>
   </text>
   <extension url="http://hl7.org/fhir/StructureDefinition/request-statusReason">
     <valueCodeableConcept>
       <coding>
-        <system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason"/>
-        <code value="created"/>
-        <display value="Created"/>
+        <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-status-reason"/>
+        <code value="other"/>
+        <display value="Other"/>
       </coding>
     </valueCodeableConcept>
   </extension>
-  <modifierExtension url="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-contraindication">
+  <extension url="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period">
+    <valuePeriod>
+      <start value="2020-01-01"/>
+      <end value="2021-01-01"/>
+    </valuePeriod>
+  </extension>
+  <extension url="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer">
+    <extension url="role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="66862007"/>
+          <display value="Radiologist"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+  </extension>
+  <modifierExtension url="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-contraindication">
     <valueCodeableConcept>
       <coding>
         <system value="http://terminology.hl7.org/CodeSystem/v3-NullFlavor"/>
@@ -26,7 +43,7 @@
       </coding>
     </valueCodeableConcept>
   </modifierExtension>
-  <modifierExtension url="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-contrastfluiduse">
+  <modifierExtension url="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-contrastfluiduse">
     <valueCode value="if-necessary"/>
   </modifierExtension>
   <status value="active"/>
@@ -45,16 +62,10 @@
   <subject>
     <reference value="Patient/patient1"/>
   </subject>
+  <authoredOn value="2020-01-01"/>
   <requester>
     <reference value="Practitioner/practitioner1"/>
   </requester>
-  <performerType>
-    <coding>
-      <system value="http://snomed.info/sct"/>
-      <code value="66862007"/>
-      <display value="Radiologist"/>
-    </coding>
-  </performerType>
   <reasonCode>
     <text value="Fractuur? Ligamentair letsel?"/>
   </reasonCode>

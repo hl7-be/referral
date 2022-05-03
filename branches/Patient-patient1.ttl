@@ -5,14 +5,14 @@
 
 # - resource -------------------------------------------------------------------
 
-<http://example.com/fhir/example/Patient/patient1> a fhir:Patient;
+<https://www.ehealth.fgov.be/standards/fhir/referral/Patient/patient1> a fhir:Patient;
   fhir:nodeRole fhir:treeRoot;
   fhir:Resource.id [ fhir:value "patient1"];
   fhir:Resource.meta [
      fhir:Meta.profile [
-       fhir:value "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient";
+       fhir:value "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-patient";
        fhir:index 0;
-       fhir:link <https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient>
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-patient>
      ]
   ];
   fhir:DomainResource.text [
@@ -22,7 +22,7 @@
   fhir:Patient.identifier [
      fhir:index 0;
      fhir:Identifier.use [ fhir:value "official" ];
-     fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/ssin" ];
+     fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin" ];
      fhir:Identifier.value [ fhir:value "9999999999" ]
   ];
   fhir:Patient.name [
@@ -38,7 +38,7 @@
 
 # - ontology header ------------------------------------------------------------
 
-<http://example.com/fhir/example/Patient/patient1.ttl> a owl:Ontology;
+<https://www.ehealth.fgov.be/standards/fhir/referral/Patient/patient1.ttl> a owl:Ontology;
   owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------

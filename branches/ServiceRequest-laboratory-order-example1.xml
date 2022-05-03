@@ -3,22 +3,20 @@
 <ServiceRequest xmlns="http://hl7.org/fhir">
   <id value="laboratory-order-example1"/>
   <meta>
-    <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-lab-prescription"/>
+    <profile value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-lab-prescription"/>
   </meta>
-<!--  NOTE the mix of codes etc. in this example serve to illustrate and may not be clinically logical  -->
-<!--  In this example some referenced resources are placed here in <contained> tags to be fully 'contained' 	within the serviceRequest, depending on the final architectural approach 	- this may have to be revisited  -->
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml">A human readable form of the request (in HTML) SHALL be	provided here to enable systems that cannot process all structured	data, to at least present the information to the interactive user.	More information on https://www.hl7.org/fhir/R4/narrative.html</div>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "laboratory-order-example1" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-be-lab-prescription.html">BeLabPrescription</a></p></div><p><b>Reason for current status</b>: Other <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-be-status-reason.html">BeStatusReason</a>#other)</span></p><p><b>BeValidityPeriod</b>: 2021-10-10 --&gt; (ongoing)</p><blockquote><p><b>BeIntendedPerformer</b></p><p><b>value</b>: Laboratory medicine specialist <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#61246008)</span></p><p><b>value</b>: <a href="Practitioner-practitioner1.html">Practitioner/practitioner1</a> " MCCOY"</p></blockquote><blockquote><p><b>BeUrgentCommunication</b></p><p><b>value</b>: <a name="Requester1"> </a></p><blockquote><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "Requester1" </p><p style="margin-bottom: 0px">Profile: <a href="https://www.ehealth.fgov.be/standards/fhir/core/2.0.0/StructureDefinition-be-practitioner.html">Practitioner core BE profile</a></p></div><p><b>identifier</b>: id: 8888888888 (OFFICIAL)</p><p><b>name</b>: Henry Seven (OFFICIAL)</p><p><b>telecom</b>: ph: 322882299(HOME)</p><p><b>address</b>: Werkstraat 26, 1000 Brussel(WORK)</p></blockquote><p><b>value</b>: Send the requester an email, when the test is done.</p></blockquote><p><b>identifier</b>: id: XXXXXX</p><p><b>status</b>: active</p><p><b>intent</b>: original-order</p><p><b>category</b>: Laboratory test <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#15220000)</span></p><p><b>priority</b>: stat</p><p><b>code</b>: Hematology studies (set) <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#18723-7)</span></p><p><b>orderDetail</b>: Erythrocyte sedimentation rate <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#30341-2)</span>, Erythrocytes [#/volume] in Blood by Automated count <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#789-8)</span>, Carboxyhemoglobin/Hemoglobin.total in Blood <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#20563-3)</span>, Test described in text only <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> ()</span></p><p><b>subject</b>: <a name="patient1"> </a></p><blockquote><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "patient1" </p><p style="margin-bottom: 0px">Profile: <a href="https://www.ehealth.fgov.be/standards/fhir/core/2.0.0/StructureDefinition-be-patient.html">Patient core BE profile</a></p></div><p><b>identifier</b>: id: 9999999999 (OFFICIAL)</p><p><b>name</b>: Jane Doe </p><p><b>telecom</b>: ph: 322672299(HOME)</p><p><b>gender</b>: female</p><p><b>birthDate</b>: 1956-05-27</p><p><b>address</b>: Labradorstraat 26, 1000 Brussel(HOME)</p></blockquote><p><b>authoredOn</b>: 2015-11-01 02:41:00+0100</p><p><b>requester</b>: <a name="Requester1"> </a></p><blockquote><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "Requester1" </p><p style="margin-bottom: 0px">Profile: <a href="https://www.ehealth.fgov.be/standards/fhir/core/2.0.0/StructureDefinition-be-practitioner.html">Practitioner core BE profile</a></p></div><p><b>identifier</b>: id: 8888888888 (OFFICIAL)</p><p><b>name</b>: Henry Seven (OFFICIAL)</p><p><b>telecom</b>: ph: 322882299(HOME)</p><p><b>address</b>: Werkstraat 26, 1000 Brussel(WORK)</p></blockquote><p><b>reasonCode</b>: TheJustification <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (#123)</span></p><p><b>supportingInfo</b>: </p><ul><li><a name="observation1"> </a></li><li><a name="condition1"> </a></li><li><a name="media1"> </a></li></ul><blockquote><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "observation1" </p></div><p><b>status</b>: final</p><p><b>category</b>: Vital Signs <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://build.fhir.org/ig/HL7/UTG//CodeSystem-observation-category.html">Observation Category Codes</a>#vital-signs)</span></p><p><b>code</b>: Heart rate <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#8867-4; <a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#364075005 "Heart rate (observable entity)")</span></p><p><b>subject</b>: <a href="#patient1">#patient1</a></p><p><b>effective</b>: 1999-07-02</p><p><b>performer</b>: <a href="#Requester1">#Requester1</a></p><p><b>value</b>: 51 beats/minute<span style="background: LightGoldenRodYellow"> (Details: UCUM code /min = '/min')</span></p></blockquote><blockquote><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "condition1" </p></div><p><b>clinicalStatus</b>: Active <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://build.fhir.org/ig/HL7/UTG//CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Provisional <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://build.fhir.org/ig/HL7/UTG//CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>#provisional)</span></p><p><b>code</b>: bradycardie <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> ()</span></p><p><b>subject</b>: <a href="#patient1">#patient1</a></p><p><b>note</b>: This is a suspicion</p></blockquote><blockquote><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "media1" </p></div><p><b>status</b>: current</p><blockquote><p><b>content</b></p></blockquote></blockquote><p><b>specimen</b>: <a name="specimen1"> </a></p><blockquote><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "specimen1" </p></div><p><b>identifier</b>: id: 1</p><p><b>type</b>: A string can be added to nuance or explain. <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#119297000 "Blood specimen")</span></p><h3>Collections</h3><table class="grid"><tr><td>-</td><td><b>Collected[x]</b></td><td><b>Method</b></td><td><b>BodySite</b></td></tr><tr><td>*</td><td>2015-11-03</td><td>Venipuncture for blood test (procedure) <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#28520004)</span></td><td>Left upper arm structure (body structure) <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#368208006)</span></td></tr></table><p><b>note</b>: Some extra relevant information concerning the specimen</p></blockquote><p><b>note</b>: Some free text explaining about these tests that are ordered.</p></div>
   </text>
   <contained>
     <Patient>
-      <id value="Patient1"/>
+      <id value="patient1"/>
       <meta>
-        <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient"/>
+        <profile value="https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-patient"/>
       </meta>
       <identifier>
         <use value="official"/>
-        <system value="https://www.ehealth.fgov.be/standards/fhir/NamingSystem/ssin"/>
+        <system value="https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"/>
         <value value="9999999999"/>
       </identifier>
       <name>
@@ -69,7 +67,7 @@
         <text value="Heart rate"/>
       </code>
       <subject>
-        <reference value="#Patient1"/>
+        <reference value="#patient1"/>
       </subject>
       <effectiveDateTime value="1999-07-02"/>
       <performer>
@@ -85,7 +83,6 @@
   </contained>
   <contained>
     <Condition>
-    <!--  a suspected codition of the patient is given as extra clinical information  -->
       <id value="condition1"/>
       <clinicalStatus>
         <coding>
@@ -103,7 +100,7 @@
         <text value="bradycardie"/>
       </code>
       <subject>
-        <reference value="#Patient1"/>
+        <reference value="#patient1"/>
       </subject>
       <note>
         <text value="This is a suspicion"/>
@@ -113,14 +110,10 @@
   <contained>
     <DocumentReference>
       <id value="media1"/>
-    <!--   This just to illustrate how lo leverage the DocumentReference resource to link to a supporting image   -->
       <status value="current"/>
-    <!-- Many elements are available within the Media resource to further define, in this example, minimal use is made of the Media resource to only highlight the bare essentials  -->
       <content>
-      <!--  [...]  -->
         <attachment>
           <contentType value="image/gif"/>
-        <!-- Many elements are available within the attachment resource to further define, in this example, minimal use is made to only highlight the bare essentials  -->
           <data value="iVBORw0KGgoAAAANSUhEUgAAA+MAAACnCAYAAAB6pY03AAAAAXNSR0IArs4c6QAAAARnQU1BAACx jwv8YQUAAAAJcEhZcwAAEnMAABJzAYwiuQcAADBZSURBVHhe7d09rty218fxrOFfZj/ZQHZgwEiZ gg=="/>
         </attachment>
       </content>
@@ -130,11 +123,11 @@
     <Practitioner>
       <id value="Requester1"/>
       <meta>
-        <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner"/>
+        <profile value="https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitioner"/>
       </meta>
       <identifier>
         <use value="official"/>
-        <system value="https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi"/>
+        <system value="https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"/>
         <value value="8888888888"/>
       </identifier>
       <name>
@@ -162,11 +155,11 @@
     <Organization>
       <id value="Performer1"/>
       <meta>
-        <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization"/>
+        <profile value="https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-organization"/>
       </meta>
       <identifier>
         <use value="official"/>
-        <system value="https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi"/>
+        <system value="https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"/>
         <value value="9876543210"/>
       </identifier>
       <name value="Labstraatlabo"/>
@@ -190,13 +183,11 @@
     <Specimen>
       <id value="specimen1"/>
       <identifier>
-      <!--   Business identifier 0..* of the specimen SHOULD BE included if available   -->
         <system value="https://www.GTL-LABO.be/"/>
         <value value="1"/>
       </identifier>
       <type>
         <coding>
-        <!--    RECOMMENDED to include The actual specimen, described using a coding system. Here, the coding system SNOMED-CT is used for this which is RECOMMENDED for specimen. As a general back-up rule, whenever the laboratory does use a propriety code, a .text element SHALL always be included explaining the code.    -->
           <system value="http://snomed.info/sct"/>
           <code value="119297000"/>
           <display value="Blood specimen"/>
@@ -204,10 +195,8 @@
         <text value="A string can be added to nuance or explain."/>
       </type>
       <collection>
-      <!--    The date/time when the specimen was collected SHOULD be included if available    -->
         <collectedDateTime value="2015-11-03"/>
         <method>
-        <!--   OPTIONAL provide the method of collection    -->
           <coding>
             <system value="http://snomed.info/sct"/>
             <code value="28520004"/>
@@ -215,7 +204,6 @@
           </coding>
         </method>
         <bodySite>
-        <!--   OPTIONAL provide the bodySite. Here, a SNOMED-CT code is used. Alternatively, express this using the .text element of the CodeableConcept datatype.   -->
           <coding>
             <system value="http://snomed.info/sct"/>
             <code value="368208006"/>
@@ -224,8 +212,6 @@
         </bodySite>
       </collection>
       <note>
-      <!--   OPTIONAL  the .processing element can be added here. Again, this is also a powerful element to express details if needed. (refer to the profile for the many possibilities that can be leveraged here)   -->
-      <!--    OPTIONAL, any note concerning the specimen. Using the Annotation datatype in FHIR, it is OPTIONAL here to also add an author and/or dateTime of this annotation    -->
         <text value="Some extra relevant information concerning the specimen"/>
       </note>
     </Specimen>
@@ -233,13 +219,34 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/request-statusReason">
     <valueCodeableConcept>
       <coding>
-        <system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason"/>
-        <code value="created"/>
-        <display value="Created"/>
+        <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-status-reason"/>
+        <code value="other"/>
+        <display value="Other"/>
       </coding>
     </valueCodeableConcept>
   </extension>
-  <extension url="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-urgent-communication">
+  <extension url="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period">
+    <valuePeriod>
+      <start value="2021-10-10"/>
+    </valuePeriod>
+  </extension>
+  <extension url="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer">
+    <extension url="role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="61246008"/>
+          <display value="Laboratory medicine specialist"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="actor">
+      <valueReference>
+        <reference value="Practitioner/practitioner1"/>
+      </valueReference>
+    </extension>
+  </extension>
+  <extension url="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-urgent-communication">
     <extension url="party">
       <valueReference>
         <reference value="#Requester1"/>
@@ -264,15 +271,11 @@
     </extension>
   </extension>
   <identifier>
-    <system value="https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"/>
+    <system value="https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"/>
     <value value="XXXXXX"/>
   </identifier>
-<!-- basedOn element might be here to reference another request  -->
-<!-- replaces element might be here to reference the request being replaced  -->
   <status value="active"/>
-<!-- This could also be e.g. 'draft' or 'on-hold' if the order e.g. is made by a secretary and still needs approval -->
   <intent value="original-order"/>
-<!-- This could also be e.g. 'reflex-order' (cfr. specifications)  -->
   <category>
     <coding>
       <system value="http://snomed.info/sct"/>
@@ -281,18 +284,14 @@
     </coding>
   </category>
   <priority value="stat"/>
-<!-- priority according to specifications  -->
-<!--  the FHIR datatype that is used here allows for only textual expressions.If considered exhaustive enough - an order might only contain: e.g.<code><text value="Diabetes?"/></code> -->
   <code>
     <coding>
-    <!--  high level: 1 code. Cfr. profile for rules on what codes to use here (preferably LOINC etc.)  -->
       <system value="http://loinc.org"/>
       <code value="18723-7"/>
       <display value="Hematology studies (set)"/>
     </coding>
   </code>
   <orderDetail>
-  <!--  If needed to specify: multiple codes. Cfr. profile for rules on what codes to use here (preferably LOINC etc.)  -->
     <coding>
       <system value="http://loinc.org"/>
       <code value="30341-2"/>
@@ -317,27 +316,13 @@
     <text value="Test described in text only"/>
   </orderDetail>
   <subject>
-    <reference value="#Patient1"/>
+    <reference value="#patient1"/>
   </subject>
   <authoredOn value="2015-11-01T14:41:00+01:00"/>
   <requester>
     <reference value="#Requester1"/>
   </requester>
-<!--  if simply needed to mark the prescription as an internal draft that is made by administrative personel, the requester might alternatively be modeled simply like this:<requester><display value="Jan Van Den Admin-assistent"/>	</requester>  -->
-  <performerType>
-    <coding>
-      <system value="http://snomed.info/sct"/>
-      <code value="61246008"/>
-    <!--  here the high level SNOMED-CT code is given for laboratory performer - could also be a specialized child of this SNOMED-CT code  -->
-      <display value="Laboratory medicine specialist"/>
-    </coding>
-  </performerType>
-  <performer>
-  <!-- This could be a practitioner, but in this case, it is a laboratory. Naturally, this might be not known and the entire element will not exist. -->
-    <reference value="#Performer1"/>
-  </performer>
   <reasonCode>
-  <!--  Using a code, it should be possible to also send a justification (e.g. a toxoplasmosis test during pregnancy) (this is a limited list of nomenclature codes)  -->
     <coding>
       <system value="https://www.SOME_NOMENCLATURE_SYSTEM.be/"/>
       <code value="123"/>

@@ -5,18 +5,18 @@
 
 # - resource -------------------------------------------------------------------
 
-<http://example.com/fhir/example/ValueSet/be-vs-communication-method> a fhir:ValueSet;
+<https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-communication-method> a fhir:ValueSet;
   fhir:nodeRole fhir:treeRoot;
   fhir:Resource.id [ fhir:value "be-vs-communication-method"];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <a href=\"CodeSystem-be-communication-code.html\"><code>https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-communication-code</code></a></li><li>Include all codes defined in <code>http://hl7.org/fhir/ValueSet/contact-point-system</code></li></ul></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <a href=\"CodeSystem-be-communication-code.html\"><code>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-communication-code</code></a></li><li>Include all codes defined in <code>http://hl7.org/fhir/ValueSet/contact-point-system</code></li></ul></div>"
   ];
-  fhir:ValueSet.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/ValueSet/be-communication-method"];
+  fhir:ValueSet.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-communication-method"];
   fhir:ValueSet.version [ fhir:value "0.2.0"];
   fhir:ValueSet.name [ fhir:value "BeCommunicationMethod"];
   fhir:ValueSet.status [ fhir:value "draft"];
-  fhir:ValueSet.date [ fhir:value "2022-03-23T15:53:34+00:00"^^xsd:dateTime];
+  fhir:ValueSet.date [ fhir:value "2022-05-03T10:04:16+02:00"^^xsd:dateTime];
   fhir:ValueSet.publisher [ fhir:value "HL7 Belgium"];
   fhir:ValueSet.contact [
      fhir:index 0;
@@ -41,15 +41,15 @@
      fhir:index 0;
      fhir:CodeableConcept.coding [
        fhir:index 0;
-       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
-       fhir:Coding.code [ fhir:value "056" ];
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ];
+       fhir:Coding.code [ fhir:value "BE" ];
        fhir:Coding.display [ fhir:value "Belgium" ]
      ]
   ];
   fhir:ValueSet.compose [
      fhir:ValueSet.compose.include [
        fhir:index 0;
-       fhir:ValueSet.compose.include.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-communication-code" ]
+       fhir:ValueSet.compose.include.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-communication-code" ]
      ], [
        fhir:index 1;
        fhir:ValueSet.compose.include.system [ fhir:value "http://hl7.org/fhir/ValueSet/contact-point-system" ]
@@ -58,7 +58,7 @@
 
 # - ontology header ------------------------------------------------------------
 
-<http://example.com/fhir/example/ValueSet/be-vs-communication-method.ttl> a owl:Ontology;
+<https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-communication-method.ttl> a owl:Ontology;
   owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------

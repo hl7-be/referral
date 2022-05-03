@@ -5,18 +5,18 @@
 
 # - resource -------------------------------------------------------------------
 
-<http://example.com/fhir/example/CarePlan/gpvisit> a fhir:CarePlan;
+<https://www.ehealth.fgov.be/standards/fhir/referral/CarePlan/gpvisit> a fhir:CarePlan;
   fhir:nodeRole fhir:treeRoot;
   fhir:Resource.id [ fhir:value "gpvisit"];
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "additional" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n			<p>Narrative</p>\n		</div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Narrative</p></div>"
   ];
   fhir:CarePlan.status [ fhir:value "active"];
   fhir:CarePlan.intent [ fhir:value "plan"];
   fhir:CarePlan.subject [
-     fhir:link <http://example.com/fhir/example/Patient/100>;
-     fhir:Reference.reference [ fhir:value "Patient/100" ];
+     fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Patient/patient1>;
+     fhir:Reference.reference [ fhir:value "Patient/patient1" ];
      fhir:Reference.display [ fhir:value "Peter James Chalmers" ]
   ];
   fhir:CarePlan.period [
@@ -26,8 +26,7 @@
      fhir:index 0;
      fhir:CarePlan.activity.outcomeReference [
        fhir:index 0;
-       fhir:link <http://example.com/fhir/example/Encounter/example>;
-       fhir:Reference.reference [ fhir:value "Encounter/example" ]
+       fhir:Reference.reference [ fhir:value "encounter1" ]
      ];
      fhir:CarePlan.activity.detail [
        fhir:CarePlan.activity.detail.kind [ fhir:value "Appointment" ];
@@ -46,8 +45,8 @@
        ];
        fhir:CarePlan.activity.detail.performer [
          fhir:index 0;
-         fhir:link <http://example.com/fhir/example/Practitioner/13>;
-         fhir:Reference.reference [ fhir:value "Practitioner/13" ];
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Practitioner/practitioner1>;
+         fhir:Reference.reference [ fhir:value "Practitioner/practitioner1" ];
          fhir:Reference.display [ fhir:value "Nurse Nancy" ]
        ]
      ]
@@ -55,7 +54,7 @@
 
 # - ontology header ------------------------------------------------------------
 
-<http://example.com/fhir/example/CarePlan/gpvisit.ttl> a owl:Ontology;
+<https://www.ehealth.fgov.be/standards/fhir/referral/CarePlan/gpvisit.ttl> a owl:Ontology;
   owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------

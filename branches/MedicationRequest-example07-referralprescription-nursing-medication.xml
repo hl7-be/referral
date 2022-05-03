@@ -3,27 +3,43 @@
 <MedicationRequest xmlns="http://hl7.org/fhir">
   <id value="example07-referralprescription-nursing-medication"/>
   <meta>
-    <profile value="https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-nursing-medication"/>
+    <profile value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication"/>
   </meta>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "example07-referralprescription-nursing-medication" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-be-referralprescription-nursing-medication.html">BeReferralPrescriptionNursingMedication</a></p></div><p><b>identifier</b>: id: UHMEPVALUE</p><p><b>status</b>: active</p><p><b>statusReason</b>: Created <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-be-status-reason.html">BeStatusReason</a>#created)</span></p><p><b>intent</b>: order</p><p><b>category</b>: Subcutaan <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-be-nursing-medication-injection.html">BeNursingMedicationInjection</a>#SC)</span></p><p><b>priority</b>: routine</p><p><b>medication</b>: Neupogen inj./inf. oploss. (conc.) i.v./s.c. [voorgev. spuit] 5 x 48 ME / 0,5 ml <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (cnk-codes#1728104)</span></p><p><b>subject</b>: <a href="Patient-patient1.html">Patient/patient1</a> " DOE"</p><p><b>requester</b>: <a href="Practitioner-practitioner1.html">Practitioner/practitioner1</a> " MCCOY"</p><p><b>performer</b>: <a href="Practitioner-practitioner2.html">Practitioner/practitioner2</a> " CHAPEL"</p><p><b>performerType</b>: Nurse <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#106292003)</span></p></div>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative</b></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource "example07-referralprescription-nursing-medication" </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-be-referralprescription-nursing-gen-medication.html">BeReferralPrescriptionNursingGenMedication</a></p></div><blockquote><p><b>BeIntendedPerformer</b></p><p><b>value</b>: Nurse <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#106292003)</span></p><p><b>value</b>: <a href="Practitioner-practitioner2.html">Practitioner/practitioner2</a> " CHAPEL"</p></blockquote><p><b>identifier</b>: id: UHMEPVALUE</p><p><b>status</b>: active</p><p><b>statusReason</b>: Other <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-be-status-reason.html">BeStatusReason</a>#other)</span></p><p><b>intent</b>: order</p><p><b>category</b>: Subcutaan <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-be-nursing-medication-injection.html">BeNursingMedicationInjection</a>#SC)</span></p><p><b>priority</b>: routine</p><p><b>medication</b>: Neupogen inj./inf. oploss. (conc.) i.v./s.c. [voorgev. spuit] 5 x 48 ME / 0,5 ml <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (be-ns-cnk-codes#1728104)</span></p><p><b>subject</b>: <a href="Patient-patient1.html">Patient/patient1</a> " DOE"</p><p><b>requester</b>: <a href="Practitioner-practitioner1.html">Practitioner/practitioner1</a> " MCCOY"</p></div>
   </text>
+  <extension url="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer">
+    <extension url="role">
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="106292003"/>
+          <display value="Nurse"/>
+        </coding>
+      </valueCodeableConcept>
+    </extension>
+    <extension url="actor">
+      <valueReference>
+        <reference value="Practitioner/practitioner2"/>
+      </valueReference>
+    </extension>
+  </extension>
   <identifier>
-    <system value="https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep"/>
+    <system value="https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"/>
     <value value="UHMEPVALUE"/>
   </identifier>
   <status value="active"/>
   <statusReason>
     <coding>
-      <system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason"/>
-      <code value="created"/>
-      <display value="Created"/>
+      <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-status-reason"/>
+      <code value="other"/>
+      <display value="Other"/>
     </coding>
   </statusReason>
   <intent value="order"/>
   <category>
     <coding>
-      <system value="https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-medication-injection"/>
+      <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-nursing-medication-injection"/>
       <code value="SC"/>
     </coding>
     <text value="Subcutaan"/>
@@ -31,7 +47,7 @@
   <priority value="routine"/>
   <medicationCodeableConcept>
     <coding>
-      <system value="https://www.ehealth.fgov.be/standards/fhir/NamingSystem/cnk-codes"/>
+      <system value="https://www.ehealth.fgov.be/standards/fhir/medication/NamingSystem/be-ns-cnk-codes"/>
       <code value="1728104"/>
       <display value="Neupogen inj./inf. oploss. (conc.) i.v./s.c. [voorgev. spuit] 5 x 48 ME / 0,5 ml"/>
     </coding>
@@ -42,16 +58,6 @@
   <requester>
     <reference value="Practitioner/practitioner1"/>
   </requester>
-  <performer>
-    <reference value="Practitioner/practitioner2"/>
-  </performer>
-  <performerType>
-    <coding>
-      <system value="http://snomed.info/sct"/>
-      <code value="106292003"/>
-      <display value="Nurse"/>
-    </coding>
-  </performerType>
   <dosageInstruction>
     <text value="2 spuiten simultaan te geven.  5 days ‘s avonds rond 20.00u"/>
     <timing>
