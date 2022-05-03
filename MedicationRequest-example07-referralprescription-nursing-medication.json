@@ -1,0 +1,102 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "example07-referralprescription-nursing-medication",
+  "meta": {
+    "profile": [
+      "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication"
+    ]
+  },
+  "text": {
+    "status": "extensions",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"example07-referralprescription-nursing-medication\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referralprescription-nursing-gen-medication.html\">BeReferralPrescriptionNursingGenMedication</a></p></div><blockquote><p><b>BeIntendedPerformer</b></p><p><b>value</b>: Nurse <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#106292003)</span></p><p><b>value</b>: <a href=\"Practitioner-practitioner2.html\">Practitioner/practitioner2</a> \" CHAPEL\"</p></blockquote><p><b>identifier</b>: id: UHMEPVALUE</p><p><b>status</b>: active</p><p><b>statusReason</b>: Other <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-be-status-reason.html\">BeStatusReason</a>#other)</span></p><p><b>intent</b>: order</p><p><b>category</b>: Subcutaan <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-be-nursing-medication-injection.html\">BeNursingMedicationInjection</a>#SC)</span></p><p><b>priority</b>: routine</p><p><b>medication</b>: Neupogen inj./inf. oploss. (conc.) i.v./s.c. [voorgev. spuit] 5 x 48 ME / 0,5 ml <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (be-ns-cnk-codes#1728104)</span></p><p><b>subject</b>: <a href=\"Patient-patient1.html\">Patient/patient1</a> \" DOE\"</p><p><b>requester</b>: <a href=\"Practitioner-practitioner1.html\">Practitioner/practitioner1</a> \" MCCOY\"</p></div>"
+  },
+  "extension": [
+    {
+      "extension": [
+        {
+          "url": "role",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "106292003",
+                "display": "Nurse"
+              }
+            ]
+          }
+        },
+        {
+          "url": "actor",
+          "valueReference": {
+            "reference": "Practitioner/practitioner2"
+          }
+        }
+      ],
+      "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer"
+    }
+  ],
+  "identifier": [
+    {
+      "system": "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep",
+      "value": "UHMEPVALUE"
+    }
+  ],
+  "status": "active",
+  "statusReason": {
+    "coding": [
+      {
+        "system": "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-status-reason",
+        "code": "other",
+        "display": "Other"
+      }
+    ]
+  },
+  "intent": "order",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-nursing-medication-injection",
+          "code": "SC"
+        }
+      ],
+      "text": "Subcutaan"
+    }
+  ],
+  "priority": "routine",
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "system": "https://www.ehealth.fgov.be/standards/fhir/medication/NamingSystem/be-ns-cnk-codes",
+        "code": "1728104",
+        "display": "Neupogen inj./inf. oploss. (conc.) i.v./s.c. [voorgev. spuit] 5 x 48 ME / 0,5 ml"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient1"
+  },
+  "requester": {
+    "reference": "Practitioner/practitioner1"
+  },
+  "dosageInstruction": [
+    {
+      "text": "2 spuiten simultaan te geven.  5 days ‘s avonds rond 20.00u",
+      "timing": {
+        "repeat": {
+          "boundsDuration": {
+            "value": 5,
+            "unit": "d",
+            "system": "http://hl7.org/fhir/ValueSet/ucum-units"
+          },
+          "frequency": 1,
+          "period": 1,
+          "periodUnit": "d",
+          "timeOfDay": [
+            "20:00:00"
+          ]
+        }
+      }
+    }
+  ]
+}

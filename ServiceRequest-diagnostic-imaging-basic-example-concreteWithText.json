@@ -3,26 +3,26 @@
   "id": "diagnostic-imaging-basic-example-concreteWithText",
   "meta": {
     "profile": [
-      "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-referralprescription-diagnosticimaging"
+      "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-diagnosticimaging"
     ]
   },
   "text": {
-    "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">A human readable form of the request (in HTML) SHALL be\n\t\t\tprovided here to enable systems that cannot process all structured\n\t\t\tdata, to at least present the information to the interactive user.\n\t\t\tMore information on https://www.hl7.org/fhir/R4/narrative.html\n\t\t</div>"
+    "status": "extensions",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"diagnostic-imaging-basic-example-concreteWithText\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referralprescription-diagnosticimaging.html\">BeReferralPrescriptionDiagnosticImaging</a></p></div><p><b>Reason for current status</b>: Inversietrauma rechtervoet 20/1</p><p><b>BeValidityPeriod</b>: 2020-01-01 --&gt; 2021-01-01</p><blockquote><p><b>BeIntendedPerformer</b></p><p><b>value</b>: Radiologist <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#66862007)</span></p></blockquote><p><b>status</b>: active</p><p><b>intent</b>: order</p><p><b>category</b>: Clinical imaging <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#363679005)</span></p><p><b>priority</b>: routine</p><p><b>code</b>: Rx + echo rechtervoet <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ()</span></p><p><b>subject</b>: <a name=\"patient1\"> </a></p><blockquote><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"patient1\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"https://www.ehealth.fgov.be/standards/fhir/core/2.0.0/StructureDefinition-be-patient.html\">Patient core BE profile</a></p></div><p><b>identifier</b>: id: 9999999999 (OFFICIAL)</p><p><b>name</b>: Jane Doe </p><p><b>gender</b>: female</p><p><b>birthDate</b>: 1956-05-27</p></blockquote><p><b>authoredOn</b>: 2022-01-01</p><p><b>requester</b>: <a name=\"Requester1\"> </a></p><blockquote><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"Requester1\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"https://www.ehealth.fgov.be/standards/fhir/core/2.0.0/StructureDefinition-be-practitioner.html\">Practitioner core BE profile</a></p></div><p><b>identifier</b>: id: 8888888888 (OFFICIAL)</p><p><b>name</b>: Leonard McCoy (OFFICIAL), Bones (NICKNAME)</p></blockquote><p><b>reasonCode</b>: Fractuur? Ligamentair letsel? <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ()</span></p></div>"
   },
   "contained": [
     {
       "resourceType": "Patient",
-      "id": "Patient1",
+      "id": "patient1",
       "meta": {
         "profile": [
-          "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient"
+          "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-patient"
         ]
       },
       "identifier": [
         {
           "use": "official",
-          "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/ssin",
+          "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin",
           "value": "9999999999"
         }
       ],
@@ -42,13 +42,13 @@
       "id": "Requester1",
       "meta": {
         "profile": [
-          "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner"
+          "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitioner"
         ]
       },
       "identifier": [
         {
           "use": "official",
-          "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/nihdi",
+          "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi",
           "value": "8888888888"
         }
       ],
@@ -72,26 +72,38 @@
   "extension": [
     {
       "url": "http://hl7.org/fhir/StructureDefinition/request-statusReason",
-      "valueCodeableConcept": {
-        "coding": [
-          {
-            "system": "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-status-reason",
-            "code": "created",
-            "display": "Created"
-          }
-        ]
-      }
-    },
-    {
-      "url": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-supporting-info",
       "valueAnnotation": {
         "text": "Inversietrauma rechtervoet 20/1"
       }
+    },
+    {
+      "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period",
+      "valuePeriod": {
+        "start": "2020-01-01",
+        "end": "2021-01-01"
+      }
+    },
+    {
+      "extension": [
+        {
+          "url": "role",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "66862007",
+                "display": "Radiologist"
+              }
+            ]
+          }
+        }
+      ],
+      "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer"
     }
   ],
   "modifierExtension": [
     {
-      "url": "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-contraindication",
+      "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-contraindication",
       "valueCodeableConcept": {
         "coding": [
           {
@@ -121,19 +133,11 @@
     "text": "Rx + echo rechtervoet"
   },
   "subject": {
-    "reference": "#Patient1"
+    "reference": "#patient1"
   },
+  "authoredOn": "2022-01-01",
   "requester": {
     "reference": "#Requester1"
-  },
-  "performerType": {
-    "coding": [
-      {
-        "system": "http://snomed.info/sct",
-        "code": "66862007",
-        "display": "Radiologist"
-      }
-    ]
   },
   "reasonCode": [
     {
