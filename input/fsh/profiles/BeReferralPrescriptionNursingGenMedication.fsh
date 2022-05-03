@@ -1,39 +1,31 @@
-Alias: $m49.htm = http://unstats.un.org/unsd/methods/m49/m49.htm
-Alias: $be-ext-inform-party = https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-ext-inform-party
-Alias: $be-patient = https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-patient
-Alias: $be-practitioner = https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitioner
-Alias: $be-practitionerrole = https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-practitionerrole
-Alias: $be-organization = https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-organization
-
 Profile: BeReferralPrescriptionNursingGenMedication
 Parent: MedicationRequest
 Id: be-referralprescription-nursing-gen-medication
-Description: """The nursing profile specialized for medication. Note this profile is based on the FHIR resource MedicationRequest. Dosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements)."""
+Description: "The nursing profile specialized for medication. Note this profile is based on the FHIR resource MedicationRequest. Dosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements)."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication"
 * ^version = "0.2.0"
 * ^status = #draft
+* ^date = "2022-05-03T10:04:16+02:00"
 * ^publisher = "HL7 Belgium"
 * ^contact[0].name = "HL7 Belgium"
 * ^contact[=].telecom.system = #url
 * ^contact[=].telecom.value = "http://hl7belgium.org"
-* ^contact[+].name = "Bart Decuypere"
+* ^contact[+].name = "Message-Structure"
 * ^contact[=].telecom.system = #email
-* ^contact[=].telecom.value = "bart.decuypere@ehealth.fgov.be"
+* ^contact[=].telecom.value = "message-structure@ehealth.fgov.be"
 * ^contact[=].telecom.use = #work
-* ^jurisdiction = $m49.htm#001 "World"
+* ^jurisdiction = $jurisdiction#BE "Belgium"
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-    //$request-statusReason named statusReason 1..1 MS and
     BeInformParty named informParty 0..* MS and
-	BeCoPrescriber named coprescriber 0..* MS and
-    BeValidityPeriod named validity 0..1 MS and 
-    BeExecutionPeriod named executed 0..1 MS and 
-    BeIntendedPerformer named performer 1..1 MS and 
-    BeProposalType named proposalType 0..1 MS and 
-    BeTaskReference named task 0..1 MS 
-//* extension[statusReason].value[x] only CodeableConcept
-//* extension[statusReason].valueCodeableConcept from BeReasonReferralStatus (extensible)
+    BeCoPrescriber named coprescriber 0..* MS and
+    BeValidityPeriod named validity 0..1 MS and
+    BeExecutionPeriod named executed 0..1 MS and
+    BeIntendedPerformer named performer 1..1 MS and
+    BeProposalType named proposalType 0..1 MS and
+    BeTaskReference named task 0..1 MS
 * extension[informParty] ^short = "Parties to inform of fulfillment of the prescription, besides the prescriber."
 * extension[coprescriber] ^short = "Other parties that have to take part in the prescription."
 * extension[validity] ^short = "Validity period of the prescription"
@@ -45,23 +37,23 @@ Description: """The nursing profile specialized for medication. Note this profil
 * identifier contains UHMEP 0..1
 * identifier[UHMEP] ^short = "Reference ID of the UHMEP once available there"
 * identifier[UHMEP].system 1..
-* identifier[UHMEP].system = "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep" (exactly)
+* identifier[UHMEP].system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep" (exactly)
 * identifier[UHMEP].value 1..
 * status MS
 * statusReason MS
+* intent MS
 * category 1..1 MS
-* category from http://hl7.org/fhir/ValueSet/procedure-code (example)
+* category from $procedure-code (example)
 * medication[x] MS
-* subject only Reference(Group or $be-patient)
+* subject only Reference(Group or BePatient)
 * subject MS
 * encounter MS
 * requester 1.. MS
-* requester only Reference(RelatedPerson or Device or $be-patient or $be-practitioner or $be-practitionerrole or $be-organization)
-* performer 0..0 MS
-* performerType 0..0 MS
+* requester only Reference(RelatedPerson or Device or BePatient or BePractitioner or BePractitionerRole or BeOrganization)
+* performer ..0 MS
+* performerType ..0 MS
 * groupIdentifier MS
 * groupIdentifier ^short = "If needed to have a common identifier among different prescriptions."
 * note MS
 * dosageInstruction.text 1.. MS
 * dosageInstruction.site MS
-* intent 1..1 MS

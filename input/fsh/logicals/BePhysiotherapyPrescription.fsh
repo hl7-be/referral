@@ -1,21 +1,19 @@
 Logical: BePhysiotherapyPrescription
 Parent: BeModelReferralPrescription
 Id: be-model-physiotherapyprescription
-* ^url = "https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-model-physiotherapyprescription"
-* ^version = "0.2.0"
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-model-physiotherapyprescription"
 * ^status = #draft
 * ^date = "2021-10-07T15:14:36+02:00"
 * ^publisher = "HL7 Belgium"
 * ^contact[0].name = "HL7 Belgium"
 * ^contact[=].telecom.system = #url
 * ^contact[=].telecom.value = "http://hl7belgium.org"
-* ^contact[+].name = "Bart Decuypere"
+* ^contact[+].name = "Message-Structure"
 * ^contact[=].telecom.system = #email
-* ^contact[=].telecom.value = "bart.decuypere@ehealth.fgov.be"
+* ^contact[=].telecom.value = "message-structure@ehealth.fgov.be"
 * ^contact[=].telecom.use = #work
-* ^jurisdiction.coding.system = "http://unstats.un.org/unsd/methods/m49/m49.htm"
-* ^jurisdiction.coding.code = #001
-* ^jurisdiction.coding.display = "World"
+* ^jurisdiction.coding.system = "urn:iso:std:iso:3166"
+* ^jurisdiction.coding.code = #BE
+* ^jurisdiction.coding.display = "Belgium"
 * ^type = "BePhysiotherapyPrescription"
-//* BeReferralPrescription 1..1 https://www.ehealth.fgov.be/standards/fhir/StructureDefinition/be-model-referralprescription "test"
-* numberOfSessions 0..1 http://hl7.org/fhir/StructureDefinition/integer "Number of pt sessions that are prescribed" "Number of pt sessions that are prescribed"
+* numberOfSessions 0..1 integer "Number of pt sessions that are prescribed" "Number of pt sessions that are prescribed"
