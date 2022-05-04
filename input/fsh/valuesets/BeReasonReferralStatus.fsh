@@ -15,3 +15,10 @@ Description: "Codes to explain the current status of a referral prescription."
 * ^contact[=].telecom.use = #work
 * ^jurisdiction = $jurisdiction#BE "Belgium"
 * include codes from system BeStatusReason
+* include http://terminology.hl7.org/CodeSystem/v3-ActReason#MEDPREC "Medical Precaution"
+* include http://terminology.hl7.org/CodeSystem/v3-ActReason#OSTOCK "Out of Stock"
+* include http://terminology.hl7.org/CodeSystem/v3-ActReason#PATOBJ "Patient Objection"
+* include http://terminology.hl7.org/CodeSystem/v3-ActReason#DECSD
+* include http://terminology.hl7.org/CodeSystem/v3-ActReason#SALG
+* include http://terminology.hl7.org/CodeSystem/v3-ActReason#MODIFY
+* include http://terminology.hl7.org/CodeSystem/v3-ActReason#CONTRA

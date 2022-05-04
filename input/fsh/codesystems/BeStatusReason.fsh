@@ -17,23 +17,6 @@ Description: "Status reason in Belgium. Initially defined as supporting CodeSyst
 * ^contact[=].telecom.use = #work
 * ^jurisdiction = $jurisdiction#BE "Belgium"
 * ^caseSensitive = false
-* ^content = #complete
-* ^count = 6
-* #contra-indication "contra-indication"
-* #contra-indication ^designation.language = #en
-* #contra-indication ^designation.value = "The patient's state is a contra-indication for the prescription"
-* #modified "modified"
-* #modified ^designation.language = #en
-* #modified ^designation.value = "The treatment has changed"
-* #out-of-stock "out-of-stock"
-* #out-of-stock ^designation.language = #en
-* #out-of-stock ^designation.value = "The treatment is not available"
-* #allergy "allergy"
-* #allergy ^designation.language = #en
-* #allergy ^designation.value = "The patient is allergic to the treatment."
-* #refused "refused"
-* #refused ^designation.language = #en
-* #refused ^designation.value = "The patient refused the treatment"
 * #other "other"
 * #other ^designation.language = #en
 * #other ^designation.value = "Other"
