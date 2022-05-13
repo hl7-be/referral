@@ -3,7 +3,7 @@ InstanceOf: BeReferralPrescriptionNursing
 Title: "example24-referralprescription-nursing-non-reimbursable"
 Usage: #example
 * extension[0].url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
-* extension[=].valueCodeableConcept = $be-status-reason#refused "Refused"
+* extension[=].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/v3-ActReason#PATOBJ "Refused"
 * extension[+].url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period"
 * extension[=].valuePeriod.start = "2022-04-19"
 * extension[=].valuePeriod.end = "2023-04-19"

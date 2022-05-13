@@ -10,7 +10,7 @@ Usage: #example
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
 * identifier.value = "UHMEPVALUE"
 * status = #active
-* statusReason = $be-status-reason#refused "Refused"
+* statusReason = http://terminology.hl7.org/CodeSystem/v3-ActReason#PATOBJ "Refused"
 * intent = #order
 * category = $be-nursing-medication-injection#SC
 * category.text = "Subcutaan"
