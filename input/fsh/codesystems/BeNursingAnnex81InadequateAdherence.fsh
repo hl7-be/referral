@@ -2,7 +2,7 @@ CodeSystem: BeNursingAnnex81InadequateAdherence
 Id: be-nursing-annex81-inadequate-adherence
 Title: "BeNursingAnnex81InadequateAdherence"
 Description: "Nursing codes in Belgium. To define details in nursing activities for the annex 81 diagnostics of inadequate adherence. Initially defined as supporting CodeSystem for the referral prescription."
-* ^url = "https://www.ehealth.fgov.be/standards/fhir/CodeSystem/be-nursing-annex81-inadequate-adherence"
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-nursing-annex81-inadequate-adherence"
 * ^version = "0.2.0"
 * ^status = #draft
 * ^experimental = false
@@ -11,13 +11,14 @@ Description: "Nursing codes in Belgium. To define details in nursing activities 
 * ^contact[0].name = "HL7 Belgium"
 * ^contact[=].telecom.system = #url
 * ^contact[=].telecom.value = "http://hl7belgium.org"
-* ^contact[+].name = "Bart Decuypere"
+* ^contact[+].name = "Message-Structure"
 * ^contact[=].telecom.system = #email
-* ^contact[=].telecom.value = "bart.decuypere@ehealth.fgov.be"
+* ^contact[=].telecom.value = "message-structure@ehealth.fgov.be"
 * ^contact[=].telecom.use = #work
-* ^jurisdiction = $m49.htm#001 "World"
+* ^jurisdiction = $jurisdiction#BE "Belgium"
 * ^caseSensitive = false
 * ^content = #complete
+* ^count = 8
 * #expressed "Expressing difficulty in cooperating with the prescribed treatment"
 * #expressed ^designation[0].language = #nl-BE
 * #expressed ^designation[=].value = "Verwoorden moeite te hebben om mee te werken aan de voorgeschreven behandeling"

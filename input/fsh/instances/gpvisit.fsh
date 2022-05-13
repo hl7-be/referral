@@ -1,0 +1,18 @@
+Instance: gpvisit
+InstanceOf: CarePlan
+Title: "gpvisit"
+Usage: #example
+* text.status = #additional
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n\t\t\t<p>Narrative</p>\n\t\t</div>"
+* status = #active
+* intent = #plan
+* subject = Reference(patient1) "Peter James Chalmers"
+* period.start = "2013-01-01T10:30:00+00:00"
+* activity.outcomeReference = Reference(encounter1)
+* activity.detail.kind = #Appointment
+* activity.detail.code = $local#nursecon
+* activity.detail.code.text = "Nurse Consultation"
+* activity.detail.status = #scheduled
+* activity.detail.scheduledPeriod.start = "2013-01-01T10:38:00+00:00"
+* activity.detail.scheduledPeriod.end = "2013-01-01T10:50:00+00:00"
+* activity.detail.performer = Reference(practitioner1) "Nurse Nancy"
