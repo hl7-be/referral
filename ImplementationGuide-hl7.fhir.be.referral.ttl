@@ -17,7 +17,7 @@
   fhir:ImplementationGuide.name [ fhir:value "HL7BEReferralPrescriptionWGImplementationGuideworkinprogress"];
   fhir:ImplementationGuide.title [ fhir:value "HL7 BE Referral Prescription WG Implementation Guide (work in progress)"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
-  fhir:ImplementationGuide.date [ fhir:value "2022-05-03T18:04:21+00:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2022-05-13T13:07:05+00:00"^^xsd:dateTime];
   fhir:ImplementationGuide.packageId [ fhir:value "hl7.fhir.be.referral"];
   fhir:ImplementationGuide.license [ fhir:value "CC0-1.0"];
   fhir:ImplementationGuide.fhirVersion [
@@ -26,6 +26,15 @@
   ];
   fhir:ImplementationGuide.dependsOn [
      fhir:index 0;
+     fhir:Element.id [ fhir:value "hl7tx" ];
+     fhir:ImplementationGuide.dependsOn.uri [
+       fhir:value "http://terminology.hl7.org";
+       fhir:link <http://terminology.hl7.org>
+     ];
+     fhir:ImplementationGuide.dependsOn.packageId [ fhir:value "hl7.terminology.r4" ];
+     fhir:ImplementationGuide.dependsOn.version [ fhir:value "3.1.0" ]
+  ], [
+     fhir:index 1;
      fhir:Element.id [ fhir:value "hl7_fhir_be_core" ];
      fhir:ImplementationGuide.dependsOn.uri [
        fhir:value "https://www.ehealth.fgov.be/standards/fhir/core/ImplementationGuide/hl7.fhir.be.core";
@@ -34,7 +43,7 @@
      fhir:ImplementationGuide.dependsOn.packageId [ fhir:value "hl7.fhir.be.core" ];
      fhir:ImplementationGuide.dependsOn.version [ fhir:value "2.0.0" ]
   ], [
-     fhir:index 1;
+     fhir:index 2;
      fhir:Element.id [ fhir:value "hl7_fhir_be_medication" ];
      fhir:ImplementationGuide.dependsOn.uri [
        fhir:value "https://www.ehealth.fgov.be/standards/fhir/medication/ImplementationGuide/hl7.fhir.be.medication";
@@ -43,7 +52,7 @@
      fhir:ImplementationGuide.dependsOn.packageId [ fhir:value "hl7.fhir.be.medication" ];
      fhir:ImplementationGuide.dependsOn.version [ fhir:value "dev" ]
   ], [
-     fhir:index 2;
+     fhir:index 3;
      fhir:Element.id [ fhir:value "hl7_fhir_be_core_clinical" ];
      fhir:ImplementationGuide.dependsOn.uri [
        fhir:value "https://www.ehealth.fgov.be/standards/fhir/core-clinical/ImplementationGuide/hl7.fhir.be.core-clinical";
@@ -52,7 +61,7 @@
      fhir:ImplementationGuide.dependsOn.packageId [ fhir:value "hl7.fhir.be.core-clinical" ];
      fhir:ImplementationGuide.dependsOn.version [ fhir:value "dev" ]
   ], [
-     fhir:index 3;
+     fhir:index 4;
      fhir:Element.id [ fhir:value "hl7_fhir_be_allergy" ];
      fhir:ImplementationGuide.dependsOn.uri [
        fhir:value "https://www.ehealth.fgov.be/standards/fhir/allergy/ImplementationGuide/hl7.fhir.be.allergy";
