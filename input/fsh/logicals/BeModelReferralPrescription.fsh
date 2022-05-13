@@ -36,7 +36,7 @@ Description: "Logical model describing the model for the prescription referral. 
 * serviceRequested 1..1 CodeableConcept "What is prescribed" "What is prescribed"
 * problemCode 1..1 Reference "The problem (code or reference) that is the main reason for this prescription" "The problem (code or reference) that is the main reason for this prescription"
 * supportingInfo 0..1 Reference "Care Set Problem" "Care Set Problem"
-* resultReceiver 0..* Reference "Parties that shall be informed of the results of the prescription other then the prescriber." "Parties that shall be informed of the results of the prescription other then the prescriber."
+* resultReceiver 0..1 bool "True if the prescriber wants feedback. Other caregivers can be mentioned in the note" "True if the prescriber wants feedback. Other caregivers can be mentioned in the note"
 * status 0..1 code "Current status" "Current status"
 * status from http://hl7.org/fhir/ValueSet/request-status (required)
 * statusReason 0..1 CodeableConcept "Reason current status" "Reason current status"
