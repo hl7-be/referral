@@ -1,0 +1,4 @@
+Invariant: annex-81
+Description: "if annex-81 is the code, then adherence and adherence-link SHALL be present"
+Severity: #error
+Expression: "ServiceRequest.code.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code').code != 'appendix-81-preparation-of-medications'  or ServiceRequest.orderDetail.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-nursing-annex81-inadequate-adherence').empty() = false and ServiceRequest.orderDetail.coding.where(system = 'https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-nursing-annex81-inadequate-adherence-link').empty() = false"
