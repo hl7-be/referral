@@ -20,7 +20,8 @@ Description: "The common structure for referral prescription."
 * extension ^slicing.rules = #open
 * extension contains
     $request-statusReason named statusReason 1..1 MS and
-    BeInformParty named informParty 0..* MS and
+//  BeInformParty named informParty 0..* MS and
+    BeFeedbackToPrescriber named feedback 0..1 MS and
     BeCoPrescriber named coprescriber 0..* MS and
     BeValidityPeriod named validity 1..1 MS and
     BeExecutionPeriod named executed 0..1 MS and
@@ -30,11 +31,12 @@ Description: "The common structure for referral prescription."
     BeTaskReference named task 0..1 MS
 * extension[statusReason].valueCodeableConcept 1..1
 * extension[statusReason].valueCodeableConcept from BeReasonReferralStatus (extensible)
-* extension[informParty] ^short = "Parties to inform of fulfillment of the prescription, besides the prescriber."
+//* extension[informParty] ^short = "Parties to inform of fulfillment of the prescription, besides the prescriber."
 * extension[coprescriber] ^short = "Other parties that have to take part in the prescription."
 * extension[validity] ^short = "Validity period of the prescription"
 * extension[latest] ^short = "Request must be executed before"
 * extension[performer] ^short = "Takes the place of performer and performerType"
+* extension[feedback] ^short = "Give feedback to the prescriber"
 * identifier MS
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
