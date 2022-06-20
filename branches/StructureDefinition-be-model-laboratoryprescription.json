@@ -217,6 +217,60 @@
         ]
       },
       {
+        "id": "BeLaboratoryPrescription.ppsNumber",
+        "path": "BeLaboratoryPrescription.ppsNumber",
+        "short": "An identifier for the Prescription Proposal Support",
+        "definition": "An identifier for the Prescription Proposal Support",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.ppsNumber",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ]
+      },
+      {
+        "id": "BeLaboratoryPrescription.ppsRejectionReason",
+        "path": "BeLaboratoryPrescription.ppsRejectionReason",
+        "short": "Reason for not following the PPS suggestion",
+        "definition": "Reason for not following the PPS suggestion",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.ppsRejectionReason",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Annotation"
+          }
+        ]
+      },
+      {
+        "id": "BeLaboratoryPrescription.requisition",
+        "path": "BeLaboratoryPrescription.requisition",
+        "short": "An identifier for the bundle this prescription belongs to. The type of bundle can be indicated in the type of the identifier",
+        "definition": "An identifier for the bundle this prescription belongs to. The type of bundle can be indicated in the type of the identifier",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.requisition",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ]
+      },
+      {
         "id": "BeLaboratoryPrescription.basedOn",
         "path": "BeLaboratoryPrescription.basedOn",
         "short": "The original request or prescription triggered this prescription",
@@ -289,14 +343,14 @@
         ]
       },
       {
-        "id": "BeLaboratoryPrescription.intendedProvider",
-        "path": "BeLaboratoryPrescription.intendedProvider",
+        "id": "BeLaboratoryPrescription.intendedPerformer",
+        "path": "BeLaboratoryPrescription.intendedPerformer",
         "short": "The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality",
         "definition": "The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality",
         "min": 0,
         "max": "*",
         "base": {
-          "path": "BeReferralPrescription.intendedProvider",
+          "path": "BeReferralPrescription.intendedPerformer",
           "min": 0,
           "max": "*"
         },
@@ -307,14 +361,14 @@
         ]
       },
       {
-        "id": "BeLaboratoryPrescription.intendedProvider.provider",
-        "path": "BeLaboratoryPrescription.intendedProvider.provider",
+        "id": "BeLaboratoryPrescription.intendedPerformer.performer",
+        "path": "BeLaboratoryPrescription.intendedPerformer.performer",
         "short": "A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)",
         "definition": "A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)",
         "min": 0,
         "max": "*",
         "base": {
-          "path": "BeReferralPrescription.intendedProvider.provider",
+          "path": "BeReferralPrescription.intendedPerformer.performer",
           "min": 0,
           "max": "*"
         },
@@ -325,20 +379,56 @@
         ]
       },
       {
-        "id": "BeLaboratoryPrescription.intendedProvider.discipline",
-        "path": "BeLaboratoryPrescription.intendedProvider.discipline",
+        "id": "BeLaboratoryPrescription.intendedPerformer.discipline",
+        "path": "BeLaboratoryPrescription.intendedPerformer.discipline",
         "short": "The required discipline of the provider party",
         "definition": "The required discipline of the provider party",
         "min": 1,
         "max": "1",
         "base": {
-          "path": "BeReferralPrescription.intendedProvider.discipline",
+          "path": "BeReferralPrescription.intendedPerformer.discipline",
           "min": 1,
           "max": "1"
         },
         "type": [
           {
             "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "BeLaboratoryPrescription.intendedPerformer.period",
+        "path": "BeLaboratoryPrescription.intendedPerformer.period",
+        "short": "Start and enddate for the particular provider",
+        "definition": "Start and enddate for the particular provider",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.intendedPerformer.period",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Period"
+          }
+        ]
+      },
+      {
+        "id": "BeLaboratoryPrescription.toBePerformedAfter",
+        "path": "BeLaboratoryPrescription.toBePerformedAfter",
+        "short": "The current prescription should be performed after this one",
+        "definition": "The current prescription should be performed after this one",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.toBePerformedAfter",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Reference"
           }
         ]
       },
@@ -455,16 +545,88 @@
         ]
       },
       {
-        "id": "BeLaboratoryPrescription.bodySite",
-        "path": "BeLaboratoryPrescription.bodySite",
-        "short": "Anatomical place where the treatment should be executed",
-        "definition": "Anatomical place where the treatment should be executed",
+        "id": "BeLaboratoryPrescription.treatmentStatus",
+        "path": "BeLaboratoryPrescription.treatmentStatus",
+        "short": "Status of the treatment",
+        "definition": "Status of the treatment",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.treatmentStatus",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "BeLaboratoryPrescription.treatmentStatusReason",
+        "path": "BeLaboratoryPrescription.treatmentStatusReason",
+        "short": "Reason treatment status",
+        "definition": "Reason treatment status",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.treatmentStatusReason",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "BeLaboratoryPrescription.bodyLocation",
+        "path": "BeLaboratoryPrescription.bodyLocation",
+        "short": "Place where the treatment should be executed",
+        "definition": "Place where the treatment should be executed",
         "min": 0,
         "max": "*",
         "base": {
-          "path": "BeReferralPrescription.bodySite",
+          "path": "BeReferralPrescription.bodyLocation",
           "min": 0,
           "max": "*"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "BeLaboratoryPrescription.bodyLocation.bodySite",
+        "path": "BeLaboratoryPrescription.bodyLocation.bodySite",
+        "short": "Anatomical place where the treatment should be executed",
+        "definition": "Anatomical place where the treatment should be executed",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.bodyLocation.bodySite",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "BeLaboratoryPrescription.bodyLocation.bodyLaterality",
+        "path": "BeLaboratoryPrescription.bodyLocation.bodyLaterality",
+        "short": "Side of the body",
+        "definition": "Side of the body",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.bodyLocation.bodyLaterality",
+          "min": 0,
+          "max": "1"
         },
         "type": [
           {

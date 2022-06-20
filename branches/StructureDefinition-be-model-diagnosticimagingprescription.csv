@@ -16,6 +16,12 @@
 ","The SSIN of the person for which the referral is prescribed.","The SSIN of the person for which the referral is prescribed.","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.patient",1,1,"",""
 "BeDiagnosticImagingPrescription.prescriptionNumber","BeDiagnosticImagingPrescription.prescriptionNumber","","","",0,1,"","","","Identifier {[]} {[]}
 ","An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available","An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.prescriptionNumber",0,1,"",""
+"BeDiagnosticImagingPrescription.ppsNumber","BeDiagnosticImagingPrescription.ppsNumber","","","",0,1,"","","","Identifier {[]} {[]}
+","An identifier for the Prescription Proposal Support","An identifier for the Prescription Proposal Support","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.ppsNumber",0,1,"",""
+"BeDiagnosticImagingPrescription.ppsRejectionReason","BeDiagnosticImagingPrescription.ppsRejectionReason","","","",0,1,"","","","Annotation {[]} {[]}
+","Reason for not following the PPS suggestion","Reason for not following the PPS suggestion","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.ppsRejectionReason",0,1,"",""
+"BeDiagnosticImagingPrescription.requisition","BeDiagnosticImagingPrescription.requisition","","","",0,1,"","","","Identifier {[]} {[]}
+","An identifier for the bundle this prescription belongs to. The type of bundle can be indicated in the type of the identifier","An identifier for the bundle this prescription belongs to. The type of bundle can be indicated in the type of the identifier","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.requisition",0,1,"",""
 "BeDiagnosticImagingPrescription.basedOn","BeDiagnosticImagingPrescription.basedOn","","","",0,*,"","","","Reference {[]} {[]}
 ","The original request or prescription triggered this prescription","The original request or prescription that is the reason for this request - for example when a detailed request is created by a broader request.","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.basedOn",0,*,"",""
 "BeDiagnosticImagingPrescription.validitionPeriod","BeDiagnosticImagingPrescription.validitionPeriod","","","",1,1,"","","","Period {[]} {[]}
@@ -24,12 +30,16 @@
 ","When this prescription is executed, available after start of execution","When this prescription is executed, available after start of execution","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.treatmentPeriod",0,1,"",""
 "BeDiagnosticImagingPrescription.treatmentValidationEndDate","BeDiagnosticImagingPrescription.treatmentValidationEndDate","","","",0,1,"","","","dateTime {[]} {[]}
 ","The latest moment to end this treatment","The latest moment to end this treatment","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.treatmentValidationEndDate",0,1,"",""
-"BeDiagnosticImagingPrescription.intendedProvider","BeDiagnosticImagingPrescription.intendedProvider","","","",0,*,"","","","BackboneElement {[]} {[]}
-","The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality","The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedProvider",0,*,"",""
-"BeDiagnosticImagingPrescription.intendedProvider.provider","BeDiagnosticImagingPrescription.intendedProvider.provider","","","",0,*,"","","","Reference {[]} {[]}
-","A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)","A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedProvider.provider",0,*,"",""
-"BeDiagnosticImagingPrescription.intendedProvider.discipline","BeDiagnosticImagingPrescription.intendedProvider.discipline","","","",1,1,"","","","CodeableConcept {[]} {[]}
-","The required discipline of the provider party","The required discipline of the provider party","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedProvider.discipline",1,1,"",""
+"BeDiagnosticImagingPrescription.intendedPerformer","BeDiagnosticImagingPrescription.intendedPerformer","","","",0,*,"","","","BackboneElement {[]} {[]}
+","The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality","The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedPerformer",0,*,"",""
+"BeDiagnosticImagingPrescription.intendedPerformer.performer","BeDiagnosticImagingPrescription.intendedPerformer.performer","","","",0,*,"","","","Reference {[]} {[]}
+","A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)","A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedPerformer.performer",0,*,"",""
+"BeDiagnosticImagingPrescription.intendedPerformer.discipline","BeDiagnosticImagingPrescription.intendedPerformer.discipline","","","",1,1,"","","","CodeableConcept {[]} {[]}
+","The required discipline of the provider party","The required discipline of the provider party","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedPerformer.discipline",1,1,"",""
+"BeDiagnosticImagingPrescription.intendedPerformer.period","BeDiagnosticImagingPrescription.intendedPerformer.period","","","",1,1,"","","","Period {[]} {[]}
+","Start and enddate for the particular provider","Start and enddate for the particular provider","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedPerformer.period",1,1,"",""
+"BeDiagnosticImagingPrescription.toBePerformedAfter","BeDiagnosticImagingPrescription.toBePerformedAfter","","","",0,1,"","","","Reference {[]} {[]}
+","The current prescription should be performed after this one","The current prescription should be performed after this one","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.toBePerformedAfter",0,1,"",""
 "BeDiagnosticImagingPrescription.serviceRequested","BeDiagnosticImagingPrescription.serviceRequested","","","",1,1,"","","","CodeableConcept {[]} {[]}
 ","What is prescribed","What is prescribed","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.serviceRequested",1,1,"",""
 "BeDiagnosticImagingPrescription.problemCode","BeDiagnosticImagingPrescription.problemCode","","","",1,1,"","","","Reference {[]} {[]}
@@ -42,8 +52,16 @@
 ","Current status","Current status","","","","","","","","","",,"required","","http://hl7.org/fhir/ValueSet/request-status","",,,,"BeReferralPrescription.status",0,1,"",""
 "BeDiagnosticImagingPrescription.statusReason","BeDiagnosticImagingPrescription.statusReason","","","",0,1,"","","","CodeableConcept {[]} {[]}
 ","Reason current status","Reason current status","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.statusReason",0,1,"",""
-"BeDiagnosticImagingPrescription.bodySite","BeDiagnosticImagingPrescription.bodySite","","","",0,*,"","","","CodeableConcept {[]} {[]}
-","bodySite, e.g. using a SNOMED-CT code","bodySite, e.g. using a SNOMED-CT code","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.bodySite",0,*,"",""
+"BeDiagnosticImagingPrescription.treatmentStatus","BeDiagnosticImagingPrescription.treatmentStatus","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Status of the treatment","Status of the treatment","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.treatmentStatus",0,1,"",""
+"BeDiagnosticImagingPrescription.treatmentStatusReason","BeDiagnosticImagingPrescription.treatmentStatusReason","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Reason treatment status","Reason treatment status","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.treatmentStatusReason",0,1,"",""
+"BeDiagnosticImagingPrescription.bodyLocation","BeDiagnosticImagingPrescription.bodyLocation","","","",0,*,"","","","BackboneElement {[]} {[]}
+","Place where the treatment should be executed","Place where the treatment should be executed","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.bodyLocation",0,*,"",""
+"BeDiagnosticImagingPrescription.bodyLocation.bodySite","BeDiagnosticImagingPrescription.bodyLocation.bodySite","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Anatomical place where the treatment should be executed","Anatomical place where the treatment should be executed","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.bodyLocation.bodySite",0,1,"",""
+"BeDiagnosticImagingPrescription.bodyLocation.bodyLaterality","BeDiagnosticImagingPrescription.bodyLocation.bodyLaterality","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Side of the body","Side of the body","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.bodyLocation.bodyLaterality",0,1,"",""
 "BeDiagnosticImagingPrescription.note","BeDiagnosticImagingPrescription.note","","","",0,*,"","","","Annotation {[]} {[]}
 ","Additional text notes about the request.","Additional text notes about the request.","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.note",0,*,"",""
 "BeDiagnosticImagingPrescription.intent","BeDiagnosticImagingPrescription.intent","","","",1,1,"","","","code {[]} {[]}
@@ -64,6 +82,8 @@ Annotation {[]} {[]}Reference {[]} {[CanonicalType[http://hl7.org/fhir/Structure
 ","Any document added as extra information","Any document added as extra information","","","","","","","","","",,,,,"",,,,"BeDiagnosticImagingPrescription.supportingInformation[x].document",0,*,"",""
 "BeDiagnosticImagingPrescription.supportingInformation[x].imagingStudy","BeDiagnosticImagingPrescription.supportingInformation[x].imagingStudy","","","",0,*,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/ImagingStudy]]}
 ","If vital to this request, references may be given to previous diagnostic imaging","If vital to this request, references may be given to previous diagnostic imaging","","","","","","","","","",,,,,"",,,,"BeDiagnosticImagingPrescription.supportingInformation[x].imagingStudy",0,*,"",""
+"BeDiagnosticImagingPrescription.bodySite","BeDiagnosticImagingPrescription.bodySite","","","",0,*,"","","","CodeableConcept {[]} {[]}
+","bodySite, e.g. using a SNOMED-CT code","bodySite, e.g. using a SNOMED-CT code","","","","","","","","","",,,,,"",,,,"BeDiagnosticImagingPrescription.bodySite",0,*,"",""
 "BeDiagnosticImagingPrescription.proposedInvestigation","BeDiagnosticImagingPrescription.proposedInvestigation","","","",0,*,"","","","CodeableConcept {[]} {[]}
 ","What to do - coded or as text within the codeableConcept","What to do - coded or as text within the codeableConcept","","","","","","","","","",,,,,"",,,,"BeDiagnosticImagingPrescription.proposedInvestigation",0,*,"",""
 "BeDiagnosticImagingPrescription.contrastFluid","BeDiagnosticImagingPrescription.contrastFluid","","","",0,1,"","","","code {[]} {[]}

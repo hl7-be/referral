@@ -16,6 +16,12 @@
 ","The SSIN of the person for which the referral is prescribed.","The SSIN of the person for which the referral is prescribed.","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.patient",1,1,"",""
 "BeNursingPrescription.prescriptionNumber","BeNursingPrescription.prescriptionNumber","","","",0,1,"","","","Identifier {[]} {[]}
 ","An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available","An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.prescriptionNumber",0,1,"",""
+"BeNursingPrescription.ppsNumber","BeNursingPrescription.ppsNumber","","","",0,1,"","","","Identifier {[]} {[]}
+","An identifier for the Prescription Proposal Support","An identifier for the Prescription Proposal Support","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.ppsNumber",0,1,"",""
+"BeNursingPrescription.ppsRejectionReason","BeNursingPrescription.ppsRejectionReason","","","",0,1,"","","","Annotation {[]} {[]}
+","Reason for not following the PPS suggestion","Reason for not following the PPS suggestion","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.ppsRejectionReason",0,1,"",""
+"BeNursingPrescription.requisition","BeNursingPrescription.requisition","","","",0,1,"","","","Identifier {[]} {[]}
+","An identifier for the bundle this prescription belongs to. The type of bundle can be indicated in the type of the identifier","An identifier for the bundle this prescription belongs to. The type of bundle can be indicated in the type of the identifier","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.requisition",0,1,"",""
 "BeNursingPrescription.basedOn","BeNursingPrescription.basedOn","","","",0,*,"","","","Reference {[]} {[]}
 ","The original request or prescription triggered this prescription","The original request or prescription that is the reason for this request - for example when a detailed request is created by a broader request.","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.basedOn",0,*,"",""
 "BeNursingPrescription.validitionPeriod","BeNursingPrescription.validitionPeriod","","","",1,1,"","","","Period {[]} {[]}
@@ -24,12 +30,16 @@
 ","When this prescription is executed, available after start of execution","When this prescription is executed, available after start of execution","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.treatmentPeriod",0,1,"",""
 "BeNursingPrescription.treatmentValidationEndDate","BeNursingPrescription.treatmentValidationEndDate","","","",0,1,"","","","dateTime {[]} {[]}
 ","The latest moment to end this treatment","The latest moment to end this treatment","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.treatmentValidationEndDate",0,1,"",""
-"BeNursingPrescription.intendedProvider","BeNursingPrescription.intendedProvider","","","",0,*,"","","","BackboneElement {[]} {[]}
-","The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality","The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedProvider",0,*,"",""
-"BeNursingPrescription.intendedProvider.provider","BeNursingPrescription.intendedProvider.provider","","","",0,*,"","","","Reference {[]} {[]}
-","A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)","A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedProvider.provider",0,*,"",""
-"BeNursingPrescription.intendedProvider.discipline","BeNursingPrescription.intendedProvider.discipline","","","",1,1,"","","","CodeableConcept {[]} {[]}
-","The required discipline of the provider party","The required discipline of the provider party","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedProvider.discipline",1,1,"",""
+"BeNursingPrescription.intendedPerformer","BeNursingPrescription.intendedPerformer","","","",0,*,"","","","BackboneElement {[]} {[]}
+","The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality","The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedPerformer",0,*,"",""
+"BeNursingPrescription.intendedPerformer.performer","BeNursingPrescription.intendedPerformer.performer","","","",0,*,"","","","Reference {[]} {[]}
+","A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)","A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedPerformer.performer",0,*,"",""
+"BeNursingPrescription.intendedPerformer.discipline","BeNursingPrescription.intendedPerformer.discipline","","","",1,1,"","","","CodeableConcept {[]} {[]}
+","The required discipline of the provider party","The required discipline of the provider party","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedPerformer.discipline",1,1,"",""
+"BeNursingPrescription.intendedPerformer.period","BeNursingPrescription.intendedPerformer.period","","","",1,1,"","","","Period {[]} {[]}
+","Start and enddate for the particular provider","Start and enddate for the particular provider","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedPerformer.period",1,1,"",""
+"BeNursingPrescription.toBePerformedAfter","BeNursingPrescription.toBePerformedAfter","","","",0,1,"","","","Reference {[]} {[]}
+","The current prescription should be performed after this one","The current prescription should be performed after this one","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.toBePerformedAfter",0,1,"",""
 "BeNursingPrescription.serviceRequested","BeNursingPrescription.serviceRequested","","","",1,1,"","","","CodeableConcept {[]} {[]}
 ","What is prescribed","What is prescribed","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.serviceRequested",1,1,"",""
 "BeNursingPrescription.problemCode","BeNursingPrescription.problemCode","","","",1,1,"","","","Reference {[]} {[]}
@@ -42,8 +52,16 @@
 ","Current status","Current status","","","","","","","","","",,"required","","http://hl7.org/fhir/ValueSet/request-status","",,,,"BeReferralPrescription.status",0,1,"",""
 "BeNursingPrescription.statusReason","BeNursingPrescription.statusReason","","","",0,1,"","","","CodeableConcept {[]} {[]}
 ","Reason current status","Reason current status","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.statusReason",0,1,"",""
-"BeNursingPrescription.bodySite","BeNursingPrescription.bodySite","","","",0,*,"","","","CodeableConcept {[]} {[]}
-","Anatomical place where the treatment should be executed","Anatomical place where the treatment should be executed","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.bodySite",0,*,"",""
+"BeNursingPrescription.treatmentStatus","BeNursingPrescription.treatmentStatus","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Status of the treatment","Status of the treatment","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.treatmentStatus",0,1,"",""
+"BeNursingPrescription.treatmentStatusReason","BeNursingPrescription.treatmentStatusReason","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Reason treatment status","Reason treatment status","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.treatmentStatusReason",0,1,"",""
+"BeNursingPrescription.bodyLocation","BeNursingPrescription.bodyLocation","","","",0,*,"","","","BackboneElement {[]} {[]}
+","Place where the treatment should be executed","Place where the treatment should be executed","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.bodyLocation",0,*,"",""
+"BeNursingPrescription.bodyLocation.bodySite","BeNursingPrescription.bodyLocation.bodySite","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Anatomical place where the treatment should be executed","Anatomical place where the treatment should be executed","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.bodyLocation.bodySite",0,1,"",""
+"BeNursingPrescription.bodyLocation.bodyLaterality","BeNursingPrescription.bodyLocation.bodyLaterality","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Side of the body","Side of the body","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.bodyLocation.bodyLaterality",0,1,"",""
 "BeNursingPrescription.note","BeNursingPrescription.note","","","",0,*,"","","","Annotation {[]} {[]}
 ","Additional text notes about the request.","Additional text notes about the request.","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.note",0,*,"",""
 "BeNursingPrescription.intent","BeNursingPrescription.intent","","","",1,1,"","","","code {[]} {[]}
