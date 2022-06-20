@@ -997,9 +997,9 @@
          fhir:index 0;
          fhir:ElementDefinition.type.code [ fhir:value "Extension" ];
          fhir:ElementDefinition.type.profile [
-           fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-end-date";
+           fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-lastest-end-date";
            fhir:index 0;
-           fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-end-date>
+           fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-lastest-end-date>
          ]
        ];
        fhir:ElementDefinition.condition [
@@ -1189,58 +1189,6 @@
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 22;
-       fhir:Element.id [ fhir:value "ServiceRequest.extension:pps" ];
-       fhir:ElementDefinition.path [ fhir:value "ServiceRequest.extension" ];
-       fhir:ElementDefinition.sliceName [ fhir:value "pps" ];
-       fhir:ElementDefinition.short [ fhir:value "BeProposalType" ];
-       fhir:ElementDefinition.definition [ fhir:value "Type of proposal" ];
-       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
-       fhir:ElementDefinition.max [ fhir:value "1" ];
-       fhir:ElementDefinition.base [
-         fhir:ElementDefinition.base.path [ fhir:value "DomainResource.extension" ];
-         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
-         fhir:ElementDefinition.base.max [ fhir:value "*" ]
-       ];
-       fhir:ElementDefinition.type [
-         fhir:index 0;
-         fhir:ElementDefinition.type.code [ fhir:value "Extension" ];
-         fhir:ElementDefinition.type.profile [
-           fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-pps-info";
-           fhir:index 0;
-           fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-pps-info>
-         ]
-       ];
-       fhir:ElementDefinition.condition [
-         fhir:value "ele-1";
-         fhir:index 0
-       ];
-       fhir:ElementDefinition.constraint [
-         fhir:index 0;
-         fhir:ElementDefinition.constraint.key [ fhir:value "ele-1" ];
-         fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
-         fhir:ElementDefinition.constraint.human [ fhir:value "All FHIR elements must have a @value or children" ];
-         fhir:ElementDefinition.constraint.expression [ fhir:value "hasValue() or (children().count() > id.count())" ];
-         fhir:ElementDefinition.constraint.xpath [ fhir:value "@value|f:*|h:div" ];
-         fhir:ElementDefinition.constraint.source [
-           fhir:value "http://hl7.org/fhir/StructureDefinition/Element";
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ], [
-         fhir:index 1;
-         fhir:ElementDefinition.constraint.key [ fhir:value "ext-1" ];
-         fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
-         fhir:ElementDefinition.constraint.human [ fhir:value "Must have either extensions or value[x], not both" ];
-         fhir:ElementDefinition.constraint.expression [ fhir:value "extension.exists() != value.exists()" ];
-         fhir:ElementDefinition.constraint.xpath [ fhir:value "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])" ];
-         fhir:ElementDefinition.constraint.source [
-           fhir:value "http://hl7.org/fhir/StructureDefinition/Extension";
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
-         ]
-       ];
-       fhir:ElementDefinition.mustSupport [ fhir:value "true"^^xsd:boolean ];
-       fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ]
-     ], [
-       fhir:index 23;
        fhir:Element.id [ fhir:value "ServiceRequest.extension:relevantSupportingInformationAsAnnotationOrCodeableConcept" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.extension" ];
        fhir:ElementDefinition.sliceName [ fhir:value "relevantSupportingInformationAsAnnotationOrCodeableConcept" ];
@@ -1289,7 +1237,7 @@
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ];
        fhir:ElementDefinition.isSummary [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 24;
+       fhir:index 23;
        fhir:Element.id [ fhir:value "ServiceRequest.modifierExtension" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.modifierExtension" ];
        fhir:ElementDefinition.slicing [
@@ -1340,7 +1288,7 @@
        fhir:ElementDefinition.isModifierReason [ fhir:value "Modifier extensions are expected to modify the meaning or interpretation of the resource that contains them" ];
        fhir:ElementDefinition.isSummary [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 25;
+       fhir:index 24;
        fhir:Element.id [ fhir:value "ServiceRequest.modifierExtension:contraIndication" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.modifierExtension" ];
        fhir:ElementDefinition.sliceName [ fhir:value "contraIndication" ];
@@ -1393,7 +1341,7 @@
        fhir:ElementDefinition.isModifier [ fhir:value "true"^^xsd:boolean ];
        fhir:ElementDefinition.isModifierReason [ fhir:value "Contra indication" ]
      ], [
-       fhir:index 26;
+       fhir:index 25;
        fhir:Element.id [ fhir:value "ServiceRequest.modifierExtension:contrastFluidUse" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.modifierExtension" ];
        fhir:ElementDefinition.sliceName [ fhir:value "contrastFluidUse" ];
@@ -1446,7 +1394,7 @@
        fhir:ElementDefinition.isModifier [ fhir:value "true"^^xsd:boolean ];
        fhir:ElementDefinition.isModifierReason [ fhir:value "Possible not permitted use of contrast fluid." ]
      ], [
-       fhir:index 27;
+       fhir:index 26;
        fhir:Element.id [ fhir:value "ServiceRequest.identifier" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.identifier" ];
        fhir:ElementDefinition.slicing [
@@ -1508,7 +1456,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "ClinicalStatement.identifier" ]
        ]
      ], [
-       fhir:index 28;
+       fhir:index 27;
        fhir:Element.id [ fhir:value "ServiceRequest.identifier:UHMEP" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.identifier" ];
        fhir:ElementDefinition.sliceName [ fhir:value "UHMEP" ];
@@ -1562,7 +1510,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "ClinicalStatement.identifier" ]
        ]
      ], [
-       fhir:index 29;
+       fhir:index 28;
        fhir:Element.id [ fhir:value "ServiceRequest.identifier:UHMEP.id" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.identifier.id" ];
        fhir:ElementDefinition.representation [
@@ -1595,7 +1543,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "n/a" ]
        ]
      ], [
-       fhir:index 30;
+       fhir:index 29;
        fhir:Element.id [ fhir:value "ServiceRequest.identifier:UHMEP.extension" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.identifier.extension" ];
        fhir:ElementDefinition.slicing [
@@ -1659,7 +1607,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "n/a" ]
        ]
      ], [
-       fhir:index 31;
+       fhir:index 30;
        fhir:Element.id [ fhir:value "ServiceRequest.identifier:UHMEP.use" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.identifier.use" ];
        fhir:ElementDefinition.short [ fhir:value "usual | official | temp | secondary | old (If known)" ];
@@ -1715,7 +1663,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "Role.code or implied by context" ]
        ]
      ], [
-       fhir:index 32;
+       fhir:index 31;
        fhir:Element.id [ fhir:value "ServiceRequest.identifier:UHMEP.type" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.identifier.type" ];
        fhir:ElementDefinition.short [ fhir:value "Description of identifier" ];
@@ -1774,7 +1722,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "Role.code or implied by context" ]
        ]
      ], [
-       fhir:index 33;
+       fhir:index 32;
        fhir:Element.id [ fhir:value "ServiceRequest.identifier:UHMEP.system" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.identifier.system" ];
        fhir:ElementDefinition.short [ fhir:value "The namespace for the identifier value" ];
@@ -1826,7 +1774,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "./IdentifierType" ]
        ]
      ], [
-       fhir:index 34;
+       fhir:index 33;
        fhir:Element.id [ fhir:value "ServiceRequest.identifier:UHMEP.value" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.identifier.value" ];
        fhir:ElementDefinition.short [ fhir:value "The value that is unique" ];
@@ -1876,7 +1824,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "./Value" ]
        ]
      ], [
-       fhir:index 35;
+       fhir:index 34;
        fhir:Element.id [ fhir:value "ServiceRequest.identifier:UHMEP.period" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.identifier.period" ];
        fhir:ElementDefinition.short [ fhir:value "Time period when id is/was valid for use" ];
@@ -1920,7 +1868,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "./StartDate and ./EndDate" ]
        ]
      ], [
-       fhir:index 36;
+       fhir:index 35;
        fhir:Element.id [ fhir:value "ServiceRequest.identifier:UHMEP.assigner" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.identifier.assigner" ];
        fhir:ElementDefinition.short [ fhir:value "Organization that issued id (may be just text)" ];
@@ -1970,7 +1918,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "./IdentifierIssuingAuthority" ]
        ]
      ], [
-       fhir:index 37;
+       fhir:index 36;
        fhir:Element.id [ fhir:value "ServiceRequest.instantiatesCanonical" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.instantiatesCanonical" ];
        fhir:ElementDefinition.short [ fhir:value "Instantiates FHIR protocol or definition" ];
@@ -2024,7 +1972,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value ".outboundRelationship[typeCode=DEFN].target" ]
        ]
      ], [
-       fhir:index 38;
+       fhir:index 37;
        fhir:Element.id [ fhir:value "ServiceRequest.instantiatesUri" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.instantiatesUri" ];
        fhir:ElementDefinition.short [ fhir:value "Instantiates external protocol or definition" ];
@@ -2069,7 +2017,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value ".outboundRelationship[typeCode=DEFN].target" ]
        ]
      ], [
-       fhir:index 39;
+       fhir:index 38;
        fhir:Element.id [ fhir:value "ServiceRequest.basedOn" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.basedOn" ];
        fhir:ElementDefinition.short [ fhir:value "What request fulfills" ];
@@ -2131,7 +2079,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value ".outboundRelationship[typeCode=FLFS].target" ]
        ]
      ], [
-       fhir:index 40;
+       fhir:index 39;
        fhir:Element.id [ fhir:value "ServiceRequest.replaces" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.replaces" ];
        fhir:ElementDefinition.short [ fhir:value "What request replaces" ];
@@ -2190,7 +2138,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value ".outboundRelationship[typeCode=RPLC].target" ]
        ]
      ], [
-       fhir:index 41;
+       fhir:index 40;
        fhir:Element.id [ fhir:value "ServiceRequest.requisition" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.requisition" ];
        fhir:ElementDefinition.short [ fhir:value "If needed to have a common identifier among different prescriptions." ];
@@ -2244,7 +2192,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value ".inboundRelationship(typeCode=COMP].source[moodCode=INT].identifier" ]
        ]
      ], [
-       fhir:index 42;
+       fhir:index 41;
        fhir:Element.id [ fhir:value "ServiceRequest.status" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.status" ];
        fhir:ElementDefinition.short [ fhir:value "draft | active | on-hold | revoked | completed | entered-in-error | unknown" ];
@@ -2312,7 +2260,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "Action.currentStatus" ]
        ]
      ], [
-       fhir:index 43;
+       fhir:index 42;
        fhir:Element.id [ fhir:value "ServiceRequest.intent" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.intent" ];
        fhir:ElementDefinition.short [ fhir:value "proposal | plan | directive | order | original-order | reflex-order | filler-order | instance-order | option" ];
@@ -2376,7 +2324,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value ".moodCode (nuances beyond PRP/PLAN/RQO would need to be elsewhere)" ]
        ]
      ], [
-       fhir:index 44;
+       fhir:index 43;
        fhir:Element.id [ fhir:value "ServiceRequest.category" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.category" ];
        fhir:ElementDefinition.short [ fhir:value "Classification of service" ];
@@ -2430,7 +2378,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value ".outboundRelationship[typeCode=\"COMP].target[classCode=\"LIST\", moodCode=\"INT\"].code" ]
        ]
      ], [
-       fhir:index 45;
+       fhir:index 44;
        fhir:Element.id [ fhir:value "ServiceRequest.category.id" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.category.id" ];
        fhir:ElementDefinition.representation [
@@ -2463,7 +2411,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "n/a" ]
        ]
      ], [
-       fhir:index 46;
+       fhir:index 45;
        fhir:Element.id [ fhir:value "ServiceRequest.category.extension" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.category.extension" ];
        fhir:ElementDefinition.slicing [
@@ -2527,7 +2475,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "n/a" ]
        ]
      ], [
-       fhir:index 47;
+       fhir:index 46;
        fhir:Element.id [ fhir:value "ServiceRequest.category.coding" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.category.coding" ];
        fhir:ElementDefinition.short [ fhir:value "Code defined by a terminology system" ];
@@ -2573,7 +2521,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" ]
        ]
      ], [
-       fhir:index 48;
+       fhir:index 47;
        fhir:Element.id [ fhir:value "ServiceRequest.category.coding.id" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.category.coding.id" ];
        fhir:ElementDefinition.representation [
@@ -2606,7 +2554,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "n/a" ]
        ]
      ], [
-       fhir:index 49;
+       fhir:index 48;
        fhir:Element.id [ fhir:value "ServiceRequest.category.coding.extension" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.category.coding.extension" ];
        fhir:ElementDefinition.slicing [
@@ -2670,7 +2618,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "n/a" ]
        ]
      ], [
-       fhir:index 50;
+       fhir:index 49;
        fhir:Element.id [ fhir:value "ServiceRequest.category.coding.system" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.category.coding.system" ];
        fhir:ElementDefinition.short [ fhir:value "Identity of the terminology system" ];
@@ -2717,7 +2665,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem" ]
        ]
      ], [
-       fhir:index 51;
+       fhir:index 50;
        fhir:Element.id [ fhir:value "ServiceRequest.category.coding.version" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.category.coding.version" ];
        fhir:ElementDefinition.short [ fhir:value "Version of the system - if relevant" ];
@@ -2762,7 +2710,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion" ]
        ]
      ], [
-       fhir:index 52;
+       fhir:index 51;
        fhir:Element.id [ fhir:value "ServiceRequest.category.coding.code" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.category.coding.code" ];
        fhir:ElementDefinition.short [ fhir:value "Symbol in syntax defined by the system" ];
@@ -2808,7 +2756,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code" ]
        ]
      ], [
-       fhir:index 53;
+       fhir:index 52;
        fhir:Element.id [ fhir:value "ServiceRequest.category.coding.display" ];
        fhir:Element.extension [
          fhir:index 0;
@@ -2858,7 +2806,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName" ]
        ]
      ], [
-       fhir:index 54;
+       fhir:index 53;
        fhir:Element.id [ fhir:value "ServiceRequest.category.coding.userSelected" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.category.coding.userSelected" ];
        fhir:ElementDefinition.short [ fhir:value "If this coding was chosen directly by the user" ];
@@ -2904,7 +2852,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\\#true a [     fhir:source \"true\";     fhir:target dt:CDCoding.codingRationale\\#O   ]" ]
        ]
      ], [
-       fhir:index 55;
+       fhir:index 54;
        fhir:Element.id [ fhir:value "ServiceRequest.category.text" ];
        fhir:Element.extension [
          fhir:index 0;
@@ -2955,7 +2903,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText" ]
        ]
      ], [
-       fhir:index 56;
+       fhir:index 55;
        fhir:Element.id [ fhir:value "ServiceRequest.priority" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.priority" ];
        fhir:ElementDefinition.short [ fhir:value "routine | urgent | asap | stat" ];
@@ -3017,7 +2965,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value ".priorityCode" ]
        ]
      ], [
-       fhir:index 57;
+       fhir:index 56;
        fhir:Element.id [ fhir:value "ServiceRequest.doNotPerform" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.doNotPerform" ];
        fhir:ElementDefinition.short [ fhir:value "True if service/procedure should not be performed" ];
@@ -3061,7 +3009,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value ".actionNegationInd" ]
        ]
      ], [
-       fhir:index 58;
+       fhir:index 57;
        fhir:Element.id [ fhir:value "ServiceRequest.code" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.code" ];
        fhir:ElementDefinition.short [ fhir:value "What is being requested/ordered" ];
@@ -3132,7 +3080,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.procedureCode" ]
        ]
      ], [
-       fhir:index 59;
+       fhir:index 58;
        fhir:Element.id [ fhir:value "ServiceRequest.orderDetail" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.orderDetail" ];
        fhir:ElementDefinition.slicing [
@@ -3207,7 +3155,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.procedureCode" ]
        ]
      ], [
-       fhir:index 60;
+       fhir:index 59;
        fhir:Element.id [ fhir:value "ServiceRequest.orderDetail:modality" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.orderDetail" ];
        fhir:ElementDefinition.sliceName [ fhir:value "modality" ];
@@ -3275,7 +3223,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.procedureCode" ]
        ]
      ], [
-       fhir:index 61;
+       fhir:index 60;
        fhir:Element.id [ fhir:value "ServiceRequest.orderDetail:modality.id" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.orderDetail.id" ];
        fhir:ElementDefinition.representation [
@@ -3308,7 +3256,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "n/a" ]
        ]
      ], [
-       fhir:index 62;
+       fhir:index 61;
        fhir:Element.id [ fhir:value "ServiceRequest.orderDetail:modality.extension" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.orderDetail.extension" ];
        fhir:ElementDefinition.slicing [
@@ -3372,7 +3320,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "n/a" ]
        ]
      ], [
-       fhir:index 63;
+       fhir:index 62;
        fhir:Element.id [ fhir:value "ServiceRequest.orderDetail:modality.coding" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.orderDetail.coding" ];
        fhir:ElementDefinition.short [ fhir:value "Code defined by a terminology system" ];
@@ -3431,7 +3379,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" ]
        ]
      ], [
-       fhir:index 64;
+       fhir:index 63;
        fhir:Element.id [ fhir:value "ServiceRequest.orderDetail:modality.coding.id" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.orderDetail.coding.id" ];
        fhir:ElementDefinition.representation [
@@ -3464,7 +3412,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "n/a" ]
        ]
      ], [
-       fhir:index 65;
+       fhir:index 64;
        fhir:Element.id [ fhir:value "ServiceRequest.orderDetail:modality.coding.extension" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.orderDetail.coding.extension" ];
        fhir:ElementDefinition.slicing [
@@ -3528,7 +3476,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "n/a" ]
        ]
      ], [
-       fhir:index 66;
+       fhir:index 65;
        fhir:Element.id [ fhir:value "ServiceRequest.orderDetail:modality.coding.system" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.orderDetail.coding.system" ];
        fhir:ElementDefinition.short [ fhir:value "Identity of the terminology system" ];
@@ -3575,7 +3523,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem" ]
        ]
      ], [
-       fhir:index 67;
+       fhir:index 66;
        fhir:Element.id [ fhir:value "ServiceRequest.orderDetail:modality.coding.version" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.orderDetail.coding.version" ];
        fhir:ElementDefinition.short [ fhir:value "Version of the system - if relevant" ];
@@ -3620,7 +3568,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "fhir:Coding.version rdfs:subPropertyOf dt:CDCoding.codeSystemVersion" ]
        ]
      ], [
-       fhir:index 68;
+       fhir:index 67;
        fhir:Element.id [ fhir:value "ServiceRequest.orderDetail:modality.coding.code" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.orderDetail.coding.code" ];
        fhir:ElementDefinition.short [ fhir:value "Symbol in syntax defined by the system" ];
@@ -3665,7 +3613,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code" ]
        ]
      ], [
-       fhir:index 69;
+       fhir:index 68;
        fhir:Element.id [ fhir:value "ServiceRequest.orderDetail:modality.coding.display" ];
        fhir:Element.extension [
          fhir:index 0;
@@ -3715,7 +3663,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName" ]
        ]
      ], [
-       fhir:index 70;
+       fhir:index 69;
        fhir:Element.id [ fhir:value "ServiceRequest.orderDetail:modality.coding.userSelected" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.orderDetail.coding.userSelected" ];
        fhir:ElementDefinition.short [ fhir:value "If this coding was chosen directly by the user" ];
@@ -3761,7 +3709,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "fhir:Coding.userSelected fhir:mapsTo dt:CDCoding.codingRationale. fhir:Coding.userSelected fhir:hasMap fhir:Coding.userSelected.map. fhir:Coding.userSelected.map a fhir:Map;   fhir:target dt:CDCoding.codingRationale. fhir:Coding.userSelected\\#true a [     fhir:source \"true\";     fhir:target dt:CDCoding.codingRationale\\#O   ]" ]
        ]
      ], [
-       fhir:index 71;
+       fhir:index 70;
        fhir:Element.id [ fhir:value "ServiceRequest.orderDetail:modality.text" ];
        fhir:Element.extension [
          fhir:index 0;
@@ -3812,7 +3760,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText" ]
        ]
      ], [
-       fhir:index 72;
+       fhir:index 71;
        fhir:Element.id [ fhir:value "ServiceRequest.quantity[x]" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.quantity[x]" ];
        fhir:ElementDefinition.short [ fhir:value "Service amount" ];
@@ -3859,7 +3807,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value ".quantity" ]
        ]
      ], [
-       fhir:index 73;
+       fhir:index 72;
        fhir:Element.id [ fhir:value "ServiceRequest.subject" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.subject" ];
        fhir:ElementDefinition.short [ fhir:value "Individual or Entity the service is ordered for" ];
@@ -3933,7 +3881,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "FiveWs.subject" ]
        ]
      ], [
-       fhir:index 74;
+       fhir:index 73;
        fhir:Element.id [ fhir:value "ServiceRequest.encounter" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.encounter" ];
        fhir:ElementDefinition.short [ fhir:value "Encounter in which the request was created" ];
@@ -3994,7 +3942,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "ClinicalStatement.encounter" ]
        ]
      ], [
-       fhir:index 75;
+       fhir:index 74;
        fhir:Element.id [ fhir:value "ServiceRequest.occurrence[x]" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.occurrence[x]" ];
        fhir:ElementDefinition.short [ fhir:value "When service shall occur - once this is past, this prescription is no longer valid and the status shall reflect this." ];
@@ -4057,7 +4005,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.procedureSchedule" ]
        ]
      ], [
-       fhir:index 76;
+       fhir:index 75;
        fhir:Element.id [ fhir:value "ServiceRequest.asNeeded[x]" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.asNeeded[x]" ];
        fhir:ElementDefinition.short [ fhir:value "Preconditions for service" ];
@@ -4113,7 +4061,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "Proposal.prnReason.reason" ]
        ]
      ], [
-       fhir:index 77;
+       fhir:index 76;
        fhir:Element.id [ fhir:value "ServiceRequest.authoredOn" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.authoredOn" ];
        fhir:ElementDefinition.short [ fhir:value "Date request signed" ];
@@ -4170,7 +4118,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "Proposal.proposedAtTime" ]
        ]
      ], [
-       fhir:index 78;
+       fhir:index 77;
        fhir:Element.id [ fhir:value "ServiceRequest.requester" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.requester" ];
        fhir:ElementDefinition.short [ fhir:value "Prescriber of the requested service" ];
@@ -4256,7 +4204,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "ClinicalStatement.statementAuthor" ]
        ]
      ], [
-       fhir:index 79;
+       fhir:index 78;
        fhir:Element.id [ fhir:value "ServiceRequest.performerType" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.performerType" ];
        fhir:ElementDefinition.short [ fhir:value "Discipline of provider" ];
@@ -4323,7 +4271,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value ".participation[typeCode=PRF].role[scoper.determinerCode=KIND].code" ]
        ]
      ], [
-       fhir:index 80;
+       fhir:index 79;
        fhir:Element.id [ fhir:value "ServiceRequest.performer" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.performer" ];
        fhir:ElementDefinition.short [ fhir:value "Requested performer - typically reference to practitioner but could also be reference to related person by business identifier or Reference.display" ];
@@ -4410,7 +4358,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value ".participation[typeCode=PRF].role[scoper.determinerCode=INSTANCE]" ]
        ]
      ], [
-       fhir:index 81;
+       fhir:index 80;
        fhir:Element.id [ fhir:value "ServiceRequest.locationCode" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.locationCode" ];
        fhir:ElementDefinition.short [ fhir:value "Requested location" ];
@@ -4463,7 +4411,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value ".participation[typeCode=LOC].role[scoper.determinerCode=KIND].code" ]
        ]
      ], [
-       fhir:index 82;
+       fhir:index 81;
        fhir:Element.id [ fhir:value "ServiceRequest.locationReference" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.locationReference" ];
        fhir:ElementDefinition.short [ fhir:value "Requested location" ];
@@ -4508,7 +4456,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value ".participation[typeCode=LOC].role[scoper.determinerCode=INSTANCE]" ]
        ]
      ], [
-       fhir:index 83;
+       fhir:index 82;
        fhir:Element.id [ fhir:value "ServiceRequest.reasonCode" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.reasonCode" ];
        fhir:ElementDefinition.short [ fhir:value "Diagnostic question, explanation/Justification for procedure or service" ];
@@ -4571,7 +4519,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value ".reasonCode" ]
        ]
      ], [
-       fhir:index 84;
+       fhir:index 83;
        fhir:Element.id [ fhir:value "ServiceRequest.reasonReference" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.reasonReference" ];
        fhir:ElementDefinition.short [ fhir:value "Explanation/Justification for service or service" ];
@@ -4637,7 +4585,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value ".outboundRelationship[typeCode=RSON].target" ]
        ]
      ], [
-       fhir:index 85;
+       fhir:index 84;
        fhir:Element.id [ fhir:value "ServiceRequest.insurance" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.insurance" ];
        fhir:ElementDefinition.short [ fhir:value "Associated insurance coverage" ];
@@ -4690,7 +4638,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value ".outboundRelationship[typeCode=COVBY].target" ]
        ]
      ], [
-       fhir:index 86;
+       fhir:index 85;
        fhir:Element.id [ fhir:value "ServiceRequest.supportingInfo" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.supportingInfo" ];
        fhir:ElementDefinition.short [ fhir:value "Relevant information in the context of this prescription concerning for example allergies, kidney function, diabetic. When detailed information can be given, it is RECOMMENDED to express it as structured as possible. ContraIndications SHALL be expressed using the contraIndication modifierExtension" ];
@@ -4772,7 +4720,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value ".outboundRelationship[typeCode=PERT].target" ]
        ]
      ], [
-       fhir:index 87;
+       fhir:index 86;
        fhir:Element.id [ fhir:value "ServiceRequest.specimen" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.specimen" ];
        fhir:ElementDefinition.short [ fhir:value "Procedure Samples" ];
@@ -4818,7 +4766,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value ".participation[typeCode=SPC].role" ]
        ]
      ], [
-       fhir:index 88;
+       fhir:index 87;
        fhir:Element.id [ fhir:value "ServiceRequest.bodySite" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.bodySite" ];
        fhir:ElementDefinition.short [ fhir:value "Location on Body" ];
@@ -4882,7 +4830,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "Procedure.targetBodySite" ]
        ]
      ], [
-       fhir:index 89;
+       fhir:index 88;
        fhir:Element.id [ fhir:value "ServiceRequest.note" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.note" ];
        fhir:ElementDefinition.short [ fhir:value "Comments" ];
@@ -4930,7 +4878,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value "ClinicalStatement.additionalText" ]
        ]
      ], [
-       fhir:index 90;
+       fhir:index 89;
        fhir:Element.id [ fhir:value "ServiceRequest.patientInstruction" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.patientInstruction" ];
        fhir:ElementDefinition.short [ fhir:value "Patient or consumer-oriented instructions" ];
@@ -4971,7 +4919,7 @@
          fhir:ElementDefinition.mapping.map [ fhir:value ".text" ]
        ]
      ], [
-       fhir:index 91;
+       fhir:index 90;
        fhir:Element.id [ fhir:value "ServiceRequest.relevantHistory" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.relevantHistory" ];
        fhir:ElementDefinition.short [ fhir:value "Request provenance" ];
