@@ -12,7 +12,7 @@
   </text>
   <url value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-model-nursingprescription"/>
   <version value="0.2.0"/>
-  <name value="BeNursingPrescription"/>
+  <name value="BeModelNursingPrescription"/>
   <status value="draft"/>
   <date value="2021-10-07T15:14:36+02:00"/>
   <publisher value="HL7 Belgium"/>
@@ -182,6 +182,51 @@
         <code value="Identifier"/>
       </type>
     </element>
+    <element id="BeNursingPrescription.ppsNumber">
+      <path value="BeNursingPrescription.ppsNumber"/>
+      <short value="An identifier for the Prescription Proposal Support"/>
+      <definition value="An identifier for the Prescription Proposal Support"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.ppsNumber"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Identifier"/>
+      </type>
+    </element>
+    <element id="BeNursingPrescription.ppsRejectionReason">
+      <path value="BeNursingPrescription.ppsRejectionReason"/>
+      <short value="Reason for not following the PPS suggestion"/>
+      <definition value="Reason for not following the PPS suggestion"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.ppsRejectionReason"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Annotation"/>
+      </type>
+    </element>
+    <element id="BeNursingPrescription.requisition">
+      <path value="BeNursingPrescription.requisition"/>
+      <short value="An identifier for the bundle this prescription belongs to. The type of bundle can be indicated in the type of the identifier"/>
+      <definition value="An identifier for the bundle this prescription belongs to. The type of bundle can be indicated in the type of the identifier"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.requisition"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Identifier"/>
+      </type>
+    </element>
     <element id="BeNursingPrescription.basedOn">
       <path value="BeNursingPrescription.basedOn"/>
       <short value="The original request or prescription triggered this prescription"/>
@@ -242,14 +287,14 @@
         <code value="dateTime"/>
       </type>
     </element>
-    <element id="BeNursingPrescription.intendedProvider">
-      <path value="BeNursingPrescription.intendedProvider"/>
+    <element id="BeNursingPrescription.intendedPerformer">
+      <path value="BeNursingPrescription.intendedPerformer"/>
       <short value="The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality"/>
       <definition value="The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality"/>
       <min value="0"/>
       <max value="*"/>
       <base>
-        <path value="BeReferralPrescription.intendedProvider"/>
+        <path value="BeReferralPrescription.intendedPerformer"/>
         <min value="0"/>
         <max value="*"/>
       </base>
@@ -257,14 +302,14 @@
         <code value="BackboneElement"/>
       </type>
     </element>
-    <element id="BeNursingPrescription.intendedProvider.provider">
-      <path value="BeNursingPrescription.intendedProvider.provider"/>
+    <element id="BeNursingPrescription.intendedPerformer.performer">
+      <path value="BeNursingPrescription.intendedPerformer.performer"/>
       <short value="A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)"/>
       <definition value="A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)"/>
       <min value="0"/>
       <max value="*"/>
       <base>
-        <path value="BeReferralPrescription.intendedProvider.provider"/>
+        <path value="BeReferralPrescription.intendedPerformer.performer"/>
         <min value="0"/>
         <max value="*"/>
       </base>
@@ -272,19 +317,49 @@
         <code value="Reference"/>
       </type>
     </element>
-    <element id="BeNursingPrescription.intendedProvider.discipline">
-      <path value="BeNursingPrescription.intendedProvider.discipline"/>
+    <element id="BeNursingPrescription.intendedPerformer.discipline">
+      <path value="BeNursingPrescription.intendedPerformer.discipline"/>
       <short value="The required discipline of the provider party"/>
       <definition value="The required discipline of the provider party"/>
       <min value="1"/>
       <max value="1"/>
       <base>
-        <path value="BeReferralPrescription.intendedProvider.discipline"/>
+        <path value="BeReferralPrescription.intendedPerformer.discipline"/>
         <min value="1"/>
         <max value="1"/>
       </base>
       <type>
         <code value="CodeableConcept"/>
+      </type>
+    </element>
+    <element id="BeNursingPrescription.intendedPerformer.period">
+      <path value="BeNursingPrescription.intendedPerformer.period"/>
+      <short value="Start and enddate for the particular provider"/>
+      <definition value="Start and enddate for the particular provider"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.intendedPerformer.period"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Period"/>
+      </type>
+    </element>
+    <element id="BeNursingPrescription.toBePerformedAfter">
+      <path value="BeNursingPrescription.toBePerformedAfter"/>
+      <short value="The current prescription should be performed after this one"/>
+      <definition value="The current prescription should be performed after this one"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.toBePerformedAfter"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Reference"/>
       </type>
     </element>
     <element id="BeNursingPrescription.serviceRequested">
@@ -381,16 +456,76 @@
         <code value="CodeableConcept"/>
       </type>
     </element>
-    <element id="BeNursingPrescription.bodySite">
-      <path value="BeNursingPrescription.bodySite"/>
-      <short value="Anatomical place where the treatment should be executed"/>
-      <definition value="Anatomical place where the treatment should be executed"/>
+    <element id="BeNursingPrescription.treatmentStatus">
+      <path value="BeNursingPrescription.treatmentStatus"/>
+      <short value="Status of the treatment"/>
+      <definition value="Status of the treatment"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.treatmentStatus"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+    </element>
+    <element id="BeNursingPrescription.treatmentStatusReason">
+      <path value="BeNursingPrescription.treatmentStatusReason"/>
+      <short value="Reason treatment status"/>
+      <definition value="Reason treatment status"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.treatmentStatusReason"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+    </element>
+    <element id="BeNursingPrescription.bodyLocation">
+      <path value="BeNursingPrescription.bodyLocation"/>
+      <short value="Place where the treatment should be executed"/>
+      <definition value="Place where the treatment should be executed"/>
       <min value="0"/>
       <max value="*"/>
       <base>
-        <path value="BeReferralPrescription.bodySite"/>
+        <path value="BeReferralPrescription.bodyLocation"/>
         <min value="0"/>
         <max value="*"/>
+      </base>
+      <type>
+        <code value="BackboneElement"/>
+      </type>
+    </element>
+    <element id="BeNursingPrescription.bodyLocation.bodySite">
+      <path value="BeNursingPrescription.bodyLocation.bodySite"/>
+      <short value="Anatomical place where the treatment should be executed"/>
+      <definition value="Anatomical place where the treatment should be executed"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.bodyLocation.bodySite"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+    </element>
+    <element id="BeNursingPrescription.bodyLocation.bodyLaterality">
+      <path value="BeNursingPrescription.bodyLocation.bodyLaterality"/>
+      <short value="Side of the body"/>
+      <definition value="Side of the body"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.bodyLocation.bodyLaterality"/>
+        <min value="0"/>
+        <max value="1"/>
       </base>
       <type>
         <code value="CodeableConcept"/>

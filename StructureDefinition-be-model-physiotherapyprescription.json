@@ -216,6 +216,60 @@
         ]
       },
       {
+        "id": "BePhysiotherapyPrescription.ppsNumber",
+        "path": "BePhysiotherapyPrescription.ppsNumber",
+        "short": "An identifier for the Prescription Proposal Support",
+        "definition": "An identifier for the Prescription Proposal Support",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.ppsNumber",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ]
+      },
+      {
+        "id": "BePhysiotherapyPrescription.ppsRejectionReason",
+        "path": "BePhysiotherapyPrescription.ppsRejectionReason",
+        "short": "Reason for not following the PPS suggestion",
+        "definition": "Reason for not following the PPS suggestion",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.ppsRejectionReason",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Annotation"
+          }
+        ]
+      },
+      {
+        "id": "BePhysiotherapyPrescription.requisition",
+        "path": "BePhysiotherapyPrescription.requisition",
+        "short": "An identifier for the bundle this prescription belongs to. The type of bundle can be indicated in the type of the identifier",
+        "definition": "An identifier for the bundle this prescription belongs to. The type of bundle can be indicated in the type of the identifier",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.requisition",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ]
+      },
+      {
         "id": "BePhysiotherapyPrescription.basedOn",
         "path": "BePhysiotherapyPrescription.basedOn",
         "short": "The original request or prescription triggered this prescription",
@@ -288,14 +342,14 @@
         ]
       },
       {
-        "id": "BePhysiotherapyPrescription.intendedProvider",
-        "path": "BePhysiotherapyPrescription.intendedProvider",
+        "id": "BePhysiotherapyPrescription.intendedPerformer",
+        "path": "BePhysiotherapyPrescription.intendedPerformer",
         "short": "The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality",
         "definition": "The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality",
         "min": 0,
         "max": "*",
         "base": {
-          "path": "BeReferralPrescription.intendedProvider",
+          "path": "BeReferralPrescription.intendedPerformer",
           "min": 0,
           "max": "*"
         },
@@ -306,14 +360,14 @@
         ]
       },
       {
-        "id": "BePhysiotherapyPrescription.intendedProvider.provider",
-        "path": "BePhysiotherapyPrescription.intendedProvider.provider",
+        "id": "BePhysiotherapyPrescription.intendedPerformer.performer",
+        "path": "BePhysiotherapyPrescription.intendedPerformer.performer",
         "short": "A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)",
         "definition": "A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)",
         "min": 0,
         "max": "*",
         "base": {
-          "path": "BeReferralPrescription.intendedProvider.provider",
+          "path": "BeReferralPrescription.intendedPerformer.performer",
           "min": 0,
           "max": "*"
         },
@@ -324,20 +378,56 @@
         ]
       },
       {
-        "id": "BePhysiotherapyPrescription.intendedProvider.discipline",
-        "path": "BePhysiotherapyPrescription.intendedProvider.discipline",
+        "id": "BePhysiotherapyPrescription.intendedPerformer.discipline",
+        "path": "BePhysiotherapyPrescription.intendedPerformer.discipline",
         "short": "The required discipline of the provider party",
         "definition": "The required discipline of the provider party",
         "min": 1,
         "max": "1",
         "base": {
-          "path": "BeReferralPrescription.intendedProvider.discipline",
+          "path": "BeReferralPrescription.intendedPerformer.discipline",
           "min": 1,
           "max": "1"
         },
         "type": [
           {
             "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "BePhysiotherapyPrescription.intendedPerformer.period",
+        "path": "BePhysiotherapyPrescription.intendedPerformer.period",
+        "short": "Start and enddate for the particular provider",
+        "definition": "Start and enddate for the particular provider",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.intendedPerformer.period",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Period"
+          }
+        ]
+      },
+      {
+        "id": "BePhysiotherapyPrescription.toBePerformedAfter",
+        "path": "BePhysiotherapyPrescription.toBePerformedAfter",
+        "short": "The current prescription should be performed after this one",
+        "definition": "The current prescription should be performed after this one",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.toBePerformedAfter",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Reference"
           }
         ]
       },
@@ -454,16 +544,88 @@
         ]
       },
       {
-        "id": "BePhysiotherapyPrescription.bodySite",
-        "path": "BePhysiotherapyPrescription.bodySite",
-        "short": "Anatomical place where the treatment should be executed",
-        "definition": "Anatomical place where the treatment should be executed",
+        "id": "BePhysiotherapyPrescription.treatmentStatus",
+        "path": "BePhysiotherapyPrescription.treatmentStatus",
+        "short": "Status of the treatment",
+        "definition": "Status of the treatment",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.treatmentStatus",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "BePhysiotherapyPrescription.treatmentStatusReason",
+        "path": "BePhysiotherapyPrescription.treatmentStatusReason",
+        "short": "Reason treatment status",
+        "definition": "Reason treatment status",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.treatmentStatusReason",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "BePhysiotherapyPrescription.bodyLocation",
+        "path": "BePhysiotherapyPrescription.bodyLocation",
+        "short": "Place where the treatment should be executed",
+        "definition": "Place where the treatment should be executed",
         "min": 0,
         "max": "*",
         "base": {
-          "path": "BeReferralPrescription.bodySite",
+          "path": "BeReferralPrescription.bodyLocation",
           "min": 0,
           "max": "*"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "BePhysiotherapyPrescription.bodyLocation.bodySite",
+        "path": "BePhysiotherapyPrescription.bodyLocation.bodySite",
+        "short": "Anatomical place where the treatment should be executed",
+        "definition": "Anatomical place where the treatment should be executed",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.bodyLocation.bodySite",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "BePhysiotherapyPrescription.bodyLocation.bodyLaterality",
+        "path": "BePhysiotherapyPrescription.bodyLocation.bodyLaterality",
+        "short": "Side of the body",
+        "definition": "Side of the body",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.bodyLocation.bodyLaterality",
+          "min": 0,
+          "max": "1"
         },
         "type": [
           {
