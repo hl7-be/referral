@@ -17,4 +17,4 @@ Description: "BeTaskReference"
 * . ^short = "BeTaskReference"
 * . ^definition = "BeTaskReference"
 * url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-task-reference" (exactly)
-* value[x] only Reference(Task)
+* value[x] only Reference(BeReferralTask)
