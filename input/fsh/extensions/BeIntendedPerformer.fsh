@@ -19,13 +19,16 @@ Description: "Intended performers for this request"
 * extension contains
     actor 0..1 MS and
     role 1..1 MS and
-    organization 0..1 MS
+    organization 0..1 MS and
+    period 0..1 MS
 * extension[actor] ^short = "Reference to performer"
 * extension[actor].value[x] only Reference(CareTeam or HealthcareService or Device or RelatedPerson or BePractitioner or BePractitionerRole or BePatient or BeOrganization)
 * extension[role] ^short = "Role of performer"
 * extension[role].value[x] only CodeableConcept
-* extension[role].valueCodeableConcept 0..1
+* extension[role].valueCodeableConcept 1..1
 * extension[role].valueCodeableConcept from ProcedurePerformerRoleCodes (required)
 * url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer" (exactly)
 * extension[organization].value[x] only Reference(BeOrganization)
 * extension[organization].valueReference 0..1
+* extension[period].value[x] only Period
+* extension[period].valuePeriod 0..1
