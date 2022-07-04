@@ -2,11 +2,11 @@ Instance: example20-referralprescription-nursing-medication
 InstanceOf: BeReferralPrescriptionNursingGenMedication
 Title: "example20-referralprescription-nursing-medication"
 Usage: #example
-* extension.extension[0].url = "role"
-* extension.extension[=].valueCodeableConcept = $sct#106292003 "Nurse"
-* extension.extension[+].url = "actor"
-* extension.extension[=].valueReference = Reference(practitioner2)
-* extension.url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer"
+
+
+
+* extension[performer].valueReference = Reference(practitionerrole1)
+
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
 * identifier.value = "UHMEPVALUE"
 * status = #active
@@ -27,3 +27,5 @@ Usage: #example
 * dosageInstruction.timing.repeat.periodUnit = #d
 * dosageInstruction.asNeededBoolean = true
 * dosageInstruction.site = $sct#31764008
+* extension[validity].valuePeriod.start = "2022-10-10"
+* extension[validity].valuePeriod.start = "2022-10-12"

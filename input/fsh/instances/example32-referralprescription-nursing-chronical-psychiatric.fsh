@@ -7,11 +7,10 @@ Usage: #example
 * extension[+].url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period"
 * extension[=].valuePeriod.start = "2022-04-19"
 * extension[=].valuePeriod.end = "2023-04-19"
-* extension[+].extension[0].url = "role"
-* extension[=].extension[=].valueCodeableConcept = $sct#106292003 "Nurse"
-* extension[=].extension[+].url = "actor"
-* extension[=].extension[=].valueReference = Reference(practitioner2)
-* extension[=].url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer"
+
+
+
+* performer[+] = Reference(practitionerrole1)
 * extension[+].url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-execution-period"
 * extension[=].valuePeriod.start = "2022-04-19"
 * extension[=].valuePeriod.end = "2023-04-19"
