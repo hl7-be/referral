@@ -10,7 +10,7 @@
   "name": "HL7BEReferralPrescriptionWGImplementationGuideworkinprogress",
   "title": "HL7 BE Referral Prescription WG Implementation Guide (work in progress)",
   "status": "draft",
-  "date": "2022-07-04T12:45:37+00:00",
+  "date": "2022-07-04T13:31:09+00:00",
   "packageId": "hl7.fhir.be.referral",
   "license": "CC0-1.0",
   "fhirVersion": [
@@ -1114,6 +1114,19 @@
           }
         ],
         "reference": {
+          "reference": "ValueSet/be-vs-co-prescriber-choice"
+        },
+        "name": "BeVsCoPrescriberChoice",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
           "reference": "ValueSet/be-vs-proposal-type"
         },
         "name": "BeVsProposalType",
@@ -1131,6 +1144,20 @@
         },
         "name": "BeBladderCareType",
         "description": "Nursing codes in Belgium. To define details in nursing activities for the bladder care category. Initially defined as supporting CodeSystem for the referral prescription.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "CodeSystem"
+          }
+        ],
+        "reference": {
+          "reference": "CodeSystem/be-cs-co-prescriber-choice"
+        },
+        "name": "BeCSCoPrescriberChoice",
+        "description": "Type of intended performer choice",
         "exampleBoolean": false
       },
       {
