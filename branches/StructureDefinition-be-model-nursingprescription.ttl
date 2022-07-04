@@ -399,6 +399,23 @@
        ]
      ], [
        fhir:index 20;
+       fhir:Element.id [ fhir:value "BeNursingPrescription.intendedPerformer.organization" ];
+       fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.intendedPerformer.organization" ];
+       fhir:ElementDefinition.short [ fhir:value "Reference to an organization that will add the performer" ];
+       fhir:ElementDefinition.definition [ fhir:value "Reference to an organization that will add the performer" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.intendedPerformer.organization" ];
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
+       ]
+     ], [
+       fhir:index 21;
        fhir:Element.id [ fhir:value "BeNursingPrescription.toBePerformedAfter" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.toBePerformedAfter" ];
        fhir:ElementDefinition.short [ fhir:value "The current prescription should be performed after this one" ];
@@ -415,7 +432,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
        ]
      ], [
-       fhir:index 21;
+       fhir:index 22;
        fhir:Element.id [ fhir:value "BeNursingPrescription.serviceRequested" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.serviceRequested" ];
        fhir:ElementDefinition.short [ fhir:value "What is prescribed" ];
@@ -432,7 +449,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 22;
+       fhir:index 23;
        fhir:Element.id [ fhir:value "BeNursingPrescription.problemCode" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.problemCode" ];
        fhir:ElementDefinition.short [ fhir:value "The problem (code or reference) that is the main reason for this prescription" ];
@@ -449,7 +466,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
        ]
      ], [
-       fhir:index 23;
+       fhir:index 24;
        fhir:Element.id [ fhir:value "BeNursingPrescription.supportingInfo" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.supportingInfo" ];
        fhir:ElementDefinition.short [ fhir:value "Care Set Problem" ];
@@ -466,7 +483,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
        ]
      ], [
-       fhir:index 24;
+       fhir:index 25;
        fhir:Element.id [ fhir:value "BeNursingPrescription.resultReceiver" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.resultReceiver" ];
        fhir:ElementDefinition.short [ fhir:value "True if the prescriber wants feedback. Other caregivers can be mentioned in the note" ];
@@ -483,7 +500,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "boolean" ]
        ]
      ], [
-       fhir:index 25;
+       fhir:index 26;
        fhir:Element.id [ fhir:value "BeNursingPrescription.status" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.status" ];
        fhir:ElementDefinition.short [ fhir:value "Current status" ];
@@ -507,7 +524,7 @@
          ]
        ]
      ], [
-       fhir:index 26;
+       fhir:index 27;
        fhir:Element.id [ fhir:value "BeNursingPrescription.statusReason" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.statusReason" ];
        fhir:ElementDefinition.short [ fhir:value "Reason current status" ];
@@ -524,7 +541,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 27;
+       fhir:index 28;
        fhir:Element.id [ fhir:value "BeNursingPrescription.treatmentStatus" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.treatmentStatus" ];
        fhir:ElementDefinition.short [ fhir:value "Status of the treatment" ];
@@ -541,7 +558,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 28;
+       fhir:index 29;
        fhir:Element.id [ fhir:value "BeNursingPrescription.treatmentStatusReason" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.treatmentStatusReason" ];
        fhir:ElementDefinition.short [ fhir:value "Reason treatment status" ];
@@ -558,7 +575,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 29;
+       fhir:index 30;
        fhir:Element.id [ fhir:value "BeNursingPrescription.bodyLocation" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.bodyLocation" ];
        fhir:ElementDefinition.short [ fhir:value "Place where the treatment should be executed" ];
@@ -575,7 +592,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "BackboneElement" ]
        ]
      ], [
-       fhir:index 30;
+       fhir:index 31;
        fhir:Element.id [ fhir:value "BeNursingPrescription.bodyLocation.bodySite" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.bodyLocation.bodySite" ];
        fhir:ElementDefinition.short [ fhir:value "Anatomical place where the treatment should be executed" ];
@@ -592,7 +609,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 31;
+       fhir:index 32;
        fhir:Element.id [ fhir:value "BeNursingPrescription.bodyLocation.bodyLaterality" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.bodyLocation.bodyLaterality" ];
        fhir:ElementDefinition.short [ fhir:value "Side of the body" ];
@@ -609,7 +626,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 32;
+       fhir:index 33;
        fhir:Element.id [ fhir:value "BeNursingPrescription.note" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.note" ];
        fhir:ElementDefinition.short [ fhir:value "Additional text notes about the request." ];
@@ -626,7 +643,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "Annotation" ]
        ]
      ], [
-       fhir:index 33;
+       fhir:index 34;
        fhir:Element.id [ fhir:value "BeNursingPrescription.intent" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.intent" ];
        fhir:ElementDefinition.short [ fhir:value "Proposal, Prolongation, Prescription" ];
@@ -643,7 +660,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "code" ]
        ]
      ], [
-       fhir:index 34;
+       fhir:index 35;
        fhir:Element.id [ fhir:value "BeNursingPrescription.serviceRequestNumber" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.serviceRequestNumber" ];
        fhir:ElementDefinition.short [ fhir:value "number of sessions prescribed" ];
@@ -660,7 +677,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "positiveInt" ]
        ]
      ], [
-       fhir:index 35;
+       fhir:index 36;
        fhir:Element.id [ fhir:value "BeNursingPrescription.serviceRequestFrequency" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.serviceRequestFrequency" ];
        fhir:ElementDefinition.short [ fhir:value "frequency of the treatment" ];
@@ -677,7 +694,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 36;
+       fhir:index 37;
        fhir:Element.id [ fhir:value "BeNursingPrescription.serviceRequestDayPeriod" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.serviceRequestDayPeriod" ];
        fhir:ElementDefinition.short [ fhir:value "period of the day on which the treatment must take place" ];
@@ -694,7 +711,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 37;
+       fhir:index 38;
        fhir:Element.id [ fhir:value "BeNursingPrescription.route" ];
        fhir:ElementDefinition.path [ fhir:value "BeNursingPrescription.route" ];
        fhir:ElementDefinition.short [ fhir:value "administration route of the treatment" ];

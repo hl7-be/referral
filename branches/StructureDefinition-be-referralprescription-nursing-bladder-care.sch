@@ -501,8 +501,35 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
+    <sch:title>f:ServiceRequest/f:bodySite</sch:title>
+    <sch:rule context="f:ServiceRequest/f:bodySite">
+      <sch:assert test="count(f:extension[@url = 'https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-ext-laterality']) &lt;= 1">extension with URL = 'https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-ext-laterality': maximum cardinality of 'extension' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
     <sch:title>ServiceRequest.bodySite</sch:title>
     <sch:rule context="f:ServiceRequest/f:bodySite">
+      <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>ServiceRequest.bodySite.extension</sch:title>
+    <sch:rule context="f:ServiceRequest/f:bodySite/f:extension">
+      <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children</sch:assert>
+      <sch:assert test="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])">Must have either extensions or value[x], not both</sch:assert>
+      <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children</sch:assert>
+      <sch:assert test="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])">Must have either extensions or value[x], not both</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>ServiceRequest.bodySite.coding</sch:title>
+    <sch:rule context="f:ServiceRequest/f:bodySite/f:coding">
+      <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>ServiceRequest.bodySite.text</sch:title>
+    <sch:rule context="f:ServiceRequest/f:bodySite/f:text">
       <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
     </sch:rule>
   </sch:pattern>
