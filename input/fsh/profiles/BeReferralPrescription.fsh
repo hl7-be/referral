@@ -22,12 +22,12 @@ Description: "The common structure for referral prescription."
     $request-statusReason named statusReason 1..1 MS and
 //  BeInformParty named informParty 0..* MS and
     BeFeedbackToPrescriber named feedback 0..1 MS and
-    BeCoPrescriber named coprescriber 0..* MS and
+    BeCoPrescriberInfo named coprescriber 0..1 MS and
     BeValidityPeriod named validity 1..1 MS and
     BeExecutionPeriod named executed 0..1 MS and
     BeLatestEndDate named latest 0..1 MS and
     BeLatestDraftDate named latestDraft 0..1 MS and
-    BeIntendedPerformer named performer 1..1 MS and
+    BeIntendedPerformer named performer 1..* MS and
     BeProposalType named proposalType 0..1 MS and
     BeTaskReference named task 0..1 MS and
     BePSSInfo named pss 0..1 MS and
@@ -35,7 +35,7 @@ Description: "The common structure for referral prescription."
 * extension[statusReason].valueCodeableConcept 1..1
 * extension[statusReason].valueCodeableConcept from BeReasonReferralStatus (extensible)
 //* extension[informParty] ^short = "Parties to inform of fulfillment of the prescription, besides the prescriber."
-* extension[coprescriber] ^short = "Other parties that have to take part in the prescription."
+* extension[coprescriber] ^short = "Info about the other parties that have to take part in the prescription."
 * extension[validity] ^short = "Validity period of the prescription"
 * extension[latest] ^short = "Request must be executed before"
 * extension[performer] ^short = "Takes the place of performer and performerType"
