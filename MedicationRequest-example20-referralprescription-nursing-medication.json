@@ -8,31 +8,20 @@
   },
   "text": {
     "status": "extensions",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"example20-referralprescription-nursing-medication\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referralprescription-nursing-gen-medication.html\">BeReferralPrescriptionNursingGenMedication</a></p></div><blockquote><p><b>BeIntendedPerformer</b></p><p><b>value</b>: Nurse <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#106292003)</span></p><p><b>value</b>: <a href=\"Practitioner-practitioner2.html\">Practitioner/practitioner2</a> \" CHAPEL\"</p></blockquote><p><b>identifier</b>: id: UHMEPVALUE</p><p><b>status</b>: active</p><p><b>statusReason</b>: Refused <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActReason.html\">ActReason</a>#PATOBJ)</span></p><p><b>intent</b>: order</p><p><b>category</b>: Subcutaan <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-be-nursing-medication-injection.html\">BeNursingMedicationInjection</a>#SC)</span></p><p><b>priority</b>: routine</p><p><b>medication</b>: Voltaren Emulgel (PIP) transderm. lok. gel 50 g 10 mg / 1 g <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (be-ns-cnk-codes#2638591)</span></p><p><b>subject</b>: <a href=\"Patient-patient1.html\">Patient/patient1</a> \" DOE\"</p><p><b>requester</b>: <a href=\"Practitioner-practitioner1.html\">Practitioner/practitioner1</a> \" MCCOY\"</p><p><b>note</b>: thv m.trapezius en rechterelleboog</p></div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"example20-referralprescription-nursing-medication\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referralprescription-nursing-gen-medication.html\">BeReferralPrescriptionNursingGenMedication</a></p></div><p><b>BeValidityPeriod</b>: 2022-10-12 --&gt; (ongoing)</p><p><b>BePerformerReference</b>: <a href=\"PractitionerRole-practitionerrole1.html\">PractitionerRole/practitionerrole1</a></p><p><b>identifier</b>: id: UHMEPVALUE</p><p><b>status</b>: active</p><p><b>statusReason</b>: Refused <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActReason.html\">ActReason</a>#PATOBJ)</span></p><p><b>intent</b>: order</p><p><b>category</b>: Subcutaan <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (be-nursing-medication-injection#SC)</span></p><p><b>priority</b>: routine</p><p><b>medication</b>: Voltaren Emulgel (PIP) transderm. lok. gel 50 g 10 mg / 1 g <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (be-ns-cnk-codes#2638591)</span></p><p><b>subject</b>: <a href=\"Patient-patient1.html\">Patient/patient1</a> \" DOE\"</p><p><b>requester</b>: <a href=\"Practitioner-practitioner1.html\">Practitioner/practitioner1</a> \" MCCOY\"</p><p><b>note</b>: thv m.trapezius en rechterelleboog</p></div>"
   },
   "extension": [
     {
-      "extension": [
-        {
-          "url": "role",
-          "valueCodeableConcept": {
-            "coding": [
-              {
-                "system": "http://snomed.info/sct",
-                "code": "106292003",
-                "display": "Nurse"
-              }
-            ]
-          }
-        },
-        {
-          "url": "actor",
-          "valueReference": {
-            "reference": "Practitioner/practitioner2"
-          }
-        }
-      ],
-      "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer"
+      "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period",
+      "valuePeriod": {
+        "start": "2022-10-12"
+      }
+    },
+    {
+      "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-performer-reference",
+      "valueReference": {
+        "reference": "PractitionerRole/practitionerrole1"
+      }
     }
   ],
   "identifier": [

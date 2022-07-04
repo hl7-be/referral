@@ -388,84 +388,21 @@
       "types": [
         "Period"
       ]
-    },
-    {
-      "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer",
-      "title": "BeIntendedPerformer",
-      "types": [
-        "Reference",
-        "CodeableConcept",
-        "CodeableConcept",
-        "Reference",
-        "Reference",
-        "Period",
-        "Period",
-        "base64Binary",
-        "boolean",
-        "canonical",
-        "code",
-        "date",
-        "dateTime",
-        "decimal",
-        "id",
-        "instant",
-        "integer",
-        "markdown",
-        "oid",
-        "positiveInt",
-        "string",
-        "time",
-        "unsignedInt",
-        "uri",
-        "url",
-        "uuid",
-        "Address",
-        "Age",
-        "Annotation",
-        "Attachment",
-        "CodeableConcept",
-        "Coding",
-        "ContactPoint",
-        "Count",
-        "Distance",
-        "Duration",
-        "HumanName",
-        "Identifier",
-        "Money",
-        "Period",
-        "Quantity",
-        "Range",
-        "Ratio",
-        "Reference",
-        "SampledData",
-        "Signature",
-        "Timing",
-        "ContactDetail",
-        "Contributor",
-        "DataRequirement",
-        "Expression",
-        "ParameterDefinition",
-        "RelatedArtifact",
-        "TriggerDefinition",
-        "UsageContext",
-        "Dosage",
-        "Meta"
-      ]
     }
   ],
   "profiles": {
     "ServiceRequest": [
       {
-        "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-non-reimbursable",
-        "title": "BeReferralPrescriptionNursingNonReimbursable"
+        "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription",
+        "title": "BeReferralPrescription"
       },
       {
-        "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-other",
-        "title": "BeReferralPrescriptionNursingOther"
+        "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-diagnosticimaging",
+        "title": "BeReferralPrescriptionDiagnosticImaging"
       },
       {
-        "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-woundcare",
-        "title": "BeReferralPrescriptionNursingWoundcare"
+        "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing",
+        "title": "BeReferralPrescriptionNursing"
       }
     ],
     "Task": [
@@ -482,16 +419,6 @@
       {
         "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication",
         "title": "BeReferralPrescriptionNursingGenMedication"
-      },
-      {
-        "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication",
-        "title": "BeReferralPrescriptionNursingMedication"
-      }
-    ],
-    "RequestGroup": [
-      {
-        "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-request-group",
-        "title": "BeReferralPrescriptionRequestGroup"
       }
     ]
   },
@@ -516,7 +443,6 @@
       "StructureDefinition.snapshot.element"
     ],
     "http://hl7.org/fhir/StructureDefinition/request-statusReason": [
-      "RequestGroup.contained",
       "ServiceRequest"
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-category": [
@@ -565,9 +491,6 @@
       "MedicationRequest",
       "ServiceRequest"
     ],
-    "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-inform-party": [
-      "MedicationRequest"
-    ],
     "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-draft-date": [
       "MedicationRequest",
       "ServiceRequest"
@@ -577,8 +500,7 @@
       "ServiceRequest"
     ],
     "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-performer-reference": [
-      "MedicationRequest",
-      "RequestGroup.contained"
+      "MedicationRequest"
     ],
     "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-performer-task-reference": [
       "MedicationRequest",
@@ -603,11 +525,6 @@
       "ServiceRequest"
     ],
     "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period": [
-      "MedicationRequest",
-      "RequestGroup.contained",
-      "ServiceRequest"
-    ],
-    "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer": [
       "MedicationRequest",
       "ServiceRequest"
     ]
