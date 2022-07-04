@@ -18,16 +18,21 @@ Description: "Other practitioners that must take part in this prescripiton"
 * . ^definition = "Other practitioners that must take part in this prescripiton"
 * extension contains
     coprescriber 0..1 MS and
-    coprescriberType 0..1 MS and
-    coprescriptionStatus 0..1 MS
+    coprescriberType 1..1 MS and
+    coprescriptionStatus 1..1 MS and
+    required 1..1 MS
 * extension[coprescriber] ^short = "Reference to practitioner"
 * extension[coprescriber].value[x] only Reference(CareTeam or HealthcareService or Device or RelatedPerson or BePractitioner or BePractitionerRole or BePatient or BeOrganization)
 * extension[coprescriberType] ^short = "Discipline of coprescriber"
 * extension[coprescriberType].value[x] only CodeableConcept
-* extension[coprescriberType].valueCodeableConcept 0..1
+* extension[coprescriberType].valueCodeableConcept 1..1
 * extension[coprescriberType].valueCodeableConcept from ParticipantRoles (required)
 * extension[coprescriptionStatus] ^short = "Status of coprescription"
 * extension[coprescriptionStatus].value[x] only CodeableConcept
-* extension[coprescriptionStatus].valueCodeableConcept 0..1
+* extension[coprescriptionStatus].valueCodeableConcept 1..1
 * extension[coprescriptionStatus].valueCodeableConcept from BeCoPrescriptionStatus (required)
 * url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-co-prescriber" (exactly)
+* extension[required].value[x] only CodeableConcept
+* extension[required].valueCodeableConcept 1..1
+* extension[required].valueCodeableConcept from BeVsCoPrescriberChoice (required)
+* extension[required] ^short = "Importance of the signature for the prescription"
