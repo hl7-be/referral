@@ -30,5 +30,7 @@ Description: "Intended performers for this request"
 * url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer" (exactly)
 * extension[organization].value[x] only Reference(BeOrganization)
 * extension[organization].valueReference 0..1
+* extension[organization] ^short = "Organization of the performer"
 * extension[period].value[x] only Period
 * extension[period].valuePeriod 0..1
+* extension[period] ^short = "Start and end of assignment of performer"
