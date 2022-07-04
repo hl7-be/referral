@@ -63,6 +63,10 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Request must be executed before","Request must be performed before","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"ServiceRequest.extension:latestDraft","ServiceRequest.extension","latestDraft","","",0,1,"Y","","","Extension {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-draft-date]]} {[]}
+","The prescription must have left the draft status befor this moment","Request must leave draft status before","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "ServiceRequest.extension:performer","ServiceRequest.extension","performer","","",1,1,"Y","","","Extension {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer]]} {[]}
 ","Takes the place of performer and performerType","Intended performers for this request","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -80,7 +84,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "ServiceRequest.extension:recorder","ServiceRequest.extension","recorder","","",0,1,"Y","","","Extension {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-recorder]]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","The person responsable for this information, not necessarily the person who recorded the information","An Extension","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "ServiceRequest.modifierExtension","ServiceRequest.modifierExtension","","extensions
