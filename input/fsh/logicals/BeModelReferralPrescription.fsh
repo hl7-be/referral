@@ -27,7 +27,7 @@ Description: "Logical model describing the model for the prescription referral. 
 * patient 1..1 Reference "The SSIN of the person for which the referral is prescribed." "The SSIN of the person for which the referral is prescribed."
 * prescriptionNumber 0..1 Identifier "An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available" "An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available"
 * ppsNumber 0..1 Identifier "An identifier for the Prescription Proposal Support"
-* ppsDenialReason 0..1 Annotation "Reason for not following the PPS suggestion"
+* ppsRejectionReason 0..1 Annotation "Reason for not following the PPS suggestion"
 * requisition 0..1 Identifier "An identifier for the bundle this prescription belongs to. The type of bundle can be indicated in the type of the identifier"
 * basedOn 0..* Reference "The original request or prescription triggered this prescription" "The original request or prescription that is the reason for this request - for example when a detailed request is created by a broader request."
 * validitionPeriod 1..1 Period "Period of validity of prescription" "Period of validity of prescription"
