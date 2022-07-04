@@ -4,8 +4,7 @@ Title: "referralprescription-nursing-example6-compression-therapy"
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-compressiontherapy"
 * extension[statusReason].valueCodeableConcept = $be-status-reason#other "Other"
-* extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
-* extension[performer].extension[actor].valueReference = Reference(practitioner2)
+* performer[+] = Reference(practitionerrole1)
 * extension[validity].valuePeriod.start = "2020-01-01"
 * extension[validity].valuePeriod.end = "2021-01-01"
 * status = #active

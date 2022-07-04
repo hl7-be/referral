@@ -19,14 +19,20 @@ Description: "The nursing profile specialized for medication. Note this profile 
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-    BeInformParty named informParty 0..* MS and
-    BeCoPrescriber named coprescriber 0..* MS and
-    BeValidityPeriod named validity 0..1 MS and
+//  BeInformParty named informParty 0..* MS and
+    BeFeedbackToPrescriber named feedback 0..1 MS and
+    BeCoPrescriberInfo named coprescriber 0..1 MS and
+    BeValidityPeriod named validity 1..1 MS and
     BeExecutionPeriod named executed 0..1 MS and
-    BeIntendedPerformer named performer 1..1 MS and
+    BeLatestEndDate named latest 0..1 MS and
+    BeLatestDraftDate named latestDraft 0..1 MS and
+//    BeIntendedPerformer named performer 1..* MS and
+    BePerformerReference named performer 0..* MS and
+    BePerformerTaskReference named performertasks 0..* MS and
     BeProposalType named proposalType 0..1 MS and
-    BeTaskReference named task 0..1 MS
-* extension[informParty] ^short = "Parties to inform of fulfillment of the prescription, besides the prescriber."
+    BeTaskReference named task 0..1 MS and
+    BePSSInfo named pss 0..1 MS 
+//* extension[informParty] ^short = "Parties to inform of fulfillment of the prescription, besides the prescriber."
 * extension[coprescriber] ^short = "Other parties that have to take part in the prescription."
 * extension[validity] ^short = "Validity period of the prescription"
 * extension[performer] ^short = "Takes the place of performer and performerType"
@@ -57,3 +63,4 @@ Description: "The nursing profile specialized for medication. Note this profile 
 * note MS
 * dosageInstruction.text 1.. MS
 * dosageInstruction.site MS
+* recorder MS

@@ -4,7 +4,6 @@ Title: "diagnostic-imaging-basic-example-concreteWithText"
 Usage: #example
 * contained[0] = patient1
 * contained[+] = Requester1
-* extension[performer].extension[role].valueCodeableConcept = $sct#66862007 "Radiologist"
 * extension[validity].valuePeriod.start = "2020-01-01"
 * extension[validity].valuePeriod.end = "2021-01-01"
 * extension[statusReason].valueCodeableConcept = $be-status-reason#other "Other"

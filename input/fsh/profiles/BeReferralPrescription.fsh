@@ -27,7 +27,8 @@ Description: "The common structure for referral prescription."
     BeExecutionPeriod named executed 0..1 MS and
     BeLatestEndDate named latest 0..1 MS and
     BeLatestDraftDate named latestDraft 0..1 MS and
-    BeIntendedPerformer named performer 1..* MS and
+//    BeIntendedPerformer named performer 1..* MS and
+    BePerformerTaskReference named performertasks 0..* MS and
     BeProposalType named proposalType 0..1 MS and
     BeTaskReference named task 0..1 MS and
     BePSSInfo named pss 0..1 MS and
@@ -38,7 +39,7 @@ Description: "The common structure for referral prescription."
 * extension[coprescriber] ^short = "Info about the other parties that have to take part in the prescription."
 * extension[validity] ^short = "Validity period of the prescription"
 * extension[latest] ^short = "Request must be executed before"
-* extension[performer] ^short = "Takes the place of performer and performerType"
+//* extension[performer] ^short = "Takes the place of performer and performerType"
 * extension[feedback] ^short = "Give feedback to the prescriber"
 * extension[recorder] ^short = "The person responsable for this information, not necessarily the person who recorded the information"
 * extension[latestDraft] ^short = "The prescription must have left the draft status befor this moment"
@@ -74,9 +75,9 @@ Description: "The common structure for referral prescription."
 * requester ^short = "Prescriber of the requested service"
 * performerType ..0 MS
 * performerType ^short = "Discipline of provider"
-* performer ..0 MS
-* performer only Reference(CareTeam or HealthcareService or Device or RelatedPerson or BePractitioner or BePractitionerRole or BePatient or BeOrganization)
-* performer ^short = "Requested performer - typically reference to practitioner but could also be reference to related person by business identifier or Reference.display"
+* performer  MS
+* performer only Reference( BePractitionerRole )
+* performer ^short = "Requested performer - typically reference to practitionerroles"
 * reasonCode 1..1 MS
 * patientInstruction MS
 * bodySite MS

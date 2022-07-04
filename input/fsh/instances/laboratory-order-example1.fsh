@@ -9,8 +9,7 @@ Usage: #example
 * contained[+] = Inline-Instance-for-laboratory-order-example1-3
 * contained[+] = Inline-Instance-for-laboratory-order-example1-4
 * contained[+] = specimen1
-* extension[performer].extension[role].valueCodeableConcept = $sct#61246008 "Laboratory medicine specialist"
-* extension[performer].extension[actor].valueReference = Reference(practitioner1)
+* performer[+] = Reference(practitionerrole1)
 * extension[statusReason].valueCodeableConcept = $be-status-reason#other "Other"
 * extension[validity].valuePeriod.start = "2020-10-10"
 * extension[validity].valuePeriod.start = "2021-10-10"
