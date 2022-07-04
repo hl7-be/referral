@@ -52,8 +52,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"14.14"}
-    h3,h4,h5,h6{--heading-prefix:"14.14"}</style>
+    <style type="text/css">h2{--heading-prefix:"14.15"}
+    h3,h4,h5,h6{--heading-prefix:"14.15"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -327,6 +327,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x]</td><td>Request.occurrence[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;authoredOn</td><td>Request.authoredOn</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;requester</td><td>Request.requester</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>Request.performer</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>Request.reasonCode</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonReference</td><td>Request.reasonReference</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;insurance</td><td>Request.insurance</td> </tr>
@@ -377,6 +378,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x]</td><td>TQ1/TQ2, OBR-7/OBR-8</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;authoredOn</td><td>ORC.9,  RF1-7 / RF1-9</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;requester</td><td>ORC.12, PRT</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>PRT, Practitioner: PRD-2/PRD-7 where PRD-3 = RT; Organization: PRD-10 where PRD-3 = RT</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>ORC.16, RF1-10</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonReference</td><td>ORC.16</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;insurance</td><td>IN1/IN2</td> </tr>
@@ -453,6 +455,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;asNeeded[x]</td><td>boolean: precondition.negationInd (inversed - so negationInd = true means asNeeded=false CodeableConcept: precondition.observationEventCriterion[code=&quot;Assertion&quot;].value</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;authoredOn</td><td>.participation[typeCode=AUT].time</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;requester</td><td>.participation[typeCode=AUT].role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>.participation[typeCode=PRF].role[scoper.determinerCode=INSTANCE]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;locationCode</td><td>.participation[typeCode=LOC].role[scoper.determinerCode=KIND].code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;locationReference</td><td>.participation[typeCode=LOC].role[scoper.determinerCode=INSTANCE]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>.reasonCode</td> </tr>
@@ -484,6 +487,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x]</td><td>FiveWs.planned</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;authoredOn</td><td>FiveWs.recorded</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;requester</td><td>FiveWs.author</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>FiveWs.actor</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;locationCode</td><td>FiveWs.actor</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;locationReference</td><td>FiveWs.actor</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>FiveWs.why[x]</td> </tr>
@@ -559,7 +563,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href=""></a>.  Package hl7.fhir.be.referral#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jul 4, 2022 13:52+0000">2022-07-04</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href=""></a>.  Package hl7.fhir.be.referral#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jul 4, 2022 16:05+0000">2022-07-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

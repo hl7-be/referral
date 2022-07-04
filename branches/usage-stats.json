@@ -176,6 +176,21 @@
       ]
     },
     {
+      "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-performer-reference",
+      "title": "BePerformerReference",
+      "types": [
+        "Reference"
+      ]
+    },
+    {
+      "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-performer-task-reference",
+      "title": "BePerformerTaskReference",
+      "types": [
+        "Reference",
+        "Reference"
+      ]
+    },
+    {
       "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-proposal-type",
       "title": "BeProposalType",
       "types": [
@@ -455,6 +470,10 @@
     ],
     "Task": [
       {
+        "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-performer-task",
+        "title": "BePerformerTask"
+      },
+      {
         "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-task",
         "title": "BeReferralTask"
       }
@@ -526,10 +545,10 @@
     ],
     "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-co-prescriber": [
       "Extension",
-      "MedicationRequest",
       "ServiceRequest"
     ],
     "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-co-prescriber-info": [
+      "MedicationRequest",
       "ServiceRequest"
     ],
     "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-contraindication": [
@@ -543,15 +562,26 @@
       "ServiceRequest"
     ],
     "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-feedback-to-prescriber": [
+      "MedicationRequest",
       "ServiceRequest"
     ],
     "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-inform-party": [
       "MedicationRequest"
     ],
     "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-draft-date": [
+      "MedicationRequest",
       "ServiceRequest"
     ],
     "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-end-date": [
+      "MedicationRequest",
+      "ServiceRequest"
+    ],
+    "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-performer-reference": [
+      "MedicationRequest",
+      "RequestGroup.contained"
+    ],
+    "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-performer-task-reference": [
+      "MedicationRequest",
       "ServiceRequest"
     ],
     "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-proposal-type": [
@@ -559,6 +589,7 @@
       "ServiceRequest"
     ],
     "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-pss-info": [
+      "MedicationRequest",
       "ServiceRequest"
     ],
     "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-supporting-info": [
@@ -578,7 +609,6 @@
     ],
     "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer": [
       "MedicationRequest",
-      "RequestGroup.contained",
       "ServiceRequest"
     ]
   }

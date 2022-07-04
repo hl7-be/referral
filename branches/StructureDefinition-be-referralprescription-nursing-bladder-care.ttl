@@ -475,7 +475,7 @@
        ];
        fhir:ElementDefinition.short [ fhir:value "Extension" ];
        fhir:ElementDefinition.definition [ fhir:value "An Extension" ];
-       fhir:ElementDefinition.min [ fhir:value "3"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.min [ fhir:value "2"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "*" ];
        fhir:ElementDefinition.base [
          fhir:ElementDefinition.base.path [ fhir:value "DomainResource.extension" ];
@@ -1113,12 +1113,12 @@
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 20;
-       fhir:Element.id [ fhir:value "ServiceRequest.extension:performer" ];
+       fhir:Element.id [ fhir:value "ServiceRequest.extension:performertasks" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.extension" ];
-       fhir:ElementDefinition.sliceName [ fhir:value "performer" ];
-       fhir:ElementDefinition.short [ fhir:value "Takes the place of performer and performerType" ];
-       fhir:ElementDefinition.definition [ fhir:value "Intended performers for this request" ];
-       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.sliceName [ fhir:value "performertasks" ];
+       fhir:ElementDefinition.short [ fhir:value "BePerformerTaskReference" ];
+       fhir:ElementDefinition.definition [ fhir:value "List of references to the tasks performed by each performer" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "*" ];
        fhir:ElementDefinition.base [
          fhir:ElementDefinition.base.path [ fhir:value "DomainResource.extension" ];
@@ -1129,9 +1129,9 @@
          fhir:index 0;
          fhir:ElementDefinition.type.code [ fhir:value "Extension" ];
          fhir:ElementDefinition.type.profile [
-           fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer";
+           fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-performer-task-reference";
            fhir:index 0;
-           fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer>
+           fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-performer-task-reference>
          ]
        ];
        fhir:ElementDefinition.condition [
@@ -4535,7 +4535,7 @@
        fhir:index 85;
        fhir:Element.id [ fhir:value "ServiceRequest.performer" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.performer" ];
-       fhir:ElementDefinition.short [ fhir:value "Requested performer - typically reference to practitioner but could also be reference to related person by business identifier or Reference.display" ];
+       fhir:ElementDefinition.short [ fhir:value "Requested performer - typically reference to practitionerroles" ];
        fhir:ElementDefinition.definition [ fhir:value "The desired performer for doing the requested service.  For example, the surgeon, dermatopathologist, endoscopist, etc." ];
        fhir:ElementDefinition.comment [ fhir:value "If multiple performers are present, it is interpreted as a list of *alternative* performers without any preference regardless of order.  If order of preference is needed use the [request-performerOrder extension](http://hl7.org/fhir/R4/extension-request-performerorder.html).  Use CareTeam to represent a group of performers (for example, Practitioner A *and* Practitioner B)." ];
        fhir:ElementDefinition.alias [
@@ -4543,7 +4543,7 @@
          fhir:index 0
        ];
        fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
-       fhir:ElementDefinition.max [ fhir:value "0" ];
+       fhir:ElementDefinition.max [ fhir:value "*" ];
        fhir:ElementDefinition.base [
          fhir:ElementDefinition.base.path [ fhir:value "ServiceRequest.performer" ];
          fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
@@ -4553,37 +4553,9 @@
          fhir:index 0;
          fhir:ElementDefinition.type.code [ fhir:value "Reference" ];
          fhir:ElementDefinition.type.targetProfile [
-           fhir:value "http://hl7.org/fhir/StructureDefinition/CareTeam";
-           fhir:index 0;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/CareTeam>
-         ], [
-           fhir:value "http://hl7.org/fhir/StructureDefinition/HealthcareService";
-           fhir:index 1;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/HealthcareService>
-         ], [
-           fhir:value "http://hl7.org/fhir/StructureDefinition/Device";
-           fhir:index 2;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Device>
-         ], [
-           fhir:value "http://hl7.org/fhir/StructureDefinition/RelatedPerson";
-           fhir:index 3;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/RelatedPerson>
-         ], [
-           fhir:value "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitioner";
-           fhir:index 4;
-           fhir:link <https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitioner>
-         ], [
            fhir:value "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole";
-           fhir:index 5;
+           fhir:index 0;
            fhir:link <https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole>
-         ], [
-           fhir:value "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-patient";
-           fhir:index 6;
-           fhir:link <https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-patient>
-         ], [
-           fhir:value "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-organization";
-           fhir:index 7;
-           fhir:link <https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-organization>
          ]
        ];
        fhir:ElementDefinition.constraint [

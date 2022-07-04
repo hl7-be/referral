@@ -10,7 +10,7 @@
   "name": "HL7BEReferralPrescriptionWGImplementationGuideworkinprogress",
   "title": "HL7 BE Referral Prescription WG Implementation Guide (work in progress)",
   "status": "draft",
-  "date": "2022-07-04T13:52:58+00:00",
+  "date": "2022-07-04T16:05:57+00:00",
   "packageId": "hl7.fhir.be.referral",
   "license": "CC0-1.0",
   "fhirVersion": [
@@ -350,6 +350,20 @@
         },
         "name": "BeLabPrescription",
         "description": "This is the Belgian profile for a laboratory order.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/be-performer-task"
+        },
+        "name": "BePerformerTask",
+        "description": "Subtask performed by one performer",
         "exampleBoolean": false
       },
       {
@@ -728,6 +742,34 @@
         },
         "name": "BePSSInfo",
         "description": "Information regarding the Prescription Search Support",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/be-ext-Performer-reference"
+        },
+        "name": "BePerformerReference",
+        "description": "BePerformerReference",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/be-ext-performer-task-reference"
+        },
+        "name": "BePerformerTaskReference",
+        "description": "BePerformerTaskReference",
         "exampleBoolean": false
       },
       {
@@ -1895,6 +1937,19 @@
           "reference": "Practitioner/practitioner2"
         },
         "name": "practitioner2",
+        "exampleBoolean": true
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "PractitionerRole"
+          }
+        ],
+        "reference": {
+          "reference": "PractitionerRole/practitionerrole1"
+        },
+        "name": "practitionerrole1",
         "exampleBoolean": true
       },
       {

@@ -21,7 +21,6 @@
       <sch:assert test="count(f:extension[@url = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-execution-period']) &lt;= 1">extension with URL = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-execution-period': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-end-date']) &lt;= 1">extension with URL = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-end-date': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-draft-date']) &lt;= 1">extension with URL = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-draft-date': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer']) &gt;= 1">extension with URL = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer': minimum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-proposal-type']) &lt;= 1">extension with URL = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-proposal-type': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-task-reference']) &lt;= 1">extension with URL = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-task-reference': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-pss-info']) &lt;= 1">extension with URL = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-pss-info': maximum cardinality of 'extension' is 1</sch:assert>
@@ -31,7 +30,6 @@
       <sch:assert test="count(f:authoredOn) &gt;= 1">authoredOn: minimum cardinality of 'authoredOn' is 1</sch:assert>
       <sch:assert test="count(f:requester) &gt;= 1">requester: minimum cardinality of 'requester' is 1</sch:assert>
       <sch:assert test="count(f:performerType) &lt;= 0">performerType: maximum cardinality of 'performerType' is 0</sch:assert>
-      <sch:assert test="count(f:performer) &lt;= 0">performer: maximum cardinality of 'performer' is 0</sch:assert>
       <sch:assert test="count(f:reasonCode) &gt;= 1">reasonCode: minimum cardinality of 'reasonCode' is 1</sch:assert>
       <sch:assert test="count(f:reasonCode) &lt;= 1">reasonCode: maximum cardinality of 'reasonCode' is 1</sch:assert>
     </sch:rule>

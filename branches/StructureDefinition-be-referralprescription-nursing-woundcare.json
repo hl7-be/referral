@@ -425,7 +425,7 @@
         },
         "short": "Extension",
         "definition": "An Extension",
-        "min": 3,
+        "min": 2,
         "max": "*",
         "base": {
           "path": "DomainResource.extension",
@@ -1012,12 +1012,12 @@
         "isModifier": false
       },
       {
-        "id": "ServiceRequest.extension:performer",
+        "id": "ServiceRequest.extension:performertasks",
         "path": "ServiceRequest.extension",
-        "sliceName": "performer",
-        "short": "Takes the place of performer and performerType",
-        "definition": "Intended performers for this request",
-        "min": 1,
+        "sliceName": "performertasks",
+        "short": "BePerformerTaskReference",
+        "definition": "List of references to the tasks performed by each performer",
+        "min": 0,
         "max": "*",
         "base": {
           "path": "DomainResource.extension",
@@ -1028,7 +1028,7 @@
           {
             "code": "Extension",
             "profile": [
-              "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer"
+              "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-performer-task-reference"
             ]
           }
         ],
@@ -3977,14 +3977,14 @@
       {
         "id": "ServiceRequest.performer",
         "path": "ServiceRequest.performer",
-        "short": "Requested performer - typically reference to practitioner but could also be reference to related person by business identifier or Reference.display",
+        "short": "Requested performer - typically reference to practitionerroles",
         "definition": "The desired performer for doing the requested service.  For example, the surgeon, dermatopathologist, endoscopist, etc.",
         "comment": "If multiple performers are present, it is interpreted as a list of *alternative* performers without any preference regardless of order.  If order of preference is needed use the [request-performerOrder extension](http://hl7.org/fhir/R4/extension-request-performerorder.html).  Use CareTeam to represent a group of performers (for example, Practitioner A *and* Practitioner B).",
         "alias": [
           "request recipient"
         ],
         "min": 0,
-        "max": "0",
+        "max": "*",
         "base": {
           "path": "ServiceRequest.performer",
           "min": 0,
@@ -3994,14 +3994,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/CareTeam",
-              "http://hl7.org/fhir/StructureDefinition/HealthcareService",
-              "http://hl7.org/fhir/StructureDefinition/Device",
-              "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
-              "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitioner",
-              "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole",
-              "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-patient",
-              "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-organization"
+              "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole"
             ]
           }
         ],
