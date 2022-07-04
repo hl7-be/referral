@@ -14,5 +14,6 @@ Usage: #inline
 * dosageInstruction.timing.repeat.periodUnit = #d
 * dosageInstruction.text = "opzet hier: éénmalige sondage en lavement uitvoeren, maar persoon op voorhand verdoven met 5mg Midzaolan via subcutane inspuiting"
 * requester.reference = "#Requester1"
-* extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
-* extension[performer].extension[actor].valueReference.reference = "#Performer1"
+* extension[performer].valueReference = Reference(practitionerrole1)
+* extension[validity].valuePeriod.start = "2022-10-10"
+* extension[validity].valuePeriod.start = "2022-10-12"

@@ -21,5 +21,6 @@ Usage: #example
 * dosageInstruction.timing.repeat.timeOfDay = "20:00:00"
 * dosageInstruction.text = "2 spuiten simultaan te geven.  5 days ‘s avonds rond 20.00u"
 * requester.reference = "Practitioner/practitioner1"
-* extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
-* extension[performer].extension[actor].valueReference.reference = "Practitioner/practitioner2"
+* extension[performer].valueReference = Reference(practitionerrole1)
+* extension[validity].valuePeriod.start = "2022-10-10"
+* extension[validity].valuePeriod.start = "2022-10-12"

@@ -17,6 +17,5 @@ Usage: #example
 * priority = #routine
 * code.text = "Rx + echo rechtervoet"
 * subject = Reference(patient1)
-* extension[performer].extension[role].valueCodeableConcept = $sct#66862007 "Radiologist"
 * reasonCode.text = "Fractuur? Ligamentair letsel?"
 * supportingInfo = Reference(condition1)

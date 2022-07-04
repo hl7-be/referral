@@ -20,8 +20,7 @@ Usage: #example
 * occurrenceTiming.repeat.period = 1
 * occurrenceTiming.repeat.periodUnit = #d
 * requester = Reference(practitioner1)
-* extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
-* extension[performer].extension[actor].valueReference = Reference(practitioner2)
+* performer[+] = Reference(practitionerrole1)
 * note.text = "Patient cannot move"
 * reasonCode.text = "reason"
 * authoredOn = "2020-01-01"

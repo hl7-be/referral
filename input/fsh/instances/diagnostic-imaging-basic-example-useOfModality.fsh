@@ -18,7 +18,6 @@ Usage: #example
 * orderDetail[+] = $DCM#US "Ultrasound"
 * subject = Reference(patient1)
 * requester = Reference(practitioner1)
-* extension[performer].extension[role].valueCodeableConcept = $sct#66862007 "Radiologist"
 * reasonCode.text = "Fractuur? Ligamentair letsel?"
 * supportingInfo = Reference(condition1)
 * bodySite = $sct#7769000 "Structure of right foot (body structure)"
