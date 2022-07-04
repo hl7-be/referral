@@ -10,7 +10,7 @@
   "name": "HL7BEReferralPrescriptionWGImplementationGuideworkinprogress",
   "title": "HL7 BE Referral Prescription WG Implementation Guide (work in progress)",
   "status": "draft",
-  "date": "2022-07-04T09:46:47+00:00",
+  "date": "2022-07-04T09:47:47+00:00",
   "packageId": "hl7.fhir.be.referral",
   "license": "CC0-1.0",
   "fhirVersion": [
@@ -682,10 +682,24 @@
           }
         ],
         "reference": {
-          "reference": "StructureDefinition/be-ext-lastest-end-date"
+          "reference": "StructureDefinition/be-ext-latest-end-date"
         },
-        "name": "BeLastestEndDate",
+        "name": "BeLatestEndDate",
         "description": "Request must be performed before",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:extension"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/be-ext-pps-info"
+        },
+        "name": "BePPSInfo",
+        "description": "Information regarding the Prescription Proposal Support",
         "exampleBoolean": false
       },
       {
