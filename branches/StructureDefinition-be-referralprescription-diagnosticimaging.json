@@ -723,13 +723,13 @@
         ]
       },
       {
-        "id": "ServiceRequest.extension:informParty",
+        "id": "ServiceRequest.extension:feedback",
         "path": "ServiceRequest.extension",
-        "sliceName": "informParty",
-        "short": "Parties to inform of fulfillment of the prescription, besides the prescriber.",
-        "definition": "An Extension",
+        "sliceName": "feedback",
+        "short": "Give feedback to the prescriber",
+        "definition": "Optional Extension Element - found in all resources.",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "base": {
           "path": "DomainResource.extension",
           "min": 0,
@@ -739,7 +739,7 @@
           {
             "code": "Extension",
             "profile": [
-              "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-inform-party"
+              "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-feedback-to-prescriber"
             ]
           }
         ],
@@ -765,7 +765,17 @@
           }
         ],
         "mustSupport": true,
-        "isModifier": false
+        "isModifier": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          },
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
       },
       {
         "id": "ServiceRequest.extension:coprescriber",

@@ -773,13 +773,13 @@
        ]
      ], [
        fhir:index 14;
-       fhir:Element.id [ fhir:value "ServiceRequest.extension:informParty" ];
+       fhir:Element.id [ fhir:value "ServiceRequest.extension:feedback" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.extension" ];
-       fhir:ElementDefinition.sliceName [ fhir:value "informParty" ];
-       fhir:ElementDefinition.short [ fhir:value "Parties to inform of fulfillment of the prescription, besides the prescriber." ];
-       fhir:ElementDefinition.definition [ fhir:value "An Extension" ];
+       fhir:ElementDefinition.sliceName [ fhir:value "feedback" ];
+       fhir:ElementDefinition.short [ fhir:value "Give feedback to the prescriber" ];
+       fhir:ElementDefinition.definition [ fhir:value "Optional Extension Element - found in all resources." ];
        fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
-       fhir:ElementDefinition.max [ fhir:value "*" ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
        fhir:ElementDefinition.base [
          fhir:ElementDefinition.base.path [ fhir:value "DomainResource.extension" ];
          fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
@@ -789,9 +789,9 @@
          fhir:index 0;
          fhir:ElementDefinition.type.code [ fhir:value "Extension" ];
          fhir:ElementDefinition.type.profile [
-           fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-inform-party";
+           fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-feedback-to-prescriber";
            fhir:index 0;
-           fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-inform-party>
+           fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-feedback-to-prescriber>
          ]
        ];
        fhir:ElementDefinition.condition [
@@ -822,7 +822,16 @@
          ]
        ];
        fhir:ElementDefinition.mustSupport [ fhir:value "true"^^xsd:boolean ];
-       fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ]
+       fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ];
+       fhir:ElementDefinition.mapping [
+         fhir:index 0;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "rim" ];
+         fhir:ElementDefinition.mapping.map [ fhir:value "n/a" ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.mapping.identity [ fhir:value "rim" ];
+         fhir:ElementDefinition.mapping.map [ fhir:value "N/A" ]
+       ]
      ], [
        fhir:index 15;
        fhir:Element.id [ fhir:value "ServiceRequest.extension:coprescriber" ];
