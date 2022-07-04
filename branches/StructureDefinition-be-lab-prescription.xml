@@ -652,10 +652,10 @@ This information includes diagnosis, clinical findings and other observations.  
     <element id="ServiceRequest.extension:coprescriber">
       <path value="ServiceRequest.extension"/>
       <sliceName value="coprescriber"/>
-      <short value="Other parties that have to take part in the prescription."/>
+      <short value="Info about the other parties that have to take part in the prescription."/>
       <definition value="Other practitioners that must take part in this prescripiton"/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="1"/>
       <base>
         <path value="DomainResource.extension"/>
         <min value="0"/>
@@ -663,7 +663,7 @@ This information includes diagnosis, clinical findings and other observations.  
       </base>
       <type>
         <code value="Extension"/>
-        <profile value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-co-prescriber"/>
+        <profile value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-co-prescriber-info"/>
       </type>
       <condition value="ele-1"/>
       <constraint>
@@ -835,7 +835,7 @@ This information includes diagnosis, clinical findings and other observations.  
       <short value="Takes the place of performer and performerType"/>
       <definition value="Intended performers for this request"/>
       <min value="1"/>
-      <max value="1"/>
+      <max value="*"/>
       <base>
         <path value="DomainResource.extension"/>
         <min value="0"/>

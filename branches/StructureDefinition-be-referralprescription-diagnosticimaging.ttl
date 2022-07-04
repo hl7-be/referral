@@ -837,10 +837,10 @@
        fhir:Element.id [ fhir:value "ServiceRequest.extension:coprescriber" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.extension" ];
        fhir:ElementDefinition.sliceName [ fhir:value "coprescriber" ];
-       fhir:ElementDefinition.short [ fhir:value "Other parties that have to take part in the prescription." ];
+       fhir:ElementDefinition.short [ fhir:value "Info about the other parties that have to take part in the prescription." ];
        fhir:ElementDefinition.definition [ fhir:value "Other practitioners that must take part in this prescripiton" ];
        fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
-       fhir:ElementDefinition.max [ fhir:value "*" ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
        fhir:ElementDefinition.base [
          fhir:ElementDefinition.base.path [ fhir:value "DomainResource.extension" ];
          fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
@@ -850,9 +850,9 @@
          fhir:index 0;
          fhir:ElementDefinition.type.code [ fhir:value "Extension" ];
          fhir:ElementDefinition.type.profile [
-           fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-co-prescriber";
+           fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-co-prescriber-info";
            fhir:index 0;
-           fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-co-prescriber>
+           fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-co-prescriber-info>
          ]
        ];
        fhir:ElementDefinition.condition [
@@ -1100,7 +1100,7 @@
        fhir:ElementDefinition.short [ fhir:value "Takes the place of performer and performerType" ];
        fhir:ElementDefinition.definition [ fhir:value "Intended performers for this request" ];
        fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
-       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.max [ fhir:value "*" ];
        fhir:ElementDefinition.base [
          fhir:ElementDefinition.base.path [ fhir:value "DomainResource.extension" ];
          fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
