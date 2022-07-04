@@ -272,8 +272,7 @@
       {
         "id": "BeNursingPrescription.requisition",
         "path": "BeNursingPrescription.requisition",
-        "short": "An identifier for the bundle this prescription belongs to. The type of bundle can be indicated in the type of the identifier",
-        "definition": "An identifier for the bundle this prescription belongs to. The type of bundle can be indicated in the type of the identifier",
+        "short": "An identifier for the bundle this prescription belongs to.",
         "min": 0,
         "max": "1",
         "base": {
@@ -283,7 +282,24 @@
         },
         "type": [
           {
-            "code": "Identifier"
+            "code": "positiveInt"
+          }
+        ]
+      },
+      {
+        "id": "BeNursingPrescription.requistionType",
+        "path": "BeNursingPrescription.requistionType",
+        "short": "The type of bundle can be indicated in the type of the identifier",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.requistionType",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
           }
         ]
       },

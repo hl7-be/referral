@@ -226,8 +226,7 @@
     </element>
     <element id="BeLaboratoryPrescription.requisition">
       <path value="BeLaboratoryPrescription.requisition"/>
-      <short value="An identifier for the bundle this prescription belongs to. The type of bundle can be indicated in the type of the identifier"/>
-      <definition value="An identifier for the bundle this prescription belongs to. The type of bundle can be indicated in the type of the identifier"/>
+      <short value="An identifier for the bundle this prescription belongs to."/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -236,7 +235,21 @@
         <max value="1"/>
       </base>
       <type>
-        <code value="Identifier"/>
+        <code value="positiveInt"/>
+      </type>
+    </element>
+    <element id="BeLaboratoryPrescription.requistionType">
+      <path value="BeLaboratoryPrescription.requistionType"/>
+      <short value="The type of bundle can be indicated in the type of the identifier"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.requistionType"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="CodeableConcept"/>
       </type>
     </element>
     <element id="BeLaboratoryPrescription.basedOn">
