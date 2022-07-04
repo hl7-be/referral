@@ -30,7 +30,7 @@ Description: "The common structure for referral prescription."
     BeIntendedPerformer named performer 1..1 MS and
     BeProposalType named proposalType 0..1 MS and
     BeTaskReference named task 0..1 MS and
-    BePPSInfo named pps 0..1 MS and
+    BePSSInfo named pss 0..1 MS and
     BeExtRecorder named recorder 0..1 MS
 * extension[statusReason].valueCodeableConcept 1..1
 * extension[statusReason].valueCodeableConcept from BeReasonReferralStatus (extensible)
