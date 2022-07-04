@@ -34,6 +34,7 @@ Description: "Logical model describing the model for the prescription referral. 
 * validitionPeriod 1..1 Period "Period of validity of prescription" "Period of validity of prescription"
 * treatmentPeriod 0..1 Period "When this prescription is executed, available after start of execution" "When this prescription is executed, available after start of execution"
 * treatmentValidationEndDate 0..1 dateTime "The latest moment to end this treatment" "The latest moment to end this treatment"
+* creationEndDate 0..1 dateTime "The prescription must have left the draft status before" "The prescription must have left the draft status before"
 * intendedPerformer 0..* BackboneElement "The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality" "The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality"
 * intendedPerformer.performer 0..* Reference "A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)" "A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)"
 * intendedPerformer.discipline 1..1 CodeableConcept "The required discipline of the provider party" "The required discipline of the provider party"

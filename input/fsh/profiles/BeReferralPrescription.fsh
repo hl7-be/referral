@@ -26,6 +26,7 @@ Description: "The common structure for referral prescription."
     BeValidityPeriod named validity 1..1 MS and
     BeExecutionPeriod named executed 0..1 MS and
     BeLatestEndDate named latest 0..1 MS and
+    BeLatestDraftDate named latestDraft 0..1 MS and
     BeIntendedPerformer named performer 1..1 MS and
     BeProposalType named proposalType 0..1 MS and
     BeTaskReference named task 0..1 MS and
@@ -39,6 +40,8 @@ Description: "The common structure for referral prescription."
 * extension[latest] ^short = "Request must be executed before"
 * extension[performer] ^short = "Takes the place of performer and performerType"
 * extension[feedback] ^short = "Give feedback to the prescriber"
+* extension[recorder] ^short = "The person responsable for this information, not necessarily the person who recorded the information"
+* extension[latestDraft] ^short = "The prescription must have left the draft status befor this moment"
 * identifier MS
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
