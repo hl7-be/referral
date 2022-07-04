@@ -1,11 +1,17 @@
 Instance: example01-care02-colon-cleansing
 InstanceOf: BeReferralPrescriptionNursing
-Usage: #inline
-* meta.profile[0] = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing"
-* meta.profile[+] = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-digestive-system-care"
+Usage: #example
+* contained[+] = referral-task
+* contained[+] = performer-task
+* contained[+] = patient1
+* contained[+] = Requester1
+* contained[+] = practitionerrole1
+* contained[+] = Performer1
 * extension[statusReason].valueCodeableConcept = $be-status-reason#other "Other"
 * extension[validity].valuePeriod.start = "2020-01-01"
 * extension[validity].valuePeriod.end = "2021-01-01"
+* extension[task].valueReference = Reference(referral-task)
+* extension[performertasks].valueReference[+] = Reference(performer-task)
 * status = #active
 * intent = #order
 * category = $sct#9632001
