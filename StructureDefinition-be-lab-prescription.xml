@@ -605,13 +605,13 @@ This information includes diagnosis, clinical findings and other observations.  
         <map value="N/A"/>
       </mapping>
     </element>
-    <element id="ServiceRequest.extension:informParty">
+    <element id="ServiceRequest.extension:feedback">
       <path value="ServiceRequest.extension"/>
-      <sliceName value="informParty"/>
-      <short value="Parties to inform of fulfillment of the prescription, besides the prescriber."/>
-      <definition value="An Extension"/>
+      <sliceName value="feedback"/>
+      <short value="Give feedback to the prescriber"/>
+      <definition value="Optional Extension Element - found in all resources."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="1"/>
       <base>
         <path value="DomainResource.extension"/>
         <min value="0"/>
@@ -619,7 +619,7 @@ This information includes diagnosis, clinical findings and other observations.  
       </base>
       <type>
         <code value="Extension"/>
-        <profile value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-inform-party"/>
+        <profile value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-feedback-to-prescriber"/>
       </type>
       <condition value="ele-1"/>
       <constraint>
@@ -640,6 +640,14 @@ This information includes diagnosis, clinical findings and other observations.  
       </constraint>
       <mustSupport value="true"/>
       <isModifier value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
     </element>
     <element id="ServiceRequest.extension:coprescriber">
       <path value="ServiceRequest.extension"/>
