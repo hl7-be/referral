@@ -799,6 +799,42 @@
       <mustSupport value="true"/>
       <isModifier value="false"/>
     </element>
+    <element id="ServiceRequest.extension:latestDraft">
+      <path value="ServiceRequest.extension"/>
+      <sliceName value="latestDraft"/>
+      <short value="The prescription must have left the draft status befor this moment"/>
+      <definition value="Request must leave draft status before"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="DomainResource.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+        <profile value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-draft-date"/>
+      </type>
+      <condition value="ele-1"/>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
+    </element>
     <element id="ServiceRequest.extension:performer">
       <path value="ServiceRequest.extension"/>
       <sliceName value="performer"/>
@@ -946,7 +982,7 @@
     <element id="ServiceRequest.extension:recorder">
       <path value="ServiceRequest.extension"/>
       <sliceName value="recorder"/>
-      <short value="Extension"/>
+      <short value="The person responsable for this information, not necessarily the person who recorded the information"/>
       <definition value="An Extension"/>
       <min value="0"/>
       <max value="1"/>

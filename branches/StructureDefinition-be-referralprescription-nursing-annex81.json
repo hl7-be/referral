@@ -967,6 +967,51 @@
         "isModifier": false
       },
       {
+        "id": "ServiceRequest.extension:latestDraft",
+        "path": "ServiceRequest.extension",
+        "sliceName": "latestDraft",
+        "short": "The prescription must have left the draft status befor this moment",
+        "definition": "Request must leave draft status before",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "DomainResource.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-draft-date"
+            ]
+          }
+        ],
+        "condition": [
+          "ele-1"
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          },
+          {
+            "key": "ext-1",
+            "severity": "error",
+            "human": "Must have either extensions or value[x], not both",
+            "expression": "extension.exists() != value.exists()",
+            "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+            "source": "http://hl7.org/fhir/StructureDefinition/Extension"
+          }
+        ],
+        "mustSupport": true,
+        "isModifier": false
+      },
+      {
         "id": "ServiceRequest.extension:performer",
         "path": "ServiceRequest.extension",
         "sliceName": "performer",
@@ -1150,7 +1195,7 @@
         "id": "ServiceRequest.extension:recorder",
         "path": "ServiceRequest.extension",
         "sliceName": "recorder",
-        "short": "Extension",
+        "short": "The person responsable for this information, not necessarily the person who recorded the information",
         "definition": "An Extension",
         "min": 0,
         "max": "1",

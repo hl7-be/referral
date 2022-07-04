@@ -348,6 +348,23 @@
        ]
      ], [
        fhir:index 17;
+       fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.creationEndDate" ];
+       fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.creationEndDate" ];
+       fhir:ElementDefinition.short [ fhir:value "The prescription must have left the draft status before" ];
+       fhir:ElementDefinition.definition [ fhir:value "The prescription must have left the draft status before" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.creationEndDate" ];
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "dateTime" ]
+       ]
+     ], [
+       fhir:index 18;
        fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.intendedPerformer" ];
        fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.intendedPerformer" ];
        fhir:ElementDefinition.short [ fhir:value "The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality" ];
@@ -364,7 +381,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "BackboneElement" ]
        ]
      ], [
-       fhir:index 18;
+       fhir:index 19;
        fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.intendedPerformer.performer" ];
        fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.intendedPerformer.performer" ];
        fhir:ElementDefinition.short [ fhir:value "A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)" ];
@@ -381,7 +398,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
        ]
      ], [
-       fhir:index 19;
+       fhir:index 20;
        fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.intendedPerformer.discipline" ];
        fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.intendedPerformer.discipline" ];
        fhir:ElementDefinition.short [ fhir:value "The required discipline of the provider party" ];
@@ -398,7 +415,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 20;
+       fhir:index 21;
        fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.intendedPerformer.period" ];
        fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.intendedPerformer.period" ];
        fhir:ElementDefinition.short [ fhir:value "Start and enddate for the particular provider" ];
@@ -415,7 +432,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "Period" ]
        ]
      ], [
-       fhir:index 21;
+       fhir:index 22;
        fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.intendedPerformer.organization" ];
        fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.intendedPerformer.organization" ];
        fhir:ElementDefinition.short [ fhir:value "Reference to an organization that will add the performer" ];
@@ -432,7 +449,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
        ]
      ], [
-       fhir:index 22;
+       fhir:index 23;
        fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.toBePerformedAfter" ];
        fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.toBePerformedAfter" ];
        fhir:ElementDefinition.short [ fhir:value "The current prescription should be performed after this one" ];
@@ -449,7 +466,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
        ]
      ], [
-       fhir:index 23;
+       fhir:index 24;
        fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.serviceRequested" ];
        fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.serviceRequested" ];
        fhir:ElementDefinition.short [ fhir:value "What is prescribed" ];
@@ -466,7 +483,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 24;
+       fhir:index 25;
        fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.problemCode" ];
        fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.problemCode" ];
        fhir:ElementDefinition.short [ fhir:value "The problem (code or reference) that is the main reason for this prescription" ];
@@ -483,7 +500,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
        ]
      ], [
-       fhir:index 25;
+       fhir:index 26;
        fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.supportingInfo" ];
        fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.supportingInfo" ];
        fhir:ElementDefinition.short [ fhir:value "Care Set Problem" ];
@@ -500,7 +517,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
        ]
      ], [
-       fhir:index 26;
+       fhir:index 27;
        fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.resultReceiver" ];
        fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.resultReceiver" ];
        fhir:ElementDefinition.short [ fhir:value "True if the prescriber wants feedback. Other caregivers can be mentioned in the note" ];
@@ -517,7 +534,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "boolean" ]
        ]
      ], [
-       fhir:index 27;
+       fhir:index 28;
        fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.status" ];
        fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.status" ];
        fhir:ElementDefinition.short [ fhir:value "Current status" ];
@@ -541,7 +558,7 @@
          ]
        ]
      ], [
-       fhir:index 28;
+       fhir:index 29;
        fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.statusReason" ];
        fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.statusReason" ];
        fhir:ElementDefinition.short [ fhir:value "Reason current status" ];
@@ -558,7 +575,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 29;
+       fhir:index 30;
        fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.treatmentStatus" ];
        fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.treatmentStatus" ];
        fhir:ElementDefinition.short [ fhir:value "Status of the treatment" ];
@@ -575,7 +592,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 30;
+       fhir:index 31;
        fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.treatmentStatusReason" ];
        fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.treatmentStatusReason" ];
        fhir:ElementDefinition.short [ fhir:value "Reason treatment status" ];
@@ -592,7 +609,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 31;
+       fhir:index 32;
        fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.bodyLocation" ];
        fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.bodyLocation" ];
        fhir:ElementDefinition.short [ fhir:value "Place where the treatment should be executed" ];
@@ -609,7 +626,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "BackboneElement" ]
        ]
      ], [
-       fhir:index 32;
+       fhir:index 33;
        fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.bodyLocation.bodySite" ];
        fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.bodyLocation.bodySite" ];
        fhir:ElementDefinition.short [ fhir:value "Anatomical place where the treatment should be executed" ];
@@ -626,7 +643,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 33;
+       fhir:index 34;
        fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.bodyLocation.bodyLaterality" ];
        fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.bodyLocation.bodyLaterality" ];
        fhir:ElementDefinition.short [ fhir:value "Side of the body" ];
@@ -643,7 +660,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 34;
+       fhir:index 35;
        fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.note" ];
        fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.note" ];
        fhir:ElementDefinition.short [ fhir:value "Additional text notes about the request." ];
@@ -660,7 +677,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "Annotation" ]
        ]
      ], [
-       fhir:index 35;
+       fhir:index 36;
        fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.intent" ];
        fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.intent" ];
        fhir:ElementDefinition.short [ fhir:value "Proposal, Prolongation, Prescription" ];
@@ -677,7 +694,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "code" ]
        ]
      ], [
-       fhir:index 36;
+       fhir:index 37;
        fhir:Element.id [ fhir:value "BePhysiotherapyPrescription.numberOfSessions" ];
        fhir:ElementDefinition.path [ fhir:value "BePhysiotherapyPrescription.numberOfSessions" ];
        fhir:ElementDefinition.short [ fhir:value "Number of pt sessions that are prescribed" ];
