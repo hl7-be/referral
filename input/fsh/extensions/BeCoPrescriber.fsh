@@ -17,16 +17,11 @@ Description: "Other practitioners that must take part in this prescripiton"
 * . ^short = "BeCoPrescriber"
 * . ^definition = "Other practitioners that must take part in this prescripiton"
 * extension contains
-    coprescriber 0..1 MS and
-    coprescriberType 1..1 MS and
+    coprescriber 1..1 MS and
     coprescriptionStatus 1..1 MS and
     required 1..1 MS
-* extension[coprescriber] ^short = "Reference to practitioner"
-* extension[coprescriber].value[x] only Reference(CareTeam or HealthcareService or Device or RelatedPerson or BePractitioner or BePractitionerRole or BePatient or BeOrganization)
-* extension[coprescriberType] ^short = "Discipline of coprescriber"
-* extension[coprescriberType].value[x] only CodeableConcept
-* extension[coprescriberType].valueCodeableConcept 1..1
-* extension[coprescriberType].valueCodeableConcept from ParticipantRoles (required)
+* extension[coprescriber] ^short = "Reference to practitionerrole"
+* extension[coprescriber].value[x] only Reference(BePractitionerRole)
 * extension[coprescriptionStatus] ^short = "Status of coprescription"
 * extension[coprescriptionStatus].value[x] only CodeableConcept
 * extension[coprescriptionStatus].valueCodeableConcept 1..1
