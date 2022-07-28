@@ -26,7 +26,7 @@ Description: "Logical model describing the model for the prescription referral. 
 * co-prescriber.co-prescriberType 1..1 code "Type of the practitioner" "Type of the practitioner"
 * co-prescriber.status 0..1 code "Status of co prescribing status (to sign, signed or refused)" "Status of co prescribing status (to sign, signed or refused)"
 * patient 1..1 Reference "The SSIN of the person for which the referral is prescribed." "The SSIN of the person for which the referral is prescribed."
-* prescriptionNumber 0..1 Identifier "An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available" "An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available"
+* prescriptionNumber 1..1 Identifier "An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available" "An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available"
 * pssNumber 0..1 Identifier "An identifier for the Prescription Search Support"
 * pssRejectionReason 0..1 Annotation "Reason for not following the PSS suggestion"
 * requisition 0..1 positiveInt "An identifier for the bundle this prescription belongs to." " "
