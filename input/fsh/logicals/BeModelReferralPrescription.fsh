@@ -39,7 +39,7 @@ Description: "Logical model describing the model for the prescription referral. 
 * intendedPerformer 1..* BackboneElement "The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality" "The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality"
 * intendedPerformer.performer 0..1 Reference "A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)" "A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)"
 * intendedPerformer.discipline 1..1 CodeableConcept "The required discipline of the provider party" "The required discipline of the provider party"
-* intendedPerformer.period 1..1 Period "Start and enddate for the particular provider"
+* intendedPerformer.period 0..1 Period "Start and enddate for the particular provider"
 * intendedPerformer.organization 0..1 Reference "Reference to an organization that will add the performer"
 * toBePerformedAfter 0..1 Reference "The current prescription should be performed after this one"
 * serviceRequested 1..1 CodeableConcept "What is prescribed" "What is prescribed"
