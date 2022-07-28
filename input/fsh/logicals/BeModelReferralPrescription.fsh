@@ -23,7 +23,7 @@ Description: "Logical model describing the model for the prescription referral. 
 * prescriber 1..1 Reference "The prescribing healthcare party" "The prescribing healthcare party"
 * co-prescriber 0..* BackboneElement "Information about co prescribers" "Information about co prescribers"
 * co-prescriber.co-prescriber 0..1 Reference "The co-prescriber party" "The co-prescriber party"
-* co-prescriber.co-prescriberType 0..1 code "Type of the practitioner" "Type of the practitioner"
+* co-prescriber.co-prescriberType 1..1 code "Type of the practitioner" "Type of the practitioner"
 * co-prescriber.status 0..1 code "Status of co prescribing status (to sign, signed or refused)" "Status of co prescribing status (to sign, signed or refused)"
 * patient 1..1 Reference "The SSIN of the person for which the referral is prescribed." "The SSIN of the person for which the referral is prescribed."
 * prescriptionNumber 0..1 Identifier "An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available" "An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available"
