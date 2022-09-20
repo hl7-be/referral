@@ -2,30 +2,20 @@
 "BePhysiotherapyPrescription","BePhysiotherapyPrescription","","","",0,*,"","","","","","Logical model describing the model for the prescription referral. This draft is used in the HL7 Belgian workgroup for referral.","","","","","","","","","",,,,,"",,,,"Base",0,*,"",""
 "BePhysiotherapyPrescription.recordedDate","BePhysiotherapyPrescription.recordedDate","","","",1,1,"","","","dateTime {[]} {[]}
 ","When this prescription was created","When this prescription was created","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.recordedDate",1,1,"",""
-"BePhysiotherapyPrescription.recorder","BePhysiotherapyPrescription.recorder","","","",1,1,"","","","Reference {[]} {[]}
-","The person who is responsable for the content, not necessarily the person who entered the content. This is either the prescriber, a co-prescriber or a performer","The person who is responsable for the content, not necessarily the person who entered the content. This is either the prescriber, a co-prescriber or a performer","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.recorder",1,1,"",""
 "BePhysiotherapyPrescription.prescriber","BePhysiotherapyPrescription.prescriber","","","",1,1,"","","","Reference {[]} {[]}
 ","The prescribing healthcare party","The prescribing healthcare party","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.prescriber",1,1,"",""
 "BePhysiotherapyPrescription.co-prescriber","BePhysiotherapyPrescription.co-prescriber","","","",0,*,"","","","BackboneElement {[]} {[]}
 ","Information about co prescribers","Information about co prescribers","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.co-prescriber",0,*,"",""
 "BePhysiotherapyPrescription.co-prescriber.co-prescriber","BePhysiotherapyPrescription.co-prescriber.co-prescriber","","","",0,1,"","","","Reference {[]} {[]}
 ","The co-prescriber party","The co-prescriber party","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.co-prescriber.co-prescriber",0,1,"",""
-"BePhysiotherapyPrescription.co-prescriber.co-prescriberType","BePhysiotherapyPrescription.co-prescriber.co-prescriberType","","","",1,1,"","","","code {[]} {[]}
-","Type of the practitioner","Type of the practitioner","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.co-prescriber.co-prescriberType",1,1,"",""
+"BePhysiotherapyPrescription.co-prescriber.co-prescriberType","BePhysiotherapyPrescription.co-prescriber.co-prescriberType","","","",0,1,"","","","code {[]} {[]}
+","Type of the practitioner","Type of the practitioner","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.co-prescriber.co-prescriberType",0,1,"",""
 "BePhysiotherapyPrescription.co-prescriber.status","BePhysiotherapyPrescription.co-prescriber.status","","","",0,1,"","","","code {[]} {[]}
 ","Status of co prescribing status (to sign, signed or refused)","Status of co prescribing status (to sign, signed or refused)","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.co-prescriber.status",0,1,"",""
 "BePhysiotherapyPrescription.patient","BePhysiotherapyPrescription.patient","","","",1,1,"","","","Reference {[]} {[]}
 ","The SSIN of the person for which the referral is prescribed.","The SSIN of the person for which the referral is prescribed.","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.patient",1,1,"",""
-"BePhysiotherapyPrescription.prescriptionNumber","BePhysiotherapyPrescription.prescriptionNumber","","","",1,1,"","","","Identifier {[]} {[]}
-","An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available","An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.prescriptionNumber",1,1,"",""
-"BePhysiotherapyPrescription.pssNumber","BePhysiotherapyPrescription.pssNumber","","","",0,1,"","","","Identifier {[]} {[]}
-","An identifier for the Prescription Search Support","An identifier for the Prescription Search Support","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.pssNumber",0,1,"",""
-"BePhysiotherapyPrescription.pssRejectionReason","BePhysiotherapyPrescription.pssRejectionReason","","","",0,1,"","","","Annotation {[]} {[]}
-","Reason for not following the PSS suggestion","Reason for not following the PSS suggestion","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.pssRejectionReason",0,1,"",""
-"BePhysiotherapyPrescription.requisition","BePhysiotherapyPrescription.requisition","","","",0,1,"","","","positiveInt {[]} {[]}
-","An identifier for the bundle this prescription belongs to.","","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.requisition",0,1,"",""
-"BePhysiotherapyPrescription.requistionType","BePhysiotherapyPrescription.requistionType","","","",0,1,"","","","CodeableConcept {[]} {[]}
-","The type of bundle can be indicated in the type of the identifier","","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.requistionType",0,1,"",""
+"BePhysiotherapyPrescription.prescriptionNumber","BePhysiotherapyPrescription.prescriptionNumber","","","",0,1,"","","","Identifier {[]} {[]}
+","An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available","An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.prescriptionNumber",0,1,"",""
 "BePhysiotherapyPrescription.basedOn","BePhysiotherapyPrescription.basedOn","","","",0,*,"","","","Reference {[]} {[]}
 ","The original request or prescription triggered this prescription","The original request or prescription that is the reason for this request - for example when a detailed request is created by a broader request.","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.basedOn",0,*,"",""
 "BePhysiotherapyPrescription.validitionPeriod","BePhysiotherapyPrescription.validitionPeriod","","","",1,1,"","","","Period {[]} {[]}
@@ -34,20 +24,12 @@
 ","When this prescription is executed, available after start of execution","When this prescription is executed, available after start of execution","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.treatmentPeriod",0,1,"",""
 "BePhysiotherapyPrescription.treatmentValidationEndDate","BePhysiotherapyPrescription.treatmentValidationEndDate","","","",0,1,"","","","dateTime {[]} {[]}
 ","The latest moment to end this treatment","The latest moment to end this treatment","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.treatmentValidationEndDate",0,1,"",""
-"BePhysiotherapyPrescription.creationEndDate","BePhysiotherapyPrescription.creationEndDate","","","",0,1,"","","","dateTime {[]} {[]}
-","The prescription must have left the draft status before","The prescription must have left the draft status before","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.creationEndDate",0,1,"",""
-"BePhysiotherapyPrescription.intendedPerformer","BePhysiotherapyPrescription.intendedPerformer","","","",1,*,"","","","BackboneElement {[]} {[]}
-","The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality","The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedPerformer",1,*,"",""
-"BePhysiotherapyPrescription.intendedPerformer.performer","BePhysiotherapyPrescription.intendedPerformer.performer","","","",0,1,"","","","Reference {[]} {[]}
-","A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)","A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedPerformer.performer",0,1,"",""
-"BePhysiotherapyPrescription.intendedPerformer.discipline","BePhysiotherapyPrescription.intendedPerformer.discipline","","","",1,1,"","","","CodeableConcept {[]} {[]}
-","The required discipline of the provider party","The required discipline of the provider party","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedPerformer.discipline",1,1,"",""
-"BePhysiotherapyPrescription.intendedPerformer.period","BePhysiotherapyPrescription.intendedPerformer.period","","","",0,1,"","","","Period {[]} {[]}
-","Start and enddate for the particular provider","Start and enddate for the particular provider","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedPerformer.period",0,1,"",""
-"BePhysiotherapyPrescription.intendedPerformer.organization","BePhysiotherapyPrescription.intendedPerformer.organization","","","",0,1,"","","","Reference {[]} {[]}
-","Reference to an organization that will add the performer","Reference to an organization that will add the performer","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedPerformer.organization",0,1,"",""
-"BePhysiotherapyPrescription.toBePerformedAfter","BePhysiotherapyPrescription.toBePerformedAfter","","","",0,1,"","","","Reference {[]} {[]}
-","The current prescription should be performed after this one","The current prescription should be performed after this one","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.toBePerformedAfter",0,1,"",""
+"BePhysiotherapyPrescription.intendedProvider","BePhysiotherapyPrescription.intendedProvider","","","",0,*,"","","","BackboneElement {[]} {[]}
+","The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality","The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedProvider",0,*,"",""
+"BePhysiotherapyPrescription.intendedProvider.provider","BePhysiotherapyPrescription.intendedProvider.provider","","","",0,*,"","","","Reference {[]} {[]}
+","A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)","A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedProvider.provider",0,*,"",""
+"BePhysiotherapyPrescription.intendedProvider.discipline","BePhysiotherapyPrescription.intendedProvider.discipline","","","",1,1,"","","","CodeableConcept {[]} {[]}
+","The required discipline of the provider party","The required discipline of the provider party","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedProvider.discipline",1,1,"",""
 "BePhysiotherapyPrescription.serviceRequested","BePhysiotherapyPrescription.serviceRequested","","","",1,1,"","","","CodeableConcept {[]} {[]}
 ","What is prescribed","What is prescribed","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.serviceRequested",1,1,"",""
 "BePhysiotherapyPrescription.problemCode","BePhysiotherapyPrescription.problemCode","","","",1,1,"","","","Reference {[]} {[]}
@@ -60,16 +42,8 @@
 ","Current status","Current status","","","","","","","","","",,"required","","http://hl7.org/fhir/ValueSet/request-status","",,,,"BeReferralPrescription.status",0,1,"",""
 "BePhysiotherapyPrescription.statusReason","BePhysiotherapyPrescription.statusReason","","","",0,1,"","","","CodeableConcept {[]} {[]}
 ","Reason current status","Reason current status","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.statusReason",0,1,"",""
-"BePhysiotherapyPrescription.treatmentStatus","BePhysiotherapyPrescription.treatmentStatus","","","",0,1,"","","","CodeableConcept {[]} {[]}
-","Status of the treatment","Status of the treatment","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.treatmentStatus",0,1,"",""
-"BePhysiotherapyPrescription.treatmentStatusReason","BePhysiotherapyPrescription.treatmentStatusReason","","","",0,1,"","","","CodeableConcept {[]} {[]}
-","Reason treatment status","Reason treatment status","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.treatmentStatusReason",0,1,"",""
-"BePhysiotherapyPrescription.bodyLocation","BePhysiotherapyPrescription.bodyLocation","","","",0,*,"","","","BackboneElement {[]} {[]}
-","Place where the treatment should be executed","Place where the treatment should be executed","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.bodyLocation",0,*,"",""
-"BePhysiotherapyPrescription.bodyLocation.bodySite","BePhysiotherapyPrescription.bodyLocation.bodySite","","","",0,1,"","","","CodeableConcept {[]} {[]}
-","Anatomical place where the treatment should be executed","Anatomical place where the treatment should be executed","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.bodyLocation.bodySite",0,1,"",""
-"BePhysiotherapyPrescription.bodyLocation.bodyLaterality","BePhysiotherapyPrescription.bodyLocation.bodyLaterality","","","",0,1,"","","","CodeableConcept {[]} {[]}
-","Side of the body","Side of the body","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.bodyLocation.bodyLaterality",0,1,"",""
+"BePhysiotherapyPrescription.bodySite","BePhysiotherapyPrescription.bodySite","","","",0,*,"","","","CodeableConcept {[]} {[]}
+","Anatomical place where the treatment should be executed","Anatomical place where the treatment should be executed","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.bodySite",0,*,"",""
 "BePhysiotherapyPrescription.note","BePhysiotherapyPrescription.note","","","",0,*,"","","","Annotation {[]} {[]}
 ","Additional text notes about the request.","Additional text notes about the request.","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.note",0,*,"",""
 "BePhysiotherapyPrescription.intent","BePhysiotherapyPrescription.intent","","","",1,1,"","","","code {[]} {[]}
