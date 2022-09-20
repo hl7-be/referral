@@ -207,7 +207,7 @@
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
-                "valueUrl": "string"
+                "valueUrl": "id"
               }
             ],
             "code": "http://hl7.org/fhirpath/System.String"
@@ -418,7 +418,7 @@
         },
         "short": "Extension",
         "definition": "An Extension",
-        "min": 2,
+        "min": 3,
         "max": "*",
         "base": {
           "path": "DomainResource.extension",
@@ -725,13 +725,13 @@
         ]
       },
       {
-        "id": "ServiceRequest.extension:feedback",
+        "id": "ServiceRequest.extension:informParty",
         "path": "ServiceRequest.extension",
-        "sliceName": "feedback",
-        "short": "Give feedback to the prescriber",
-        "definition": "Optional Extension Element - found in all resources.",
+        "sliceName": "informParty",
+        "short": "Parties to inform of fulfillment of the prescription, besides the prescriber.",
+        "definition": "An Extension",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "base": {
           "path": "DomainResource.extension",
           "min": 0,
@@ -741,7 +741,7 @@
           {
             "code": "Extension",
             "profile": [
-              "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-feedback-to-prescriber"
+              "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-inform-party"
             ]
           }
         ],
@@ -767,26 +767,16 @@
           }
         ],
         "mustSupport": true,
-        "isModifier": false,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "n/a"
-          },
-          {
-            "identity": "rim",
-            "map": "N/A"
-          }
-        ]
+        "isModifier": false
       },
       {
         "id": "ServiceRequest.extension:coprescriber",
         "path": "ServiceRequest.extension",
         "sliceName": "coprescriber",
-        "short": "Info about the other parties that have to take part in the prescription.",
+        "short": "Other parties that have to take part in the prescription.",
         "definition": "Other practitioners that must take part in this prescripiton",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "base": {
           "path": "DomainResource.extension",
           "min": 0,
@@ -796,7 +786,7 @@
           {
             "code": "Extension",
             "profile": [
-              "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-co-prescriber-info"
+              "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-co-prescriber"
             ]
           }
         ],
@@ -931,7 +921,7 @@
           {
             "code": "Extension",
             "profile": [
-              "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-end-date"
+              "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-lastest-end-date"
             ]
           }
         ],
@@ -960,12 +950,12 @@
         "isModifier": false
       },
       {
-        "id": "ServiceRequest.extension:latestDraft",
+        "id": "ServiceRequest.extension:performer",
         "path": "ServiceRequest.extension",
-        "sliceName": "latestDraft",
-        "short": "The prescription must have left the draft status befor this moment",
-        "definition": "Request must leave draft status before",
-        "min": 0,
+        "sliceName": "performer",
+        "short": "Takes the place of performer and performerType",
+        "definition": "Intended performers for this request",
+        "min": 1,
         "max": "1",
         "base": {
           "path": "DomainResource.extension",
@@ -976,52 +966,7 @@
           {
             "code": "Extension",
             "profile": [
-              "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-draft-date"
-            ]
-          }
-        ],
-        "condition": [
-          "ele-1"
-        ],
-        "constraint": [
-          {
-            "key": "ele-1",
-            "severity": "error",
-            "human": "All FHIR elements must have a @value or children",
-            "expression": "hasValue() or (children().count() > id.count())",
-            "xpath": "@value|f:*|h:div",
-            "source": "http://hl7.org/fhir/StructureDefinition/Element"
-          },
-          {
-            "key": "ext-1",
-            "severity": "error",
-            "human": "Must have either extensions or value[x], not both",
-            "expression": "extension.exists() != value.exists()",
-            "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-            "source": "http://hl7.org/fhir/StructureDefinition/Extension"
-          }
-        ],
-        "mustSupport": true,
-        "isModifier": false
-      },
-      {
-        "id": "ServiceRequest.extension:performertasks",
-        "path": "ServiceRequest.extension",
-        "sliceName": "performertasks",
-        "short": "BePerformerTaskReference",
-        "definition": "List of references to the tasks performed by each performer",
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "DomainResource.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-performer-task-reference"
+              "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer"
             ]
           }
         ],
@@ -1112,96 +1057,6 @@
             "code": "Extension",
             "profile": [
               "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-task-reference"
-            ]
-          }
-        ],
-        "condition": [
-          "ele-1"
-        ],
-        "constraint": [
-          {
-            "key": "ele-1",
-            "severity": "error",
-            "human": "All FHIR elements must have a @value or children",
-            "expression": "hasValue() or (children().count() > id.count())",
-            "xpath": "@value|f:*|h:div",
-            "source": "http://hl7.org/fhir/StructureDefinition/Element"
-          },
-          {
-            "key": "ext-1",
-            "severity": "error",
-            "human": "Must have either extensions or value[x], not both",
-            "expression": "extension.exists() != value.exists()",
-            "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-            "source": "http://hl7.org/fhir/StructureDefinition/Extension"
-          }
-        ],
-        "mustSupport": true,
-        "isModifier": false
-      },
-      {
-        "id": "ServiceRequest.extension:pss",
-        "path": "ServiceRequest.extension",
-        "sliceName": "pss",
-        "short": "BePSSInfo",
-        "definition": "Prescription Search Support Info",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "DomainResource.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-pss-info"
-            ]
-          }
-        ],
-        "condition": [
-          "ele-1"
-        ],
-        "constraint": [
-          {
-            "key": "ele-1",
-            "severity": "error",
-            "human": "All FHIR elements must have a @value or children",
-            "expression": "hasValue() or (children().count() > id.count())",
-            "xpath": "@value|f:*|h:div",
-            "source": "http://hl7.org/fhir/StructureDefinition/Element"
-          },
-          {
-            "key": "ext-1",
-            "severity": "error",
-            "human": "Must have either extensions or value[x], not both",
-            "expression": "extension.exists() != value.exists()",
-            "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
-            "source": "http://hl7.org/fhir/StructureDefinition/Extension"
-          }
-        ],
-        "mustSupport": true,
-        "isModifier": false
-      },
-      {
-        "id": "ServiceRequest.extension:recorder",
-        "path": "ServiceRequest.extension",
-        "sliceName": "recorder",
-        "short": "The person responsable for this information, not necessarily the person who recorded the information",
-        "definition": "An Extension",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "DomainResource.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-recorder"
             ]
           }
         ],
@@ -2980,14 +2835,14 @@
       {
         "id": "ServiceRequest.performer",
         "path": "ServiceRequest.performer",
-        "short": "Requested performer - typically reference to practitionerroles",
+        "short": "Requested performer - typically reference to practitioner but could also be reference to related person by business identifier or Reference.display",
         "definition": "The desired performer for doing the requested service.  For example, the surgeon, dermatopathologist, endoscopist, etc.",
         "comment": "If multiple performers are present, it is interpreted as a list of *alternative* performers without any preference regardless of order.  If order of preference is needed use the [request-performerOrder extension](http://hl7.org/fhir/R4/extension-request-performerorder.html).  Use CareTeam to represent a group of performers (for example, Practitioner A *and* Practitioner B).",
         "alias": [
           "request recipient"
         ],
         "min": 0,
-        "max": "*",
+        "max": "0",
         "base": {
           "path": "ServiceRequest.performer",
           "min": 0,
@@ -2997,7 +2852,14 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole"
+              "http://hl7.org/fhir/StructureDefinition/CareTeam",
+              "http://hl7.org/fhir/StructureDefinition/HealthcareService",
+              "http://hl7.org/fhir/StructureDefinition/Device",
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+              "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitioner",
+              "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole",
+              "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-patient",
+              "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-organization"
             ]
           }
         ],
@@ -3447,240 +3309,6 @@
           {
             "identity": "quick",
             "map": "Procedure.targetBodySite"
-          }
-        ]
-      },
-      {
-        "id": "ServiceRequest.bodySite.id",
-        "path": "ServiceRequest.bodySite.id",
-        "representation": [
-          "xmlAttr"
-        ],
-        "short": "Unique id for inter-element referencing",
-        "definition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Element.id",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
-                "valueUrl": "string"
-              }
-            ],
-            "code": "http://hl7.org/fhirpath/System.String"
-          }
-        ],
-        "isModifier": false,
-        "isSummary": false,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "n/a"
-          }
-        ]
-      },
-      {
-        "id": "ServiceRequest.bodySite.extension",
-        "path": "ServiceRequest.bodySite.extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "description": "Extensions are always sliced by (at least) url",
-          "rules": "open"
-        },
-        "short": "Additional content defined by implementations",
-        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
-        "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
-        "alias": [
-          "extensions",
-          "user content"
-        ],
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Element.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Extension"
-          }
-        ],
-        "constraint": [
-          {
-            "key": "ele-1",
-            "severity": "error",
-            "human": "All FHIR elements must have a @value or children",
-            "expression": "hasValue() or (children().count() > id.count())",
-            "xpath": "@value|f:*|h:div",
-            "source": "http://hl7.org/fhir/StructureDefinition/Element"
-          },
-          {
-            "key": "ext-1",
-            "severity": "error",
-            "human": "Must have either extensions or value[x], not both",
-            "expression": "extension.exists() != value.exists()",
-            "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
-            "source": "http://hl7.org/fhir/StructureDefinition/Extension"
-          }
-        ],
-        "isModifier": false,
-        "isSummary": false,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "n/a"
-          }
-        ]
-      },
-      {
-        "id": "ServiceRequest.bodySite.extension:bodyLaterality",
-        "path": "ServiceRequest.bodySite.extension",
-        "sliceName": "bodyLaterality",
-        "short": "BeExtLaterality",
-        "definition": "An explicit statement of laterality of a lesion, or a treatment, etc.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Element.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-ext-laterality"
-            ]
-          }
-        ],
-        "constraint": [
-          {
-            "key": "ele-1",
-            "severity": "error",
-            "human": "All FHIR elements must have a @value or children",
-            "expression": "hasValue() or (children().count() > id.count())",
-            "xpath": "@value|f:*|h:div",
-            "source": "http://hl7.org/fhir/StructureDefinition/Element"
-          },
-          {
-            "key": "ext-1",
-            "severity": "error",
-            "human": "Must have either extensions or value[x], not both",
-            "expression": "extension.exists() != value.exists()",
-            "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
-            "source": "http://hl7.org/fhir/StructureDefinition/Extension"
-          }
-        ],
-        "isModifier": false,
-        "isSummary": false
-      },
-      {
-        "id": "ServiceRequest.bodySite.coding",
-        "path": "ServiceRequest.bodySite.coding",
-        "short": "Code defined by a terminology system",
-        "definition": "A reference to a code defined by a terminology system.",
-        "comment": "Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.",
-        "requirements": "Allows for alternative encodings within a code system, and translations to other code systems.",
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "CodeableConcept.coding",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Coding"
-          }
-        ],
-        "constraint": [
-          {
-            "key": "ele-1",
-            "severity": "error",
-            "human": "All FHIR elements must have a @value or children",
-            "expression": "hasValue() or (children().count() > id.count())",
-            "xpath": "@value|f:*|h:div",
-            "source": "http://hl7.org/fhir/StructureDefinition/Element"
-          }
-        ],
-        "isModifier": false,
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "C*E.1-8, C*E.10-22"
-          },
-          {
-            "identity": "rim",
-            "map": "union(., ./translation)"
-          },
-          {
-            "identity": "orim",
-            "map": "fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"
-          }
-        ]
-      },
-      {
-        "id": "ServiceRequest.bodySite.text",
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable",
-            "valueBoolean": true
-          }
-        ],
-        "path": "ServiceRequest.bodySite.text",
-        "short": "Plain text representation of the concept",
-        "definition": "A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.",
-        "comment": "Very often the text is the same as a displayName of one of the codings.",
-        "requirements": "The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "CodeableConcept.text",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "string"
-          }
-        ],
-        "constraint": [
-          {
-            "key": "ele-1",
-            "severity": "error",
-            "human": "All FHIR elements must have a @value or children",
-            "expression": "hasValue() or (children().count() > id.count())",
-            "xpath": "@value|f:*|h:div",
-            "source": "http://hl7.org/fhir/StructureDefinition/Element"
-          }
-        ],
-        "isModifier": false,
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "C*E.9. But note many systems use C*E.2 for this"
-          },
-          {
-            "identity": "rim",
-            "map": "./originalText[mediaType/code=\"text/plain\"]/data"
-          },
-          {
-            "identity": "orim",
-            "map": "fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"
           }
         ]
       },

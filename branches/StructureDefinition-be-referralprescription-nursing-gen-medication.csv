@@ -2,7 +2,7 @@
 "MedicationRequest","MedicationRequest","","Prescription
 Order","",0,*,"","","","","Ordering of medication for patient or group","An order or request for both supply of the medication and the instructions for administration of the medication to a patient. The resource is called ""MedicationRequest"" rather than ""MedicationPrescription"" or ""MedicationOrder"" to generalize the use across inpatient and outpatient settings, including care plans, etc., and to harmonize with workflow patterns.","","","","","","","","","",,,,,"",,,,"MedicationRequest",0,*,"","dom-2:If the resource is contained in another resource, it SHALL NOT contain nested Resources {contained.contained.empty()}
 dom-3:If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource {contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()}dom-4:If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated {contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()}dom-5:If a resource is contained in another resource, it SHALL NOT have a security label {contained.meta.security.empty()}dom-6:A resource should have narrative for robust management {text.`div`.exists()}","Request","Message/Body/NewRx","Entity. Role, or Act","CombinedMedicationRequest"
-"MedicationRequest.id","MedicationRequest.id","","","",0,1,"","","Y","string {[]} {[]}
+"MedicationRequest.id","MedicationRequest.id","","","",0,1,"","","Y","id {[]} {[]}
 ","Logical id of this artifact","The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.","The only time that a resource does not have an id is when it is being submitted to the server using a create operation.","","","","","","","","",,,,,"",,,,"Resource.id",0,1,"",""
 "MedicationRequest.meta","MedicationRequest.meta","","","",0,1,"","","Y","Meta {[]} {[]}
 ","Metadata about the resource","The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.","","","","","","","","","",,,,,"",,,,"Resource.meta",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -24,15 +24,15 @@ anonymous resourcescontained resources","",0,*,"","","","Resource {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","",,"open","DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"MedicationRequest.extension:feedback","MedicationRequest.extension","feedback","","",0,1,"Y","","","Extension {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-feedback-to-prescriber]]} {[]}
-","Optional Extensions Element","Optional Extension Element - found in all resources.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+"MedicationRequest.extension:informParty","MedicationRequest.extension","informParty","","",0,*,"Y","","","Extension {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-inform-party]]} {[]}
+","Parties to inform of fulfillment of the prescription, besides the prescriber.","An Extension","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a","N/A"
-"MedicationRequest.extension:coprescriber","MedicationRequest.extension","coprescriber","","",0,1,"Y","","","Extension {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-co-prescriber-info]]} {[]}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MedicationRequest.extension:coprescriber","MedicationRequest.extension","coprescriber","","",0,*,"Y","","","Extension {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-co-prescriber]]} {[]}
 ","Other parties that have to take part in the prescription.","Other practitioners that must take part in this prescripiton","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"MedicationRequest.extension:validity","MedicationRequest.extension","validity","","",1,1,"Y","","","Extension {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period]]} {[]}
+"MedicationRequest.extension:validity","MedicationRequest.extension","validity","","",0,1,"Y","","","Extension {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period]]} {[]}
 ","Validity period of the prescription","Begin and enddate of the validity of the request","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
@@ -40,20 +40,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","BeExecutionPeriod","Begin and enddate of the execution of the request","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"MedicationRequest.extension:latest","MedicationRequest.extension","latest","","",0,1,"Y","","","Extension {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-end-date]]} {[]}
-","BeLatestEndDate","Request must be performed before","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"MedicationRequest.extension:latestDraft","MedicationRequest.extension","latestDraft","","",0,1,"Y","","","Extension {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-draft-date]]} {[]}
-","BeLatestDraftDate","Request must leave draft status before","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"MedicationRequest.extension:performer","MedicationRequest.extension","performer","","",0,*,"Y","","","Extension {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-performer-reference]]} {[]}
-","Takes the place of performer and performerType","Takes the place of the performer field in ServiceRequest","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"MedicationRequest.extension:performertasks","MedicationRequest.extension","performertasks","","",0,*,"Y","","","Extension {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-performer-task-reference]]} {[]}
-","BePerformerTaskReference","List of references to the tasks performed by each performer","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+"MedicationRequest.extension:performer","MedicationRequest.extension","performer","","",1,1,"Y","","","Extension {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer]]} {[]}
+","Takes the place of performer and performerType","Intended performers for this request","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "MedicationRequest.extension:proposalType","MedicationRequest.extension","proposalType","","",0,1,"Y","","","Extension {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-proposal-type]]} {[]}
@@ -62,10 +50,6 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "MedicationRequest.extension:task","MedicationRequest.extension","task","","",0,1,"Y","","","Extension {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-task-reference]]} {[]}
 ","BeTaskReference","BeTaskReference","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"MedicationRequest.extension:pss","MedicationRequest.extension","pss","","",0,1,"Y","","","Extension {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-pss-info]]} {[]}
-","BePSSInfo","Prescription Search Support Info","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "MedicationRequest.modifierExtension","MedicationRequest.modifierExtension","","extensions
@@ -151,7 +135,7 @@ Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Medicatio
 "MedicationRequest.performerType","MedicationRequest.performerType","","","",0,0,"Y","","Y","CodeableConcept {[]} {[]}
 ","Desired kind of performer of the medication administration","Indicates the type of performer of the administration of the medication.","If specified without indicating a performer, this indicates that the performer must be of the specified type. If specified with a performer then it indicates the requirements of the performer if the designated performer is not available.","","","","","","","","",,"example","Identifies the type of individual that is desired to administer the medication.","http://hl7.org/fhir/ValueSet/performer-role","",,,,"MedicationRequest.performerType",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Request.performerType",".participation[typeCode=PRF].role[scoper.determinerCode=KIND].code"
-"MedicationRequest.recorder","MedicationRequest.recorder","","","",0,1,"Y","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Practitioner], CanonicalType[http://hl7.org/fhir/StructureDefinition/PractitionerRole]]}
+"MedicationRequest.recorder","MedicationRequest.recorder","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Practitioner], CanonicalType[http://hl7.org/fhir/StructureDefinition/PractitionerRole]]}
 ","Person who entered the request","The person who entered the order on behalf of another individual for example in the case of a verbal or a telephone order.","","","","","","","","","",,,,,"",,,,"MedicationRequest.recorder",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".participation[typeCode=TRANS].role[classCode=ASSIGNED].code (HealthcareProviderType)","FiveWs.who"
 "MedicationRequest.reasonCode","MedicationRequest.reasonCode","","","",0,*,"","","","CodeableConcept {[]} {[]}
