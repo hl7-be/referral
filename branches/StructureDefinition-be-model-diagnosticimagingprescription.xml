@@ -93,6 +93,21 @@
         <code value="dateTime"/>
       </type>
     </element>
+    <element id="BeDiagnosticImagingPrescription.recorder">
+      <path value="BeDiagnosticImagingPrescription.recorder"/>
+      <short value="The person who is responsable for the content, not necessarily the person who entered the content. This is either the prescriber, a co-prescriber or a performer"/>
+      <definition value="The person who is responsable for the content, not necessarily the person who entered the content. This is either the prescriber, a co-prescriber or a performer"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.recorder"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Reference"/>
+      </type>
+    </element>
     <element id="BeDiagnosticImagingPrescription.prescriber">
       <path value="BeDiagnosticImagingPrescription.prescriber"/>
       <short value="The prescribing healthcare party"/>
@@ -106,6 +121,21 @@
       </base>
       <type>
         <code value="Reference"/>
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.co-prescriberNumber">
+      <path value="BeDiagnosticImagingPrescription.co-prescriberNumber"/>
+      <short value="Number of co-prescribers that must sign the prescription to activate it"/>
+      <definition value="Number of co-prescribers that must sign the prescription to activate it"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.co-prescriberNumber"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="positiveInt"/>
       </type>
     </element>
     <element id="BeDiagnosticImagingPrescription.co-prescriber">
@@ -142,11 +172,11 @@
       <path value="BeDiagnosticImagingPrescription.co-prescriber.co-prescriberType"/>
       <short value="Type of the practitioner"/>
       <definition value="Type of the practitioner"/>
-      <min value="0"/>
+      <min value="1"/>
       <max value="1"/>
       <base>
         <path value="BeReferralPrescription.co-prescriber.co-prescriberType"/>
-        <min value="0"/>
+        <min value="1"/>
         <max value="1"/>
       </base>
       <type>
@@ -187,15 +217,73 @@
       <path value="BeDiagnosticImagingPrescription.prescriptionNumber"/>
       <short value="An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available"/>
       <definition value="An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available"/>
-      <min value="0"/>
+      <min value="1"/>
       <max value="1"/>
       <base>
         <path value="BeReferralPrescription.prescriptionNumber"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Identifier"/>
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.pssNumber">
+      <path value="BeDiagnosticImagingPrescription.pssNumber"/>
+      <short value="An identifier for the Prescription Search Support"/>
+      <definition value="An identifier for the Prescription Search Support"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.pssNumber"/>
         <min value="0"/>
         <max value="1"/>
       </base>
       <type>
         <code value="Identifier"/>
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.pssRejectionReason">
+      <path value="BeDiagnosticImagingPrescription.pssRejectionReason"/>
+      <short value="Reason for not following the PSS suggestion"/>
+      <definition value="Reason for not following the PSS suggestion"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.pssRejectionReason"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Annotation"/>
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.requisition">
+      <path value="BeDiagnosticImagingPrescription.requisition"/>
+      <short value="An identifier for the bundle this prescription belongs to."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.requisition"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="positiveInt"/>
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.requistionType">
+      <path value="BeDiagnosticImagingPrescription.requistionType"/>
+      <short value="The type of bundle can be indicated in the type of the identifier"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.requistionType"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="CodeableConcept"/>
       </type>
     </element>
     <element id="BeDiagnosticImagingPrescription.basedOn">
@@ -258,49 +346,109 @@
         <code value="dateTime"/>
       </type>
     </element>
-    <element id="BeDiagnosticImagingPrescription.intendedProvider">
-      <path value="BeDiagnosticImagingPrescription.intendedProvider"/>
+    <element id="BeDiagnosticImagingPrescription.creationEndDate">
+      <path value="BeDiagnosticImagingPrescription.creationEndDate"/>
+      <short value="The prescription must have left the draft status before"/>
+      <definition value="The prescription must have left the draft status before"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.creationEndDate"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="dateTime"/>
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.intendedPerformer">
+      <path value="BeDiagnosticImagingPrescription.intendedPerformer"/>
       <short value="The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality"/>
       <definition value="The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality"/>
-      <min value="0"/>
+      <min value="1"/>
       <max value="*"/>
       <base>
-        <path value="BeReferralPrescription.intendedProvider"/>
-        <min value="0"/>
+        <path value="BeReferralPrescription.intendedPerformer"/>
+        <min value="1"/>
         <max value="*"/>
       </base>
       <type>
         <code value="BackboneElement"/>
       </type>
     </element>
-    <element id="BeDiagnosticImagingPrescription.intendedProvider.provider">
-      <path value="BeDiagnosticImagingPrescription.intendedProvider.provider"/>
+    <element id="BeDiagnosticImagingPrescription.intendedPerformer.performer">
+      <path value="BeDiagnosticImagingPrescription.intendedPerformer.performer"/>
       <short value="A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)"/>
       <definition value="A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)"/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="1"/>
       <base>
-        <path value="BeReferralPrescription.intendedProvider.provider"/>
+        <path value="BeReferralPrescription.intendedPerformer.performer"/>
         <min value="0"/>
-        <max value="*"/>
+        <max value="1"/>
       </base>
       <type>
         <code value="Reference"/>
       </type>
     </element>
-    <element id="BeDiagnosticImagingPrescription.intendedProvider.discipline">
-      <path value="BeDiagnosticImagingPrescription.intendedProvider.discipline"/>
+    <element id="BeDiagnosticImagingPrescription.intendedPerformer.discipline">
+      <path value="BeDiagnosticImagingPrescription.intendedPerformer.discipline"/>
       <short value="The required discipline of the provider party"/>
       <definition value="The required discipline of the provider party"/>
       <min value="1"/>
       <max value="1"/>
       <base>
-        <path value="BeReferralPrescription.intendedProvider.discipline"/>
+        <path value="BeReferralPrescription.intendedPerformer.discipline"/>
         <min value="1"/>
         <max value="1"/>
       </base>
       <type>
         <code value="CodeableConcept"/>
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.intendedPerformer.period">
+      <path value="BeDiagnosticImagingPrescription.intendedPerformer.period"/>
+      <short value="Start and enddate for the particular provider"/>
+      <definition value="Start and enddate for the particular provider"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.intendedPerformer.period"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Period"/>
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.intendedPerformer.organization">
+      <path value="BeDiagnosticImagingPrescription.intendedPerformer.organization"/>
+      <short value="Reference to an organization that will add the performer"/>
+      <definition value="Reference to an organization that will add the performer"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.intendedPerformer.organization"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Reference"/>
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.toBePerformedAfter">
+      <path value="BeDiagnosticImagingPrescription.toBePerformedAfter"/>
+      <short value="The current prescription should be performed after this one"/>
+      <definition value="The current prescription should be performed after this one"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.toBePerformedAfter"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="Reference"/>
       </type>
     </element>
     <element id="BeDiagnosticImagingPrescription.serviceRequested">
@@ -397,16 +545,76 @@
         <code value="CodeableConcept"/>
       </type>
     </element>
-    <element id="BeDiagnosticImagingPrescription.bodySite">
-      <path value="BeDiagnosticImagingPrescription.bodySite"/>
-      <short value="bodySite, e.g. using a SNOMED-CT code"/>
-      <definition value="bodySite, e.g. using a SNOMED-CT code"/>
+    <element id="BeDiagnosticImagingPrescription.treatmentStatus">
+      <path value="BeDiagnosticImagingPrescription.treatmentStatus"/>
+      <short value="Status of the treatment"/>
+      <definition value="Status of the treatment"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.treatmentStatus"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.treatmentStatusReason">
+      <path value="BeDiagnosticImagingPrescription.treatmentStatusReason"/>
+      <short value="Reason treatment status"/>
+      <definition value="Reason treatment status"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.treatmentStatusReason"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.bodyLocation">
+      <path value="BeDiagnosticImagingPrescription.bodyLocation"/>
+      <short value="Place where the treatment should be executed"/>
+      <definition value="Place where the treatment should be executed"/>
       <min value="0"/>
       <max value="*"/>
       <base>
-        <path value="BeReferralPrescription.bodySite"/>
+        <path value="BeReferralPrescription.bodyLocation"/>
         <min value="0"/>
         <max value="*"/>
+      </base>
+      <type>
+        <code value="BackboneElement"/>
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.bodyLocation.bodySite">
+      <path value="BeDiagnosticImagingPrescription.bodyLocation.bodySite"/>
+      <short value="Anatomical place where the treatment should be executed"/>
+      <definition value="Anatomical place where the treatment should be executed"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.bodyLocation.bodySite"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.bodyLocation.bodyLaterality">
+      <path value="BeDiagnosticImagingPrescription.bodyLocation.bodyLaterality"/>
+      <short value="Side of the body"/>
+      <definition value="Side of the body"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.bodyLocation.bodyLaterality"/>
+        <min value="0"/>
+        <max value="1"/>
       </base>
       <type>
         <code value="CodeableConcept"/>
@@ -589,6 +797,21 @@
       <type>
         <code value="Reference"/>
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/ImagingStudy"/>
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.bodySite">
+      <path value="BeDiagnosticImagingPrescription.bodySite"/>
+      <short value="bodySite, e.g. using a SNOMED-CT code"/>
+      <definition value="bodySite, e.g. using a SNOMED-CT code"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="BeDiagnosticImagingPrescription.bodySite"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="CodeableConcept"/>
       </type>
     </element>
     <element id="BeDiagnosticImagingPrescription.proposedInvestigation">

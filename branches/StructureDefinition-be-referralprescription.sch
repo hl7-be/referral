@@ -14,20 +14,22 @@
     <sch:rule context="f:ServiceRequest">
       <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/StructureDefinition/request-statusReason']) &gt;= 1">extension with URL = 'http://hl7.org/fhir/StructureDefinition/request-statusReason': minimum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'http://hl7.org/fhir/StructureDefinition/request-statusReason']) &lt;= 1">extension with URL = 'http://hl7.org/fhir/StructureDefinition/request-statusReason': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-feedback-to-prescriber']) &lt;= 1">extension with URL = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-feedback-to-prescriber': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-co-prescriber-info']) &lt;= 1">extension with URL = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-co-prescriber-info': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period']) &gt;= 1">extension with URL = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period': minimum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period']) &lt;= 1">extension with URL = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-execution-period']) &lt;= 1">extension with URL = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-execution-period': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-lastest-end-date']) &lt;= 1">extension with URL = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-lastest-end-date': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer']) &gt;= 1">extension with URL = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer': minimum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer']) &lt;= 1">extension with URL = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-end-date']) &lt;= 1">extension with URL = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-end-date': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-draft-date']) &lt;= 1">extension with URL = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-draft-date': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-proposal-type']) &lt;= 1">extension with URL = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-proposal-type': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-task-reference']) &lt;= 1">extension with URL = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-task-reference': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-pss-info']) &lt;= 1">extension with URL = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-pss-info': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-recorder']) &lt;= 1">extension with URL = 'https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-recorder': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:category) &gt;= 1">category: minimum cardinality of 'category' is 1</sch:assert>
       <sch:assert test="count(f:category) &lt;= 1">category: maximum cardinality of 'category' is 1</sch:assert>
       <sch:assert test="count(f:authoredOn) &gt;= 1">authoredOn: minimum cardinality of 'authoredOn' is 1</sch:assert>
       <sch:assert test="count(f:requester) &gt;= 1">requester: minimum cardinality of 'requester' is 1</sch:assert>
       <sch:assert test="count(f:performerType) &lt;= 0">performerType: maximum cardinality of 'performerType' is 0</sch:assert>
-      <sch:assert test="count(f:performer) &lt;= 0">performer: maximum cardinality of 'performer' is 0</sch:assert>
       <sch:assert test="count(f:reasonCode) &gt;= 1">reasonCode: minimum cardinality of 'reasonCode' is 1</sch:assert>
       <sch:assert test="count(f:reasonCode) &lt;= 1">reasonCode: maximum cardinality of 'reasonCode' is 1</sch:assert>
     </sch:rule>
@@ -72,6 +74,12 @@
     <sch:rule context="f:ServiceRequest/f:extension">
       <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
       <sch:assert test="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])">Must have either extensions or value[x], not both (inherited)</sch:assert>
+      <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
+      <sch:assert test="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])">Must have either extensions or value[x], not both (inherited)</sch:assert>
+      <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
+      <sch:assert test="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])">Must have either extensions or value[x], not both (inherited)</sch:assert>
+      <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
+      <sch:assert test="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])">Must have either extensions or value[x], not both (inherited)</sch:assert>
       <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
       <sch:assert test="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])">Must have either extensions or value[x], not both (inherited)</sch:assert>
       <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
@@ -354,8 +362,37 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
+    <sch:title>f:ServiceRequest/f:bodySite</sch:title>
+    <sch:rule context="f:ServiceRequest/f:bodySite">
+      <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-ext-laterality']) &lt;= 1">extension with URL = 'https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-ext-laterality': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:text) &lt;= 1">text: maximum cardinality of 'text' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
     <sch:title>ServiceRequest.bodySite</sch:title>
     <sch:rule context="f:ServiceRequest/f:bodySite">
+      <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>ServiceRequest.bodySite.extension</sch:title>
+    <sch:rule context="f:ServiceRequest/f:bodySite/f:extension">
+      <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children</sch:assert>
+      <sch:assert test="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])">Must have either extensions or value[x], not both</sch:assert>
+      <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
+      <sch:assert test="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])">Must have either extensions or value[x], not both (inherited)</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>ServiceRequest.bodySite.coding</sch:title>
+    <sch:rule context="f:ServiceRequest/f:bodySite/f:coding">
+      <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>ServiceRequest.bodySite.text</sch:title>
+    <sch:rule context="f:ServiceRequest/f:bodySite/f:text">
       <sch:assert test="@value|f:*|h:div">All FHIR elements must have a @value or children (inherited)</sch:assert>
     </sch:rule>
   </sch:pattern>

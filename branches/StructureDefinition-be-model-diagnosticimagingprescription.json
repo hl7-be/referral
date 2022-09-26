@@ -91,6 +91,24 @@
         ]
       },
       {
+        "id": "BeDiagnosticImagingPrescription.recorder",
+        "path": "BeDiagnosticImagingPrescription.recorder",
+        "short": "The person who is responsable for the content, not necessarily the person who entered the content. This is either the prescriber, a co-prescriber or a performer",
+        "definition": "The person who is responsable for the content, not necessarily the person who entered the content. This is either the prescriber, a co-prescriber or a performer",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.recorder",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
         "id": "BeDiagnosticImagingPrescription.prescriber",
         "path": "BeDiagnosticImagingPrescription.prescriber",
         "short": "The prescribing healthcare party",
@@ -105,6 +123,24 @@
         "type": [
           {
             "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "BeDiagnosticImagingPrescription.co-prescriberNumber",
+        "path": "BeDiagnosticImagingPrescription.co-prescriberNumber",
+        "short": "Number of co-prescribers that must sign the prescription to activate it",
+        "definition": "Number of co-prescribers that must sign the prescription to activate it",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.co-prescriberNumber",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "positiveInt"
           }
         ]
       },
@@ -149,11 +185,11 @@
         "path": "BeDiagnosticImagingPrescription.co-prescriber.co-prescriberType",
         "short": "Type of the practitioner",
         "definition": "Type of the practitioner",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "BeReferralPrescription.co-prescriber.co-prescriberType",
-          "min": 0,
+          "min": 1,
           "max": "1"
         },
         "type": [
@@ -203,16 +239,86 @@
         "path": "BeDiagnosticImagingPrescription.prescriptionNumber",
         "short": "An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available",
         "definition": "An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "BeReferralPrescription.prescriptionNumber",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ]
+      },
+      {
+        "id": "BeDiagnosticImagingPrescription.pssNumber",
+        "path": "BeDiagnosticImagingPrescription.pssNumber",
+        "short": "An identifier for the Prescription Search Support",
+        "definition": "An identifier for the Prescription Search Support",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.pssNumber",
           "min": 0,
           "max": "1"
         },
         "type": [
           {
             "code": "Identifier"
+          }
+        ]
+      },
+      {
+        "id": "BeDiagnosticImagingPrescription.pssRejectionReason",
+        "path": "BeDiagnosticImagingPrescription.pssRejectionReason",
+        "short": "Reason for not following the PSS suggestion",
+        "definition": "Reason for not following the PSS suggestion",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.pssRejectionReason",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Annotation"
+          }
+        ]
+      },
+      {
+        "id": "BeDiagnosticImagingPrescription.requisition",
+        "path": "BeDiagnosticImagingPrescription.requisition",
+        "short": "An identifier for the bundle this prescription belongs to.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.requisition",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "positiveInt"
+          }
+        ]
+      },
+      {
+        "id": "BeDiagnosticImagingPrescription.requistionType",
+        "path": "BeDiagnosticImagingPrescription.requistionType",
+        "short": "The type of bundle can be indicated in the type of the identifier",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.requistionType",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
           }
         ]
       },
@@ -289,15 +395,33 @@
         ]
       },
       {
-        "id": "BeDiagnosticImagingPrescription.intendedProvider",
-        "path": "BeDiagnosticImagingPrescription.intendedProvider",
+        "id": "BeDiagnosticImagingPrescription.creationEndDate",
+        "path": "BeDiagnosticImagingPrescription.creationEndDate",
+        "short": "The prescription must have left the draft status before",
+        "definition": "The prescription must have left the draft status before",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.creationEndDate",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "BeDiagnosticImagingPrescription.intendedPerformer",
+        "path": "BeDiagnosticImagingPrescription.intendedPerformer",
         "short": "The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality",
         "definition": "The intended provider, i.e. who is expected to perform the procedure - a specific person or a speciality",
-        "min": 0,
+        "min": 1,
         "max": "*",
         "base": {
-          "path": "BeReferralPrescription.intendedProvider",
-          "min": 0,
+          "path": "BeReferralPrescription.intendedPerformer",
+          "min": 1,
           "max": "*"
         },
         "type": [
@@ -307,16 +431,16 @@
         ]
       },
       {
-        "id": "BeDiagnosticImagingPrescription.intendedProvider.provider",
-        "path": "BeDiagnosticImagingPrescription.intendedProvider.provider",
+        "id": "BeDiagnosticImagingPrescription.intendedPerformer.performer",
+        "path": "BeDiagnosticImagingPrescription.intendedPerformer.performer",
         "short": "A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)",
         "definition": "A reference to the provider party (e.g. a NIHDI number for a healthcare professional, a SSIN or only a displaystring for a non professional caregiver,...)",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "base": {
-          "path": "BeReferralPrescription.intendedProvider.provider",
+          "path": "BeReferralPrescription.intendedPerformer.performer",
           "min": 0,
-          "max": "*"
+          "max": "1"
         },
         "type": [
           {
@@ -325,20 +449,74 @@
         ]
       },
       {
-        "id": "BeDiagnosticImagingPrescription.intendedProvider.discipline",
-        "path": "BeDiagnosticImagingPrescription.intendedProvider.discipline",
+        "id": "BeDiagnosticImagingPrescription.intendedPerformer.discipline",
+        "path": "BeDiagnosticImagingPrescription.intendedPerformer.discipline",
         "short": "The required discipline of the provider party",
         "definition": "The required discipline of the provider party",
         "min": 1,
         "max": "1",
         "base": {
-          "path": "BeReferralPrescription.intendedProvider.discipline",
+          "path": "BeReferralPrescription.intendedPerformer.discipline",
           "min": 1,
           "max": "1"
         },
         "type": [
           {
             "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "BeDiagnosticImagingPrescription.intendedPerformer.period",
+        "path": "BeDiagnosticImagingPrescription.intendedPerformer.period",
+        "short": "Start and enddate for the particular provider",
+        "definition": "Start and enddate for the particular provider",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.intendedPerformer.period",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Period"
+          }
+        ]
+      },
+      {
+        "id": "BeDiagnosticImagingPrescription.intendedPerformer.organization",
+        "path": "BeDiagnosticImagingPrescription.intendedPerformer.organization",
+        "short": "Reference to an organization that will add the performer",
+        "definition": "Reference to an organization that will add the performer",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.intendedPerformer.organization",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      },
+      {
+        "id": "BeDiagnosticImagingPrescription.toBePerformedAfter",
+        "path": "BeDiagnosticImagingPrescription.toBePerformedAfter",
+        "short": "The current prescription should be performed after this one",
+        "definition": "The current prescription should be performed after this one",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.toBePerformedAfter",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Reference"
           }
         ]
       },
@@ -455,16 +633,88 @@
         ]
       },
       {
-        "id": "BeDiagnosticImagingPrescription.bodySite",
-        "path": "BeDiagnosticImagingPrescription.bodySite",
-        "short": "bodySite, e.g. using a SNOMED-CT code",
-        "definition": "bodySite, e.g. using a SNOMED-CT code",
+        "id": "BeDiagnosticImagingPrescription.treatmentStatus",
+        "path": "BeDiagnosticImagingPrescription.treatmentStatus",
+        "short": "Status of the treatment",
+        "definition": "Status of the treatment",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.treatmentStatus",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "BeDiagnosticImagingPrescription.treatmentStatusReason",
+        "path": "BeDiagnosticImagingPrescription.treatmentStatusReason",
+        "short": "Reason treatment status",
+        "definition": "Reason treatment status",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.treatmentStatusReason",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "BeDiagnosticImagingPrescription.bodyLocation",
+        "path": "BeDiagnosticImagingPrescription.bodyLocation",
+        "short": "Place where the treatment should be executed",
+        "definition": "Place where the treatment should be executed",
         "min": 0,
         "max": "*",
         "base": {
-          "path": "BeReferralPrescription.bodySite",
+          "path": "BeReferralPrescription.bodyLocation",
           "min": 0,
           "max": "*"
+        },
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "BeDiagnosticImagingPrescription.bodyLocation.bodySite",
+        "path": "BeDiagnosticImagingPrescription.bodyLocation.bodySite",
+        "short": "Anatomical place where the treatment should be executed",
+        "definition": "Anatomical place where the treatment should be executed",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.bodyLocation.bodySite",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "BeDiagnosticImagingPrescription.bodyLocation.bodyLaterality",
+        "path": "BeDiagnosticImagingPrescription.bodyLocation.bodyLaterality",
+        "short": "Side of the body",
+        "definition": "Side of the body",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.bodyLocation.bodyLaterality",
+          "min": 0,
+          "max": "1"
         },
         "type": [
           {
@@ -690,6 +940,24 @@
             "targetProfile": [
               "http://hl7.org/fhir/StructureDefinition/ImagingStudy"
             ]
+          }
+        ]
+      },
+      {
+        "id": "BeDiagnosticImagingPrescription.bodySite",
+        "path": "BeDiagnosticImagingPrescription.bodySite",
+        "short": "bodySite, e.g. using a SNOMED-CT code",
+        "definition": "bodySite, e.g. using a SNOMED-CT code",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "BeDiagnosticImagingPrescription.bodySite",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
           }
         ]
       },

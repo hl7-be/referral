@@ -24,6 +24,12 @@
   	<link href="assets/css/prism.css" rel="stylesheet" />
     <!-- Placeholder for child template CSS declarations -->
 <link href="assets/css/hl7-be.css" rel="stylesheet"/>
+<!-- Placeholder for child template CSS declarations -->
+<!--  -->
+<!-- draft -->
+
+<link href="assets/css/colors.css" rel="stylesheet"/>
+
 <link href="assets/css/affiliate.css" rel="stylesheet"/>
 
     <script type="text/javascript" src="fhir-table-scripts.js"> </script>
@@ -52,23 +58,28 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"14.9"}
-    h3,h4,h5,h6{--heading-prefix:"14.9"}</style>
+    <style type="text/css">h2{--heading-prefix:"14.10"}
+    h3,h4,h5,h6{--heading-prefix:"14.10"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
 
-        <div id="ig-nav">
-          <a id="hl7-logo" no-external="true" href="https://hl7-be.github.io">
-            <img height="65" alt="HL7 Belgium" src="assets/images/hl7be-logo-header.png"/>
-          </a>
-        </div>
-        <div id="fhir-nav">
-          <a id="fhir-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
-        </div>
-        <div id="ig-search">
-          <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir/search.cfm"><img alt="Search FHIR" src="assets/images/search.png"/></a>
-        </div>
+        
+<!--  -->
+<!-- draft -->
+
+<div id="ig-nav">
+  <a id="hl7-logo" no-external="true" href="https://hl7-be.github.io">
+    <img height="65" alt="HL7 Belgium" src="assets/images/hl7be-logo-header.png"/>
+  </a>
+</div>
+<div id="fhir-nav">
+  <a id="fhir-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+<div id="ig-search">
+  <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir/search.cfm"><img alt="Search FHIR" src="assets/images/search.png"/></a>
+</div>
+
 <!-- Left logo - typically the publisher's logo - project or affiliate -->
         <div id="project-nav">
           <a id="project-logo" no-external="true" href="http://hl7.eu">
@@ -337,6 +348,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x]</td><td>Request.occurrence[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;authoredOn</td><td>Request.authoredOn</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;requester</td><td>Request.requester</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>Request.performer</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>Request.reasonCode</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonReference</td><td>Request.reasonReference</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;insurance</td><td>Request.insurance</td> </tr>
@@ -388,12 +400,15 @@
  <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x]</td><td>TQ1/TQ2, OBR-7/OBR-8</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;authoredOn</td><td>ORC.9,  RF1-7 / RF1-9</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;requester</td><td>ORC.12, PRT</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>PRT, Practitioner: PRD-2/PRD-7 where PRD-3 = RT; Organization: PRD-10 where PRD-3 = RT</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>ORC.16, RF1-10</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonReference</td><td>ORC.16</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;insurance</td><td>IN1/IN2</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;supportingInfo</td><td>Accompanying segments</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>SPM</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;bodySite</td><td>SPM</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>C*E.9. But note many systems use C*E.2 for this</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>NTE</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;patientInstruction</td><td>NTE</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;relevantHistory</td><td>N/A</td> </tr>
@@ -409,6 +424,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x] (valueCodeableConcept)</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (feedback)</td><td>n/a, N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>.identifier</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier (UHMEP)</td><td>.identifier</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
@@ -461,6 +477,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;asNeeded[x]</td><td>boolean: precondition.negationInd (inversed - so negationInd = true means asNeeded=false CodeableConcept: precondition.observationEventCriterion[code=&quot;Assertion&quot;].value</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;authoredOn</td><td>.participation[typeCode=AUT].time</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;requester</td><td>.participation[typeCode=AUT].role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>.participation[typeCode=PRF].role[scoper.determinerCode=INSTANCE]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;locationCode</td><td>.participation[typeCode=LOC].role[scoper.determinerCode=KIND].code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;locationReference</td><td>.participation[typeCode=LOC].role[scoper.determinerCode=INSTANCE]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>.reasonCode</td> </tr>
@@ -469,6 +486,10 @@
  <tr><td>&nbsp;&nbsp;&nbsp;supportingInfo</td><td>.outboundRelationship[typeCode=PERT].target</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>.participation[typeCode=SPC].role</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;bodySite</td><td>targetSiteCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>.inboundRelationship(typeCode=SUBJ].source[classCode=ANNGEN, moodCode=EVN].value[xsi:type=ST]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;patientInstruction</td><td>.text</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;relevantHistory</td><td>.inboundRelationship(typeCode=SUBJ].source[classCode=CACT, moodCode=EVN]</td> </tr>
@@ -488,6 +509,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x]</td><td>FiveWs.planned</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;authoredOn</td><td>FiveWs.recorded</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;requester</td><td>FiveWs.author</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>FiveWs.actor</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;locationCode</td><td>FiveWs.actor</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;locationReference</td><td>FiveWs.actor</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>FiveWs.why[x]</td> </tr>
@@ -564,13 +586,16 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href=""></a>.  Package hl7.fhir.be.referral#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Sep 20, 2022 11:55+0000">2022-09-20</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href=""></a>.  Package hl7.fhir.be.referral#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Sep 26, 2022 07:00+0000">2022-09-26</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
-                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
-                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
-                 
-                
+            <!--  -->
+<!-- draft -->
+
+<!--  -->
+<!-- draft -->
+
+
           </span>
         </p>
       </div>  <!-- /inner-wrapper -->
