@@ -1,0 +1,69 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescriptionstatus-reason> a fhir:CodeSystem;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "be-prescriptionstatus-reason"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This code system <code>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">blacklist<a name=\"be-prescriptionstatus-reason-blacklist\"> </a></td><td>Blacklist</td></tr><tr><td style=\"white-space:nowrap\">multiplestep<a name=\"be-prescriptionstatus-reason-multiplestep\"> </a></td><td>Multiple step</td></tr><tr><td style=\"white-space:nowrap\">cosign<a name=\"be-prescriptionstatus-reason-cosign\"> </a></td><td>Co-sign</td></tr><tr><td style=\"white-space:nowrap\">cancelled<a name=\"be-prescriptionstatus-reason-cancelled\"> </a></td><td>Cancelled</td></tr><tr><td style=\"white-space:nowrap\">expired<a name=\"be-prescriptionstatus-reason-expired\"> </a></td><td>Expired</td></tr><tr><td style=\"white-space:nowrap\">pending<a name=\"be-prescriptionstatus-reason-pending\"> </a></td><td>Pending</td></tr><tr><td style=\"white-space:nowrap\">ready<a name=\"be-prescriptionstatus-reason-ready\"> </a></td><td>Ready</td></tr><tr><td style=\"white-space:nowrap\">inprogress<a name=\"be-prescriptionstatus-reason-inprogress\"> </a></td><td>In progress</td></tr><tr><td style=\"white-space:nowrap\">inactive<a name=\"be-prescriptionstatus-reason-inactive\"> </a></td><td>Inactive</td></tr></table></div>"
+  ];
+  fhir:CodeSystem.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason"];
+  fhir:CodeSystem.version [ fhir:value "0.2.0"];
+  fhir:CodeSystem.name [ fhir:value "BePrescriptionStatusReason"];
+  fhir:CodeSystem.title [ fhir:value "BePrescriptionStatusReason"];
+  fhir:CodeSystem.status [ fhir:value "active"];
+  fhir:CodeSystem.date [ fhir:value "2022-09-26T09:04:29+00:00"^^xsd:dateTime];
+  fhir:CodeSystem.description [ fhir:value "Status reason for the prescription. Initially defined as supporting CodeSystem for the referral prescription."];
+  fhir:CodeSystem.caseSensitive [ fhir:value "false"^^xsd:boolean];
+  fhir:CodeSystem.content [ fhir:value "complete"];
+  fhir:CodeSystem.count [ fhir:value "9"^^xsd:nonNegativeInteger];
+  fhir:CodeSystem.concept [
+     fhir:index 0;
+     fhir:CodeSystem.concept.code [ fhir:value "blacklist" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Blacklist" ]
+  ], [
+     fhir:index 1;
+     fhir:CodeSystem.concept.code [ fhir:value "multiplestep" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Multiple step" ]
+  ], [
+     fhir:index 2;
+     fhir:CodeSystem.concept.code [ fhir:value "cosign" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Co-sign" ]
+  ], [
+     fhir:index 3;
+     fhir:CodeSystem.concept.code [ fhir:value "cancelled" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Cancelled" ]
+  ], [
+     fhir:index 4;
+     fhir:CodeSystem.concept.code [ fhir:value "expired" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Expired" ]
+  ], [
+     fhir:index 5;
+     fhir:CodeSystem.concept.code [ fhir:value "pending" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Pending" ]
+  ], [
+     fhir:index 6;
+     fhir:CodeSystem.concept.code [ fhir:value "ready" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Ready" ]
+  ], [
+     fhir:index 7;
+     fhir:CodeSystem.concept.code [ fhir:value "inprogress" ];
+     fhir:CodeSystem.concept.display [ fhir:value "In progress" ]
+  ], [
+     fhir:index 8;
+     fhir:CodeSystem.concept.code [ fhir:value "inactive" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Inactive" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescriptionstatus-reason.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

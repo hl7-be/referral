@@ -17,7 +17,7 @@
   fhir:ImplementationGuide.name [ fhir:value "HL7BEReferralPrescriptionWGImplementationGuideworkinprogress"];
   fhir:ImplementationGuide.title [ fhir:value "HL7 BE Referral Prescription WG Implementation Guide (work in progress)"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
-  fhir:ImplementationGuide.date [ fhir:value "2022-09-26T07:47:59+00:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2022-09-26T09:04:29+00:00"^^xsd:dateTime];
   fhir:ImplementationGuide.packageId [ fhir:value "hl7.fhir.be.referral"];
   fhir:ImplementationGuide.license [ fhir:value "CC0-1.0"];
   fhir:ImplementationGuide.fhirVersion [
@@ -41,7 +41,7 @@
        fhir:link <https://www.ehealth.fgov.be/standards/fhir/core/ImplementationGuide/hl7.fhir.be.core>
      ];
      fhir:ImplementationGuide.dependsOn.packageId [ fhir:value "hl7.fhir.be.core" ];
-     fhir:ImplementationGuide.dependsOn.version [ fhir:value "2.0.0" ]
+     fhir:ImplementationGuide.dependsOn.version [ fhir:value "2.0.1" ]
   ], [
      fhir:index 2;
      fhir:Element.id [ fhir:value "hl7_fhir_be_medication" ];
@@ -68,7 +68,7 @@
        fhir:link <https://www.ehealth.fgov.be/standards/fhir/allergy/ImplementationGuide/hl7.fhir.be.allergy>
      ];
      fhir:ImplementationGuide.dependsOn.packageId [ fhir:value "hl7.fhir.be.allergy" ];
-     fhir:ImplementationGuide.dependsOn.version [ fhir:value "1.0.0" ]
+     fhir:ImplementationGuide.dependsOn.version [ fhir:value "1.0.1" ]
   ];
   fhir:ImplementationGuide.definition [
      fhir:Element.extension [
@@ -804,11 +804,11 @@
          fhir:Extension.valueString [ fhir:value "ValueSet" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-prescription-status>;
-         fhir:Reference.reference [ fhir:value "ValueSet/be-vs-prescription-status" ]
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-prescription-status-reason>;
+         fhir:Reference.reference [ fhir:value "ValueSet/be-vs-prescription-status-reason" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "BePrescriptionStatus" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This is the status of the prescription" ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "BeVSPrescriptionStatusReason" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This is the status reason of the prescription" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 34;
@@ -818,11 +818,11 @@
          fhir:Extension.valueString [ fhir:value "ValueSet" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-reason-referral-status>;
-         fhir:Reference.reference [ fhir:value "ValueSet/be-vs-reason-referral-status" ]
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-treatment-status-reason>;
+         fhir:Reference.reference [ fhir:value "ValueSet/be-vs-treatment-status-reason" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "BeReasonReferralStatus" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Codes to explain the current status of a referral prescription." ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "BeVSTreatmentStatusReason" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Codes to explain the current status of a treatment in a referral prescription." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 35;
@@ -942,11 +942,11 @@
          fhir:Extension.valueString [ fhir:value "CodeSystem" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status>;
-         fhir:Reference.reference [ fhir:value "CodeSystem/be-prescription-status" ]
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescriptionstatus-reason>;
+         fhir:Reference.reference [ fhir:value "CodeSystem/be-prescriptionstatus-reason" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "BePrescriptionStatus" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Prescription status in Belgium. Initially defined as supporting CodeSystem for the referral prescription." ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "BePrescriptionStatusReason" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Status reason for the prescription. Initially defined as supporting CodeSystem for the referral prescription." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 44;
@@ -956,11 +956,11 @@
          fhir:Extension.valueString [ fhir:value "CodeSystem" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-status-reason>;
-         fhir:Reference.reference [ fhir:value "CodeSystem/be-status-reason" ]
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-treatment-status-reason>;
+         fhir:Reference.reference [ fhir:value "CodeSystem/be-treatment-status-reason" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "BeStatusReason" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Status reason in Belgium. Initially defined as supporting CodeSystem for the referral prescription." ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "BeTreatmentStatusReason" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Status reason for the treatment. Initially defined as supporting CodeSystem for the referral prescription." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 45;

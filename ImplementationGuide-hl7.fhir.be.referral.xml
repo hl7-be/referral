@@ -10,7 +10,7 @@
   <name value="HL7BEReferralPrescriptionWGImplementationGuideworkinprogress"/>
   <title value="HL7 BE Referral Prescription WG Implementation Guide (work in progress)"/>
   <status value="draft"/>
-  <date value="2022-09-26T07:47:59+00:00"/>
+  <date value="2022-09-26T09:04:29+00:00"/>
   <packageId value="hl7.fhir.be.referral"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.1"/>
@@ -22,7 +22,7 @@
   <dependsOn id="hl7_fhir_be_core">
     <uri value="https://www.ehealth.fgov.be/standards/fhir/core/ImplementationGuide/hl7.fhir.be.core"/>
     <packageId value="hl7.fhir.be.core"/>
-    <version value="2.0.0"/>
+    <version value="2.0.1"/>
   </dependsOn>
   <dependsOn id="hl7_fhir_be_medication">
     <uri value="https://www.ehealth.fgov.be/standards/fhir/medication/ImplementationGuide/hl7.fhir.be.medication"/>
@@ -37,7 +37,7 @@
   <dependsOn id="hl7_fhir_be_allergy">
     <uri value="https://www.ehealth.fgov.be/standards/fhir/allergy/ImplementationGuide/hl7.fhir.be.allergy"/>
     <packageId value="hl7.fhir.be.allergy"/>
-    <version value="1.0.0"/>
+    <version value="1.0.1"/>
   </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -582,10 +582,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/be-vs-prescription-status"/>
+        <reference value="ValueSet/be-vs-prescription-status-reason"/>
       </reference>
-      <name value="BePrescriptionStatus"/>
-      <description value="This is the status of the prescription"/>
+      <name value="BeVSPrescriptionStatusReason"/>
+      <description value="This is the status reason of the prescription"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -593,10 +593,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/be-vs-reason-referral-status"/>
+        <reference value="ValueSet/be-vs-treatment-status-reason"/>
       </reference>
-      <name value="BeReasonReferralStatus"/>
-      <description value="Codes to explain the current status of a referral prescription."/>
+      <name value="BeVSTreatmentStatusReason"/>
+      <description value="Codes to explain the current status of a treatment in a referral prescription."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -690,10 +690,10 @@
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
-        <reference value="CodeSystem/be-prescription-status"/>
+        <reference value="CodeSystem/be-prescriptionstatus-reason"/>
       </reference>
-      <name value="BePrescriptionStatus"/>
-      <description value="Prescription status in Belgium. Initially defined as supporting CodeSystem for the referral prescription."/>
+      <name value="BePrescriptionStatusReason"/>
+      <description value="Status reason for the prescription. Initially defined as supporting CodeSystem for the referral prescription."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -701,10 +701,10 @@
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
-        <reference value="CodeSystem/be-status-reason"/>
+        <reference value="CodeSystem/be-treatment-status-reason"/>
       </reference>
-      <name value="BeStatusReason"/>
-      <description value="Status reason in Belgium. Initially defined as supporting CodeSystem for the referral prescription."/>
+      <name value="BeTreatmentStatusReason"/>
+      <description value="Status reason for the treatment. Initially defined as supporting CodeSystem for the referral prescription."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
