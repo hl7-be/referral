@@ -46,7 +46,7 @@ Description: "Logical model describing the model for the prescription referral. 
 * intendedPerformer.executionPeriod 0..1 Period "Period in which the caregiver executes the treatment"
 * toBePerformedAfter 0..1 Reference "The current prescription should be performed after this one"
 * serviceRequested 1..1 CodeableConcept "What is prescribed" "What is prescribed"
-* problemCode 1..1 Reference "The problem (code or reference) that is the main reason for this prescription" "The problem (code or reference) that is the main reason for this prescription"
+* problemCode 0..1 Reference "The problem (code or reference) that is the main reason for this prescription" "The problem (code or reference) that is the main reason for this prescription"
 * supportingInfo 0..1 Reference "Care Set Problem" "Care Set Problem"
 * resultReceiver 0..1 boolean "True if the prescriber wants feedback. Other caregivers can be mentioned in the note" "True if the prescriber wants feedback. Other caregivers can be mentioned in the note"
 * status 0..1 code "Current status" "Current status"
