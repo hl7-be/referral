@@ -6,7 +6,7 @@ Usage: #example
 * contained[+] = Inline-Instance-for-diagnostic-imaging-basic-example-everything-contained-2
 * contained[+] = Performer1
 * performer[+] = Reference(practitionerrole1)
-* extension[statusReason].valueCodeableConcept = $be-status-reason#other "Other"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#inprogress "Other"
 * extension[validity].valuePeriod.start = "2020-01-01"
 * extension[validity].valuePeriod.end = "2021-01-01"
 * extension[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-supporting-info].url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-supporting-info"
