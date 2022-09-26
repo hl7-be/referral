@@ -1,7 +1,7 @@
 Instance: example01-care03-referralprescription-nursing-medication
 InstanceOf: BeReferralPrescriptionNursingGenMedication
 Usage: #example
-* statusReason = $be-status-reason#other "Other"
+* statusReason = $be-status-reason#inprogress "Other"
 * status = #active
 * intent = #order
 * category = $be-nursing-medication-injection#SC

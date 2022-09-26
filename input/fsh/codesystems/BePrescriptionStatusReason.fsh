@@ -1,5 +1,5 @@
 CodeSystem: BePrescriptionStatusReason
-Id: be-prescriptionstatus-reason
+Id: be-prescription-status-reason
 Title: "BePrescriptionStatusReason"
 Description: "Status reason for the prescription. Initially defined as supporting CodeSystem for the referral prescription."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason"
