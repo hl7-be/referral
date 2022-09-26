@@ -500,6 +500,23 @@
        ]
      ], [
        fhir:index 26;
+       fhir:Element.id [ fhir:value "BeDiagnosticImagingPrescription.intendedPerformer.executionPeriod" ];
+       fhir:ElementDefinition.path [ fhir:value "BeDiagnosticImagingPrescription.intendedPerformer.executionPeriod" ];
+       fhir:ElementDefinition.short [ fhir:value "Period in which the caregiver executes the treatment" ];
+       fhir:ElementDefinition.definition [ fhir:value "Period in which the caregiver executes the treatment" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.intendedPerformer.executionPeriod" ];
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Period" ]
+       ]
+     ], [
+       fhir:index 27;
        fhir:Element.id [ fhir:value "BeDiagnosticImagingPrescription.toBePerformedAfter" ];
        fhir:ElementDefinition.path [ fhir:value "BeDiagnosticImagingPrescription.toBePerformedAfter" ];
        fhir:ElementDefinition.short [ fhir:value "The current prescription should be performed after this one" ];
@@ -516,7 +533,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
        ]
      ], [
-       fhir:index 27;
+       fhir:index 28;
        fhir:Element.id [ fhir:value "BeDiagnosticImagingPrescription.serviceRequested" ];
        fhir:ElementDefinition.path [ fhir:value "BeDiagnosticImagingPrescription.serviceRequested" ];
        fhir:ElementDefinition.short [ fhir:value "What is prescribed" ];
@@ -533,7 +550,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 28;
+       fhir:index 29;
        fhir:Element.id [ fhir:value "BeDiagnosticImagingPrescription.problemCode" ];
        fhir:ElementDefinition.path [ fhir:value "BeDiagnosticImagingPrescription.problemCode" ];
        fhir:ElementDefinition.short [ fhir:value "The problem (code or reference) that is the main reason for this prescription" ];
@@ -550,7 +567,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
        ]
      ], [
-       fhir:index 29;
+       fhir:index 30;
        fhir:Element.id [ fhir:value "BeDiagnosticImagingPrescription.supportingInfo" ];
        fhir:ElementDefinition.path [ fhir:value "BeDiagnosticImagingPrescription.supportingInfo" ];
        fhir:ElementDefinition.short [ fhir:value "Care Set Problem" ];
@@ -567,7 +584,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
        ]
      ], [
-       fhir:index 30;
+       fhir:index 31;
        fhir:Element.id [ fhir:value "BeDiagnosticImagingPrescription.resultReceiver" ];
        fhir:ElementDefinition.path [ fhir:value "BeDiagnosticImagingPrescription.resultReceiver" ];
        fhir:ElementDefinition.short [ fhir:value "True if the prescriber wants feedback. Other caregivers can be mentioned in the note" ];
@@ -584,7 +601,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "boolean" ]
        ]
      ], [
-       fhir:index 31;
+       fhir:index 32;
        fhir:Element.id [ fhir:value "BeDiagnosticImagingPrescription.status" ];
        fhir:ElementDefinition.path [ fhir:value "BeDiagnosticImagingPrescription.status" ];
        fhir:ElementDefinition.short [ fhir:value "Current status" ];
@@ -608,7 +625,7 @@
          ]
        ]
      ], [
-       fhir:index 32;
+       fhir:index 33;
        fhir:Element.id [ fhir:value "BeDiagnosticImagingPrescription.statusReason" ];
        fhir:ElementDefinition.path [ fhir:value "BeDiagnosticImagingPrescription.statusReason" ];
        fhir:ElementDefinition.short [ fhir:value "Reason current status" ];
@@ -625,7 +642,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 33;
+       fhir:index 34;
        fhir:Element.id [ fhir:value "BeDiagnosticImagingPrescription.treatmentStatus" ];
        fhir:ElementDefinition.path [ fhir:value "BeDiagnosticImagingPrescription.treatmentStatus" ];
        fhir:ElementDefinition.short [ fhir:value "Status of the treatment" ];
@@ -642,7 +659,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 34;
+       fhir:index 35;
        fhir:Element.id [ fhir:value "BeDiagnosticImagingPrescription.treatmentStatusReason" ];
        fhir:ElementDefinition.path [ fhir:value "BeDiagnosticImagingPrescription.treatmentStatusReason" ];
        fhir:ElementDefinition.short [ fhir:value "Reason treatment status" ];
@@ -659,7 +676,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 35;
+       fhir:index 36;
        fhir:Element.id [ fhir:value "BeDiagnosticImagingPrescription.bodyLocation" ];
        fhir:ElementDefinition.path [ fhir:value "BeDiagnosticImagingPrescription.bodyLocation" ];
        fhir:ElementDefinition.short [ fhir:value "Place where the treatment should be executed" ];
@@ -676,7 +693,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "BackboneElement" ]
        ]
      ], [
-       fhir:index 36;
+       fhir:index 37;
        fhir:Element.id [ fhir:value "BeDiagnosticImagingPrescription.bodyLocation.bodySite" ];
        fhir:ElementDefinition.path [ fhir:value "BeDiagnosticImagingPrescription.bodyLocation.bodySite" ];
        fhir:ElementDefinition.short [ fhir:value "Anatomical place where the treatment should be executed" ];
@@ -693,7 +710,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 37;
+       fhir:index 38;
        fhir:Element.id [ fhir:value "BeDiagnosticImagingPrescription.bodyLocation.bodyLaterality" ];
        fhir:ElementDefinition.path [ fhir:value "BeDiagnosticImagingPrescription.bodyLocation.bodyLaterality" ];
        fhir:ElementDefinition.short [ fhir:value "Side of the body" ];
@@ -710,7 +727,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 38;
+       fhir:index 39;
        fhir:Element.id [ fhir:value "BeDiagnosticImagingPrescription.note" ];
        fhir:ElementDefinition.path [ fhir:value "BeDiagnosticImagingPrescription.note" ];
        fhir:ElementDefinition.short [ fhir:value "Additional text notes about the request." ];
@@ -727,7 +744,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "Annotation" ]
        ]
      ], [
-       fhir:index 39;
+       fhir:index 40;
        fhir:Element.id [ fhir:value "BeDiagnosticImagingPrescription.intent" ];
        fhir:ElementDefinition.path [ fhir:value "BeDiagnosticImagingPrescription.intent" ];
        fhir:ElementDefinition.short [ fhir:value "Proposal, Prolongation, Prescription" ];
@@ -744,7 +761,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "code" ]
        ]
      ], [
-       fhir:index 40;
+       fhir:index 41;
        fhir:Element.id [ fhir:value "BeDiagnosticImagingPrescription.BeReferralPrescription" ];
        fhir:ElementDefinition.path [ fhir:value "BeDiagnosticImagingPrescription.BeReferralPrescription" ];
        fhir:ElementDefinition.short [ fhir:value "test" ];
@@ -766,7 +783,7 @@
          ]
        ]
      ], [
-       fhir:index 41;
+       fhir:index 42;
        fhir:Element.id [ fhir:value "BeDiagnosticImagingPrescription.relevantClinicalInformation[x]" ];
        fhir:ElementDefinition.path [ fhir:value "BeDiagnosticImagingPrescription.relevantClinicalInformation[x]" ];
        fhir:ElementDefinition.short [ fhir:value "Relevant information in the context of this prescription concerning for example allergies, kidney function, diabetic. When detailed information can be given, it is RECOMMENDED to express it as structured as possible." ];
@@ -810,7 +827,7 @@
          ]
        ]
      ], [
-       fhir:index 42;
+       fhir:index 43;
        fhir:Element.id [ fhir:value "BeDiagnosticImagingPrescription.diagnosticQuestion[x]" ];
        fhir:ElementDefinition.path [ fhir:value "BeDiagnosticImagingPrescription.diagnosticQuestion[x]" ];
        fhir:ElementDefinition.short [ fhir:value "Either in text or in a coded format. At the discretion of the prescribing party." ];
@@ -830,7 +847,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 43;
+       fhir:index 44;
        fhir:Element.id [ fhir:value "BeDiagnosticImagingPrescription.contraIndication[x]" ];
        fhir:ElementDefinition.path [ fhir:value "BeDiagnosticImagingPrescription.contraIndication[x]" ];
        fhir:ElementDefinition.short [ fhir:value "Relevant information in the context of this prescription concerning possible contra indication. For example presence of devices or (suspected) pregnancy. When detailed information can be given, it is RECOMMENDED to express it as structured as possible. If prescriber has no knowledge of contra indication, this SHALL be expressed with a 'ASKU' nullFlavor ( = Information was sought but not found  ) in codeableConcept." ];
@@ -874,7 +891,7 @@
          ]
        ]
      ], [
-       fhir:index 44;
+       fhir:index 45;
        fhir:Element.id [ fhir:value "BeDiagnosticImagingPrescription.supportingInformation[x]" ];
        fhir:ElementDefinition.path [ fhir:value "BeDiagnosticImagingPrescription.supportingInformation[x]" ];
        fhir:ElementDefinition.short [ fhir:value "test" ];
@@ -891,7 +908,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "BackboneElement" ]
        ]
      ], [
-       fhir:index 45;
+       fhir:index 46;
        fhir:Element.id [ fhir:value "BeDiagnosticImagingPrescription.supportingInformation[x].questionnaireResponse" ];
        fhir:ElementDefinition.path [ fhir:value "BeDiagnosticImagingPrescription.supportingInformation[x].questionnaireResponse" ];
        fhir:ElementDefinition.short [ fhir:value "Questionnaire responses" ];
@@ -913,7 +930,7 @@
          ]
        ]
      ], [
-       fhir:index 46;
+       fhir:index 47;
        fhir:Element.id [ fhir:value "BeDiagnosticImagingPrescription.supportingInformation[x].document" ];
        fhir:ElementDefinition.path [ fhir:value "BeDiagnosticImagingPrescription.supportingInformation[x].document" ];
        fhir:ElementDefinition.short [ fhir:value "Any document added as extra information" ];
@@ -935,7 +952,7 @@
          ]
        ]
      ], [
-       fhir:index 47;
+       fhir:index 48;
        fhir:Element.id [ fhir:value "BeDiagnosticImagingPrescription.supportingInformation[x].imagingStudy" ];
        fhir:ElementDefinition.path [ fhir:value "BeDiagnosticImagingPrescription.supportingInformation[x].imagingStudy" ];
        fhir:ElementDefinition.short [ fhir:value "If vital to this request, references may be given to previous diagnostic imaging" ];
@@ -957,7 +974,7 @@
          ]
        ]
      ], [
-       fhir:index 48;
+       fhir:index 49;
        fhir:Element.id [ fhir:value "BeDiagnosticImagingPrescription.bodySite" ];
        fhir:ElementDefinition.path [ fhir:value "BeDiagnosticImagingPrescription.bodySite" ];
        fhir:ElementDefinition.short [ fhir:value "bodySite, e.g. using a SNOMED-CT code" ];
@@ -974,7 +991,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 49;
+       fhir:index 50;
        fhir:Element.id [ fhir:value "BeDiagnosticImagingPrescription.proposedInvestigation" ];
        fhir:ElementDefinition.path [ fhir:value "BeDiagnosticImagingPrescription.proposedInvestigation" ];
        fhir:ElementDefinition.short [ fhir:value "What to do - coded or as text within the codeableConcept" ];
@@ -991,7 +1008,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 50;
+       fhir:index 51;
        fhir:Element.id [ fhir:value "BeDiagnosticImagingPrescription.contrastFluid" ];
        fhir:ElementDefinition.path [ fhir:value "BeDiagnosticImagingPrescription.contrastFluid" ];
        fhir:ElementDefinition.short [ fhir:value "ifNecessary|notPermitted" ];

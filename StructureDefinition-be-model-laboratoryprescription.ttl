@@ -500,6 +500,23 @@
        ]
      ], [
        fhir:index 26;
+       fhir:Element.id [ fhir:value "BeLaboratoryPrescription.intendedPerformer.executionPeriod" ];
+       fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.intendedPerformer.executionPeriod" ];
+       fhir:ElementDefinition.short [ fhir:value "Period in which the caregiver executes the treatment" ];
+       fhir:ElementDefinition.definition [ fhir:value "Period in which the caregiver executes the treatment" ];
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+       fhir:ElementDefinition.max [ fhir:value "1" ];
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeReferralPrescription.intendedPerformer.executionPeriod" ];
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ];
+       fhir:ElementDefinition.type [
+         fhir:index 0;
+         fhir:ElementDefinition.type.code [ fhir:value "Period" ]
+       ]
+     ], [
+       fhir:index 27;
        fhir:Element.id [ fhir:value "BeLaboratoryPrescription.toBePerformedAfter" ];
        fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.toBePerformedAfter" ];
        fhir:ElementDefinition.short [ fhir:value "The current prescription should be performed after this one" ];
@@ -516,7 +533,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
        ]
      ], [
-       fhir:index 27;
+       fhir:index 28;
        fhir:Element.id [ fhir:value "BeLaboratoryPrescription.serviceRequested" ];
        fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.serviceRequested" ];
        fhir:ElementDefinition.short [ fhir:value "What is prescribed" ];
@@ -533,7 +550,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 28;
+       fhir:index 29;
        fhir:Element.id [ fhir:value "BeLaboratoryPrescription.problemCode" ];
        fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.problemCode" ];
        fhir:ElementDefinition.short [ fhir:value "The problem (code or reference) that is the main reason for this prescription" ];
@@ -550,7 +567,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
        ]
      ], [
-       fhir:index 29;
+       fhir:index 30;
        fhir:Element.id [ fhir:value "BeLaboratoryPrescription.supportingInfo" ];
        fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.supportingInfo" ];
        fhir:ElementDefinition.short [ fhir:value "Care Set Problem" ];
@@ -567,7 +584,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "Reference" ]
        ]
      ], [
-       fhir:index 30;
+       fhir:index 31;
        fhir:Element.id [ fhir:value "BeLaboratoryPrescription.resultReceiver" ];
        fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.resultReceiver" ];
        fhir:ElementDefinition.short [ fhir:value "True if the prescriber wants feedback. Other caregivers can be mentioned in the note" ];
@@ -584,7 +601,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "boolean" ]
        ]
      ], [
-       fhir:index 31;
+       fhir:index 32;
        fhir:Element.id [ fhir:value "BeLaboratoryPrescription.status" ];
        fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.status" ];
        fhir:ElementDefinition.short [ fhir:value "Current status" ];
@@ -608,7 +625,7 @@
          ]
        ]
      ], [
-       fhir:index 32;
+       fhir:index 33;
        fhir:Element.id [ fhir:value "BeLaboratoryPrescription.statusReason" ];
        fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.statusReason" ];
        fhir:ElementDefinition.short [ fhir:value "Reason current status" ];
@@ -625,7 +642,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 33;
+       fhir:index 34;
        fhir:Element.id [ fhir:value "BeLaboratoryPrescription.treatmentStatus" ];
        fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.treatmentStatus" ];
        fhir:ElementDefinition.short [ fhir:value "Status of the treatment" ];
@@ -642,7 +659,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 34;
+       fhir:index 35;
        fhir:Element.id [ fhir:value "BeLaboratoryPrescription.treatmentStatusReason" ];
        fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.treatmentStatusReason" ];
        fhir:ElementDefinition.short [ fhir:value "Reason treatment status" ];
@@ -659,7 +676,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 35;
+       fhir:index 36;
        fhir:Element.id [ fhir:value "BeLaboratoryPrescription.bodyLocation" ];
        fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.bodyLocation" ];
        fhir:ElementDefinition.short [ fhir:value "Place where the treatment should be executed" ];
@@ -676,7 +693,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "BackboneElement" ]
        ]
      ], [
-       fhir:index 36;
+       fhir:index 37;
        fhir:Element.id [ fhir:value "BeLaboratoryPrescription.bodyLocation.bodySite" ];
        fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.bodyLocation.bodySite" ];
        fhir:ElementDefinition.short [ fhir:value "Anatomical place where the treatment should be executed" ];
@@ -693,7 +710,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 37;
+       fhir:index 38;
        fhir:Element.id [ fhir:value "BeLaboratoryPrescription.bodyLocation.bodyLaterality" ];
        fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.bodyLocation.bodyLaterality" ];
        fhir:ElementDefinition.short [ fhir:value "Side of the body" ];
@@ -710,7 +727,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
        ]
      ], [
-       fhir:index 38;
+       fhir:index 39;
        fhir:Element.id [ fhir:value "BeLaboratoryPrescription.note" ];
        fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.note" ];
        fhir:ElementDefinition.short [ fhir:value "Additional text notes about the request." ];
@@ -727,7 +744,7 @@
          fhir:ElementDefinition.type.code [ fhir:value "Annotation" ]
        ]
      ], [
-       fhir:index 39;
+       fhir:index 40;
        fhir:Element.id [ fhir:value "BeLaboratoryPrescription.intent" ];
        fhir:ElementDefinition.path [ fhir:value "BeLaboratoryPrescription.intent" ];
        fhir:ElementDefinition.short [ fhir:value "Proposal, Prolongation, Prescription" ];
