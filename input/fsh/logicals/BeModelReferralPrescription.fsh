@@ -21,6 +21,7 @@ Description: "Logical model describing the model for the prescription referral. 
 * recordedDate 1..1 dateTime "When this prescription was created" "When this prescription was created"
 * recorder 1..1 Reference "The person who is responsable for the content, not necessarily the person who entered the content. This is either the prescriber, a co-prescriber or a performer" "The person who is responsable for the content, not necessarily the person who entered the content. This is either the prescriber, a co-prescriber or a performer"
 * prescriber 1..1 Reference "The prescribing healthcare party" "The prescribing healthcare party"
+* co-prescriberNumber 1..1 positiveInt "Number of co-prescribers that must sign the prescription to activate it" "Number of co-prescribers that must sign the prescription to activate it"
 * co-prescriber 0..* BackboneElement "Information about co prescribers" "Information about co prescribers"
 * co-prescriber.co-prescriber 0..1 Reference "The co-prescriber party" "The co-prescriber party"
 * co-prescriber.co-prescriberType 1..1 code "Type of the practitioner" "Type of the practitioner"
