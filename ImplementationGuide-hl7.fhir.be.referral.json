@@ -3,14 +3,25 @@
   "id": "hl7.fhir.be.referral",
   "text": {
     "status": "extensions",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>HL7BEReferralPrescriptionWGImplementationGuideworkinprogress</h2><p>The official URL for this implementation guide is: </p><pre>https://www.ehealth.fgov.be/standards/fhir/referral/ImplementationGuide/hl7.fhir.be.referral</pre></div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>ReferralPrescription</h2><p>The official URL for this implementation guide is: </p><pre>https://www.ehealth.fgov.be/standards/fhir/referral/ImplementationGuide/hl7.fhir.be.referral</pre></div>"
   },
   "url": "https://www.ehealth.fgov.be/standards/fhir/referral/ImplementationGuide/hl7.fhir.be.referral",
-  "version": "0.2.0",
-  "name": "HL7BEReferralPrescriptionWGImplementationGuideworkinprogress",
-  "title": "HL7 BE Referral Prescription WG Implementation Guide (work in progress)",
+  "version": "1.0.0",
+  "name": "ReferralPrescription",
+  "title": "Referral Prescription",
   "status": "draft",
-  "date": "2022-09-26T12:48:08+00:00",
+  "date": "2022-09-26T15:07:54+00:00",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "urn:iso:std:iso:3166",
+          "code": "BE",
+          "display": "Belgium"
+        }
+      ]
+    }
+  ],
   "packageId": "hl7.fhir.be.referral",
   "license": "CC0-1.0",
   "fhirVersion": [
@@ -72,6 +83,84 @@
           {
             "url": "value",
             "valueString": "STU"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "shownav"
+          },
+          {
+            "url": "value",
+            "valueString": "true"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "apply-contact"
+          },
+          {
+            "url": "value",
+            "valueString": "true"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "apply-jurisdiction"
+          },
+          {
+            "url": "value",
+            "valueString": "true"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "apply-publisher"
+          },
+          {
+            "url": "value",
+            "valueString": "true"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "apply-version"
+          },
+          {
+            "url": "value",
+            "valueString": "true"
+          }
+        ],
+        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+      },
+      {
+        "extension": [
+          {
+            "url": "code",
+            "valueString": "autoload-resources"
+          },
+          {
+            "url": "value",
+            "valueString": "true"
           }
         ],
         "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
@@ -197,19 +286,6 @@
         "extension": [
           {
             "url": "code",
-            "valueString": "apply-contact"
-          },
-          {
-            "url": "value",
-            "valueString": "true"
-          }
-        ],
-        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-      },
-      {
-        "extension": [
-          {
-            "url": "code",
             "valueString": "apply-context"
           },
           {
@@ -236,46 +312,7 @@
         "extension": [
           {
             "url": "code",
-            "valueString": "apply-jurisdiction"
-          },
-          {
-            "url": "value",
-            "valueString": "true"
-          }
-        ],
-        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-      },
-      {
-        "extension": [
-          {
-            "url": "code",
             "valueString": "apply-license"
-          },
-          {
-            "url": "value",
-            "valueString": "true"
-          }
-        ],
-        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-      },
-      {
-        "extension": [
-          {
-            "url": "code",
-            "valueString": "apply-publisher"
-          },
-          {
-            "url": "value",
-            "valueString": "true"
-          }
-        ],
-        "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-      },
-      {
-        "extension": [
-          {
-            "url": "code",
-            "valueString": "apply-version"
           },
           {
             "url": "value",
@@ -944,7 +981,7 @@
           }
         ],
         "reference": {
-          "reference": "CodeSystem/be-prescriptionstatus-reason"
+          "reference": "CodeSystem/be-prescription-status-reason"
         },
         "name": "BePrescriptionStatusReason",
         "description": "Status reason for the prescription. Initially defined as supporting CodeSystem for the referral prescription.",
@@ -1607,133 +1644,34 @@
           "extension": [
             {
               "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl": "downloads.html"
-            }
-          ],
-          "nameUrl": "downloads.html",
-          "title": "Downloads",
-          "generation": "markdown"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
               "valueUrl": "guidance.html"
             }
           ],
           "nameUrl": "guidance.html",
           "title": "Guidance",
+          "generation": "markdown"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl": "changes.html"
+            }
+          ],
+          "nameUrl": "changes.html",
+          "title": "Changes",
+          "generation": "markdown"
+        },
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+              "valueUrl": "downloads.html"
+            }
+          ],
+          "nameUrl": "downloads.html",
+          "title": "Downloads",
           "generation": "html"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl": "howto.html"
-            }
-          ],
-          "nameUrl": "howto.html",
-          "title": "Howto",
-          "generation": "markdown"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl": "logical-models.html"
-            }
-          ],
-          "nameUrl": "logical-models.html",
-          "title": "Logical Models",
-          "generation": "markdown"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl": "openapi.html"
-            }
-          ],
-          "nameUrl": "openapi.html",
-          "title": "Openapi",
-          "generation": "markdown"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl": "privacy.html"
-            }
-          ],
-          "nameUrl": "privacy.html",
-          "title": "Privacy",
-          "generation": "markdown"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl": "security.html"
-            }
-          ],
-          "nameUrl": "security.html",
-          "title": "Security",
-          "generation": "markdown"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl": "standardsstatus.html"
-            }
-          ],
-          "nameUrl": "standardsstatus.html",
-          "title": "Standardsstatus",
-          "generation": "markdown"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl": "terminology.html"
-            }
-          ],
-          "nameUrl": "terminology.html",
-          "title": "Terminology",
-          "generation": "markdown"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl": "testdata.html"
-            }
-          ],
-          "nameUrl": "testdata.html",
-          "title": "Testdata",
-          "generation": "markdown"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl": "testservers.html"
-            }
-          ],
-          "nameUrl": "testservers.html",
-          "title": "Testservers",
-          "generation": "markdown"
-        },
-        {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-              "valueUrl": "usecases.html"
-            }
-          ],
-          "nameUrl": "usecases.html",
-          "title": "Usecases",
-          "generation": "markdown"
         }
       ]
     },
