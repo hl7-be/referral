@@ -26,6 +26,7 @@ Description: "Logical model describing the model for the prescription referral. 
 * co-prescriber.co-prescriber 0..1 Reference "The co-prescriber party" "The co-prescriber party"
 * co-prescriber.co-prescriberType 1..1 code "Type of the practitioner" "Type of the practitioner"
 * co-prescriber.status 0..1 code "Status of co prescribing status (to sign, signed or refused)" "Status of co prescribing status (to sign, signed or refused)"
+* co-prescriber.required 1..1 positiveInt "Type of mandatory for the signature of the co-prescriber (1= required: the co-prescriber SHALL sign to make the prescription valid, 2= conditionally required: the co-prescriber SHALL sign if the number of co-prescribers with a signature is lower than the number in co-prescriber number 3= optional: the signature does not affect the validity of the prescription, but is for information only"
 * patient 1..1 Reference "The SSIN of the person for which the referral is prescribed." "The SSIN of the person for which the referral is prescribed."
 * prescriptionNumber 1..1 Identifier "An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available" "An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available"
 * pssNumber 0..1 Identifier "An identifier for the Prescription Search Support"
