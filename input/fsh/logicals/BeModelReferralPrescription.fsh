@@ -43,6 +43,7 @@ Description: "Logical model describing the model for the prescription referral. 
 * intendedPerformer.discipline 1..1 CodeableConcept "The required discipline of the provider party" "The required discipline of the provider party"
 * intendedPerformer.period 0..1 Period "Start and enddate for the particular provider"
 * intendedPerformer.organization 0..1 Reference "Reference to an organization that will add the performer"
+* intendedPerformer.executionPeriod 0..1 Period "Period in which the caregiver executes the treatment"
 * toBePerformedAfter 0..1 Reference "The current prescription should be performed after this one"
 * serviceRequested 1..1 CodeableConcept "What is prescribed" "What is prescribed"
 * problemCode 1..1 Reference "The problem (code or reference) that is the main reason for this prescription" "The problem (code or reference) that is the main reason for this prescription"
