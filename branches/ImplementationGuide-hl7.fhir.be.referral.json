@@ -10,7 +10,7 @@
   "name": "HL7BEReferralPrescriptionWGImplementationGuideworkinprogress",
   "title": "HL7 BE Referral Prescription WG Implementation Guide (work in progress)",
   "status": "draft",
-  "date": "2022-09-26T07:47:59+00:00",
+  "date": "2022-09-26T09:04:29+00:00",
   "packageId": "hl7.fhir.be.referral",
   "license": "CC0-1.0",
   "fhirVersion": [
@@ -27,7 +27,7 @@
       "id": "hl7_fhir_be_core",
       "uri": "https://www.ehealth.fgov.be/standards/fhir/core/ImplementationGuide/hl7.fhir.be.core",
       "packageId": "hl7.fhir.be.core",
-      "version": "2.0.0"
+      "version": "2.0.1"
     },
     {
       "id": "hl7_fhir_be_medication",
@@ -45,7 +45,7 @@
       "id": "hl7_fhir_be_allergy",
       "uri": "https://www.ehealth.fgov.be/standards/fhir/allergy/ImplementationGuide/hl7.fhir.be.allergy",
       "packageId": "hl7.fhir.be.allergy",
-      "version": "1.0.0"
+      "version": "1.0.1"
     }
   ],
   "definition": {
@@ -806,10 +806,10 @@
           }
         ],
         "reference": {
-          "reference": "ValueSet/be-vs-prescription-status"
+          "reference": "ValueSet/be-vs-prescription-status-reason"
         },
-        "name": "BePrescriptionStatus",
-        "description": "This is the status of the prescription",
+        "name": "BeVSPrescriptionStatusReason",
+        "description": "This is the status reason of the prescription",
         "exampleBoolean": false
       },
       {
@@ -820,10 +820,10 @@
           }
         ],
         "reference": {
-          "reference": "ValueSet/be-vs-reason-referral-status"
+          "reference": "ValueSet/be-vs-treatment-status-reason"
         },
-        "name": "BeReasonReferralStatus",
-        "description": "Codes to explain the current status of a referral prescription.",
+        "name": "BeVSTreatmentStatusReason",
+        "description": "Codes to explain the current status of a treatment in a referral prescription.",
         "exampleBoolean": false
       },
       {
@@ -944,10 +944,10 @@
           }
         ],
         "reference": {
-          "reference": "CodeSystem/be-prescription-status"
+          "reference": "CodeSystem/be-prescriptionstatus-reason"
         },
-        "name": "BePrescriptionStatus",
-        "description": "Prescription status in Belgium. Initially defined as supporting CodeSystem for the referral prescription.",
+        "name": "BePrescriptionStatusReason",
+        "description": "Status reason for the prescription. Initially defined as supporting CodeSystem for the referral prescription.",
         "exampleBoolean": false
       },
       {
@@ -958,10 +958,10 @@
           }
         ],
         "reference": {
-          "reference": "CodeSystem/be-status-reason"
+          "reference": "CodeSystem/be-treatment-status-reason"
         },
-        "name": "BeStatusReason",
-        "description": "Status reason in Belgium. Initially defined as supporting CodeSystem for the referral prescription.",
+        "name": "BeTreatmentStatusReason",
+        "description": "Status reason for the treatment. Initially defined as supporting CodeSystem for the referral prescription.",
         "exampleBoolean": false
       },
       {
