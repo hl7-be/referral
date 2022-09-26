@@ -9,8 +9,8 @@ Usage: #example
 * extension[statusReason].valueCodeableConcept = $be-status-reason#other "Other"
 * extension[validity].valuePeriod.start = "2020-01-01"
 * extension[validity].valuePeriod.end = "2021-01-01"
-* extension[+].url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-supporting-info"
-* extension[=].valueAnnotation.text = "Some relevant supporting information"
+* extension[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-supporting-info].url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-supporting-info"
+* extension[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-supporting-info].valueAnnotation.text = "Some relevant supporting information"
 * modifierExtension.url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-contraindication"
 * modifierExtension.valueAnnotation.text = "Patient has serious kidney problems."
 * status = #active

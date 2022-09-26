@@ -7,8 +7,8 @@ Usage: #example
 * extension[validity].valuePeriod.start = "2020-01-01"
 * extension[validity].valuePeriod.end = "2021-01-01"
 * extension[statusReason].valueCodeableConcept = $be-status-reason#other "Other"
-* extension[+].url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-supporting-info"
-* extension[=].valueAnnotation.text = "Inversietrauma rechtervoet 20/1"
+* extension[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-supporting-info].url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-supporting-info"
+* extension[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-supporting-info].valueAnnotation.text = "Inversietrauma rechtervoet 20/1"
 * modifierExtension.url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-contraindication"
 * modifierExtension.valueCodeableConcept = $v3-NullFlavor#ASKU "asked but unknown"
 * status = #active
