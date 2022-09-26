@@ -217,6 +217,24 @@
         ]
       },
       {
+        "id": "BeDiagnosticImagingPrescription.co-prescriber.required",
+        "path": "BeDiagnosticImagingPrescription.co-prescriber.required",
+        "short": "Type of mandatory for the signature of the co-prescriber (1= required: the co-prescriber SHALL sign to make the prescription valid, 2= conditionally required: the co-prescriber SHALL sign if the number of co-prescribers with a signature is lower than the number in co-prescriber number 3= optional: the signature does not affect the validity of the prescription, but is for information only",
+        "definition": "Type of mandatory for the signature of the co-prescriber (1= required: the co-prescriber SHALL sign to make the prescription valid, 2= conditionally required: the co-prescriber SHALL sign if the number of co-prescribers with a signature is lower than the number in co-prescriber number 3= optional: the signature does not affect the validity of the prescription, but is for information only",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.co-prescriber.required",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "positiveInt"
+          }
+        ]
+      },
+      {
         "id": "BeDiagnosticImagingPrescription.patient",
         "path": "BeDiagnosticImagingPrescription.patient",
         "short": "The SSIN of the person for which the referral is prescribed.",
