@@ -22,7 +22,7 @@
      fhir:Extension.valueCode [ fhir:value "patient" ]
   ];
   fhir:StructureDefinition.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing"];
-  fhir:StructureDefinition.version [ fhir:value "0.2.0"];
+  fhir:StructureDefinition.version [ fhir:value "1.0.0"];
   fhir:StructureDefinition.name [ fhir:value "BeReferralPrescriptionNursing"];
   fhir:StructureDefinition.status [ fhir:value "draft"];
   fhir:StructureDefinition.date [ fhir:value "2021-07-15T08:52:50+00:00"^^xsd:dateTime];
@@ -807,7 +807,7 @@
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.extension" ];
        fhir:ElementDefinition.sliceName [ fhir:value "feedback" ];
        fhir:ElementDefinition.short [ fhir:value "Give feedback to the prescriber" ];
-       fhir:ElementDefinition.definition [ fhir:value "Optional Extension Element - found in all resources." ];
+       fhir:ElementDefinition.definition [ fhir:value "An Extension" ];
        fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "1" ];
        fhir:ElementDefinition.base [
@@ -852,16 +852,7 @@
          ]
        ];
        fhir:ElementDefinition.mustSupport [ fhir:value "true"^^xsd:boolean ];
-       fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ];
-       fhir:ElementDefinition.mapping [
-         fhir:index 0;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "rim" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value "n/a" ]
-       ], [
-         fhir:index 1;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "rim" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value "N/A" ]
-       ]
+       fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 15;
        fhir:Element.id [ fhir:value "ServiceRequest.extension:coprescriber" ];
