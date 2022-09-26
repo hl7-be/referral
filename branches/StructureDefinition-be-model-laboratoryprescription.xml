@@ -179,6 +179,21 @@
         <code value="code"/>
       </type>
     </element>
+    <element id="BeLaboratoryPrescription.co-prescriber.required">
+      <path value="BeLaboratoryPrescription.co-prescriber.required"/>
+      <short value="Type of mandatory for the signature of the co-prescriber (1= required: the co-prescriber SHALL sign to make the prescription valid, 2= conditionally required: the co-prescriber SHALL sign if the number of co-prescribers with a signature is lower than the number in co-prescriber number 3= optional: the signature does not affect the validity of the prescription, but is for information only"/>
+      <definition value="Type of mandatory for the signature of the co-prescriber (1= required: the co-prescriber SHALL sign to make the prescription valid, 2= conditionally required: the co-prescriber SHALL sign if the number of co-prescribers with a signature is lower than the number in co-prescriber number 3= optional: the signature does not affect the validity of the prescription, but is for information only"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.co-prescriber.required"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="positiveInt"/>
+      </type>
+    </element>
     <element id="BeLaboratoryPrescription.patient">
       <path value="BeLaboratoryPrescription.patient"/>
       <short value="The SSIN of the person for which the referral is prescribed."/>
