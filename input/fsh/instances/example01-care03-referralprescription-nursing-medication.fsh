@@ -1,7 +1,9 @@
 Instance: example01-care03-referralprescription-nursing-medication
-InstanceOf: BeReferralPrescriptionNursingGenMedication
+InstanceOf: BeReferralPrescriptionNursingMedication
 Usage: #example
-* statusReason = $be-status-reason#inProgress "Other"
+* contained[+] = patient1
+* contained[+] = Requester1
+* statusReason = $be-status-reason#inProgress "In progress"
 * status = #active
 * intent = #order
 * category = $be-nursing-medication-injection#SC
@@ -14,6 +16,7 @@ Usage: #example
 * dosageInstruction.timing.repeat.periodUnit = #d
 * dosageInstruction.text = "opzet hier: éénmalige sondage en lavement uitvoeren, maar persoon op voorhand verdoven met 5mg Midzaolan via subcutane inspuiting"
 * requester.reference = "#Requester1"
-* extension[performer].valueReference = Reference(practitionerrole1)
+* extension[performertasks].valueReference[+] = Reference(performer-task)
 * extension[validity].valuePeriod.start = "2022-10-10"
 * extension[validity].valuePeriod.start = "2022-10-12"
+* extension[feedback].valueBoolean = true

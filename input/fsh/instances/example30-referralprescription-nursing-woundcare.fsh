@@ -1,12 +1,12 @@
 Instance: example30-referralprescription-nursing-woundcare
-InstanceOf: BeReferralPrescriptionNursingGenMedication
+InstanceOf: BeReferralPrescriptionNursingMedication
 Title: "example30-referralprescription-nursing-woundcare"
 Usage: #example
 
 
 
-* extension[performer].valueReference = Reference(practitionerrole1)
-
+* extension[performertasks].valueReference[+] = Reference(performer-task)
+* extension[feedback].valueBoolean = true
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
 * identifier.value = "UHMEPVALUE"
 * status = #active

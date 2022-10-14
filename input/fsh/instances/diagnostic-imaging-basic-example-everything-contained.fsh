@@ -4,11 +4,11 @@ Title: "diagnostic-imaging-basic-example-everything-contained"
 Usage: #example
 * contained[0] = patient1
 * contained[+] = Inline-Instance-for-diagnostic-imaging-basic-example-everything-contained-2
-* contained[+] = Performer1
 * performer[+] = Reference(practitionerrole1)
-* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "Other"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * extension[validity].valuePeriod.start = "2020-01-01"
 * extension[validity].valuePeriod.end = "2021-01-01"
+* extension[feedback].valueBoolean = true
 * extension[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-supporting-info].url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-supporting-info"
 * extension[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-supporting-info].valueAnnotation.text = "Some relevant supporting information"
 * modifierExtension.url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-contraindication"

@@ -1,8 +1,8 @@
-Profile: BeReferralPrescriptionNursingGenMedication
+Profile: BeReferralPrescriptionNursingMedication
 Parent: MedicationRequest
-Id: be-referralprescription-nursing-gen-medication
+Id: be-referralprescription-nursing-medication
 Description: "The nursing profile specialized for medication. Note this profile is based on the FHIR resource MedicationRequest. Dosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements)."
-* ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication"
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication"
 * ^version = "0.2.0"
 * ^status = #draft
 * ^date = "2022-05-03T10:04:16+02:00"
@@ -19,23 +19,21 @@ Description: "The nursing profile specialized for medication. Note this profile 
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-//  BeInformParty named informParty 0..* MS and
     BeFeedbackToPrescriber named feedback 0..1 MS and
     BeCoPrescriberInfo named coprescriber 0..1 MS and
     BeValidityPeriod named validity 1..1 MS and
-    BeExecutionPeriod named executed 0..1 MS and
     BeLatestEndDate named latest 0..1 MS and
     BeLatestDraftDate named latestDraft 0..1 MS and
-//    BeIntendedPerformer named performer 1..* MS and
-    BePerformerReference named performer 0..* MS and
     BePerformerTaskReference named performertasks 0..* MS and
     BeProposalType named proposalType 0..1 MS and
     BeTaskReference named task 0..1 MS and
     BePSSInfo named pss 0..1 MS 
-//* extension[informParty] ^short = "Parties to inform of fulfillment of the prescription, besides the prescriber."
-* extension[coprescriber] ^short = "Other parties that have to take part in the prescription."
+* extension[coprescriber] ^short = "Info about the other parties that have to take part in the prescription."
 * extension[validity] ^short = "Validity period of the prescription"
-* extension[performer] ^short = "Takes the place of performer and performerType"
+* extension[latest] ^short = "Request must be executed before"
+* extension[feedback] ^short = "Give feedback to the prescriber"
+* extension[latestDraft] ^short = "The prescription must have left the draft status befor this moment"
+* extension[performertasks] ^short = "The subtasks as executed by different performers. Together they form the execution of the prescription as described in task extension"
 * identifier MS
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
@@ -51,11 +49,11 @@ Description: "The nursing profile specialized for medication. Note this profile 
 * category 1..1 MS
 * category from $procedure-code (example)
 * medication[x] MS
-* subject only Reference(Group or BePatient)
+* subject only Reference(BePatient)
 * subject MS
 * encounter MS
 * requester 1.. MS
-* requester only Reference(RelatedPerson or Device or BePatient or BePractitioner or BePractitionerRole or BeOrganization)
+* requester only Reference(BePractitioner)
 * performer ..0 MS
 * performerType ..0 MS
 * groupIdentifier MS
@@ -64,3 +62,4 @@ Description: "The nursing profile specialized for medication. Note this profile 
 * dosageInstruction.text 1.. MS
 * dosageInstruction.site MS
 * recorder MS
+* recorder ^short = "The person responsable for this information, not necessarily the person who recorded the information"

@@ -1,10 +1,8 @@
 Profile: BeReferralTask
 Parent: Task
 Id: be-referral-task
-Description: "The task that is referred to in the referral prescription"
-* input MS
+Description: "The task that is referred to in the referral prescription (this is the common task for the execution of the prescription). The subtasks per performer can be found in BePerformerTask"
 * statusReason MS
 * statusReason from BeVSTreatmentStatusReason
-* input ^short = "Elements to be executed or to be present before this task can start. Always use http://snomed.info/sct#704326004 as type"
-//* input.type.coding = http://snomed.info/sct#704326004
-* input.value[x] only Reference(BeReferralPrescription or BeReferralPrescriptionNursingGenMedication)
+* executionPeriod MS 
+* executionPeriod ^short = "Start and end date of the treatment"
