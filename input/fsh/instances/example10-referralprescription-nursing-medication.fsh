@@ -10,7 +10,7 @@ Usage: #example
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
 * identifier.value = "UHMEPVALUE"
 * status = #active
-* statusReason = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason#inprogress "In Progress"
+* statusReason = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason#inProgress "In Progress"
 * intent = #order
 * category = $be-nursing-medication-category#vaginal
 * category.text = "vaginal"

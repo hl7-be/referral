@@ -12,12 +12,12 @@ ServiceRequest.status.completed : [uitgevoerd]
 
 state ServiceRequest.status.active {
   Task.status.ready : Open
-  Task.status.inprogress : In Uitvoering
+  Task.status.inProgress : In Uitvoering
   Task.status.failed : Vervallen
 
-  Task.status.ready --> Task.status.inprogress
+  Task.status.ready --> Task.status.inProgress
   Task.status.ready --> Task.status.failed
-  Task.status.inprogress --> ServiceRequest.status.completed
+  Task.status.inProgress --> ServiceRequest.status.completed
 }
 
 ServiceRequest.status.revoked : Geannuleerd

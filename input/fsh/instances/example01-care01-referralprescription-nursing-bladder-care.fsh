@@ -3,7 +3,7 @@ InstanceOf: BeReferralPrescriptionNursing
 Usage: #inline
 * meta.profile[0] = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing"
 * meta.profile[+] = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-bladder-care"
-* extension[statusReason].valueCodeableConcept = $be-status-reason#inprogress "Other"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "Other"
 * extension[validity].valuePeriod.start = "2020-01-01"
 * extension[validity].valuePeriod.end = "2021-01-01"
 * status = #active

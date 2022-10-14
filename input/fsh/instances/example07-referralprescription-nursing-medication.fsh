@@ -2,7 +2,7 @@ Instance: example07-referralprescription-nursing-medication
 InstanceOf: BeReferralPrescriptionNursingGenMedication
 Title: "example07-referralprescription-nursing-medication"
 Usage: #example
-* statusReason = $be-status-reason#inprogress "Other"
+* statusReason = $be-status-reason#inProgress "Other"
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
 * identifier.value = "UHMEPVALUE"
 * status = #active
