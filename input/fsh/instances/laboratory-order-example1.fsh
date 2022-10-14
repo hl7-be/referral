@@ -10,7 +10,7 @@ Usage: #example
 * contained[+] = Inline-Instance-for-laboratory-order-example1-4
 * contained[+] = specimen1
 * performer[+] = Reference(practitionerrole1)
-* extension[statusReason].valueCodeableConcept = $be-status-reason#inprogress "Other"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "Other"
 * extension[validity].valuePeriod.start = "2020-10-10"
 * extension[validity].valuePeriod.start = "2021-10-10"
 * extension[urgentCommunication].extension[party].valueReference = Reference(Requester1)

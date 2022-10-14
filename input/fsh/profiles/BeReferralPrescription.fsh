@@ -33,7 +33,7 @@ Description: "The common structure for referral prescription."
     BeTaskReference named task 0..1 MS and
     BePSSInfo named pss 0..1 MS and
     BeExtRecorder named recorder 0..1 MS
-* extension[statusReason].valueCodeableConcept 0..1
+* extension[statusReason].valueCodeableConcept 1..1
 * extension[statusReason].valueCodeableConcept from BeVSPrescriptionStatusReason (extensible)
 //* extension[informParty] ^short = "Parties to inform of fulfillment of the prescription, besides the prescriber."
 * extension[coprescriber] ^short = "Info about the other parties that have to take part in the prescription."
