@@ -19,7 +19,7 @@ Description: "The common structure for referral prescription."
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-    $request-statusReason named statusReason 1..1 MS and
+    $request-statusReason named statusReason 0..1 MS and
 //  BeInformParty named informParty 0..* MS and
     BeFeedbackToPrescriber named feedback 0..1 MS and
     BeCoPrescriberInfo named coprescriber 0..1 MS and
@@ -33,7 +33,7 @@ Description: "The common structure for referral prescription."
     BeTaskReference named task 0..1 MS and
     BePSSInfo named pss 0..1 MS and
     BeExtRecorder named recorder 0..1 MS
-* extension[statusReason].valueCodeableConcept 1..1
+* extension[statusReason].valueCodeableConcept 0..1
 * extension[statusReason].valueCodeableConcept from BeVSPrescriptionStatusReason (extensible)
 //* extension[informParty] ^short = "Parties to inform of fulfillment of the prescription, besides the prescriber."
 * extension[coprescriber] ^short = "Info about the other parties that have to take part in the prescription."
