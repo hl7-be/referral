@@ -10,7 +10,7 @@
   "name": "ReferralPrescription",
   "title": "Referral Prescription",
   "status": "draft",
-  "date": "2022-10-03T11:30:02+00:00",
+  "date": "2022-10-14T14:40:23+00:00",
   "jurisdiction": [
     {
       "coding": [
@@ -28,12 +28,6 @@
     "4.0.1"
   ],
   "dependsOn": [
-    {
-      "id": "higtools",
-      "uri": "http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools",
-      "packageId": "hl7.fhir.uv.tools",
-      "version": "current"
-    },
     {
       "id": "hl7tx",
       "uri": "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
@@ -780,6 +774,20 @@
           }
         ],
         "reference": {
+          "reference": "StructureDefinition/be-model-referral-requestgroup"
+        },
+        "name": "BeModelReferralRequestGroup",
+        "description": "Logical model describing the model for a group of referral prescriptions. This draft is used in the HL7 Belgian workgroup for referral.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:logical"
+          }
+        ],
+        "reference": {
           "reference": "StructureDefinition/be-model-physiotherapyprescription"
         },
         "name": "BePhysiotherapyPrescription",
@@ -839,6 +847,20 @@
         },
         "name": "BeNursingType",
         "description": "Codes to define a type of nursing.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/be-vs-performer-task-status-reason"
+        },
+        "name": "BeVSPerformerTaskStatusReason",
+        "description": "Codes to explain the current status of a referral prescription.",
         "exampleBoolean": false
       },
       {

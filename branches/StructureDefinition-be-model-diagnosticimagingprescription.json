@@ -307,36 +307,19 @@
         ]
       },
       {
-        "id": "BeDiagnosticImagingPrescription.requisition",
-        "path": "BeDiagnosticImagingPrescription.requisition",
+        "id": "BeDiagnosticImagingPrescription.groupIdentifier",
+        "path": "BeDiagnosticImagingPrescription.groupIdentifier",
         "short": "An identifier for the bundle this prescription belongs to.",
         "min": 0,
         "max": "1",
         "base": {
-          "path": "BeReferralPrescription.requisition",
+          "path": "BeReferralPrescription.groupIdentifier",
           "min": 0,
           "max": "1"
         },
         "type": [
           {
             "code": "positiveInt"
-          }
-        ]
-      },
-      {
-        "id": "BeDiagnosticImagingPrescription.requistionType",
-        "path": "BeDiagnosticImagingPrescription.requistionType",
-        "short": "The type of bundle can be indicated in the type of the identifier",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "BeReferralPrescription.requistionType",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "CodeableConcept"
           }
         ]
       },
@@ -539,20 +522,38 @@
         ]
       },
       {
-        "id": "BeDiagnosticImagingPrescription.toBePerformedAfter",
-        "path": "BeDiagnosticImagingPrescription.toBePerformedAfter",
-        "short": "The current prescription should be performed after this one",
-        "definition": "The current prescription should be performed after this one",
+        "id": "BeDiagnosticImagingPrescription.intendedPerformer.status",
+        "path": "BeDiagnosticImagingPrescription.intendedPerformer.status",
+        "short": "Status of the action executed by the performer",
+        "definition": "Status of the action executed by the performer",
         "min": 0,
         "max": "1",
         "base": {
-          "path": "BeReferralPrescription.toBePerformedAfter",
+          "path": "BeReferralPrescription.intendedPerformer.status",
           "min": 0,
           "max": "1"
         },
         "type": [
           {
-            "code": "Reference"
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "BeDiagnosticImagingPrescription.intendedPerformer.statusReason",
+        "path": "BeDiagnosticImagingPrescription.intendedPerformer.statusReason",
+        "short": "The reason of the status of the action executed by the performer",
+        "definition": "The reason of the status of the action executed by the performer",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.intendedPerformer.statusReason",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
           }
         ]
       },
@@ -566,6 +567,24 @@
         "base": {
           "path": "BeReferralPrescription.serviceRequested",
           "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "BeDiagnosticImagingPrescription.serviceRequestedDetail",
+        "path": "BeDiagnosticImagingPrescription.serviceRequestedDetail",
+        "short": "More detailed specification of the prescribed act",
+        "definition": "More detailed specification of the prescribed act",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.serviceRequestedDetail",
+          "min": 0,
           "max": "1"
         },
         "type": [
@@ -777,14 +796,14 @@
         ]
       },
       {
-        "id": "BeDiagnosticImagingPrescription.intent",
-        "path": "BeDiagnosticImagingPrescription.intent",
+        "id": "BeDiagnosticImagingPrescription.prescriptionType",
+        "path": "BeDiagnosticImagingPrescription.prescriptionType",
         "short": "Proposal, Prolongation, Prescription",
         "definition": "Proposal, Prolongation, Prescription",
         "min": 1,
         "max": "1",
         "base": {
-          "path": "BeReferralPrescription.intent",
+          "path": "BeReferralPrescription.prescriptionType",
           "min": 1,
           "max": "1"
         },

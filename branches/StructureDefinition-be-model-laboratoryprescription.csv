@@ -26,10 +26,8 @@
 ","An identifier for the Prescription Search Support","An identifier for the Prescription Search Support","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.pssNumber",0,1,"",""
 "BeLaboratoryPrescription.pssRejectionReason","BeLaboratoryPrescription.pssRejectionReason","","","",0,1,"","","","Annotation {[]} {[]}
 ","Reason for not following the PSS suggestion","Reason for not following the PSS suggestion","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.pssRejectionReason",0,1,"",""
-"BeLaboratoryPrescription.requisition","BeLaboratoryPrescription.requisition","","","",0,1,"","","","positiveInt {[]} {[]}
-","An identifier for the bundle this prescription belongs to.","","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.requisition",0,1,"",""
-"BeLaboratoryPrescription.requistionType","BeLaboratoryPrescription.requistionType","","","",0,1,"","","","CodeableConcept {[]} {[]}
-","The type of bundle can be indicated in the type of the identifier","","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.requistionType",0,1,"",""
+"BeLaboratoryPrescription.groupIdentifier","BeLaboratoryPrescription.groupIdentifier","","","",0,1,"","","","positiveInt {[]} {[]}
+","An identifier for the bundle this prescription belongs to.","","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.groupIdentifier",0,1,"",""
 "BeLaboratoryPrescription.basedOn","BeLaboratoryPrescription.basedOn","","","",0,*,"","","","Reference {[]} {[]}
 ","The original request or prescription triggered this prescription","The original request or prescription that is the reason for this request - for example when a detailed request is created by a broader request.","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.basedOn",0,*,"",""
 "BeLaboratoryPrescription.validitionPeriod","BeLaboratoryPrescription.validitionPeriod","","","",1,1,"","","","Period {[]} {[]}
@@ -52,10 +50,14 @@
 ","Reference to an organization that will add the performer","Reference to an organization that will add the performer","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedPerformer.organization",0,1,"",""
 "BeLaboratoryPrescription.intendedPerformer.executionPeriod","BeLaboratoryPrescription.intendedPerformer.executionPeriod","","","",0,1,"","","","Period {[]} {[]}
 ","Period in which the caregiver executes the treatment","Period in which the caregiver executes the treatment","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedPerformer.executionPeriod",0,1,"",""
-"BeLaboratoryPrescription.toBePerformedAfter","BeLaboratoryPrescription.toBePerformedAfter","","","",0,1,"","","","Reference {[]} {[]}
-","The current prescription should be performed after this one","The current prescription should be performed after this one","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.toBePerformedAfter",0,1,"",""
+"BeLaboratoryPrescription.intendedPerformer.status","BeLaboratoryPrescription.intendedPerformer.status","","","",0,1,"","","","code {[]} {[]}
+","Status of the action executed by the performer","Status of the action executed by the performer","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedPerformer.status",0,1,"",""
+"BeLaboratoryPrescription.intendedPerformer.statusReason","BeLaboratoryPrescription.intendedPerformer.statusReason","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","The reason of the status of the action executed by the performer","The reason of the status of the action executed by the performer","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedPerformer.statusReason",0,1,"",""
 "BeLaboratoryPrescription.serviceRequested","BeLaboratoryPrescription.serviceRequested","","","",1,1,"","","","CodeableConcept {[]} {[]}
 ","What is prescribed","What is prescribed","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.serviceRequested",1,1,"",""
+"BeLaboratoryPrescription.serviceRequestedDetail","BeLaboratoryPrescription.serviceRequestedDetail","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","More detailed specification of the prescribed act","More detailed specification of the prescribed act","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.serviceRequestedDetail",0,1,"",""
 "BeLaboratoryPrescription.problemCode","BeLaboratoryPrescription.problemCode","","","",0,1,"","","","Reference {[]} {[]}
 ","The problem (code or reference) that is the main reason for this prescription","The problem (code or reference) that is the main reason for this prescription","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.problemCode",0,1,"",""
 "BeLaboratoryPrescription.supportingInfo","BeLaboratoryPrescription.supportingInfo","","","",0,1,"","","","Reference {[]} {[]}
@@ -78,5 +80,5 @@
 ","Side of the body","Side of the body","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.bodyLocation.bodyLaterality",0,1,"",""
 "BeLaboratoryPrescription.note","BeLaboratoryPrescription.note","","","",0,*,"","","","Annotation {[]} {[]}
 ","Additional text notes about the request.","Additional text notes about the request.","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.note",0,*,"",""
-"BeLaboratoryPrescription.intent","BeLaboratoryPrescription.intent","","","",1,1,"","","","code {[]} {[]}
-","Proposal, Prolongation, Prescription","Proposal, Prolongation, Prescription","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intent",1,1,"",""
+"BeLaboratoryPrescription.prescriptionType","BeLaboratoryPrescription.prescriptionType","","","",1,1,"","","","code {[]} {[]}
+","Proposal, Prolongation, Prescription","Proposal, Prolongation, Prescription","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.prescriptionType",1,1,"",""
