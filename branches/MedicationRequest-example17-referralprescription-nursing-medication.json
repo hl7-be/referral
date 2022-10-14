@@ -3,12 +3,12 @@
   "id": "example17-referralprescription-nursing-medication",
   "meta": {
     "profile": [
-      "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication"
+      "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication"
     ]
   },
   "text": {
     "status": "extensions",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: MedicationRequest</b><a name=\"example17-referralprescription-nursing-medication\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource MedicationRequest \"example17-referralprescription-nursing-medication\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referralprescription-nursing-gen-medication.html\">BeReferralPrescriptionNursingGenMedication</a></p></div><p><b>BeValidityPeriod</b>: 2022-10-12 --&gt; (ongoing)</p><p><b>BePerformerReference</b>: <a href=\"PractitionerRole-practitionerrole1.html\">PractitionerRole/practitionerrole1</a></p><p><b>identifier</b>: id: UHMEPVALUE</p><p><b>status</b>: active</p><p><b>statusReason</b>: In Progress <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-be-prescription-status-reason.html\">BePrescriptionStatusReason</a>#inProgress)</span></p><p><b>intent</b>: order</p><p><b>category</b>: Subcutaan <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (be-nursing-medication-injection#SC)</span></p><p><b>priority</b>: routine</p><p><b>medication</b>: Metoject inj. oploss. s.c. [voorgev. spuit] 12 x 15 mg / 0,3 ml <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (be-ns-cnk-codes#2727196)</span></p><p><b>subject</b>: <a href=\"Patient-patient1.html\">Patient/patient1</a> \" DOE\"</p><p><b>requester</b>: <a href=\"Practitioner-practitioner1.html\">Practitioner/practitioner1</a> \" MCCOY\"</p><p><b>note</b>: toedienen Metoject 15mg</p><h3>DosageInstructions</h3><table class=\"grid\"><tr><td>-</td><td><b>Text</b></td><td><b>Timing</b></td></tr><tr><td>*</td><td>Frequency: 1x per week, gedurende 12 weken, vanaf 29/6/2021</td><td>Do Once per 1 weeks</td></tr></table></div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: MedicationRequest</b><a name=\"example17-referralprescription-nursing-medication\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource MedicationRequest \"example17-referralprescription-nursing-medication\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referralprescription-nursing-medication.html\">BeReferralPrescriptionNursingMedication</a></p></div><p><b>BeValidityPeriod</b>: 2022-10-12 --&gt; (ongoing)</p><p><b>BePerformerTaskReference</b>: <a href=\"Task-performer-task.html\">Task/performer-task</a></p><p><b>BeFeedbackToPrescriber</b>: true</p><p><b>identifier</b>: id: UHMEPVALUE</p><p><b>status</b>: active</p><p><b>statusReason</b>: In Progress <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-be-prescription-status-reason.html\">BePrescriptionStatusReason</a>#inProgress)</span></p><p><b>intent</b>: order</p><p><b>category</b>: Subcutaan <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (be-nursing-medication-injection#SC)</span></p><p><b>priority</b>: routine</p><p><b>medication</b>: Metoject inj. oploss. s.c. [voorgev. spuit] 12 x 15 mg / 0,3 ml <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (be-ns-cnk-codes#2727196)</span></p><p><b>subject</b>: <a href=\"Patient-patient1.html\">Patient/patient1</a> \" DOE\"</p><p><b>requester</b>: <a href=\"Practitioner-practitioner1.html\">Practitioner/practitioner1</a> \" MCCOY\"</p><p><b>note</b>: toedienen Metoject 15mg</p><h3>DosageInstructions</h3><table class=\"grid\"><tr><td>-</td><td><b>Text</b></td><td><b>Timing</b></td></tr><tr><td>*</td><td>Frequency: 1x per week, gedurende 12 weken, vanaf 29/6/2021</td><td>Do Once per 1 weeks</td></tr></table></div>"
   },
   "extension": [
     {
@@ -18,10 +18,14 @@
       }
     },
     {
-      "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-performer-reference",
+      "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-performer-task-reference",
       "valueReference": {
-        "reference": "PractitionerRole/practitionerrole1"
+        "reference": "Task/performer-task"
       }
+    },
+    {
+      "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-feedback-to-prescriber",
+      "valueBoolean": true
     }
   ],
   "identifier": [

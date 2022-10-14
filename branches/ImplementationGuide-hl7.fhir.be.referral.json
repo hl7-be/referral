@@ -10,7 +10,7 @@
   "name": "ReferralPrescription",
   "title": "Referral Prescription",
   "status": "draft",
-  "date": "2022-10-14T14:40:23+00:00",
+  "date": "2022-10-14T20:29:20+00:00",
   "jurisdiction": [
     {
       "coding": [
@@ -453,10 +453,24 @@
           }
         ],
         "reference": {
-          "reference": "StructureDefinition/be-referralprescription-nursing-gen-medication"
+          "reference": "StructureDefinition/be-referralprescription-nursing-medication"
         },
-        "name": "BeReferralPrescriptionNursingGenMedication",
+        "name": "BeReferralPrescriptionNursingMedication",
         "description": "The nursing profile specialized for medication. Note this profile is based on the FHIR resource MedicationRequest. Dosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements).",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "StructureDefinition:resource"
+          }
+        ],
+        "reference": {
+          "reference": "StructureDefinition/be-referralprescription-request-group"
+        },
+        "name": "BeReferralPrescriptionRequestGroup",
+        "description": "Envelope that allows different referralprescriptions to have an order",
         "exampleBoolean": false
       },
       {
@@ -470,7 +484,7 @@
           "reference": "StructureDefinition/be-referral-task"
         },
         "name": "BeReferralTask",
-        "description": "The task that is referred to in the referral prescription",
+        "description": "The task that is referred to in the referral prescription (this is the common task for the execution of the prescription). The subtasks per performer can be found in BePerformerTask",
         "exampleBoolean": false
       },
       {
@@ -527,20 +541,6 @@
         },
         "name": "BeContrastFluidUse",
         "description": "Whether the use of contrast fluid in diagnostic imaging can be defined as 'If necessary' or 'Not permitted.'",
-        "exampleBoolean": false
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "StructureDefinition:extension"
-          }
-        ],
-        "reference": {
-          "reference": "StructureDefinition/be-ext-execution-period"
-        },
-        "name": "BeExecutionPeriod",
-        "description": "Begin and enddate of the execution of the request",
         "exampleBoolean": false
       },
       {
@@ -611,20 +611,6 @@
         },
         "name": "BePSSInfo",
         "description": "Information regarding the Prescription Search Support",
-        "exampleBoolean": false
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "StructureDefinition:extension"
-          }
-        ],
-        "reference": {
-          "reference": "StructureDefinition/be-ext-Performer-reference"
-        },
-        "name": "BePerformerReference",
-        "description": "BePerformerReference",
         "exampleBoolean": false
       },
       {
@@ -1201,7 +1187,7 @@
           "reference": "MedicationRequest/example01-care03-referralprescription-nursing-medication"
         },
         "name": "example01-care03-referralprescription-nursing-medication",
-        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication"
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication"
       },
       {
         "extension": [
@@ -1279,7 +1265,7 @@
           "reference": "MedicationRequest/example07-referralprescription-nursing-medication"
         },
         "name": "example07-referralprescription-nursing-medication",
-        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication"
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication"
       },
       {
         "extension": [
@@ -1292,7 +1278,7 @@
           "reference": "MedicationRequest/example08-referralprescription-nursing-medication"
         },
         "name": "example08-referralprescription-nursing-medication",
-        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication"
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication"
       },
       {
         "extension": [
@@ -1318,7 +1304,7 @@
           "reference": "MedicationRequest/example10-referralprescription-nursing-medication"
         },
         "name": "example10-referralprescription-nursing-medication",
-        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication"
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication"
       },
       {
         "extension": [
@@ -1344,7 +1330,7 @@
           "reference": "MedicationRequest/example13-referralprescription-nursing-medication"
         },
         "name": "example13-referralprescription-nursing-medication",
-        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication"
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication"
       },
       {
         "extension": [
@@ -1370,7 +1356,7 @@
           "reference": "MedicationRequest/example17-referralprescription-nursing-medication"
         },
         "name": "example17-referralprescription-nursing-medication",
-        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication"
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication"
       },
       {
         "extension": [
@@ -1383,7 +1369,7 @@
           "reference": "MedicationRequest/example19-referralprescription-nursing-medication"
         },
         "name": "example19-referralprescription-nursing-medication",
-        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication"
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication"
       },
       {
         "extension": [
@@ -1396,7 +1382,7 @@
           "reference": "MedicationRequest/example20-referralprescription-nursing-medication"
         },
         "name": "example20-referralprescription-nursing-medication",
-        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication"
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication"
       },
       {
         "extension": [
@@ -1409,7 +1395,7 @@
           "reference": "MedicationRequest/example22-referralprescription-nursing-medication"
         },
         "name": "example22-referralprescription-nursing-medication",
-        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication"
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication"
       },
       {
         "extension": [
@@ -1422,7 +1408,7 @@
           "reference": "MedicationRequest/example23-referralprescription-nursing-medication"
         },
         "name": "example23-referralprescription-nursing-medication",
-        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication"
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication"
       },
       {
         "extension": [
@@ -1461,7 +1447,7 @@
           "reference": "MedicationRequest/example30-referralprescription-nursing-woundcare"
         },
         "name": "example30-referralprescription-nursing-woundcare",
-        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication"
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication"
       },
       {
         "extension": [
@@ -1474,7 +1460,7 @@
           "reference": "MedicationRequest/example31-referralprescription-nursing-medication"
         },
         "name": "example31-referralprescription-nursing-medication",
-        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication"
+        "exampleCanonical": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication"
       },
       {
         "extension": [
