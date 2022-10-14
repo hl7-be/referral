@@ -1,8 +1,8 @@
 Instance: example07-referralprescription-nursing-medication
-InstanceOf: BeReferralPrescriptionNursingGenMedication
+InstanceOf: BeReferralPrescriptionNursingMedication
 Title: "example07-referralprescription-nursing-medication"
 Usage: #example
-* statusReason = $be-status-reason#inProgress "Other"
+* statusReason = $be-status-reason#inProgress "In progress"
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
 * identifier.value = "UHMEPVALUE"
 * status = #active
@@ -21,6 +21,7 @@ Usage: #example
 * dosageInstruction.timing.repeat.timeOfDay = "20:00:00"
 * dosageInstruction.text = "2 spuiten simultaan te geven.  5 days ‘s avonds rond 20.00u"
 * requester.reference = "Practitioner/practitioner1"
-* extension[performer].valueReference = Reference(practitionerrole1)
+* extension[performertasks].valueReference[+] = Reference(performer-task)
 * extension[validity].valuePeriod.start = "2022-10-10"
 * extension[validity].valuePeriod.start = "2022-10-12"
+* extension[feedback].valueBoolean = true

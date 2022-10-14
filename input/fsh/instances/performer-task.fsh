@@ -3,5 +3,5 @@ InstanceOf: BePerformerTask
 * status = #draft
 * intent = #order
 * partOf = Reference(referral-task)
-* owner = Reference(Performer1)
+* owner = Reference(practitionerrole1)
 * executionPeriod.id = "1"

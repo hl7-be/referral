@@ -8,3 +8,7 @@ Description: "Subtask performed by one performer"
 * executionPeriod ^short = "Start and end date when the performer executed the task"
 * owner 1..1 MS
 * owner ^short = "Reference to the performer of the referral prescription"
+* owner only Reference(BePractitionerRole)
+* status MS
+* statusReason MS
+* statusReason from BeVSPerformerTaskStatusReason

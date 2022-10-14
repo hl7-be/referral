@@ -2,21 +2,11 @@ Instance: example02-referralprescription-nursing-digestive-system-care
 InstanceOf: BeReferralPrescriptionNursing
 Title: "example02-referralprescription-nursing-digestive-system-care"
 Usage: #example
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
-* extension[=].valueCodeableConcept = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason#inProgress "In Progress"
-* extension[+].url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period"
-* extension[=].valuePeriod.start = "2022-04-19"
-* extension[=].valuePeriod.end = "2023-04-19"
+* extension[statusReason].valueCodeableConcept = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason#inProgress "In Progress"
+* extension[validity].valuePeriod.start = "2022-04-19"
+* extension[validity].valuePeriod.end = "2023-04-19"
+* extension[feedback].valueBoolean = true
 * performer[+] = Reference(practitionerrole1)
-* extension[+].url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-execution-period"
-* extension[=].valuePeriod.start = "2022-04-19"
-* extension[=].valuePeriod.end = "2023-04-19"
-* extension[+].extension.url = "coprescriptionStatus"
-* extension[=].extension.valueCodeableConcept = $task-status#requested
-* extension[=].url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-co-prescriber"
-* extension[+].extension.url = "coprescriptionStatus"
-* extension[=].extension.valueCodeableConcept = $task-status#requested
-* extension[=].url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-co-prescriber"
 * status = #active
 * intent = #order
 * category = $sct#9632001

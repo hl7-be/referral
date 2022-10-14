@@ -4,7 +4,8 @@ Title: "diagnostic-imaging-basic-example-concreteWithDetails"
 Usage: #example
 * authoredOn = "2020-01-01"
 * requester = Reference(practitioner1)
-* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "Other"
+* extension[feedback].valueBoolean = true
+* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * extension[validity].valuePeriod.start = "2020-01-01"
 * extension[validity].valuePeriod.end = "2021-01-01"
 * modifierExtension[0].url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-contraindication"

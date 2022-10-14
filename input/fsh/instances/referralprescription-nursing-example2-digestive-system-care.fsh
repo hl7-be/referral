@@ -3,9 +3,10 @@ InstanceOf: BeReferralPrescriptionNursing
 Title: "referralprescription-nursing-example2-digestive-system-care"
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-digestive-system-care"
-* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "Other"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * extension[validity].valuePeriod.start = "2020-10-10"
 * extension[validity].valuePeriod.start = "2021-10-10"
+* extension[feedback].valueBoolean = true
 * status = #active
 * intent = #order
 * category = $sct#9632001

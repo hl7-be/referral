@@ -1,8 +1,6 @@
 Instance: practitionerrole1
 InstanceOf: BePractitionerRole
 Usage: #example
-* meta.versionId = "1"
-* meta.lastUpdated = "2019-07-01T13:30:55.864+00:00"
 * identifier.system = "http://www.acme.org/practitioners"
 * identifier.value = "23"
 * active = true

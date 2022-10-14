@@ -7,11 +7,12 @@ Usage: #example
 * contained[+] = Requester1
 * contained[+] = practitionerrole1
 * contained[+] = Performer1
-* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "Other"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * extension[validity].valuePeriod.start = "2020-01-01"
 * extension[validity].valuePeriod.end = "2021-01-01"
 * extension[task].valueReference = Reference(referral-task)
 * extension[performertasks].valueReference[+] = Reference(performer-task)
+* extension[feedback].valueBoolean = true
 * status = #active
 * intent = #order
 * category = $sct#9632001
