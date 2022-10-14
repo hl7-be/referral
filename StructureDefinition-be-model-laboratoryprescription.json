@@ -307,36 +307,19 @@
         ]
       },
       {
-        "id": "BeLaboratoryPrescription.requisition",
-        "path": "BeLaboratoryPrescription.requisition",
+        "id": "BeLaboratoryPrescription.groupIdentifier",
+        "path": "BeLaboratoryPrescription.groupIdentifier",
         "short": "An identifier for the bundle this prescription belongs to.",
         "min": 0,
         "max": "1",
         "base": {
-          "path": "BeReferralPrescription.requisition",
+          "path": "BeReferralPrescription.groupIdentifier",
           "min": 0,
           "max": "1"
         },
         "type": [
           {
             "code": "positiveInt"
-          }
-        ]
-      },
-      {
-        "id": "BeLaboratoryPrescription.requistionType",
-        "path": "BeLaboratoryPrescription.requistionType",
-        "short": "The type of bundle can be indicated in the type of the identifier",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "BeReferralPrescription.requistionType",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "CodeableConcept"
           }
         ]
       },
@@ -539,20 +522,38 @@
         ]
       },
       {
-        "id": "BeLaboratoryPrescription.toBePerformedAfter",
-        "path": "BeLaboratoryPrescription.toBePerformedAfter",
-        "short": "The current prescription should be performed after this one",
-        "definition": "The current prescription should be performed after this one",
+        "id": "BeLaboratoryPrescription.intendedPerformer.status",
+        "path": "BeLaboratoryPrescription.intendedPerformer.status",
+        "short": "Status of the action executed by the performer",
+        "definition": "Status of the action executed by the performer",
         "min": 0,
         "max": "1",
         "base": {
-          "path": "BeReferralPrescription.toBePerformedAfter",
+          "path": "BeReferralPrescription.intendedPerformer.status",
           "min": 0,
           "max": "1"
         },
         "type": [
           {
-            "code": "Reference"
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "BeLaboratoryPrescription.intendedPerformer.statusReason",
+        "path": "BeLaboratoryPrescription.intendedPerformer.statusReason",
+        "short": "The reason of the status of the action executed by the performer",
+        "definition": "The reason of the status of the action executed by the performer",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.intendedPerformer.statusReason",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
           }
         ]
       },
@@ -566,6 +567,24 @@
         "base": {
           "path": "BeReferralPrescription.serviceRequested",
           "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "BeLaboratoryPrescription.serviceRequestedDetail",
+        "path": "BeLaboratoryPrescription.serviceRequestedDetail",
+        "short": "More detailed specification of the prescribed act",
+        "definition": "More detailed specification of the prescribed act",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "BeReferralPrescription.serviceRequestedDetail",
+          "min": 0,
           "max": "1"
         },
         "type": [
@@ -777,14 +796,14 @@
         ]
       },
       {
-        "id": "BeLaboratoryPrescription.intent",
-        "path": "BeLaboratoryPrescription.intent",
+        "id": "BeLaboratoryPrescription.prescriptionType",
+        "path": "BeLaboratoryPrescription.prescriptionType",
         "short": "Proposal, Prolongation, Prescription",
         "definition": "Proposal, Prolongation, Prescription",
         "min": 1,
         "max": "1",
         "base": {
-          "path": "BeReferralPrescription.intent",
+          "path": "BeReferralPrescription.prescriptionType",
           "min": 1,
           "max": "1"
         },

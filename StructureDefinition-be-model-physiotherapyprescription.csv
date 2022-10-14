@@ -26,10 +26,8 @@
 ","An identifier for the Prescription Search Support","An identifier for the Prescription Search Support","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.pssNumber",0,1,"",""
 "BePhysiotherapyPrescription.pssRejectionReason","BePhysiotherapyPrescription.pssRejectionReason","","","",0,1,"","","","Annotation {[]} {[]}
 ","Reason for not following the PSS suggestion","Reason for not following the PSS suggestion","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.pssRejectionReason",0,1,"",""
-"BePhysiotherapyPrescription.requisition","BePhysiotherapyPrescription.requisition","","","",0,1,"","","","positiveInt {[]} {[]}
-","An identifier for the bundle this prescription belongs to.","","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.requisition",0,1,"",""
-"BePhysiotherapyPrescription.requistionType","BePhysiotherapyPrescription.requistionType","","","",0,1,"","","","CodeableConcept {[]} {[]}
-","The type of bundle can be indicated in the type of the identifier","","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.requistionType",0,1,"",""
+"BePhysiotherapyPrescription.groupIdentifier","BePhysiotherapyPrescription.groupIdentifier","","","",0,1,"","","","positiveInt {[]} {[]}
+","An identifier for the bundle this prescription belongs to.","","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.groupIdentifier",0,1,"",""
 "BePhysiotherapyPrescription.basedOn","BePhysiotherapyPrescription.basedOn","","","",0,*,"","","","Reference {[]} {[]}
 ","The original request or prescription triggered this prescription","The original request or prescription that is the reason for this request - for example when a detailed request is created by a broader request.","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.basedOn",0,*,"",""
 "BePhysiotherapyPrescription.validitionPeriod","BePhysiotherapyPrescription.validitionPeriod","","","",1,1,"","","","Period {[]} {[]}
@@ -52,10 +50,14 @@
 ","Reference to an organization that will add the performer","Reference to an organization that will add the performer","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedPerformer.organization",0,1,"",""
 "BePhysiotherapyPrescription.intendedPerformer.executionPeriod","BePhysiotherapyPrescription.intendedPerformer.executionPeriod","","","",0,1,"","","","Period {[]} {[]}
 ","Period in which the caregiver executes the treatment","Period in which the caregiver executes the treatment","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedPerformer.executionPeriod",0,1,"",""
-"BePhysiotherapyPrescription.toBePerformedAfter","BePhysiotherapyPrescription.toBePerformedAfter","","","",0,1,"","","","Reference {[]} {[]}
-","The current prescription should be performed after this one","The current prescription should be performed after this one","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.toBePerformedAfter",0,1,"",""
+"BePhysiotherapyPrescription.intendedPerformer.status","BePhysiotherapyPrescription.intendedPerformer.status","","","",0,1,"","","","code {[]} {[]}
+","Status of the action executed by the performer","Status of the action executed by the performer","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedPerformer.status",0,1,"",""
+"BePhysiotherapyPrescription.intendedPerformer.statusReason","BePhysiotherapyPrescription.intendedPerformer.statusReason","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","The reason of the status of the action executed by the performer","The reason of the status of the action executed by the performer","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intendedPerformer.statusReason",0,1,"",""
 "BePhysiotherapyPrescription.serviceRequested","BePhysiotherapyPrescription.serviceRequested","","","",1,1,"","","","CodeableConcept {[]} {[]}
 ","What is prescribed","What is prescribed","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.serviceRequested",1,1,"",""
+"BePhysiotherapyPrescription.serviceRequestedDetail","BePhysiotherapyPrescription.serviceRequestedDetail","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","More detailed specification of the prescribed act","More detailed specification of the prescribed act","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.serviceRequestedDetail",0,1,"",""
 "BePhysiotherapyPrescription.problemCode","BePhysiotherapyPrescription.problemCode","","","",0,1,"","","","Reference {[]} {[]}
 ","The problem (code or reference) that is the main reason for this prescription","The problem (code or reference) that is the main reason for this prescription","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.problemCode",0,1,"",""
 "BePhysiotherapyPrescription.supportingInfo","BePhysiotherapyPrescription.supportingInfo","","","",0,1,"","","","Reference {[]} {[]}
@@ -78,7 +80,7 @@
 ","Side of the body","Side of the body","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.bodyLocation.bodyLaterality",0,1,"",""
 "BePhysiotherapyPrescription.note","BePhysiotherapyPrescription.note","","","",0,*,"","","","Annotation {[]} {[]}
 ","Additional text notes about the request.","Additional text notes about the request.","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.note",0,*,"",""
-"BePhysiotherapyPrescription.intent","BePhysiotherapyPrescription.intent","","","",1,1,"","","","code {[]} {[]}
-","Proposal, Prolongation, Prescription","Proposal, Prolongation, Prescription","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.intent",1,1,"",""
+"BePhysiotherapyPrescription.prescriptionType","BePhysiotherapyPrescription.prescriptionType","","","",1,1,"","","","code {[]} {[]}
+","Proposal, Prolongation, Prescription","Proposal, Prolongation, Prescription","","","","","","","","","",,,,,"",,,,"BeReferralPrescription.prescriptionType",1,1,"",""
 "BePhysiotherapyPrescription.numberOfSessions","BePhysiotherapyPrescription.numberOfSessions","","","",0,1,"","","","integer {[]} {[]}
 ","Number of pt sessions that are prescribed","Number of pt sessions that are prescribed","","","","","","","","","",,,,,"",,,,"BePhysiotherapyPrescription.numberOfSessions",0,1,"",""

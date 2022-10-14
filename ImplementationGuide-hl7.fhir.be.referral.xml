@@ -10,7 +10,7 @@
   <name value="ReferralPrescription"/>
   <title value="Referral Prescription"/>
   <status value="draft"/>
-  <date value="2022-10-03T11:30:02+00:00"/>
+  <date value="2022-10-14T14:40:23+00:00"/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>
@@ -21,11 +21,6 @@
   <packageId value="hl7.fhir.be.referral"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.1"/>
-  <dependsOn id="higtools">
-    <uri value="http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools"/>
-    <packageId value="hl7.fhir.uv.tools"/>
-    <version value="current"/>
-  </dependsOn>
   <dependsOn id="hl7tx">
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r4"/>
@@ -556,6 +551,17 @@
         <valueString value="StructureDefinition:logical"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/be-model-referral-requestgroup"/>
+      </reference>
+      <name value="BeModelReferralRequestGroup"/>
+      <description value="Logical model describing the model for a group of referral prescriptions. This draft is used in the HL7 Belgian workgroup for referral."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/be-model-physiotherapyprescription"/>
       </reference>
       <name value="BePhysiotherapyPrescription"/>
@@ -603,6 +609,17 @@
       </reference>
       <name value="BeNursingType"/>
       <description value="Codes to define a type of nursing."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-performer-task-status-reason"/>
+      </reference>
+      <name value="BeVSPerformerTaskStatusReason"/>
+      <description value="Codes to explain the current status of a referral prescription."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

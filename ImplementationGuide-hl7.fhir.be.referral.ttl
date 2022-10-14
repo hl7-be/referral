@@ -17,7 +17,7 @@
   fhir:ImplementationGuide.name [ fhir:value "ReferralPrescription"];
   fhir:ImplementationGuide.title [ fhir:value "Referral Prescription"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
-  fhir:ImplementationGuide.date [ fhir:value "2022-10-03T11:30:02+00:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2022-10-14T14:40:23+00:00"^^xsd:dateTime];
   fhir:ImplementationGuide.jurisdiction [
      fhir:index 0;
      fhir:CodeableConcept.coding [
@@ -35,15 +35,6 @@
   ];
   fhir:ImplementationGuide.dependsOn [
      fhir:index 0;
-     fhir:Element.id [ fhir:value "higtools" ];
-     fhir:ImplementationGuide.dependsOn.uri [
-       fhir:value "http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools";
-       fhir:link <http://hl7.org/fhir/tools/ImplementationGuide/hl7.fhir.uv.tools>
-     ];
-     fhir:ImplementationGuide.dependsOn.packageId [ fhir:value "hl7.fhir.uv.tools" ];
-     fhir:ImplementationGuide.dependsOn.version [ fhir:value "current" ]
-  ], [
-     fhir:index 1;
      fhir:Element.id [ fhir:value "hl7tx" ];
      fhir:ImplementationGuide.dependsOn.uri [
        fhir:value "http://terminology.hl7.org/ImplementationGuide/hl7.terminology";
@@ -52,7 +43,7 @@
      fhir:ImplementationGuide.dependsOn.packageId [ fhir:value "hl7.terminology.r4" ];
      fhir:ImplementationGuide.dependsOn.version [ fhir:value "4.0.0" ]
   ], [
-     fhir:index 2;
+     fhir:index 1;
      fhir:Element.id [ fhir:value "hl7_fhir_be_core" ];
      fhir:ImplementationGuide.dependsOn.uri [
        fhir:value "https://www.ehealth.fgov.be/standards/fhir/core/ImplementationGuide/hl7.fhir.be.core";
@@ -61,7 +52,7 @@
      fhir:ImplementationGuide.dependsOn.packageId [ fhir:value "hl7.fhir.be.core" ];
      fhir:ImplementationGuide.dependsOn.version [ fhir:value "2.0.1" ]
   ], [
-     fhir:index 3;
+     fhir:index 2;
      fhir:Element.id [ fhir:value "hl7_fhir_be_medication" ];
      fhir:ImplementationGuide.dependsOn.uri [
        fhir:value "https://www.ehealth.fgov.be/standards/fhir/medication/ImplementationGuide/hl7.fhir.be.medication";
@@ -70,7 +61,7 @@
      fhir:ImplementationGuide.dependsOn.packageId [ fhir:value "hl7.fhir.be.medication" ];
      fhir:ImplementationGuide.dependsOn.version [ fhir:value "1.0.0" ]
   ], [
-     fhir:index 4;
+     fhir:index 3;
      fhir:Element.id [ fhir:value "hl7_fhir_be_core_clinical" ];
      fhir:ImplementationGuide.dependsOn.uri [
        fhir:value "https://www.ehealth.fgov.be/standards/fhir/core-clinical/ImplementationGuide/hl7.fhir.be.core-clinical";
@@ -79,7 +70,7 @@
      fhir:ImplementationGuide.dependsOn.packageId [ fhir:value "hl7.fhir.be.core-clinical" ];
      fhir:ImplementationGuide.dependsOn.version [ fhir:value "1.0.0" ]
   ], [
-     fhir:index 5;
+     fhir:index 4;
      fhir:Element.id [ fhir:value "hl7_fhir_be_allergy" ];
      fhir:ImplementationGuide.dependsOn.uri [
        fhir:value "https://www.ehealth.fgov.be/standards/fhir/allergy/ImplementationGuide/hl7.fhir.be.allergy";
@@ -777,13 +768,27 @@
          fhir:Extension.valueString [ fhir:value "StructureDefinition:logical" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-model-referral-requestgroup>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/be-model-referral-requestgroup" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "BeModelReferralRequestGroup" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Logical model describing the model for a group of referral prescriptions. This draft is used in the HL7 Belgian workgroup for referral." ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 29;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:logical" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-model-physiotherapyprescription>;
          fhir:Reference.reference [ fhir:value "StructureDefinition/be-model-physiotherapyprescription" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BePhysiotherapyPrescription" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 29;
+       fhir:index 30;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -797,7 +802,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "This is the status of the prescription for the coprescriber" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 30;
+       fhir:index 31;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -811,7 +816,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Codes to define a communication method." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 31;
+       fhir:index 32;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -825,7 +830,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Codes to define the use of contrast fluid." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 32;
+       fhir:index 33;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -839,7 +844,21 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Codes to define a type of nursing." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 33;
+       fhir:index 34;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-performer-task-status-reason>;
+         fhir:Reference.reference [ fhir:value "ValueSet/be-vs-performer-task-status-reason" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "BeVSPerformerTaskStatusReason" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Codes to explain the current status of a referral prescription." ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 35;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -853,7 +872,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "This is the status reason of the prescription" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 34;
+       fhir:index 36;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -867,7 +886,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Codes to explain the current status of a treatment in a referral prescription." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 35;
+       fhir:index 37;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -880,7 +899,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BeVsCoPrescriberChoice" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 36;
+       fhir:index 38;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -893,7 +912,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "BeVsProposalType" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 37;
+       fhir:index 39;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -907,7 +926,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Type of intended performer choice" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 38;
+       fhir:index 40;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -921,7 +940,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Communication codes in Belgium. To define a specific method of communicating. Initially defined as supporting CodeSystem for the referral prescription." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 39;
+       fhir:index 41;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -935,7 +954,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Whether use of contrast fluid should be considered." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 40;
+       fhir:index 42;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -949,7 +968,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Nursing codes in Belgium. To define a high level in nursing activities. Initially defined as supporting CodeSystem for the referral prescription." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 41;
+       fhir:index 43;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -963,7 +982,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Nursing codes in Belgium. To define details in nursing activities for compression therapy. Initially defined as supporting CodeSystem for the referral prescription." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 42;
+       fhir:index 44;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -977,7 +996,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Prescription Proposal Type. Indicates the type of proposal (new or prolongation) as from the uses cases by NIHDI" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 43;
+       fhir:index 45;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -991,7 +1010,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Status reason for the prescription. Initially defined as supporting CodeSystem for the referral prescription." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 44;
+       fhir:index 46;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1005,7 +1024,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Status reason for the treatment. Initially defined as supporting CodeSystem for the referral prescription." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 45;
+       fhir:index 47;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1018,7 +1037,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Performer1" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 46;
+       fhir:index 48;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1032,7 +1051,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Code as generated by the Coronalert app." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 47;
+       fhir:index 49;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1046,7 +1065,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "National identifier for a specimen when needed." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 48;
+       fhir:index 50;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1060,7 +1079,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "UHMEP naming system" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 49;
+       fhir:index 51;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1074,7 +1093,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Cancel Referral Prescription or Proposal" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 50;
+       fhir:index 52;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1088,7 +1107,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "Codes to define the high level category for a referral prescription. SNOMED-CT codes in this valueset are just a draft proposal to give a general idea - pending an official valueset." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 51;
+       fhir:index 53;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1101,7 +1120,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "condition1" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 52;
+       fhir:index 54;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1117,7 +1136,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-diagnosticimaging>
        ]
      ], [
-       fhir:index 53;
+       fhir:index 55;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1133,7 +1152,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-diagnosticimaging>
        ]
      ], [
-       fhir:index 54;
+       fhir:index 56;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1149,7 +1168,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-diagnosticimaging>
        ]
      ], [
-       fhir:index 55;
+       fhir:index 57;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1165,7 +1184,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-diagnosticimaging>
        ]
      ], [
-       fhir:index 56;
+       fhir:index 58;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1181,7 +1200,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing>
        ]
      ], [
-       fhir:index 57;
+       fhir:index 59;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1197,7 +1216,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication>
        ]
      ], [
-       fhir:index 58;
+       fhir:index 60;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1213,7 +1232,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing>
        ]
      ], [
-       fhir:index 59;
+       fhir:index 61;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1229,7 +1248,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing>
        ]
      ], [
-       fhir:index 60;
+       fhir:index 62;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1245,7 +1264,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing>
        ]
      ], [
-       fhir:index 61;
+       fhir:index 63;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1261,7 +1280,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing>
        ]
      ], [
-       fhir:index 62;
+       fhir:index 64;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1277,7 +1296,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing>
        ]
      ], [
-       fhir:index 63;
+       fhir:index 65;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1293,7 +1312,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication>
        ]
      ], [
-       fhir:index 64;
+       fhir:index 66;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1309,7 +1328,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication>
        ]
      ], [
-       fhir:index 65;
+       fhir:index 67;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1325,7 +1344,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing>
        ]
      ], [
-       fhir:index 66;
+       fhir:index 68;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1341,7 +1360,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication>
        ]
      ], [
-       fhir:index 67;
+       fhir:index 69;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1357,7 +1376,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing>
        ]
      ], [
-       fhir:index 68;
+       fhir:index 70;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1373,7 +1392,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication>
        ]
      ], [
-       fhir:index 69;
+       fhir:index 71;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1389,7 +1408,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing>
        ]
      ], [
-       fhir:index 70;
+       fhir:index 72;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1405,7 +1424,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication>
        ]
      ], [
-       fhir:index 71;
+       fhir:index 73;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1421,7 +1440,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication>
        ]
      ], [
-       fhir:index 72;
+       fhir:index 74;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1437,7 +1456,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication>
        ]
      ], [
-       fhir:index 73;
+       fhir:index 75;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1453,7 +1472,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication>
        ]
      ], [
-       fhir:index 74;
+       fhir:index 76;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1469,7 +1488,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication>
        ]
      ], [
-       fhir:index 75;
+       fhir:index 77;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1485,7 +1504,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing>
        ]
      ], [
-       fhir:index 76;
+       fhir:index 78;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1501,7 +1520,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing>
        ]
      ], [
-       fhir:index 77;
+       fhir:index 79;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1517,7 +1536,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication>
        ]
      ], [
-       fhir:index 78;
+       fhir:index 80;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1533,7 +1552,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication>
        ]
      ], [
-       fhir:index 79;
+       fhir:index 81;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1549,7 +1568,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing>
        ]
      ], [
-       fhir:index 80;
+       fhir:index 82;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1562,7 +1581,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "gpvisit" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 81;
+       fhir:index 83;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1578,7 +1597,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-lab-prescription>
        ]
      ], [
-       fhir:index 82;
+       fhir:index 84;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1591,7 +1610,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "patient1" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 83;
+       fhir:index 85;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1607,7 +1626,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-performer-task>
        ]
      ], [
-       fhir:index 84;
+       fhir:index 86;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1620,7 +1639,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "practitioner1" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 85;
+       fhir:index 87;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1633,7 +1652,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "practitioner2" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 86;
+       fhir:index 88;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1646,7 +1665,7 @@
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "practitionerrole1" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ], [
-       fhir:index 87;
+       fhir:index 89;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1662,7 +1681,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-task>
        ]
      ], [
-       fhir:index 88;
+       fhir:index 90;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1678,7 +1697,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing>
        ]
      ], [
-       fhir:index 89;
+       fhir:index 91;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1694,7 +1713,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing>
        ]
      ], [
-       fhir:index 90;
+       fhir:index 92;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1710,7 +1729,7 @@
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing>
        ]
      ], [
-       fhir:index 91;
+       fhir:index 93;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];

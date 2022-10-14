@@ -254,32 +254,18 @@
         <code value="Annotation"/>
       </type>
     </element>
-    <element id="BePhysiotherapyPrescription.requisition">
-      <path value="BePhysiotherapyPrescription.requisition"/>
+    <element id="BePhysiotherapyPrescription.groupIdentifier">
+      <path value="BePhysiotherapyPrescription.groupIdentifier"/>
       <short value="An identifier for the bundle this prescription belongs to."/>
       <min value="0"/>
       <max value="1"/>
       <base>
-        <path value="BeReferralPrescription.requisition"/>
+        <path value="BeReferralPrescription.groupIdentifier"/>
         <min value="0"/>
         <max value="1"/>
       </base>
       <type>
         <code value="positiveInt"/>
-      </type>
-    </element>
-    <element id="BePhysiotherapyPrescription.requistionType">
-      <path value="BePhysiotherapyPrescription.requistionType"/>
-      <short value="The type of bundle can be indicated in the type of the identifier"/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="BeReferralPrescription.requistionType"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="CodeableConcept"/>
       </type>
     </element>
     <element id="BePhysiotherapyPrescription.basedOn">
@@ -447,19 +433,34 @@
         <code value="Period"/>
       </type>
     </element>
-    <element id="BePhysiotherapyPrescription.toBePerformedAfter">
-      <path value="BePhysiotherapyPrescription.toBePerformedAfter"/>
-      <short value="The current prescription should be performed after this one"/>
-      <definition value="The current prescription should be performed after this one"/>
+    <element id="BePhysiotherapyPrescription.intendedPerformer.status">
+      <path value="BePhysiotherapyPrescription.intendedPerformer.status"/>
+      <short value="Status of the action executed by the performer"/>
+      <definition value="Status of the action executed by the performer"/>
       <min value="0"/>
       <max value="1"/>
       <base>
-        <path value="BeReferralPrescription.toBePerformedAfter"/>
+        <path value="BeReferralPrescription.intendedPerformer.status"/>
         <min value="0"/>
         <max value="1"/>
       </base>
       <type>
-        <code value="Reference"/>
+        <code value="code"/>
+      </type>
+    </element>
+    <element id="BePhysiotherapyPrescription.intendedPerformer.statusReason">
+      <path value="BePhysiotherapyPrescription.intendedPerformer.statusReason"/>
+      <short value="The reason of the status of the action executed by the performer"/>
+      <definition value="The reason of the status of the action executed by the performer"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.intendedPerformer.statusReason"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="CodeableConcept"/>
       </type>
     </element>
     <element id="BePhysiotherapyPrescription.serviceRequested">
@@ -471,6 +472,21 @@
       <base>
         <path value="BeReferralPrescription.serviceRequested"/>
         <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+    </element>
+    <element id="BePhysiotherapyPrescription.serviceRequestedDetail">
+      <path value="BePhysiotherapyPrescription.serviceRequestedDetail"/>
+      <short value="More detailed specification of the prescribed act"/>
+      <definition value="More detailed specification of the prescribed act"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeReferralPrescription.serviceRequestedDetail"/>
+        <min value="0"/>
         <max value="1"/>
       </base>
       <type>
@@ -646,14 +662,14 @@
         <code value="Annotation"/>
       </type>
     </element>
-    <element id="BePhysiotherapyPrescription.intent">
-      <path value="BePhysiotherapyPrescription.intent"/>
+    <element id="BePhysiotherapyPrescription.prescriptionType">
+      <path value="BePhysiotherapyPrescription.prescriptionType"/>
       <short value="Proposal, Prolongation, Prescription"/>
       <definition value="Proposal, Prolongation, Prescription"/>
       <min value="1"/>
       <max value="1"/>
       <base>
-        <path value="BeReferralPrescription.intent"/>
+        <path value="BeReferralPrescription.prescriptionType"/>
         <min value="1"/>
         <max value="1"/>
       </base>
