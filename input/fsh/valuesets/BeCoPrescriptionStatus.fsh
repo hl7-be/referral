@@ -1,4 +1,5 @@
 ValueSet: BeCoPrescriptionStatus
+Title: "BeCoPrescriptionStatus"
 Id: be-vs-co-prescription-status
 Description: "This is the status of the prescription for the coprescriber"
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-co-prescription-status"

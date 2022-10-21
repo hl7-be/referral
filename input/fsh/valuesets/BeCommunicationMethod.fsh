@@ -1,4 +1,5 @@
 ValueSet: BeCommunicationMethod
+Title: "BeCommunicationMethod"
 Id: be-vs-communication-method
 Description: "Codes to define a communication method."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-communication-method"
@@ -14,5 +15,7 @@ Description: "Codes to define a communication method."
 * ^contact[=].telecom.value = "message-structure@ehealth.fgov.be"
 * ^contact[=].telecom.use = #work
 * ^jurisdiction = $jurisdiction#BE "Belgium"
+* ^experimental = false
 * include codes from system BeCommunicationCode
+* ^experimental = false
 * include codes from system $contact-point-system

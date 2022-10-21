@@ -2,6 +2,9 @@ Instance: example09-referralprescription-nursing-woundcare
 InstanceOf: BeReferralPrescriptionNursing
 Title: "example09-referralprescription-nursing-woundcare"
 Usage: #example
+* contained[0] = patient1
+* contained[+] = practitioner1
+* contained[+] = practitionerrole1
 * extension[statusReason].valueCodeableConcept = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason#inProgress "In Progress"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"

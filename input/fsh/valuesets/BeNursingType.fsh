@@ -1,4 +1,5 @@
 ValueSet: BeNursingType
+Title: "BeNursingType"
 Id: be-vs-type-of-nursing
 Description: "Codes to define a type of nursing."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-type-of-nursing"
@@ -14,4 +15,5 @@ Description: "Codes to define a type of nursing."
 * ^contact[=].telecom.value = "message-structure@ehealth.fgov.be"
 * ^contact[=].telecom.use = #work
 * ^jurisdiction = $jurisdiction#BE "Belgium"
+* ^experimental = false
 * include codes from system BeNursingCode

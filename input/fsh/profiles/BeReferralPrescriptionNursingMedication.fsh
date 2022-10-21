@@ -49,10 +49,12 @@ Description: "The nursing profile specialized for medication. Note this profile 
 * category 1..1 MS
 * category from $procedure-code (example)
 * medication[x] MS
+* subject only BeContainedOrLogicalReference
 * subject only Reference(BePatient)
 * subject MS
 * encounter MS
 * requester 1.. MS
+* requester only BeContainedOrLogicalReference
 * requester only Reference(BePractitioner)
 * performer ..0 MS
 * performerType ..0 MS

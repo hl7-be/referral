@@ -2,9 +2,8 @@ Instance: example22-referralprescription-nursing-medication
 InstanceOf: BeReferralPrescriptionNursingMedication
 Title: "example22-referralprescription-nursing-medication"
 Usage: #example
-
-
-
+* contained[0] = patient1
+* contained[+] = practitioner1
 * extension[performertasks].valueReference[+] = Reference(performer-task)
 * extension[feedback].valueBoolean = true
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"

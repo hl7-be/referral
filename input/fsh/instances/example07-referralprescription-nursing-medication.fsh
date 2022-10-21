@@ -2,6 +2,9 @@ Instance: example07-referralprescription-nursing-medication
 InstanceOf: BeReferralPrescriptionNursingMedication
 Title: "example07-referralprescription-nursing-medication"
 Usage: #example
+* contained[0] = patient1
+* contained[+] = practitioner1
+* contained[+] = practitionerrole1
 * statusReason = $be-status-reason#inProgress "In progress"
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
 * identifier.value = "UHMEPVALUE"
@@ -11,7 +14,7 @@ Usage: #example
 * category.text = "Subcutaan"
 * medicationCodeableConcept = $cnk_product_codes#1728104 "Neupogen inj./inf. oploss. (conc.) i.v./s.c. [voorgev. spuit] 5 x 48 ME / 0,5 ml"
 * priority = #routine
-* subject.reference = "Patient/patient1"
+* subject.reference = "#patient1"
 * dosageInstruction.timing.repeat.boundsDuration.value = 5
 * dosageInstruction.timing.repeat.boundsDuration.system = "http://hl7.org/fhir/ValueSet/ucum-units"
 * dosageInstruction.timing.repeat.boundsDuration.unit = "d"
@@ -20,7 +23,7 @@ Usage: #example
 * dosageInstruction.timing.repeat.periodUnit = #d
 * dosageInstruction.timing.repeat.timeOfDay = "20:00:00"
 * dosageInstruction.text = "2 spuiten simultaan te geven.  5 days ‘s avonds rond 20.00u"
-* requester.reference = "Practitioner/practitioner1"
+* requester.reference = "#practitioner1"
 * extension[performertasks].valueReference[+] = Reference(performer-task)
 * extension[validity].valuePeriod.start = "2022-10-10"
 * extension[validity].valuePeriod.start = "2022-10-12"

@@ -3,7 +3,6 @@ InstanceOf: OperationDefinition
 Title: "be-op-cancel"
 Description: "Cancel Referral Prescription or Proposal"
 Usage: #definition
-* url = "https://www.ehealth.fgov.be/standards/fhir/OperationDefinition/cancel"
 * version = "0.2.0"
 * name = "cancel"
 * title = "Cancel Referral Prescription or Proposal"
