@@ -1,4 +1,5 @@
 ValueSet: BeVsCoPrescriberChoice
+Title: "BeVsCoPrescriberChoice"
 Id: be-vs-co-prescriber-choice
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-co-prescriber-choice"
 * ^version = "0.2.0"
@@ -13,4 +14,5 @@ Id: be-vs-co-prescriber-choice
 * ^contact[=].telecom.value = "message-structure@ehealth.fgov.be"
 * ^contact[=].telecom.use = #work
 * ^jurisdiction = $jurisdiction#BE "Belgium"
+* ^experimental = false
 * include codes from system BeCSCoPrescriberChoice

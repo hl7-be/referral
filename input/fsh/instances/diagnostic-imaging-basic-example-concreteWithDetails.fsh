@@ -2,6 +2,8 @@ Instance: diagnostic-imaging-basic-example-concreteWithDetails
 InstanceOf: BeReferralPrescriptionDiagnosticImaging
 Title: "diagnostic-imaging-basic-example-concreteWithDetails"
 Usage: #example
+* contained[0] = patient1
+* contained[+] = practitioner1
 * authoredOn = "2020-01-01"
 * requester = Reference(practitioner1)
 * extension[feedback].valueBoolean = true

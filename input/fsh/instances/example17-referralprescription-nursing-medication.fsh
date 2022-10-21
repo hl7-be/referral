@@ -2,7 +2,8 @@ Instance: example17-referralprescription-nursing-medication
 InstanceOf: BeReferralPrescriptionNursingMedication
 Title: "example17-referralprescription-nursing-medication"
 Usage: #example
-
+* contained[0] = patient1
+* contained[+] = practitioner1
 
 
 * extension[performertasks].valueReference[+] = Reference(performer-task)

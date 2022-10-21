@@ -1,4 +1,5 @@
 ValueSet: BeContrastFluidUse
+Title: "BeContrastFluidUse"
 Id: be-vs-contrastfluid-use
 Description: "Codes to define the use of contrast fluid."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-contrastfluid-use"
@@ -14,4 +15,5 @@ Description: "Codes to define the use of contrast fluid."
 * ^contact[=].telecom.value = "message-structure@ehealth.fgov.be"
 * ^contact[=].telecom.use = #work
 * ^jurisdiction = $jurisdiction#BE "Belgium"
+* ^experimental = false
 * include codes from system BeContrastFluidUse

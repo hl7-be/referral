@@ -61,17 +61,20 @@ Description: "The common structure for referral prescription."
 * code ^binding.extension.valueString = "ServiceRequestCode"
 * code ^binding.description = "Codes for tests or services that can be carried out by a designated individual, organization or healthcare service."
 * orderDetail MS
+* subject only BeContainedOrLogicalReference
 * subject only Reference(BePatient)
 * subject MS
 * occurrence[x] MS
 * occurrence[x] ^short = "When service shall occur - once this is past, this prescription is no longer valid and the status shall reflect this."
 * authoredOn 1.. MS
 * requester 1.. MS
+* requester only BeContainedOrLogicalReference
 * requester only Reference(BePractitioner)
 * requester ^short = "Prescriber of the requested service"
 * performerType ..0 MS
 * performerType ^short = "Discipline of provider"
 * performer  MS
+* performer only BeContainedOrLogicalReference
 * performer only Reference( BePractitionerRole )
 * performer ^short = "Requested performer - typically reference to practitionerroles"
 * reasonCode 1..1 MS
