@@ -779,7 +779,7 @@
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.extension" ];
        fhir:ElementDefinition.sliceName [ fhir:value "feedback" ];
        fhir:ElementDefinition.short [ fhir:value "Give feedback to the prescriber" ];
-       fhir:ElementDefinition.definition [ fhir:value "Optional Extension Element - found in all resources." ];
+       fhir:ElementDefinition.definition [ fhir:value "An Extension" ];
        fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "1" ];
        fhir:ElementDefinition.base [
@@ -824,16 +824,7 @@
          ]
        ];
        fhir:ElementDefinition.mustSupport [ fhir:value "true"^^xsd:boolean ];
-       fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ];
-       fhir:ElementDefinition.mapping [
-         fhir:index 0;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "rim" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value "n/a" ]
-       ], [
-         fhir:index 1;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "rim" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value "N/A" ]
-       ]
+       fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 15;
        fhir:Element.id [ fhir:value "ServiceRequest.extension:coprescriber" ];
@@ -2692,8 +2683,9 @@
        fhir:index 49;
        fhir:Element.id [ fhir:value "ServiceRequest.subject" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.subject" ];
-       fhir:ElementDefinition.short [ fhir:value "Individual or Entity the service is ordered for" ];
-       fhir:ElementDefinition.definition [ fhir:value "On whom or what the service is to be performed. This is usually a human patient, but can also be requested on animals, groups of humans or animals, devices such as dialysis machines, or even locations (typically for environmental scans)." ];
+       fhir:ElementDefinition.short [ fhir:value "A reference from one resource to another" ];
+       fhir:ElementDefinition.definition [ fhir:value "A reference from one resource to another." ];
+       fhir:ElementDefinition.comment [ fhir:value "References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository." ];
        fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "1" ];
        fhir:ElementDefinition.base [
@@ -2704,6 +2696,11 @@
        fhir:ElementDefinition.type [
          fhir:index 0;
          fhir:ElementDefinition.type.code [ fhir:value "Reference" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-contained-or-logical-reference";
+           fhir:index 0;
+           fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-contained-or-logical-reference>
+         ];
          fhir:ElementDefinition.type.targetProfile [
            fhir:value "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-patient";
            fhir:index 0;
@@ -2727,28 +2724,12 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ];
        fhir:ElementDefinition.mapping [
          fhir:index 0;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "workflow" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value "Request.subject" ]
+         fhir:ElementDefinition.mapping.identity [ fhir:value "rim" ];
+         fhir:ElementDefinition.mapping.map [ fhir:value "n/a" ]
        ], [
          fhir:index 1;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "w5" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value "FiveWs.subject[x]" ]
-       ], [
-         fhir:index 2;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "v2" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value "PID" ]
-       ], [
-         fhir:index 3;
          fhir:ElementDefinition.mapping.identity [ fhir:value "rim" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value ".participation[typeCode=SBJ].role" ]
-       ], [
-         fhir:index 4;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "quick" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value "ClinicalStatement.subject" ]
-       ], [
-         fhir:index 5;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "w5" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value "FiveWs.subject" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "The target of a resource reference is a RIM entry point (Act, Role, or Entity)" ]
        ]
      ], [
        fhir:index 50;
@@ -2992,15 +2973,8 @@
        fhir:Element.id [ fhir:value "ServiceRequest.requester" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.requester" ];
        fhir:ElementDefinition.short [ fhir:value "Prescriber of the requested service" ];
-       fhir:ElementDefinition.definition [ fhir:value "The individual who initiated the request and has responsibility for its activation." ];
-       fhir:ElementDefinition.comment [ fhir:value "This not the dispatcher, but rather who is the authorizer.  This element is not intended to handle delegation which would generally be managed through the Provenance resource." ];
-       fhir:ElementDefinition.alias [
-         fhir:value "author";
-         fhir:index 0
-       ], [
-         fhir:value "orderer";
-         fhir:index 1
-       ];
+       fhir:ElementDefinition.definition [ fhir:value "A reference from one resource to another." ];
+       fhir:ElementDefinition.comment [ fhir:value "References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository." ];
        fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "1" ];
        fhir:ElementDefinition.base [
@@ -3011,6 +2985,11 @@
        fhir:ElementDefinition.type [
          fhir:index 0;
          fhir:ElementDefinition.type.code [ fhir:value "Reference" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-contained-or-logical-reference";
+           fhir:index 0;
+           fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-contained-or-logical-reference>
+         ];
          fhir:ElementDefinition.type.targetProfile [
            fhir:value "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitioner";
            fhir:index 0;
@@ -3034,24 +3013,12 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ];
        fhir:ElementDefinition.mapping [
          fhir:index 0;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "workflow" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value "Request.requester" ]
+         fhir:ElementDefinition.mapping.identity [ fhir:value "rim" ];
+         fhir:ElementDefinition.mapping.map [ fhir:value "n/a" ]
        ], [
          fhir:index 1;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "w5" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value "FiveWs.author" ]
-       ], [
-         fhir:index 2;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "v2" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value "ORC.12, PRT" ]
-       ], [
-         fhir:index 3;
          fhir:ElementDefinition.mapping.identity [ fhir:value "rim" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value ".participation[typeCode=AUT].role" ]
-       ], [
-         fhir:index 4;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "quick" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value "ClinicalStatement.statementAuthor" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "The target of a resource reference is a RIM entry point (Act, Role, or Entity)" ]
        ]
      ], [
        fhir:index 55;
@@ -3125,12 +3092,8 @@
        fhir:Element.id [ fhir:value "ServiceRequest.performer" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.performer" ];
        fhir:ElementDefinition.short [ fhir:value "Requested performer - typically reference to practitionerroles" ];
-       fhir:ElementDefinition.definition [ fhir:value "The desired performer for doing the requested service.  For example, the surgeon, dermatopathologist, endoscopist, etc." ];
-       fhir:ElementDefinition.comment [ fhir:value "If multiple performers are present, it is interpreted as a list of *alternative* performers without any preference regardless of order.  If order of preference is needed use the [request-performerOrder extension](http://hl7.org/fhir/R4/extension-request-performerorder.html).  Use CareTeam to represent a group of performers (for example, Practitioner A *and* Practitioner B)." ];
-       fhir:ElementDefinition.alias [
-         fhir:value "request recipient";
-         fhir:index 0
-       ];
+       fhir:ElementDefinition.definition [ fhir:value "A reference from one resource to another." ];
+       fhir:ElementDefinition.comment [ fhir:value "References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository." ];
        fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "*" ];
        fhir:ElementDefinition.base [
@@ -3141,6 +3104,11 @@
        fhir:ElementDefinition.type [
          fhir:index 0;
          fhir:ElementDefinition.type.code [ fhir:value "Reference" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-contained-or-logical-reference";
+           fhir:index 0;
+           fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-contained-or-logical-reference>
+         ];
          fhir:ElementDefinition.type.targetProfile [
            fhir:value "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole";
            fhir:index 0;
@@ -3164,20 +3132,12 @@
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ];
        fhir:ElementDefinition.mapping [
          fhir:index 0;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "workflow" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value "Request.performer" ]
+         fhir:ElementDefinition.mapping.identity [ fhir:value "rim" ];
+         fhir:ElementDefinition.mapping.map [ fhir:value "n/a" ]
        ], [
          fhir:index 1;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "w5" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value "FiveWs.actor" ]
-       ], [
-         fhir:index 2;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "v2" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value "PRT, Practitioner: PRD-2/PRD-7 where PRD-3 = RT; Organization: PRD-10 where PRD-3 = RT" ]
-       ], [
-         fhir:index 3;
          fhir:ElementDefinition.mapping.identity [ fhir:value "rim" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value ".participation[typeCode=PRF].role[scoper.determinerCode=INSTANCE]" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "The target of a resource reference is a RIM entry point (Act, Role, or Entity)" ]
        ]
      ], [
        fhir:index 57;

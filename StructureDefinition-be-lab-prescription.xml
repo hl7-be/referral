@@ -608,7 +608,7 @@ This information includes diagnosis, clinical findings and other observations.  
       <path value="ServiceRequest.extension"/>
       <sliceName value="feedback"/>
       <short value="Give feedback to the prescriber"/>
-      <definition value="Optional Extension Element - found in all resources."/>
+      <definition value="An Extension"/>
       <min value="1"/>
       <max value="1"/>
       <base>
@@ -639,14 +639,6 @@ This information includes diagnosis, clinical findings and other observations.  
       </constraint>
       <mustSupport value="true"/>
       <isModifier value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
-      </mapping>
     </element>
     <element id="ServiceRequest.extension:coprescriber">
       <path value="ServiceRequest.extension"/>
@@ -2065,8 +2057,9 @@ This information includes diagnosis, clinical findings and other observations.  
     </element>
     <element id="ServiceRequest.subject">
       <path value="ServiceRequest.subject"/>
-      <short value="Individual or Entity the service is ordered for"/>
-      <definition value="On whom or what the service is to be performed. This is usually a human patient, but can also be requested on animals, groups of humans or animals, devices such as dialysis machines, or even locations (typically for environmental scans)."/>
+      <short value="A reference from one resource to another"/>
+      <definition value="A reference from one resource to another."/>
+      <comment value="References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository."/>
       <min value="1"/>
       <max value="1"/>
       <base>
@@ -2076,6 +2069,7 @@ This information includes diagnosis, clinical findings and other observations.  
       </base>
       <type>
         <code value="Reference"/>
+        <profile value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-contained-or-logical-reference"/>
         <targetProfile value="https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-patient"/>
       </type>
       <constraint>
@@ -2090,28 +2084,12 @@ This information includes diagnosis, clinical findings and other observations.  
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="workflow"/>
-        <map value="Request.subject"/>
-      </mapping>
-      <mapping>
-        <identity value="w5"/>
-        <map value="FiveWs.subject[x]"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="PID"/>
+        <identity value="rim"/>
+        <map value="n/a"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
-        <map value=".participation[typeCode=SBJ].role"/>
-      </mapping>
-      <mapping>
-        <identity value="quick"/>
-        <map value="ClinicalStatement.subject"/>
-      </mapping>
-      <mapping>
-        <identity value="w5"/>
-        <map value="FiveWs.subject"/>
+        <map value="The target of a resource reference is a RIM entry point (Act, Role, or Entity)"/>
       </mapping>
     </element>
     <element id="ServiceRequest.encounter">
@@ -2308,10 +2286,8 @@ This information includes diagnosis, clinical findings and other observations.  
     <element id="ServiceRequest.requester">
       <path value="ServiceRequest.requester"/>
       <short value="Prescriber of the requested service"/>
-      <definition value="The individual who initiated the request and has responsibility for its activation."/>
-      <comment value="This not the dispatcher, but rather who is the authorizer.  This element is not intended to handle delegation which would generally be managed through the Provenance resource."/>
-      <alias value="author"/>
-      <alias value="orderer"/>
+      <definition value="A reference from one resource to another."/>
+      <comment value="References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository."/>
       <min value="1"/>
       <max value="1"/>
       <base>
@@ -2321,6 +2297,7 @@ This information includes diagnosis, clinical findings and other observations.  
       </base>
       <type>
         <code value="Reference"/>
+        <profile value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-contained-or-logical-reference"/>
         <targetProfile value="https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitioner"/>
       </type>
       <constraint>
@@ -2335,24 +2312,12 @@ This information includes diagnosis, clinical findings and other observations.  
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="workflow"/>
-        <map value="Request.requester"/>
-      </mapping>
-      <mapping>
-        <identity value="w5"/>
-        <map value="FiveWs.author"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="ORC.12, PRT"/>
+        <identity value="rim"/>
+        <map value="n/a"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
-        <map value=".participation[typeCode=AUT].role"/>
-      </mapping>
-      <mapping>
-        <identity value="quick"/>
-        <map value="ClinicalStatement.statementAuthor"/>
+        <map value="The target of a resource reference is a RIM entry point (Act, Role, or Entity)"/>
       </mapping>
     </element>
     <element id="ServiceRequest.performerType">
@@ -2410,9 +2375,8 @@ This information includes diagnosis, clinical findings and other observations.  
     <element id="ServiceRequest.performer">
       <path value="ServiceRequest.performer"/>
       <short value="Requested performer - typically reference to practitionerroles"/>
-      <definition value="The desired performer for doing the requested service.  For example, the surgeon, dermatopathologist, endoscopist, etc."/>
-      <comment value="If multiple performers are present, it is interpreted as a list of *alternative* performers without any preference regardless of order.  If order of preference is needed use the [request-performerOrder extension](http://hl7.org/fhir/R4/extension-request-performerorder.html).  Use CareTeam to represent a group of performers (for example, Practitioner A *and* Practitioner B)."/>
-      <alias value="request recipient"/>
+      <definition value="A reference from one resource to another."/>
+      <comment value="References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository."/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -2422,6 +2386,7 @@ This information includes diagnosis, clinical findings and other observations.  
       </base>
       <type>
         <code value="Reference"/>
+        <profile value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-contained-or-logical-reference"/>
         <targetProfile value="https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole"/>
       </type>
       <constraint>
@@ -2436,20 +2401,12 @@ This information includes diagnosis, clinical findings and other observations.  
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="workflow"/>
-        <map value="Request.performer"/>
-      </mapping>
-      <mapping>
-        <identity value="w5"/>
-        <map value="FiveWs.actor"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="PRT, Practitioner: PRD-2/PRD-7 where PRD-3 = RT; Organization: PRD-10 where PRD-3 = RT"/>
+        <identity value="rim"/>
+        <map value="n/a"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
-        <map value=".participation[typeCode=PRF].role[scoper.determinerCode=INSTANCE]"/>
+        <map value="The target of a resource reference is a RIM entry point (Act, Role, or Entity)"/>
       </mapping>
     </element>
     <element id="ServiceRequest.locationCode">

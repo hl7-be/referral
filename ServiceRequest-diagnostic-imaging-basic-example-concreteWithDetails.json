@@ -8,8 +8,67 @@
   },
   "text": {
     "status": "extensions",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: ServiceRequest</b><a name=\"diagnostic-imaging-basic-example-concreteWithDetails\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource ServiceRequest \"diagnostic-imaging-basic-example-concreteWithDetails\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referralprescription-diagnosticimaging.html\">BeReferralPrescriptionDiagnosticImaging</a></p></div><p><b>BeFeedbackToPrescriber</b>: true</p><p><b>BeValidityPeriod</b>: 2020-01-01 --&gt; 2021-01-01</p><p><b>Reason for current status</b>: In progress <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-be-prescription-status-reason.html\">BePrescriptionStatusReason</a>#inProgress)</span></p><p><b>status</b>: active</p><p><b>intent</b>: order</p><p><b>category</b>: Clinical imaging <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#363679005)</span></p><p><b>priority</b>: routine</p><p><b>code</b>: Rx + echo rechtervoet <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ()</span></p><p><b>subject</b>: <a href=\"Patient-patient1.html\">Patient/patient1</a> \" DOE\"</p><p><b>authoredOn</b>: 2020-01-01</p><p><b>requester</b>: <a href=\"Practitioner-practitioner1.html\">Practitioner/practitioner1</a> \" MCCOY\"</p><p><b>reasonCode</b>: Fractuur? Ligamentair letsel? <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ()</span></p><p><b>supportingInfo</b>: <a href=\"Condition-condition1.html\">Condition/condition1</a></p></div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: ServiceRequest</b><a name=\"diagnostic-imaging-basic-example-concreteWithDetails\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource ServiceRequest \"diagnostic-imaging-basic-example-concreteWithDetails\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referralprescription-diagnosticimaging.html\">BeReferralPrescriptionDiagnosticImaging</a></p></div><p><b>BeFeedbackToPrescriber</b>: true</p><p><b>BeValidityPeriod</b>: 2020-01-01 --&gt; 2021-01-01</p><p><b>Reason for current status</b>: In progress <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-be-prescription-status-reason.html\">BePrescriptionStatusReason</a>#inProgress)</span></p><p><b>status</b>: active</p><p><b>intent</b>: order</p><p><b>category</b>: Clinical imaging <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#363679005)</span></p><p><b>priority</b>: routine</p><p><b>code</b>: Rx + echo rechtervoet <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ()</span></p><p><b>subject</b>: <a name=\"patient1\"> </a></p><blockquote><p></p><p><a name=\"patient1\"> </a></p><p><b>identifier</b>: id: 9999999999(use: OFFICIAL)</p><p><b>name</b>: Jane Doe </p><p><b>gender</b>: female</p><p><b>birthDate</b>: 1956-05-27</p></blockquote><p><b>authoredOn</b>: 2020-01-01</p><p><b>requester</b>: <a name=\"practitioner1\"> </a></p><blockquote><p></p><p><a name=\"practitioner1\"> </a></p><p><b>identifier</b>: id: 8888888888(use: OFFICIAL)</p><p><b>name</b>: Leonard McCoy (OFFICIAL), Bones (NICKNAME)</p></blockquote><p><b>reasonCode</b>: Fractuur? Ligamentair letsel? <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ()</span></p><p><b>supportingInfo</b>: <a href=\"Condition-condition1.html\">Condition/condition1</a></p></div>"
   },
+  "contained": [
+    {
+      "resourceType": "Patient",
+      "id": "patient1",
+      "meta": {
+        "profile": [
+          "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-patient"
+        ]
+      },
+      "identifier": [
+        {
+          "use": "official",
+          "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin",
+          "value": "9999999999"
+        }
+      ],
+      "name": [
+        {
+          "family": "Doe",
+          "given": [
+            "Jane"
+          ]
+        }
+      ],
+      "gender": "female",
+      "birthDate": "1956-05-27"
+    },
+    {
+      "resourceType": "Practitioner",
+      "id": "practitioner1",
+      "meta": {
+        "profile": [
+          "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitioner"
+        ]
+      },
+      "identifier": [
+        {
+          "use": "official",
+          "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi",
+          "value": "8888888888"
+        }
+      ],
+      "name": [
+        {
+          "use": "official",
+          "family": "McCoy",
+          "given": [
+            "Leonard"
+          ]
+        },
+        {
+          "use": "nickname",
+          "given": [
+            "Bones"
+          ]
+        }
+      ]
+    }
+  ],
   "extension": [
     {
       "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-feedback-to-prescriber",
@@ -71,11 +130,11 @@
     "text": "Rx + echo rechtervoet"
   },
   "subject": {
-    "reference": "Patient/patient1"
+    "reference": "#patient1"
   },
   "authoredOn": "2020-01-01",
   "requester": {
-    "reference": "Practitioner/practitioner1"
+    "reference": "#practitioner1"
   },
   "reasonCode": [
     {
