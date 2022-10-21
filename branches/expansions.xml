@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Bundle xmlns="http://hl7.org/fhir">
-  <id value="159cc78b-cc95-4846-8da5-9c1e196f8d80"/>
+  <id value="e1fa8009-0dfc-4612-bb72-4641c5a09308"/>
   <meta>
-    <lastUpdated value="2022-10-14T20:29:20.737+00:00"/>
+    <lastUpdated value="2022-10-21T19:41:46.729+00:00"/>
   </meta>
   <type value="collection"/>
   <entry>
@@ -52,7 +52,9 @@
         <url value="https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-proposal-type"/>
         <version value="1.0.0"/>
         <name value="BeVsProposalType"/>
+        <title value="BeVsProposalType"/>
         <status value="active"/>
+        <experimental value="false"/>
         <date value="2022-05-03T10:04:16+02:00"/>
         <publisher value="HL7 Belgium"/>
         <contact>
@@ -78,8 +80,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:8f0a1d3c-0ca5-4427-a4e3-f437b1f1454b"/>
-          <timestamp value="2022-10-14T20:30:11+00:00"/>
+          <identifier value="urn:uuid:d5d6a45f-03b3-422e-b1a8-429f2d62c7d4"/>
+          <timestamp value="2022-10-21T19:42:32+00:00"/>
           <total value="2"/>
           <parameter>
             <name value="excludeNested"/>
@@ -98,6 +100,251 @@
             <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-proposal-type"/>
             <code value="prolongation"/>
             <display value="prolongation"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-co-prescription-status"/>
+    <resource>
+      <ValueSet>
+        <id value="be-vs-co-prescription-status"/>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>This value set contains 3 concepts</p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
+              <a href="http://hl7.org/fhir/R4/codesystem-task-status.html">TaskStatus v4.0.1 (CodeSystem)</a>
+            </p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>System</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-task-status-requested"> </a>  
+                  <a href="http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-requested">requested</a>
+                </td>
+                <td>http://hl7.org/fhir/task-status</td>
+                <td>Requested</td>
+                <td>
+                  <div>
+                    <p>The task is ready to be acted upon and action is sought.</p>
+
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-task-status-accepted"> </a>  
+                  <a href="http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-accepted">accepted</a>
+                </td>
+                <td>http://hl7.org/fhir/task-status</td>
+                <td>Accepted</td>
+                <td>
+                  <div>
+                    <p>The potential performer has agreed to execute the task but has not yet started work.</p>
+
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-task-status-rejected"> </a>  
+                  <a href="http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-rejected">rejected</a>
+                </td>
+                <td>http://hl7.org/fhir/task-status</td>
+                <td>Rejected</td>
+                <td>
+                  <div>
+                    <p>The potential performer who claimed ownership of the task has decided not to execute it prior to performing any action.</p>
+
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-co-prescription-status"/>
+        <version value="1.0.0"/>
+        <name value="BeCoPrescriptionStatus"/>
+        <title value="BeCoPrescriptionStatus"/>
+        <status value="active"/>
+        <date value="2022-05-03T10:04:16+02:00"/>
+        <publisher value="HL7 Belgium"/>
+        <contact>
+          <name value="HL7 Belgium"/>
+          <telecom>
+            <system value="url"/>
+            <value value="http://hl7belgium.org"/>
+          </telecom>
+        </contact>
+        <contact>
+          <name value="Message-Structure"/>
+          <telecom>
+            <system value="email"/>
+            <value value="message-structure@ehealth.fgov.be"/>
+            <use value="work"/>
+          </telecom>
+        </contact>
+        <description value="This is the status of the prescription for the coprescriber"/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="BE"/>
+            <display value="Belgium"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:cb5c2bc8-1fff-4804-b966-b909c4c90e16"/>
+          <timestamp value="2022-10-21T19:42:32+00:00"/>
+          <total value="3"/>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="version"/>
+            <valueUri value="http://hl7.org/fhir/task-status|4.0.1"/>
+          </parameter>
+          <contains>
+            <system value="http://hl7.org/fhir/task-status"/>
+            <code value="requested"/>
+            <display value="Requested"/>
+          </contains>
+          <contains>
+            <system value="http://hl7.org/fhir/task-status"/>
+            <code value="accepted"/>
+            <display value="Accepted"/>
+          </contains>
+          <contains>
+            <system value="http://hl7.org/fhir/task-status"/>
+            <code value="rejected"/>
+            <display value="Rejected"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-co-prescriber-choice"/>
+    <resource>
+      <ValueSet>
+        <id value="be-vs-co-prescriber-choice"/>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>This value set contains 3 concepts</p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
+              <a href="CodeSystem-be-cs-co-prescriber-choice.html">BeCSCoPrescriberChoice v1.0.0 (CodeSystem)</a>
+            </p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>System</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-cs-co-prescriber-choice-mandatory"> </a>  
+                  <a href="CodeSystem-be-cs-co-prescriber-choice.html#be-cs-co-prescriber-choice-mandatory">mandatory</a>
+                </td>
+                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-co-prescriber-choice</td>
+                <td>The co-prescriber must sign</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-cs-co-prescriber-choice-one-of-mandatory"> </a>  
+                  <a href="CodeSystem-be-cs-co-prescriber-choice.html#be-cs-co-prescriber-choice-one-of-mandatory">one-of-mandatory</a>
+                </td>
+                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-co-prescriber-choice</td>
+                <td>The signature of the co-prescriber counts in the number of required signatures, but not blocking</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-cs-co-prescriber-choice-recommended"> </a>  
+                  <a href="CodeSystem-be-cs-co-prescriber-choice.html#be-cs-co-prescriber-choice-recommended">recommended</a>
+                </td>
+                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-co-prescriber-choice</td>
+                <td>The signature of the co-prescriber is recommended, but not blocking</td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-co-prescriber-choice"/>
+        <version value="1.0.0"/>
+        <name value="BeVsCoPrescriberChoice"/>
+        <title value="BeVsCoPrescriberChoice"/>
+        <status value="active"/>
+        <experimental value="false"/>
+        <date value="2022-05-03T10:04:16+02:00"/>
+        <publisher value="HL7 Belgium"/>
+        <contact>
+          <name value="HL7 Belgium"/>
+          <telecom>
+            <system value="url"/>
+            <value value="http://hl7belgium.org"/>
+          </telecom>
+        </contact>
+        <contact>
+          <name value="Message-Structure"/>
+          <telecom>
+            <system value="email"/>
+            <value value="message-structure@ehealth.fgov.be"/>
+            <use value="work"/>
+          </telecom>
+        </contact>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="BE"/>
+            <display value="Belgium"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:a8c5a0bf-34f8-495e-8884-8c141c8c52b1"/>
+          <timestamp value="2022-10-21T19:42:33+00:00"/>
+          <total value="3"/>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="version"/>
+            <valueUri value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-co-prescriber-choice|1.0.0"/>
+          </parameter>
+          <contains>
+            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-co-prescriber-choice"/>
+            <code value="mandatory"/>
+            <display value="The co-prescriber must sign"/>
+          </contains>
+          <contains>
+            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-co-prescriber-choice"/>
+            <code value="one-of-mandatory"/>
+            <display value="The signature of the co-prescriber counts in the number of required signatures, but not blocking"/>
+          </contains>
+          <contains>
+            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-co-prescriber-choice"/>
+            <code value="recommended"/>
+            <display value="The signature of the co-prescriber is recommended, but not blocking"/>
           </contains>
         </expansion>
       </ValueSet>
@@ -157,8 +404,10 @@
         <url value="https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-treatment-status-reason"/>
         <version value="1.0.0"/>
         <name value="BeVSTreatmentStatusReason"/>
+        <title value="BeVSTreatmentStatusReason"/>
         <status value="active"/>
-        <date value="2022-10-14T20:29:20+00:00"/>
+        <experimental value="false"/>
+        <date value="2022-10-21T19:41:46+00:00"/>
         <description value="Codes to explain the current status of a treatment in a referral prescription."/>
         <jurisdiction>
           <coding>
@@ -168,8 +417,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:2af96c41-f9df-4c22-8b73-30d17b0dede1"/>
-          <timestamp value="2022-10-14T20:30:11+00:00"/>
+          <identifier value="urn:uuid:5f92b785-7f06-4c24-82ff-66dc00087cac"/>
+          <timestamp value="2022-10-21T19:42:33+00:00"/>
           <total value="3"/>
           <parameter>
             <name value="excludeNested"/>
@@ -193,6 +442,482 @@
             <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-treatment-status-reason"/>
             <code value="blacklistedprescriber"/>
             <display value="Blacklisted Prescriber"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-referral-category"/>
+    <resource>
+      <ValueSet>
+        <id value="be-vs-referral-category"/>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>This value set contains 7 concepts</p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on SNOMED CT International edition 31-Jul 2022</p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>System</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---snomed.info-sct-363679005"> </a>  
+                  <a href="http://snomed.info/id/363679005">363679005</a>
+                </td>
+                <td>http://snomed.info/sct</td>
+                <td>Imaging (procedure)</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---snomed.info-sct-91251008"> </a>  
+                  <a href="http://snomed.info/id/91251008">91251008</a>
+                </td>
+                <td>http://snomed.info/sct</td>
+                <td>Physical therapy procedure (regime/therapy)</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---snomed.info-sct-9632001"> </a>  
+                  <a href="http://snomed.info/id/9632001">9632001</a>
+                </td>
+                <td>http://snomed.info/sct</td>
+                <td>Nursing procedure (procedure)</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---snomed.info-sct-15220000"> </a>  
+                  <a href="http://snomed.info/id/15220000">15220000</a>
+                </td>
+                <td>http://snomed.info/sct</td>
+                <td>Laboratory test (procedure)</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---snomed.info-sct-312856000"> </a>  
+                  <a href="http://snomed.info/id/312856000">312856000</a>
+                </td>
+                <td>http://snomed.info/sct</td>
+                <td>Referral to diabetes nurse (procedure)</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---snomed.info-sct-183545006"> </a>  
+                  <a href="http://snomed.info/id/183545006">183545006</a>
+                </td>
+                <td>http://snomed.info/sct</td>
+                <td>Orthopedic referral (procedure)</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---snomed.info-sct-69377005"> </a>  
+                  <a href="http://snomed.info/id/69377005">69377005</a>
+                </td>
+                <td>http://snomed.info/sct</td>
+                <td>Patient referral for rehabilitation, psychological (procedure)</td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-referral-category"/>
+        <version value="1.0.0"/>
+        <name value="BeReferralCategory"/>
+        <status value="draft"/>
+        <date value="2021-10-07T15:14:36+02:00"/>
+        <publisher value="HL7 Belgium"/>
+        <contact>
+          <name value="HL7 Belgium"/>
+          <telecom>
+            <system value="url"/>
+            <value value="http://hl7belgium.org"/>
+          </telecom>
+        </contact>
+        <contact>
+          <name value="Message-Structure"/>
+          <telecom>
+            <system value="email"/>
+            <value value="message-structure@ehealth.fgov.be"/>
+            <use value="work"/>
+          </telecom>
+        </contact>
+        <description value="Codes to define the high level category for a referral prescription. SNOMED-CT codes in this valueset are just a draft proposal to give a general idea - pending an official valueset."/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="BE"/>
+            <display value="Belgium"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:209721d0-5b6f-4986-b13e-3e38a67e66ae"/>
+          <timestamp value="2022-10-21T19:42:35+00:00"/>
+          <total value="7"/>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="limitedExpansion"/>
+            <valueBoolean value="true"/>
+          </parameter>
+          <parameter>
+            <name value="version"/>
+            <valueUri value="http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20220731"/>
+          </parameter>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <code value="363679005"/>
+            <display value="Imaging (procedure)"/>
+          </contains>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <code value="91251008"/>
+            <display value="Physical therapy procedure (regime/therapy)"/>
+          </contains>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <code value="9632001"/>
+            <display value="Nursing procedure (procedure)"/>
+          </contains>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <code value="15220000"/>
+            <display value="Laboratory test (procedure)"/>
+          </contains>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <code value="312856000"/>
+            <display value="Referral to diabetes nurse (procedure)"/>
+          </contains>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <code value="183545006"/>
+            <display value="Orthopedic referral (procedure)"/>
+          </contains>
+          <contains>
+            <system value="http://snomed.info/sct"/>
+            <code value="69377005"/>
+            <display value="Patient referral for rehabilitation, psychological (procedure)"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-type-of-nursing"/>
+    <resource>
+      <ValueSet>
+        <id value="be-vs-type-of-nursing"/>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>This value set contains 10 concepts</p>
+            <p style="border: black 1px dotted; background-color: #ffcccc; padding: 8px; margin-bottom: 8px">Expansion based on code system fragment 
+              <a href="CodeSystem-be-cs-nursing-code.html">BeNursingCode v1.0.0 (CodeSystem)</a>
+            </p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
+              <a href="CodeSystem-be-cs-nursing-code.html">BeNursingCode v1.0.0 (CodeSystem)</a>
+            </p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>System</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-cs-nursing-code-bladder-care"> </a>  
+                  <a href="CodeSystem-be-cs-nursing-code.html#be-cs-nursing-code-bladder-care">bladder-care</a>
+                </td>
+                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code</td>
+                <td>Bladder care</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-cs-nursing-code-digestive-system-care"> </a>  
+                  <a href="CodeSystem-be-cs-nursing-code.html#be-cs-nursing-code-digestive-system-care">digestive-system-care</a>
+                </td>
+                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code</td>
+                <td>Digestive system care</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-cs-nursing-code-wound-care"> </a>  
+                  <a href="CodeSystem-be-cs-nursing-code.html#be-cs-nursing-code-wound-care">wound-care</a>
+                </td>
+                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code</td>
+                <td>Wound care</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-cs-nursing-code-compression-therapy"> </a>  
+                  <a href="CodeSystem-be-cs-nursing-code.html#be-cs-nursing-code-compression-therapy">compression-therapy</a>
+                </td>
+                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code</td>
+                <td>Compression therapy</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-cs-nursing-code-medication"> </a>  
+                  <a href="CodeSystem-be-cs-nursing-code.html#be-cs-nursing-code-medication">medication</a>
+                </td>
+                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code</td>
+                <td>Medication</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-cs-nursing-code-appendix-81-preparation-of-medications"> </a>  
+                  <a href="CodeSystem-be-cs-nursing-code.html#be-cs-nursing-code-appendix-81-preparation-of-medications">appendix-81-preparation-of-medications</a>
+                </td>
+                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code</td>
+                <td>Appendix 81 preparation of medications</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-cs-nursing-code-preparation-and-administration-of-medication-to-chronical-psychiatric-patient"> </a>  
+                  <a href="CodeSystem-be-cs-nursing-code.html#be-cs-nursing-code-preparation-and-administration-of-medication-to-chronical-psychiatric-patient">preparation-and-administration-of-medication-to-chronical-psychiatric-patient</a>
+                </td>
+                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code</td>
+                <td>Preparation and administration of medication to chronical psychiatric patient</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-cs-nursing-code-diabetic-patient-services"> </a>  
+                  <a href="CodeSystem-be-cs-nursing-code.html#be-cs-nursing-code-diabetic-patient-services">diabetic-patient-services</a>
+                </td>
+                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code</td>
+                <td>Diabetic patient services</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-cs-nursing-code-non-reimbursed-services"> </a>  
+                  <a href="CodeSystem-be-cs-nursing-code.html#be-cs-nursing-code-non-reimbursed-services">non-reimbursed-services</a>
+                </td>
+                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code</td>
+                <td>Non reimbursed services</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-cs-nursing-code-other"> </a>  
+                  <a href="CodeSystem-be-cs-nursing-code.html#be-cs-nursing-code-other">other</a>
+                </td>
+                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code</td>
+                <td>Other</td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-type-of-nursing"/>
+        <version value="1.0.0"/>
+        <name value="BeNursingType"/>
+        <title value="BeNursingType"/>
+        <status value="draft"/>
+        <experimental value="false"/>
+        <date value="2022-05-03T10:04:16+02:00"/>
+        <publisher value="HL7 Belgium"/>
+        <contact>
+          <name value="HL7 Belgium"/>
+          <telecom>
+            <system value="url"/>
+            <value value="http://hl7belgium.org"/>
+          </telecom>
+        </contact>
+        <contact>
+          <name value="Message-Structure"/>
+          <telecom>
+            <system value="email"/>
+            <value value="message-structure@ehealth.fgov.be"/>
+            <use value="work"/>
+          </telecom>
+        </contact>
+        <description value="Codes to define a type of nursing."/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="BE"/>
+            <display value="Belgium"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:9c62209e-686d-4a9b-8607-493b652099a2"/>
+          <timestamp value="2022-10-21T19:42:36+00:00"/>
+          <total value="10"/>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="version"/>
+            <valueUri value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code|1.0.0"/>
+          </parameter>
+          <parameter>
+            <name value="fragment"/>
+            <valueUri value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code|1.0.0"/>
+          </parameter>
+          <contains>
+            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code"/>
+            <code value="bladder-care"/>
+            <display value="Bladder care"/>
+          </contains>
+          <contains>
+            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code"/>
+            <code value="digestive-system-care"/>
+            <display value="Digestive system care"/>
+          </contains>
+          <contains>
+            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code"/>
+            <code value="wound-care"/>
+            <display value="Wound care"/>
+          </contains>
+          <contains>
+            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code"/>
+            <code value="compression-therapy"/>
+            <display value="Compression therapy"/>
+          </contains>
+          <contains>
+            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code"/>
+            <code value="medication"/>
+            <display value="Medication"/>
+          </contains>
+          <contains>
+            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code"/>
+            <code value="appendix-81-preparation-of-medications"/>
+            <display value="Appendix 81 preparation of medications"/>
+          </contains>
+          <contains>
+            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code"/>
+            <code value="preparation-and-administration-of-medication-to-chronical-psychiatric-patient"/>
+            <display value="Preparation and administration of medication to chronical psychiatric patient"/>
+          </contains>
+          <contains>
+            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code"/>
+            <code value="diabetic-patient-services"/>
+            <display value="Diabetic patient services"/>
+          </contains>
+          <contains>
+            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code"/>
+            <code value="non-reimbursed-services"/>
+            <display value="Non reimbursed services"/>
+          </contains>
+          <contains>
+            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code"/>
+            <code value="other"/>
+            <display value="Other"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-contrastfluid-use"/>
+    <resource>
+      <ValueSet>
+        <id value="be-vs-contrastfluid-use"/>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>This value set contains 2 concepts</p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
+              <a href="CodeSystem-be-vs-contrastfluid-use.html">BeContrastFluidUse v1.0.0 (CodeSystem)</a>
+            </p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>System</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-vs-contrastfluid-use-if-necessary"> </a>  
+                  <a href="CodeSystem-be-vs-contrastfluid-use.html#be-vs-contrastfluid-use-if-necessary">if-necessary</a>
+                </td>
+                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-vs-contrastfluid-use</td>
+                <td>if-necessary</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-vs-contrastfluid-use-not-permitted"> </a>  
+                  <a href="CodeSystem-be-vs-contrastfluid-use.html#be-vs-contrastfluid-use-not-permitted">not-permitted</a>
+                </td>
+                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-vs-contrastfluid-use</td>
+                <td>not-permitted</td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-contrastfluid-use"/>
+        <version value="1.0.0"/>
+        <name value="BeContrastFluidUse"/>
+        <title value="BeContrastFluidUse"/>
+        <status value="draft"/>
+        <experimental value="false"/>
+        <date value="2022-05-03T10:04:16+02:00"/>
+        <publisher value="HL7 Belgium"/>
+        <contact>
+          <name value="HL7 Belgium"/>
+          <telecom>
+            <system value="url"/>
+            <value value="http://hl7belgium.org"/>
+          </telecom>
+        </contact>
+        <contact>
+          <name value="Message-Structure"/>
+          <telecom>
+            <system value="email"/>
+            <value value="message-structure@ehealth.fgov.be"/>
+            <use value="work"/>
+          </telecom>
+        </contact>
+        <description value="Codes to define the use of contrast fluid."/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="BE"/>
+            <display value="Belgium"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:9539a823-840f-48a5-8e59-f1f29ad3ec34"/>
+          <timestamp value="2022-10-21T19:42:37+00:00"/>
+          <total value="2"/>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="version"/>
+            <valueUri value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-vs-contrastfluid-use|1.0.0"/>
+          </parameter>
+          <contains>
+            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-vs-contrastfluid-use"/>
+            <code value="if-necessary"/>
+            <display value="if-necessary"/>
+          </contains>
+          <contains>
+            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-vs-contrastfluid-use"/>
+            <code value="not-permitted"/>
+            <display value="not-permitted"/>
           </contains>
         </expansion>
       </ValueSet>
@@ -329,8 +1054,9 @@
         <url value="https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-performer-task-status-reason"/>
         <version value="1.0.0"/>
         <name value="BeVSPerformerTaskStatusReason"/>
+        <title value="BeVSPerformerTaskStatusReason"/>
         <status value="active"/>
-        <date value="2022-10-14T20:29:20+00:00"/>
+        <date value="2022-10-21T19:41:46+00:00"/>
         <description value="Codes to explain the current status of a referral prescription."/>
         <jurisdiction>
           <coding>
@@ -340,8 +1066,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:e65a28b9-b67d-4bb3-afd9-b9ab6bef6777"/>
-          <timestamp value="2022-10-14T20:30:11+00:00"/>
+          <identifier value="urn:uuid:3d9268df-b0fc-4aac-9b62-91364418cd87"/>
+          <timestamp value="2022-10-21T19:42:37+00:00"/>
           <total value="7"/>
           <parameter>
             <name value="excludeNested"/>
@@ -385,555 +1111,6 @@
             <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
             <code value="CONTRA"/>
             <display value="contraindication"/>
-          </contains>
-        </expansion>
-      </ValueSet>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-co-prescriber-choice"/>
-    <resource>
-      <ValueSet>
-        <id value="be-vs-co-prescriber-choice"/>
-        <text>
-          <status value="generated"/>
-          <div xmlns="http://www.w3.org/1999/xhtml">
-            <p>This value set contains 3 concepts</p>
-            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
-              <a href="CodeSystem-be-cs-co-prescriber-choice.html">BeCSCoPrescriberChoice v1.0.0 (CodeSystem)</a>
-            </p>
-            <table class="codes">
-              <tr>
-                <td style="white-space:nowrap">
-                  <b>Code</b>
-                </td>
-                <td>
-                  <b>System</b>
-                </td>
-                <td>
-                  <b>Display</b>
-                </td>
-              </tr>
-              <tr>
-                <td style="white-space:nowrap">
-                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-cs-co-prescriber-choice-mandatory"> </a>  
-                  <a href="CodeSystem-be-cs-co-prescriber-choice.html#be-cs-co-prescriber-choice-mandatory">mandatory</a>
-                </td>
-                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-co-prescriber-choice</td>
-                <td>The co-prescriber must sign</td>
-              </tr>
-              <tr>
-                <td style="white-space:nowrap">
-                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-cs-co-prescriber-choice-one-of-mandatory"> </a>  
-                  <a href="CodeSystem-be-cs-co-prescriber-choice.html#be-cs-co-prescriber-choice-one-of-mandatory">one-of-mandatory</a>
-                </td>
-                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-co-prescriber-choice</td>
-                <td>The signature of the co-prescriber counts in the number of required signatures, but not blocking</td>
-              </tr>
-              <tr>
-                <td style="white-space:nowrap">
-                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-cs-co-prescriber-choice-recommended"> </a>  
-                  <a href="CodeSystem-be-cs-co-prescriber-choice.html#be-cs-co-prescriber-choice-recommended">recommended</a>
-                </td>
-                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-co-prescriber-choice</td>
-                <td>The signature of the co-prescriber is recommended, but not blocking</td>
-              </tr>
-            </table>
-          </div>
-        </text>
-        <url value="https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-co-prescriber-choice"/>
-        <version value="1.0.0"/>
-        <name value="BeVsCoPrescriberChoice"/>
-        <status value="active"/>
-        <date value="2022-05-03T10:04:16+02:00"/>
-        <publisher value="HL7 Belgium"/>
-        <contact>
-          <name value="HL7 Belgium"/>
-          <telecom>
-            <system value="url"/>
-            <value value="http://hl7belgium.org"/>
-          </telecom>
-        </contact>
-        <contact>
-          <name value="Message-Structure"/>
-          <telecom>
-            <system value="email"/>
-            <value value="message-structure@ehealth.fgov.be"/>
-            <use value="work"/>
-          </telecom>
-        </contact>
-        <jurisdiction>
-          <coding>
-            <system value="urn:iso:std:iso:3166"/>
-            <code value="BE"/>
-            <display value="Belgium"/>
-          </coding>
-        </jurisdiction>
-        <expansion>
-          <identifier value="urn:uuid:7cc1db60-3e18-48a5-925d-5388ec33b4a0"/>
-          <timestamp value="2022-10-14T20:30:12+00:00"/>
-          <total value="3"/>
-          <parameter>
-            <name value="excludeNested"/>
-            <valueBoolean value="false"/>
-          </parameter>
-          <parameter>
-            <name value="version"/>
-            <valueUri value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-co-prescriber-choice|1.0.0"/>
-          </parameter>
-          <contains>
-            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-co-prescriber-choice"/>
-            <code value="mandatory"/>
-            <display value="The co-prescriber must sign"/>
-          </contains>
-          <contains>
-            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-co-prescriber-choice"/>
-            <code value="one-of-mandatory"/>
-            <display value="The signature of the co-prescriber counts in the number of required signatures, but not blocking"/>
-          </contains>
-          <contains>
-            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-co-prescriber-choice"/>
-            <code value="recommended"/>
-            <display value="The signature of the co-prescriber is recommended, but not blocking"/>
-          </contains>
-        </expansion>
-      </ValueSet>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-type-of-nursing"/>
-    <resource>
-      <ValueSet>
-        <id value="be-vs-type-of-nursing"/>
-        <text>
-          <status value="generated"/>
-          <div xmlns="http://www.w3.org/1999/xhtml">
-            <p>This value set contains 10 concepts</p>
-            <p style="border: black 1px dotted; background-color: #ffcccc; padding: 8px; margin-bottom: 8px">Expansion based on code system fragment 
-              <a href="CodeSystem-be-cs-nursing-code.html">BeNursingCode v1.0.0 (CodeSystem)</a>
-            </p>
-            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
-              <a href="CodeSystem-be-cs-nursing-code.html">BeNursingCode v1.0.0 (CodeSystem)</a>
-            </p>
-            <table class="codes">
-              <tr>
-                <td style="white-space:nowrap">
-                  <b>Code</b>
-                </td>
-                <td>
-                  <b>System</b>
-                </td>
-                <td>
-                  <b>Display</b>
-                </td>
-              </tr>
-              <tr>
-                <td style="white-space:nowrap">
-                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-cs-nursing-code-bladder-care"> </a>  
-                  <a href="CodeSystem-be-cs-nursing-code.html#be-cs-nursing-code-bladder-care">bladder-care</a>
-                </td>
-                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code</td>
-                <td>Bladder care</td>
-              </tr>
-              <tr>
-                <td style="white-space:nowrap">
-                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-cs-nursing-code-digestive-system-care"> </a>  
-                  <a href="CodeSystem-be-cs-nursing-code.html#be-cs-nursing-code-digestive-system-care">digestive-system-care</a>
-                </td>
-                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code</td>
-                <td>Digestive system care</td>
-              </tr>
-              <tr>
-                <td style="white-space:nowrap">
-                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-cs-nursing-code-wound-care"> </a>  
-                  <a href="CodeSystem-be-cs-nursing-code.html#be-cs-nursing-code-wound-care">wound-care</a>
-                </td>
-                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code</td>
-                <td>Wound care</td>
-              </tr>
-              <tr>
-                <td style="white-space:nowrap">
-                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-cs-nursing-code-compression-therapy"> </a>  
-                  <a href="CodeSystem-be-cs-nursing-code.html#be-cs-nursing-code-compression-therapy">compression-therapy</a>
-                </td>
-                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code</td>
-                <td>Compression therapy</td>
-              </tr>
-              <tr>
-                <td style="white-space:nowrap">
-                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-cs-nursing-code-medication"> </a>  
-                  <a href="CodeSystem-be-cs-nursing-code.html#be-cs-nursing-code-medication">medication</a>
-                </td>
-                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code</td>
-                <td>Medication</td>
-              </tr>
-              <tr>
-                <td style="white-space:nowrap">
-                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-cs-nursing-code-appendix-81-preparation-of-medications"> </a>  
-                  <a href="CodeSystem-be-cs-nursing-code.html#be-cs-nursing-code-appendix-81-preparation-of-medications">appendix-81-preparation-of-medications</a>
-                </td>
-                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code</td>
-                <td>Appendix 81 preparation of medications</td>
-              </tr>
-              <tr>
-                <td style="white-space:nowrap">
-                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-cs-nursing-code-preparation-and-administration-of-medication-to-chronical-psychiatric-patient"> </a>  
-                  <a href="CodeSystem-be-cs-nursing-code.html#be-cs-nursing-code-preparation-and-administration-of-medication-to-chronical-psychiatric-patient">preparation-and-administration-of-medication-to-chronical-psychiatric-patient</a>
-                </td>
-                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code</td>
-                <td>Preparation and administration of medication to chronical psychiatric patient</td>
-              </tr>
-              <tr>
-                <td style="white-space:nowrap">
-                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-cs-nursing-code-diabetic-patient-services"> </a>  
-                  <a href="CodeSystem-be-cs-nursing-code.html#be-cs-nursing-code-diabetic-patient-services">diabetic-patient-services</a>
-                </td>
-                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code</td>
-                <td>Diabetic patient services</td>
-              </tr>
-              <tr>
-                <td style="white-space:nowrap">
-                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-cs-nursing-code-non-reimbursed-services"> </a>  
-                  <a href="CodeSystem-be-cs-nursing-code.html#be-cs-nursing-code-non-reimbursed-services">non-reimbursed-services</a>
-                </td>
-                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code</td>
-                <td>Non reimbursed services</td>
-              </tr>
-              <tr>
-                <td style="white-space:nowrap">
-                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-cs-nursing-code-other"> </a>  
-                  <a href="CodeSystem-be-cs-nursing-code.html#be-cs-nursing-code-other">other</a>
-                </td>
-                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code</td>
-                <td>Other</td>
-              </tr>
-            </table>
-          </div>
-        </text>
-        <url value="https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-type-of-nursing"/>
-        <version value="1.0.0"/>
-        <name value="BeNursingType"/>
-        <status value="draft"/>
-        <date value="2022-05-03T10:04:16+02:00"/>
-        <publisher value="HL7 Belgium"/>
-        <contact>
-          <name value="HL7 Belgium"/>
-          <telecom>
-            <system value="url"/>
-            <value value="http://hl7belgium.org"/>
-          </telecom>
-        </contact>
-        <contact>
-          <name value="Message-Structure"/>
-          <telecom>
-            <system value="email"/>
-            <value value="message-structure@ehealth.fgov.be"/>
-            <use value="work"/>
-          </telecom>
-        </contact>
-        <description value="Codes to define a type of nursing."/>
-        <jurisdiction>
-          <coding>
-            <system value="urn:iso:std:iso:3166"/>
-            <code value="BE"/>
-            <display value="Belgium"/>
-          </coding>
-        </jurisdiction>
-        <expansion>
-          <identifier value="urn:uuid:5e0f7bc5-f00d-436c-8e6f-a0668afab7e3"/>
-          <timestamp value="2022-10-14T20:30:12+00:00"/>
-          <total value="10"/>
-          <parameter>
-            <name value="excludeNested"/>
-            <valueBoolean value="false"/>
-          </parameter>
-          <parameter>
-            <name value="version"/>
-            <valueUri value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code|1.0.0"/>
-          </parameter>
-          <parameter>
-            <name value="fragment"/>
-            <valueUri value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code|1.0.0"/>
-          </parameter>
-          <contains>
-            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code"/>
-            <code value="bladder-care"/>
-            <display value="Bladder care"/>
-          </contains>
-          <contains>
-            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code"/>
-            <code value="digestive-system-care"/>
-            <display value="Digestive system care"/>
-          </contains>
-          <contains>
-            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code"/>
-            <code value="wound-care"/>
-            <display value="Wound care"/>
-          </contains>
-          <contains>
-            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code"/>
-            <code value="compression-therapy"/>
-            <display value="Compression therapy"/>
-          </contains>
-          <contains>
-            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code"/>
-            <code value="medication"/>
-            <display value="Medication"/>
-          </contains>
-          <contains>
-            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code"/>
-            <code value="appendix-81-preparation-of-medications"/>
-            <display value="Appendix 81 preparation of medications"/>
-          </contains>
-          <contains>
-            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code"/>
-            <code value="preparation-and-administration-of-medication-to-chronical-psychiatric-patient"/>
-            <display value="Preparation and administration of medication to chronical psychiatric patient"/>
-          </contains>
-          <contains>
-            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code"/>
-            <code value="diabetic-patient-services"/>
-            <display value="Diabetic patient services"/>
-          </contains>
-          <contains>
-            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code"/>
-            <code value="non-reimbursed-services"/>
-            <display value="Non reimbursed services"/>
-          </contains>
-          <contains>
-            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-nursing-code"/>
-            <code value="other"/>
-            <display value="Other"/>
-          </contains>
-        </expansion>
-      </ValueSet>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-contrastfluid-use"/>
-    <resource>
-      <ValueSet>
-        <id value="be-vs-contrastfluid-use"/>
-        <text>
-          <status value="generated"/>
-          <div xmlns="http://www.w3.org/1999/xhtml">
-            <p>This value set contains 2 concepts</p>
-            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
-              <a href="CodeSystem-be-vs-contrastfluid-use.html">BeContrastFluidUse v1.0.0 (CodeSystem)</a>
-            </p>
-            <table class="codes">
-              <tr>
-                <td style="white-space:nowrap">
-                  <b>Code</b>
-                </td>
-                <td>
-                  <b>System</b>
-                </td>
-                <td>
-                  <b>Display</b>
-                </td>
-              </tr>
-              <tr>
-                <td style="white-space:nowrap">
-                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-vs-contrastfluid-use-if-necessary"> </a>  
-                  <a href="CodeSystem-be-vs-contrastfluid-use.html#be-vs-contrastfluid-use-if-necessary">if-necessary</a>
-                </td>
-                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-vs-contrastfluid-use</td>
-                <td>if-necessary</td>
-              </tr>
-              <tr>
-                <td style="white-space:nowrap">
-                  <a name="https---www.ehealth.fgov.be-standards-fhir-referral-CodeSystem-be-vs-contrastfluid-use-not-permitted"> </a>  
-                  <a href="CodeSystem-be-vs-contrastfluid-use.html#be-vs-contrastfluid-use-not-permitted">not-permitted</a>
-                </td>
-                <td>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-vs-contrastfluid-use</td>
-                <td>not-permitted</td>
-              </tr>
-            </table>
-          </div>
-        </text>
-        <url value="https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-contrastfluid-use"/>
-        <version value="1.0.0"/>
-        <name value="BeContrastFluidUse"/>
-        <status value="draft"/>
-        <date value="2022-05-03T10:04:16+02:00"/>
-        <publisher value="HL7 Belgium"/>
-        <contact>
-          <name value="HL7 Belgium"/>
-          <telecom>
-            <system value="url"/>
-            <value value="http://hl7belgium.org"/>
-          </telecom>
-        </contact>
-        <contact>
-          <name value="Message-Structure"/>
-          <telecom>
-            <system value="email"/>
-            <value value="message-structure@ehealth.fgov.be"/>
-            <use value="work"/>
-          </telecom>
-        </contact>
-        <description value="Codes to define the use of contrast fluid."/>
-        <jurisdiction>
-          <coding>
-            <system value="urn:iso:std:iso:3166"/>
-            <code value="BE"/>
-            <display value="Belgium"/>
-          </coding>
-        </jurisdiction>
-        <expansion>
-          <identifier value="urn:uuid:11c3591b-e7cf-4491-9666-d8885c6f02fc"/>
-          <timestamp value="2022-10-14T20:30:12+00:00"/>
-          <total value="2"/>
-          <parameter>
-            <name value="excludeNested"/>
-            <valueBoolean value="false"/>
-          </parameter>
-          <parameter>
-            <name value="version"/>
-            <valueUri value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-vs-contrastfluid-use|1.0.0"/>
-          </parameter>
-          <contains>
-            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-vs-contrastfluid-use"/>
-            <code value="if-necessary"/>
-            <display value="if-necessary"/>
-          </contains>
-          <contains>
-            <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-vs-contrastfluid-use"/>
-            <code value="not-permitted"/>
-            <display value="not-permitted"/>
-          </contains>
-        </expansion>
-      </ValueSet>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-co-prescription-status"/>
-    <resource>
-      <ValueSet>
-        <id value="be-vs-co-prescription-status"/>
-        <text>
-          <status value="generated"/>
-          <div xmlns="http://www.w3.org/1999/xhtml">
-            <p>This value set contains 3 concepts</p>
-            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
-              <a href="http://hl7.org/fhir/R4/codesystem-task-status.html">TaskStatus v4.0.1 (CodeSystem)</a>
-            </p>
-            <table class="codes">
-              <tr>
-                <td style="white-space:nowrap">
-                  <b>Code</b>
-                </td>
-                <td>
-                  <b>System</b>
-                </td>
-                <td>
-                  <b>Display</b>
-                </td>
-                <td>
-                  <b>Definition</b>
-                </td>
-              </tr>
-              <tr>
-                <td style="white-space:nowrap">
-                  <a name="http---hl7.org-fhir-task-status-requested"> </a>  
-                  <a href="http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-requested">requested</a>
-                </td>
-                <td>http://hl7.org/fhir/task-status</td>
-                <td>Requested</td>
-                <td>
-                  <div>
-                    <p>The task is ready to be acted upon and action is sought.</p>
-
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td style="white-space:nowrap">
-                  <a name="http---hl7.org-fhir-task-status-accepted"> </a>  
-                  <a href="http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-accepted">accepted</a>
-                </td>
-                <td>http://hl7.org/fhir/task-status</td>
-                <td>Accepted</td>
-                <td>
-                  <div>
-                    <p>The potential performer has agreed to execute the task but has not yet started work.</p>
-
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td style="white-space:nowrap">
-                  <a name="http---hl7.org-fhir-task-status-rejected"> </a>  
-                  <a href="http://hl7.org/fhir/R4/codesystem-task-status.html#task-status-rejected">rejected</a>
-                </td>
-                <td>http://hl7.org/fhir/task-status</td>
-                <td>Rejected</td>
-                <td>
-                  <div>
-                    <p>The potential performer who claimed ownership of the task has decided not to execute it prior to performing any action.</p>
-
-                  </div>
-                </td>
-              </tr>
-            </table>
-          </div>
-        </text>
-        <url value="https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-co-prescription-status"/>
-        <version value="1.0.0"/>
-        <name value="BeCoPrescriptionStatus"/>
-        <status value="active"/>
-        <date value="2022-05-03T10:04:16+02:00"/>
-        <publisher value="HL7 Belgium"/>
-        <contact>
-          <name value="HL7 Belgium"/>
-          <telecom>
-            <system value="url"/>
-            <value value="http://hl7belgium.org"/>
-          </telecom>
-        </contact>
-        <contact>
-          <name value="Message-Structure"/>
-          <telecom>
-            <system value="email"/>
-            <value value="message-structure@ehealth.fgov.be"/>
-            <use value="work"/>
-          </telecom>
-        </contact>
-        <description value="This is the status of the prescription for the coprescriber"/>
-        <jurisdiction>
-          <coding>
-            <system value="urn:iso:std:iso:3166"/>
-            <code value="BE"/>
-            <display value="Belgium"/>
-          </coding>
-        </jurisdiction>
-        <expansion>
-          <identifier value="urn:uuid:ce0c2d50-65d3-422b-8d07-a6cd8932cb8e"/>
-          <timestamp value="2022-10-14T20:30:12+00:00"/>
-          <total value="3"/>
-          <parameter>
-            <name value="excludeNested"/>
-            <valueBoolean value="false"/>
-          </parameter>
-          <parameter>
-            <name value="version"/>
-            <valueUri value="http://hl7.org/fhir/task-status|4.0.1"/>
-          </parameter>
-          <contains>
-            <system value="http://hl7.org/fhir/task-status"/>
-            <code value="requested"/>
-            <display value="Requested"/>
-          </contains>
-          <contains>
-            <system value="http://hl7.org/fhir/task-status"/>
-            <code value="accepted"/>
-            <display value="Accepted"/>
-          </contains>
-          <contains>
-            <system value="http://hl7.org/fhir/task-status"/>
-            <code value="rejected"/>
-            <display value="Rejected"/>
           </contains>
         </expansion>
       </ValueSet>
@@ -1057,8 +1234,10 @@
         <url value="https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-prescription-status-reason"/>
         <version value="1.0.0"/>
         <name value="BeVSPrescriptionStatusReason"/>
+        <title value="BeVSPrescriptionStatusReason"/>
         <status value="active"/>
-        <date value="2022-10-14T20:29:20+00:00"/>
+        <experimental value="false"/>
+        <date value="2022-10-21T19:41:46+00:00"/>
         <description value="This is the status reason of the prescription"/>
         <jurisdiction>
           <coding>
@@ -1068,8 +1247,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:b8cf1d36-1eff-45d3-9fae-26f6dcd1cca4"/>
-          <timestamp value="2022-10-14T20:30:12+00:00"/>
+          <identifier value="urn:uuid:f7090be2-2218-43bc-9370-2250b13b6ad2"/>
+          <timestamp value="2022-10-21T19:42:37+00:00"/>
           <total value="11"/>
           <parameter>
             <name value="excludeNested"/>
@@ -1133,171 +1312,6 @@
             <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason"/>
             <code value="expired"/>
             <display value="Expired"/>
-          </contains>
-        </expansion>
-      </ValueSet>
-    </resource>
-  </entry>
-  <entry>
-    <fullUrl value="https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-referral-category"/>
-    <resource>
-      <ValueSet>
-        <id value="be-vs-referral-category"/>
-        <text>
-          <status value="generated"/>
-          <div xmlns="http://www.w3.org/1999/xhtml">
-            <p>This value set contains 7 concepts</p>
-            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on SNOMED CT International edition 31-Jul 2022</p>
-            <table class="codes">
-              <tr>
-                <td style="white-space:nowrap">
-                  <b>Code</b>
-                </td>
-                <td>
-                  <b>System</b>
-                </td>
-                <td>
-                  <b>Display</b>
-                </td>
-              </tr>
-              <tr>
-                <td style="white-space:nowrap">
-                  <a name="http---snomed.info-sct-363679005"> </a>  
-                  <a href="http://snomed.info/id/363679005">363679005</a>
-                </td>
-                <td>http://snomed.info/sct</td>
-                <td>Imaging (procedure)</td>
-              </tr>
-              <tr>
-                <td style="white-space:nowrap">
-                  <a name="http---snomed.info-sct-91251008"> </a>  
-                  <a href="http://snomed.info/id/91251008">91251008</a>
-                </td>
-                <td>http://snomed.info/sct</td>
-                <td>Physical therapy procedure (regime/therapy)</td>
-              </tr>
-              <tr>
-                <td style="white-space:nowrap">
-                  <a name="http---snomed.info-sct-9632001"> </a>  
-                  <a href="http://snomed.info/id/9632001">9632001</a>
-                </td>
-                <td>http://snomed.info/sct</td>
-                <td>Nursing procedure (procedure)</td>
-              </tr>
-              <tr>
-                <td style="white-space:nowrap">
-                  <a name="http---snomed.info-sct-15220000"> </a>  
-                  <a href="http://snomed.info/id/15220000">15220000</a>
-                </td>
-                <td>http://snomed.info/sct</td>
-                <td>Laboratory test (procedure)</td>
-              </tr>
-              <tr>
-                <td style="white-space:nowrap">
-                  <a name="http---snomed.info-sct-312856000"> </a>  
-                  <a href="http://snomed.info/id/312856000">312856000</a>
-                </td>
-                <td>http://snomed.info/sct</td>
-                <td>Referral to diabetes nurse (procedure)</td>
-              </tr>
-              <tr>
-                <td style="white-space:nowrap">
-                  <a name="http---snomed.info-sct-183545006"> </a>  
-                  <a href="http://snomed.info/id/183545006">183545006</a>
-                </td>
-                <td>http://snomed.info/sct</td>
-                <td>Orthopedic referral (procedure)</td>
-              </tr>
-              <tr>
-                <td style="white-space:nowrap">
-                  <a name="http---snomed.info-sct-69377005"> </a>  
-                  <a href="http://snomed.info/id/69377005">69377005</a>
-                </td>
-                <td>http://snomed.info/sct</td>
-                <td>Patient referral for rehabilitation, psychological (procedure)</td>
-              </tr>
-            </table>
-          </div>
-        </text>
-        <url value="https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-referral-category"/>
-        <version value="1.0.0"/>
-        <name value="BeReferralCategory"/>
-        <status value="draft"/>
-        <date value="2021-10-07T15:14:36+02:00"/>
-        <publisher value="HL7 Belgium"/>
-        <contact>
-          <name value="HL7 Belgium"/>
-          <telecom>
-            <system value="url"/>
-            <value value="http://hl7belgium.org"/>
-          </telecom>
-        </contact>
-        <contact>
-          <name value="Message-Structure"/>
-          <telecom>
-            <system value="email"/>
-            <value value="message-structure@ehealth.fgov.be"/>
-            <use value="work"/>
-          </telecom>
-        </contact>
-        <description value="Codes to define the high level category for a referral prescription. SNOMED-CT codes in this valueset are just a draft proposal to give a general idea - pending an official valueset."/>
-        <jurisdiction>
-          <coding>
-            <system value="urn:iso:std:iso:3166"/>
-            <code value="BE"/>
-            <display value="Belgium"/>
-          </coding>
-        </jurisdiction>
-        <expansion>
-          <identifier value="urn:uuid:3bbe1bf2-f27e-4a9d-bcd6-e7abc4133771"/>
-          <timestamp value="2022-10-14T20:30:13+00:00"/>
-          <total value="7"/>
-          <parameter>
-            <name value="excludeNested"/>
-            <valueBoolean value="false"/>
-          </parameter>
-          <parameter>
-            <name value="limitedExpansion"/>
-            <valueBoolean value="true"/>
-          </parameter>
-          <parameter>
-            <name value="version"/>
-            <valueUri value="http://snomed.info/sct|http://snomed.info/sct/900000000000207008/version/20220731"/>
-          </parameter>
-          <contains>
-            <system value="http://snomed.info/sct"/>
-            <code value="363679005"/>
-            <display value="Imaging (procedure)"/>
-          </contains>
-          <contains>
-            <system value="http://snomed.info/sct"/>
-            <code value="91251008"/>
-            <display value="Physical therapy procedure (regime/therapy)"/>
-          </contains>
-          <contains>
-            <system value="http://snomed.info/sct"/>
-            <code value="9632001"/>
-            <display value="Nursing procedure (procedure)"/>
-          </contains>
-          <contains>
-            <system value="http://snomed.info/sct"/>
-            <code value="15220000"/>
-            <display value="Laboratory test (procedure)"/>
-          </contains>
-          <contains>
-            <system value="http://snomed.info/sct"/>
-            <code value="312856000"/>
-            <display value="Referral to diabetes nurse (procedure)"/>
-          </contains>
-          <contains>
-            <system value="http://snomed.info/sct"/>
-            <code value="183545006"/>
-            <display value="Orthopedic referral (procedure)"/>
-          </contains>
-          <contains>
-            <system value="http://snomed.info/sct"/>
-            <code value="69377005"/>
-            <display value="Patient referral for rehabilitation, psychological (procedure)"/>
           </contains>
         </expansion>
       </ValueSet>

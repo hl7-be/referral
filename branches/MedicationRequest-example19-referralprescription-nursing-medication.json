@@ -8,8 +8,142 @@
   },
   "text": {
     "status": "extensions",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: MedicationRequest</b><a name=\"example19-referralprescription-nursing-medication\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource MedicationRequest \"example19-referralprescription-nursing-medication\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referralprescription-nursing-medication.html\">BeReferralPrescriptionNursingMedication</a></p></div><p><b>BeValidityPeriod</b>: 2022-10-12 --&gt; (ongoing)</p><p><b>BePerformerTaskReference</b>: <a href=\"Task-performer-task.html\">Task/performer-task</a></p><p><b>BeFeedbackToPrescriber</b>: true</p><p><b>identifier</b>: id: UHMEPVALUE</p><p><b>status</b>: active</p><p><b>statusReason</b>: In Progress <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-be-prescription-status-reason.html\">BePrescriptionStatusReason</a>#inProgress)</span></p><p><b>intent</b>: order</p><p><b>category</b>: Subcutaan <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (be-nursing-medication-injection#SC)</span></p><p><b>priority</b>: routine</p><p><b>medication</b>: Clexane inj. oploss. i.v./s.c. [voorgev. spuit] 10 x 4 000 IE anti-Xa / 0,4 ml <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (be-ns-cnk-codes#0278192)</span></p><p><b>subject</b>: <a href=\"Patient-patient1.html\">Patient/patient1</a> \" DOE\"</p><p><b>requester</b>: <a href=\"Practitioner-practitioner1.html\">Practitioner/practitioner1</a> \" MCCOY\"</p><h3>DosageInstructions</h3><table class=\"grid\"><tr><td>-</td><td><b>Text</b></td><td><b>Timing</b></td></tr><tr><td>*</td><td>frequency: 2x/dag subcutaan toedienen, vanaf operatie tot 20/8/2021 of tot INR &gt; 2</td><td>Starting 1900-01-01, Do 2 per 1 days, Until 2021-08-20</td></tr></table></div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: MedicationRequest</b><a name=\"example19-referralprescription-nursing-medication\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource MedicationRequest \"example19-referralprescription-nursing-medication\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referralprescription-nursing-medication.html\">BeReferralPrescriptionNursingMedication</a></p></div><p><b>BeValidityPeriod</b>: 2022-10-12 --&gt; (ongoing)</p><p><b>BePerformerTaskReference</b>: <a href=\"Task-performer-task.html\">Task/performer-task</a></p><p><b>BeFeedbackToPrescriber</b>: true</p><p><b>identifier</b>: id: UHMEPVALUE</p><p><b>status</b>: active</p><p><b>statusReason</b>: In Progress <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-be-prescription-status-reason.html\">BePrescriptionStatusReason</a>#inProgress)</span></p><p><b>intent</b>: order</p><p><b>category</b>: Subcutaan <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (be-nursing-medication-injection#SC)</span></p><p><b>priority</b>: routine</p><p><b>medication</b>: Clexane inj. oploss. i.v./s.c. [voorgev. spuit] 10 x 4 000 IE anti-Xa / 0,4 ml <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (be-ns-cnk-codes#0278192)</span></p><p><b>subject</b>: <a name=\"patient1\"> </a></p><blockquote><p></p><p><a name=\"patient1\"> </a></p><p><b>identifier</b>: id: 9999999999(use: OFFICIAL)</p><p><b>name</b>: Jane Doe </p><p><b>gender</b>: female</p><p><b>birthDate</b>: 1956-05-27</p></blockquote><p><b>requester</b>: <a name=\"practitioner1\"> </a></p><blockquote><p></p><p><a name=\"practitioner1\"> </a></p><p><b>identifier</b>: id: 8888888888(use: OFFICIAL)</p><p><b>name</b>: Leonard McCoy (OFFICIAL), Bones (NICKNAME)</p></blockquote><h3>DosageInstructions</h3><table class=\"grid\"><tr><td>-</td><td><b>Text</b></td><td><b>Timing</b></td></tr><tr><td>*</td><td>frequency: 2x/dag subcutaan toedienen, vanaf operatie tot 20/8/2021 of tot INR &gt; 2</td><td>Starting 1900-01-01, Do 2 per 1 days, Until 2021-08-20</td></tr></table></div>"
   },
+  "contained": [
+    {
+      "resourceType": "Patient",
+      "id": "patient1",
+      "meta": {
+        "profile": [
+          "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-patient"
+        ]
+      },
+      "identifier": [
+        {
+          "use": "official",
+          "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin",
+          "value": "9999999999"
+        }
+      ],
+      "name": [
+        {
+          "family": "Doe",
+          "given": [
+            "Jane"
+          ]
+        }
+      ],
+      "gender": "female",
+      "birthDate": "1956-05-27"
+    },
+    {
+      "resourceType": "Practitioner",
+      "id": "practitioner1",
+      "meta": {
+        "profile": [
+          "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitioner"
+        ]
+      },
+      "identifier": [
+        {
+          "use": "official",
+          "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi",
+          "value": "8888888888"
+        }
+      ],
+      "name": [
+        {
+          "use": "official",
+          "family": "McCoy",
+          "given": [
+            "Leonard"
+          ]
+        },
+        {
+          "use": "nickname",
+          "given": [
+            "Bones"
+          ]
+        }
+      ]
+    },
+    {
+      "resourceType": "PractitionerRole",
+      "id": "practitionerrole1",
+      "meta": {
+        "profile": [
+          "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole"
+        ]
+      },
+      "identifier": [
+        {
+          "system": "http://www.acme.org/practitioners",
+          "value": "23"
+        }
+      ],
+      "active": true,
+      "period": {
+        "start": "2019-08-01T00:00:00.000Z",
+        "end": "2019-12-01T00:00:00.000Z"
+      },
+      "practitioner": {
+        "reference": "Practitioner/Performer1",
+        "display": "Dr Katherine Pulaski"
+      },
+      "code": [
+        {
+          "coding": [
+            {
+              "system": "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty",
+              "code": "persphysician",
+              "display": "physician"
+            }
+          ]
+        }
+      ],
+      "specialty": [
+        {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "419772000",
+              "display": "Family practice"
+            }
+          ]
+        }
+      ],
+      "availableTime": [
+        {
+          "daysOfWeek": [
+            "mon",
+            "tue",
+            "wed"
+          ],
+          "availableStartTime": "09:00:00",
+          "availableEndTime": "16:30:00"
+        },
+        {
+          "daysOfWeek": [
+            "thu",
+            "fri"
+          ],
+          "availableStartTime": "09:00:00",
+          "availableEndTime": "12:00:00"
+        }
+      ],
+      "notAvailable": [
+        {
+          "description": "Katherine will be on extended leave during August 2020",
+          "during": {
+            "start": "2020-08-01T00:00:00.000Z",
+            "end": "2020-08-20T00:00:00.000Z"
+          }
+        }
+      ],
+      "availabilityExceptions": "Katherine is generally unavailable on public holidays and during the Christmas/New Year break"
+    }
+  ],
   "extension": [
     {
       "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period",
@@ -67,10 +201,10 @@
     ]
   },
   "subject": {
-    "reference": "Patient/patient1"
+    "reference": "#patient1"
   },
   "requester": {
-    "reference": "Practitioner/practitioner1"
+    "reference": "#practitioner1"
   },
   "dosageInstruction": [
     {
