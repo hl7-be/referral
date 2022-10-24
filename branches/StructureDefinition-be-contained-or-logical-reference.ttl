@@ -16,7 +16,7 @@
   fhir:StructureDefinition.version [ fhir:value "1.0.0"];
   fhir:StructureDefinition.name [ fhir:value "BeContainedOrLogicalReference"];
   fhir:StructureDefinition.status [ fhir:value "active"];
-  fhir:StructureDefinition.date [ fhir:value "2022-10-21T19:41:46+00:00"^^xsd:dateTime];
+  fhir:StructureDefinition.date [ fhir:value "2022-10-24T13:30:48+00:00"^^xsd:dateTime];
   fhir:StructureDefinition.description [ fhir:value "A reference limited to contained resources or resources with a logical identifier."];
   fhir:StructureDefinition.jurisdiction [
      fhir:index 0;
@@ -88,7 +88,7 @@
          fhir:ElementDefinition.constraint.key [ fhir:value "be-inv-contained-or-logical-reference" ];
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
          fhir:ElementDefinition.constraint.human [ fhir:value "A reference must refer to a contained resource or have a logical identifier" ];
-         fhir:ElementDefinition.constraint.expression [ fhir:value "reference.substring(0,1)='#' or reference.identifier.empty().not()" ];
+         fhir:ElementDefinition.constraint.expression [ fhir:value "reference.substring(0,1)='#' or identifier.empty().not()" ];
          fhir:ElementDefinition.constraint.source [
            fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-contained-or-logical-reference";
            fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-contained-or-logical-reference>
@@ -385,7 +385,7 @@
          fhir:ElementDefinition.constraint.key [ fhir:value "be-inv-contained-or-logical-reference" ];
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
          fhir:ElementDefinition.constraint.human [ fhir:value "A reference must refer to a contained resource or have a logical identifier" ];
-         fhir:ElementDefinition.constraint.expression [ fhir:value "reference.substring(0,1)='#' or reference.identifier.empty().not()" ];
+         fhir:ElementDefinition.constraint.expression [ fhir:value "reference.substring(0,1)='#' or identifier.empty().not()" ];
          fhir:ElementDefinition.constraint.source [
            fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-contained-or-logical-reference";
            fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-contained-or-logical-reference>
