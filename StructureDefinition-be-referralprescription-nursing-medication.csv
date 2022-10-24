@@ -34,15 +34,15 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "MedicationRequest.extension:validity","MedicationRequest.extension","validity","","",1,1,"Y","","","Extension {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period]]} {[]}
 ","Validity period of the prescription","Begin and enddate of the validity of the request","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}be-inv-validityPeriod-granularity:validityPeriod dates SHALL be of format YYYY-MM-DD {(valuePeriod.start.empty() or valuePeriod.start.toString().length()=10) and (valuePeriod.end.empty() or valuePeriod.end.toString().length()=10)}"
 "MedicationRequest.extension:latest","MedicationRequest.extension","latest","","",0,1,"Y","","","Extension {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-end-date]]} {[]}
 ","Request must be executed before","Request must be performed before","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}be-inv-latestEndDate-granularity:latestEndDate dates SHALL be of format YYYY-MM-DD {valueDateTime.empty() or valueDateTime.toString().length()=10}"
 "MedicationRequest.extension:latestDraft","MedicationRequest.extension","latestDraft","","",0,1,"Y","","","Extension {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-draft-date]]} {[]}
 ","The prescription must have left the draft status befor this moment","Request must leave draft status before","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}be-inv-latestDraftDate-granularity:latestDraftDate dates SHALL be of format YYYY-MM-DD {valueDateTime.empty() or valueDateTime.toString().length()=10}"
 "MedicationRequest.extension:performertasks","MedicationRequest.extension","performertasks","","",0,*,"Y","","","Extension {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-performer-task-reference]]} {[]}
 ","The subtasks as executed by different performers. Together they form the execution of the prescription as described in task extension","List of references to the tasks performed by each performer","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -130,7 +130,7 @@ Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Medicatio
 "MedicationRequest.supportingInformation","MedicationRequest.supportingInformation","","","",0,*,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Resource]]}
 ","Information to support ordering of the medication","Include additional information (for example, patient height and weight) that supports the ordering of the medication.","","","","","","","","","",,,,,"",,,,"MedicationRequest.supportingInformation",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Request.supportingInfo",".outboundRelationship[typeCode=PERT].target[A_SupportingClinicalStatement CMET minimal with many different choices of classCodes(ORG, ENC, PROC, SPLY, SBADM, OBS) and each of the act class codes draws from one or more of the following moodCodes (EVN, DEF, INT PRMS, RQO, PRP, APT, ARQ, GOL)]","FiveWs.context"
-"MedicationRequest.authoredOn","MedicationRequest.authoredOn","","","",0,1,"","","Y","dateTime {[]} {[]}
+"MedicationRequest.authoredOn","MedicationRequest.authoredOn","","","",1,1,"Y","","Y","dateTime {[]} {[]}
 ","When request was initially authored","The date (and perhaps time) when the prescription was initially written or authored on.","","","","","","","","","",,,,,"",,,,"MedicationRequest.authoredOn",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Request.authoredOn","Message/Body/NewRx/MedicationPrescribed/WrittenDate","author.time","FiveWs.recorded","RXE-32-Original Order Date/Time / ORC-9-Date/Time of Transaction"
 "MedicationRequest.requester","MedicationRequest.requester","","","",1,1,"Y","","Y","Reference {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-contained-or-logical-reference]]} {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitioner]]}

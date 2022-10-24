@@ -150,6 +150,13 @@
         <source value="http://hl7.org/fhir/StructureDefinition/ServiceRequest"/>
       </constraint>
       <constraint>
+        <key value="be-inv-authoredOn-granularity"/>
+        <severity value="error"/>
+        <human value="authoredOn dates SHALL be of format YYYY-MM-DD"/>
+        <expression value="authoredOn.empty() or authoredOn.toString().length()=10"/>
+        <source value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription"/>
+      </constraint>
+      <constraint>
         <key value="annex-81"/>
         <severity value="error"/>
         <human value="if annex-81 is the code, then adherence and adherence-link SHALL be present"/>
@@ -722,6 +729,13 @@
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <constraint>
+        <key value="be-inv-validityPeriod-granularity"/>
+        <severity value="error"/>
+        <human value="validityPeriod dates SHALL be of format YYYY-MM-DD"/>
+        <expression value="(valuePeriod.start.empty() or valuePeriod.start.toString().length()=10) and (valuePeriod.end.empty() or valuePeriod.end.toString().length()=10)"/>
+        <source value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period"/>
+      </constraint>
       <mustSupport value="true"/>
       <isModifier value="false"/>
     </element>
@@ -758,6 +772,13 @@
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
+      <constraint>
+        <key value="be-inv-latestEndDate-granularity"/>
+        <severity value="error"/>
+        <human value="latestEndDate dates SHALL be of format YYYY-MM-DD"/>
+        <expression value="valueDateTime.empty() or valueDateTime.toString().length()=10"/>
+        <source value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-end-date"/>
+      </constraint>
       <mustSupport value="true"/>
       <isModifier value="false"/>
     </element>
@@ -793,6 +814,13 @@
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <constraint>
+        <key value="be-inv-latestDraftDate-granularity"/>
+        <severity value="error"/>
+        <human value="latestDraftDate dates SHALL be of format YYYY-MM-DD"/>
+        <expression value="valueDateTime.empty() or valueDateTime.toString().length()=10"/>
+        <source value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-draft-date"/>
       </constraint>
       <mustSupport value="true"/>
       <isModifier value="false"/>

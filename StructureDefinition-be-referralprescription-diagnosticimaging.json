@@ -165,6 +165,13 @@
             "expression": "orderDetail.empty() or code.exists()",
             "xpath": "exists(f:code) or not(exists(f:orderDetail))",
             "source": "http://hl7.org/fhir/StructureDefinition/ServiceRequest"
+          },
+          {
+            "key": "be-inv-authoredOn-granularity",
+            "severity": "error",
+            "human": "authoredOn dates SHALL be of format YYYY-MM-DD",
+            "expression": "authoredOn.empty() or authoredOn.toString().length()=10",
+            "source": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription"
           }
         ],
         "isModifier": false,
@@ -852,6 +859,13 @@
             "expression": "extension.exists() != value.exists()",
             "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
             "source": "http://hl7.org/fhir/StructureDefinition/Extension"
+          },
+          {
+            "key": "be-inv-validityPeriod-granularity",
+            "severity": "error",
+            "human": "validityPeriod dates SHALL be of format YYYY-MM-DD",
+            "expression": "(valuePeriod.start.empty() or valuePeriod.start.toString().length()=10) and (valuePeriod.end.empty() or valuePeriod.end.toString().length()=10)",
+            "source": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period"
           }
         ],
         "mustSupport": true,
@@ -897,6 +911,13 @@
             "expression": "extension.exists() != value.exists()",
             "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
             "source": "http://hl7.org/fhir/StructureDefinition/Extension"
+          },
+          {
+            "key": "be-inv-latestEndDate-granularity",
+            "severity": "error",
+            "human": "latestEndDate dates SHALL be of format YYYY-MM-DD",
+            "expression": "valueDateTime.empty() or valueDateTime.toString().length()=10",
+            "source": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-end-date"
           }
         ],
         "mustSupport": true,
@@ -942,6 +963,13 @@
             "expression": "extension.exists() != value.exists()",
             "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
             "source": "http://hl7.org/fhir/StructureDefinition/Extension"
+          },
+          {
+            "key": "be-inv-latestDraftDate-granularity",
+            "severity": "error",
+            "human": "latestDraftDate dates SHALL be of format YYYY-MM-DD",
+            "expression": "valueDateTime.empty() or valueDateTime.toString().length()=10",
+            "source": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-draft-date"
           }
         ],
         "mustSupport": true,
