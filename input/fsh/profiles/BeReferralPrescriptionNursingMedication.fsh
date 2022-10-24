@@ -65,3 +65,5 @@ Description: "The nursing profile specialized for medication. Note this profile 
 * dosageInstruction.site MS
 * recorder MS
 * recorder ^short = "The person responsable for this information, not necessarily the person who recorded the information"
+* authoredOn 1.. MS
+* obeys be-inv-authoredOn-granularity

@@ -2,6 +2,9 @@ Instance: referralprescription-nursing-example2-digestive-system-care
 InstanceOf: BeReferralPrescriptionNursing
 Title: "referralprescription-nursing-example2-digestive-system-care"
 Usage: #example
+* contained[0] = patient1
+* contained[+] = practitioner1
+* contained[+] = practitionerrole1
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-digestive-system-care"
 * extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * extension[validity].valuePeriod.start = "2020-10-10"

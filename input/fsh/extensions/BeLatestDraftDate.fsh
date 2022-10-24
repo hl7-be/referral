@@ -18,3 +18,9 @@ Description: "Request must leave draft status before"
 * . ^definition = "Request must leave draft status before"
 * url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-draft-date" (exactly)
 * value[x] only dateTime
+* obeys be-inv-latestDraftDate-granularity
+
+Invariant:   be-inv-latestDraftDate-granularity
+Description: "latestDraftDate dates SHALL be of format YYYY-MM-DD"
+Expression:  "valueDateTime.empty() or valueDateTime.toString().length()=10"
+Severity:    #error
