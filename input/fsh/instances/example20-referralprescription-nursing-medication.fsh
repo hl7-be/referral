@@ -30,3 +30,4 @@ Usage: #example
 * dosageInstruction.site = $sct#31764008
 * extension[validity].valuePeriod.start = "2022-10-10"
 * extension[validity].valuePeriod.start = "2022-10-12"
+* authoredOn = "2022-10-31"

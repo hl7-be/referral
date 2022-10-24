@@ -2,6 +2,9 @@ Instance: referralprescription-nursing-example6-compression-therapy
 InstanceOf: BeReferralPrescriptionNursing
 Title: "referralprescription-nursing-example6-compression-therapy"
 Usage: #example
+* contained[0] = patient1
+* contained[+] = practitioner1
+* contained[+] = practitionerrole1
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-compressiontherapy"
 * extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * performer[+] = Reference(practitionerrole1)

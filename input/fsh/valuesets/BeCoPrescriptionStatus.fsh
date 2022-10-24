@@ -7,6 +7,7 @@ Description: "This is the status of the prescription for the coprescriber"
 * ^status = #active
 * ^date = "2022-05-03T10:04:16+02:00"
 * ^publisher = "HL7 Belgium"
+* ^experimental = false
 * ^contact[0].name = "HL7 Belgium"
 * ^contact[=].telecom.system = #url
 * ^contact[=].telecom.value = "http://hl7belgium.org"

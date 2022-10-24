@@ -5,6 +5,7 @@ Description: "Codes to define a communication method."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-communication-method"
 * ^version = "0.2.0"
 * ^status = #draft
+* ^experimental = false
 * ^date = "2022-05-03T10:04:16+02:00"
 * ^publisher = "HL7 Belgium"
 * ^contact[0].name = "HL7 Belgium"

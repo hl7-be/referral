@@ -28,3 +28,4 @@ Usage: #example
 * dosageInstruction.timing.repeat.periodUnit = #d
 * extension[validity].valuePeriod.start = "2022-10-10"
 * extension[validity].valuePeriod.start = "2022-10-12"
+* authoredOn = "2022-10-31"

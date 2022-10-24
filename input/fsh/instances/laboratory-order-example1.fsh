@@ -8,6 +8,7 @@ Usage: #example
 * contained[+] = media1
 * contained[+] = Inline-Instance-for-laboratory-order-example1-3
 * contained[+] = specimen1
+* contained[+] = practitionerrole1
 * performer[+] = Reference(practitionerrole1)
 * extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * extension[validity].valuePeriod.start = "2020-10-10"
@@ -29,7 +30,7 @@ Usage: #example
 * orderDetail[+] = $loinc#20563-3 "Carboxyhemoglobin/Hemoglobin.total in Blood"
 * orderDetail[+].text = "Test described in text only"
 * subject = Reference(patient1)
-* authoredOn = "2015-11-01T14:41:00+01:00"
+* authoredOn = "2015-11-01"
 * requester = Reference(Requester1)
 * reasonCode = $some_nomenclature_system#123 "TheJustification"
 * supportingInfo[0] = Reference(observation1)

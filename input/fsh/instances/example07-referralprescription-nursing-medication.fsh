@@ -4,7 +4,6 @@ Title: "example07-referralprescription-nursing-medication"
 Usage: #example
 * contained[0] = patient1
 * contained[+] = practitioner1
-* contained[+] = practitionerrole1
 * statusReason = $be-status-reason#inProgress "In progress"
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
 * identifier.value = "UHMEPVALUE"
@@ -28,3 +27,4 @@ Usage: #example
 * extension[validity].valuePeriod.start = "2022-10-10"
 * extension[validity].valuePeriod.start = "2022-10-12"
 * extension[feedback].valueBoolean = true
+* authoredOn = "2022-10-31"

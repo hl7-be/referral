@@ -18,3 +18,9 @@ Description: "Request must be performed before"
 * . ^definition = "Request must be performed before"
 * url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-end-date" (exactly)
 * value[x] only dateTime
+* obeys be-inv-latestEndDate-granularity
+
+Invariant:   be-inv-latestEndDate-granularity
+Description: "latestEndDate dates SHALL be of format YYYY-MM-DD"
+Expression:  "valueDateTime.empty() or valueDateTime.toString().length()=10"
+Severity:    #error
