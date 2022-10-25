@@ -83,4 +83,4 @@ Description: "The common structure for referral prescription."
 * bodySite MS
 * bodySite.extension contains BeExtLaterality named bodyLaterality 0..1
 * note MS
-* obeys be-inv-authoredOn-granularity
+* authoredOn only BeYearMonthDay

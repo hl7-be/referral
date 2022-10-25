@@ -18,9 +18,5 @@ Description: "Begin and enddate of the validity of the request"
 * . ^definition = "Begin and enddate of the validity of the request"
 * url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period" (exactly)
 * value[x] only Period
-* obeys be-inv-validityPeriod-granularity
-
-Invariant:   be-inv-validityPeriod-granularity
-Description: "validityPeriod dates SHALL be of format YYYY-MM-DD"
-Expression:  "(valuePeriod.start.empty() or valuePeriod.start.toString().length()=10) and (valuePeriod.end.empty() or valuePeriod.end.toString().length()=10)"
-Severity:    #error
+* valuePeriod.start only BeYearMonthDay
+* valuePeriod.end only BeYearMonthDay
