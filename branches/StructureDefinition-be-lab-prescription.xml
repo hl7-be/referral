@@ -156,13 +156,6 @@ This information includes diagnosis, clinical findings and other observations.  
         <xpath value="exists(f:code) or not(exists(f:orderDetail))"/>
         <source value="http://hl7.org/fhir/StructureDefinition/ServiceRequest"/>
       </constraint>
-      <constraint>
-        <key value="be-inv-authoredOn-granularity"/>
-        <severity value="error"/>
-        <human value="authoredOn dates SHALL be of format YYYY-MM-DD"/>
-        <expression value="authoredOn.empty() or authoredOn.toString().length()=10"/>
-        <source value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription"/>
-      </constraint>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
@@ -716,13 +709,6 @@ This information includes diagnosis, clinical findings and other observations.  
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
-      <constraint>
-        <key value="be-inv-validityPeriod-granularity"/>
-        <severity value="error"/>
-        <human value="validityPeriod dates SHALL be of format YYYY-MM-DD"/>
-        <expression value="(valuePeriod.start.empty() or valuePeriod.start.toString().length()=10) and (valuePeriod.end.empty() or valuePeriod.end.toString().length()=10)"/>
-        <source value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period"/>
-      </constraint>
       <mustSupport value="true"/>
       <isModifier value="false"/>
     </element>
@@ -759,13 +745,6 @@ This information includes diagnosis, clinical findings and other observations.  
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
       </constraint>
-      <constraint>
-        <key value="be-inv-latestEndDate-granularity"/>
-        <severity value="error"/>
-        <human value="latestEndDate dates SHALL be of format YYYY-MM-DD"/>
-        <expression value="valueDateTime.empty() or valueDateTime.toString().length()=10"/>
-        <source value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-end-date"/>
-      </constraint>
       <mustSupport value="true"/>
       <isModifier value="false"/>
     </element>
@@ -801,13 +780,6 @@ This information includes diagnosis, clinical findings and other observations.  
         <expression value="extension.exists() != value.exists()"/>
         <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
-      </constraint>
-      <constraint>
-        <key value="be-inv-latestDraftDate-granularity"/>
-        <severity value="error"/>
-        <human value="latestDraftDate dates SHALL be of format YYYY-MM-DD"/>
-        <expression value="valueDateTime.empty() or valueDateTime.toString().length()=10"/>
-        <source value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-draft-date"/>
       </constraint>
       <mustSupport value="true"/>
       <isModifier value="false"/>
@@ -2266,9 +2238,8 @@ This information includes diagnosis, clinical findings and other observations.  
     </element>
     <element id="ServiceRequest.authoredOn">
       <path value="ServiceRequest.authoredOn"/>
-      <short value="Date request signed"/>
-      <definition value="When the request transitioned to being actionable."/>
-      <alias value="orderedOn"/>
+      <short value="Primitive Type dateTime"/>
+      <definition value="A date, date-time or partial date (e.g. just year or year + month).  If hours and minutes are specified, a time zone SHALL be populated. The format is a union of the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided due to schema type constraints but may be zero-filled and may be ignored.                 Dates SHALL be valid dates."/>
       <min value="1"/>
       <max value="1"/>
       <base>
@@ -2278,6 +2249,7 @@ This information includes diagnosis, clinical findings and other observations.  
       </base>
       <type>
         <code value="dateTime"/>
+        <profile value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-year-month-day"/>
       </type>
       <constraint>
         <key value="ele-1"/>
@@ -2287,29 +2259,16 @@ This information includes diagnosis, clinical findings and other observations.  
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <constraint>
+        <key value="be-inv-year-month-day"/>
+        <severity value="error"/>
+        <human value="date SHALL be of format YYYY-MM-DD"/>
+        <expression value="empty() or toString().length()=10"/>
+        <source value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-year-month-day"/>
+      </constraint>
       <mustSupport value="true"/>
       <isModifier value="false"/>
-      <isSummary value="true"/>
-      <mapping>
-        <identity value="workflow"/>
-        <map value="Request.authoredOn"/>
-      </mapping>
-      <mapping>
-        <identity value="w5"/>
-        <map value="FiveWs.recorded"/>
-      </mapping>
-      <mapping>
-        <identity value="v2"/>
-        <map value="ORC.9,  RF1-7 / RF1-9"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value=".participation[typeCode=AUT].time"/>
-      </mapping>
-      <mapping>
-        <identity value="quick"/>
-        <map value="Proposal.proposedAtTime"/>
-      </mapping>
+      <isSummary value="false"/>
     </element>
     <element id="ServiceRequest.requester">
       <path value="ServiceRequest.requester"/>

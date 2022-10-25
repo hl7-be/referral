@@ -194,16 +194,6 @@
          ]
        ], [
          fhir:index 6;
-         fhir:ElementDefinition.constraint.key [ fhir:value "be-inv-authoredOn-granularity" ];
-         fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
-         fhir:ElementDefinition.constraint.human [ fhir:value "authoredOn dates SHALL be of format YYYY-MM-DD" ];
-         fhir:ElementDefinition.constraint.expression [ fhir:value "authoredOn.empty() or authoredOn.toString().length()=10" ];
-         fhir:ElementDefinition.constraint.source [
-           fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription";
-           fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription>
-         ]
-       ], [
-         fhir:index 7;
          fhir:ElementDefinition.constraint.key [ fhir:value "annex-81" ];
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
          fhir:ElementDefinition.constraint.human [ fhir:value "if annex-81 is the code, then adherence and adherence-link SHALL be present" ];
@@ -213,7 +203,7 @@
            fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing>
          ]
        ], [
-         fhir:index 8;
+         fhir:index 7;
          fhir:ElementDefinition.constraint.key [ fhir:value "chron-psych" ];
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
          fhir:ElementDefinition.constraint.human [ fhir:value "if this is preparation-and-administration-of-medication-to-chronical-psychiatric-patient no orderDetail SHALL be present" ];
@@ -223,7 +213,7 @@
            fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing>
          ]
        ], [
-         fhir:index 9;
+         fhir:index 8;
          fhir:ElementDefinition.constraint.key [ fhir:value "gen" ];
          fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
          fhir:ElementDefinition.constraint.human [ fhir:value "if other is the code, then orderDetail SHALL SNOMED-CT" ];
@@ -964,16 +954,6 @@
            fhir:value "http://hl7.org/fhir/StructureDefinition/Extension";
            fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
-       ], [
-         fhir:index 2;
-         fhir:ElementDefinition.constraint.key [ fhir:value "be-inv-validityPeriod-granularity" ];
-         fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
-         fhir:ElementDefinition.constraint.human [ fhir:value "validityPeriod dates SHALL be of format YYYY-MM-DD" ];
-         fhir:ElementDefinition.constraint.expression [ fhir:value "(valuePeriod.start.empty() or valuePeriod.start.toString().length()=10) and (valuePeriod.end.empty() or valuePeriod.end.toString().length()=10)" ];
-         fhir:ElementDefinition.constraint.source [
-           fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period";
-           fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period>
-         ]
        ];
        fhir:ElementDefinition.mustSupport [ fhir:value "true"^^xsd:boolean ];
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ]
@@ -1026,16 +1006,6 @@
            fhir:value "http://hl7.org/fhir/StructureDefinition/Extension";
            fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
          ]
-       ], [
-         fhir:index 2;
-         fhir:ElementDefinition.constraint.key [ fhir:value "be-inv-latestEndDate-granularity" ];
-         fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
-         fhir:ElementDefinition.constraint.human [ fhir:value "latestEndDate dates SHALL be of format YYYY-MM-DD" ];
-         fhir:ElementDefinition.constraint.expression [ fhir:value "valueDateTime.empty() or valueDateTime.toString().length()=10" ];
-         fhir:ElementDefinition.constraint.source [
-           fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-end-date";
-           fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-end-date>
-         ]
        ];
        fhir:ElementDefinition.mustSupport [ fhir:value "true"^^xsd:boolean ];
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ]
@@ -1087,16 +1057,6 @@
          fhir:ElementDefinition.constraint.source [
            fhir:value "http://hl7.org/fhir/StructureDefinition/Extension";
            fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
-         ]
-       ], [
-         fhir:index 2;
-         fhir:ElementDefinition.constraint.key [ fhir:value "be-inv-latestDraftDate-granularity" ];
-         fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
-         fhir:ElementDefinition.constraint.human [ fhir:value "latestDraftDate dates SHALL be of format YYYY-MM-DD" ];
-         fhir:ElementDefinition.constraint.expression [ fhir:value "valueDateTime.empty() or valueDateTime.toString().length()=10" ];
-         fhir:ElementDefinition.constraint.source [
-           fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-draft-date";
-           fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-draft-date>
          ]
        ];
        fhir:ElementDefinition.mustSupport [ fhir:value "true"^^xsd:boolean ];
@@ -3449,12 +3409,8 @@
        fhir:index 63;
        fhir:Element.id [ fhir:value "ServiceRequest.authoredOn" ];
        fhir:ElementDefinition.path [ fhir:value "ServiceRequest.authoredOn" ];
-       fhir:ElementDefinition.short [ fhir:value "Date request signed" ];
-       fhir:ElementDefinition.definition [ fhir:value "When the request transitioned to being actionable." ];
-       fhir:ElementDefinition.alias [
-         fhir:value "orderedOn";
-         fhir:index 0
-       ];
+       fhir:ElementDefinition.short [ fhir:value "Primitive Type dateTime" ];
+       fhir:ElementDefinition.definition [ fhir:value "A date, date-time or partial date (e.g. just year or year + month).  If hours and minutes are specified, a time zone SHALL be populated. The format is a union of the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided due to schema type constraints but may be zero-filled and may be ignored.                 Dates SHALL be valid dates." ];
        fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ];
        fhir:ElementDefinition.max [ fhir:value "1" ];
        fhir:ElementDefinition.base [
@@ -3464,7 +3420,12 @@
        ];
        fhir:ElementDefinition.type [
          fhir:index 0;
-         fhir:ElementDefinition.type.code [ fhir:value "dateTime" ]
+         fhir:ElementDefinition.type.code [ fhir:value "dateTime" ];
+         fhir:ElementDefinition.type.profile [
+           fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-year-month-day";
+           fhir:index 0;
+           fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-year-month-day>
+         ]
        ];
        fhir:ElementDefinition.constraint [
          fhir:index 0;
@@ -3477,31 +3438,20 @@
            fhir:value "http://hl7.org/fhir/StructureDefinition/Element";
            fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
          ]
+       ], [
+         fhir:index 1;
+         fhir:ElementDefinition.constraint.key [ fhir:value "be-inv-year-month-day" ];
+         fhir:ElementDefinition.constraint.severity [ fhir:value "error" ];
+         fhir:ElementDefinition.constraint.human [ fhir:value "date SHALL be of format YYYY-MM-DD" ];
+         fhir:ElementDefinition.constraint.expression [ fhir:value "empty() or toString().length()=10" ];
+         fhir:ElementDefinition.constraint.source [
+           fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-year-month-day";
+           fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-year-month-day>
+         ]
        ];
        fhir:ElementDefinition.mustSupport [ fhir:value "true"^^xsd:boolean ];
        fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ];
-       fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ];
-       fhir:ElementDefinition.mapping [
-         fhir:index 0;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "workflow" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value "Request.authoredOn" ]
-       ], [
-         fhir:index 1;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "w5" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value "FiveWs.recorded" ]
-       ], [
-         fhir:index 2;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "v2" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value "ORC.9,  RF1-7 / RF1-9" ]
-       ], [
-         fhir:index 3;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "rim" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value ".participation[typeCode=AUT].time" ]
-       ], [
-         fhir:index 4;
-         fhir:ElementDefinition.mapping.identity [ fhir:value "quick" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value "Proposal.proposedAtTime" ]
-       ]
+       fhir:ElementDefinition.isSummary [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 64;
        fhir:Element.id [ fhir:value "ServiceRequest.requester" ];
