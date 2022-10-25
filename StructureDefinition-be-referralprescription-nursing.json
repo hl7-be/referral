@@ -167,13 +167,6 @@
             "source": "http://hl7.org/fhir/StructureDefinition/ServiceRequest"
           },
           {
-            "key": "be-inv-authoredOn-granularity",
-            "severity": "error",
-            "human": "authoredOn dates SHALL be of format YYYY-MM-DD",
-            "expression": "authoredOn.empty() or authoredOn.toString().length()=10",
-            "source": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription"
-          },
-          {
             "key": "annex-81",
             "severity": "error",
             "human": "if annex-81 is the code, then adherence and adherence-link SHALL be present",
@@ -880,13 +873,6 @@
             "expression": "extension.exists() != value.exists()",
             "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
             "source": "http://hl7.org/fhir/StructureDefinition/Extension"
-          },
-          {
-            "key": "be-inv-validityPeriod-granularity",
-            "severity": "error",
-            "human": "validityPeriod dates SHALL be of format YYYY-MM-DD",
-            "expression": "(valuePeriod.start.empty() or valuePeriod.start.toString().length()=10) and (valuePeriod.end.empty() or valuePeriod.end.toString().length()=10)",
-            "source": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period"
           }
         ],
         "mustSupport": true,
@@ -932,13 +918,6 @@
             "expression": "extension.exists() != value.exists()",
             "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
             "source": "http://hl7.org/fhir/StructureDefinition/Extension"
-          },
-          {
-            "key": "be-inv-latestEndDate-granularity",
-            "severity": "error",
-            "human": "latestEndDate dates SHALL be of format YYYY-MM-DD",
-            "expression": "valueDateTime.empty() or valueDateTime.toString().length()=10",
-            "source": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-end-date"
           }
         ],
         "mustSupport": true,
@@ -984,13 +963,6 @@
             "expression": "extension.exists() != value.exists()",
             "xpath": "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
             "source": "http://hl7.org/fhir/StructureDefinition/Extension"
-          },
-          {
-            "key": "be-inv-latestDraftDate-granularity",
-            "severity": "error",
-            "human": "latestDraftDate dates SHALL be of format YYYY-MM-DD",
-            "expression": "valueDateTime.empty() or valueDateTime.toString().length()=10",
-            "source": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-draft-date"
           }
         ],
         "mustSupport": true,
@@ -3241,11 +3213,8 @@
       {
         "id": "ServiceRequest.authoredOn",
         "path": "ServiceRequest.authoredOn",
-        "short": "Date request signed",
-        "definition": "When the request transitioned to being actionable.",
-        "alias": [
-          "orderedOn"
-        ],
+        "short": "Primitive Type dateTime",
+        "definition": "A date, date-time or partial date (e.g. just year or year + month).  If hours and minutes are specified, a time zone SHALL be populated. The format is a union of the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided due to schema type constraints but may be zero-filled and may be ignored.                 Dates SHALL be valid dates.",
         "min": 1,
         "max": "1",
         "base": {
@@ -3255,7 +3224,10 @@
         },
         "type": [
           {
-            "code": "dateTime"
+            "code": "dateTime",
+            "profile": [
+              "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-year-month-day"
+            ]
           }
         ],
         "constraint": [
@@ -3266,33 +3238,18 @@
             "expression": "hasValue() or (children().count() > id.count())",
             "xpath": "@value|f:*|h:div",
             "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          },
+          {
+            "key": "be-inv-year-month-day",
+            "severity": "error",
+            "human": "date SHALL be of format YYYY-MM-DD",
+            "expression": "empty() or toString().length()=10",
+            "source": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-year-month-day"
           }
         ],
         "mustSupport": true,
         "isModifier": false,
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "workflow",
-            "map": "Request.authoredOn"
-          },
-          {
-            "identity": "w5",
-            "map": "FiveWs.recorded"
-          },
-          {
-            "identity": "v2",
-            "map": "ORC.9,  RF1-7 / RF1-9"
-          },
-          {
-            "identity": "rim",
-            "map": ".participation[typeCode=AUT].time"
-          },
-          {
-            "identity": "quick",
-            "map": "Proposal.proposedAtTime"
-          }
-        ]
+        "isSummary": false
       },
       {
         "id": "ServiceRequest.requester",
