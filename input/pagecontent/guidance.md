@@ -8,6 +8,9 @@ The requested performer in a referral prescription is typically a reference to a
 
 It is RECOMMENDED in case of a related person as performer, the related person is included using the [contained mechanism](https://www.hl7.org/fhir/references.html#contained).
 
+### Keeping track of the execution of a referral prescription
+The task or treatment that should be executed as a fulfillment of the referral prescription SHALL be tracked using the task resource in the BeTaskReference extension on the ServiceRequest or MedicationRequest. The status of the task SHALL be identical to the status of the referral prescription. Additional status information on the treatment SHALL be provided in the statusReason field of the Task. The owner of the task is empty, because the different owners of the Task are handled in the PerformerTaskReference extension (see: many performers for one prescription). The full duration of the execution of the treatment is stored in the executionPeriod field of the BeTaskReference extension. The intent of the task SHALL be identical to the intent of the prescription. 
+
 ### The procedure or observation executing the referral prescription
 
 A procedure or observation resource typically execute the referral prescription. As such, they shall be made available on the system where the ServiceRequest resides and refer to the ServiceRequest resource using their basedOn field.
