@@ -8,3 +8,5 @@ Description: "The task that is referred to in the referral prescription (this is
 * executionPeriod ^short = "Start and end date of the treatment"
 * executionPeriod.start only BeYearMonthDay
 * executionPeriod.end only BeYearMonthDay
+* intent MS
+* intent from BeVsRequestIntent (required)

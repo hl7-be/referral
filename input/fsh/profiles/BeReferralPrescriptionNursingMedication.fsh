@@ -46,6 +46,7 @@ Description: "The nursing profile specialized for medication. Note this profile 
 * status MS
 * statusReason MS
 * intent MS
+* intent from BeVsRequestIntent (required)
 * category 1..1 MS
 * category from $procedure-code (example)
 * medication[x] MS
