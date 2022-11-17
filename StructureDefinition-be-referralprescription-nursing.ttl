@@ -2279,16 +2279,10 @@
        fhir:ElementDefinition.isModifierReason [ fhir:value "This element changes the interpretation of all descriptive attributes. For example \"the time the request is recommended to occur\" vs. \"the time the request is authorized to occur\" or \"who is recommended to perform the request\" vs. \"who is authorized to perform the request" ];
        fhir:ElementDefinition.isSummary [ fhir:value "true"^^xsd:boolean ];
        fhir:ElementDefinition.binding [
-         fhir:Element.extension [
-           fhir:index 0;
-           fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName" ];
-           fhir:Extension.valueString [ fhir:value "ServiceRequestIntent" ]
-         ];
          fhir:ElementDefinition.binding.strength [ fhir:value "required" ];
-         fhir:ElementDefinition.binding.description [ fhir:value "The kind of service request." ];
          fhir:ElementDefinition.binding.valueSet [
-           fhir:value "http://hl7.org/fhir/ValueSet/request-intent|4.0.1";
-           fhir:link <http://hl7.org/fhir/ValueSet/request-intent|4.0.1>
+           fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-request-intent";
+           fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-request-intent>
          ]
        ];
        fhir:ElementDefinition.mapping [

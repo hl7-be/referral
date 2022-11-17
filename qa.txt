@@ -1,9 +1,9 @@
 ﻿ReferralPrescription : Validation Results
 =========================================
 
-err = 25, warn = 145, info = 30
+err = 28, warn = 145, info = 30
 IG Publisher Version: 1.2.15
-Generated Thu Nov 17 11:03:28 UTC 2022. FHIR version 4.0.1 for hl7.fhir.be.referral#1.0.0 (canonical = https://www.ehealth.fgov.be/standards/fhir/referral)
+Generated Thu Nov 17 12:17:05 UTC 2022. FHIR version 4.0.1 for hl7.fhir.be.referral#1.0.0 (canonical = https://www.ehealth.fgov.be/standards/fhir/referral)
  Build Errors : 7 / 49 / 0
  /github/workspace/fsh-generated/resources/CarePlan-gpvisit : 1 / 0 / 1
  /github/workspace/fsh-generated/resources/CodeSystem-be-communication-code : 0 / 0 / 1
@@ -53,7 +53,7 @@ Generated Thu Nov 17 11:03:28 UTC 2022. FHIR version 4.0.1 for hl7.fhir.be.refer
  /github/workspace/fsh-generated/resources/ServiceRequest-example24-referralprescription-nursing-non-reimbursable : 0 / 0 / 8
  /github/workspace/fsh-generated/resources/ServiceRequest-example26-referralprescription-nursing-other : 0 / 0 / 7
  /github/workspace/fsh-generated/resources/ServiceRequest-example32-referralprescription-nursing-chronical-psychiatric : 0 / 0 / 7
- /github/workspace/fsh-generated/resources/ServiceRequest-laboratory-order-example1 : 0 / 1 / 12
+ /github/workspace/fsh-generated/resources/ServiceRequest-laboratory-order-example1 : 1 / 1 / 12
  /github/workspace/fsh-generated/resources/ServiceRequest-referralprescription-nursing-example2-digestive-system-care : 0 / 1 / 8
  /github/workspace/fsh-generated/resources/ServiceRequest-referralprescription-nursing-example3-compression-therapy : 0 / 1 / 7
  /github/workspace/fsh-generated/resources/ServiceRequest-referralprescription-nursing-example5-digestive-system-care : 0 / 1 / 8
@@ -86,7 +86,7 @@ Generated Thu Nov 17 11:03:28 UTC 2022. FHIR version 4.0.1 for hl7.fhir.be.refer
  /github/workspace/fsh-generated/resources/StructureDefinition-be-referralprescription : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-be-referralprescription-diagnosticimaging : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-be-referralprescription-nursing : 0 / 0 / 1
- /github/workspace/fsh-generated/resources/StructureDefinition-be-referralprescription-nursing-medication : 0 / 0 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-be-referralprescription-nursing-medication : 2 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-be-referralprescription-request-group : 0 / 1 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-be-year-month-day : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/Task-performer-task : 0 / 0 / 1
@@ -99,6 +99,7 @@ Generated Thu Nov 17 11:03:28 UTC 2022. FHIR version 4.0.1 for hl7.fhir.be.refer
  /github/workspace/fsh-generated/resources/ValueSet-be-vs-prescription-status-reason : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/ValueSet-be-vs-proposal-type : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/ValueSet-be-vs-referral-category : 0 / 0 / 1
+ /github/workspace/fsh-generated/resources/ValueSet-be-vs-request-intent : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/ValueSet-be-vs-treatment-status-reason : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/ValueSet-be-vs-type-of-nursing : 0 / 0 / 1
 </table>
@@ -243,6 +244,7 @@ INFORMATION: ServiceRequest/example24-referralprescription-nursing-non-reimbursa
 == fsh-generated/resources/ServiceRequest-example32-referralprescription-nursing-chronical-psychiatric.json ==
 == fsh-generated/resources/ServiceRequest-laboratory-order-example1.json ==
 WARNING: ServiceRequest/laboratory-order-example1: ServiceRequest.contained[3].ofType(DocumentReference).content[0].attachment.data: Base64 encoded values SHOULD not contain any whitespace (per RFC 4648). Note that non-validating readers are encouraged to accept whitespace anyway
+ERROR: ServiceRequest/laboratory-order-example1: ServiceRequest.intent: The value provided ('original-order') is not in the value set 'BeVsRequestIntent' (https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-request-intent|1.0.0), and a code is required from this value set) (error message = Not in value set https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-request-intent)
 INFORMATION: ServiceRequest/laboratory-order-example1: ServiceRequest.reasonCode[0].coding[0]: Code System URI 'https://www.SOME_NOMENCLATURE_SYSTEM.be/' is unknown so the code cannot be validated
 == fsh-generated/resources/ServiceRequest-referralprescription-nursing-example2-digestive-system-care.json ==
 INFORMATION: ServiceRequest/referralprescription-nursing-example2-digestive-system-care: ServiceRequest.orderDetail[0].coding[0]: Code System URI 'https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-digestive-system-care' is unknown so the code cannot be validated
@@ -385,6 +387,8 @@ WARNING: StructureDefinition.where(url = 'https://www.ehealth.fgov.be/standards/
 == fsh-generated/resources/StructureDefinition-be-referralprescription-diagnosticimaging.json ==
 == fsh-generated/resources/StructureDefinition-be-referralprescription-nursing.json ==
 == fsh-generated/resources/StructureDefinition-be-referralprescription-nursing-medication.json ==
+ERROR: BeReferralPrescriptionNursingMedication.MedicationRequest.intent: Binding https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-request-intent is not a subset of binding http://hl7.org/fhir/ValueSet/medicationrequest-intent|4.0.1
+ERROR: StructureDefinition/be-referralprescription-nursing-medication: StructureDefinition: Binding https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-request-intent is not a subset of binding http://hl7.org/fhir/ValueSet/medicationrequest-intent|4.0.1
 == fsh-generated/resources/StructureDefinition-be-referralprescription-request-group.json ==
 WARNING: StructureDefinition.where(url = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-request-group'): The Implementation Guide contains no examples for this profile
 == fsh-generated/resources/StructureDefinition-be-year-month-day.json ==
@@ -400,5 +404,6 @@ WARNING: ValueSet.where(id = 'be-vs-communication-method'): Error from server: U
 == fsh-generated/resources/ValueSet-be-vs-prescription-status-reason.json ==
 == fsh-generated/resources/ValueSet-be-vs-proposal-type.json ==
 == fsh-generated/resources/ValueSet-be-vs-referral-category.json ==
+== fsh-generated/resources/ValueSet-be-vs-request-intent.json ==
 == fsh-generated/resources/ValueSet-be-vs-treatment-status-reason.json ==
 == fsh-generated/resources/ValueSet-be-vs-type-of-nursing.json ==
