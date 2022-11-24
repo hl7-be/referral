@@ -10,7 +10,7 @@
   <name value="ReferralPrescription"/>
   <title value="Referral Prescription"/>
   <status value="draft"/>
-  <date value="2022-11-17T12:13:42+00:00"/>
+  <date value="2022-11-24T13:50:37+00:00"/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>
@@ -827,17 +827,6 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/be-vs-type-of-nursing"/>
-      </reference>
-      <name value="BeNursingType"/>
-      <description value="Codes to define a type of nursing."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
-      </extension>
-      <reference>
         <reference value="ValueSet/be-vs-performer-task-status-reason"/>
       </reference>
       <name value="BeVSPerformerTaskStatusReason"/>
@@ -853,6 +842,17 @@
       </reference>
       <name value="BeVSPrescriptionStatusReason"/>
       <description value="This is the status reason of the prescription"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-requested-services-nurse"/>
+      </reference>
+      <name value="BeVSRequestedServicesNurse"/>
+      <description value="Codes indicating the requests that can be asked from a nurse."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -936,28 +936,6 @@
         <valueString value="CodeSystem"/>
       </extension>
       <reference>
-        <reference value="CodeSystem/be-cs-nursing-code"/>
-      </reference>
-      <name value="BeNursingCode"/>
-      <description value="Nursing codes in Belgium. To define a high level in nursing activities. Initially defined as supporting CodeSystem for the referral prescription."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
-      </extension>
-      <reference>
-        <reference value="CodeSystem/be-cs-nursing-code-compressiontherapy"/>
-      </reference>
-      <name value="BeNursingCodeCompressiontherapy"/>
-      <description value="Nursing codes in Belgium. To define details in nursing activities for compression therapy. Initially defined as supporting CodeSystem for the referral prescription."/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CodeSystem"/>
-      </extension>
-      <reference>
         <reference value="CodeSystem/be-prescription-proposal-type"/>
       </reference>
       <name value="BePrescriptionProposalType"/>
@@ -973,6 +951,17 @@
       </reference>
       <name value="BePrescriptionStatusReason"/>
       <description value="Status reason for the prescription. Initially defined as supporting CodeSystem for the referral prescription."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/be-cs-temp-requested-service"/>
+      </reference>
+      <name value="BeTempRequestedService"/>
+      <description value="Temporary codes for indicating services that can be requested from a Nurse"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

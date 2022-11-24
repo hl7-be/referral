@@ -10,7 +10,7 @@
   "name": "ReferralPrescription",
   "title": "Referral Prescription",
   "status": "draft",
-  "date": "2022-11-17T12:13:42+00:00",
+  "date": "2022-11-24T13:50:37+00:00",
   "jurisdiction": [
     {
       "coding": [
@@ -1201,20 +1201,6 @@
           }
         ],
         "reference": {
-          "reference": "ValueSet/be-vs-type-of-nursing"
-        },
-        "name": "BeNursingType",
-        "description": "Codes to define a type of nursing.",
-        "exampleBoolean": false
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "ValueSet"
-          }
-        ],
-        "reference": {
           "reference": "ValueSet/be-vs-performer-task-status-reason"
         },
         "name": "BeVSPerformerTaskStatusReason",
@@ -1233,6 +1219,20 @@
         },
         "name": "BeVSPrescriptionStatusReason",
         "description": "This is the status reason of the prescription",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "ValueSet"
+          }
+        ],
+        "reference": {
+          "reference": "ValueSet/be-vs-requested-services-nurse"
+        },
+        "name": "BeVSRequestedServicesNurse",
+        "description": "Codes indicating the requests that can be asked from a nurse.",
         "exampleBoolean": false
       },
       {
@@ -1340,34 +1340,6 @@
           }
         ],
         "reference": {
-          "reference": "CodeSystem/be-cs-nursing-code"
-        },
-        "name": "BeNursingCode",
-        "description": "Nursing codes in Belgium. To define a high level in nursing activities. Initially defined as supporting CodeSystem for the referral prescription.",
-        "exampleBoolean": false
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "CodeSystem"
-          }
-        ],
-        "reference": {
-          "reference": "CodeSystem/be-cs-nursing-code-compressiontherapy"
-        },
-        "name": "BeNursingCodeCompressiontherapy",
-        "description": "Nursing codes in Belgium. To define details in nursing activities for compression therapy. Initially defined as supporting CodeSystem for the referral prescription.",
-        "exampleBoolean": false
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "CodeSystem"
-          }
-        ],
-        "reference": {
           "reference": "CodeSystem/be-prescription-proposal-type"
         },
         "name": "BePrescriptionProposalType",
@@ -1386,6 +1358,20 @@
         },
         "name": "BePrescriptionStatusReason",
         "description": "Status reason for the prescription. Initially defined as supporting CodeSystem for the referral prescription.",
+        "exampleBoolean": false
+      },
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+            "valueString": "CodeSystem"
+          }
+        ],
+        "reference": {
+          "reference": "CodeSystem/be-cs-temp-requested-service"
+        },
+        "name": "BeTempRequestedService",
+        "description": "Temporary codes for indicating services that can be requested from a Nurse",
         "exampleBoolean": false
       },
       {
