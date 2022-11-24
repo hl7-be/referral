@@ -15,8 +15,7 @@ Usage: #inline
 * category = $sct#9632001
 * category.text = "Nursing procedure"
 * priority = #routine
-* code = $be-cs-nursing-code#bladder-care
-* orderDetail = $be-cs-type-of-bladder-care#bladder-probe-in-out
+* code = $be-cs-nursing-code#TEMPCODE_12
 * subject = Reference(patient1)
 * occurrenceTiming.repeat.frequency = 1
 * occurrenceTiming.repeat.period = 1
