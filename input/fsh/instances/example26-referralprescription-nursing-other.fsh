@@ -15,8 +15,7 @@ Usage: #example
 * category = $sct#9632001
 * category.text = "Nursing procedure"
 * priority = #routine
-* code = $be-cs-nursing-code#other
-* orderDetail = $sct#82078001
+* code = $be-cs-nursing-code#TEMPCODE_52
 * subject = Reference(patient1)
 * occurrenceDateTime = "2021-02-25T00:00:00.000Z"
 * authoredOn = "2022-10-31"

@@ -15,8 +15,7 @@ Usage: #example
 * category = $sct#9632001
 * category.text = "Nursing procedure"
 * priority = #routine
-* code = $be-cs-nursing-code#non-reimbursed-services
-* orderDetail = $be-cs-nursing-code-non-reimbursable#bloodpressure-measure
+* code = $be-cs-nursing-code#TEMPCODE_54
 * subject = Reference(patient1)
 * occurrenceTiming.repeat.boundsPeriod.start = "2021-02-25"
 * occurrenceTiming.repeat.boundsPeriod.end = "2021-12-31"

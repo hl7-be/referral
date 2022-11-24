@@ -18,8 +18,7 @@ Usage: #example
 * category = $sct#9632001
 * category.text = "Nursing procedure"
 * priority = #routine
-* code = $be-cs-nursing-code#digestive-system-care
-* orderDetail = $be-cs-digestive-system-care#colonic-cleansing
+* code = $be-cs-nursing-code#TEMPCODE_22
 * subject = Reference(patient1)
 * occurrenceTiming.repeat.frequency = 1
 * occurrenceTiming.repeat.period = 1

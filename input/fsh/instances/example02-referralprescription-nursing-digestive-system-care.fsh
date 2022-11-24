@@ -14,8 +14,7 @@ Usage: #example
 * category = $sct#9632001
 * category.text = "Nursing procedure"
 * priority = #routine
-* code = $be-cs-nursing-code#other
-* orderDetail = $sct#229917005
+* code = $be-cs-nursing-code#TEMPCODE_23
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "9999999999"
 * occurrenceTiming.repeat.boundsPeriod.start = "2022-04-19"
