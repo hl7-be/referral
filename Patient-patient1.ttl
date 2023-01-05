@@ -7,24 +7,24 @@
 
 <https://www.ehealth.fgov.be/standards/fhir/referral/Patient/patient1> a fhir:Patient;
   fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "patient1"];
+  fhir:Resource.id [ fhir:value "patient1"]; # 
   fhir:Resource.meta [
      fhir:Meta.profile [
        fhir:value "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-patient";
        fhir:index 0;
        fhir:link <https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-patient>
      ]
-  ];
+  ]; # 
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
      fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\"><b>Jane Doe </b> female, DoB: 1956-05-27 ( id: 9999999999 (use: OFFICIAL))</p><hr/></div>"
-  ];
+  ]; # 
   fhir:Patient.identifier [
      fhir:index 0;
      fhir:Identifier.use [ fhir:value "official" ];
      fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin" ];
      fhir:Identifier.value [ fhir:value "9999999999" ]
-  ];
+  ]; # 
   fhir:Patient.name [
      fhir:index 0;
      fhir:HumanName.family [ fhir:value "Doe" ];
@@ -32,9 +32,9 @@
        fhir:value "Jane";
        fhir:index 0
      ]
-  ];
-  fhir:Patient.gender [ fhir:value "female"];
-  fhir:Patient.birthDate [ fhir:value "1956-05-27"^^xsd:date] .
+  ]; # 
+  fhir:Patient.gender [ fhir:value "female"]; # 
+  fhir:Patient.birthDate [ fhir:value "1956-05-27"^^xsd:date] . # 
 
 # - ontology header ------------------------------------------------------------
 
