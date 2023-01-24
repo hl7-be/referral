@@ -1,14 +1,15 @@
 ﻿ReferralPrescription : Validation Results
 =========================================
 
-err = 25, warn = 150, info = 24
+err = 27, warn = 152, info = 24
 IG Publisher Version: 1.2.30
-Generated Tue Jan 24 07:57:43 UTC 2023. FHIR version 4.0.1 for hl7.fhir.be.referral#1.0.0 (canonical = https://www.ehealth.fgov.be/standards/fhir/referral)
+Generated Tue Jan 24 08:53:46 UTC 2023. FHIR version 4.0.1 for hl7.fhir.be.referral#1.0.0 (canonical = https://www.ehealth.fgov.be/standards/fhir/referral)
  Build Errors : 7 / 49 / 0
  /github/workspace/fsh-generated/resources/CarePlan-gpvisit : 1 / 0 / 1
  /github/workspace/fsh-generated/resources/CodeSystem-be-communication-code : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/CodeSystem-be-cs-co-prescriber-choice : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/CodeSystem-be-cs-temp-requested-service : 0 / 5 / 1
+ /github/workspace/fsh-generated/resources/CodeSystem-be-cs-temp-requested-service-detail : 0 / 2 / 1
  /github/workspace/fsh-generated/resources/CodeSystem-be-prescription-proposal-type : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/CodeSystem-be-prescription-status-reason : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/CodeSystem-be-treatment-status-reason : 0 / 0 / 1
@@ -47,7 +48,7 @@ Generated Tue Jan 24 07:57:43 UTC 2023. FHIR version 4.0.1 for hl7.fhir.be.refer
  /github/workspace/fsh-generated/resources/ServiceRequest-example05-referralprescription-nursing-digestive-system-care : 0 / 0 / 7
  /github/workspace/fsh-generated/resources/ServiceRequest-example06-referralprescription-nursing-compression-therapy : 0 / 0 / 7
  /github/workspace/fsh-generated/resources/ServiceRequest-example09-referralprescription-nursing-woundcare : 0 / 0 / 7
- /github/workspace/fsh-generated/resources/ServiceRequest-example12-referralprescription-nursing-annex81 : 0 / 0 / 9
+ /github/workspace/fsh-generated/resources/ServiceRequest-example12-referralprescription-nursing-annex81 : 2 / 0 / 9
  /github/workspace/fsh-generated/resources/ServiceRequest-example16-referralprescription-nursing-bladder-care : 0 / 0 / 7
  /github/workspace/fsh-generated/resources/ServiceRequest-example24-referralprescription-nursing-non-reimbursable : 0 / 0 / 7
  /github/workspace/fsh-generated/resources/ServiceRequest-example26-referralprescription-nursing-other : 0 / 0 / 7
@@ -100,6 +101,7 @@ Generated Tue Jan 24 07:57:43 UTC 2023. FHIR version 4.0.1 for hl7.fhir.be.refer
  /github/workspace/fsh-generated/resources/ValueSet-be-vs-referral-category : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/ValueSet-be-vs-request-intent : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/ValueSet-be-vs-requested-services-nurse : 0 / 0 / 1
+ /github/workspace/fsh-generated/resources/ValueSet-be-vs-requested-services-nurse-detail : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/ValueSet-be-vs-treatment-status-reason : 0 / 0 / 1
 </table>
 == n/a ==
@@ -169,6 +171,9 @@ WARNING: CodeSystem/be-cs-temp-requested-service: CodeSystem.concept[38].designa
 WARNING: CodeSystem/be-cs-temp-requested-service: CodeSystem.concept[45].designation[1].value: value should not start or finish with whitespace 'Spoelen...katheter '
 WARNING: CodeSystem/be-cs-temp-requested-service: CodeSystem.concept[48].designation[1].value: value should not start or finish with whitespace 'compressietherapie:...bandage '
 WARNING: CodeSystem/be-cs-temp-requested-service: CodeSystem: The ShareableCodeSystem profile says that the experimental element is mandatory, but it is not present. Published code systems SHOULD conform to the ShareableCodeSystem profile
+== fsh-generated/resources/CodeSystem-be-cs-temp-requested-service-detail.json ==
+WARNING: CodeSystem/be-cs-temp-requested-service-detail: CodeSystem.concept[60].designation[0].value: value should not start or finish with whitespace 'Raccourcir...mèche '
+WARNING: CodeSystem/be-cs-temp-requested-service-detail: CodeSystem: The ShareableCodeSystem profile says that the experimental element is mandatory, but it is not present. Published code systems SHOULD conform to the ShareableCodeSystem profile
 == fsh-generated/resources/CodeSystem-be-prescription-proposal-type.json ==
 == fsh-generated/resources/CodeSystem-be-prescription-status-reason.json ==
 == fsh-generated/resources/CodeSystem-be-treatment-status-reason.json ==
@@ -232,7 +237,9 @@ WARNING: ServiceRequest/diagnostic-imaging-basic-example-useOfModality: ServiceR
 == fsh-generated/resources/ServiceRequest-example06-referralprescription-nursing-compression-therapy.json ==
 == fsh-generated/resources/ServiceRequest-example09-referralprescription-nursing-woundcare.json ==
 == fsh-generated/resources/ServiceRequest-example12-referralprescription-nursing-annex81.json ==
+ERROR: ServiceRequest/example12-referralprescription-nursing-annex81: ServiceRequest.orderDetail[0]: None of the codings provided are in the value set 'BeVSRequestedServicesNurseDetail' (https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-requested-services-nurse-detail|1.0.0), and a coding from this value set is required) (codes = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-nursing-annex81-inadequate-adherence#confused)
 INFORMATION: ServiceRequest/example12-referralprescription-nursing-annex81: ServiceRequest.orderDetail[0].coding[0]: Code System URI 'https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-nursing-annex81-inadequate-adherence' is unknown so the code cannot be validated
+ERROR: ServiceRequest/example12-referralprescription-nursing-annex81: ServiceRequest.orderDetail[1]: None of the codings provided are in the value set 'BeVSRequestedServicesNurseDetail' (https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-requested-services-nurse-detail|1.0.0), and a coding from this value set is required) (codes = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-nursing-annex81-inadequate-adherence-link#dementia)
 INFORMATION: ServiceRequest/example12-referralprescription-nursing-annex81: ServiceRequest.orderDetail[1].coding[0]: Code System URI 'https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-nursing-annex81-inadequate-adherence-link' is unknown so the code cannot be validated
 == fsh-generated/resources/ServiceRequest-example16-referralprescription-nursing-bladder-care.json ==
 == fsh-generated/resources/ServiceRequest-example24-referralprescription-nursing-non-reimbursable.json ==
@@ -400,4 +407,5 @@ WARNING: ValueSet.where(id = 'be-vs-communication-method'): Error from server: U
 == fsh-generated/resources/ValueSet-be-vs-referral-category.json ==
 == fsh-generated/resources/ValueSet-be-vs-request-intent.json ==
 == fsh-generated/resources/ValueSet-be-vs-requested-services-nurse.json ==
+== fsh-generated/resources/ValueSet-be-vs-requested-services-nurse-detail.json ==
 == fsh-generated/resources/ValueSet-be-vs-treatment-status-reason.json ==
