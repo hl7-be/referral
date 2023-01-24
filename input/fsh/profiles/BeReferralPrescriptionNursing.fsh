@@ -19,6 +19,7 @@ Description: "The nursing profile, generic version. Please note the nursing refe
 * code 1..
 * code from be-vs-requested-services-nurse (required)
 * orderDetail ^short = "Details of the nursing activity"
+* orderDetail from be-vs-requested-services-nurse-detail
 * asNeeded[x] MS
 * supportingInfo MS
 * bodySite MS
