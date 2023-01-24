@@ -9,7 +9,7 @@
   "version" : "1.0.0",
   "name" : "BeYearMonthDay",
   "status" : "active",
-  "date" : "2023-01-05T08:20:17+00:00",
+  "date" : "2023-01-24T07:53:27+00:00",
   "description" : "a datetime of length 10 or empty",
   "jurisdiction" : [{
     "coding" : [{
@@ -42,6 +42,7 @@
         "severity" : "error",
         "human" : "All FHIR elements must have a @value or children",
         "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       },
       {
@@ -100,6 +101,7 @@
         "severity" : "error",
         "human" : "All FHIR elements must have a @value or children",
         "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       },
       {
@@ -107,6 +109,7 @@
         "severity" : "error",
         "human" : "Must have either extensions or value[x], not both",
         "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
         "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
       }],
       "isModifier" : false,
