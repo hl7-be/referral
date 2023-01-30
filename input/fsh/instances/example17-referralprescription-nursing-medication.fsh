@@ -6,7 +6,7 @@ Usage: #example
 * contained[+] = practitioner1
 
 
-* extension[performertasks].valueReference[+] = Reference(performer-task)
+//* extension[performertasks].valueReference[+] = Reference(performer-task)
 * extension[feedback].valueBoolean = true
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
 * identifier.value = "UHMEPVALUE"

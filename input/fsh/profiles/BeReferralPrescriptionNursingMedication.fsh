@@ -24,16 +24,16 @@ Description: "The nursing profile specialized for medication. Note this profile 
     BeValidityPeriod named validity 1..1 MS and
     BeLatestEndDate named latest 0..1 MS and
     BeLatestDraftDate named latestDraft 0..1 MS and
-    BePerformerTaskReference named performertasks 0..* MS and
+    //BePerformerTaskReference named performertasks 0..* MS and
     BeProposalType named proposalType 0..1 MS and
-    BeTaskReference named task 0..1 MS and
+    //BeTaskReference named task 0..1 MS and
     BePSSInfo named pss 0..1 MS 
 * extension[coprescriber] ^short = "Info about the other parties that have to take part in the prescription."
 * extension[validity] ^short = "Validity period of the prescription"
 * extension[latest] ^short = "Request must be executed before"
 * extension[feedback] ^short = "Give feedback to the prescriber"
 * extension[latestDraft] ^short = "The prescription must have left the draft status befor this moment"
-* extension[performertasks] ^short = "The subtasks as executed by different performers. Together they form the execution of the prescription as described in task extension"
+//* extension[performertasks] ^short = "The subtasks as executed by different performers. Together they form the execution of the prescription as described in task extension"
 * identifier MS
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"

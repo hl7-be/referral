@@ -23,7 +23,7 @@ Usage: #example
 * dosageInstruction.timing.repeat.timeOfDay = "20:00:00"
 * dosageInstruction.text = "2 spuiten simultaan te geven.  5 days ‘s avonds rond 20.00u"
 * requester.reference = "#practitioner1"
-* extension[performertasks].valueReference[+] = Reference(performer-task)
+//* extension[performertasks].valueReference[+] = Reference(performer-task)
 * extension[validity].valuePeriod.start = "2022-10-10"
 * extension[validity].valuePeriod.start = "2022-10-12"
 * extension[feedback].valueBoolean = true

@@ -16,7 +16,7 @@ Usage: #example
 * dosageInstruction.timing.repeat.periodUnit = #d
 * dosageInstruction.text = "opzet hier: éénmalige sondage en lavement uitvoeren, maar persoon op voorhand verdoven met 5mg Midzaolan via subcutane inspuiting"
 * requester.reference = "#Requester1"
-* extension[performertasks].valueReference[+] = Reference(performer-task)
+//* extension[performertasks].valueReference[+] = Reference(performer-task)
 * extension[validity].valuePeriod.start = "2022-10-10"
 * extension[validity].valuePeriod.start = "2022-10-12"
 * extension[feedback].valueBoolean = true
