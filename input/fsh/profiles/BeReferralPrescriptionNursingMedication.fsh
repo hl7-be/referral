@@ -25,6 +25,7 @@ Description: "The nursing profile specialized for medication. Note this profile 
     BeLatestEndDate named latest 0..1 MS and
     BeLatestDraftDate named latestDraft 0..1 MS and
     //BePerformerTaskReference named performertasks 0..* MS and
+    BePerformerReference named performer 0..* MS and 
     BeProposalType named proposalType 0..1 MS and
     //BeTaskReference named task 0..1 MS and
     BePSSInfo named pss 0..1 MS 
