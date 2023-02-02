@@ -8,35 +8,28 @@ De arts Rik Hendrikson schrijft volgende behandeling voor:
 
 
 Instance: uc2a-1
-InstanceOf: BeReferralPrescriptionNursingMedication
-* statusReason = $be-status-reason#inProgress "In progress"
+InstanceOf: BeReferralPrescriptionNursing
+* basedOn.identifier.system = "https://nonexistant.system.be/vidis"
+* basedOn.identifier.value = "medication-line-id"
+* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "38012699993"
 * extension[validity].valuePeriod.start = "2023-01-26"
 * extension[validity].valuePeriod.end = "2023-07-26"
 * extension[feedback].valueBoolean = true
-* extension[performer][+].valueReference.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
-* extension[performer][=].valueReference.identifier.value = #persnurse 
+* performer[+].identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
+* performer[=].identifier.value = #persnurse
+* reasonCode = $sct#44653001 //niet in Belgische module
+* code =  https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service#tmp-drug-tion-9
 * status = #active
 * intent = #order
 * category = $sct#9632001 //niet in Belgische module
 * category.text = "Nursing procedure"
 * priority = #routine
-* medicationCodeableConcept = $cnk-codes#2960961 "Dalacin C inj./inf. oploss. i.m./i.v. [amp.] 5 x 300 mg / 2 ml"
 * authoredOn = "2023-01-26"
 * requester.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi" //add reference to practitioner role because we need the discipline
 * requester.identifier.value = "10829059"
-* dosageInstruction.doseAndRate.doseQuantity.unit = "mg" //MS must be added
-* dosageInstruction.doseAndRate.doseQuantity.value = 350
-* dosageInstruction.timing.repeat.count = 7 //MS must be added
-* dosageInstruction.timing.repeat.duration = 8
-* dosageInstruction.timing.repeat.durationUnit = #h
-* dosageInstruction.timing.repeat.frequency = 1
-* dosageInstruction.timing.repeat.period = 1
-* dosageInstruction.timing.repeat.periodUnit = #d
-* dosageInstruction.text = "Dalacin 350 mg / 8 uur, intraveneus gedurende zeven dagen, via een perifere katheter"
-* dosageInstruction.route = $sct#419993007 // niet in Belgische module
-//perifere katheter???
+* note.text = "Dalacin 350 mg / 8 uur, intraveneus gedurende zeven dagen, via een perifere katheter"
 
 Instance: referral-task-uc2a-1 //we cannot throw it away, because we need the statusReason!!!
 InstanceOf: BeReferralTask
@@ -67,23 +60,7 @@ InstanceOf: BePerformerTask
 * executionPeriod.start = "2023-02-01"
 * executionPeriod.end = "2023-02-03"
 
-//add Procedures? Is this really a part of UHMEP?
-Instance: procedure-performer-task-1-uc2a-1
-InstanceOf: Procedure
-//* basedOn = Reference(performer-task-1-uc2a-1) //cannot refer to Task or MedicationRequest?
-* subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
-* subject.identifier.value = "38012699993"
-* status = #draft
-* code = http://snomed.info#18629005
 
-//add Procedures? Is this really a part of UHMEP?
-Instance: procedure-performer-task-2-uc2a-1
-InstanceOf: Procedure
-//* basedOn = Reference(performer-task-2-uc2a-1) //cannot refer to Task or MedicationRequest?
-* subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
-* subject.identifier.value = "38012699993"
-* status = #draft
-* code = http://snomed.info#18629005
 
 Instance: uc2a
 InstanceOf: BeReferralPrescriptionRequestGroup
