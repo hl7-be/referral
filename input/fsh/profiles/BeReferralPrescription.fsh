@@ -25,9 +25,9 @@ Description: "The common structure for referral prescription."
     BeValidityPeriod named validity 1..1 MS and
     BeLatestEndDate named latest 0..1 MS and
     BeLatestDraftDate named latestDraft 0..1 MS and
-    BePerformerTaskReference named performertasks 0..* MS and
+    //BePerformerTaskReference named performertasks 0..* MS and
     BeProposalType named proposalType 0..1 MS and
-    BeTaskReference named task 0..1 MS and
+    //BeTaskReference named task 0..1 MS and
     BePSSInfo named pss 0..1 MS and
     BeExtRecorder named recorder 0..1 MS
 * extension[statusReason].valueCodeableConcept 1..1
@@ -38,7 +38,7 @@ Description: "The common structure for referral prescription."
 * extension[feedback] ^short = "Give feedback to the prescriber"
 * extension[recorder] ^short = "The person responsable for this information, not necessarily the person who recorded the information"
 * extension[latestDraft] ^short = "The prescription must have left the draft status befor this moment"
-* extension[performertasks] ^short = "The subtasks as executed by different performers. Together they form the execution of the prescription as described in task extension"
+//* extension[performertasks] ^short = "The subtasks as executed by different performers. Together they form the execution of the prescription as described in task extension"
 * identifier MS
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
