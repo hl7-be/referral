@@ -10,7 +10,7 @@
   "name" : "ReferralPrescription",
   "title" : "Referral Prescription",
   "status" : "draft",
-  "date" : "2023-01-24T08:49:19+00:00",
+  "date" : "2023-02-02T07:53:11+00:00",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -684,18 +684,6 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/be-referralprescription-nursing-medication"
-      },
-      "name" : "BeReferralPrescriptionNursingMedication",
-      "description" : "The nursing profile specialized for medication. Note this profile is based on the FHIR resource MedicationRequest. Dosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements).",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
         "reference" : "StructureDefinition/be-referralprescription-request-group"
       },
       "name" : "BeReferralPrescriptionRequestGroup",
@@ -840,10 +828,10 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/be-ext-performer-task-reference"
+        "reference" : "StructureDefinition/be-ext-performer-reference"
       },
-      "name" : "BePerformerTaskReference",
-      "description" : "BePerformerTaskReference",
+      "name" : "BePerformerReference",
+      "description" : "BePerformerReference",
       "exampleBoolean" : false
     },
     {
@@ -868,18 +856,6 @@
       },
       "name" : "BeSupportingInfo",
       "description" : "Relevant clinical information in the context of this prescription concerning for example allergies, kidney function, diabetic. This extension allows the use of an Annotation or codeableConcept but when more detailed information can be given, it is RECOMMENDED to express it as structured as possible using the appropriate elements.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/be-ext-task-reference"
-      },
-      "name" : "BeTaskReference",
-      "description" : "BeTaskReference",
       "exampleBoolean" : false
     },
     {
@@ -1343,13 +1319,24 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
+        "valueString" : "Task"
       }],
       "reference" : {
-        "reference" : "MedicationRequest/example01-care03-referralprescription-nursing-medication"
+        "reference" : "Task/example01-care02-colon-cleansing-performer-task"
       },
-      "name" : "example01-care03-referralprescription-nursing-medication",
-      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication"
+      "name" : "example01-care02-colon-cleansing-performer-task",
+      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-performer-task"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      }],
+      "reference" : {
+        "reference" : "Task/example01-care02-colon-cleansing-referral-task"
+      },
+      "name" : "example01-care02-colon-cleansing-referral-task",
+      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-task"
     },
     {
       "extension" : [{
@@ -1409,28 +1396,6 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/example07-referralprescription-nursing-medication"
-      },
-      "name" : "example07-referralprescription-nursing-medication",
-      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/example08-referralprescription-nursing-medication"
-      },
-      "name" : "example08-referralprescription-nursing-medication",
-      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ServiceRequest"
       }],
       "reference" : {
@@ -1438,17 +1403,6 @@
       },
       "name" : "example09-referralprescription-nursing-woundcare",
       "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/example10-referralprescription-nursing-medication"
-      },
-      "name" : "example10-referralprescription-nursing-medication",
-      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication"
     },
     {
       "extension" : [{
@@ -1464,17 +1418,6 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/example13-referralprescription-nursing-medication"
-      },
-      "name" : "example13-referralprescription-nursing-medication",
-      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ServiceRequest"
       }],
       "reference" : {
@@ -1482,61 +1425,6 @@
       },
       "name" : "example16-referralprescription-nursing-bladder-care",
       "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/example17-referralprescription-nursing-medication"
-      },
-      "name" : "example17-referralprescription-nursing-medication",
-      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/example19-referralprescription-nursing-medication"
-      },
-      "name" : "example19-referralprescription-nursing-medication",
-      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/example20-referralprescription-nursing-medication"
-      },
-      "name" : "example20-referralprescription-nursing-medication",
-      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/example22-referralprescription-nursing-medication"
-      },
-      "name" : "example22-referralprescription-nursing-medication",
-      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/example23-referralprescription-nursing-medication"
-      },
-      "name" : "example23-referralprescription-nursing-medication",
-      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication"
     },
     {
       "extension" : [{
@@ -1559,28 +1447,6 @@
       },
       "name" : "example26-referralprescription-nursing-other",
       "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/example30-referralprescription-nursing-woundcare"
-      },
-      "name" : "example30-referralprescription-nursing-woundcare",
-      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "MedicationRequest"
-      }],
-      "reference" : {
-        "reference" : "MedicationRequest/example31-referralprescription-nursing-medication"
-      },
-      "name" : "example31-referralprescription-nursing-medication",
-      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication"
     },
     {
       "extension" : [{
@@ -1640,6 +1506,28 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      }],
+      "reference" : {
+        "reference" : "Task/performer-task-1-uc2a-1"
+      },
+      "name" : "performer-task-1-uc2a-1",
+      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-performer-task"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      }],
+      "reference" : {
+        "reference" : "Task/performer-task-2-uc2a-1"
+      },
+      "name" : "performer-task-2-uc2a-1",
+      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-performer-task"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Practitioner"
       }],
       "reference" : {
@@ -1684,6 +1572,17 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      }],
+      "reference" : {
+        "reference" : "Task/referral-task-uc2a-1"
+      },
+      "name" : "referral-task-uc2a-1",
+      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-task"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ServiceRequest"
       }],
       "reference" : {
@@ -1723,6 +1622,50 @@
         "reference" : "ServiceRequest/referralprescription-nursing-example6-compression-therapy"
       },
       "name" : "referralprescription-nursing-example6-compression-therapy",
+      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "RequestGroup"
+      }],
+      "reference" : {
+        "reference" : "RequestGroup/uc2a"
+      },
+      "name" : "uc2a",
+      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-request-group"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/uc2a-1"
+      },
+      "name" : "uc2a-1",
+      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/uc2a-2"
+      },
+      "name" : "uc2a-2",
+      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ServiceRequest"
+      }],
+      "reference" : {
+        "reference" : "ServiceRequest/uc2a-3"
+      },
+      "name" : "uc2a-3",
       "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing"
     }],
     "page" : {

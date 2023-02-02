@@ -792,42 +792,6 @@ This information includes diagnosis, clinical findings and other observations.  
       <mustSupport value="true"/>
       <isModifier value="false"/>
     </element>
-    <element id="ServiceRequest.extension:performertasks">
-      <path value="ServiceRequest.extension"/>
-      <sliceName value="performertasks"/>
-      <short value="The subtasks as executed by different performers. Together they form the execution of the prescription as described in task extension"/>
-      <definition value="List of references to the tasks performed by each performer"/>
-      <min value="0"/>
-      <max value="*"/>
-      <base>
-        <path value="DomainResource.extension"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="Extension"/>
-        <profile value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-performer-task-reference"/>
-      </type>
-      <condition value="ele-1"/>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <constraint>
-        <key value="ext-1"/>
-        <severity value="error"/>
-        <human value="Must have either extensions or value[x], not both"/>
-        <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
-      </constraint>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
-    </element>
     <element id="ServiceRequest.extension:proposalType">
       <path value="ServiceRequest.extension"/>
       <sliceName value="proposalType"/>
@@ -843,42 +807,6 @@ This information includes diagnosis, clinical findings and other observations.  
       <type>
         <code value="Extension"/>
         <profile value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-proposal-type"/>
-      </type>
-      <condition value="ele-1"/>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <constraint>
-        <key value="ext-1"/>
-        <severity value="error"/>
-        <human value="Must have either extensions or value[x], not both"/>
-        <expression value="extension.exists() != value.exists()"/>
-        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
-      </constraint>
-      <mustSupport value="true"/>
-      <isModifier value="false"/>
-    </element>
-    <element id="ServiceRequest.extension:task">
-      <path value="ServiceRequest.extension"/>
-      <sliceName value="task"/>
-      <short value="BeTaskReference"/>
-      <definition value="BeTaskReference"/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="DomainResource.extension"/>
-        <min value="0"/>
-        <max value="*"/>
-      </base>
-      <type>
-        <code value="Extension"/>
-        <profile value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-task-reference"/>
       </type>
       <condition value="ele-1"/>
       <constraint>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ServiceRequest xmlns="http://hl7.org/fhir">
+  <id value="uc2a-2"/>
+  <meta>
+    <profile value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: ServiceRequest</b><a name="uc2a-2"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource ServiceRequest &quot;uc2a-2&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-be-referralprescription-nursing.html">BeReferralPrescriptionNursing</a></p></div><p><b>BeFeedbackToPrescriber</b>: true</p><p><b>BeValidityPeriod</b>: 2023-01-26 --&gt; 2023-07-26</p><p><b>Reason for current status</b>: In progress <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-be-prescription-status-reason.html">BePrescriptionStatusReason</a>#inProgress)</span></p><p><b>status</b>: draft</p><p><b>intent</b>: order</p><p><b>category</b>: Nursing procedure <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#9632001)</span></p><p><b>code</b>: compression therapy: application of bandage <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-be-cs-temp-requested-service.html">BeTempRequestedService</a>#tmp-comp-dage-3)</span></p><p><b>orderDetail</b>: long stretch <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-be-cs-temp-requested-service-detail.html">BeTempRequestedServiceDetail</a>#tmp-long-etch-2)</span></p><p><b>subject</b>: <span/></p><p><b>occurrence</b>: Once</p><p><b>authoredOn</b>: 2023-01-26</p><p><b>requester</b>: <span/></p><p><b>performer</b>: <span/></p><p><b>reasonCode</b>: Erysipelas <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#44653001)</span></p></div>
+  </text>
+  <extension url="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-feedback-to-prescriber">
+    <valueBoolean value="true"/>
+  </extension>
+  <extension url="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period">
+    <valuePeriod>
+      <start value="2023-01-26"/>
+      <end value="2023-07-26"/>
+    </valuePeriod>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/request-statusReason">
+    <valueCodeableConcept>
+      <coding>
+        <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason"/>
+        <code value="inProgress"/>
+        <display value="In progress"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <status value="draft"/>
+  <intent value="order"/>
+  <category>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="9632001"/>
+    </coding>
+    <text value="Nursing procedure"/>
+  </category>
+  <code>
+    <coding>
+      <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service"/>
+      <code value="tmp-comp-dage-3"/>
+    </coding>
+  </code>
+  <orderDetail>
+    <coding>
+      <system value="https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service-detail"/>
+      <code value="tmp-long-etch-2"/>
+    </coding>
+  </orderDetail>
+  <subject>
+    <identifier>
+      <system value="https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"/>
+      <value value="38012699993"/>
+    </identifier>
+  </subject>
+  <occurrenceTiming>
+    <repeat>
+      <boundsDuration>
+        <value value="1"/>
+        <unit value="mo"/>
+      </boundsDuration>
+    </repeat>
+  </occurrenceTiming>
+  <authoredOn value="2023-01-26"/>
+  <requester>
+    <identifier>
+      <system value="https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"/>
+      <value value="10829059"/>
+    </identifier>
+  </requester>
+  <performer>
+    <identifier>
+      <system value="https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty"/>
+      <value value="persnurse"/>
+    </identifier>
+  </performer>
+  <reasonCode>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="44653001"/>
+    </coding>
+  </reasonCode>
+</ServiceRequest>

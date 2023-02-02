@@ -1,0 +1,82 @@
+{
+  "resourceType" : "ServiceRequest",
+  "id" : "uc2a-1",
+  "meta" : {
+    "profile" : ["https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing"]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: ServiceRequest</b><a name=\"uc2a-1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource ServiceRequest &quot;uc2a-1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referralprescription-nursing.html\">BeReferralPrescriptionNursing</a></p></div><p><b>BeFeedbackToPrescriber</b>: true</p><p><b>BeValidityPeriod</b>: 2023-01-26 --&gt; 2023-07-26</p><p><b>Reason for current status</b>: In progress <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-be-prescription-status-reason.html\">BePrescriptionStatusReason</a>#inProgress)</span></p><p><b>basedOn</b>: <span/></p><p><b>status</b>: active</p><p><b>intent</b>: order</p><p><b>category</b>: Nursing procedure <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#9632001)</span></p><p><b>priority</b>: routine</p><p><b>code</b>: Drug administration <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-be-cs-temp-requested-service.html\">BeTempRequestedService</a>#tmp-drug-tion-9)</span></p><p><b>subject</b>: <span/></p><p><b>authoredOn</b>: 2023-01-26</p><p><b>requester</b>: <span/></p><p><b>performer</b>: <span/></p><p><b>reasonCode</b>: Erysipelas <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#44653001)</span></p><p><b>note</b>: Dalacin 350 mg / 8 uur, intraveneus gedurende zeven dagen, via een perifere katheter</p></div>"
+  },
+  "extension" : [{
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-feedback-to-prescriber",
+    "valueBoolean" : true
+  },
+  {
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period",
+    "valuePeriod" : {
+      "start" : "2023-01-26",
+      "end" : "2023-07-26"
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/request-statusReason",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason",
+        "code" : "inProgress",
+        "display" : "In progress"
+      }]
+    }
+  }],
+  "basedOn" : [{
+    "identifier" : {
+      "system" : "https://nonexistant.system.be/vidis",
+      "value" : "medication-line-id"
+    }
+  }],
+  "status" : "active",
+  "intent" : "order",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "9632001"
+    }],
+    "text" : "Nursing procedure"
+  }],
+  "priority" : "routine",
+  "code" : {
+    "coding" : [{
+      "system" : "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service",
+      "code" : "tmp-drug-tion-9"
+    }]
+  },
+  "subject" : {
+    "identifier" : {
+      "system" : "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin",
+      "value" : "38012699993"
+    }
+  },
+  "authoredOn" : "2023-01-26",
+  "requester" : {
+    "identifier" : {
+      "system" : "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi",
+      "value" : "10829059"
+    }
+  },
+  "performer" : [{
+    "identifier" : {
+      "system" : "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty",
+      "value" : "persnurse"
+    }
+  }],
+  "reasonCode" : [{
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "code" : "44653001"
+    }]
+  }],
+  "note" : [{
+    "text" : "Dalacin 350 mg / 8 uur, intraveneus gedurende zeven dagen, via een perifere katheter"
+  }]
+}
