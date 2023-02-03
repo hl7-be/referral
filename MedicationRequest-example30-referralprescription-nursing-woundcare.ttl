@@ -1,0 +1,128 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/referral/MedicationRequest/example30-referralprescription-nursing-woundcare> a fhir:MedicationRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "example30-referralprescription-nursing-woundcare"]; # 
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication";
+       fhir:index 0;
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication>
+     ]
+  ]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: MedicationRequest</b><a name=\"example30-referralprescription-nursing-woundcare\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource MedicationRequest &quot;example30-referralprescription-nursing-woundcare&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referralprescription-nursing-gen-medication.html\">BeReferralPrescriptionNursingGenMedication</a></p></div><blockquote><p><b>BeIntendedPerformer</b></p><p><b>value</b>: Nurse <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#106292003)</span></p><p><b>value</b>: <a href=\"Practitioner-practitioner2.html\">Practitioner/practitioner2</a> &quot; CHAPEL&quot;</p></blockquote><p><b>identifier</b>: id: UHMEPVALUE</p><p><b>status</b>: active</p><p><b>statusReason</b>: Refused <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActReason.html\">ActReason</a>#PATOBJ)</span></p><p><b>intent</b>: order</p><p><b>category</b>: Nursing procedure <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#733925000)</span></p><p><b>priority</b>: routine</p><p><b>medication</b>: Flaminal gel Hydro 1 x 50 g <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (be-ns-cnk-codes#2501013)</span></p><p><b>subject</b>: <a href=\"Patient-patient1.html\">Patient/patient1</a> &quot; DOE&quot;</p><p><b>requester</b>: <a href=\"Practitioner-practitioner1.html\">Practitioner/practitioner1</a> &quot; MCCOY&quot;</p><p><b>reasonCode</b>: Infected varicose ulcer <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#195450002)</span></p><p><b>note</b>: wound care codeset/valueset is still missing (see orderDetail)/ waar komt de medicatie Flaminal Hydro</p><h3>DosageInstructions</h3><table class=\"grid\"><tr><td>-</td><td><b>Text</b></td><td><b>Timing</b></td><td><b>Site</b></td></tr><tr><td>*</td><td>some note about the dose</td><td>Once per 1 days</td><td>Structure of superficial palmar arch of right hand (body structure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#771354004)</span></td></tr></table></div>"
+  ]; # 
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "role" ];
+       fhir:Extension.valueCodeableConcept [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           a sct:106292003;
+           fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+           fhir:Coding.code [ fhir:value "106292003" ];
+           fhir:Coding.display [ fhir:value "Nurse" ]
+         ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Extension.url [ fhir:value "actor" ];
+       fhir:Extension.valueReference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Practitioner/practitioner2>;
+         fhir:Reference.reference [ fhir:value "Practitioner/practitioner2" ]
+       ]
+     ];
+     fhir:Extension.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer" ]
+  ]; # 
+  fhir:MedicationRequest.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep" ];
+     fhir:Identifier.value [ fhir:value "UHMEPVALUE" ]
+  ]; # 
+  fhir:MedicationRequest.status [ fhir:value "active"]; # 
+  fhir:MedicationRequest.statusReason [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActReason" ];
+       fhir:Coding.code [ fhir:value "PATOBJ" ];
+       fhir:Coding.display [ fhir:value "Refused" ]
+     ]
+  ]; # 
+  fhir:MedicationRequest.intent [ fhir:value "order"]; # 
+  fhir:MedicationRequest.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:733925000;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "733925000" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Nursing procedure" ]
+  ]; # 
+  fhir:MedicationRequest.priority [ fhir:value "routine"]; # 
+  fhir:MedicationRequest.medicationCodeableConcept [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/medication/NamingSystem/be-ns-cnk-codes" ];
+       fhir:Coding.code [ fhir:value "2501013" ];
+       fhir:Coding.display [ fhir:value "Flaminal gel Hydro 1 x 50 g" ]
+     ]
+  ]; # 
+  fhir:MedicationRequest.subject [
+     fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Patient/patient1>;
+     fhir:Reference.reference [ fhir:value "Patient/patient1" ]
+  ]; # 
+  fhir:MedicationRequest.requester [
+     fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Practitioner/practitioner1>;
+     fhir:Reference.reference [ fhir:value "Practitioner/practitioner1" ]
+  ]; # 
+  fhir:MedicationRequest.reasonCode [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:195450002;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "195450002" ]
+     ]
+  ]; # 
+  fhir:MedicationRequest.note [
+     fhir:index 0;
+     fhir:Annotation.text [ fhir:value "wound care codeset/valueset is still missing (see orderDetail)/ waar komt de medicatie Flaminal Hydro" ]
+  ]; # 
+  fhir:MedicationRequest.dosageInstruction [
+     fhir:index 0;
+     fhir:Dosage.text [ fhir:value "some note about the dose" ];
+     fhir:Dosage.timing [
+       fhir:Timing.repeat [
+         fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ];
+         fhir:Timing.repeat.period [ fhir:value "1"^^xsd:decimal ];
+         fhir:Timing.repeat.periodUnit [ fhir:value "d" ]
+       ]
+     ];
+     fhir:Dosage.site [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         a sct:771354004;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+         fhir:Coding.code [ fhir:value "771354004" ]
+       ]
+     ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/referral/MedicationRequest/example30-referralprescription-nursing-woundcare.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

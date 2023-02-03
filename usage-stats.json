@@ -1,8 +1,7 @@
 {
   "package": "hl7.fhir.be.referral",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "fhirVersion": "4.0.1",
-  "jurisdiction": "BE",
   "extensions": [
     {
       "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-co-prescriber",
@@ -13,63 +12,6 @@
         "CodeableConcept",
         "CodeableConcept",
         "CodeableConcept",
-        "base64Binary",
-        "boolean",
-        "canonical",
-        "code",
-        "date",
-        "dateTime",
-        "decimal",
-        "id",
-        "instant",
-        "integer",
-        "markdown",
-        "oid",
-        "positiveInt",
-        "string",
-        "time",
-        "unsignedInt",
-        "uri",
-        "url",
-        "uuid",
-        "Address",
-        "Age",
-        "Annotation",
-        "Attachment",
-        "CodeableConcept",
-        "Coding",
-        "ContactPoint",
-        "Count",
-        "Distance",
-        "Duration",
-        "HumanName",
-        "Identifier",
-        "Money",
-        "Period",
-        "Quantity",
-        "Range",
-        "Ratio",
-        "Reference",
-        "SampledData",
-        "Signature",
-        "Timing",
-        "ContactDetail",
-        "Contributor",
-        "DataRequirement",
-        "Expression",
-        "ParameterDefinition",
-        "RelatedArtifact",
-        "TriggerDefinition",
-        "UsageContext",
-        "Dosage",
-        "Meta"
-      ]
-    },
-    {
-      "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-co-prescriber-info",
-      "title": "BeCoPrescriberInfo",
-      "types": [
-        "positiveInt",
         "base64Binary",
         "boolean",
         "canonical",
@@ -139,11 +81,10 @@
       ]
     },
     {
-      "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-feedback-to-prescriber",
-      "title": "BeFeedbackToPrescriber",
+      "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-execution-period",
+      "title": "BeExecutionPeriod",
       "types": [
-        "boolean",
-        "boolean"
+        "Period"
       ]
     },
     {
@@ -154,25 +95,10 @@
       ]
     },
     {
-      "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-draft-date",
-      "title": "BeLatestDraftDate",
+      "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-lastest-end-date",
+      "title": "BeLastestEndDate",
       "types": [
         "dateTime"
-      ]
-    },
-    {
-      "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-end-date",
-      "title": "BeLatestEndDate",
-      "types": [
-        "dateTime"
-      ]
-    },
-    {
-      "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-performer-reference",
-      "title": "BePerformerReference",
-      "types": [
-        "Reference",
-        "Reference"
       ]
     },
     {
@@ -184,69 +110,18 @@
       ]
     },
     {
-      "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-pss-info",
-      "title": "BePSSInfo",
-      "types": [
-        "Reference",
-        "Annotation",
-        "base64Binary",
-        "boolean",
-        "canonical",
-        "code",
-        "date",
-        "dateTime",
-        "decimal",
-        "id",
-        "instant",
-        "integer",
-        "markdown",
-        "oid",
-        "positiveInt",
-        "string",
-        "time",
-        "unsignedInt",
-        "uri",
-        "url",
-        "uuid",
-        "Address",
-        "Age",
-        "Annotation",
-        "Attachment",
-        "CodeableConcept",
-        "Coding",
-        "ContactPoint",
-        "Count",
-        "Distance",
-        "Duration",
-        "HumanName",
-        "Identifier",
-        "Money",
-        "Period",
-        "Quantity",
-        "Range",
-        "Ratio",
-        "Reference",
-        "SampledData",
-        "Signature",
-        "Timing",
-        "ContactDetail",
-        "Contributor",
-        "DataRequirement",
-        "Expression",
-        "ParameterDefinition",
-        "RelatedArtifact",
-        "TriggerDefinition",
-        "UsageContext",
-        "Dosage",
-        "Meta"
-      ]
-    },
-    {
       "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-supporting-info",
       "title": "BeSupportingInfo",
       "types": [
         "Annotation",
         "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-task-reference",
+      "title": "BeTaskReference",
+      "types": [
+        "Reference"
       ]
     },
     {
@@ -364,38 +239,92 @@
       "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period",
       "title": "BeValidityPeriod",
       "types": [
-        "Period",
-        "Period",
-        "string",
-        "Extension",
+        "Period"
+      ]
+    },
+    {
+      "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer",
+      "title": "BeIntendedPerformer",
+      "types": [
+        "Reference",
+        "CodeableConcept",
+        "CodeableConcept",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
         "dateTime",
-        "dateTime"
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
       ]
     }
   ],
   "profiles": {
     "ServiceRequest": [
       {
-        "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription",
-        "title": "BeReferralPrescription"
+        "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-non-reimbursable",
+        "title": "BeReferralPrescriptionNursingNonReimbursable"
       },
       {
-        "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-diagnosticimaging",
-        "title": "BeReferralPrescriptionDiagnosticImaging"
+        "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-other",
+        "title": "BeReferralPrescriptionNursingOther"
       },
       {
-        "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing",
-        "title": "BeReferralPrescriptionNursing"
+        "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-woundcare",
+        "title": "BeReferralPrescriptionNursingWoundcare"
       }
     ],
-    "Task": [
+    "MedicationRequest": [
       {
-        "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-performer-task",
-        "title": "BePerformerTask"
+        "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-gen-medication",
+        "title": "BeReferralPrescriptionNursingGenMedication"
       },
       {
-        "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-task",
-        "title": "BeReferralTask"
+        "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication",
+        "title": "BeReferralPrescriptionNursingMedication"
       }
     ],
     "RequestGroup": [
@@ -425,17 +354,12 @@
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable": [
       "StructureDefinition.snapshot.element"
     ],
-    "http://hl7.org/fhir/StructureDefinition/regex": [
-      "StructureDefinition.snapshot.element.type"
-    ],
     "http://hl7.org/fhir/StructureDefinition/request-statusReason": [
+      "RequestGroup.contained",
       "ServiceRequest"
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-category": [
       "StructureDefinition"
-    ],
-    "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name": [
-      "StructureDefinition.snapshot.element"
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
       "StructureDefinition.snapshot.element.type"
@@ -456,16 +380,8 @@
     "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
       "ImplementationGuide.definition.resource"
     ],
-    "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-ext-laterality": [
-      "ServiceRequest.bodySite"
-    ],
-    "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-recorder": [
-      "ServiceRequest"
-    ],
     "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-co-prescriber": [
-      "Extension"
-    ],
-    "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-co-prescriber-info": [
+      "MedicationRequest",
       "ServiceRequest"
     ],
     "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-contraindication": [
@@ -474,28 +390,39 @@
     "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-contrastfluiduse": [
       "ServiceRequest"
     ],
-    "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-feedback-to-prescriber": [
+    "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-execution-period": [
+      "MedicationRequest",
       "ServiceRequest"
     ],
-    "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-draft-date": [
+    "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-inform-party": [
+      "MedicationRequest",
       "ServiceRequest"
     ],
-    "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-end-date": [
+    "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-lastest-end-date": [
       "ServiceRequest"
     ],
     "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-proposal-type": [
-      "ServiceRequest"
-    ],
-    "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-pss-info": [
+      "MedicationRequest",
       "ServiceRequest"
     ],
     "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-supporting-info": [
+      "ServiceRequest"
+    ],
+    "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-task-reference": [
+      "MedicationRequest",
       "ServiceRequest"
     ],
     "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-urgent-communication": [
       "ServiceRequest"
     ],
     "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period": [
+      "MedicationRequest",
+      "RequestGroup.contained",
+      "ServiceRequest"
+    ],
+    "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer": [
+      "MedicationRequest",
+      "RequestGroup.contained",
       "ServiceRequest"
     ]
   }
