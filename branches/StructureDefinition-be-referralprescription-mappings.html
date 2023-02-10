@@ -30,7 +30,6 @@
 
 <link href="assets/css/colors.css" rel="stylesheet"/>
 
-<link href="assets/css/affiliate.css" rel="stylesheet"/>
 
     <script type="text/javascript" src="fhir-table-scripts.js"> </script>
 <!--
@@ -58,8 +57,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"14.8"}
-    h3,h4,h5,h6{--heading-prefix:"14.8"}</style>
+    <style type="text/css">h2{--heading-prefix:"5.10"}
+    h3,h4,h5,h6{--heading-prefix:"5.10"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -80,16 +79,9 @@
   <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir/search.cfm"><img alt="Search FHIR" src="assets/images/search.png"/></a>
 </div>
 
-<!-- Left logo - typically the publisher's logo - project or affiliate -->
-        <div id="project-nav">
-          <a id="project-logo" no-external="true" href="http://hl7.eu">
-            <img height="71" alt="Project home" src="assets/images/scribe.png"/>
-          </a>
-        </div>
-
 
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">HL7 BE Referral Prescription WG Implementation Guide (work in progress)</span><br/>0.2.0 - STU</p>
+          <p><span style="font-size:12pt;font-weight:bold">Referral Prescription</span><br/>1.0.0 - STU</p>
         </div>
       </div> <!-- /container -->
     </div>  <!-- /segment-header -->
@@ -109,104 +101,41 @@
             </button>
             <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
             <div class="nav-collapse collapse navbar-inverse-collapse">
-              <ul
-	xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
-	<li>
-		<a href="index.html">IG Home</a>
-	</li>
-	<li>
-		<a href="guidance.html">Guidance</a>
-	</li>
-	<li>
-		<a href="toc.html">Table of Contents</a>
-	</li>
-	<li class="dropdown">
-		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret"></b>
-		</a>
-		<ul class="dropdown-menu">
-			<li>
-				<a href="howto.html">How to use this Publication</a>
-			</li>
-			<li>
-				<a href="standardsstatus.html">Standards Status</a>
-			</li>
-			<li>
-				<a href="privacy.html">Privacy considerations</a>
-			</li>
-			<li>
-				<a href="security.html">Security considerations</a>
-			</li>
-			<li>
-				<a target="_blank" href="http://hl7.org/fhir/R4/index.html">FHIR Spec<img src="external.png" style="text-align: baseline"/>
-				</a>
-			</li>
-		</ul>
-	</li>
-	<li class="dropdown">
-		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Functional Description<b class="caret"></b>
-		</a>
-		<ul class="dropdown-menu">
-			<li>
-				<a href="usecases.html">Use Cases</a>
-			</li>
-			<li>
-				<a href="logical-models.html">Logical Models</a>
-			</li>
-<!--
-			<li>
-				<a target="_blank" href="#">Services &amp; Transactions</a>
-			</li>
--->
-		</ul>
+              <!-- menu.xml  -->
 
-	</li>
-	<li class="dropdown">
-		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Detailed Specifications<b class="caret"></b>
-		</a>
-		<ul class="dropdown-menu">
-			<li>
-				<a href="artifacts.html">Artifact Index</a>
-			</li>
-		</ul>
-	</li>
-	<li class="dropdown">
-		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Terminology<b class="caret"></b>
-		</a>
-		<ul class="dropdown-menu">
-			<li>
-				<a href="terminology.html">Terminology Resources</a>
-			</li>
-		</ul>
-	</li>
-<!--
-	<li class="dropdown">
-		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Project-specific
-			<b class="caret"></b>
-		</a>
-		<ul class="dropdown-menu">
-			<li>
-				<a href="#">Core Profiles</a>
-			</li>
-			<li class="divider"></li>
-			<li>
-				<a href="#">DZOP</a>
-			</li>
-            <li>
-				<a href="#">EFRO</a>
-			</li>
-		</ul>
-	</li>
--->
-	<li class="dropdown">
-		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Implementation<b class="caret"></b></a>
-		<ul class="dropdown-menu">
-			<li><a href="testdata.html">Test Data<img src="external.png" style="text-align: baseline"/></a></li>
-			<li><a target="_blank" href="openapi.html">OpenAPI</a></li>
-			<li><a href="testservers.html">Test Servers<img src="external.png" style="text-align: baseline"/></a></li>
-			<li><a href="downloads.html">Downloads</a></li>
-		</ul>
-	</li>
-</ul>      
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="guidance.html">Guidance</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html#2">Profiles</a>
+      </li>
+      <li>
+        <a href="artifacts.html#3">Extensions</a>
+      </li>
+      <li>
+        <a href="artifacts.html#4">Value Sets</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+  <li>
+    <a href="changes.html">Changes</a>
+  </li>
+  <li>
+    <a href="https://www.ehealth.fgov.be/standards/fhir/referral/history.html">History</a>
+  </li>
+</ul>
             </div>  <!-- /.nav-collapse -->
           </div>  <!-- /.container -->
         </nav>  <!-- /.navbar -->
@@ -220,6 +149,16 @@
         <ul class="breadcrumb">
           <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>BeReferralPrescription</b></li>
           
+          <span style="float:right;">
+
+            <a href="StructureDefinition-be-referralprescription-definitions.html">&lt;prev</a> | 
+
+            <a href="#bottom">bottom</a>
+
+          | <a href="StructureDefinition-be-referralprescription-testing.html">next&gt;</a>
+
+          </span>
+
         </ul>
       </div>  <!-- /container -->
     </div>  <!-- /segment-breadcrumb -->
@@ -231,7 +170,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">HL7 BE Referral Prescription WG Implementation Guide (work in progress) - Local Development build (v0.2.0). See the <a href="https://www.ehealth.fgov.be/standards/fhir/referral/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">Referral Prescription - Local Development build (v1.0.0). See the <a href="https://www.ehealth.fgov.be/standards/fhir/referral/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -334,11 +273,8 @@
  <tr><td>&nbsp;&nbsp;&nbsp;priority</td><td>Request.priority</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;doNotPerform</td><td>Request.doNotPerform</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>Request.code</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>Request.subject</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>Request.encounter</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x]</td><td>Request.occurrence[x]</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;authoredOn</td><td>Request.authoredOn</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;requester</td><td>Request.requester</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>Request.reasonCode</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonReference</td><td>Request.reasonReference</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;insurance</td><td>Request.insurance</td> </tr>
@@ -370,17 +306,16 @@
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>PR1-3 / OBR-4  (varies by domain)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;orderDetail</td><td>NTE</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;quantity[x]</td><td>NTE</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>PID</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>PV1</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x]</td><td>TQ1/TQ2, OBR-7/OBR-8</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;authoredOn</td><td>ORC.9,  RF1-7 / RF1-9</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;requester</td><td>ORC.12, PRT</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>ORC.16, RF1-10</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonReference</td><td>ORC.16</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;insurance</td><td>IN1/IN2</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;supportingInfo</td><td>Accompanying segments</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>SPM</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;bodySite</td><td>SPM</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>C*E.9. But note many systems use C*E.2 for this</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>NTE</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;patientInstruction</td><td>NTE</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;relevantHistory</td><td>N/A</td> </tr>
@@ -396,6 +331,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x] (valueCodeableConcept)</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (feedback)</td><td>n/a, N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>.identifier</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier (UHMEP)</td><td>.identifier</td> </tr>
@@ -420,12 +356,12 @@
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>.code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;orderDetail</td><td>.code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;quantity[x]</td><td>.quantity</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>.participation[typeCode=SBJ].role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>.inboundRelationship(typeCode=COMP].source[classCode&lt;=PCPR, moodCode=EVN]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x]</td><td>.effectiveTime</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;asNeeded[x]</td><td>boolean: precondition.negationInd (inversed - so negationInd = true means asNeeded=false CodeableConcept: precondition.observationEventCriterion[code=&quot;Assertion&quot;].value</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;authoredOn</td><td>.participation[typeCode=AUT].time</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;requester</td><td>.participation[typeCode=AUT].role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;requester</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>n/a, The target of a resource reference is a RIM entry point (Act, Role, or Entity)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;locationCode</td><td>.participation[typeCode=LOC].role[scoper.determinerCode=KIND].code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;locationReference</td><td>.participation[typeCode=LOC].role[scoper.determinerCode=INSTANCE]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>.reasonCode</td> </tr>
@@ -434,6 +370,10 @@
  <tr><td>&nbsp;&nbsp;&nbsp;supportingInfo</td><td>.outboundRelationship[typeCode=PERT].target</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>.participation[typeCode=SPC].role</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;bodySite</td><td>targetSiteCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>.inboundRelationship(typeCode=SUBJ].source[classCode=ANNGEN, moodCode=EVN].value[xsi:type=ST]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;patientInstruction</td><td>.text</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;relevantHistory</td><td>.inboundRelationship(typeCode=SUBJ].source[classCode=CACT, moodCode=EVN]</td> </tr>
@@ -448,11 +388,8 @@
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>FiveWs.class</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;priority</td><td>FiveWs.grade</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>FiveWs.what[x]</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>FiveWs.subject[x], FiveWs.subject</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>FiveWs.context</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x]</td><td>FiveWs.planned</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;authoredOn</td><td>FiveWs.recorded</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;requester</td><td>FiveWs.author</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;locationCode</td><td>FiveWs.actor</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;locationReference</td><td>FiveWs.actor</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>FiveWs.why[x]</td> </tr>
@@ -466,12 +403,9 @@
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>Action.currentStatus</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>Procedure.procedureCode</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;orderDetail</td><td>Procedure.procedureCode</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>ClinicalStatement.subject</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>ClinicalStatement.encounter</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x]</td><td>Procedure.procedureSchedule</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;asNeeded[x]</td><td>Proposal.prnReason.reason</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;authoredOn</td><td>Proposal.proposedAtTime</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;requester</td><td>ClinicalStatement.statementAuthor</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;bodySite</td><td>Procedure.targetBodySite</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>ClinicalStatement.additionalText</td> </tr>
 </table>
@@ -526,9 +460,31 @@
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container">  <!-- container -->
 
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="StructureDefinition-be-referralprescription-definitions.html">&lt;prev</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">top</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="StructureDefinition-be-referralprescription-testing.html">next&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href=""></a>.  Package hl7.fhir.be.referral#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Feb 3, 2023 12:54+0000">2023-02-03</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href=""></a>.  Package hl7.fhir.be.referral#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Feb 10, 2023 09:12+0000">2023-02-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!--  -->

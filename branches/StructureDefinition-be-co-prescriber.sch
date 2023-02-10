@@ -12,9 +12,12 @@
   <sch:pattern>
     <sch:title>f:Extension</sch:title>
     <sch:rule context="f:Extension">
+      <sch:assert test="count(f:extension[@url = 'coprescriber']) &gt;= 1">extension with URL = 'coprescriber': minimum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'coprescriber']) &lt;= 1">extension with URL = 'coprescriber': maximum cardinality of 'extension' is 1</sch:assert>
-      <sch:assert test="count(f:extension[@url = 'coprescriberType']) &lt;= 1">extension with URL = 'coprescriberType': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'coprescriptionStatus']) &gt;= 1">extension with URL = 'coprescriptionStatus': minimum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:extension[@url = 'coprescriptionStatus']) &lt;= 1">extension with URL = 'coprescriptionStatus': maximum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'required']) &gt;= 1">extension with URL = 'required': minimum cardinality of 'extension' is 1</sch:assert>
+      <sch:assert test="count(f:extension[@url = 'required']) &lt;= 1">extension with URL = 'required': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:value[x]) &lt;= 0">value[x]: maximum cardinality of 'value[x]' is 0</sch:assert>
     </sch:rule>
   </sch:pattern>

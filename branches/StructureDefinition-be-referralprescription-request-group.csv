@@ -76,7 +76,7 @@ priorrenewed order","",0,*,"","","","Reference {[]} {[CanonicalType[http://hl7.o
 ","Request(s) replaced by this request","Completed or terminated request(s) whose function is taken by this new request.","The replacement could be because the initial request was immediately rejected (due to an issue) or because the previous request was completed, but the need for the action described by the request remains ongoing.","Allows tracing the continuation of a therapy or administrative process instantiated through multiple requests.","","","","","","","",,,,,"",,,,"RequestGroup.replaces",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Request.replaces"
 "RequestGroup.groupIdentifier","RequestGroup.groupIdentifier","","grouperid
-requisition","",0,1,"","","Y","Identifier {[]} {[]}
+requisition","",0,1,"Y","","Y","Identifier {[]} {[]}
 ","Composite request this is part of","A shared identifier common to all requests that were authorized more or less simultaneously by a single author, representing the identifier of the requisition, prescription or similar form.","Requests are linked either by a ""basedOn"" relationship (i.e. one request is fulfilling another) or by having a common requisition.  Requests that are part of the same requisition are generally treated independently from the perspective of changing their state or maintaining them after initial creation.","Some business processes need to know if multiple items were ordered as part of the same ""prescription"" or ""requisition"" for billing or other purposes.","","","","","","","",,,,,"",,,,"RequestGroup.groupIdentifier",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Request.groupIdentifier"
 "RequestGroup.status","RequestGroup.status","","","",1,1,"","Y","Y","code {[]} {[]}
@@ -116,7 +116,7 @@ requisition","",0,1,"","","Y","Identifier {[]} {[]}
 "RequestGroup.action","RequestGroup.action","","","",1,*,"Y","","","BackboneElement {[]} {[]}
 ","At least one referral prescription","The actions, if any, produced by the evaluation of the artifact.","","","","","","","","","",,,,,"",,,,"RequestGroup.action",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 rqg-1:Must have resource or action but not both {resource.exists() != action.exists()}"
-"RequestGroup.action.id","RequestGroup.action.id","","","",0,1,"","","","string {[]} {[]}
+"RequestGroup.action.id","RequestGroup.action.id","","","",0,1,"Y","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
 "RequestGroup.action.extension","RequestGroup.action.extension","","extensions
 user content","",0,*,"","","","Extension {[]} {[]}
@@ -185,10 +185,10 @@ user contentmodifiers","",0,*,"","Y","Y","Extension {[]} {[]}
 
 Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension).","","","","","","","",,,,,"",,,,"BackboneElement.modifierExtension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","N/A"
-"RequestGroup.action.relatedAction.actionId","RequestGroup.action.relatedAction.actionId","","","",1,1,"","","","id {[]} {[]}
+"RequestGroup.action.relatedAction.actionId","RequestGroup.action.relatedAction.actionId","","","",1,1,"Y","","","id {[]} {[]}
 ","What action this is related to","The element id of the action this is related to.","","","","","","","","","",,,,,"",,,,"RequestGroup.action.relatedAction.actionId",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"RequestGroup.action.relatedAction.relationship","RequestGroup.action.relatedAction.relationship","","","",1,1,"","","","code {[]} {[]}
+"RequestGroup.action.relatedAction.relationship","RequestGroup.action.relatedAction.relationship","","","",1,1,"Y","","","code {[]} {[]}
 ","before-start | before | before-end | concurrent-with-start | concurrent | concurrent-with-end | after-start | after | after-end","The relationship of this action to the related action.","","","","","","","","","",,"required","Defines the types of relationships between actions.","http://hl7.org/fhir/ValueSet/action-relationship-type|4.0.1","",,,,"RequestGroup.action.relatedAction.relationship",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "RequestGroup.action.relatedAction.offset[x]","RequestGroup.action.relatedAction.offset[x]","","","",0,1,"","","","Duration {[]} {[]}
@@ -218,7 +218,7 @@ Age {[]} {[]}Period {[]} {[]}Duration {[]} {[]}Range {[]} {[]}Timing {[]} {[]}",
 "RequestGroup.action.cardinalityBehavior","RequestGroup.action.cardinalityBehavior","","","",0,1,"","","","code {[]} {[]}
 ","single | multiple","Defines whether the action can be selected multiple times.","","","","","","","","","",,"required","Defines behavior for an action or a group for how many times that item may be repeated.","http://hl7.org/fhir/ValueSet/action-cardinality-behavior|4.0.1","",,,,"RequestGroup.action.cardinalityBehavior",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"RequestGroup.action.resource","RequestGroup.action.resource","","","",1,1,"Y","","","Reference {[]} {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication]]}
+"RequestGroup.action.resource","RequestGroup.action.resource","","","",1,1,"Y","","","Reference {[]} {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-request-group]]}
 ","The target of the action","The resource that is the target of the action (e.g. CommunicationRequest).","The target resource SHALL be a [Request](request.html) resource with a Request.intent set to ""option"".","","","","","","","","",,,,,"",,,,"RequestGroup.action.resource",0,1,"rqg-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
