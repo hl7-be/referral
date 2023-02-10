@@ -10,7 +10,7 @@ InstanceOf: BeReferralPrescriptionNursing
 * code = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service#tmp-samp-tion-7
 * orderDetail = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service-detail#tmp-bloo-lood-5
 * extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
-* reasonCode = $sct#44653001 //niet in Belgische module
+* reasonCode = $sct#267032009 
 * requester.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"
 * requester.identifier.value = "10829059"
 * authoredOn = "2023-02-07"
