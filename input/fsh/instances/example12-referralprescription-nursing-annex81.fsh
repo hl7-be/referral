@@ -2,25 +2,20 @@ Instance: example12-referralprescription-nursing-annex81
 InstanceOf: BeReferralPrescriptionNursing
 Title: "example12-referralprescription-nursing-annex81"
 Usage: #example
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/request-statusReason"
-* extension[=].valueCodeableConcept = http://terminology.hl7.org/CodeSystem/v3-ActReason#PATOBJ "Refused"
-* extension[+].url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period"
-* extension[=].valuePeriod.start = "2022-04-19"
-* extension[=].valuePeriod.end = "2023-04-19"
-* extension[+].extension[0].url = "role"
-* extension[=].extension[=].valueCodeableConcept = $sct#106292003 "Nurse"
-* extension[=].extension[+].url = "actor"
-* extension[=].extension[=].valueReference = Reference(practitioner2)
-* extension[=].url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-intended-performer"
-* extension[+].url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-execution-period"
-* extension[=].valuePeriod.start = "2022-04-19"
-* extension[=].valuePeriod.end = "2023-04-19"
+* contained[0] = patient1
+* contained[+] = practitioner1
+* contained[+] = practitionerrole1
+* extension[statusReason].valueCodeableConcept = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason#inProgress "In Progress"
+* extension[validity].valuePeriod.start = "2022-04-19"
+* extension[validity].valuePeriod.end = "2023-04-19"
+* extension[feedback].valueBoolean = true
+* performer[+] = Reference(practitionerrole1)
 * status = #active
 * intent = #order
 * category = $sct#9632001
 * category.text = "Nursing procedure"
 * priority = #routine
-* code = $be-cs-nursing-code#appendix-81-preparation-of-medications
+* code = $be-cs-nursing-code#tmp-prep-x081-2
 * orderDetail[0] = $be-nursing-annex81-inadequate-adherence#confused
 * orderDetail[+] = $be-nursing-annex81-inadequate-adherence-link#dementia
 * subject = Reference(patient1)

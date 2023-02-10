@@ -7,13 +7,13 @@ Usage: #example
 * contained[+] = Inline-Instance-for-laboratory-order-example1-2
 * contained[+] = media1
 * contained[+] = Inline-Instance-for-laboratory-order-example1-3
-* contained[+] = Inline-Instance-for-laboratory-order-example1-4
 * contained[+] = specimen1
-* extension[performer].extension[role].valueCodeableConcept = $sct#61246008 "Laboratory medicine specialist"
-* extension[performer].extension[actor].valueReference = Reference(practitioner1)
-* extension[statusReason].valueCodeableConcept = $be-status-reason#other "Other"
+* contained[+] = practitionerrole1
+* performer[+] = Reference(practitionerrole1)
+* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * extension[validity].valuePeriod.start = "2020-10-10"
 * extension[validity].valuePeriod.start = "2021-10-10"
+* extension[feedback].valueBoolean = true
 * extension[urgentCommunication].extension[party].valueReference = Reference(Requester1)
 * extension[urgentCommunication].extension[instructions].valueString = "Send the requester an email, when the test is done."
 * extension[urgentCommunication].extension[contactway].extension[contactSystem].valueCodeableConcept = $contact-point-system_1#email "email"
@@ -30,7 +30,7 @@ Usage: #example
 * orderDetail[+] = $loinc#20563-3 "Carboxyhemoglobin/Hemoglobin.total in Blood"
 * orderDetail[+].text = "Test described in text only"
 * subject = Reference(patient1)
-* authoredOn = "2015-11-01T14:41:00+01:00"
+* authoredOn = "2015-11-01"
 * requester = Reference(Requester1)
 * reasonCode = $some_nomenclature_system#123 "TheJustification"
 * supportingInfo[0] = Reference(observation1)

@@ -3,14 +3,72 @@ fhirVersion: 4.0.1
 FSHOnly: false
 applyExtensionMetadataToRoot: false
 id: hl7.fhir.be.referral
-name: HL7 BE Referral Prescription WG Implementation Guide (work in progress)
-title: HL7 BE Referral Prescription WG Implementation Guide (work in progress)
+name: Referral Prescription
+title: Referral Prescription
 status: draft
-version: 0.2.0
+version: 1.0.0
 copyrightYear: 2022+
 releaseLabel: STU
+jurisdiction: urn:iso:std:iso:3166#BE "Belgium"
 dependencies:
-  hl7.fhir.be.core: 2.0.0
+  hl7.fhir.be.core: 2.0.1
   hl7.fhir.be.medication: 1.0.0
   hl7.fhir.be.core-clinical: 1.0.0
-  hl7.fhir.be.allergy: 1.0.0
+  hl7.fhir.be.allergy: 1.0.1
+
+# The pages property corresponds to IG.definition.page. SUSHI can
+# auto-generate the page list, but if the author includes pages in
+# this file, it is assumed that the author will fully manage the
+# pages section and SUSHI will not generate any page entries.
+# The page file name is used as the key. If title is not provided,
+# then the title will be generated from the file name.  If a
+# generation value is not provided, it will be inferred from the
+# file name extension.  Any subproperties that are valid filenames
+# with supported extensions (e.g., .md/.xml) will be treated as
+# sub-pages.
+pages:
+  index.xml:
+    title: Home
+  guidance.md:
+  changes.md:
+  downloads.xml:
+  
+# The ImplementationGuide resource defines several other properties
+# not represented above. These properties can be used as-is and
+# should follow the format defined in ImplementationGuide:
+# * meta
+# * implicitRules
+# * language
+# * text
+# * contained
+# * extension
+# * modifierExtension
+# * experimental
+# * useContext
+# * copyright
+# * packageId
+
+# The menu property will be used to generate the input/menu.xml file.
+# The menu is represented as a simple structure where the YAML key
+# is the menu item name and the value is the URL. The IG publisher
+# currently only supports one level deep on sub-menus.
+# To provide a custom menu.xml file, do not include this property and
+# include a `menu.xml` file in input/includes.
+menu:
+  Home: index.html
+  Guidance: guidance.html
+  Artifacts:
+    Profiles: artifacts.html#2
+    Extensions: artifacts.html#3
+    Value Sets: artifacts.html#4
+  Downloads: downloads.html
+  Changes: changes.html
+  History: "https://www.ehealth.fgov.be/standards/fhir/referral/history.html"
+
+
+parameters:
+  shownav: 'true'
+  apply-contact: 'true'
+  apply-jurisdiction: 'true'
+  apply-publisher: 'true'
+  apply-version: 'true' 

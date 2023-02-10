@@ -3,6 +3,8 @@ InstanceOf: ValueSet
 Title: "BeReferralCategory"
 Description: "Codes to define the high level category for a referral prescription. SNOMED-CT codes in this valueset are just a draft proposal to give a general idea - pending an official valueset."
 Usage: #definition
+* experimental = false
+* title = "BeReferralCategory"
 * url = "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-referral-category"
 * version = "0.2.0"
 * name = "BeReferralCategory"

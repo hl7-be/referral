@@ -1,9 +1,11 @@
 ValueSet: BeCommunicationMethod
+Title: "BeCommunicationMethod"
 Id: be-vs-communication-method
 Description: "Codes to define a communication method."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-communication-method"
 * ^version = "0.2.0"
 * ^status = #draft
+* ^experimental = false
 * ^date = "2022-05-03T10:04:16+02:00"
 * ^publisher = "HL7 Belgium"
 * ^contact[0].name = "HL7 Belgium"
@@ -14,5 +16,7 @@ Description: "Codes to define a communication method."
 * ^contact[=].telecom.value = "message-structure@ehealth.fgov.be"
 * ^contact[=].telecom.use = #work
 * ^jurisdiction = $jurisdiction#BE "Belgium"
+* ^experimental = false
 * include codes from system BeCommunicationCode
+* ^experimental = false
 * include codes from system $contact-point-system

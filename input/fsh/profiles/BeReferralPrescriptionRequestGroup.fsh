@@ -20,6 +20,11 @@ Description: "Envelope that allows different referralprescriptions to have an or
 * identifier[UHMEP].value 1..
 * action 1.. MS
 * action ^short = "At least one referral prescription"
+* action.id MS
 * action.relatedAction MS
+* action.relatedAction.actionId MS
+* action.relatedAction.relationship MS
 * action.resource 1.. MS
-* action.resource only Reference(BeReferralPrescription or BeReferralPrescriptionNursingMedication)
+//* action.resource only Reference(BeReferralPrescription /* or BeReferralPrescriptionNursingMedication */ or BeReferralPrescriptionRequestGroup)
+* action.resource only Reference(BeReferralPrescription or BeReferralPrescriptionRequestGroup)
+* groupIdentifier MS

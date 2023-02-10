@@ -2,19 +2,21 @@ Instance: referralprescription-nursing-example6-compression-therapy
 InstanceOf: BeReferralPrescriptionNursing
 Title: "referralprescription-nursing-example6-compression-therapy"
 Usage: #example
+* contained[0] = patient1
+* contained[+] = practitioner1
+* contained[+] = practitionerrole1
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-compressiontherapy"
-* extension[statusReason].valueCodeableConcept = $be-status-reason#other "Other"
-* extension[performer].extension[role].valueCodeableConcept = $sct#106292003 "Nurse"
-* extension[performer].extension[actor].valueReference = Reference(practitioner2)
+* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
+* performer[+] = Reference(practitionerrole1)
 * extension[validity].valuePeriod.start = "2020-01-01"
 * extension[validity].valuePeriod.end = "2021-01-01"
+* extension[feedback].valueBoolean = true
 * status = #active
 * intent = #order
 * category = $sct#9632001
 * category.text = "Nursing procedure"
 * priority = #routine
-* code = $be-cs-nursing-code#compression-therapy
-* orderDetail = $be-cs-nursing-code-compressiontherapy#compression-stockings
+* code = $be-cs-nursing-code#tmp-comp-ings-8
 * subject = Reference(patient1)
 * occurrenceTiming.repeat.boundsPeriod.start = "2022-04-19"
 * occurrenceTiming.repeat.boundsPeriod.end = "2023-04-19"

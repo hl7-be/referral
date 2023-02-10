@@ -14,12 +14,12 @@ Description: "The nursing profile, generic version. Please note the nursing refe
 * ^contact[=].telecom.value = "message-structure@ehealth.fgov.be"
 * ^contact[=].telecom.use = #work
 * ^jurisdiction = $jurisdiction#BE "Belgium"
-* obeys annex-81 and chron-psych and gen
 * category.coding.system = "http://snomed.info/sct" (exactly)
 * category.coding.code = #9632001 (exactly)
 * code 1..
-* code from BeNursingType (required)
+* code from be-vs-requested-services-nurse (required)
 * orderDetail ^short = "Details of the nursing activity"
+* orderDetail from be-vs-requested-services-nurse-detail
 * asNeeded[x] MS
 * supportingInfo MS
 * bodySite MS

@@ -2,9 +2,12 @@ Instance: diagnostic-imaging-basic-example-useOfModality
 InstanceOf: BeReferralPrescriptionDiagnosticImaging
 Title: "diagnostic-imaging-basic-example-useOfModality"
 Usage: #example
-* extension[statusReason].valueCodeableConcept = $be-status-reason#other "Other"
+* contained[0] = patient1
+* contained[+] = practitioner1
+* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * extension[validity].valuePeriod.start = "2020-01-01"
 * extension[validity].valuePeriod.end = "2021-01-01"
+* extension[feedback].valueBoolean = true
 * modifierExtension[0].url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-contraindication"
 * modifierExtension[=].valueCodeableConcept = $v3-NullFlavor#ASKU "asked but unknown"
 * modifierExtension[+].url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-contrastfluiduse"
@@ -18,7 +21,6 @@ Usage: #example
 * orderDetail[+] = $DCM#US "Ultrasound"
 * subject = Reference(patient1)
 * requester = Reference(practitioner1)
-* extension[performer].extension[role].valueCodeableConcept = $sct#66862007 "Radiologist"
 * reasonCode.text = "Fractuur? Ligamentair letsel?"
 * supportingInfo = Reference(condition1)
 * bodySite = $sct#7769000 "Structure of right foot (body structure)"
