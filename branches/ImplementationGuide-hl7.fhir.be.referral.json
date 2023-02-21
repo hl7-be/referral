@@ -10,7 +10,7 @@
   "name" : "ReferralPrescription",
   "title" : "Referral Prescription",
   "status" : "draft",
-  "date" : "2023-02-10T15:47:03+00:00",
+  "date" : "2023-02-21T10:12:27+00:00",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -53,7 +53,7 @@
     "id" : "hl7_fhir_be_allergy",
     "uri" : "https://www.ehealth.fgov.be/standards/fhir/allergy/ImplementationGuide/hl7.fhir.be.allergy",
     "packageId" : "hl7.fhir.be.allergy",
-    "version" : "1.0.1"
+    "version" : "1.1.0"
   }],
   "definition" : {
     "extension" : [{
@@ -130,6 +130,17 @@
       {
         "url" : "value",
         "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-expansion-params"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Parameters-terminology-expansion.json"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -405,6 +416,17 @@
       {
         "url" : "value",
         "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-expansion-params"
+      },
+      {
+        "url" : "value",
+        "valueString" : "Parameters-terminology-expansion.json"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -1057,6 +1079,7 @@
         "reference" : "ValueSet/be-vs-co-prescriber-choice"
       },
       "name" : "BeVsCoPrescriberChoice",
+      "description" : "Type of intended performer choice",
       "exampleBoolean" : false
     },
     {
@@ -1645,6 +1668,17 @@
       },
       "name" : "referralprescription-nursing-example6-compression-therapy",
       "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Parameters"
+      }],
+      "reference" : {
+        "reference" : "Parameters/terminology-expansion"
+      },
+      "name" : "terminology-expansion",
+      "exampleBoolean" : true
     },
     {
       "extension" : [{

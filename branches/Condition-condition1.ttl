@@ -11,7 +11,7 @@
   fhir:Resource.id [ fhir:value "condition1"]; # 
   fhir:DomainResource.text [
      fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Condition</b><a name=\"condition1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Condition &quot;condition1&quot; </p></div><p><b>verificationStatus</b>: Confirmed <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-condition-ver-status.html\">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>code</b>: Foot inversion <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#13130004)</span></p><p><b>bodySite</b>: Right foot <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#7769000)</span></p><p><b>subject</b>: <a href=\"Patient-patient1.html\">Patient/patient1</a> &quot; DOE&quot;</p><p><b>onset</b>: 2012-05-24</p></div>"
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Condition</b><a name=\"condition1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Condition &quot;condition1&quot; </p></div><p><b>verificationStatus</b>: Confirmed <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-condition-ver-status.html\">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>code</b>: Foot inversion <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#13130004)</span></p><p><b>bodySite</b>: Right foot <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#7769000)</span></p><p><b>subject</b>: <a href=\"Patient-patient1.html\">Patient/patient1</a> &quot; DOE&quot;</p><p><b>onset</b>: 2012-05-24</p></div>"
   ]; # 
   fhir:Condition.verificationStatus [
      fhir:CodeableConcept.coding [
@@ -25,6 +25,7 @@
        fhir:index 0;
        a sct:13130004;
        fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ];
        fhir:Coding.code [ fhir:value "13130004" ];
        fhir:Coding.display [ fhir:value "Foot inversion" ]
      ]
@@ -35,6 +36,7 @@
        fhir:index 0;
        a sct:7769000;
        fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ];
        fhir:Coding.code [ fhir:value "7769000" ];
        fhir:Coding.display [ fhir:value "Right foot" ]
      ]
