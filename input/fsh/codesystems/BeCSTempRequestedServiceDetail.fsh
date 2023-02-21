@@ -6,6 +6,7 @@ Description: "Temporary codes for indicating service details that can be request
 * ^content = #complete
 * ^version = "0.2.0"
 * ^caseSensitive = true
+* ^experimental = false
 * #tmp-nurs-osis-7 "Nursing diagnosis"
 * #tmp-nurs-osis-7 ^designation[0].language = #fr-BE
 * #tmp-nurs-osis-7 ^designation[=].value = "Diagnostic infirmier"

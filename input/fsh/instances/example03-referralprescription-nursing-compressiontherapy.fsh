@@ -17,7 +17,7 @@ Usage: #example
 * category = $sct#9632001
 * category.text = "Nursing procedure"
 * priority = #routine
-* code = $be-cs-nursing-code#tmp-comp-dage-3
+* code = $sct#413899004
 * subject = Reference(patient1)
 * occurrenceTiming.repeat.boundsPeriod.start = "2022-04-19"
 * occurrenceTiming.repeat.boundsPeriod.end = "2023-04-19"
