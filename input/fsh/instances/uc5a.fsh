@@ -8,7 +8,7 @@ Note importante : La partie précisant que la demande d'analyse concerne le gluc
 Instance: uc5a-1
 InstanceOf: BeReferralPrescriptionNursing
 * code = $sct#413899004
-* orderDetail = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service-detail#tmp-bloo-lood-5
+* orderDetail = $sct#87612001
 * extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * reasonCode = $sct#267032009 
 * requester.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"
