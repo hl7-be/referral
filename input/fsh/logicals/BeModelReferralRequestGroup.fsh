@@ -1,5 +1,5 @@
 Logical: BeModelReferralRequestGroup
-Parent: Element
+Title: "BeModelReferralRequestGroup"
 Id: be-model-referral-requestgroup
 Description: "Logical model describing the model for a group of referral prescriptions. This draft is used in the HL7 Belgian workgroup for referral."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-model-referral-requestgroup"

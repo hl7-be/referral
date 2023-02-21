@@ -20,7 +20,7 @@ InstanceOf: BeReferralPrescriptionNursing
 * performer[+].identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
 * performer[=].identifier.value = #persnurse
 * reasonCode = $sct#44653001 //niet in Belgische module
-* code =  https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service#tmp-drug-tion-9
+* code =  $sct#385796006
 * status = #active
 * intent = #order
 * category = $sct#9632001 //niet in Belgische module
@@ -35,7 +35,7 @@ Instance: referral-task-uc2a-1 //we cannot throw it away, because we need the st
 InstanceOf: BeReferralTask
 * status = #draft
 * intent = #order
-* statusReason = #blacklistedcaregiver
+* statusReason = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-treatment-status-reason#blacklistedcaregiver
 * basedOn = Reference(uc2a-1)
 * executionPeriod.start = "2023-01-28"
 * executionPeriod.end = "2023-03-02"
@@ -82,7 +82,7 @@ Usage: #example
 
 Instance: uc2a-2
 InstanceOf: BeReferralPrescriptionNursing
-* code = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service#tmp-comp-dage-3
+* code = $sct#413899004
 * orderDetail = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service-detail#tmp-long-etch-2
 * extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * reasonCode = $sct#44653001 //niet in Belgische module
@@ -106,7 +106,7 @@ InstanceOf: BeReferralPrescriptionNursing
 Instance: uc2a-3
 InstanceOf: BeReferralPrescriptionNursing
 * extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
-* code = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service#tmp-comp-ings-8
+* code = $sct#225420001
 * reasonCode = $sct#44653001 //niet in Belgische module
 * requester.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"
 * requester.identifier.value = "10829059"

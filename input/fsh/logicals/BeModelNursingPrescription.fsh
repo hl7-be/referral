@@ -1,5 +1,6 @@
 Logical: BeModelNursingPrescription
 Parent: BeModelReferralPrescription
+Title: "BeModelNursingPrescription"
 Id: be-model-nursingprescription
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-model-nursingprescription"
 * ^status = #draft
@@ -15,7 +16,6 @@ Id: be-model-nursingprescription
 * ^jurisdiction.coding.system = "urn:iso:std:iso:3166"
 * ^jurisdiction.coding.code = #BE
 * ^jurisdiction.coding.display = "Belgium"
-* ^type = "BeNursingPrescription"
 * serviceRequestNumber 0..1 positiveInt "number of sessions prescribed" "number of sessions prescribed"
 * serviceRequestFrequency 0..1 CodeableConcept "frequency of the treatment" "frequency of the treatment"
 * serviceRequestDayPeriod 0..* CodeableConcept "period of the day on which the treatment must take place" "period of the day on which the treatment must take place"

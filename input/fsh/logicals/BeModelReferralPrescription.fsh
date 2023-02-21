@@ -1,6 +1,7 @@
 Logical: BeModelReferralPrescription
-Parent: Element
+//Parent: Element
 Id: be-model-referralprescription
+Title: "BeModelReferralPrescription"
 Description: "Logical model describing the model for the prescription referral. This draft is used in the HL7 Belgian workgroup for referral."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-model-referralprescription"
 * ^version = "0.2.0"
@@ -17,8 +18,6 @@ Description: "Logical model describing the model for the prescription referral. 
 * ^jurisdiction.coding.system = "urn:iso:std:iso:3166"
 * ^jurisdiction.coding.code = #BE
 * ^jurisdiction.coding.display = "Belgium"
-* ^type = "BeReferralPrescription"
-* . ^definition = "Logical model describing the model for the prescription referral. This draft is used in the HL7 Belgian workgroup for referral."
 * recordedDate 1..1 dateTime "When this prescription was created" "When this prescription was created"
 * recorder 1..1 Reference "The person who is responsable for the content, not necessarily the person who entered the content. This is either the prescriber, a co-prescriber or a performer" "The person who is responsable for the content, not necessarily the person who entered the content. This is either the prescriber, a co-prescriber or a performer"
 * prescriber 1..1 Reference "The prescribing healthcare party" "The prescribing healthcare party"

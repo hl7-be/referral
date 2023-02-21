@@ -15,7 +15,8 @@ Usage: #example
 * category = $sct#9632001
 * category.text = "Nursing procedure"
 * priority = #routine
-* code = $be-cs-nursing-code#tmp-prep-x081-2
+* code = $sct#385796006
+
 * orderDetail[0] = $be-nursing-annex81-inadequate-adherence#confused
 * orderDetail[+] = $be-nursing-annex81-inadequate-adherence-link#dementia
 * subject = Reference(patient1)

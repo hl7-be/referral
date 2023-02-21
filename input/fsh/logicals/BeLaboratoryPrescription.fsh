@@ -1,6 +1,7 @@
 Logical: BeLaboratoryPrescription
 Parent: BeModelReferralPrescription
 Id: be-model-laboratoryprescription
+Title: "BeLaboratoryPrescription"
 Description: "Logical model describing the model for the prescription laboratory. This draft is used in the HL7 Belgian workgroup for laboratory."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-model-laboratoryprescription"
 * ^status = #draft
@@ -16,5 +17,3 @@ Description: "Logical model describing the model for the prescription laboratory
 * ^jurisdiction.coding.system = "urn:iso:std:iso:3166"
 * ^jurisdiction.coding.code = #BE
 * ^jurisdiction.coding.display = "Belgium"
-* ^type = "BeLaboratoryPrescription"
-* . ^definition = "Logical model describing the model for the prescription laboratory. This draft is used in the HL7 Belgian workgroup for laboratory."
