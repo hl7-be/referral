@@ -7,7 +7,7 @@ Note importante : La partie précisant que la demande d'analyse concerne le gluc
 
 Instance: uc5a-1
 InstanceOf: BeReferralPrescriptionNursing
-* code = $sct#413899004
+* code = $sct#17636008
 * orderDetail = $sct#87612001
 * extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * reasonCode = $sct#267032009 
@@ -26,8 +26,9 @@ InstanceOf: BeReferralPrescriptionNursing
 * occurrenceTiming.repeat.count = 1
 * performer[+].identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
 * performer[=].identifier.value = #persnurse
-* bodySite.extension[bodyLaterality].valueCoding = http://snomed.info/sct#419161000
-* bodySite.coding = http://snomed.info/sct#3556003 
+* bodySite.extension[bodyLaterality].valueCoding = $sct#419161000
+* bodySite.coding = $sct#14975008
+ 
 
 Instance: referral-task-uc5a-1 //we cannot throw it away, because we need the statusReason!!!
 InstanceOf: BeReferralTask
