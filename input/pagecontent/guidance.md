@@ -101,13 +101,13 @@ When describing the prescription of multiple actions, we showed that multiple re
 
 As prescription is a form that represents the question from one practitioner to another to perform a particular task. The prescription has some statuses, e.g., it can be in draft, it can be active, it can be completed. Next to the prescription, there is also the task, which also has some statuses: it can (e.g.) be on hold, in progress or completed. These are different things, but the referral prescription system wants to keep information about the two things.
 
-Therefore, there are two resources that are handled at the same time, the request and the task. The task is linked to the request using an extension, the TaskReference. The task referred to in the TaskReference SHALL be present in the contained section of the Request. The task has no life independent of the Request.
+Therefore, there are two resources that are handled at the same time, the request and the task with the profile BeReferralTask.
 
 #### Many performers for one prescription
 
 There is a clear difference between a prescription and the task associated with the prescription. However, if the prescription contains a repeated action, and is possibly spread over a longer period of time, the task can be executed by different performers. Each performer will perform a part of the task, and all parts together are the full task as prescribed by the prescription.
 
-Therefore there is the possibility to split up the general task in TaskReference in several subtasks by different performers. These tasks are kept in the extension PerformerTasks. Each performer will have its own task, in which he or she can indicate when the subtask was started and when it was ended. The combination of the time indications in the PerformerTasks make up the duration of the TaskReference, and the statuses of the PerformerTasks make up the status of the TaskReference.
+Therefore there is the possibility to split up the general task (BeReferralTask) in several subtasks by different performers. Each performer will have its own task (BePerformerTask), in which he or she can indicate when the subtask was started and when it was ended. The combination of the time indications in the PerformerTasks make up the duration of the BeReferralTask, and the statuses of the PerformerTasks make up the status of the BeReferralTask.
 
 ### Specifics concerning the referral prescription for diagnostic imaging
 
