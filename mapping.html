@@ -1,13 +1,9 @@
-<!-- get modelType -->
-
-
-
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE HTML>
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>HL7.FHIR.BE.REFERRAL\BeContrastFluidUse - Testing - FHIR v4.0.1</title>
+    <title>HL7.FHIR.BE.REFERRAL\Mapping - FHIR v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -52,8 +48,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"6.20"}
-    h3,h4,h5,h6{--heading-prefix:"6.20"}</style>
+    <style type="text/css">h2{--heading-prefix:"5"}
+    h3,h4,h5,h6{--heading-prefix:"5"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -156,15 +152,15 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>BeContrastFluidUse</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Mapping</b></li>
 
           <span style="float:right;">
 
-            <a href="StructureDefinition-be-ext-contrastfluiduse-mappings.html">&lt;prev</a> | 
+            <a href="downloads.html">&lt;prev</a> | 
 
             <a href="#bottom">bottom</a>
 
-          | <a href="StructureDefinition-be-ext-contrastfluiduse.profile.xml.html">next&gt;</a>
+          | <a href="artifacts.html">next&gt;</a>
 
           </span>
 
@@ -178,8 +174,16 @@
         <div class="row">
           <div class="inner-wrapper">
 
-<div style="counter-reset: section 6" class="col-12">
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
   <!--ReleaseHeader--><p id="publish-box">Referral Prescription - Local Development build (v1.0.0). See the <a href="https://www.ehealth.fgov.be/standards/fhir/referral/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Mapping</h2>
   
 
 
@@ -192,86 +196,189 @@
 
 
 
-<ul class="nav nav-tabs">
 
-  <li>
-    <a href="StructureDefinition-be-ext-contrastfluiduse.html">Content</a>
-  </li>
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<h3 id="mapping-from-the-logical-model-to-the-profiled-resource">Mapping from the logical model to the profiled resource</h3>
 
+<h4 id="bemodelreferralprescription-to-bereferralprescription">BeModelReferralPrescription to BeReferralPrescription</h4>
 
-
-  <li>
-    <a href="StructureDefinition-be-ext-contrastfluiduse-definitions.html">Detailed Descriptions</a>
-  </li>
-
-
-
-  
-    <li>
-      <a href="StructureDefinition-be-ext-contrastfluiduse-mappings.html">Mappings</a>
-    </li>
-  
-
-
-
-
-
-
-
-  
-    <li>
-      <a href="StructureDefinition-be-ext-contrastfluiduse.profile.xml.html">XML</a>
-    </li>
-  
-
-
-  
-    <li>
-      <a href="StructureDefinition-be-ext-contrastfluiduse.profile.json.html">JSON</a>
-    </li>
-  
-
-
-  
-    <li>
-      <a href="StructureDefinition-be-ext-contrastfluiduse.profile.ttl.html">TTL</a>
-    </li>
-  
-
-
-</ul>
-
-
-  <a name="root"> </a>
-  <h2 id="root">Extension: BeContrastFluidUse - Testing</h2>
-  <table class="colsd">
+<table>
+  <thead>
     <tr>
-
-      <td colspan="2">
-        
-          Draft
-          
-            as of 2021-07-15
-          
-        
-      </td>
-
+      <th>Logical Model</th>
+      <th>Profiled Resource</th>
     </tr>
-  </table>
-
-
-
-
-  <p><b>No TestScripts are currently available for the  Profile.</b></p>
-
-
-<!-- insert notes if present -->
-
+  </thead>
+  <tbody>
+    <tr>
+      <td>recordedDate</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).authoredOn</td>
+    </tr>
+    <tr>
+      <td>recorder</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).extension[BeExtRecorder].valueReference</td>
+    </tr>
+    <tr>
+      <td>prescriber</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).requester</td>
+    </tr>
+    <tr>
+      <td>co-prescriberNumber</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).extension[BeCoPrescriberInfo].extension[coprescriberNumber].valuePositiveInt</td>
+    </tr>
+    <tr>
+      <td>co-prescriber</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).extension[BeCoPrescriberInfo].extension[coprescriber]</td>
+    </tr>
+    <tr>
+      <td>co-prescriber.co-prescriber</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).extension[BeCoPrescriberInfo].extension[coprescriber].extension[coprescriber].valueReference</td>
+    </tr>
+    <tr>
+      <td>co-prescriber.co-prescriberType</td>
+      <td>PractitionerRole.code</td>
+    </tr>
+    <tr>
+      <td>co-prescriber.status</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).extension[BeCoPrescriberInfo].extension[coprescriber].extension[coprescriptionStatus].valueCodeableConcept</td>
+    </tr>
+    <tr>
+      <td>co-prescriber.required</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).extension[BeCoPrescriberInfo].extension[coprescriber].extension[coprescriptionStatus].valueCodeableConcept</td>
+    </tr>
+    <tr>
+      <td>patient</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).subject</td>
+    </tr>
+    <tr>
+      <td>prescriptionNumber</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).identifier</td>
+    </tr>
+    <tr>
+      <td>pssNumber</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).extension[BePSSInfo].extension[guidanceResponse].valueReference.identifier</td>
+    </tr>
+    <tr>
+      <td>pssRejectionReason</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).extension[BePSSInfo].extension[rejectionReason].valueAnnotation</td>
+    </tr>
+    <tr>
+      <td>groupIdentifier</td>
+      <td>groupIdentifier</td>
+    </tr>
+    <tr>
+      <td>basedOn</td>
+      <td>basedOn</td>
+    </tr>
+    <tr>
+      <td>validationPeriod</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).extension[BeValidityPeriod].valuePeriod</td>
+    </tr>
+    <tr>
+      <td>treatmentPeriod</td>
+      <td>Task(BeReferralTask).executionPeriod</td>
+    </tr>
+    <tr>
+      <td>treatmentValidationEndDate</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).extension[BeLatestEndDate].valueDate</td>
+    </tr>
+    <tr>
+      <td>creationEndDate</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).extension[BeLatestDraft].valueDate</td>
+    </tr>
+    <tr>
+      <td>intendedPerformer</td>
+      <td>Task(BePerformerTask)</td>
+    </tr>
+    <tr>
+      <td>intendedPerformer.performer</td>
+      <td>Task(BePerformerTask).owner + PractitionerRole.practitioner</td>
+    </tr>
+    <tr>
+      <td>intendedPerformer.discipline</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).performer</td>
+    </tr>
+    <tr>
+      <td>intendedPerformer.period</td>
+      <td>Task(BePerformerTask).executionPeriod</td>
+    </tr>
+    <tr>
+      <td>intendedPerformer.organization</td>
+      <td>Task(BePerformerTask).owner + PractitionerRole.organization</td>
+    </tr>
+    <tr>
+      <td>intendedPerformer.status</td>
+      <td>Task(BePerformerTask).status</td>
+    </tr>
+    <tr>
+      <td>intendedPerformer.statusReason</td>
+      <td>Task(BePerformerTask).statusReason</td>
+    </tr>
+    <tr>
+      <td>ServiceRequested</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).code</td>
+    </tr>
+    <tr>
+      <td>ServiceRequestedDetail</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).orderDetail</td>
+    </tr>
+    <tr>
+      <td>problemCode</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).reasonCode</td>
+    </tr>
+    <tr>
+      <td>supportingInfo</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).supportingInfo</td>
+    </tr>
+    <tr>
+      <td>resultReceiver</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).extension[BeFeedbackToPrescriber].valueBoolean</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).status</td>
+    </tr>
+    <tr>
+      <td>statusReason</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).extension[statusReason].valueCodeableConcept</td>
+    </tr>
+    <tr>
+      <td>treatmentStatus</td>
+      <td>Task(BeReferralTask).status</td>
+    </tr>
+    <tr>
+      <td>treatmentStatusReason</td>
+      <td>Task(BeReferralTask).statusReason</td>
+    </tr>
+    <tr>
+      <td>bodyLocation</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).bodySite</td>
+    </tr>
+    <tr>
+      <td>bodyLocation.bodySite</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).bodySite</td>
+    </tr>
+    <tr>
+      <td>bodyLocation.bodyLaterality</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).bodySite.extension[BeExtBodyLaterality].valueCodeableConcept</td>
+    </tr>
+    <tr>
+      <td>note</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).note</td>
+    </tr>
+    <tr>
+      <td>prescriptionType</td>
+      <td>ServiceRequest(BeReferralPrescriptionNursing).intent + ServiceRequest(BeReferralPrescriptionNursing).extension[BeProposalType].valueCodeableConcept</td>
+    </tr>
+  </tbody>
+</table>
 
 
 
 </div>
-
         </div>  <!-- /inner-wrapper -->
       </div>  <!-- /row -->
     </div>  <!-- /container -->
@@ -279,29 +386,6 @@
 
   <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
   <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
-
-  <script type="text/javascript">
-    try {
-      var currentTabIndex = sessionStorage.getItem('fhir-resource-tab-index');
-    } catch(exception) {
-    }
-
-    if (!currentTabIndex)
-      currentTabIndex = '0';
-
-    $( '#tabs' ).tabs({
-      active: currentTabIndex,
-      activate: function( event, ui ) {
-        var active = $('.selector').tabs('option', 'active');
-        currentTabIndex = ui.newTab.index();
-        document.activeElement.blur();
-        try {
-          sessionStorage.setItem('fhir-resource-tab-index', currentTabIndex);
-        } catch(exception) {
-        }
-      }
-    });
-  </script>
 
   <script type="text/javascript">
     $(document).ready(function(){
@@ -320,7 +404,7 @@
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="StructureDefinition-be-ext-contrastfluiduse-mappings.html">&lt;prev</a>
+                <a href="downloads.html">&lt;prev</a>
 
               </td>
               <td style="text-align:center">
@@ -328,7 +412,7 @@
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="StructureDefinition-be-ext-contrastfluiduse.profile.xml.html">next&gt;</a>
+                <a href="artifacts.html">next&gt;</a>
 
               </td>
             </tr>

@@ -5,47 +5,32 @@
 
 # - resource -------------------------------------------------------------------
 
-<https://www.ehealth.fgov.be/standards/fhir/referral/Practitioner/practitioner2> a fhir:Practitioner;
-  fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "practitioner2"]; # 
-  fhir:Resource.meta [
-     fhir:Meta.profile [
-       fhir:value "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitioner";
-       fhir:index 0;
+<https://www.ehealth.fgov.be/standards/fhir/referral/Practitioner/practitioner2> a fhir:Practitioner ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "practitioner2"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitioner"^^xsd:anyURI ;
        fhir:link <https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitioner>
-     ]
-  ]; # 
-  fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Practitioner</b><a name=\"practitioner2\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Practitioner &quot;practitioner2&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"https://www.ehealth.fgov.be/standards/fhir/core/2.0.0/StructureDefinition-be-practitioner.html\">Practitioner core BE profile</a></p></div><p><b>identifier</b>: id: 8888888888 (use: OFFICIAL)</p><p><b>name</b>: Christopher Chapel (OFFICIAL), Mr.Nurse (NICKNAME)</p></div>"
-  ]; # 
-  fhir:Practitioner.identifier [
-     fhir:index 0;
-     fhir:Identifier.use [ fhir:value "official" ];
-     fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi" ];
-     fhir:Identifier.value [ fhir:value "8888888888" ]
-  ]; # 
-  fhir:Practitioner.name [
-     fhir:index 0;
-     fhir:HumanName.use [ fhir:value "official" ];
-     fhir:HumanName.family [ fhir:value "Chapel" ];
-     fhir:HumanName.given [
-       fhir:value "Christopher";
-       fhir:index 0
-     ]
-  ], [
-     fhir:index 1;
-     fhir:HumanName.use [ fhir:value "nickname" ];
-     fhir:HumanName.given [
-       fhir:value "Mr.Nurse";
-       fhir:index 0
-     ]
-  ] . # 
-
-# - ontology header ------------------------------------------------------------
-
-<https://www.ehealth.fgov.be/standards/fhir/referral/Practitioner/practitioner2.ttl> a owl:Ontology;
-  owl:imports fhir:fhir.ttl .
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Practitioner</b><a name=\"practitioner2\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Practitioner &quot;practitioner2&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"https://build.fhir.org/ig/hl7-be/core//StructureDefinition-be-practitioner.html\">BePractitioner</a></p></div><p><b>identifier</b>: id: 8888888888 (use: OFFICIAL)</p><p><b>name</b>: Christopher Chapel (OFFICIAL), Mr.Nurse (NICKNAME)</p></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:system [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "8888888888" ]
+  ] ) ; # 
+  fhir:name ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:family [ fhir:v "Chapel" ] ;
+     fhir:given ( [ fhir:v "Christopher" ] )
+  ] [
+     fhir:use [ fhir:v "nickname" ] ;
+     fhir:given ( [ fhir:v "Mr.Nurse" ] )
+  ] ) . # 
 
 # -------------------------------------------------------------------------------------
 

@@ -1,5 +1,5 @@
 @prefix fhir: <http://hl7.org/fhir/> .
-@prefix loinc: <http://loinc.org/rdf#> .
+@prefix loinc: <https://loinc.org/rdf/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sct: <http://snomed.info/id/> .
@@ -7,483 +7,385 @@
 
 # - resource -------------------------------------------------------------------
 
-<https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/laboratory-order-example1> a fhir:ServiceRequest;
-  fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "laboratory-order-example1"]; # 
-  fhir:Resource.meta [
-     fhir:Meta.profile [
-       fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-lab-prescription";
-       fhir:index 0;
+<https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/laboratory-order-example1> a fhir:ServiceRequest ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "laboratory-order-example1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-lab-prescription"^^xsd:anyURI ;
        fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-lab-prescription>
-     ]
-  ]; # 
-  fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "extensions" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: ServiceRequest</b><a name=\"laboratory-order-example1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource ServiceRequest &quot;laboratory-order-example1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-lab-prescription.html\">BeLabPrescription</a></p></div><p><b>BeFeedbackToPrescriber</b>: true</p><p><b>BeValidityPeriod</b>: 2021-10-10 --&gt; (ongoing)</p><p><b>Reason for current status</b>: In progress <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-be-prescription-status-reason.html\">BePrescriptionStatusReason</a>#inProgress)</span></p><blockquote><p><b>BeUrgentCommunication</b></p><p><b>value</b>: <a name=\"Requester1\"> </a></p><blockquote><p/><p><a name=\"Requester1\"> </a></p><p><b>identifier</b>: id: 8888888888 (use: OFFICIAL)</p><p><b>name</b>: Henry Seven (OFFICIAL)</p><p><b>telecom</b>: ph: 322882299(HOME)</p><p><b>address</b>: Werkstraat 26, 1000 Brussel(WORK)</p></blockquote><p><b>value</b>: Send the requester an email, when the test is done.</p></blockquote><p><b>identifier</b>: id: XXXXXX</p><p><b>status</b>: active</p><p><b>intent</b>: original-order</p><p><b>category</b>: Laboratory test <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#15220000)</span></p><p><b>priority</b>: stat</p><p><b>code</b>: Hematology studies (set) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#18723-7)</span></p><p><b>orderDetail</b>: Erythrocyte sedimentation rate <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#30341-2)</span>, Erythrocytes [#/volume] in Blood by Automated count <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#789-8)</span>, Carboxyhemoglobin/Hemoglobin.total in Blood <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#20563-3)</span>, Test described in text only <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ()</span></p><p><b>subject</b>: <a name=\"patient1\"> </a></p><blockquote><p/><p><a name=\"patient1\"> </a></p><p><b>identifier</b>: id: 9999999999 (use: OFFICIAL)</p><p><b>name</b>: Jane Doe </p><p><b>telecom</b>: ph: 322672299(HOME)</p><p><b>gender</b>: female</p><p><b>birthDate</b>: 1956-05-27</p><p><b>address</b>: Labradorstraat 26, 1000 Brussel(HOME)</p></blockquote><p><b>authoredOn</b>: 2015-11-01</p><p><b>requester</b>: <a name=\"Requester1\"> </a></p><blockquote><p/><p><a name=\"Requester1\"> </a></p><p><b>identifier</b>: id: 8888888888 (use: OFFICIAL)</p><p><b>name</b>: Henry Seven (OFFICIAL)</p><p><b>telecom</b>: ph: 322882299(HOME)</p><p><b>address</b>: Werkstraat 26, 1000 Brussel(WORK)</p></blockquote><p><b>performer</b>: <a name=\"practitionerrole1\"> </a></p><blockquote><p/><p><a name=\"practitionerrole1\"> </a></p><p><b>identifier</b>: id: 23</p><p><b>active</b>: true</p><p><b>period</b>: 2019-08-01 00:00:00+0000 --&gt; 2019-12-01 00:00:00+0000</p><p><b>practitioner</b>: <a href=\"Practitioner-Performer1.html\">Practitioner/Performer1: Dr Katherine Pulaski</a> &quot; LISA&quot;</p><p><b>code</b>: physician <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://www.ehealth.fgov.be/standards/fhir/core/2.0.0/CodeSystem-cd-hcparty.html\">HCParty</a>#persphysician)</span></p><p><b>specialty</b>: Family practice <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#419772000)</span></p><blockquote><p><b>availableTime</b></p><p><b>daysOfWeek</b>: mon, tue, wed</p><p><b>availableStartTime</b>: 09:00:00</p><p><b>availableEndTime</b>: 16:30:00</p></blockquote><blockquote><p><b>availableTime</b></p><p><b>daysOfWeek</b>: thu, fri</p><p><b>availableStartTime</b>: 09:00:00</p><p><b>availableEndTime</b>: 12:00:00</p></blockquote><h3>NotAvailables</h3><table class=\"grid\"><tr><td>-</td><td><b>Description</b></td><td><b>During</b></td></tr><tr><td>*</td><td>Katherine will be on extended leave during August 2020</td><td>2020-08-01 00:00:00+0000 --&gt; 2020-08-20 00:00:00+0000</td></tr></table><p><b>availabilityExceptions</b>: Katherine is generally unavailable on public holidays and during the Christmas/New Year break</p></blockquote><p><b>reasonCode</b>: TheJustification <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (#123)</span></p><p><b>supportingInfo</b>: </p><ul><li><a name=\"observation1\"> </a></li><li><a name=\"condition1\"> </a></li><li><a name=\"media1\"> </a></li></ul><blockquote><p/><p><a name=\"observation1\"> </a></p><p><b>status</b>: final</p><p><b>category</b>: Vital Signs <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-observation-category.html\">Observation Category Codes</a>#vital-signs)</span></p><p><b>code</b>: Heart rate <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#8867-4; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#364075005 &quot;Heart rate (observable entity)&quot;)</span></p><p><b>subject</b>: <a href=\"#patient1\">#patient1</a></p><p><b>effective</b>: 1999-07-02</p><p><b>performer</b>: <a href=\"#Requester1\">#Requester1</a></p><p><b>value</b>: 51 beats/minute<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM code /min = '/min')</span></p></blockquote><blockquote><p/><p><a name=\"condition1\"> </a></p><p><b>clinicalStatus</b>: Active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-condition-clinical.html\">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Provisional <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-condition-ver-status.html\">ConditionVerificationStatus</a>#provisional)</span></p><p><b>code</b>: bradycardie <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ()</span></p><p><b>subject</b>: <a href=\"#patient1\">#patient1</a></p><p><b>note</b>: This is a suspicion</p></blockquote><blockquote><p/><p><a name=\"media1\"> </a></p><p><b>status</b>: current</p><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td>-</td><td><b>ContentType</b></td><td><b>Data</b></td></tr><tr><td>*</td><td>image/gif</td><td>iVBORw0KGgoAAAANSUhEUgAAA+MAAACnCAYAAAB6pY03AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnMAABJzAYwiuQcAADBZSURBVHhe7d09rty218fxrOFfZj/ZQHZgwEiZgg==</td></tr></table></blockquote></blockquote><p><b>specimen</b>: <a name=\"specimen1\"> </a></p><blockquote><p/><p><a name=\"specimen1\"> </a></p><p><b>identifier</b>: id: 1</p><p><b>type</b>: A string can be added to nuance or explain. <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#119297000 &quot;Blood specimen&quot;)</span></p><h3>Collections</h3><table class=\"grid\"><tr><td>-</td><td><b>Collected[x]</b></td><td><b>Method</b></td><td><b>BodySite</b></td></tr><tr><td>*</td><td>2015-11-03</td><td>Venipuncture for blood test (procedure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#28520004)</span></td><td>Left upper arm structure (body structure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#368208006)</span></td></tr></table><p><b>note</b>: Some extra relevant information concerning the specimen</p></blockquote><p><b>note</b>: Some free text explaining about these tests that are ordered.</p><hr/><blockquote><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\"><b>Jane Doe </b> female, DoB: 1956-05-27 ( id: 9999999999 (use: OFFICIAL))</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Details:</td><td colspan=\"3\"><ul><li>ph: 322672299(HOME)</li><li>Labradorstraat 26, 1000 Brussel(HOME)</li></ul></td></tr></table></blockquote><hr/><blockquote><p><b>Generated Narrative: Observation #observation1</b><a name=\"observation1\"> </a></p><p><b>status</b>: final</p><p><b>category</b>: Vital Signs <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-observation-category.html\">Observation Category Codes</a>#vital-signs)</span></p><p><b>code</b>: Heart rate <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#8867-4; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#364075005 &quot;Heart rate (observable entity)&quot;)</span></p><p><b>subject</b>: <a href=\"#patient1\">#patient1</a></p><p><b>effective</b>: 1999-07-02</p><p><b>performer</b>: <a href=\"#Requester1\">#Requester1</a></p><p><b>value</b>: 51 beats/minute<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM code /min = '/min')</span></p></blockquote><hr/><blockquote><p><b>Generated Narrative: Condition #condition1</b><a name=\"condition1\"> </a></p><p><b>clinicalStatus</b>: Active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-condition-clinical.html\">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Provisional <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-condition-ver-status.html\">ConditionVerificationStatus</a>#provisional)</span></p><p><b>code</b>: bradycardie <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ()</span></p><p><b>subject</b>: <a href=\"#patient1\">#patient1</a></p><p><b>note</b>: This is a suspicion</p></blockquote><hr/><blockquote><p><b>Generated Narrative: DocumentReference #media1</b><a name=\"media1\"> </a></p><p><b>status</b>: current</p><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td>-</td><td><b>ContentType</b></td><td><b>Data</b></td></tr><tr><td>*</td><td>image/gif</td><td>iVBORw0KGgoAAAANSUhEUgAAA+MAAACnCAYAAAB6pY03AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnMAABJzAYwiuQcAADBZSURBVHhe7d09rty218fxrOFfZj/ZQHZgwEiZgg==</td></tr></table></blockquote></blockquote><hr/><blockquote><p><b>Generated Narrative: Practitioner #Requester1</b><a name=\"Requester1\"> </a></p><p><b>identifier</b>: id: 8888888888 (use: OFFICIAL)</p><p><b>name</b>: Henry Seven (OFFICIAL)</p><p><b>telecom</b>: ph: 322882299(HOME)</p><p><b>address</b>: Werkstraat 26, 1000 Brussel(WORK)</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Specimen #specimen1</b><a name=\"specimen1\"> </a></p><p><b>identifier</b>: id: 1</p><p><b>type</b>: A string can be added to nuance or explain. <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#119297000 &quot;Blood specimen&quot;)</span></p><h3>Collections</h3><table class=\"grid\"><tr><td>-</td><td><b>Collected[x]</b></td><td><b>Method</b></td><td><b>BodySite</b></td></tr><tr><td>*</td><td>2015-11-03</td><td>Venipuncture for blood test (procedure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#28520004)</span></td><td>Left upper arm structure (body structure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#368208006)</span></td></tr></table><p><b>note</b>: Some extra relevant information concerning the specimen</p></blockquote><hr/><blockquote><p><b>Generated Narrative: PractitionerRole #practitionerrole1</b><a name=\"practitionerrole1\"> </a></p><p><b>identifier</b>: id: 23</p><p><b>active</b>: true</p><p><b>period</b>: 2019-08-01 00:00:00+0000 --&gt; 2019-12-01 00:00:00+0000</p><p><b>practitioner</b>: <a href=\"Practitioner-Performer1.html\">Practitioner/Performer1: Dr Katherine Pulaski</a> &quot; LISA&quot;</p><p><b>code</b>: physician <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://www.ehealth.fgov.be/standards/fhir/core/2.0.0/CodeSystem-cd-hcparty.html\">HCParty</a>#persphysician)</span></p><p><b>specialty</b>: Family practice <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#419772000)</span></p><blockquote><p><b>availableTime</b></p><p><b>daysOfWeek</b>: mon, tue, wed</p><p><b>availableStartTime</b>: 09:00:00</p><p><b>availableEndTime</b>: 16:30:00</p></blockquote><blockquote><p><b>availableTime</b></p><p><b>daysOfWeek</b>: thu, fri</p><p><b>availableStartTime</b>: 09:00:00</p><p><b>availableEndTime</b>: 12:00:00</p></blockquote><h3>NotAvailables</h3><table class=\"grid\"><tr><td>-</td><td><b>Description</b></td><td><b>During</b></td></tr><tr><td>*</td><td>Katherine will be on extended leave during August 2020</td><td>2020-08-01 00:00:00+0000 --&gt; 2020-08-20 00:00:00+0000</td></tr></table><p><b>availabilityExceptions</b>: Katherine is generally unavailable on public holidays and during the Christmas/New Year break</p></blockquote></div>"
-  ]; # 
-  fhir:DomainResource.contained [
-     a fhir:Patient;
-     fhir:index 0;
-     fhir:Resource.id [ fhir:value "patient1" ];
-     fhir:Resource.meta [
-       fhir:Meta.profile [
-         fhir:value "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-patient";
-         fhir:index 0;
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: ServiceRequest</b><a name=\"laboratory-order-example1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource ServiceRequest &quot;laboratory-order-example1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-lab-prescription.html\">BeLabPrescription</a></p></div><p><b>BeFeedbackToPrescriber</b>: true</p><p><b>BeValidityPeriod</b>: 2021-10-10 --&gt; (ongoing)</p><p><b>Reason for current status</b>: In progress <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-be-prescription-status-reason.html\">BePrescriptionStatusReason</a>#inProgress)</span></p><blockquote><p><b>BeUrgentCommunication</b></p><blockquote><p><b>url</b></p><code>party</code></blockquote><p><b>value</b>: <a name=\"Requester1\"> </a></p><blockquote><p/><p><a name=\"Requester1\"> </a></p><p><b>identifier</b>: id: 8888888888 (use: OFFICIAL)</p><p><b>name</b>: Henry Seven (OFFICIAL)</p><p><b>telecom</b>: ph: 322882299(HOME)</p><p><b>address</b>: Werkstraat 26, 1000 Brussel(WORK)</p></blockquote><blockquote><p><b>url</b></p><code>instructions</code></blockquote><p><b>value</b>: Send the requester an email, when the test is done.</p><blockquote><p><b>url</b></p><code>contactway</code></blockquote></blockquote><p><b>identifier</b>: id: XXXXXX</p><p><b>status</b>: active</p><p><b>intent</b>: original-order</p><p><b>category</b>: Laboratory test <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#15220000)</span></p><p><b>priority</b>: stat</p><p><b>code</b>: Hematology studies (set) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#18723-7)</span></p><p><b>orderDetail</b>: Erythrocyte sedimentation rate <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#30341-2)</span>, Erythrocytes [#/volume] in Blood by Automated count <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#789-8)</span>, Carboxyhemoglobin/Hemoglobin.total in Blood <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#20563-3)</span>, Test described in text only <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ()</span></p><p><b>subject</b>: <a name=\"patient1\"> </a></p><blockquote><p/><p><a name=\"patient1\"> </a></p><p><b>identifier</b>: id: 9999999999 (use: OFFICIAL)</p><p><b>name</b>: Jane Doe </p><p><b>telecom</b>: ph: 322672299(HOME)</p><p><b>gender</b>: female</p><p><b>birthDate</b>: 1956-05-27</p><p><b>address</b>: Labradorstraat 26, 1000 Brussel(HOME)</p></blockquote><p><b>authoredOn</b>: 2015-11-01</p><p><b>requester</b>: <a name=\"Requester1\"> </a></p><blockquote><p/><p><a name=\"Requester1\"> </a></p><p><b>identifier</b>: id: 8888888888 (use: OFFICIAL)</p><p><b>name</b>: Henry Seven (OFFICIAL)</p><p><b>telecom</b>: ph: 322882299(HOME)</p><p><b>address</b>: Werkstraat 26, 1000 Brussel(WORK)</p></blockquote><p><b>performer</b>: <a name=\"practitionerrole1\"> </a></p><blockquote><p/><p><a name=\"practitionerrole1\"> </a></p><p><b>identifier</b>: id: 23</p><p><b>active</b>: true</p><p><b>period</b>: 2019-08-01 00:00:00+0000 --&gt; 2019-12-01 00:00:00+0000</p><p><b>practitioner</b>: <a href=\"Practitioner-Performer1.html\">Practitioner/Performer1: Dr Katherine Pulaski</a> &quot; LISA&quot;</p><p><b>code</b>: physician <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://build.fhir.org/ig/hl7-be/core//CodeSystem-cd-hcparty.html\">BeCdHcParty</a>#persphysician)</span></p><p><b>specialty</b>: Family practice <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#419772000)</span></p><blockquote><p><b>availableTime</b></p><p><b>daysOfWeek</b>: mon, tue, wed</p><p><b>availableStartTime</b>: 09:00:00</p><p><b>availableEndTime</b>: 16:30:00</p></blockquote><blockquote><p><b>availableTime</b></p><p><b>daysOfWeek</b>: thu, fri</p><p><b>availableStartTime</b>: 09:00:00</p><p><b>availableEndTime</b>: 12:00:00</p></blockquote><h3>NotAvailables</h3><table class=\"grid\"><tr><td>-</td><td><b>Description</b></td><td><b>During</b></td></tr><tr><td>*</td><td>Katherine will be on extended leave during August 2020</td><td>2020-08-01 00:00:00+0000 --&gt; 2020-08-20 00:00:00+0000</td></tr></table><p><b>availabilityExceptions</b>: Katherine is generally unavailable on public holidays and during the Christmas/New Year break</p></blockquote><p><b>reasonCode</b>: TheJustification <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (#123)</span></p><p><b>supportingInfo</b>: </p><ul><li><a name=\"observation1\"> </a></li><li><a name=\"condition1\"> </a></li><li><a name=\"media1\"> </a></li></ul><blockquote><p/><p><a name=\"observation1\"> </a></p><p><b>status</b>: final</p><p><b>category</b>: Vital Signs <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-observation-category.html\">Observation Category Codes</a>#vital-signs)</span></p><p><b>code</b>: Heart rate <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#8867-4; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#364075005 &quot;Heart rate (observable entity)&quot;)</span></p><p><b>subject</b>: <a href=\"#patient1\">#patient1</a></p><p><b>effective</b>: 1999-07-02</p><p><b>performer</b>: <a href=\"#Requester1\">#Requester1</a></p><p><b>value</b>: 51 beats/minute<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM code /min = '/min')</span></p></blockquote><blockquote><p/><p><a name=\"condition1\"> </a></p><p><b>clinicalStatus</b>: Active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-condition-clinical.html\">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Provisional <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-condition-ver-status.html\">ConditionVerificationStatus</a>#provisional)</span></p><p><b>code</b>: bradycardie <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ()</span></p><p><b>subject</b>: <a href=\"#patient1\">#patient1</a></p><p><b>note</b>: This is a suspicion</p></blockquote><blockquote><p/><p><a name=\"media1\"> </a></p><p><b>status</b>: current</p><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td>-</td><td><b>ContentType</b></td><td><b>Data</b></td></tr><tr><td>*</td><td>image/gif</td><td>iVBORw0KGgoAAAANSUhEUgAAA+MAAACnCAYAAAB6pY03AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnMAABJzAYwiuQcAADBZSURBVHhe7d09rty218fxrOFfZj/ZQHZgwEiZgg==</td></tr></table></blockquote></blockquote><p><b>specimen</b>: <a name=\"specimen1\"> </a></p><blockquote><p/><p><a name=\"specimen1\"> </a></p><p><b>identifier</b>: id: 1</p><p><b>type</b>: A string can be added to nuance or explain. <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#119297000 &quot;Blood specimen&quot;)</span></p><h3>Collections</h3><table class=\"grid\"><tr><td>-</td><td><b>Collected[x]</b></td><td><b>Method</b></td><td><b>BodySite</b></td></tr><tr><td>*</td><td>2015-11-03</td><td>Venipuncture for blood test (procedure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#28520004)</span></td><td>Left upper arm structure (body structure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#368208006)</span></td></tr></table><p><b>note</b>: Some extra relevant information concerning the specimen</p></blockquote><p><b>note</b>: Some free text explaining about these tests that are ordered.</p><hr/><blockquote><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\"><b>Jane Doe </b> female, DoB: 1956-05-27 ( id: 9999999999 (use: OFFICIAL))</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Details:</td><td colspan=\"3\"><ul><li>ph: 322672299(HOME)</li><li>Labradorstraat 26, 1000 Brussel(HOME)</li></ul></td></tr></table></blockquote><hr/><blockquote><p><b>Generated Narrative: Observation #observation1</b><a name=\"observation1\"> </a></p><p><b>status</b>: final</p><p><b>category</b>: Vital Signs <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-observation-category.html\">Observation Category Codes</a>#vital-signs)</span></p><p><b>code</b>: Heart rate <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#8867-4; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#364075005 &quot;Heart rate (observable entity)&quot;)</span></p><p><b>subject</b>: <a href=\"#patient1\">#patient1</a></p><p><b>effective</b>: 1999-07-02</p><p><b>performer</b>: <a href=\"#Requester1\">#Requester1</a></p><p><b>value</b>: 51 beats/minute<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM code /min = '/min')</span></p></blockquote><hr/><blockquote><p><b>Generated Narrative: Condition #condition1</b><a name=\"condition1\"> </a></p><p><b>clinicalStatus</b>: Active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-condition-clinical.html\">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Provisional <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-condition-ver-status.html\">ConditionVerificationStatus</a>#provisional)</span></p><p><b>code</b>: bradycardie <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ()</span></p><p><b>subject</b>: <a href=\"#patient1\">#patient1</a></p><p><b>note</b>: This is a suspicion</p></blockquote><hr/><blockquote><p><b>Generated Narrative: DocumentReference #media1</b><a name=\"media1\"> </a></p><p><b>status</b>: current</p><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td>-</td><td><b>ContentType</b></td><td><b>Data</b></td></tr><tr><td>*</td><td>image/gif</td><td>iVBORw0KGgoAAAANSUhEUgAAA+MAAACnCAYAAAB6pY03AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnMAABJzAYwiuQcAADBZSURBVHhe7d09rty218fxrOFfZj/ZQHZgwEiZgg==</td></tr></table></blockquote></blockquote><hr/><blockquote><p><b>Generated Narrative: Practitioner #Requester1</b><a name=\"Requester1\"> </a></p><p><b>identifier</b>: id: 8888888888 (use: OFFICIAL)</p><p><b>name</b>: Henry Seven (OFFICIAL)</p><p><b>telecom</b>: ph: 322882299(HOME)</p><p><b>address</b>: Werkstraat 26, 1000 Brussel(WORK)</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Specimen #specimen1</b><a name=\"specimen1\"> </a></p><p><b>identifier</b>: id: 1</p><p><b>type</b>: A string can be added to nuance or explain. <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#119297000 &quot;Blood specimen&quot;)</span></p><h3>Collections</h3><table class=\"grid\"><tr><td>-</td><td><b>Collected[x]</b></td><td><b>Method</b></td><td><b>BodySite</b></td></tr><tr><td>*</td><td>2015-11-03</td><td>Venipuncture for blood test (procedure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#28520004)</span></td><td>Left upper arm structure (body structure) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#368208006)</span></td></tr></table><p><b>note</b>: Some extra relevant information concerning the specimen</p></blockquote><hr/><blockquote><p><b>Generated Narrative: PractitionerRole #practitionerrole1</b><a name=\"practitionerrole1\"> </a></p><p><b>identifier</b>: id: 23</p><p><b>active</b>: true</p><p><b>period</b>: 2019-08-01 00:00:00+0000 --&gt; 2019-12-01 00:00:00+0000</p><p><b>practitioner</b>: <a href=\"Practitioner-Performer1.html\">Practitioner/Performer1: Dr Katherine Pulaski</a> &quot; LISA&quot;</p><p><b>code</b>: physician <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://build.fhir.org/ig/hl7-be/core//CodeSystem-cd-hcparty.html\">BeCdHcParty</a>#persphysician)</span></p><p><b>specialty</b>: Family practice <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#419772000)</span></p><blockquote><p><b>availableTime</b></p><p><b>daysOfWeek</b>: mon, tue, wed</p><p><b>availableStartTime</b>: 09:00:00</p><p><b>availableEndTime</b>: 16:30:00</p></blockquote><blockquote><p><b>availableTime</b></p><p><b>daysOfWeek</b>: thu, fri</p><p><b>availableStartTime</b>: 09:00:00</p><p><b>availableEndTime</b>: 12:00:00</p></blockquote><h3>NotAvailables</h3><table class=\"grid\"><tr><td>-</td><td><b>Description</b></td><td><b>During</b></td></tr><tr><td>*</td><td>Katherine will be on extended leave during August 2020</td><td>2020-08-01 00:00:00+0000 --&gt; 2020-08-20 00:00:00+0000</td></tr></table><p><b>availabilityExceptions</b>: Katherine is generally unavailable on public holidays and during the Christmas/New Year break</p></blockquote></div>"
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Patient ;
+     fhir:id [ fhir:v "patient1" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-patient"^^xsd:anyURI ;
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-patient>
-       ]
-     ];
-     fhir:Patient.identifier [
-       fhir:index 0;
-       fhir:Identifier.use [ fhir:value "official" ];
-       fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin" ];
-       fhir:Identifier.value [ fhir:value "9999999999" ]
-     ];
-     fhir:Patient.name [
-       fhir:index 0;
-       fhir:HumanName.family [ fhir:value "Doe" ];
-       fhir:HumanName.given [
-         fhir:value "Jane";
-         fhir:index 0
-       ]
-     ];
-     fhir:Patient.telecom [
-       fhir:index 0;
-       fhir:ContactPoint.system [ fhir:value "phone" ];
-       fhir:ContactPoint.value [ fhir:value "322672299" ];
-       fhir:ContactPoint.use [ fhir:value "home" ]
-     ];
-     fhir:Patient.gender [ fhir:value "female" ];
-     fhir:Patient.birthDate [ fhir:value "1956-05-27"^^xsd:date ];
-     fhir:Patient.address [
-       fhir:index 0;
-       fhir:Address.use [ fhir:value "home" ];
-       fhir:Address.type [ fhir:value "both" ];
-       fhir:Address.text [ fhir:value "Labradorstraat 26, 1000 Brussel" ];
-       fhir:Address.line [
-         fhir:value "Labradorstraat 26";
-         fhir:index 0
-       ];
-       fhir:Address.city [ fhir:value "Brussel" ];
-       fhir:Address.postalCode [ fhir:value "1000" ];
-       fhir:Address.country [ fhir:value "BE" ]
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "official" ] ;
+       fhir:system [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "9999999999" ]
+     ] ) ;
+     fhir:name ( [
+       fhir:family [ fhir:v "Doe" ] ;
+       fhir:given ( [ fhir:v "Jane" ] )
+     ] ) ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "phone" ] ;
+       fhir:value [ fhir:v "322672299" ] ;
+       fhir:use [ fhir:v "home" ]
+     ] ) ;
+     fhir:gender [ fhir:v "female" ] ;
+     fhir:birthDate [ fhir:v "1956-05-27"^^xsd:date ] ;
+     fhir:address ( [
+       fhir:use [ fhir:v "home" ] ;
+       fhir:type [ fhir:v "both" ] ;
+       fhir:text [ fhir:v "Labradorstraat 26, 1000 Brussel" ] ;
+       fhir:line ( [ fhir:v "Labradorstraat 26" ] ) ;
+       fhir:city [ fhir:v "Brussel" ] ;
+       fhir:postalCode [ fhir:v "1000" ] ;
+       fhir:country [ fhir:v "BE" ]
+     ] )
+  ] [
+     a fhir:Observation ;
+     fhir:id [ fhir:v "observation1" ] ;
+     fhir:status [ fhir:v "final" ] ;
+     fhir:category ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "vital-signs" ] ;
+         fhir:display [ fhir:v "Vital Signs" ]
+       ] ) ;
+       fhir:text [ fhir:v "Vital Signs" ]
+     ] ) ;
+     fhir:code [
+       fhir:coding ( [
+         a loinc:8867-4 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "8867-4" ] ;
+         fhir:display [ fhir:v "Heart rate" ]
+       ] [
+         a sct:364075005 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:version [ fhir:v "http://snomed.info/sct/11000172109" ] ;
+         fhir:code [ fhir:v "364075005" ] ;
+         fhir:display [ fhir:v "Heart rate (observable entity)" ]
+       ] ) ;
+       fhir:text [ fhir:v "Heart rate" ]
+     ] ;
+     fhir:subject [
+       fhir:reference [ fhir:v "#patient1" ]
+     ] ;
+     fhir:effective [ fhir:v "1999-07-02"^^xsd:date ] ;
+     fhir:performer ( [
+       fhir:reference [ fhir:v "#Requester1" ]
+     ] ) ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "51"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "beats/minute" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "/min" ]
      ]
-  ], [
-     a fhir:Observation;
-     fhir:index 1;
-     fhir:Resource.id [ fhir:value "observation1" ];
-     fhir:Observation.status [ fhir:value "final" ];
-     fhir:Observation.category [
-       fhir:index 0;
-       fhir:CodeableConcept.coding [
-         fhir:index 0;
-         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ];
-         fhir:Coding.code [ fhir:value "vital-signs" ];
-         fhir:Coding.display [ fhir:value "Vital Signs" ]
-       ];
-       fhir:CodeableConcept.text [ fhir:value "Vital Signs" ]
-     ];
-     fhir:Observation.code [
-       fhir:CodeableConcept.coding [
-         fhir:index 0;
-         a loinc:8867-4;
-         fhir:Coding.system [ fhir:value "http://loinc.org" ];
-         fhir:Coding.code [ fhir:value "8867-4" ];
-         fhir:Coding.display [ fhir:value "Heart rate" ]
-       ], [
-         fhir:index 1;
-         a sct:364075005;
-         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
-         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ];
-         fhir:Coding.code [ fhir:value "364075005" ];
-         fhir:Coding.display [ fhir:value "Heart rate (observable entity)" ]
-       ];
-       fhir:CodeableConcept.text [ fhir:value "Heart rate" ]
-     ];
-     fhir:Observation.subject [
-       fhir:Reference.reference [ fhir:value "#patient1" ]
-     ];
-     fhir:Observation.effectiveDateTime [ fhir:value "1999-07-02"^^xsd:date ];
-     fhir:Observation.performer [
-       fhir:index 0;
-       fhir:Reference.reference [ fhir:value "#Requester1" ]
-     ];
-     fhir:Observation.valueQuantity [
-       fhir:Quantity.value [ fhir:value "51"^^xsd:decimal ];
-       fhir:Quantity.unit [ fhir:value "beats/minute" ];
-       fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
-       fhir:Quantity.code [ fhir:value "/min" ]
-     ]
-  ], [
-     a fhir:Condition;
-     fhir:index 2;
-     fhir:Resource.id [ fhir:value "condition1" ];
-     fhir:Condition.clinicalStatus [
-       fhir:CodeableConcept.coding [
-         fhir:index 0;
-         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-clinical" ];
-         fhir:Coding.code [ fhir:value "active" ]
+  ] [
+     a fhir:Condition ;
+     fhir:id [ fhir:v "condition1" ] ;
+     fhir:clinicalStatus [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-clinical"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "active" ]
+       ] )
+     ] ;
+     fhir:verificationStatus [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-ver-status"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "provisional" ]
+       ] )
+     ] ;
+     fhir:code [
+       fhir:text [ fhir:v "bradycardie" ]
+     ] ;
+     fhir:subject [
+       fhir:reference [ fhir:v "#patient1" ]
+     ] ;
+     fhir:note ( [
+       fhir:text [ fhir:v "This is a suspicion" ]
+     ] )
+  ] [
+     a fhir:DocumentReference ;
+     fhir:id [ fhir:v "media1" ] ;
+     fhir:status [ fhir:v "current" ] ;
+     fhir:content ( [
+       fhir:attachment [
+         fhir:contentType [ fhir:v "image/gif" ] ;
+         fhir:data [ fhir:v "iVBORw0KGgoAAAANSUhEUgAAA+MAAACnCAYAAAB6pY03AAAAAXNSR0IArs4c6QAAAARnQU1BAACx jwv8YQUAAAAJcEhZcwAAEnMAABJzAYwiuQcAADBZSURBVHhe7d09rty218fxrOFfZj/ZQHZgwEiZ gg=="^^xsd:base64Binary ]
        ]
-     ];
-     fhir:Condition.verificationStatus [
-       fhir:CodeableConcept.coding [
-         fhir:index 0;
-         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-ver-status" ];
-         fhir:Coding.code [ fhir:value "provisional" ]
-       ]
-     ];
-     fhir:Condition.code [
-       fhir:CodeableConcept.text [ fhir:value "bradycardie" ]
-     ];
-     fhir:Condition.subject [
-       fhir:Reference.reference [ fhir:value "#patient1" ]
-     ];
-     fhir:Condition.note [
-       fhir:index 0;
-       fhir:Annotation.text [ fhir:value "This is a suspicion" ]
-     ]
-  ], [
-     a fhir:DocumentReference;
-     fhir:index 3;
-     fhir:Resource.id [ fhir:value "media1" ];
-     fhir:DocumentReference.status [ fhir:value "current" ];
-     fhir:DocumentReference.content [
-       fhir:index 0;
-       fhir:DocumentReference.content.attachment [
-         fhir:Attachment.contentType [ fhir:value "image/gif" ];
-         fhir:Attachment.data [ fhir:value "iVBORw0KGgoAAAANSUhEUgAAA+MAAACnCAYAAAB6pY03AAAAAXNSR0IArs4c6QAAAARnQU1BAACx jwv8YQUAAAAJcEhZcwAAEnMAABJzAYwiuQcAADBZSURBVHhe7d09rty218fxrOFfZj/ZQHZgwEiZ gg=="^^xsd:base64Binary ]
-       ]
-     ]
-  ], [
-     a fhir:Practitioner;
-     fhir:index 4;
-     fhir:Resource.id [ fhir:value "Requester1" ];
-     fhir:Resource.meta [
-       fhir:Meta.profile [
-         fhir:value "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitioner";
-         fhir:index 0;
+     ] )
+  ] [
+     a fhir:Practitioner ;
+     fhir:id [ fhir:v "Requester1" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitioner"^^xsd:anyURI ;
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitioner>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "official" ] ;
+       fhir:system [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "8888888888" ]
+     ] ) ;
+     fhir:name ( [
+       fhir:use [ fhir:v "official" ] ;
+       fhir:family [ fhir:v "Seven" ] ;
+       fhir:given ( [ fhir:v "Henry" ] )
+     ] ) ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "phone" ] ;
+       fhir:value [ fhir:v "322882299" ] ;
+       fhir:use [ fhir:v "home" ]
+     ] ) ;
+     fhir:address ( [
+       fhir:use [ fhir:v "work" ] ;
+       fhir:type [ fhir:v "both" ] ;
+       fhir:text [ fhir:v "Werkstraat 26, 1000 Brussel" ] ;
+       fhir:line ( [ fhir:v "Werkstraat 26" ] ) ;
+       fhir:city [ fhir:v "Brussel" ] ;
+       fhir:postalCode [ fhir:v "1000" ] ;
+       fhir:country [ fhir:v "BE" ]
+     ] )
+  ] [
+     a fhir:Specimen ;
+     fhir:id [ fhir:v "specimen1" ] ;
+     fhir:identifier ( [
+       fhir:system [ fhir:v "https://www.GTL-LABO.be/"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "1" ]
+     ] ) ;
+     fhir:type [
+       fhir:coding ( [
+         a sct:119297000 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:version [ fhir:v "http://snomed.info/sct/11000172109" ] ;
+         fhir:code [ fhir:v "119297000" ] ;
+         fhir:display [ fhir:v "Blood specimen" ]
+       ] ) ;
+       fhir:text [ fhir:v "A string can be added to nuance or explain." ]
+     ] ;
+     fhir:collection [
+       fhir:collected [ fhir:v "2015-11-03"^^xsd:date ] ;
+       fhir:method [
+         fhir:coding ( [
+           a sct:28520004 ;
+           fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+           fhir:version [ fhir:v "http://snomed.info/sct/11000172109" ] ;
+           fhir:code [ fhir:v "28520004" ] ;
+           fhir:display [ fhir:v "Venipuncture for blood test (procedure)" ]
+         ] )
+       ] ;
+       fhir:bodySite [
+         fhir:coding ( [
+           a sct:368208006 ;
+           fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+           fhir:version [ fhir:v "http://snomed.info/sct/11000172109" ] ;
+           fhir:code [ fhir:v "368208006" ] ;
+           fhir:display [ fhir:v "Left upper arm structure (body structure)" ]
+         ] )
        ]
-     ];
-     fhir:Practitioner.identifier [
-       fhir:index 0;
-       fhir:Identifier.use [ fhir:value "official" ];
-       fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi" ];
-       fhir:Identifier.value [ fhir:value "8888888888" ]
-     ];
-     fhir:Practitioner.name [
-       fhir:index 0;
-       fhir:HumanName.use [ fhir:value "official" ];
-       fhir:HumanName.family [ fhir:value "Seven" ];
-       fhir:HumanName.given [
-         fhir:value "Henry";
-         fhir:index 0
-       ]
-     ];
-     fhir:Practitioner.telecom [
-       fhir:index 0;
-       fhir:ContactPoint.system [ fhir:value "phone" ];
-       fhir:ContactPoint.value [ fhir:value "322882299" ];
-       fhir:ContactPoint.use [ fhir:value "home" ]
-     ];
-     fhir:Practitioner.address [
-       fhir:index 0;
-       fhir:Address.use [ fhir:value "work" ];
-       fhir:Address.type [ fhir:value "both" ];
-       fhir:Address.text [ fhir:value "Werkstraat 26, 1000 Brussel" ];
-       fhir:Address.line [
-         fhir:value "Werkstraat 26";
-         fhir:index 0
-       ];
-       fhir:Address.city [ fhir:value "Brussel" ];
-       fhir:Address.postalCode [ fhir:value "1000" ];
-       fhir:Address.country [ fhir:value "BE" ]
-     ]
-  ], [
-     a fhir:Specimen;
-     fhir:index 5;
-     fhir:Resource.id [ fhir:value "specimen1" ];
-     fhir:Specimen.identifier [
-       fhir:index 0;
-       fhir:Identifier.system [ fhir:value "https://www.GTL-LABO.be/" ];
-       fhir:Identifier.value [ fhir:value "1" ]
-     ];
-     fhir:Specimen.type [
-       fhir:CodeableConcept.coding [
-         fhir:index 0;
-         a sct:119297000;
-         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
-         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ];
-         fhir:Coding.code [ fhir:value "119297000" ];
-         fhir:Coding.display [ fhir:value "Blood specimen" ]
-       ];
-       fhir:CodeableConcept.text [ fhir:value "A string can be added to nuance or explain." ]
-     ];
-     fhir:Specimen.collection [
-       fhir:Specimen.collection.collectedDateTime [ fhir:value "2015-11-03"^^xsd:date ];
-       fhir:Specimen.collection.method [
-         fhir:CodeableConcept.coding [
-           fhir:index 0;
-           a sct:28520004;
-           fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
-           fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ];
-           fhir:Coding.code [ fhir:value "28520004" ];
-           fhir:Coding.display [ fhir:value "Venipuncture for blood test (procedure)" ]
-         ]
-       ];
-       fhir:Specimen.collection.bodySite [
-         fhir:CodeableConcept.coding [
-           fhir:index 0;
-           a sct:368208006;
-           fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
-           fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ];
-           fhir:Coding.code [ fhir:value "368208006" ];
-           fhir:Coding.display [ fhir:value "Left upper arm structure (body structure)" ]
-         ]
-       ]
-     ];
-     fhir:Specimen.note [
-       fhir:index 0;
-       fhir:Annotation.text [ fhir:value "Some extra relevant information concerning the specimen" ]
-     ]
-  ], [
-     a fhir:PractitionerRole;
-     fhir:index 6;
-     fhir:Resource.id [ fhir:value "practitionerrole1" ];
-     fhir:Resource.meta [
-       fhir:Meta.profile [
-         fhir:value "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole";
-         fhir:index 0;
+     ] ;
+     fhir:note ( [
+       fhir:text [ fhir:v "Some extra relevant information concerning the specimen" ]
+     ] )
+  ] [
+     a fhir:PractitionerRole ;
+     fhir:id [ fhir:v "practitionerrole1" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole"^^xsd:anyURI ;
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:system [ fhir:v "http://www.acme.org/practitioners"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "23" ]
+     ] ) ;
+     fhir:active [ fhir:v "true"^^xsd:boolean ] ;
+     fhir:period [
+       fhir:start [ fhir:v "2019-08-01T00:00:00.000Z"^^xsd:dateTime ] ;
+       fhir:end [ fhir:v "2019-12-01T00:00:00.000Z"^^xsd:dateTime ]
+     ] ;
+     fhir:practitioner [
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Practitioner/Performer1> ;
+       fhir:reference [ fhir:v "Practitioner/Performer1" ] ;
+       fhir:display [ fhir:v "Dr Katherine Pulaski" ]
+     ] ;
+     fhir:code ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "persphysician" ] ;
+         fhir:display [ fhir:v "physician" ]
+       ] )
+     ] ) ;
+     fhir:specialty ( [
+       fhir:coding ( [
+         a sct:419772000 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:version [ fhir:v "http://snomed.info/sct/11000172109" ] ;
+         fhir:code [ fhir:v "419772000" ] ;
+         fhir:display [ fhir:v "Family practice" ]
+       ] )
+     ] ) ;
+     fhir:availableTime ( [
+       fhir:daysOfWeek ( [ fhir:v "mon" ] [ fhir:v "tue" ] [ fhir:v "wed" ] ) ;
+       fhir:availableStartTime [ fhir:v "09:00:00"^^xsd:time ] ;
+       fhir:availableEndTime [ fhir:v "16:30:00"^^xsd:time ]
+     ] [
+       fhir:daysOfWeek ( [ fhir:v "thu" ] [ fhir:v "fri" ] ) ;
+       fhir:availableStartTime [ fhir:v "09:00:00"^^xsd:time ] ;
+       fhir:availableEndTime [ fhir:v "12:00:00"^^xsd:time ]
+     ] ) ;
+     fhir:notAvailable ( [
+       fhir:description [ fhir:v "Katherine will be on extended leave during August 2020" ] ;
+       fhir:during [
+         fhir:start [ fhir:v "2020-08-01T00:00:00.000Z"^^xsd:dateTime ] ;
+         fhir:end [ fhir:v "2020-08-20T00:00:00.000Z"^^xsd:dateTime ]
        ]
-     ];
-     fhir:PractitionerRole.identifier [
-       fhir:index 0;
-       fhir:Identifier.system [ fhir:value "http://www.acme.org/practitioners" ];
-       fhir:Identifier.value [ fhir:value "23" ]
-     ];
-     fhir:PractitionerRole.active [ fhir:value "true"^^xsd:boolean ];
-     fhir:PractitionerRole.period [
-       fhir:Period.start [ fhir:value "2019-08-01T00:00:00.000Z"^^xsd:dateTime ];
-       fhir:Period.end [ fhir:value "2019-12-01T00:00:00.000Z"^^xsd:dateTime ]
-     ];
-     fhir:PractitionerRole.practitioner [
-       fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Practitioner/Performer1>;
-       fhir:Reference.reference [ fhir:value "Practitioner/Performer1" ];
-       fhir:Reference.display [ fhir:value "Dr Katherine Pulaski" ]
-     ];
-     fhir:PractitionerRole.code [
-       fhir:index 0;
-       fhir:CodeableConcept.coding [
-         fhir:index 0;
-         fhir:Coding.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" ];
-         fhir:Coding.code [ fhir:value "persphysician" ];
-         fhir:Coding.display [ fhir:value "physician" ]
-       ]
-     ];
-     fhir:PractitionerRole.specialty [
-       fhir:index 0;
-       fhir:CodeableConcept.coding [
-         fhir:index 0;
-         a sct:419772000;
-         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
-         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ];
-         fhir:Coding.code [ fhir:value "419772000" ];
-         fhir:Coding.display [ fhir:value "Family practice" ]
-       ]
-     ];
-     fhir:PractitionerRole.availableTime [
-       fhir:index 0;
-       fhir:PractitionerRole.availableTime.daysOfWeek [
-         fhir:value "mon";
-         fhir:index 0
-       ], [
-         fhir:value "tue";
-         fhir:index 1
-       ], [
-         fhir:value "wed";
-         fhir:index 2
-       ];
-       fhir:PractitionerRole.availableTime.availableStartTime [ fhir:value "09:00:00"^^xsd:time ];
-       fhir:PractitionerRole.availableTime.availableEndTime [ fhir:value "16:30:00"^^xsd:time ]
-     ], [
-       fhir:index 1;
-       fhir:PractitionerRole.availableTime.daysOfWeek [
-         fhir:value "thu";
-         fhir:index 0
-       ], [
-         fhir:value "fri";
-         fhir:index 1
-       ];
-       fhir:PractitionerRole.availableTime.availableStartTime [ fhir:value "09:00:00"^^xsd:time ];
-       fhir:PractitionerRole.availableTime.availableEndTime [ fhir:value "12:00:00"^^xsd:time ]
-     ];
-     fhir:PractitionerRole.notAvailable [
-       fhir:index 0;
-       fhir:PractitionerRole.notAvailable.description [ fhir:value "Katherine will be on extended leave during August 2020" ];
-       fhir:PractitionerRole.notAvailable.during [
-         fhir:Period.start [ fhir:value "2020-08-01T00:00:00.000Z"^^xsd:dateTime ];
-         fhir:Period.end [ fhir:value "2020-08-20T00:00:00.000Z"^^xsd:dateTime ]
-       ]
-     ];
-     fhir:PractitionerRole.availabilityExceptions [ fhir:value "Katherine is generally unavailable on public holidays and during the Christmas/New Year break" ]
-  ]; # 
-  fhir:DomainResource.extension [
-     fhir:index 0;
-     fhir:Extension.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-feedback-to-prescriber" ];
-     fhir:Extension.valueBoolean [ fhir:value "true"^^xsd:boolean ]
-  ], [
-     fhir:index 1;
-     fhir:Extension.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period" ];
-     fhir:Extension.valuePeriod [
-       fhir:Period.start [ fhir:value "2021-10-10"^^xsd:date ]
+     ] ) ;
+     fhir:availabilityExceptions [ fhir:v "Katherine is generally unavailable on public holidays and during the Christmas/New Year break" ]
+  ] ) ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-feedback-to-prescriber"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "true"^^xsd:boolean ]
+  ] [
+     fhir:url [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Period ;
+       fhir:start [ fhir:v "2021-10-10"^^xsd:date ]
      ]
-  ], [
-     fhir:index 2;
-     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/request-statusReason" ];
-     fhir:Extension.valueCodeableConcept [
-       fhir:CodeableConcept.coding [
-         fhir:index 0;
-         fhir:Coding.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason" ];
-         fhir:Coding.code [ fhir:value "inProgress" ];
-         fhir:Coding.display [ fhir:value "In progress" ]
-       ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/request-statusReason"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "inProgress" ] ;
+         fhir:display [ fhir:v "In progress" ]
+       ] )
      ]
-  ], [
-     fhir:index 3;
-     fhir:Element.extension [
-       fhir:index 0;
-       fhir:Extension.url [ fhir:value "party" ];
-       fhir:Extension.valueReference [
-         fhir:Reference.reference [ fhir:value "#Requester1" ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "party"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Reference ;
+         fhir:reference [ fhir:v "#Requester1" ]
        ]
-     ], [
-       fhir:index 1;
-       fhir:Extension.url [ fhir:value "instructions" ];
-       fhir:Extension.valueString [ fhir:value "Send the requester an email, when the test is done." ]
-     ], [
-       fhir:index 2;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "contactSystem" ];
-         fhir:Extension.valueCodeableConcept [
-           fhir:CodeableConcept.coding [
-             fhir:index 0;
-             fhir:Coding.system [ fhir:value "http://hl7.org/fhir/contact-point-system" ];
-             fhir:Coding.code [ fhir:value "email" ];
-             fhir:Coding.display [ fhir:value "email" ]
-           ]
+     ] [
+       fhir:url [ fhir:v "instructions"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Send the requester an email, when the test is done." ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "contactSystem"^^xsd:anyURI ] ;
+         fhir:value [
+           a fhir:CodeableConcept ;
+           fhir:coding ( [
+             fhir:system [ fhir:v "http://hl7.org/fhir/contact-point-system"^^xsd:anyURI ] ;
+             fhir:code [ fhir:v "email" ] ;
+             fhir:display [ fhir:v "email" ]
+           ] )
          ]
-       ], [
-         fhir:index 1;
-         fhir:Extension.url [ fhir:value "contactSystemValue" ];
-         fhir:Extension.valueString [ fhir:value "doctor@mycabinet.be" ]
-       ];
-       fhir:Extension.url [ fhir:value "contactway" ]
-     ];
-     fhir:Extension.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-urgent-communication" ]
-  ]; # 
-  fhir:ServiceRequest.identifier [
-     fhir:index 0;
-     fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep" ];
-     fhir:Identifier.value [ fhir:value "XXXXXX" ]
-  ]; # 
-  fhir:ServiceRequest.status [ fhir:value "active"]; # 
-  fhir:ServiceRequest.intent [ fhir:value "original-order"]; # 
-  fhir:ServiceRequest.category [
-     fhir:index 0;
-     fhir:CodeableConcept.coding [
-       fhir:index 0;
-       a sct:15220000;
-       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
-       fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ];
-       fhir:Coding.code [ fhir:value "15220000" ];
-       fhir:Coding.display [ fhir:value "Laboratory test" ]
-     ]
-  ]; # 
-  fhir:ServiceRequest.priority [ fhir:value "stat"]; # 
-  fhir:ServiceRequest.code [
-     fhir:CodeableConcept.coding [
-       fhir:index 0;
-       a loinc:18723-7;
-       fhir:Coding.system [ fhir:value "http://loinc.org" ];
-       fhir:Coding.code [ fhir:value "18723-7" ];
-       fhir:Coding.display [ fhir:value "Hematology studies (set)" ]
-     ]
-  ]; # 
-  fhir:ServiceRequest.orderDetail [
-     fhir:index 0;
-     fhir:CodeableConcept.coding [
-       fhir:index 0;
-       a loinc:30341-2;
-       fhir:Coding.system [ fhir:value "http://loinc.org" ];
-       fhir:Coding.code [ fhir:value "30341-2" ];
-       fhir:Coding.display [ fhir:value "Erythrocyte sedimentation rate" ]
-     ]
-  ], [
-     fhir:index 1;
-     fhir:CodeableConcept.coding [
-       fhir:index 0;
-       a loinc:789-8;
-       fhir:Coding.system [ fhir:value "http://loinc.org" ];
-       fhir:Coding.code [ fhir:value "789-8" ];
-       fhir:Coding.display [ fhir:value "Erythrocytes [#/volume] in Blood by Automated count" ]
-     ]
-  ], [
-     fhir:index 2;
-     fhir:CodeableConcept.coding [
-       fhir:index 0;
-       a loinc:20563-3;
-       fhir:Coding.system [ fhir:value "http://loinc.org" ];
-       fhir:Coding.code [ fhir:value "20563-3" ];
-       fhir:Coding.display [ fhir:value "Carboxyhemoglobin/Hemoglobin.total in Blood" ]
-     ]
-  ], [
-     fhir:index 3;
-     fhir:CodeableConcept.text [ fhir:value "Test described in text only" ]
-  ]; # 
-  fhir:ServiceRequest.subject [
-     fhir:Reference.reference [ fhir:value "#patient1" ]
-  ]; # 
-  fhir:ServiceRequest.authoredOn [ fhir:value "2015-11-01"^^xsd:date]; # 
-  fhir:ServiceRequest.requester [
-     fhir:Reference.reference [ fhir:value "#Requester1" ]
-  ]; # 
-  fhir:ServiceRequest.performer [
-     fhir:index 0;
-     fhir:Reference.reference [ fhir:value "#practitionerrole1" ]
-  ]; # 
-  fhir:ServiceRequest.reasonCode [
-     fhir:index 0;
-     fhir:CodeableConcept.coding [
-       fhir:index 0;
-       fhir:Coding.system [ fhir:value "https://www.SOME_NOMENCLATURE_SYSTEM.be/" ];
-       fhir:Coding.code [ fhir:value "123" ];
-       fhir:Coding.display [ fhir:value "TheJustification" ]
-     ]
-  ]; # 
-  fhir:ServiceRequest.supportingInfo [
-     fhir:index 0;
-     fhir:Reference.reference [ fhir:value "#observation1" ]
-  ], [
-     fhir:index 1;
-     fhir:Reference.reference [ fhir:value "#condition1" ]
-  ], [
-     fhir:index 2;
-     fhir:Reference.reference [ fhir:value "#media1" ]
-  ]; # 
-  fhir:ServiceRequest.specimen [
-     fhir:index 0;
-     fhir:Reference.reference [ fhir:value "#specimen1" ]
-  ]; # 
-  fhir:ServiceRequest.note [
-     fhir:index 0;
-     fhir:Annotation.text [ fhir:value "Some free text explaining about these tests that are ordered." ]
-  ] . # 
-
-# - ontology header ------------------------------------------------------------
-
-<https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/laboratory-order-example1.ttl> a owl:Ontology;
-  owl:imports fhir:fhir.ttl .
+       ] [
+         fhir:url [ fhir:v "contactSystemValue"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "doctor@mycabinet.be" ]
+       ] ) ;
+       fhir:url [ fhir:v "contactway"^^xsd:anyURI ]
+     ] ) ;
+     fhir:url [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-urgent-communication"^^xsd:anyURI ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "XXXXXX" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:intent [ fhir:v "original-order"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       a sct:15220000 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:version [ fhir:v "http://snomed.info/sct/11000172109" ] ;
+       fhir:code [ fhir:v "15220000" ] ;
+       fhir:display [ fhir:v "Laboratory test" ]
+     ] )
+  ] ) ; # 
+  fhir:priority [ fhir:v "stat"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:18723-7 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "18723-7" ] ;
+       fhir:display [ fhir:v "Hematology studies (set)" ]
+     ] )
+  ] ; # 
+  fhir:orderDetail ( [
+     fhir:coding ( [
+       a loinc:30341-2 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "30341-2" ] ;
+       fhir:display [ fhir:v "Erythrocyte sedimentation rate" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       a loinc:789-8 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "789-8" ] ;
+       fhir:display [ fhir:v "Erythrocytes [#/volume] in Blood by Automated count" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       a loinc:20563-3 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "20563-3" ] ;
+       fhir:display [ fhir:v "Carboxyhemoglobin/Hemoglobin.total in Blood" ]
+     ] )
+  ] [
+     fhir:text [ fhir:v "Test described in text only" ]
+  ] ) ; # 
+  fhir:subject [
+     fhir:reference [ fhir:v "#patient1" ]
+  ] ; # 
+  fhir:authoredOn [ fhir:v "2015-11-01"^^xsd:date] ; # 
+  fhir:requester [
+     fhir:reference [ fhir:v "#Requester1" ]
+  ] ; # 
+  fhir:performer ( [
+     fhir:reference [ fhir:v "#practitionerrole1" ]
+  ] ) ; # 
+  fhir:reasonCode ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://www.SOME_NOMENCLATURE_SYSTEM.be/"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "123" ] ;
+       fhir:display [ fhir:v "TheJustification" ]
+     ] )
+  ] ) ; # 
+  fhir:supportingInfo ( [
+     fhir:reference [ fhir:v "#observation1" ]
+  ] [
+     fhir:reference [ fhir:v "#condition1" ]
+  ] [
+     fhir:reference [ fhir:v "#media1" ]
+  ] ) ; # 
+  fhir:specimen ( [
+     fhir:reference [ fhir:v "#specimen1" ]
+  ] ) ; # 
+  fhir:note ( [
+     fhir:text [ fhir:v "Some free text explaining about these tests that are ordered." ]
+  ] ) . # 
 
 # -------------------------------------------------------------------------------------
 
