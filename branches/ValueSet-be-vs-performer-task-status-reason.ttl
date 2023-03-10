@@ -5,66 +5,51 @@
 
 # - resource -------------------------------------------------------------------
 
-<https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-performer-task-status-reason> a fhir:ValueSet;
-  fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "be-vs-performer-task-status-reason"]; # 
-  fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "extensions" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActReason.html\"><code>http://terminology.hl7.org/CodeSystem/v3-ActReason</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActReason.html#v3-ActReason-MEDPREC\">MEDPREC</a></td><td>Medical Precaution</td><td>**Definition:**The patient currently has a medical condition for which the vaccine is contraindicated or for which precaution is warranted.</td></tr><tr><td><a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActReason.html#v3-ActReason-OSTOCK\">OSTOCK</a></td><td>Out of Stock</td><td>**Definition:**There was no supply of the product on hand to perform the service.</td></tr><tr><td><a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActReason.html#v3-ActReason-PATOBJ\">PATOBJ</a></td><td>Patient Objection</td><td>**Definition:**The patient or their guardian objects to receiving the vaccine.</td></tr><tr><td><a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActReason.html#v3-ActReason-DECSD\">DECSD</a></td><td>deceased</td><td>Client deceased.</td></tr><tr><td><a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActReason.html#v3-ActReason-SALG\">SALG</a></td><td>allergy</td><td>**Description:**The patient is believed to be allergic to a substance that is part of the therapy and the therapy is being temporarily withdrawn to confirm.</td></tr><tr><td><a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActReason.html#v3-ActReason-MODIFY\">MODIFY</a></td><td>modified prescription exists</td><td>**Definition:**Therapy has been changed and new prescription issued</td></tr><tr><td><a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActReason.html#v3-ActReason-CONTRA\">CONTRA</a></td><td>contraindication</td><td>**Definition:**Contraindication identified</td></tr></table></li></ul></div>"
-  ]; # 
-  fhir:ValueSet.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-performer-task-status-reason"]; # 
-  fhir:ValueSet.version [ fhir:value "1.0.0"]; # 
-  fhir:ValueSet.name [ fhir:value "BeVSPerformerTaskStatusReason"]; # 
-  fhir:ValueSet.title [ fhir:value "BeVSPerformerTaskStatusReason"]; # 
-  fhir:ValueSet.status [ fhir:value "active"]; # 
-  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean]; # 
-  fhir:ValueSet.date [ fhir:value "2023-02-22T15:46:17+00:00"^^xsd:dateTime]; # 
-  fhir:ValueSet.description [ fhir:value "Codes to explain the current status of a referral prescription."]; # 
-  fhir:ValueSet.jurisdiction [
-     fhir:index 0;
-     fhir:CodeableConcept.coding [
-       fhir:index 0;
-       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ];
-       fhir:Coding.code [ fhir:value "BE" ];
-       fhir:Coding.display [ fhir:value "Belgium" ]
-     ]
-  ]; # 
-  fhir:ValueSet.compose [
-     fhir:ValueSet.compose.include [
-       fhir:index 0;
-       fhir:ValueSet.compose.include.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActReason" ];
-       fhir:ValueSet.compose.include.concept [
-         fhir:index 0;
-         fhir:ValueSet.compose.include.concept.code [ fhir:value "MEDPREC" ];
-         fhir:ValueSet.compose.include.concept.display [ fhir:value "Medical Precaution" ]
-       ], [
-         fhir:index 1;
-         fhir:ValueSet.compose.include.concept.code [ fhir:value "OSTOCK" ];
-         fhir:ValueSet.compose.include.concept.display [ fhir:value "Out of Stock" ]
-       ], [
-         fhir:index 2;
-         fhir:ValueSet.compose.include.concept.code [ fhir:value "PATOBJ" ];
-         fhir:ValueSet.compose.include.concept.display [ fhir:value "Patient Objection" ]
-       ], [
-         fhir:index 3;
-         fhir:ValueSet.compose.include.concept.code [ fhir:value "DECSD" ]
-       ], [
-         fhir:index 4;
-         fhir:ValueSet.compose.include.concept.code [ fhir:value "SALG" ]
-       ], [
-         fhir:index 5;
-         fhir:ValueSet.compose.include.concept.code [ fhir:value "MODIFY" ]
-       ], [
-         fhir:index 6;
-         fhir:ValueSet.compose.include.concept.code [ fhir:value "CONTRA" ]
-       ]
-     ]
+<https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-performer-task-status-reason> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "be-vs-performer-task-status-reason"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActReason.html\"><code>http://terminology.hl7.org/CodeSystem/v3-ActReason</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActReason.html#v3-ActReason-MEDPREC\">MEDPREC</a></td><td>Medical Precaution</td><td>**Definition:**The patient currently has a medical condition for which the vaccine is contraindicated or for which precaution is warranted.</td></tr><tr><td><a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActReason.html#v3-ActReason-OSTOCK\">OSTOCK</a></td><td>Out of Stock</td><td>**Definition:**There was no supply of the product on hand to perform the service.</td></tr><tr><td><a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActReason.html#v3-ActReason-PATOBJ\">PATOBJ</a></td><td>Patient Objection</td><td>**Definition:**The patient or their guardian objects to receiving the vaccine.</td></tr><tr><td><a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActReason.html#v3-ActReason-DECSD\">DECSD</a></td><td>deceased</td><td>Client deceased.</td></tr><tr><td><a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActReason.html#v3-ActReason-SALG\">SALG</a></td><td>allergy</td><td>**Description:**The patient is believed to be allergic to a substance that is part of the therapy and the therapy is being temporarily withdrawn to confirm.</td></tr><tr><td><a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActReason.html#v3-ActReason-MODIFY\">MODIFY</a></td><td>modified prescription exists</td><td>**Definition:**Therapy has been changed and new prescription issued</td></tr><tr><td><a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActReason.html#v3-ActReason-CONTRA\">CONTRA</a></td><td>contraindication</td><td>**Definition:**Contraindication identified</td></tr></table></li></ul></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-performer-task-status-reason"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.0.0"] ; # 
+  fhir:name [ fhir:v "BeVSPerformerTaskStatusReason"] ; # 
+  fhir:title [ fhir:v "BeVSPerformerTaskStatusReason"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2023-03-10T07:39:36+00:00"^^xsd:dateTime] ; # 
+  fhir:description [ fhir:v "Codes to explain the current status of a referral prescription."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BE" ] ;
+       fhir:display [ fhir:v "Belgium" ]
+     ] )
+  ] ) ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-ActReason"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "MEDPREC" ] ;
+         fhir:display [ fhir:v "Medical Precaution" ]
+       ] [
+         fhir:code [ fhir:v "OSTOCK" ] ;
+         fhir:display [ fhir:v "Out of Stock" ]
+       ] [
+         fhir:code [ fhir:v "PATOBJ" ] ;
+         fhir:display [ fhir:v "Patient Objection" ]
+       ] [
+         fhir:code [ fhir:v "DECSD" ]
+       ] [
+         fhir:code [ fhir:v "SALG" ]
+       ] [
+         fhir:code [ fhir:v "MODIFY" ]
+       ] [
+         fhir:code [ fhir:v "CONTRA" ]
+       ] )
+     ] )
   ] . # 
-
-# - ontology header ------------------------------------------------------------
-
-<https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-performer-task-status-reason.ttl> a owl:Ontology;
-  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 

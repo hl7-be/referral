@@ -5,36 +5,29 @@
 
 # - resource -------------------------------------------------------------------
 
-<https://www.ehealth.fgov.be/standards/fhir/referral/Task/referral-task-uc5a-1> a fhir:Task;
-  fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "referral-task-uc5a-1"]; # 
-  fhir:Resource.meta [
-     fhir:Meta.profile [
-       fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-task";
-       fhir:index 0;
+<https://www.ehealth.fgov.be/standards/fhir/referral/Task/referral-task-uc5a-1> a fhir:Task ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "referral-task-uc5a-1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-task"^^xsd:anyURI ;
        fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-task>
-     ]
-  ]; # 
-  fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Task</b><a name=\"referral-task-uc5a-1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Task &quot;referral-task-uc5a-1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referral-task.html\">BeReferralTask</a></p></div><p><b>basedOn</b>: <a href=\"ServiceRequest-uc5a-1.html\">ServiceRequest/uc5a-1</a></p><p><b>status</b>: completed</p><p><b>intent</b>: order</p><p><b>executionPeriod</b>: 2023-02-08 --&gt; 2023-02-08</p></div>"
-  ]; # 
-  fhir:Task.basedOn [
-     fhir:index 0;
-     fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/uc5a-1>;
-     fhir:Reference.reference [ fhir:value "ServiceRequest/uc5a-1" ]
-  ]; # 
-  fhir:Task.status [ fhir:value "completed"]; # 
-  fhir:Task.intent [ fhir:value "order"]; # 
-  fhir:Task.executionPeriod [
-     fhir:Period.start [ fhir:value "2023-02-08"^^xsd:date ];
-     fhir:Period.end [ fhir:value "2023-02-08"^^xsd:date ]
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Task</b><a name=\"referral-task-uc5a-1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Task &quot;referral-task-uc5a-1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referral-task.html\">BeReferralTask</a></p></div><p><b>basedOn</b>: <a href=\"ServiceRequest-uc5a-1.html\">ServiceRequest/uc5a-1</a></p><p><b>status</b>: completed</p><p><b>intent</b>: order</p><p><b>executionPeriod</b>: 2023-02-08 --&gt; 2023-02-08</p></div>"
+  ] ; # 
+  fhir:basedOn ( [
+     fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/uc5a-1> ;
+     fhir:reference [ fhir:v "ServiceRequest/uc5a-1" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:executionPeriod [
+     fhir:start [ fhir:v "2023-02-08"^^xsd:date ] ;
+     fhir:end [ fhir:v "2023-02-08"^^xsd:date ]
   ] . # 
-
-# - ontology header ------------------------------------------------------------
-
-<https://www.ehealth.fgov.be/standards/fhir/referral/Task/referral-task-uc5a-1.ttl> a owl:Ontology;
-  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 

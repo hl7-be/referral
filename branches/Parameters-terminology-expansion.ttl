@@ -5,19 +5,13 @@
 
 # - resource -------------------------------------------------------------------
 
-<https://www.ehealth.fgov.be/standards/fhir/referral/Parameters/terminology-expansion> a fhir:Parameters;
-  fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "terminology-expansion"]; # 
-  fhir:Parameters.parameter [
-     fhir:index 0;
-     fhir:Parameters.parameter.name [ fhir:value "includeDesignations" ];
-     fhir:Parameters.parameter.valueBoolean [ fhir:value "true"^^xsd:boolean ]
-  ] . # 
-
-# - ontology header ------------------------------------------------------------
-
-<https://www.ehealth.fgov.be/standards/fhir/referral/Parameters/terminology-expansion.ttl> a owl:Ontology;
-  owl:imports fhir:fhir.ttl .
+<https://www.ehealth.fgov.be/standards/fhir/referral/Parameters/terminology-expansion> a fhir:Parameters ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "terminology-expansion"] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "includeDesignations" ] ;
+     fhir:value [ fhir:v "true"^^xsd:boolean ]
+  ] ) . # 
 
 # -------------------------------------------------------------------------------------
 

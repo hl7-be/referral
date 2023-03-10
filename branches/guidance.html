@@ -112,6 +112,9 @@
   <li>
     <a href="guidance.html">Guidance</a>
   </li>
+  <li>
+    <a href="mapping.html">Functional</a>
+  </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Artifacts
       <b class="caret"></b>
@@ -312,13 +315,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>As prescription is a form that represents the question from one practitioner to another to perform a particular task. The prescription has some statuses, e.g., it can be in draft, it can be active, it can be completed. Next to the prescription, there is also the task, which also has some statuses: it can (e.g.) be on hold, in progress or completed. These are different things, but the referral prescription system wants to keep information about the two things.</p>
 
-<p>Therefore, there are two resources that are handled at the same time, the request and the task. The task is linked to the request using an extension, the TaskReference. The task referred to in the TaskReference SHALL be present in the contained section of the Request. The task has no life independent of the Request.</p>
+<p>Therefore, there are two resources that are handled at the same time, the request and the task with the profile BeReferralTask.</p>
 
 <h4 id="many-performers-for-one-prescription">Many performers for one prescription</h4>
 
 <p>There is a clear difference between a prescription and the task associated with the prescription. However, if the prescription contains a repeated action, and is possibly spread over a longer period of time, the task can be executed by different performers. Each performer will perform a part of the task, and all parts together are the full task as prescribed by the prescription.</p>
 
-<p>Therefore there is the possibility to split up the general task in TaskReference in several subtasks by different performers. These tasks are kept in the extension PerformerTasks. Each performer will have its own task, in which he or she can indicate when the subtask was started and when it was ended. The combination of the time indications in the PerformerTasks make up the duration of the TaskReference, and the statuses of the PerformerTasks make up the status of the TaskReference.</p>
+<p>Therefore there is the possibility to split up the general task (BeReferralTask) in several subtasks by different performers. Each performer will have its own task (BePerformerTask), in which he or she can indicate when the subtask was started and when it was ended. The combination of the time indications in the PerformerTasks make up the duration of the BeReferralTask, and the statuses of the PerformerTasks make up the status of the BeReferralTask.</p>
 
 <h3 id="specifics-concerning-the-referral-prescription-for-diagnostic-imaging">Specifics concerning the referral prescription for diagnostic imaging</h3>
 
@@ -428,7 +431,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href=""></a>.  Package hl7.fhir.be.referral#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Feb 22, 2023 15:46+0000">2023-02-22</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href=""></a>.  Package hl7.fhir.be.referral#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 10, 2023 07:39+0000">2023-03-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
             <!--  -->

@@ -5,64 +5,52 @@
 
 # - resource -------------------------------------------------------------------
 
-<https://www.ehealth.fgov.be/standards/fhir/referral/RequestGroup/uc2a> a fhir:RequestGroup;
-  fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "uc2a"]; # 
-  fhir:Resource.meta [
-     fhir:Meta.profile [
-       fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-request-group";
-       fhir:index 0;
+<https://www.ehealth.fgov.be/standards/fhir/referral/RequestGroup/uc2a> a fhir:RequestGroup ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "uc2a"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-request-group"^^xsd:anyURI ;
        fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-request-group>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: RequestGroup</b><a name=\"uc2a\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource RequestGroup &quot;uc2a&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referralprescription-request-group.html\">BeReferralPrescriptionRequestGroup</a></p></div><p><b>identifier</b>: id: 5752e55e-9d8a-11ed-a8fc-0242ac120002</p><p><b>status</b>: draft</p><p><b>intent</b>: order</p><blockquote><p><b>action</b></p><blockquote><p><b>id</b></p>uc2a-1</blockquote><p><b>resource</b>: <a href=\"ServiceRequest-uc2a-1.html\">ServiceRequest/uc2a-1</a></p></blockquote><blockquote><p><b>action</b></p><blockquote><p><b>id</b></p>uc2a-2</blockquote><h3>RelatedActions</h3><table class=\"grid\"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>uc2a-1</td><td>after-end</td></tr></table><p><b>resource</b>: <a href=\"ServiceRequest-uc2a-2.html\">ServiceRequest/uc2a-2</a></p></blockquote><blockquote><p><b>action</b></p><blockquote><p><b>id</b></p>uc2a-3</blockquote><h3>RelatedActions</h3><table class=\"grid\"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>uc2a-2</td><td>after-end</td></tr></table><p><b>resource</b>: <a href=\"ServiceRequest-uc2a-3.html\">ServiceRequest/uc2a-3</a></p></blockquote></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "5752e55e-9d8a-11ed-a8fc-0242ac120002" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:action ( [
+     fhir:id [ fhir:v "uc2a-1" ] ;
+     fhir:resource [
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/uc2a-1> ;
+       fhir:reference [ fhir:v "ServiceRequest/uc2a-1" ]
      ]
-  ]; # 
-  fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: RequestGroup</b><a name=\"uc2a\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource RequestGroup &quot;uc2a&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referralprescription-request-group.html\">BeReferralPrescriptionRequestGroup</a></p></div><p><b>identifier</b>: id: 5752e55e-9d8a-11ed-a8fc-0242ac120002</p><p><b>status</b>: draft</p><p><b>intent</b>: order</p><blockquote><p><b>action</b></p><p><b>resource</b>: <a href=\"ServiceRequest-uc2a-1.html\">ServiceRequest/uc2a-1</a></p></blockquote><blockquote><p><b>action</b></p><h3>RelatedActions</h3><table class=\"grid\"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>uc2a-1</td><td>after-end</td></tr></table><p><b>resource</b>: <a href=\"ServiceRequest-uc2a-2.html\">ServiceRequest/uc2a-2</a></p></blockquote><blockquote><p><b>action</b></p><h3>RelatedActions</h3><table class=\"grid\"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>uc2a-2</td><td>after-end</td></tr></table><p><b>resource</b>: <a href=\"ServiceRequest-uc2a-3.html\">ServiceRequest/uc2a-3</a></p></blockquote></div>"
-  ]; # 
-  fhir:RequestGroup.identifier [
-     fhir:index 0;
-     fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep" ];
-     fhir:Identifier.value [ fhir:value "5752e55e-9d8a-11ed-a8fc-0242ac120002" ]
-  ]; # 
-  fhir:RequestGroup.status [ fhir:value "draft"]; # 
-  fhir:RequestGroup.intent [ fhir:value "order"]; # 
-  fhir:RequestGroup.action [
-     fhir:index 0;
-     fhir:Element.id [ fhir:value "uc2a-1" ];
-     fhir:RequestGroup.action.resource [
-       fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/uc2a-1>;
-       fhir:Reference.reference [ fhir:value "ServiceRequest/uc2a-1" ]
+  ] [
+     fhir:id [ fhir:v "uc2a-2" ] ;
+     fhir:relatedAction ( [
+       fhir:actionId [ fhir:v "uc2a-1" ] ;
+       fhir:relationship [ fhir:v "after-end" ]
+     ] ) ;
+     fhir:resource [
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/uc2a-2> ;
+       fhir:reference [ fhir:v "ServiceRequest/uc2a-2" ]
      ]
-  ], [
-     fhir:index 1;
-     fhir:Element.id [ fhir:value "uc2a-2" ];
-     fhir:RequestGroup.action.relatedAction [
-       fhir:index 0;
-       fhir:RequestGroup.action.relatedAction.actionId [ fhir:value "uc2a-1" ];
-       fhir:RequestGroup.action.relatedAction.relationship [ fhir:value "after-end" ]
-     ];
-     fhir:RequestGroup.action.resource [
-       fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/uc2a-2>;
-       fhir:Reference.reference [ fhir:value "ServiceRequest/uc2a-2" ]
+  ] [
+     fhir:id [ fhir:v "uc2a-3" ] ;
+     fhir:relatedAction ( [
+       fhir:actionId [ fhir:v "uc2a-2" ] ;
+       fhir:relationship [ fhir:v "after-end" ]
+     ] ) ;
+     fhir:resource [
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/uc2a-3> ;
+       fhir:reference [ fhir:v "ServiceRequest/uc2a-3" ]
      ]
-  ], [
-     fhir:index 2;
-     fhir:Element.id [ fhir:value "uc2a-3" ];
-     fhir:RequestGroup.action.relatedAction [
-       fhir:index 0;
-       fhir:RequestGroup.action.relatedAction.actionId [ fhir:value "uc2a-2" ];
-       fhir:RequestGroup.action.relatedAction.relationship [ fhir:value "after-end" ]
-     ];
-     fhir:RequestGroup.action.resource [
-       fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/uc2a-3>;
-       fhir:Reference.reference [ fhir:value "ServiceRequest/uc2a-3" ]
-     ]
-  ] . # 
-
-# - ontology header ------------------------------------------------------------
-
-<https://www.ehealth.fgov.be/standards/fhir/referral/RequestGroup/uc2a.ttl> a owl:Ontology;
-  owl:imports fhir:fhir.ttl .
+  ] ) . # 
 
 # -------------------------------------------------------------------------------------
 
