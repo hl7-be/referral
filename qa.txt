@@ -1,10 +1,10 @@
 ﻿ReferralPrescription : Validation Results
 =========================================
 
-err = 19, warn = 426, info = 3
-IG Publisher Version: 1.2.41
-Generated Fri Mar 10 07:43:57 UTC 2023. FHIR version 4.0.1 for hl7.fhir.be.referral#1.0.0 (canonical = https://www.ehealth.fgov.be/standards/fhir/referral)
- Build Errors : 3 / 49 / 0
+err = 22, warn = 429, info = 4
+IG Publisher Version: 1.2.51
+Generated Fri Mar 17 13:15:29 UTC 2023. FHIR version 4.0.1 for hl7.fhir.be.referral#1.0.0 (canonical = https://www.ehealth.fgov.be/standards/fhir/referral)
+ Build Errors : 3 / 50 / 0
  /github/workspace/fsh-generated/resources/CarePlan-gpvisit : 1 / 0 / 1
  /github/workspace/fsh-generated/resources/CodeSystem-be-communication-code : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/CodeSystem-be-cs-co-prescriber-choice : 0 / 0 / 1
@@ -52,8 +52,9 @@ Generated Fri Mar 10 07:43:57 UTC 2023. FHIR version 4.0.1 for hl7.fhir.be.refer
  /github/workspace/fsh-generated/resources/ServiceRequest-uc2a-2 : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/ServiceRequest-uc2a-3 : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/ServiceRequest-uc5a-1 : 0 / 0 / 1
- /github/workspace/fsh-generated/resources/StructureDefinition-be-co-prescriber : 0 / 1 / 1
- /github/workspace/fsh-generated/resources/StructureDefinition-be-co-prescriber-info : 0 / 1 / 1
+ /github/workspace/fsh-generated/resources/ServiceRequest-ucgh211-1 : 3 / 4 / 10
+ /github/workspace/fsh-generated/resources/StructureDefinition-be-co-prescriber : 0 / 0 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-be-co-prescriber-info : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-be-contained-or-logical-reference : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-be-ext-contraindication : 0 / 0 / 1
  /github/workspace/fsh-generated/resources/StructureDefinition-be-ext-contrastfluiduse : 0 / 0 / 1
@@ -151,6 +152,7 @@ WARNING: Unable to find ImplementationGuide.definition.resource.description for 
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource ServiceRequest/uc2a-2.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource ServiceRequest/uc2a-3.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource ServiceRequest/uc5a-1.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource ServiceRequest/ucgh211-1.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 ERROR: ServiceRequest/referralprescription-nursing-example5-digestive-system-care: Unable to find profile https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-digestive-system-care nominated as the profile for which resource /ServiceRequest/referralprescription-nursing-example5-digestive-system-care is an example
 ERROR: ServiceRequest/referralprescription-nursing-example2-digestive-system-care: Unable to find profile https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-digestive-system-care nominated as the profile for which resource /ServiceRequest/referralprescription-nursing-example2-digestive-system-care is an example
 WARNING: 1: The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide
@@ -220,10 +222,17 @@ WARNING: ServiceRequest/referralprescription-nursing-example6-compression-therap
 == fsh-generated/resources/ServiceRequest-uc2a-2.json ==
 == fsh-generated/resources/ServiceRequest-uc2a-3.json ==
 == fsh-generated/resources/ServiceRequest-uc5a-1.json ==
+== fsh-generated/resources/ServiceRequest-ucgh211-1.json ==
+ERROR: ServiceRequest/ucgh211-1: ServiceRequest.contained[3]/*PractitionerRole/ucgh211-1-4*/.code[0].coding[0]: Unknown Code https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty#persgeneralphysician in https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty for 'https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty#persgeneralphysician'
+WARNING: ServiceRequest/ucgh211-1: ServiceRequest.extension[3].extension[1].extension[1].value.ofType(CodeableConcept).coding[0]: A code with no system has no defined meaning. A system should be provided
+WARNING: ServiceRequest/ucgh211-1: ServiceRequest.extension[3].extension[2].extension[1].value.ofType(CodeableConcept).coding[0]: A code with no system has no defined meaning. A system should be provided
+WARNING: ServiceRequest/ucgh211-1: ServiceRequest.extension[3].extension[3].extension[1].value.ofType(CodeableConcept).coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: ServiceRequest/ucgh211-1: ServiceRequest.extension[3].extension[4].extension[0].value.ofType(Reference): Unable to find a match for profile #ucgh211-1-4 among choices: https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole
+INFORMATION: ServiceRequest/ucgh211-1: ServiceRequest.extension[3].extension[4].extension[0].value.ofType(Reference): Details for #ucgh211-1-4 matching against profile https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole|2.1.0
+WARNING: ServiceRequest/ucgh211-1: ServiceRequest.extension[3].extension[4].extension[1].value.ofType(CodeableConcept).coding[0]: A code with no system has no defined meaning. A system should be provided
+ERROR: ServiceRequest/ucgh211-1: ServiceRequest.code: None of the codings provided are in the value set 'BeVSRequestedServicesNurse' (https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-requested-services-nurse|1.0.0), and a coding from this value set is required) (codes = http://snomed.info/sct#761894009)
 == fsh-generated/resources/StructureDefinition-be-co-prescriber.json ==
-WARNING: StructureDefinition.where(url = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-co-prescriber'): The Implementation Guide contains no examples for this extension
 == fsh-generated/resources/StructureDefinition-be-co-prescriber-info.json ==
-WARNING: StructureDefinition.where(url = 'https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-co-prescriber-info'): The Implementation Guide contains no examples for this extension
 == fsh-generated/resources/StructureDefinition-be-contained-or-logical-reference.json ==
 == fsh-generated/resources/StructureDefinition-be-ext-contraindication.json ==
 == fsh-generated/resources/StructureDefinition-be-ext-contrastfluiduse.json ==
