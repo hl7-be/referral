@@ -1,5 +1,4 @@
 Logical: BeModelReferralPrescription
-//Parent: Element
 Id: be-model-referralprescription
 Title: "BeModelReferralPrescription"
 Description: "Logical model describing the model for the prescription referral. This draft is used in the HL7 Belgian workgroup for referral."
