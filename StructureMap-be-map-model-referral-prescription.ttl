@@ -1,0 +1,160 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/referral/StructureMap/be-map-model-referral-prescription> a fhir:StructureMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "be-map-model-referral-prescription"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "additional" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><pre>map &quot;https://www.ehealth.fgov.be/standards/fhir/referral/StructureMap/be-map-model-referral-prescription&quot; = &quot;be-map-model-referral-prescription&quot;\r\n\r\nuses &quot;https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-model-referralprescription&quot; alias BeModelReferralPrescription as source\r\nuses &quot;https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription&quot; alias BeReferralPrescription as target\r\n\r\n\r\n\r\ngroup Main(source model : BeModelReferralPrescription, target profile : BeReferralPrescription) {\r\n    model.recordedDate as a -&gt; profile.authoredOn = a;\r\n    model.recorder as recorder -&gt; profile.extension = create('Extension') as ext, \r\n        ext.url = &quot;https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-recorder&quot;, \r\n        ext.value = recorder;\r\n    model.prescriber as prescriber -&gt; profile.requester = prescriber;\r\n    model.'co-prescriberNr' as nr, model.'co-prescriber' as co -&gt; profile.extension = create('Extension') as ext,\r\n    ext.url = &quot;https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-co-prescriber-info&quot;, \r\n    ext.value = recorder'c0';\r\n     \r\n}\r\n\r\n\r\n\r\n</pre></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureMap/be-map-model-referral-prescription"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.0.0"] ; # 
+  fhir:name [ fhir:v "be-map-model-referral-prescription"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2023-04-19T13:59:03+00:00"^^xsd:dateTime] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BE" ] ;
+       fhir:display [ fhir:v "Belgium" ]
+     ] )
+  ] ) ; # 
+  fhir:structure ( [
+     fhir:url [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-model-referralprescription"^^xsd:anyURI ;
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-model-referralprescription>
+     ] ;
+     fhir:mode [ fhir:v "source" ] ;
+     fhir:alias [ fhir:v "BeModelReferralPrescription" ]
+  ] [
+     fhir:url [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription"^^xsd:anyURI ;
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription>
+     ] ;
+     fhir:mode [ fhir:v "target" ] ;
+     fhir:alias [ fhir:v "BeReferralPrescription" ]
+  ] ) ; # 
+  fhir:group ( [
+     fhir:name [ fhir:v "Main" ] ;
+     fhir:typeMode [ fhir:v "none" ] ;
+     fhir:input ( [
+       fhir:name [ fhir:v "model" ] ;
+       fhir:type [ fhir:v "BeModelReferralPrescription" ] ;
+       fhir:mode [ fhir:v "source" ]
+     ] [
+       fhir:name [ fhir:v "profile" ] ;
+       fhir:type [ fhir:v "BeReferralPrescription" ] ;
+       fhir:mode [ fhir:v "target" ]
+     ] ) ;
+     fhir:rule ( [
+       fhir:name [ fhir:v "recordedDate" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "model" ] ;
+         fhir:element [ fhir:v "recordedDate" ] ;
+         fhir:variable [ fhir:v "a" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "profile" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "authoredOn" ] ;
+         fhir:transform [ fhir:v "copy" ] ;
+         fhir:parameter ( [
+           fhir:value [ fhir:v "a" ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "recorder" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "model" ] ;
+         fhir:element [ fhir:v "recorder" ] ;
+         fhir:variable [ fhir:v "recorder" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "profile" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "extension" ] ;
+         fhir:variable [ fhir:v "ext" ] ;
+         fhir:transform [ fhir:v "create" ] ;
+         fhir:parameter ( [
+           fhir:value [ fhir:v "Extension" ]
+         ] )
+       ] [
+         fhir:context [ fhir:v "ext" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "url" ] ;
+         fhir:transform [ fhir:v "copy" ] ;
+         fhir:parameter ( [
+           fhir:value [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-recorder" ]
+         ] )
+       ] [
+         fhir:context [ fhir:v "ext" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "value" ] ;
+         fhir:transform [ fhir:v "copy" ] ;
+         fhir:parameter ( [
+           fhir:value [ fhir:v "recorder" ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "prescriber" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "model" ] ;
+         fhir:element [ fhir:v "prescriber" ] ;
+         fhir:variable [ fhir:v "prescriber" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "profile" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "requester" ] ;
+         fhir:transform [ fhir:v "copy" ] ;
+         fhir:parameter ( [
+           fhir:value [ fhir:v "prescriber" ]
+         ] )
+       ] )
+     ] [
+       fhir:name [ fhir:v "c0" ] ;
+       fhir:source ( [
+         fhir:context [ fhir:v "model" ] ;
+         fhir:element [ fhir:v "'co-prescriberNr'" ] ;
+         fhir:variable [ fhir:v "nr" ]
+       ] [
+         fhir:context [ fhir:v "model" ] ;
+         fhir:element [ fhir:v "'co-prescriber'" ] ;
+         fhir:variable [ fhir:v "co" ]
+       ] ) ;
+       fhir:target ( [
+         fhir:context [ fhir:v "profile" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "extension" ] ;
+         fhir:variable [ fhir:v "ext" ] ;
+         fhir:transform [ fhir:v "create" ] ;
+         fhir:parameter ( [
+           fhir:value [ fhir:v "Extension" ]
+         ] )
+       ] [
+         fhir:context [ fhir:v "ext" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "url" ] ;
+         fhir:transform [ fhir:v "copy" ] ;
+         fhir:parameter ( [
+           fhir:value [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-co-prescriber-info" ]
+         ] )
+       ] [
+         fhir:context [ fhir:v "ext" ] ;
+         fhir:contextType [ fhir:v "variable" ] ;
+         fhir:element [ fhir:v "value" ] ;
+         fhir:transform [ fhir:v "copy" ] ;
+         fhir:parameter ( [
+           fhir:value [ fhir:v "recorder" ]
+         ] )
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
