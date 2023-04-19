@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureMap xmlns="http://hl7.org/fhir">
+  <id value="be-map-model-referral-prescription"/>
+  <text>
+    <status value="additional"/><div xmlns="http://www.w3.org/1999/xhtml"><pre>map &quot;https://www.ehealth.fgov.be/standards/fhir/referral/StructureMap/be-map-model-referral-prescription&quot; = &quot;be-map-model-referral-prescription&quot;
+
+uses &quot;https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-model-referralprescription&quot; alias BeModelReferralPrescription as source
+uses &quot;https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription&quot; alias BeReferralPrescription as target
+
+
+
+group Main(source model : BeModelReferralPrescription, target profile : BeReferralPrescription) {
+    model.recordedDate as a -&gt; profile.authoredOn = a;
+    model.recorder as recorder -&gt; profile.extension = create('Extension') as ext, 
+        ext.url = &quot;https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-recorder&quot;, 
+        ext.value = recorder;
+    model.prescriber as prescriber -&gt; profile.requester = prescriber;
+    model.'co-prescriberNr' as nr, model.'co-prescriber' as co -&gt; profile.extension = create('Extension') as ext,
+    ext.url = &quot;https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-co-prescriber-info&quot;, 
+    ext.value = recorder'c0';
+     
+}
+
+
+
+</pre></div>
+  </text>
+  <url value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureMap/be-map-model-referral-prescription"/>
+  <version value="1.0.0"/>
+  <name value="be-map-model-referral-prescription"/>
+  <status value="draft"/>
+  <date value="2023-04-19T13:57:37+00:00"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="BE"/>
+      <display value="Belgium"/>
+    </coding>
+  </jurisdiction>
+  <structure>
+    <url value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-model-referralprescription"/>
+    <mode value="source"/>
+    <alias value="BeModelReferralPrescription"/>
+  </structure>
+  <structure>
+    <url value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription"/>
+    <mode value="target"/>
+    <alias value="BeReferralPrescription"/>
+  </structure>
+  <group>
+    <name value="Main"/>
+    <typeMode value="none"/>
+    <input>
+      <name value="model"/>
+      <type value="BeModelReferralPrescription"/>
+      <mode value="source"/>
+    </input>
+    <input>
+      <name value="profile"/>
+      <type value="BeReferralPrescription"/>
+      <mode value="target"/>
+    </input>
+    <rule>
+      <name value="recordedDate"/>
+      <source>
+        <context value="model"/>
+        <element value="recordedDate"/>
+        <variable value="a"/>
+      </source>
+      <target>
+        <context value="profile"/>
+        <contextType value="variable"/>
+        <element value="authoredOn"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="a"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="recorder"/>
+      <source>
+        <context value="model"/>
+        <element value="recorder"/>
+        <variable value="recorder"/>
+      </source>
+      <target>
+        <context value="profile"/>
+        <contextType value="variable"/>
+        <element value="extension"/>
+        <variable value="ext"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Extension"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="ext"/>
+        <contextType value="variable"/>
+        <element value="url"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-recorder"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="ext"/>
+        <contextType value="variable"/>
+        <element value="value"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="recorder"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="prescriber"/>
+      <source>
+        <context value="model"/>
+        <element value="prescriber"/>
+        <variable value="prescriber"/>
+      </source>
+      <target>
+        <context value="profile"/>
+        <contextType value="variable"/>
+        <element value="requester"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="prescriber"/>
+        </parameter>
+      </target>
+    </rule>
+    <rule>
+      <name value="c0"/>
+      <source>
+        <context value="model"/>
+        <element value="'co-prescriberNr'"/>
+        <variable value="nr"/>
+      </source>
+      <source>
+        <context value="model"/>
+        <element value="'co-prescriber'"/>
+        <variable value="co"/>
+      </source>
+      <target>
+        <context value="profile"/>
+        <contextType value="variable"/>
+        <element value="extension"/>
+        <variable value="ext"/>
+        <transform value="create"/>
+        <parameter>
+          <valueString value="Extension"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="ext"/>
+        <contextType value="variable"/>
+        <element value="url"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueString value="https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-co-prescriber-info"/>
+        </parameter>
+      </target>
+      <target>
+        <context value="ext"/>
+        <contextType value="variable"/>
+        <element value="value"/>
+        <transform value="copy"/>
+        <parameter>
+          <valueId value="recorder"/>
+        </parameter>
+      </target>
+    </rule>
+  </group>
+</StructureMap>
