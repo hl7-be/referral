@@ -70,7 +70,7 @@ Description: "The common structure for referral prescription."
 * authoredOn 1.. MS
 * requester 1.. MS
 * requester only BeContainedOrLogicalReference
-* requester only Reference(BePractitioner)
+* requester only Reference(BePractitionerRole)
 * requester ^short = "Prescriber of the requested service"
 * performerType ..0 MS
 * performerType ^short = "Discipline of provider"

@@ -2,13 +2,14 @@ Instance: laboratory-order-example1
 InstanceOf: BeLabPrescription
 Title: "laboratory-order-example1"
 Usage: #example
-* contained[0] = Inline-Instance-for-laboratory-order-example1-1
+* contained[+] = Inline-Instance-for-laboratory-order-example1-1
 * contained[+] = observation1
 * contained[+] = Inline-Instance-for-laboratory-order-example1-2
 * contained[+] = media1
 * contained[+] = Inline-Instance-for-laboratory-order-example1-3
 * contained[+] = specimen1
 * contained[+] = practitionerrole1
+* contained[+] = requesterrole1
 * performer[+] = Reference(practitionerrole1)
 * extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * extension[validity].valuePeriod.start = "2020-10-10"
@@ -31,7 +32,7 @@ Usage: #example
 * orderDetail[+].text = "Test described in text only"
 * subject = Reference(patient1)
 * authoredOn = "2015-11-01"
-* requester = Reference(Requester1)
+* requester = Reference(requesterrole1)
 * reasonCode = $some_nomenclature_system#123 "TheJustification"
 * supportingInfo[0] = Reference(observation1)
 * supportingInfo[+] = Reference(condition1)
