@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "ReferralPrescription"] ; # 
   fhir:title [ fhir:v "Referral Prescription"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-04-19T13:59:03+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-04-20T18:37:34+00:00"^^xsd:dateTime] ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
        fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
@@ -825,8 +825,8 @@
          fhir:value [ fhir:v "StructureDefinition:logical" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-model-diagnosticimagingprescription> ;
-         fhir:reference [ fhir:v "StructureDefinition/be-model-diagnosticimagingprescription" ]
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/BeDiagnosticImagingPrescription> ;
+         fhir:reference [ fhir:v "StructureDefinition/BeDiagnosticImagingPrescription" ]
        ] ;
        fhir:name [ fhir:v "BeDiagnosticImagingPrescription" ] ;
        fhir:description [ fhir:v "Logical model describing the model for the diagnostic imaging prescription. This draft is used in the HL7 Belgian workgroup for referral." ] ;
@@ -837,8 +837,8 @@
          fhir:value [ fhir:v "StructureDefinition:logical" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-model-laboratoryprescription> ;
-         fhir:reference [ fhir:v "StructureDefinition/be-model-laboratoryprescription" ]
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/BeLaboratoryPrescription> ;
+         fhir:reference [ fhir:v "StructureDefinition/BeLaboratoryPrescription" ]
        ] ;
        fhir:name [ fhir:v "BeLaboratoryPrescription" ] ;
        fhir:description [ fhir:v "Logical model describing the model for the prescription laboratory. This draft is used in the HL7 Belgian workgroup for laboratory." ] ;
@@ -849,8 +849,8 @@
          fhir:value [ fhir:v "StructureDefinition:logical" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-model-nursingprescription> ;
-         fhir:reference [ fhir:v "StructureDefinition/be-model-nursingprescription" ]
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/BeModelNursingPrescription> ;
+         fhir:reference [ fhir:v "StructureDefinition/BeModelNursingPrescription" ]
        ] ;
        fhir:name [ fhir:v "BeModelNursingPrescription" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
@@ -860,8 +860,8 @@
          fhir:value [ fhir:v "StructureDefinition:logical" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-model-referralprescription> ;
-         fhir:reference [ fhir:v "StructureDefinition/be-model-referralprescription" ]
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/BeModelReferralPrescription> ;
+         fhir:reference [ fhir:v "StructureDefinition/BeModelReferralPrescription" ]
        ] ;
        fhir:name [ fhir:v "BeModelReferralPrescription" ] ;
        fhir:description [ fhir:v "Logical model describing the model for the prescription referral. This draft is used in the HL7 Belgian workgroup for referral." ] ;
@@ -872,8 +872,8 @@
          fhir:value [ fhir:v "StructureDefinition:logical" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-model-referral-requestgroup> ;
-         fhir:reference [ fhir:v "StructureDefinition/be-model-referral-requestgroup" ]
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/BeModelReferralRequestGroup> ;
+         fhir:reference [ fhir:v "StructureDefinition/BeModelReferralRequestGroup" ]
        ] ;
        fhir:name [ fhir:v "BeModelReferralRequestGroup" ] ;
        fhir:description [ fhir:v "Logical model describing the model for a group of referral prescriptions. This draft is used in the HL7 Belgian workgroup for referral." ] ;
@@ -884,8 +884,8 @@
          fhir:value [ fhir:v "StructureDefinition:logical" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-model-physiotherapyprescription> ;
-         fhir:reference [ fhir:v "StructureDefinition/be-model-physiotherapyprescription" ]
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/BePhysiotherapyPrescription> ;
+         fhir:reference [ fhir:v "StructureDefinition/BePhysiotherapyPrescription" ]
        ] ;
        fhir:name [ fhir:v "BePhysiotherapyPrescription" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
@@ -1139,6 +1139,17 @@
          fhir:reference [ fhir:v "Practitioner/Performer1" ]
        ] ;
        fhir:name [ fhir:v "Performer1" ] ;
+       fhir:example [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Practitioner" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Practitioner/Requester1> ;
+         fhir:reference [ fhir:v "Practitioner/Requester1" ]
+       ] ;
+       fhir:name [ fhir:v "Requester1" ] ;
        fhir:example [ fhir:v "true"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1686,6 +1697,17 @@
          fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing"^^xsd:anyURI ;
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing>
        ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/PractitionerRole/requesterrole1> ;
+         fhir:reference [ fhir:v "PractitionerRole/requesterrole1" ]
+       ] ;
+       fhir:name [ fhir:v "requesterrole1" ] ;
+       fhir:example [ fhir:v "true"^^xsd:boolean ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;

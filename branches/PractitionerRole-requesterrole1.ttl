@@ -1,0 +1,34 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/referral/PractitionerRole/requesterrole1> a fhir:PractitionerRole ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "requesterrole1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole"^^xsd:anyURI ;
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: PractitionerRole</b><a name=\"requesterrole1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource PractitionerRole &quot;requesterrole1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"https://build.fhir.org/ig/hl7-be/core//StructureDefinition-be-practitionerrole.html\">BePractitionerRole</a></p></div><p><b>practitioner</b>: <a href=\"Practitioner-Requester1.html\">Practitioner/Requester1</a> &quot; MCCOY&quot;</p><p><b>code</b>: physician <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://build.fhir.org/ig/hl7-be/core//CodeSystem-cd-hcparty.html\">BeCdHcParty</a>#persphysician)</span></p></div>"
+  ] ; # 
+  fhir:practitioner [
+     fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Practitioner/Requester1> ;
+     fhir:reference [ fhir:v "Practitioner/Requester1" ]
+  ] ; # 
+  fhir:code ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "persphysician" ] ;
+       fhir:display [ fhir:v "physician" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
