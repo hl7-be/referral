@@ -10,7 +10,7 @@
   "name" : "ReferralPrescription",
   "title" : "Referral Prescription",
   "status" : "draft",
-  "date" : "2023-04-19T13:59:03+00:00",
+  "date" : "2023-04-20T18:37:34+00:00",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -910,7 +910,7 @@
         "valueString" : "StructureDefinition:logical"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/be-model-diagnosticimagingprescription"
+        "reference" : "StructureDefinition/BeDiagnosticImagingPrescription"
       },
       "name" : "BeDiagnosticImagingPrescription",
       "description" : "Logical model describing the model for the diagnostic imaging prescription. This draft is used in the HL7 Belgian workgroup for referral.",
@@ -922,7 +922,7 @@
         "valueString" : "StructureDefinition:logical"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/be-model-laboratoryprescription"
+        "reference" : "StructureDefinition/BeLaboratoryPrescription"
       },
       "name" : "BeLaboratoryPrescription",
       "description" : "Logical model describing the model for the prescription laboratory. This draft is used in the HL7 Belgian workgroup for laboratory.",
@@ -934,7 +934,7 @@
         "valueString" : "StructureDefinition:logical"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/be-model-nursingprescription"
+        "reference" : "StructureDefinition/BeModelNursingPrescription"
       },
       "name" : "BeModelNursingPrescription",
       "exampleBoolean" : false
@@ -945,7 +945,7 @@
         "valueString" : "StructureDefinition:logical"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/be-model-referralprescription"
+        "reference" : "StructureDefinition/BeModelReferralPrescription"
       },
       "name" : "BeModelReferralPrescription",
       "description" : "Logical model describing the model for the prescription referral. This draft is used in the HL7 Belgian workgroup for referral.",
@@ -957,7 +957,7 @@
         "valueString" : "StructureDefinition:logical"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/be-model-referral-requestgroup"
+        "reference" : "StructureDefinition/BeModelReferralRequestGroup"
       },
       "name" : "BeModelReferralRequestGroup",
       "description" : "Logical model describing the model for a group of referral prescriptions. This draft is used in the HL7 Belgian workgroup for referral.",
@@ -969,7 +969,7 @@
         "valueString" : "StructureDefinition:logical"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/be-model-physiotherapyprescription"
+        "reference" : "StructureDefinition/BePhysiotherapyPrescription"
       },
       "name" : "BePhysiotherapyPrescription",
       "exampleBoolean" : false
@@ -1223,6 +1223,17 @@
         "reference" : "Practitioner/Performer1"
       },
       "name" : "Performer1",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/Requester1"
+      },
+      "name" : "Requester1",
       "exampleBoolean" : true
     },
     {
@@ -1680,6 +1691,17 @@
       },
       "name" : "referralprescription-nursing-example6-compression-therapy",
       "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "PractitionerRole"
+      }],
+      "reference" : {
+        "reference" : "PractitionerRole/requesterrole1"
+      },
+      "name" : "requesterrole1",
+      "exampleBoolean" : true
     },
     {
       "extension" : [{
