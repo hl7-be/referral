@@ -10,8 +10,12 @@ InstanceOf: BeReferralPrescriptionRequestGroup
 * action[=].resource = Reference(ucgh222p12-1)
 * action[+].id = "ucgh222p12-2"
 * action[=].resource = Reference(ucgh222p12-2)
+* action[=].relatedAction.actionId = "ucgh222p12-3"
+* action[=].relatedAction.relationship = "before"
 * action[+].id = "ucgh222p12-3"
 * action[=].resource = Reference(ucgh222p12-3)
+* action[=].relatedAction.actionId = "ucgh222p12-1"
+* action[=].relatedAction.relationship = "before"
 * intent = #order
 * status = #draft
 
