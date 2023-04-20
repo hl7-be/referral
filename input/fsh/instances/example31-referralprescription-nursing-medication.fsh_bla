@@ -2,8 +2,8 @@ Instance: example31-referralprescription-nursing-medication
 InstanceOf: BeReferralPrescriptionNursingMedication
 Title: "example31-referralprescription-nursing-medication"
 Usage: #example
-* contained[0] = patient1
-* contained[+] = practitioner1
+* contained[+] = patient1
+* contained[+] = practitionerrole1
 
 
 //* extension[performertasks].valueReference[+] = Reference(performer-task)
@@ -17,7 +17,7 @@ Usage: #example
 * priority = #routine
 * medicationCodeableConcept = $cnk-codes#3499415 "Clamoxyl inj./inf. oploss. (pdr. + solv.) i.m./i.v. [flac. + amp.] 10 x 1 g"
 * subject = Reference(patient1)
-* requester = Reference(practitioner1)
+* requester = Reference(requesterrole1)
 * reasonCode = $sct#195450002
 * note.text = "1 X per dag aanbrengen op de wonde - ulcer variqueux infecté - MI droit Amoxicilline (antibiotique)"
 * dosageInstruction.text = "1 X per dag"

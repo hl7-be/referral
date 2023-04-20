@@ -429,7 +429,7 @@ Description: "Temporary codes for indicating service details that can be request
 // * #tmp-remo-tage-7 ^designation[=].value = "remove sutures in one stage"
 * #tmp-shor-wick-2 "shorten wick"
 * #tmp-shor-wick-2 ^designation[0].language = #fr-BE
-* #tmp-shor-wick-2 ^designation[=].value = "Raccourcir la mèche "
+* #tmp-shor-wick-2 ^designation[=].value = "Raccourcir la mèche"
 * #tmp-shor-wick-2 ^designation[+].language = #nl-BE
 * #tmp-shor-wick-2 ^designation[=].value = "inkorten wiek"
 * #tmp-shor-wick-2 ^designation[+].language = #en

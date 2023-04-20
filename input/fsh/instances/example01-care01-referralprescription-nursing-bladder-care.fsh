@@ -1,9 +1,9 @@
 Instance: example01-care01-referralprescription-nursing-bladder-care
 InstanceOf: BeReferralPrescriptionNursing
 Usage: #inline
-* meta.profile[0] = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing"
-* meta.profile[+] = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-bladder-care"
-* contained[0] = patient1
+
+
+* contained[+] = patient1
 * contained[+] = Requester1
 * contained[+] = practitionerrole1
 * extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
@@ -20,7 +20,7 @@ Usage: #inline
 * occurrenceTiming.repeat.frequency = 1
 * occurrenceTiming.repeat.period = 1
 * occurrenceTiming.repeat.periodUnit = #d
-* requester = Reference(Requester1)
+* requester = Reference(requesterrole1)
 * performer[+] = Reference(practitionerrole1)
 * reasonCode.text = "reason"
 * authoredOn = "2020-01-01"
