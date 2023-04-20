@@ -2,8 +2,8 @@ Instance: example23-referralprescription-nursing-medication
 InstanceOf: BeReferralPrescriptionNursingMedication
 Title: "example23-referralprescription-nursing-medication"
 Usage: #example
-* contained[0] = patient1
-* contained[+] = practitioner1
+* contained[+] = patient1
+* contained[+] = practitionerrole1
 
 
 //* extension[performertasks].valueReference[+] = Reference(performer-task)
@@ -18,7 +18,7 @@ Usage: #example
 * priority = #routine
 * medicationCodeableConcept = $cnk-codes#0105965 "Cerulyx auric. druppels oploss. 10 ml 455 mg / 10 ml"
 * subject = Reference(patient1)
-* requester = Reference(practitioner1)
+* requester = Reference(requesterrole1)
 * note.text = "in beide oren, daarna 10 minuten op zij blijven liggen"
 * dosageInstruction.text = "frequency: 3 druppels 3x/dag gedurende 5 dagen"
 * dosageInstruction.patientInstruction = "daarna 10 minuten op zij blijven liggen"

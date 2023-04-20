@@ -2,8 +2,8 @@ Instance: example19-referralprescription-nursing-medication
 InstanceOf: BeReferralPrescriptionNursingMedication
 Title: "example19-referralprescription-nursing-medication"
 Usage: #example
-* contained[0] = patient1
-* contained[+] = practitioner1
+* contained[+] = patient1
+* contained[+] = practitionerrole1
 //* extension[performertasks].valueReference[+] = Reference(performer-task)
 * extension[feedback].valueBoolean = true
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
@@ -16,7 +16,7 @@ Usage: #example
 * priority = #routine
 * medicationCodeableConcept = $cnk-codes#0278192 "Clexane inj. oploss. i.v./s.c. [voorgev. spuit] 10 x 4 000 IE anti-Xa / 0,4 ml"
 * subject = Reference(patient1)
-* requester = Reference(practitioner1)
+* requester = Reference(requesterrole1)
 * dosageInstruction.text = "frequency: 2x/dag subcutaan toedienen, vanaf operatie tot 20/8/2021 of tot INR > 2"
 * dosageInstruction.timing.repeat.boundsPeriod.start = "1900-01-01"
 * dosageInstruction.timing.repeat.boundsPeriod.end = "2021-08-20"
