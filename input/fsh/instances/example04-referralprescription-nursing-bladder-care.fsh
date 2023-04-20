@@ -2,9 +2,9 @@ Instance: example04-referralprescription-nursing-bladder-care
 InstanceOf: BeReferralPrescriptionNursing
 Title: "example04-referralprescription-nursing-bladder-care"
 Usage: #example
-* contained[0] = patient1
-* contained[+] = practitioner1
+* contained[+] = patient1
 * contained[+] = practitionerrole1
+* contained[+] = requesterrole1
 * extension[statusReason].valueCodeableConcept = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason#inProgress "In Progress"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"
@@ -23,5 +23,5 @@ Usage: #example
 * occurrenceTiming.repeat.period = 6
 * occurrenceTiming.repeat.periodUnit = #wk
 * authoredOn = "2022-10-31"
-* requester = Reference(practitioner1)
+* requester = Reference(requesterrole1)
 * reasonCode = $sct#309256001

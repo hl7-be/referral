@@ -2,8 +2,8 @@ Instance: diagnostic-imaging-basic-example-concreteWithText
 InstanceOf: BeReferralPrescriptionDiagnosticImaging
 Title: "diagnostic-imaging-basic-example-concreteWithText"
 Usage: #example
-* contained[0] = patient1
-* contained[+] = Requester1
+* contained[+] = patient1
+* contained[+] = requesterrole1
 * extension[validity].valuePeriod.start = "2020-01-01"
 * extension[validity].valuePeriod.end = "2021-01-01"
 * extension[feedback].valueBoolean = true
@@ -18,6 +18,6 @@ Usage: #example
 * priority = #routine
 * code.text = "Rx + echo rechtervoet"
 * subject = Reference(patient1)
-* requester = Reference(Requester1)
+* requester = Reference(requesterrole1)
 * reasonCode.text = "Fractuur? Ligamentair letsel?"
 * authoredOn = "2022-01-01"

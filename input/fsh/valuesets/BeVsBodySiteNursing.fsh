@@ -14,6 +14,7 @@ Description: "Body Site"
 * ^contact[=].telecom.value = "message-structure@ehealth.fgov.be"
 * ^extension[http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm].valueInteger = 1
 * ^jurisdiction.coding[+] = urn:iso:std:iso:3166#BE
+* ^experimental = false
 * $sct#31640002
 * $sct#789699009
 * $sct#78277001
