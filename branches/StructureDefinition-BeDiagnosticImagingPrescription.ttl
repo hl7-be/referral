@@ -16,7 +16,7 @@
   fhir:version [ fhir:v "1.0.0"] ; # 
   fhir:name [ fhir:v "BeDiagnosticImagingPrescription"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-04-21T14:29:36+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-04-21T14:42:15+00:00"^^xsd:dateTime] ; # 
   fhir:description [ fhir:v "Logical model describing the model for the diagnostic imaging prescription. This draft is used in the HL7 Belgian workgroup for referral."] ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
@@ -70,8 +70,8 @@
      ] [
        fhir:id [ fhir:v "BeDiagnosticImagingPrescription.recorder" ] ;
        fhir:path [ fhir:v "BeDiagnosticImagingPrescription.recorder" ] ;
-       fhir:short [ fhir:v "The person who is responsable for the content, not necessarily the person who entered the content. This is either the prescriber, a co-prescriber or a performer" ] ;
-       fhir:definition [ fhir:v "The person who is responsable for the content, not necessarily the person who entered the content. This is either the prescriber, a co-prescriber or a performer" ] ;
+       fhir:short [ fhir:v "The person who is responsable for the content, not necessarily the person who entered the content. This is either the prescriber, a co-prescriber or a performer, depending on who last updated the resource." ] ;
+       fhir:definition [ fhir:v "The person who is responsable for the content, not necessarily the person who entered the content. This is either the prescriber, a co-prescriber or a performer, depending on who last updated the resource." ] ;
        fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -412,14 +412,14 @@
          fhir:code [ fhir:v "Reference"^^xsd:anyURI ]
        ] )
      ] [
-       fhir:id [ fhir:v "BeDiagnosticImagingPrescription.validitionPeriod" ] ;
-       fhir:path [ fhir:v "BeDiagnosticImagingPrescription.validitionPeriod" ] ;
+       fhir:id [ fhir:v "BeDiagnosticImagingPrescription.validityPeriod" ] ;
+       fhir:path [ fhir:v "BeDiagnosticImagingPrescription.validityPeriod" ] ;
        fhir:short [ fhir:v "Period of validity of prescription" ] ;
        fhir:definition [ fhir:v "Period of validity of prescription" ] ;
        fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
-         fhir:path [ fhir:v "BeModelReferralPrescription.validitionPeriod" ] ;
+         fhir:path [ fhir:v "BeModelReferralPrescription.validityPeriod" ] ;
          fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
          fhir:max [ fhir:v "1" ]
        ] ;
