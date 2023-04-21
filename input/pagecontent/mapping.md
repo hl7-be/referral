@@ -17,7 +17,7 @@
 | prescriptionNumber | ServiceRequest(BeReferralPrescriptionNursing).identifier |
 | pssNumber | ServiceRequest(BeReferralPrescriptionNursing).extension[BePSSInfo].extension[guidanceResponse].valueReference.identifier|
 | pssRejectionReason | ServiceRequest(BeReferralPrescriptionNursing).extension[BePSSInfo].extension[rejectionReason].valueAnnotation |
-| groupIdentifier | groupIdentifier |
+| groupIdentifier | requisition |
 | basedOn | basedOn |
 | validationPeriod | ServiceRequest(BeReferralPrescriptionNursing).extension[BeValidityPeriod].valuePeriod |
 | treatmentPeriod | Task(BeReferralTask).executionPeriod |
