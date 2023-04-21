@@ -358,3 +358,59 @@ Description: "Temporary codes for indicating services that can be requested from
 //* #tmp-comp-ings-8 ^designation[=].value = "compressietherapie: aan- en uittrekken van steunkousen"
 //* #tmp-comp-ings-8 ^designation[+].language = #en
 //* #tmp-comp-ings-8 ^designation[=].value = "compression therapy: putting on and taking off compression stockings"
+* #tmp-care-tube-6 "care for tracheostomy tube"
+* #tmp-care-tube-6 ^designation[0].language = #fr-BE
+* #tmp-care-tube-6 ^designation[=].value = "entretien du tube de trachéotomie"
+* #tmp-care-tube-6 ^designation[+].language = #nl-BE
+* #tmp-care-tube-6 ^designation[=].value = "zorgen aan tracheacanule"
+* #tmp-care-tube-6 ^designation[+].language = #en
+* #tmp-care-tube-6 ^designation[=].value = "care for tracheostomy tube"
+* #tmp-care-tube-1 "care for gastric tube"
+* #tmp-care-tube-1 ^designation[0].language = #fr-BE
+* #tmp-care-tube-1 ^designation[=].value = "entretien du tube gastrique"
+* #tmp-care-tube-1 ^designation[+].language = #nl-BE
+* #tmp-care-tube-1 ^designation[=].value = "zorgen aan maagsonde"
+* #tmp-care-tube-1 ^designation[+].language = #en
+* #tmp-care-tube-1 ^designation[=].value = "care for gastric tube"
+* #tmp-gast-care-1 "gastrostomy tube care"
+* #tmp-gast-care-1 ^designation[0].language = #fr-BE
+* #tmp-gast-care-1 ^designation[=].value = "entretien de la sonde de gastrostomie"
+* #tmp-gast-care-1 ^designation[+].language = #nl-BE
+* #tmp-gast-care-1 ^designation[=].value = "zorgen aan gastrostomiesonde"
+* #tmp-gast-care-1 ^designation[+].language = #en
+* #tmp-gast-care-1 ^designation[=].value = "gastrostomy tube care"
+* #tmp-care-eter-9 "care for a catheter"
+* #tmp-care-eter-9 ^designation[0].language = #fr-BE
+* #tmp-care-eter-9 ^designation[=].value = "prendre soin d'un cathéter"
+* #tmp-care-eter-9 ^designation[+].language = #nl-BE
+* #tmp-care-eter-9 ^designation[=].value = "zorgen aan een catheter"
+* #tmp-care-eter-9 ^designation[+].language = #en
+* #tmp-care-eter-9 ^designation[=].value = "care for a catheter"
+* #tmp-repl-tube-5 "replace tracheostomy tube"
+* #tmp-repl-tube-5 ^designation[0].language = #fr-BE
+* #tmp-repl-tube-5 ^designation[=].value = "remplacer le tube de trachéotomie"
+* #tmp-repl-tube-5 ^designation[+].language = #nl-BE
+* #tmp-repl-tube-5 ^designation[=].value = "vervangen tracheacanule"
+* #tmp-repl-tube-5 ^designation[+].language = #en
+* #tmp-repl-tube-5 ^designation[=].value = "replace tracheostomy tube"
+* #tmp-clea-tube-3 "clean tracheostomy tube"
+* #tmp-clea-tube-3 ^designation[0].language = #fr-BE
+* #tmp-clea-tube-3 ^designation[=].value = "nettoyer la canule de trachéotomie"
+* #tmp-clea-tube-3 ^designation[+].language = #nl-BE
+* #tmp-clea-tube-3 ^designation[=].value = "reinigen tracheacanule"
+* #tmp-clea-tube-3 ^designation[+].language = #en
+* #tmp-clea-tube-3 ^designation[=].value = "clean tracheostomy tube"
+* #tmp-spec-act0-5 "Specific technical provision (B2 act - C act)"
+* #tmp-spec-act0-5 ^designation[0].language = #fr-BE
+* #tmp-spec-act0-5 ^designation[=].value = "Disposition technique spécifique (loi B2 - loi C)"
+* #tmp-spec-act0-5 ^designation[+].language = #nl-BE
+* #tmp-spec-act0-5 ^designation[=].value = "Specifieke technische verstrekking (B2 handeling - C handeling)"
+* #tmp-spec-act0-5 ^designation[+].language = #en
+* #tmp-spec-act0-5 ^designation[=].value = "Specific technical provision (B2 act - C act)"
+* #tmp-plac-edle-0 "Place/replace needle"
+* #tmp-plac-edle-0 ^designation[0].language = #fr-BE
+* #tmp-plac-edle-0 ^designation[=].value = "Placer/remplacer l'aiguille"
+* #tmp-plac-edle-0 ^designation[+].language = #nl-BE
+* #tmp-plac-edle-0 ^designation[=].value = "Plaatsen/vervangen naald"
+* #tmp-plac-edle-0 ^designation[+].language = #en
+* #tmp-plac-edle-0 ^designation[=].value = "Place/replace needle"
