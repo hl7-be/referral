@@ -50,4 +50,10 @@
       <sch:assert test="count(f:extension[@url = 'https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-ext-laterality']) &lt;= 1">extension with URL = 'https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-ext-laterality': maximum cardinality of 'extension' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:ServiceRequest/f:note</sch:title>
+    <sch:rule context="f:ServiceRequest/f:note">
+      <sch:assert test="count(f:extension[@url = 'https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeableconcept']) &lt;= 1">extension with URL = 'https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeableconcept': maximum cardinality of 'extension' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
 </sch:schema>
