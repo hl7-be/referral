@@ -83,5 +83,7 @@ Description: "The common structure for referral prescription."
 * patientInstruction MS
 * bodySite MS
 * bodySite.extension contains BeExtLaterality named bodyLaterality 0..1
-* note MS
+* note MS 
+* note only BeCodedAnnotation
+* note.extension[https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeableconcept].valueCodeableConcept from BeVSRequestNoteType (required)
 * authoredOn only BeYearMonthDay
