@@ -1,0 +1,99 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/ucgh222p12-1> a fhir:ServiceRequest ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ucgh222p12-1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing"^^xsd:anyURI ;
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: ServiceRequest</b><a name=\"ucgh222p12-1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource ServiceRequest &quot;ucgh222p12-1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referralprescription-nursing.html\">BeReferralPrescriptionNursing</a></p></div><p><b>BeFeedbackToPrescriber</b>: false</p><p><b>BeValidityPeriod</b>: 2022-10-03 --&gt; 2023-04-03</p><p><b>requisition</b>: id: 27e5a4a4-e043-11ed-b5ea-0242ac120002</p><p><b>status</b>: draft</p><p><b>intent</b>: order</p><p><b>category</b>: Nursing procedure <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#9632001)</span></p><p><b>code</b>: Dressing change catheter <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-be-cs-temp-requested-service.html\">BeTempRequestedService</a>#tmp-dres-eter-4)</span></p><p><b>subject</b>: <span/></p><p><b>occurrence</b>: 2022-10-10</p><p><b>authoredOn</b>: 2022-10-03</p><p><b>requester</b>: <a name=\"ucgh222p12-1-1\"> </a></p><blockquote><p/><p><a name=\"ucgh222p12-1-1\"> </a></p><p><b>practitioner</b>: <span/></p><p><b>code</b>: physician <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://build.fhir.org/ig/hl7-be/core//CodeSystem-cd-hcparty.html\">BeCdHcParty</a>#persphysician)</span></p></blockquote><p><b>performer</b>: <span/></p><p><b>reasonCode</b>: chemotherapy via &quot;implantable venous access port catheter&quot; <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ([not stated])</span></p><hr/><blockquote><p><b>Generated Narrative: PractitionerRole #ucgh222p12-1-1</b><a name=\"ucgh222p12-1-1\"> </a></p><p><b>practitioner</b>: <span/></p><p><b>code</b>: physician <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://build.fhir.org/ig/hl7-be/core//CodeSystem-cd-hcparty.html\">BeCdHcParty</a>#persphysician)</span></p></blockquote></div>"
+  ] ; # 
+  fhir:contained ( [
+     a fhir:PractitionerRole ;
+     fhir:id [ fhir:v "ucgh222p12-1-1" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole>
+       ] )
+     ] ;
+     fhir:practitioner [
+       fhir:identifier [
+         fhir:system [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "10829059" ]
+       ]
+     ] ;
+     fhir:code ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "persphysician" ]
+       ] )
+     ] )
+  ] ) ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-feedback-to-prescriber"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "false"^^xsd:boolean ]
+  ] [
+     fhir:url [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Period ;
+       fhir:start [ fhir:v "2022-10-03"^^xsd:date ] ;
+       fhir:end [ fhir:v "2023-04-03"^^xsd:date ]
+     ]
+  ] ) ; # 
+  fhir:requisition [
+     fhir:system [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "27e5a4a4-e043-11ed-b5ea-0242ac120002" ]
+  ] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       a sct:9632001 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:version [ fhir:v "http://snomed.info/sct/11000172109" ] ;
+       fhir:code [ fhir:v "9632001" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "tmp-dres-eter-4" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:identifier [
+       fhir:system [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "38012699993" ]
+     ]
+  ] ; # 
+  fhir:occurrence [ fhir:v "2022-10-10"^^xsd:date] ; # 
+  fhir:authoredOn [ fhir:v "2022-10-03"^^xsd:date] ; # 
+  fhir:requester [
+     fhir:reference [ fhir:v "#ucgh222p12-1-1" ]
+  ] ; # 
+  fhir:performer ( [
+     fhir:identifier [
+       fhir:system [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "persnurse" ]
+     ]
+  ] ) ; # 
+  fhir:reasonCode ( [
+     fhir:coding ( [
+       fhir:display [ fhir:v "chemotherapy via \"implantable venous access port catheter\"" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
