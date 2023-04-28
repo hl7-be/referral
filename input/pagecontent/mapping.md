@@ -17,8 +17,8 @@
 | prescriptionNumber | ServiceRequest(BeReferralPrescriptionNursing).identifier |
 | pssNumber | ServiceRequest(BeReferralPrescriptionNursing).extension[BePSSInfo].extension[guidanceResponse].valueReference.identifier|
 | pssRejectionReason | ServiceRequest(BeReferralPrescriptionNursing).extension[BePSSInfo].extension[rejectionReason].valueAnnotation |
-| groupIdentifier | requisition |
-| basedOn | basedOn |
+| groupIdentifier | ServiceRequest(BeReferralPrescription).requisition |
+| basedOn | ServiceRequest(BeReferralPrescription).basedOn |
 | validationPeriod | ServiceRequest(BeReferralPrescriptionNursing).extension[BeValidityPeriod].valuePeriod |
 | treatmentPeriod | Task(BeReferralTask).executionPeriod |
 | treatmentValidationEndDate | ServiceRequest(BeReferralPrescriptionNursing).extension[BeLatestEndDate].valueDate |
@@ -33,14 +33,16 @@
 | ServiceRequested | ServiceRequest(BeReferralPrescriptionNursing).code |
 | ServiceRequestedDetail | ServiceRequest(BeReferralPrescriptionNursing).orderDetail |
 | problemCode | ServiceRequest(BeReferralPrescriptionNursing).reasonCode |
-| supportingInfo | ServiceRequest(BeReferralPrescriptionNursing).supportingInfo |
+| anamnesis | ServiceRequest(BeReferralPrescriptionNursing).supportingInfo |
 | resultReceiver | ServiceRequest(BeReferralPrescriptionNursing).extension[BeFeedbackToPrescriber].valueBoolean |
-| status | ServiceRequest(BeReferralPrescriptionNursing).status |
-| statusReason | ServiceRequest(BeReferralPrescriptionNursing).extension[statusReason].valueCodeableConcept |
+| prescriptionStatus | ServiceRequest(BeReferralPrescriptionNursing).status |
+| prescriptionStatusReason | ServiceRequest(BeReferralPrescriptionNursing).extension[statusReason].valueCodeableConcept |
 | treatmentStatus | Task(BeReferralTask).status |
 | treatmentStatusReason | Task(BeReferralTask).statusReason |
 | bodyLocation | ServiceRequest(BeReferralPrescriptionNursing).bodySite |
 | bodyLocation.bodySite | ServiceRequest(BeReferralPrescriptionNursing).bodySite |
 | bodyLocation.bodyLaterality | ServiceRequest(BeReferralPrescriptionNursing).bodySite.extension[BeExtBodyLaterality].valueCodeableConcept |
 | note | ServiceRequest(BeReferralPrescriptionNursing).note |
+| note.type | ServiceRequest(BeReferralPrescriptionNursing).note.extension[BeExtCodableConcept].valueCodeableConcept |
+| note.text | ServiceRequest(BeReferralPrescriptionNursing).note.text |
 | prescriptionType | ServiceRequest(BeReferralPrescriptionNursing).intent + ServiceRequest(BeReferralPrescriptionNursing).extension[BeProposalType].valueCodeableConcept |
