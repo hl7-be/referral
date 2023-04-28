@@ -1,7 +1,7 @@
 Logical: BeModelReferralPrescription
 Description: "Logical model describing the model for the prescription referral. This draft is used in the HL7 Belgian workgroup for referral."
 * recordedDate 1..1 dateTime "When this prescription was created" "When this prescription was created"
-* recorder 1..1 Reference "The person who is responsable for the content, not necessarily the person who entered the content. This is either the prescriber, a co-prescriber or a performer, depending on who last updated the resource." "The person who is responsable for the content, not necessarily the person who entered the content. This is either the prescriber, a co-prescriber or a performer, depending on who last updated the resource."
+* recorder 1..1 Reference "The person who is responsable for the content, not necessarily the person who entered the content. This is either the prescriber, a co-prescriber or a performer. It is the last person who updated the resources." "The person who is responsable for the content, not necessarily the person who entered the content. This is either the prescriber, a co-prescriber or a performer. It is the last person who updated the resources."
 * prescriber 1..1 Reference "The prescribing healthcare party" "The prescribing healthcare party"
 * co-prescriberNumber 1..1 positiveInt "Number of co-prescribers that must sign the prescription to activate it" "Number of co-prescribers that must sign the prescription to activate it"
 * co-prescriber 0..* BackboneElement "Information about co prescribers" "Information about co prescribers"
