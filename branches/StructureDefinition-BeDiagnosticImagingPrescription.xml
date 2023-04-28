@@ -28,7 +28,7 @@
   <version value="1.0.0"/>
   <name value="BeDiagnosticImagingPrescription"/>
   <status value="active"/>
-  <date value="2023-04-28T07:14:58+00:00"/>
+  <date value="2023-04-28T10:20:31+00:00"/>
   <description value="Logical model describing the model for the diagnostic imaging prescription. This draft is used in the HL7 Belgian workgroup for referral."/>
   <jurisdiction>
     <coding>
@@ -733,11 +733,11 @@
       <short value="More detailed specification of the prescribed act"/>
       <definition value="More detailed specification of the prescribed act"/>
       <min value="0"/>
-      <max value="1"/>
+      <max value="*"/>
       <base>
         <path value="BeModelReferralPrescription.serviceRequestedDetail"/>
         <min value="0"/>
-        <max value="1"/>
+        <max value="*"/>
       </base>
       <type>
         <code value="CodeableConcept"/>
@@ -758,14 +758,14 @@
         <code value="Reference"/>
       </type>
     </element>
-    <element id="BeDiagnosticImagingPrescription.supportingInfo">
-      <path value="BeDiagnosticImagingPrescription.supportingInfo"/>
+    <element id="BeDiagnosticImagingPrescription.anamnesis">
+      <path value="BeDiagnosticImagingPrescription.anamnesis"/>
       <short value="Care Set Problem"/>
       <definition value="Care Set Problem"/>
       <min value="0"/>
       <max value="1"/>
       <base>
-        <path value="BeModelReferralPrescription.supportingInfo"/>
+        <path value="BeModelReferralPrescription.anamnesis"/>
         <min value="0"/>
         <max value="1"/>
       </base>
@@ -788,14 +788,14 @@
         <code value="boolean"/>
       </type>
     </element>
-    <element id="BeDiagnosticImagingPrescription.status">
-      <path value="BeDiagnosticImagingPrescription.status"/>
+    <element id="BeDiagnosticImagingPrescription.prescriptionStatus">
+      <path value="BeDiagnosticImagingPrescription.prescriptionStatus"/>
       <short value="Current status"/>
       <definition value="Current status"/>
       <min value="1"/>
       <max value="1"/>
       <base>
-        <path value="BeModelReferralPrescription.status"/>
+        <path value="BeModelReferralPrescription.prescriptionStatus"/>
         <min value="1"/>
         <max value="1"/>
       </base>
@@ -807,14 +807,14 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/request-status"/>
       </binding>
     </element>
-    <element id="BeDiagnosticImagingPrescription.statusReason">
-      <path value="BeDiagnosticImagingPrescription.statusReason"/>
+    <element id="BeDiagnosticImagingPrescription.prescriptionStatusReason">
+      <path value="BeDiagnosticImagingPrescription.prescriptionStatusReason"/>
       <short value="Reason current status"/>
       <definition value="Reason current status"/>
       <min value="0"/>
       <max value="1"/>
       <base>
-        <path value="BeModelReferralPrescription.statusReason"/>
+        <path value="BeModelReferralPrescription.prescriptionStatusReason"/>
         <min value="0"/>
         <max value="1"/>
       </base>
@@ -1033,7 +1033,161 @@
         <max value="*"/>
       </base>
       <type>
-        <code value="Annotation"/>
+        <code value="BackboneElement"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.note.id">
+      <path value="BeDiagnosticImagingPrescription.note.id"/>
+      <representation value="xmlAttr"/>
+      <short value="Unique id for inter-element referencing"/>
+      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Element.id"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
+          <valueUrl value="string"/>
+        </extension>
+        <code value="http://hl7.org/fhirpath/System.String"/>
+      </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.note.extension">
+      <path value="BeDiagnosticImagingPrescription.note.extension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url"/>
+        <rules value="open"/>
+      </slicing>
+      <short value="Additional content defined by implementations"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="Element.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.note.modifierExtension">
+      <path value="BeDiagnosticImagingPrescription.note.modifierExtension"/>
+      <short value="Extensions that cannot be ignored even if unrecognized"/>
+      <definition value="May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.&#xA;&#xA;Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself)."/>
+      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+      <requirements value="Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension)."/>
+      <alias value="extensions"/>
+      <alias value="user content"/>
+      <alias value="modifiers"/>
+      <min value="0"/>
+      <max value="*"/>
+      <base>
+        <path value="BackboneElement.modifierExtension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="true"/>
+      <isModifierReason value="Modifier extensions are expected to modify the meaning or interpretation of the element that contains them"/>
+      <isSummary value="true"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.note.type">
+      <path value="BeDiagnosticImagingPrescription.note.type"/>
+      <short value="type of the note"/>
+      <definition value="type of the note"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="BeModelReferralPrescription.note.type"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="CodeableConcept"/>
+      </type>
+    </element>
+    <element id="BeDiagnosticImagingPrescription.note.text">
+      <path value="BeDiagnosticImagingPrescription.note.text"/>
+      <short value="text of the note"/>
+      <definition value="text of the note"/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="BeModelReferralPrescription.note.text"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="string"/>
       </type>
     </element>
     <element id="BeDiagnosticImagingPrescription.prescriptionType">

@@ -85,18 +85,18 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","The reason of the status of the action executed by the performer","The reason of the status of the action executed by the performer","","","","","","","","","",,,,,"",,,,"BeModelReferralPrescription.intendedPerformer.statusReason",0,1,"",""
 "BeModelReferralPrescription.serviceRequested","BeModelReferralPrescription.serviceRequested","","","",1,1,"","","","CodeableConcept {[]} {[]}
 ","What is prescribed","What is prescribed","","","","","","","","","",,,,,"",,,,"BeModelReferralPrescription.serviceRequested",1,1,"",""
-"BeModelReferralPrescription.serviceRequestedDetail","BeModelReferralPrescription.serviceRequestedDetail","","","",0,1,"","","","CodeableConcept {[]} {[]}
-","More detailed specification of the prescribed act","More detailed specification of the prescribed act","","","","","","","","","",,,,,"",,,,"BeModelReferralPrescription.serviceRequestedDetail",0,1,"",""
+"BeModelReferralPrescription.serviceRequestedDetail","BeModelReferralPrescription.serviceRequestedDetail","","","",0,*,"","","","CodeableConcept {[]} {[]}
+","More detailed specification of the prescribed act","More detailed specification of the prescribed act","","","","","","","","","",,,,,"",,,,"BeModelReferralPrescription.serviceRequestedDetail",0,*,"",""
 "BeModelReferralPrescription.problemCode","BeModelReferralPrescription.problemCode","","","",0,1,"","","","Reference {[]} {[]}
 ","The problem (code or reference) that is the main reason for this prescription","The problem (code or reference) that is the main reason for this prescription","","","","","","","","","",,,,,"",,,,"BeModelReferralPrescription.problemCode",0,1,"",""
-"BeModelReferralPrescription.supportingInfo","BeModelReferralPrescription.supportingInfo","","","",0,1,"","","","Reference {[]} {[]}
-","Care Set Problem","Care Set Problem","","","","","","","","","",,,,,"",,,,"BeModelReferralPrescription.supportingInfo",0,1,"",""
+"BeModelReferralPrescription.anamnesis","BeModelReferralPrescription.anamnesis","","","",0,1,"","","","Reference {[]} {[]}
+","Care Set Problem","Care Set Problem","","","","","","","","","",,,,,"",,,,"BeModelReferralPrescription.anamnesis",0,1,"",""
 "BeModelReferralPrescription.resultReceiver","BeModelReferralPrescription.resultReceiver","","","",1,1,"","","","boolean {[]} {[]}
 ","True if the prescriber wants feedback. Other caregivers can be mentioned in the note","True if the prescriber wants feedback. Other caregivers can be mentioned in the note","","","","","","","","","",,,,,"",,,,"BeModelReferralPrescription.resultReceiver",1,1,"",""
-"BeModelReferralPrescription.status","BeModelReferralPrescription.status","","","",1,1,"","","","code {[]} {[]}
-","Current status","Current status","","","","","","","","","",,"required","","http://hl7.org/fhir/ValueSet/request-status","",,,,"BeModelReferralPrescription.status",1,1,"",""
-"BeModelReferralPrescription.statusReason","BeModelReferralPrescription.statusReason","","","",0,1,"","","","CodeableConcept {[]} {[]}
-","Reason current status","Reason current status","","","","","","","","","",,,,,"",,,,"BeModelReferralPrescription.statusReason",0,1,"",""
+"BeModelReferralPrescription.prescriptionStatus","BeModelReferralPrescription.prescriptionStatus","","","",1,1,"","","","code {[]} {[]}
+","Current status","Current status","","","","","","","","","",,"required","","http://hl7.org/fhir/ValueSet/request-status","",,,,"BeModelReferralPrescription.prescriptionStatus",1,1,"",""
+"BeModelReferralPrescription.prescriptionStatusReason","BeModelReferralPrescription.prescriptionStatusReason","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","Reason current status","Reason current status","","","","","","","","","",,,,,"",,,,"BeModelReferralPrescription.prescriptionStatusReason",0,1,"",""
 "BeModelReferralPrescription.treatmentStatus","BeModelReferralPrescription.treatmentStatus","","","",0,1,"","","","CodeableConcept {[]} {[]}
 ","Status of the treatment","Status of the treatment","","","","","","","","","",,,,,"",,,,"BeModelReferralPrescription.treatmentStatus",0,1,"",""
 "BeModelReferralPrescription.treatmentStatusReason","BeModelReferralPrescription.treatmentStatusReason","","","",0,1,"","","","CodeableConcept {[]} {[]}
@@ -121,7 +121,25 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Anatomical place where the treatment should be executed","Anatomical place where the treatment should be executed","","","","","","","","","",,,,,"",,,,"BeModelReferralPrescription.bodyLocation.bodySite",0,1,"",""
 "BeModelReferralPrescription.bodyLocation.bodyLaterality","BeModelReferralPrescription.bodyLocation.bodyLaterality","","","",0,1,"","","","CodeableConcept {[]} {[]}
 ","Side of the body","Side of the body","","","","","","","","","",,,,,"",,,,"BeModelReferralPrescription.bodyLocation.bodyLaterality",0,1,"",""
-"BeModelReferralPrescription.note","BeModelReferralPrescription.note","","","",0,*,"","","","Annotation {[]} {[]}
-","Additional text notes about the request.","Additional text notes about the request.","","","","","","","","","",,,,,"",,,,"BeModelReferralPrescription.note",0,*,"",""
+"BeModelReferralPrescription.note","BeModelReferralPrescription.note","","","",0,*,"","","","BackboneElement {[]} {[]}
+","Additional text notes about the request.","Additional text notes about the request.","","","","","","","","","",,,,,"",,,,"BeModelReferralPrescription.note",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"BeModelReferralPrescription.note.id","BeModelReferralPrescription.note.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
+"BeModelReferralPrescription.note.extension","BeModelReferralPrescription.note.extension","","extensions
+user content","",0,*,"","","","Extension {[]} {[]}
+","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a"
+"BeModelReferralPrescription.note.modifierExtension","BeModelReferralPrescription.note.modifierExtension","","extensions
+user contentmodifiers","",0,*,"","Y","Y","Extension {[]} {[]}
+","Extensions that cannot be ignored even if unrecognized","May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
+
+Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension).","","","","","","","",,,,,"",,,,"BackboneElement.modifierExtension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","N/A"
+"BeModelReferralPrescription.note.type","BeModelReferralPrescription.note.type","","","",0,1,"","","","CodeableConcept {[]} {[]}
+","type of the note","type of the note","","","","","","","","","",,,,,"",,,,"BeModelReferralPrescription.note.type",0,1,"",""
+"BeModelReferralPrescription.note.text","BeModelReferralPrescription.note.text","","","",1,1,"","","","string {[]} {[]}
+","text of the note","text of the note","","","","","","","","","",,,,,"",,,,"BeModelReferralPrescription.note.text",1,1,"",""
 "BeModelReferralPrescription.prescriptionType","BeModelReferralPrescription.prescriptionType","","","",1,1,"","","","code {[]} {[]}
 ","Proposal, Prolongation, Prescription","Proposal, Prolongation, Prescription","","","","","","","","","",,,,,"",,,,"BeModelReferralPrescription.prescriptionType",1,1,"",""
