@@ -30,3 +30,4 @@ Alias: $procedure-code = http://hl7.org/fhir/ValueSet/procedure-code
 Alias: $be-vs-referral-category = https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-referral-category
 Alias: $cnk_product_codes = https://www.ehealth.fgov.be/standards/fhir/medication/NamingSystem/be-ns-cnk-codes
 Alias: $cd-hcparty = https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty
+Alias: $temp-detail = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service-detail
