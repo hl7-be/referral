@@ -25,3 +25,14 @@ Description: "The nursing profile, generic version. Please note the nursing refe
 * bodySite MS
 * bodySite from be-vs-bodysite-nursing (required)
 * note MS
+* supportingInfo ^slicing.discriminator.type = #value
+* supportingInfo ^slicing.discriminator.path = "type"
+* supportingInfo ^slicing.description = "Slice based on the supportingInfo.reference.type"
+* supportingInfo ^slicing.rules = #open
+* supportingInfo contains 
+        medication 0..1 MS and
+        tools 0..* MS
+* supportingInfo[medication].type = Canonical(BeReferralPrescriptionNursingMedication)
+* supportingInfo[medication] only Reference(BeReferralPrescriptionNursingMedication)
+* supportingInfo[tools].type = Canonical(BeReferralDevice)
+* supportingInfo[tools] only Reference(BeReferralDevice)

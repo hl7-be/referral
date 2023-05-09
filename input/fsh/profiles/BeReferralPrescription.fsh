@@ -29,7 +29,8 @@ Description: "The common structure for referral prescription."
     BeProposalType named proposalType 0..1 MS and
     //BeTaskReference named task 0..1 MS and
     BePSSInfo named pss 0..1 MS and
-    BeExtRecorder named recorder 0..1 MS
+    BeExtRecorder named recorder 0..1 MS and
+    BeExtEagreementInfo named eAgreement 0..1 MS
 * extension[statusReason].valueCodeableConcept 1..1
 * extension[statusReason].valueCodeableConcept from BeVSPrescriptionStatusReason (extensible)
 * extension[coprescriber] ^short = "Info about the other parties that have to take part in the prescription."
@@ -37,7 +38,7 @@ Description: "The common structure for referral prescription."
 * extension[latest] ^short = "Request must be executed before"
 * extension[feedback] ^short = "Give feedback to the prescriber"
 * extension[recorder] ^short = "The person responsable for this information, not necessarily the person who recorded the information"
-* extension[latestDraft] ^short = "The prescription must have left the draft status befor this moment"
+* extension[latestDraft] ^short = "The prescription must have left the draft status before this moment"
 //* extension[performertasks] ^short = "The subtasks as executed by different performers. Together they form the execution of the prescription as described in task extension"
 * identifier MS
 * identifier ^slicing.discriminator.type = #value
@@ -66,7 +67,7 @@ Description: "The common structure for referral prescription."
 * subject only Reference(BePatient)
 * subject MS
 * occurrence[x] MS
-* occurrence[x] ^short = "When service shall occur - once this is past, this prescription is no longer valid and the status shall reflect this."
+* occurrence[x] ^short = "When service shall occur"
 * authoredOn 1.. MS
 * requester 1.. MS
 * requester only BeContainedOrLogicalReference
@@ -78,8 +79,7 @@ Description: "The common structure for referral prescription."
 * performer only BeContainedOrLogicalReference
 * performer only Reference( BePractitionerRole )
 * performer ^short = "Requested performer - typically reference to practitionerroles"
-* reasonCode 1..1 MS
-* supportingInfo 0..* MS
+* reasonCode 1..1 MS        
 * patientInstruction MS
 * bodySite MS
 * bodySite.extension contains BeExtLaterality named bodyLaterality 0..1
