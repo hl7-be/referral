@@ -44,3 +44,9 @@ Description: "Logical model describing the model for the prescription referral. 
 * note.type 0..1 CodeableConcept "type of the note"
 * note.text 1..1 string "text of the note"
 * prescriptionType 1..1 code "Proposal, Prolongation, Prescription" "Proposal, Prolongation, Prescription"
+* eAgreement 0..1 BackboneElement "Information on the eAgreement (CIN-NIC) that is needed to relate to the advice of the public insurance physician."
+* eAgreement.referenceId 0..1 Identifier "Id of the eAgreement"
+* eAgreement.receptionDate 0..1 dateTime "Date on which the caregiver received the agreement by the NIC"
+* device 0..1 Reference "Information on additional devices (bandages, needles, ...) to be used during care (Specific for Nursing?)"
+* source 0..1 Reference(DocumentReference) "Link to an external document (DOC, XLS, PDF, ...)"
+
