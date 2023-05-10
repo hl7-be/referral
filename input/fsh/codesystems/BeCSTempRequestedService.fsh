@@ -19,7 +19,7 @@ Description: "Temporary codes for indicating services that can be requested from
 //* #tmp-prep-ient-8 ^designation[0].language = #fr-BE
 //* #tmp-prep-ient-8 ^designation[=].value = "Préparation des médicaments et administration à un patient psychiatrique"
 //* #tmp-prep-ient-8 ^designation[+].language = #nl-BE
-//* #tmp-prep-ient-8 ^designation[=].value = "Voorbereiding en medicatietoediening bij de psychiatrische patiënt. "
+//* #tmp-prep-ient-8 ^designation[=].value = "Voorbereiding en medicatietoediening bij de psychiatrische patiënt."
 //* #tmp-prep-ient-8 ^designation[+].language = #en
 //* #tmp-prep-ient-8 ^designation[=].value = "Preparation and medication administration in the psychiatric patient"
 * #tmp-prep-rsed-5 "Preparing medication_not reimbursed"
@@ -278,7 +278,7 @@ Description: "Temporary codes for indicating services that can be requested from
 //* #tmp-supr-ment-5 ^designation[0].language = #fr-BE
 //* #tmp-supr-ment-5 ^designation[=].value = "Remplacement de la sonde vésicale sus-pubienne"
 //* #tmp-supr-ment-5 ^designation[+].language = #nl-BE
-//* #tmp-supr-ment-5 ^designation[=].value = "suprapubische blaassonde vervanging "
+//* #tmp-supr-ment-5 ^designation[=].value = "suprapubische blaassonde vervanging"
 //* #tmp-supr-ment-5 ^designation[+].language = #en
 //* #tmp-supr-ment-5 ^designation[=].value = "suprapubic bladder tube replacement"
 //* #tmp-supr-oval-1 "suprapubic bladder tube removal"
@@ -327,7 +327,7 @@ Description: "Temporary codes for indicating services that can be requested from
 //* #tmp-flus-eter-7 ^designation[0].language = #fr-BE
 //* #tmp-flus-eter-7 ^designation[=].value = "Rinçage d’un cathéter"
 //* #tmp-flus-eter-7 ^designation[+].language = #nl-BE
-//* #tmp-flus-eter-7 ^designation[=].value = "Spoelen katheter "
+//* #tmp-flus-eter-7 ^designation[=].value = "Spoelen katheter"
 //* #tmp-flus-eter-7 ^designation[+].language = #en
 //* #tmp-flus-eter-7 ^designation[=].value = "Flushing catheter"
 * #tmp-dres-eter-4 "Dressing change catheter"
@@ -348,7 +348,7 @@ Description: "Temporary codes for indicating services that can be requested from
 //* #tmp-comp-dage-3 ^designation[0].language = #fr-BE
 //* #tmp-comp-dage-3 ^designation[=].value = "Thérapie de compression : application d’un bandage"
 //* #tmp-comp-dage-3 ^designation[+].language = #nl-BE
-//* #tmp-comp-dage-3 ^designation[=].value = "compressietherapie: aanbrengen van bandage "
+//* #tmp-comp-dage-3 ^designation[=].value = "compressietherapie: aanbrengen van bandage"
 //* #tmp-comp-dage-3 ^designation[+].language = #en
 //* #tmp-comp-dage-3 ^designation[=].value = "compression therapy: application of bandage"
 //* #tmp-comp-ings-8 "compression therapy: putting on and taking off compression stockings"

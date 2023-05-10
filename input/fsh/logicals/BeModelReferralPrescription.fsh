@@ -13,7 +13,7 @@ Description: "Logical model describing the model for the prescription referral. 
 * prescriptionNumber 1..1 Identifier "An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available" "An identifier for the ReferralPrescription, e.g. the UHMEP identifier, once available"
 * pssNumber 0..1 Identifier "An identifier for the Prescription Search Support"
 * pssRejectionReason 0..1 Annotation "Reason for not following the PSS suggestion"
-* groupIdentifier 0..1 positiveInt "An identifier for the bundle this prescription belongs to." " "
+* groupIdentifier 0..1 positiveInt "An identifier for the bundle this prescription belongs to." ""
 * basedOn 0..* Reference "The original request or prescription triggered this prescription" "The original request or prescription that is the reason for this request - for example when a detailed request is created by a broader request."
 * validityPeriod 1..1 Period "Period of validity of prescription" "Period of validity of prescription"
 * treatmentPeriod 0..1 Period "When this prescription is executed, available after start of execution" "When this prescription is executed, available after start of execution"
