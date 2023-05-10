@@ -25,7 +25,7 @@ Usage: #inline
 * medicationCodeableConcept = $cnk_product_codes#3906518
 * status = #active
 * intent = #order
-* dosageInstruction.text = "temp"
+* dosageInstruction.text = "no dosage instructions provided in use case"
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "38012699993"
 
