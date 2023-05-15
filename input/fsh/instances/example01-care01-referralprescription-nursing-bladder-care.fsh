@@ -15,7 +15,7 @@ Usage: #inline
 * category = $sct#9632001
 * category.text = "Nursing procedure"
 * priority = #routine
-* code = $be-cs-nursing-code#tmp-inte-tion-6
+* code = $temp-service#tmp-inte-tion-6
 * subject = Reference(patient1)
 * occurrenceTiming.repeat.frequency = 1
 * occurrenceTiming.repeat.period = 1
