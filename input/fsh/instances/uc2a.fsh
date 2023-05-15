@@ -83,7 +83,7 @@ Usage: #example
 Instance: uc2a-2
 InstanceOf: BeReferralPrescriptionNursing
 * code = $sct#413899004
-* orderDetail = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service-detail#tmp-long-etch-2
+//* orderDetail = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service-detail#tmp-long-etch-2
 * extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * reasonCode = $sct#44653001 //niet in Belgische module
 * requester.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"
@@ -102,6 +102,7 @@ InstanceOf: BeReferralPrescriptionNursing
 * occurrenceTiming.repeat.boundsDuration.value = 1
 * performer[+].identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
 * performer[=].identifier.value = #persnurse
+* note.text = "long stretch bandage not available for june release"
 
 Instance: uc2a-3
 InstanceOf: BeReferralPrescriptionNursing

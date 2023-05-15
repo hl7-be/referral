@@ -61,8 +61,8 @@ InstanceOf: BeReferralPrescriptionNursing
 * extension[validity].valuePeriod.start = "2022-10-03"
 * extension[validity].valuePeriod.end = "2023-04-03"
 * extension[feedback].valueBoolean = false
-* orderDetail = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service-detail#tmp-hube-type-3
-* note.text = "needle type: 20G x 25mm"
+//* orderDetail = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service-detail#tmp-hube-type-3
+* note.text = "Huber needle type: 20G x 25mm (not available for june release -> is device)"
 * performer[+].identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
 * performer[=].identifier.value = #persnurse
 * requisition.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
