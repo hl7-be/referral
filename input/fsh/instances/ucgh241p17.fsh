@@ -19,7 +19,7 @@ InstanceOf: BeReferralPrescriptionNursing
 * performer[+].identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty"
 * performer[=].identifier.value = #persdiabeticeducator 
 * occurrenceTiming[+].repeat.count  = 4
-* occurrenceTiming[=].repeat.boundsPeriod.value = "2023-12-31"
+* occurrenceTiming[=].repeat.boundsPeriod.end = "2023-12-31"
 * contained[+] = ucgh241p17-1-1
 //BMI, hypertension are Observations, and cannot be added to the prescription.
 
