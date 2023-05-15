@@ -20,7 +20,7 @@ InstanceOf: BeReferralPrescriptionNursing
 * occurrenceTiming[=].repeat.duration = 0.5
 * occurrenceTiming[=].repeat.durationUnit = #h
 * occurrenceTiming[=].repeat.boundsPeriod.end = "2023-12-31"
-* note.text = "use of blood glucose meter"
+* note.text = "use of blood glucose meter (will be device from october release)"
 * contained[+] = ucgh241p18-1-1
 //Insulin treatment, care path contract, GMF cannot be added to the prescription.
 
