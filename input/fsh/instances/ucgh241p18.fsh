@@ -4,7 +4,7 @@ InstanceOf: BeReferralPrescriptionNursing
 * authoredOn = "2022-10-03"
 * requester =  Reference(ucgh241p18-1-1)
 * extension[feedback].valueBoolean = false
-* orderDetail[+] = $temp-detail#tmp-with-cess-9
+* orderDetail[+] = $sct#370858005
 * code = $sct#385805005
 * extension[validity].valuePeriod.start = "2022-10-03"
 * extension[validity].valuePeriod.end = "2023-04-03"
