@@ -6,6 +6,7 @@ InstanceOf: BeReferralPrescriptionNursing
 * extension[feedback].valueBoolean = false
 * code = $sct#385805005
 * orderDetail[+] = $temp-detail#tmp-with-tion-7
+* orderDetail[+] = $temp-detail#tmp-guid-care-5
 * extension[validity].valuePeriod.start = "2022-10-03"
 * extension[validity].valuePeriod.end = "2023-04-03"
 * status = #draft
@@ -17,7 +18,6 @@ InstanceOf: BeReferralPrescriptionNursing
 * performer[=].identifier.value = #persnurse
 * performer[+].identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty"
 * performer[=].identifier.value = #persdiabeticeducator 
-* note.text = "diabetes self-management (of waarde toe te voegen in order detail)"
 * contained[+] = ucgh241p16-1-1
 
 

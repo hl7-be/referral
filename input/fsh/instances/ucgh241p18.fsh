@@ -5,6 +5,7 @@ InstanceOf: BeReferralPrescriptionNursing
 * requester =  Reference(ucgh241p18-1-1)
 * extension[feedback].valueBoolean = false
 * orderDetail[+] = $sct#370858005
+* orderDetail[+] = $temp-detail#tmp-indi-sion-8
 * code = $sct#385805005
 * extension[validity].valuePeriod.start = "2022-10-03"
 * extension[validity].valuePeriod.end = "2023-04-03"
@@ -18,9 +19,8 @@ InstanceOf: BeReferralPrescriptionNursing
 * occurrenceTiming[+].repeat.count  = 5
 * occurrenceTiming[=].repeat.duration = 0.5
 * occurrenceTiming[=].repeat.durationUnit = #h
-* occurrenceTiming[=].repeat.boundsDuration.value = 1
-* occurrenceTiming[=].repeat.boundsDuration.unit = #a
-* note.text = "use of blood glucose meter (or additional value in order detail)"
+* occurrenceTiming[=].repeat.boundsPeriod.end = "2023-12-31"
+* note.text = "use of blood glucose meter"
 * contained[+] = ucgh241p18-1-1
 //Insulin treatment, care path contract, GMF cannot be added to the prescription.
 

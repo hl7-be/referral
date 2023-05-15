@@ -5,6 +5,7 @@ InstanceOf: BeReferralPrescriptionNursing
 * requester =  Reference(ucgh241p17-1-1)
 * extension[feedback].valueBoolean = false
 * orderDetail[+] = $temp-detail#tmp-with-sion-8
+* orderDetail[+] = $temp-detail#tmp-indi-sion-8
 * code = $sct#385805005
 * extension[validity].valuePeriod.start = "2022-10-03"
 * extension[validity].valuePeriod.end = "2023-04-03"
@@ -18,8 +19,7 @@ InstanceOf: BeReferralPrescriptionNursing
 * performer[+].identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty"
 * performer[=].identifier.value = #persdiabeticeducator 
 * occurrenceTiming[+].repeat.count  = 4
-* occurrenceTiming[=].repeat.boundsDuration.value = 1
-* occurrenceTiming[=].repeat.boundsDuration.unit = #a
+* occurrenceTiming[=].repeat.boundsPeriod.value = "2023-12-31"
 * contained[+] = ucgh241p17-1-1
 //BMI, hypertension are Observations, and cannot be added to the prescription.
 

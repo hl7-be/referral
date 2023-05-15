@@ -5,6 +5,7 @@ InstanceOf: BeReferralPrescriptionNursing
 * requester =  Reference(ucgh241p19-1-1)
 * extension[feedback].valueBoolean = false
 * orderDetail[+] = $temp-detail#tmp-with-tory-8
+* orderDetail[+] = $temp-detail#tmp-guid-care-5
 * code = $sct#385805005
 * extension[validity].valuePeriod.start = "2022-10-03"
 * extension[validity].valuePeriod.end = "2023-04-03"
@@ -18,8 +19,7 @@ InstanceOf: BeReferralPrescriptionNursing
 * occurrenceTiming[+].repeat.count  = 10
 * occurrenceTiming[=].repeat.duration = 0.5
 * occurrenceTiming[=].repeat.durationUnit = #h
-* occurrenceTiming[=].repeat.boundsDuration.value = 1
-* occurrenceTiming[=].repeat.boundsDuration.unit = #a
+
 * note.text = "education for self care"
 * contained[+] = ucgh241p19-1-1
 //Insulin treatment, care path contract, GMF cannot be added to the prescription.
