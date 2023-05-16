@@ -1,0 +1,78 @@
+{
+  "resourceType" : "ServiceRequest",
+  "id" : "ucgh241p110-1",
+  "meta" : {
+    "profile" : ["https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing"]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: ServiceRequest</b><a name=\"ucgh241p110-1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource ServiceRequest &quot;ucgh241p110-1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referralprescription-nursing.html\">BeReferralPrescriptionNursing</a></p></div><p><b>BeFeedbackToPrescriber</b>: false</p><p><b>BeValidityPeriod</b>: 2022-10-03 --&gt; 2023-04-03</p><p><b>status</b>: draft</p><p><b>intent</b>: order</p><p><b>category</b>: Nursing procedure <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#9632001)</span></p><p><b>code</b>: Assisting with personal hygiene <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#225964003)</span></p><p><b>subject</b>: <span/></p><p><b>authoredOn</b>: 2022-10-03</p><p><b>requester</b>: <a name=\"ucgh241p110-1-1\"> </a></p><blockquote><p/><p><a name=\"ucgh241p110-1-1\"> </a></p><p><b>practitioner</b>: <span/></p><p><b>code</b>: physician <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://build.fhir.org/ig/hl7-be/core//CodeSystem-cd-hcparty.html\">BeCdHcParty</a>#persphysician)</span></p></blockquote><p><b>performer</b>: <span/></p><p><b>reasonCode</b>: parkinson's disease <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ([not stated])</span></p><hr/><blockquote><p><b>Generated Narrative: PractitionerRole #ucgh241p110-1-1</b><a name=\"ucgh241p110-1-1\"> </a></p><p><b>practitioner</b>: <span/></p><p><b>code</b>: physician <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://build.fhir.org/ig/hl7-be/core//CodeSystem-cd-hcparty.html\">BeCdHcParty</a>#persphysician)</span></p></blockquote></div>"
+  },
+  "contained" : [{
+    "resourceType" : "PractitionerRole",
+    "id" : "ucgh241p110-1-1",
+    "meta" : {
+      "profile" : ["https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole"]
+    },
+    "practitioner" : {
+      "identifier" : {
+        "system" : "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi",
+        "value" : "10829059"
+      }
+    },
+    "code" : [{
+      "coding" : [{
+        "system" : "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty",
+        "code" : "persphysician"
+      }]
+    }]
+  }],
+  "extension" : [{
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-feedback-to-prescriber",
+    "valueBoolean" : false
+  },
+  {
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period",
+    "valuePeriod" : {
+      "start" : "2022-10-03",
+      "end" : "2023-04-03"
+    }
+  }],
+  "status" : "draft",
+  "intent" : "order",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "version" : "http://snomed.info/sct/11000172109",
+      "code" : "9632001"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "version" : "http://snomed.info/sct/11000172109",
+      "code" : "225964003"
+    }]
+  },
+  "subject" : {
+    "identifier" : {
+      "system" : "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin",
+      "value" : "38012699993"
+    }
+  },
+  "authoredOn" : "2022-10-03",
+  "requester" : {
+    "reference" : "#ucgh241p110-1-1"
+  },
+  "performer" : [{
+    "identifier" : {
+      "system" : "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty",
+      "value" : "persnurse"
+    }
+  }],
+  "reasonCode" : [{
+    "coding" : [{
+      "display" : "parkinson's disease"
+    }]
+  }]
+}
