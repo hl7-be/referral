@@ -2,7 +2,7 @@
 
 # Implementation cookbook for the June 2023 Release #
 
-The cookbook is available here. Warning: this is the cookbook for the early adopters of the JUNE 2023 release. Final releases of the FHIR profiles and the Cookbook will be available from the eHealth and RIZIV/INAMI sites.
+The cookbook is available here: https://github.com/hl7-be/referral/tree/master/cookbooks. Warning: this is the cookbook for the early adopters of the JUNE 2023 release. Final releases of the FHIR profiles and the Cookbook will be available from the eHealth and RIZIV/INAMI sites.
 
 
 # Referral prescription
