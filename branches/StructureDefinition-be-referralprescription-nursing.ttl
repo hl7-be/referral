@@ -554,55 +554,6 @@
      ] [
        fhir:id [ fhir:v "ServiceRequest.extension:statusReason.value[x]" ] ;
        fhir:path [ fhir:v "ServiceRequest.extension.value[x]" ] ;
-       fhir:slicing [
-         fhir:discriminator ( [
-           fhir:type [ fhir:v "type" ] ;
-           fhir:path [ fhir:v "$this" ]
-         ] ) ;
-         fhir:ordered [ fhir:v "false"^^xsd:boolean ] ;
-         fhir:rules [ fhir:v "closed" ]
-       ] ;
-       fhir:short [ fhir:v "Value of extension" ] ;
-       fhir:definition [ fhir:v "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/extensibility.html) for a list)." ] ;
-       fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
-       fhir:max [ fhir:v "1" ] ;
-       fhir:base [
-         fhir:path [ fhir:v "Extension.value[x]" ] ;
-         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
-         fhir:max [ fhir:v "1" ]
-       ] ;
-       fhir:type ( [
-         fhir:code [ fhir:v "CodeableConcept"^^xsd:anyURI ]
-       ] ) ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
-       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:binding [
-         fhir:extension ( [
-           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "StatusReason" ]
-         ] ) ;
-         fhir:strength [ fhir:v "example" ] ;
-         fhir:description [ fhir:v "Codes identifying the reason for the current state of an event." ]
-       ] ;
-       fhir:mapping ( [
-         fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "N/A" ]
-       ] )
-     ] [
-       fhir:id [ fhir:v "ServiceRequest.extension:statusReason.value[x]:valueCodeableConcept" ] ;
-       fhir:path [ fhir:v "ServiceRequest.extension.value[x]" ] ;
-       fhir:sliceName [ fhir:v "valueCodeableConcept" ] ;
        fhir:short [ fhir:v "Value of extension" ] ;
        fhir:definition [ fhir:v "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/extensibility.html) for a list)." ] ;
        fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
@@ -2552,9 +2503,8 @@
      ] [
        fhir:id [ fhir:v "ServiceRequest.subject" ] ;
        fhir:path [ fhir:v "ServiceRequest.subject" ] ;
-       fhir:short [ fhir:v "A reference from one resource to another" ] ;
-       fhir:definition [ fhir:v "A reference from one resource to another." ] ;
-       fhir:comment [ fhir:v "References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository." ] ;
+       fhir:short [ fhir:v "Individual or Entity the service is ordered for" ] ;
+       fhir:definition [ fhir:v "On whom or what the service is to be performed. This is usually a human patient, but can also be requested on animals, groups of humans or animals, devices such as dialysis machines, or even locations (typically for environmental scans)." ] ;
        fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -2588,11 +2538,23 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "n/a" ]
+         fhir:identity [ fhir:v "workflow" ] ;
+         fhir:map [ fhir:v "Request.subject" ]
+       ] [
+         fhir:identity [ fhir:v "w5" ] ;
+         fhir:map [ fhir:v "FiveWs.subject[x]" ]
+       ] [
+         fhir:identity [ fhir:v "v2" ] ;
+         fhir:map [ fhir:v "PID" ]
        ] [
          fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "The target of a resource reference is a RIM entry point (Act, Role, or Entity)" ]
+         fhir:map [ fhir:v ".participation[typeCode=SBJ].role" ]
+       ] [
+         fhir:identity [ fhir:v "quick" ] ;
+         fhir:map [ fhir:v "ClinicalStatement.subject" ]
+       ] [
+         fhir:identity [ fhir:v "w5" ] ;
+         fhir:map [ fhir:v "FiveWs.subject" ]
        ] )
      ] [
        fhir:id [ fhir:v "ServiceRequest.encounter" ] ;
@@ -2748,6 +2710,7 @@
        fhir:path [ fhir:v "ServiceRequest.authoredOn" ] ;
        fhir:short [ fhir:v "Primitive Type dateTime" ] ;
        fhir:definition [ fhir:v "A date, date-time or partial date (e.g. just year or year + month).  If hours and minutes are specified, a time zone SHALL be populated. The format is a union of the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided due to schema type constraints but may be zero-filled and may be ignored.                 Dates SHALL be valid dates." ] ;
+       fhir:alias ( [ fhir:v "orderedOn" ] ) ;
        fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -2789,8 +2752,9 @@
        fhir:id [ fhir:v "ServiceRequest.requester" ] ;
        fhir:path [ fhir:v "ServiceRequest.requester" ] ;
        fhir:short [ fhir:v "Prescriber of the requested service" ] ;
-       fhir:definition [ fhir:v "A reference from one resource to another." ] ;
-       fhir:comment [ fhir:v "References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository." ] ;
+       fhir:definition [ fhir:v "The individual who initiated the request and has responsibility for its activation." ] ;
+       fhir:comment [ fhir:v "This not the dispatcher, but rather who is the authorizer.  This element is not intended to handle delegation which would generally be managed through the Provenance resource." ] ;
+       fhir:alias ( [ fhir:v "author" ] [ fhir:v "orderer" ] ) ;
        fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "1" ] ;
        fhir:base [
@@ -2824,11 +2788,20 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "n/a" ]
+         fhir:identity [ fhir:v "workflow" ] ;
+         fhir:map [ fhir:v "Request.requester" ]
+       ] [
+         fhir:identity [ fhir:v "w5" ] ;
+         fhir:map [ fhir:v "FiveWs.author" ]
+       ] [
+         fhir:identity [ fhir:v "v2" ] ;
+         fhir:map [ fhir:v "ORC.12, PRT" ]
        ] [
          fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "The target of a resource reference is a RIM entry point (Act, Role, or Entity)" ]
+         fhir:map [ fhir:v ".participation[typeCode=AUT].role" ]
+       ] [
+         fhir:identity [ fhir:v "quick" ] ;
+         fhir:map [ fhir:v "ClinicalStatement.statementAuthor" ]
        ] )
      ] [
        fhir:id [ fhir:v "ServiceRequest.performerType" ] ;
@@ -2890,8 +2863,9 @@
        fhir:id [ fhir:v "ServiceRequest.performer" ] ;
        fhir:path [ fhir:v "ServiceRequest.performer" ] ;
        fhir:short [ fhir:v "Requested performer - typically reference to practitionerroles" ] ;
-       fhir:definition [ fhir:v "A reference from one resource to another." ] ;
-       fhir:comment [ fhir:v "References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository." ] ;
+       fhir:definition [ fhir:v "The desired performer for doing the requested service.  For example, the surgeon, dermatopathologist, endoscopist, etc." ] ;
+       fhir:comment [ fhir:v "If multiple performers are present, it is interpreted as a list of *alternative* performers without any preference regardless of order.  If order of preference is needed use the [request-performerOrder extension](http://hl7.org/fhir/R4/extension-request-performerorder.html).  Use CareTeam to represent a group of performers (for example, Practitioner A *and* Practitioner B)." ] ;
+       fhir:alias ( [ fhir:v "request recipient" ] ) ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
        fhir:max [ fhir:v "*" ] ;
        fhir:base [
@@ -2925,11 +2899,17 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "n/a" ]
+         fhir:identity [ fhir:v "workflow" ] ;
+         fhir:map [ fhir:v "Request.performer" ]
+       ] [
+         fhir:identity [ fhir:v "w5" ] ;
+         fhir:map [ fhir:v "FiveWs.actor" ]
+       ] [
+         fhir:identity [ fhir:v "v2" ] ;
+         fhir:map [ fhir:v "PRT, Practitioner: PRD-2/PRD-7 where PRD-3 = RT; Organization: PRD-10 where PRD-3 = RT" ]
        ] [
          fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "The target of a resource reference is a RIM entry point (Act, Role, or Entity)" ]
+         fhir:map [ fhir:v ".participation[typeCode=PRF].role[scoper.determinerCode=INSTANCE]" ]
        ] )
      ] [
        fhir:id [ fhir:v "ServiceRequest.locationCode" ] ;
@@ -3779,47 +3759,6 @@
      ] [
        fhir:id [ fhir:v "ServiceRequest.note.extension:code.value[x]" ] ;
        fhir:path [ fhir:v "ServiceRequest.note.extension.value[x]" ] ;
-       fhir:slicing [
-         fhir:discriminator ( [
-           fhir:type [ fhir:v "type" ] ;
-           fhir:path [ fhir:v "$this" ]
-         ] ) ;
-         fhir:ordered [ fhir:v "false"^^xsd:boolean ] ;
-         fhir:rules [ fhir:v "closed" ]
-       ] ;
-       fhir:short [ fhir:v "Value of extension" ] ;
-       fhir:definition [ fhir:v "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list)." ] ;
-       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
-       fhir:max [ fhir:v "1" ] ;
-       fhir:base [
-         fhir:path [ fhir:v "Extension.value[x]" ] ;
-         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
-         fhir:max [ fhir:v "1" ]
-       ] ;
-       fhir:type ( [
-         fhir:code [ fhir:v "CodeableConcept"^^xsd:anyURI ]
-       ] ) ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
-       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:mapping ( [
-         fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "N/A" ]
-       ] )
-     ] [
-       fhir:id [ fhir:v "ServiceRequest.note.extension:code.value[x]:valueCodeableConcept" ] ;
-       fhir:path [ fhir:v "ServiceRequest.note.extension.value[x]" ] ;
-       fhir:sliceName [ fhir:v "valueCodeableConcept" ] ;
        fhir:short [ fhir:v "Value of extension" ] ;
        fhir:definition [ fhir:v "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list)." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;

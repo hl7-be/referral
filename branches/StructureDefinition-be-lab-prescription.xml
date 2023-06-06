@@ -522,51 +522,6 @@ This information includes diagnosis, clinical findings and other observations.  
     </element>
     <element id="ServiceRequest.extension:statusReason.value[x]">
       <path value="ServiceRequest.extension.value[x]"/>
-      <slicing>
-        <discriminator>
-          <type value="type"/>
-          <path value="$this"/>
-        </discriminator>
-        <ordered value="false"/>
-        <rules value="closed"/>
-      </slicing>
-      <short value="Value of extension"/>
-      <definition value="Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/extensibility.html) for a list)."/>
-      <min value="1"/>
-      <max value="1"/>
-      <base>
-        <path value="Extension.value[x]"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="CodeableConcept"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
-      <binding>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-          <valueString value="StatusReason"/>
-        </extension>
-        <strength value="example"/>
-        <description value="Codes identifying the reason for the current state of an event."/>
-      </binding>
-      <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
-      </mapping>
-    </element>
-    <element id="ServiceRequest.extension:statusReason.value[x]:valueCodeableConcept">
-      <path value="ServiceRequest.extension.value[x]"/>
-      <sliceName value="valueCodeableConcept"/>
       <short value="Value of extension"/>
       <definition value="Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/extensibility.html) for a list)."/>
       <min value="1"/>
@@ -1842,6 +1797,7 @@ This information includes diagnosis, clinical findings and other observations.  
       <short value="High level code to describe the tests - if needed to detail within orderDetail - consult comment for more detail."/>
       <definition value="A concept that may be defined by a formal reference to a terminology or ontology or may be provided by text."/>
       <comment value="Many laboratory and radiology procedure codes embed the specimen/organ system in the test order name, for example,  serum or serum/plasma glucose, or a chest x-ray. The specimen might not be recorded separately from the test code.&#xD;&#xA;The implementer SHALL adhere to the preferred codes to use.&#xD;&#xA;The recommended codification used is LOINC as per the subset defined by the FPS Health, for the majority of commonly used lab measurements and demands. This subset is available on https://www.vas.ehealth.fgov.be/webretam/retam/home.htm&#xD;&#xA;&#xD;&#xA;It is allowed to use multiple codes within the FHIR CodeableConcept datatype. But the first code given must follow the following rules.(Other codes given will be for information purposes.)&#xD;&#xA;&#xD;&#xA;The actual observation is preferably coded in LOINC (subset as defined by FPS Health)&#xD;&#xA;&#xD;&#xA;If that is not possible , ALBERT codes are used (subset as defined by FPS Health.) &#xD;&#xA;&#xD;&#xA;If that is not possible,laboratory may send its own code plus obligatory a text element to further explain. For a laboratory order, this SHALL be used with caution as the laboratory fulfilling the order needs to understand what is ordered - as such it SHALL only be used when the order is sent adressed.&#xD;&#xA;&#xD;&#xA;If that is not possible the kind of observation is expressed only in text (allowed but NOT RECOMMENDED - although if considered sufficient the .code element could be just a .text element e.g. &quot;Diabetes?&quot;)"/>
+      <alias value="service requested"/>
       <min value="0"/>
       <max value="1"/>
       <base>
@@ -1894,6 +1850,7 @@ This information includes diagnosis, clinical findings and other observations.  
       <short value="Additional order information - consult comment for more information"/>
       <definition value="A concept that may be defined by a formal reference to a terminology or ontology or may be provided by text."/>
       <comment value="For information from the medical record intended to support the delivery of the requested services, use the `supportingInformation` element.&#xD;&#xA;The implementer SHALL adhere to the preferred codes to use.&#xD;&#xA;The recommended codification used is LOINC as per the subset defined by the FPS Health, for the majority of commonly used lab measurements and demands. This subset is available on https://www.vas.ehealth.fgov.be/webretam/retam/home.htm&#xD;&#xA;&#xD;&#xA;It is allowed to use multiple codes within the FHIR CodeableConcept datatype. But the first code given must follow the following rules.(Other codes given will be for information purposes.)&#xD;&#xA;&#xD;&#xA;The actual observation is preferably coded in LOINC (subset as defined by FPS Health)&#xD;&#xA;&#xD;&#xA;If that is not possible , ALBERT codes are used (subset as defined by FPS Health.) &#xD;&#xA;&#xD;&#xA;If that is not possible,laboratory may send its own code plus obligatory a text element to further explain. For a laboratory order, this SHALL be used with caution as the laboratory fulfilling the order needs to understand what is ordered - as such it SHALL only be used when the order is sent adressed.&#xD;&#xA;&#xD;&#xA;If that is not possible the kind of observation is expressed only in text (allowed but NOT RECOMMENDED)"/>
+      <alias value="detailed instructions"/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -1983,9 +1940,8 @@ This information includes diagnosis, clinical findings and other observations.  
     </element>
     <element id="ServiceRequest.subject">
       <path value="ServiceRequest.subject"/>
-      <short value="A reference from one resource to another"/>
-      <definition value="A reference from one resource to another."/>
-      <comment value="References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository."/>
+      <short value="Individual or Entity the service is ordered for"/>
+      <definition value="On whom or what the service is to be performed. This is usually a human patient, but can also be requested on animals, groups of humans or animals, devices such as dialysis machines, or even locations (typically for environmental scans)."/>
       <min value="1"/>
       <max value="1"/>
       <base>
@@ -2010,12 +1966,28 @@ This information includes diagnosis, clinical findings and other observations.  
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
+        <identity value="workflow"/>
+        <map value="Request.subject"/>
+      </mapping>
+      <mapping>
+        <identity value="w5"/>
+        <map value="FiveWs.subject[x]"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="PID"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
-        <map value="The target of a resource reference is a RIM entry point (Act, Role, or Entity)"/>
+        <map value=".participation[typeCode=SBJ].role"/>
+      </mapping>
+      <mapping>
+        <identity value="quick"/>
+        <map value="ClinicalStatement.subject"/>
+      </mapping>
+      <mapping>
+        <identity value="w5"/>
+        <map value="FiveWs.subject"/>
       </mapping>
     </element>
     <element id="ServiceRequest.encounter">
@@ -2166,6 +2138,7 @@ This information includes diagnosis, clinical findings and other observations.  
       <path value="ServiceRequest.authoredOn"/>
       <short value="Primitive Type dateTime"/>
       <definition value="A date, date-time or partial date (e.g. just year or year + month).  If hours and minutes are specified, a time zone SHALL be populated. The format is a union of the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided due to schema type constraints but may be zero-filled and may be ignored.                 Dates SHALL be valid dates."/>
+      <alias value="orderedOn"/>
       <min value="1"/>
       <max value="1"/>
       <base>
@@ -2199,8 +2172,10 @@ This information includes diagnosis, clinical findings and other observations.  
     <element id="ServiceRequest.requester">
       <path value="ServiceRequest.requester"/>
       <short value="Prescriber of the requested service"/>
-      <definition value="A reference from one resource to another."/>
-      <comment value="References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository."/>
+      <definition value="The individual who initiated the request and has responsibility for its activation."/>
+      <comment value="This not the dispatcher, but rather who is the authorizer.  This element is not intended to handle delegation which would generally be managed through the Provenance resource."/>
+      <alias value="author"/>
+      <alias value="orderer"/>
       <min value="1"/>
       <max value="1"/>
       <base>
@@ -2225,12 +2200,24 @@ This information includes diagnosis, clinical findings and other observations.  
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
+        <identity value="workflow"/>
+        <map value="Request.requester"/>
+      </mapping>
+      <mapping>
+        <identity value="w5"/>
+        <map value="FiveWs.author"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="ORC.12, PRT"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
-        <map value="The target of a resource reference is a RIM entry point (Act, Role, or Entity)"/>
+        <map value=".participation[typeCode=AUT].role"/>
+      </mapping>
+      <mapping>
+        <identity value="quick"/>
+        <map value="ClinicalStatement.statementAuthor"/>
       </mapping>
     </element>
     <element id="ServiceRequest.performerType">
@@ -2288,8 +2275,9 @@ This information includes diagnosis, clinical findings and other observations.  
     <element id="ServiceRequest.performer">
       <path value="ServiceRequest.performer"/>
       <short value="Requested performer - typically reference to practitionerroles"/>
-      <definition value="A reference from one resource to another."/>
-      <comment value="References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository."/>
+      <definition value="The desired performer for doing the requested service.  For example, the surgeon, dermatopathologist, endoscopist, etc."/>
+      <comment value="If multiple performers are present, it is interpreted as a list of *alternative* performers without any preference regardless of order.  If order of preference is needed use the [request-performerOrder extension](http://hl7.org/fhir/R4/extension-request-performerorder.html).  Use CareTeam to represent a group of performers (for example, Practitioner A *and* Practitioner B)."/>
+      <alias value="request recipient"/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -2314,12 +2302,20 @@ This information includes diagnosis, clinical findings and other observations.  
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="n/a"/>
+        <identity value="workflow"/>
+        <map value="Request.performer"/>
+      </mapping>
+      <mapping>
+        <identity value="w5"/>
+        <map value="FiveWs.actor"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="PRT, Practitioner: PRD-2/PRD-7 where PRD-3 = RT; Organization: PRD-10 where PRD-3 = RT"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
-        <map value="The target of a resource reference is a RIM entry point (Act, Role, or Entity)"/>
+        <map value=".participation[typeCode=PRF].role[scoper.determinerCode=INSTANCE]"/>
       </mapping>
     </element>
     <element id="ServiceRequest.locationCode">
@@ -3092,44 +3088,6 @@ This information includes diagnosis, clinical findings and other observations.  
     </element>
     <element id="ServiceRequest.note.extension:code.value[x]">
       <path value="ServiceRequest.note.extension.value[x]"/>
-      <slicing>
-        <discriminator>
-          <type value="type"/>
-          <path value="$this"/>
-        </discriminator>
-        <ordered value="false"/>
-        <rules value="closed"/>
-      </slicing>
-      <short value="Value of extension"/>
-      <definition value="Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list)."/>
-      <min value="0"/>
-      <max value="1"/>
-      <base>
-        <path value="Extension.value[x]"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="CodeableConcept"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
-      <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
-      </mapping>
-    </element>
-    <element id="ServiceRequest.note.extension:code.value[x]:valueCodeableConcept">
-      <path value="ServiceRequest.note.extension.value[x]"/>
-      <sliceName value="valueCodeableConcept"/>
       <short value="Value of extension"/>
       <definition value="Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list)."/>
       <min value="0"/>

@@ -527,53 +527,6 @@
     {
       "id" : "ServiceRequest.extension:statusReason.value[x]",
       "path" : "ServiceRequest.extension.value[x]",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "type",
-          "path" : "$this"
-        }],
-        "ordered" : false,
-        "rules" : "closed"
-      },
-      "short" : "Value of extension",
-      "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/extensibility.html) for a list).",
-      "min" : 1,
-      "max" : "1",
-      "base" : {
-        "path" : "Extension.value[x]",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "CodeableConcept"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "isModifier" : false,
-      "isSummary" : false,
-      "binding" : {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
-          "valueString" : "StatusReason"
-        }],
-        "strength" : "example",
-        "description" : "Codes identifying the reason for the current state of an event."
-      },
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "N/A"
-      }]
-    },
-    {
-      "id" : "ServiceRequest.extension:statusReason.value[x]:valueCodeableConcept",
-      "path" : "ServiceRequest.extension.value[x]",
-      "sliceName" : "valueCodeableConcept",
       "short" : "Value of extension",
       "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/extensibility.html) for a list).",
       "min" : 1,
@@ -2424,9 +2377,8 @@
     {
       "id" : "ServiceRequest.subject",
       "path" : "ServiceRequest.subject",
-      "short" : "A reference from one resource to another",
-      "definition" : "A reference from one resource to another.",
-      "comment" : "References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository.",
+      "short" : "Individual or Entity the service is ordered for",
+      "definition" : "On whom or what the service is to be performed. This is usually a human patient, but can also be requested on animals, groups of humans or animals, devices such as dialysis machines, or even locations (typically for environmental scans).",
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -2451,12 +2403,28 @@
       "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
+        "identity" : "workflow",
+        "map" : "Request.subject"
+      },
+      {
+        "identity" : "w5",
+        "map" : "FiveWs.subject[x]"
+      },
+      {
+        "identity" : "v2",
+        "map" : "PID"
       },
       {
         "identity" : "rim",
-        "map" : "The target of a resource reference is a RIM entry point (Act, Role, or Entity)"
+        "map" : ".participation[typeCode=SBJ].role"
+      },
+      {
+        "identity" : "quick",
+        "map" : "ClinicalStatement.subject"
+      },
+      {
+        "identity" : "w5",
+        "map" : "FiveWs.subject"
       }]
     },
     {
@@ -2613,6 +2581,7 @@
       "path" : "ServiceRequest.authoredOn",
       "short" : "Primitive Type dateTime",
       "definition" : "A date, date-time or partial date (e.g. just year or year + month).  If hours and minutes are specified, a time zone SHALL be populated. The format is a union of the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided due to schema type constraints but may be zero-filled and may be ignored.                 Dates SHALL be valid dates.",
+      "alias" : ["orderedOn"],
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -2647,8 +2616,10 @@
       "id" : "ServiceRequest.requester",
       "path" : "ServiceRequest.requester",
       "short" : "Prescriber of the requested service",
-      "definition" : "A reference from one resource to another.",
-      "comment" : "References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository.",
+      "definition" : "The individual who initiated the request and has responsibility for its activation.",
+      "comment" : "This not the dispatcher, but rather who is the authorizer.  This element is not intended to handle delegation which would generally be managed through the Provenance resource.",
+      "alias" : ["author",
+      "orderer"],
       "min" : 1,
       "max" : "1",
       "base" : {
@@ -2673,12 +2644,24 @@
       "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
+        "identity" : "workflow",
+        "map" : "Request.requester"
+      },
+      {
+        "identity" : "w5",
+        "map" : "FiveWs.author"
+      },
+      {
+        "identity" : "v2",
+        "map" : "ORC.12, PRT"
       },
       {
         "identity" : "rim",
-        "map" : "The target of a resource reference is a RIM entry point (Act, Role, or Entity)"
+        "map" : ".participation[typeCode=AUT].role"
+      },
+      {
+        "identity" : "quick",
+        "map" : "ClinicalStatement.statementAuthor"
       }]
     },
     {
@@ -2739,8 +2722,9 @@
       "id" : "ServiceRequest.performer",
       "path" : "ServiceRequest.performer",
       "short" : "Requested performer - typically reference to practitionerroles",
-      "definition" : "A reference from one resource to another.",
-      "comment" : "References SHALL be a reference to an actual FHIR resource, and SHALL be resolveable (allowing for access control, temporary unavailability, etc.). Resolution can be either by retrieval from the URL, or, where applicable by resource type, by treating an absolute reference as a canonical URL and looking it up in a local registry/repository.",
+      "definition" : "The desired performer for doing the requested service.  For example, the surgeon, dermatopathologist, endoscopist, etc.",
+      "comment" : "If multiple performers are present, it is interpreted as a list of *alternative* performers without any preference regardless of order.  If order of preference is needed use the [request-performerOrder extension](http://hl7.org/fhir/R4/extension-request-performerorder.html).  Use CareTeam to represent a group of performers (for example, Practitioner A *and* Practitioner B).",
+      "alias" : ["request recipient"],
       "min" : 0,
       "max" : "*",
       "base" : {
@@ -2765,12 +2749,20 @@
       "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
-        "identity" : "rim",
-        "map" : "n/a"
+        "identity" : "workflow",
+        "map" : "Request.performer"
+      },
+      {
+        "identity" : "w5",
+        "map" : "FiveWs.actor"
+      },
+      {
+        "identity" : "v2",
+        "map" : "PRT, Practitioner: PRD-2/PRD-7 where PRD-3 = RT; Organization: PRD-10 where PRD-3 = RT"
       },
       {
         "identity" : "rim",
-        "map" : "The target of a resource reference is a RIM entry point (Act, Role, or Entity)"
+        "map" : ".participation[typeCode=PRF].role[scoper.determinerCode=INSTANCE]"
       }]
     },
     {
@@ -3566,45 +3558,6 @@
     {
       "id" : "ServiceRequest.note.extension:code.value[x]",
       "path" : "ServiceRequest.note.extension.value[x]",
-      "slicing" : {
-        "discriminator" : [{
-          "type" : "type",
-          "path" : "$this"
-        }],
-        "ordered" : false,
-        "rules" : "closed"
-      },
-      "short" : "Value of extension",
-      "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).",
-      "min" : 0,
-      "max" : "1",
-      "base" : {
-        "path" : "Extension.value[x]",
-        "min" : 0,
-        "max" : "1"
-      },
-      "type" : [{
-        "code" : "CodeableConcept"
-      }],
-      "constraint" : [{
-        "key" : "ele-1",
-        "severity" : "error",
-        "human" : "All FHIR elements must have a @value or children",
-        "expression" : "hasValue() or (children().count() > id.count())",
-        "xpath" : "@value|f:*|h:div",
-        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
-      }],
-      "isModifier" : false,
-      "isSummary" : false,
-      "mapping" : [{
-        "identity" : "rim",
-        "map" : "N/A"
-      }]
-    },
-    {
-      "id" : "ServiceRequest.note.extension:code.value[x]:valueCodeableConcept",
-      "path" : "ServiceRequest.note.extension.value[x]",
-      "sliceName" : "valueCodeableConcept",
       "short" : "Value of extension",
       "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).",
       "min" : 0,
