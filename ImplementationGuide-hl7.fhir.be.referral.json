@@ -10,7 +10,7 @@
   "name" : "ReferralPrescription",
   "title" : "Referral Prescription",
   "status" : "draft",
-  "date" : "2023-05-16T06:48:43+00:00",
+  "date" : "2023-06-06T07:33:19+00:00",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -30,6 +30,16 @@
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
     "version" : "5.0.0"
+  },
+  {
+    "id" : "hl7ext",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
+      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
+    }],
+    "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
+    "packageId" : "hl7.fhir.uv.extensions.r4",
+    "version" : "1.0.0"
   },
   {
     "id" : "hl7_fhir_be_core",
@@ -635,6 +645,42 @@
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/be-op-cancel"
+      },
+      "name" : "be-op-cancel",
+      "description" : "Cancel Referral Prescription or Proposal",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/be-communication-code"
+      },
+      "name" : "BeCommunicationCode",
+      "description" : "Communication codes in Belgium. To define a specific method of communicating. Initially defined as supporting CodeSystem for the referral prescription.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/be-vs-communication-method"
+      },
+      "name" : "BeCommunicationMethod",
+      "description" : "Codes to define a communication method.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:complex-type"
       }],
       "reference" : {
@@ -642,6 +688,150 @@
       },
       "name" : "BeContainedOrLogicalReference",
       "description" : "A reference limited to contained resources or resources with a logical identifier.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/be-ext-contraindication"
+      },
+      "name" : "BeContraindication",
+      "description" : "Contra indication in a prescription referral for diagnostic imaging.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/be-ext-contrastfluiduse"
+      },
+      "name" : "BeContrastFluidUse",
+      "description" : "Whether the use of contrast fluid in diagnostic imaging can be defined as 'If necessary' or 'Not permitted.'",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/be-vs-contrastfluid-use"
+      },
+      "name" : "BeContrastFluidUse",
+      "description" : "Codes to define the use of contrast fluid.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/be-vs-contrastfluid-use"
+      },
+      "name" : "BeContrastFluidUse",
+      "description" : "Whether use of contrast fluid should be considered.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/be-co-prescriber"
+      },
+      "name" : "BeCoPrescriber",
+      "description" : "Other practitioners that must take part in this prescripiton",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/be-co-prescriber-info"
+      },
+      "name" : "BeCoPrescriberInfo",
+      "description" : "Info about the other practitioners that must take part in this prescripiton",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/be-vs-co-prescription-status"
+      },
+      "name" : "BeCoPrescriptionStatus",
+      "description" : "This is the status of the prescription for the coprescriber",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/be-cs-co-prescriber-choice"
+      },
+      "name" : "BeCSCoPrescriberChoice",
+      "description" : "Type of intended performer choice",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/BeDiagnosticImagingPrescription"
+      },
+      "name" : "BeDiagnosticImagingPrescription",
+      "description" : "Logical model describing the model for the diagnostic imaging prescription. This draft is used in the HL7 Belgian workgroup for referral.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/be-ext-feedback-to-prescriber"
+      },
+      "name" : "BeFeedbackToPrescriber",
+      "description" : "Does the prescriber request feedback?",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/be-ext-inform-party"
+      },
+      "name" : "BeInformParty",
+      "description" : "Extra parties that need to be informed of the outcome, besides the prescriber.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/BeLaboratoryPrescription"
+      },
+      "name" : "BeLaboratoryPrescription",
+      "description" : "Logical model describing the model for the prescription laboratory. This draft is used in the HL7 Belgian workgroup for laboratory.",
       "exampleBoolean" : false
     },
     {
@@ -659,6 +849,101 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/be-ext-latest-draft-date"
+      },
+      "name" : "BeLatestDraftDate",
+      "description" : "Request must leave draft status before",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/be-ext-latest-end-date"
+      },
+      "name" : "BeLatestEndDate",
+      "description" : "Request must be performed before",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/BeModelNursingPrescription"
+      },
+      "name" : "BeModelNursingPrescription",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/BeModelReferralPrescription"
+      },
+      "name" : "BeModelReferralPrescription",
+      "description" : "Logical model describing the model for the prescription referral. This draft is used in the HL7 Belgian workgroup for referral.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/BeModelReferralRequestGroup"
+      },
+      "name" : "BeModelReferralRequestGroup",
+      "description" : "Logical model describing the model for a group of referral prescriptions. This draft is used in the HL7 Belgian workgroup for referral.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "NamingSystem"
+      }],
+      "reference" : {
+        "reference" : "NamingSystem/be-ns-coronalertcode"
+      },
+      "name" : "BeNSCoronalertcode",
+      "description" : "Code as generated by the Coronalert app.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "NamingSystem"
+      }],
+      "reference" : {
+        "reference" : "NamingSystem/be-ns-specimen"
+      },
+      "name" : "BeNSSpecimen",
+      "description" : "National identifier for a specimen when needed.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/be-ext-performer-reference"
+      },
+      "name" : "BePerformerReference",
+      "description" : "BePerformerReference",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
@@ -666,6 +951,77 @@
       },
       "name" : "BePerformerTask",
       "description" : "Subtask performed by one performer",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/BePhysiotherapyPrescription"
+      },
+      "name" : "BePhysiotherapyPrescription",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/be-prescription-proposal-type"
+      },
+      "name" : "BePrescriptionProposalType",
+      "description" : "Prescription Proposal Type. Indicates the type of proposal (new or prolongation) as from the uses cases by NIHDI",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/be-prescription-status-reason"
+      },
+      "name" : "BePrescriptionStatusReason",
+      "description" : "Status reason for the prescription. Initially defined as supporting CodeSystem for the referral prescription.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/be-ext-proposal-type"
+      },
+      "name" : "BeProposalType",
+      "description" : "Type of proposal",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/be-ext-pss-info"
+      },
+      "name" : "BePSSInfo",
+      "description" : "Information regarding the Prescription Search Support",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/be-vs-referral-category"
+      },
+      "name" : "BeReferralCategory",
+      "description" : "Codes to define the high level category for a referral prescription. SNOMED-CT codes in this valueset are just a draft proposal to give a general idea - pending an official valueset.",
       "exampleBoolean" : false
     },
     {
@@ -731,150 +1087,6 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:primitive-type"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/be-year-month-day"
-      },
-      "name" : "BeYearMonthDay",
-      "description" : "a datetime of length 10 or empty",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/be-co-prescriber"
-      },
-      "name" : "BeCoPrescriber",
-      "description" : "Other practitioners that must take part in this prescripiton",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/be-co-prescriber-info"
-      },
-      "name" : "BeCoPrescriberInfo",
-      "description" : "Info about the other practitioners that must take part in this prescripiton",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/be-ext-contraindication"
-      },
-      "name" : "BeContraindication",
-      "description" : "Contra indication in a prescription referral for diagnostic imaging.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/be-ext-contrastfluiduse"
-      },
-      "name" : "BeContrastFluidUse",
-      "description" : "Whether the use of contrast fluid in diagnostic imaging can be defined as 'If necessary' or 'Not permitted.'",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/be-ext-feedback-to-prescriber"
-      },
-      "name" : "BeFeedbackToPrescriber",
-      "description" : "Does the prescriber request feedback?",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/be-ext-inform-party"
-      },
-      "name" : "BeInformParty",
-      "description" : "Extra parties that need to be informed of the outcome, besides the prescriber.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/be-ext-latest-draft-date"
-      },
-      "name" : "BeLatestDraftDate",
-      "description" : "Request must leave draft status before",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/be-ext-latest-end-date"
-      },
-      "name" : "BeLatestEndDate",
-      "description" : "Request must be performed before",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/be-ext-pss-info"
-      },
-      "name" : "BePSSInfo",
-      "description" : "Information regarding the Prescription Search Support",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/be-ext-performer-reference"
-      },
-      "name" : "BePerformerReference",
-      "description" : "BePerformerReference",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/be-ext-proposal-type"
-      },
-      "name" : "BeProposalType",
-      "description" : "Type of proposal",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
@@ -882,316 +1094,6 @@
       },
       "name" : "BeSupportingInfo",
       "description" : "Relevant clinical information in the context of this prescription concerning for example allergies, kidney function, diabetic. This extension allows the use of an Annotation or codeableConcept but when more detailed information can be given, it is RECOMMENDED to express it as structured as possible using the appropriate elements.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/be-ext-urgent-communication"
-      },
-      "name" : "BeUrgentCommunication",
-      "description" : "When there is a need to urgently communicate results of an order.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:extension"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/be-ext-validity-period"
-      },
-      "name" : "BeValidityPeriod",
-      "description" : "Begin and enddate of the validity of the request",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:logical"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/BeDiagnosticImagingPrescription"
-      },
-      "name" : "BeDiagnosticImagingPrescription",
-      "description" : "Logical model describing the model for the diagnostic imaging prescription. This draft is used in the HL7 Belgian workgroup for referral.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:logical"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/BeLaboratoryPrescription"
-      },
-      "name" : "BeLaboratoryPrescription",
-      "description" : "Logical model describing the model for the prescription laboratory. This draft is used in the HL7 Belgian workgroup for laboratory.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:logical"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/BeModelNursingPrescription"
-      },
-      "name" : "BeModelNursingPrescription",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:logical"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/BeModelReferralPrescription"
-      },
-      "name" : "BeModelReferralPrescription",
-      "description" : "Logical model describing the model for the prescription referral. This draft is used in the HL7 Belgian workgroup for referral.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:logical"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/BeModelReferralRequestGroup"
-      },
-      "name" : "BeModelReferralRequestGroup",
-      "description" : "Logical model describing the model for a group of referral prescriptions. This draft is used in the HL7 Belgian workgroup for referral.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:logical"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/BePhysiotherapyPrescription"
-      },
-      "name" : "BePhysiotherapyPrescription",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/be-vs-co-prescription-status"
-      },
-      "name" : "BeCoPrescriptionStatus",
-      "description" : "This is the status of the prescription for the coprescriber",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/be-vs-communication-method"
-      },
-      "name" : "BeCommunicationMethod",
-      "description" : "Codes to define a communication method.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/be-vs-contrastfluid-use"
-      },
-      "name" : "BeContrastFluidUse",
-      "description" : "Codes to define the use of contrast fluid.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/be-vs-bodysite-nursing"
-      },
-      "name" : "Body Site",
-      "description" : "Body Site",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/be-vs-performer-task-status-reason"
-      },
-      "name" : "BeVSPerformerTaskStatusReason",
-      "description" : "Codes to explain the current status of a referral prescription.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/be-vs-prescription-status-reason"
-      },
-      "name" : "BeVSPrescriptionStatusReason",
-      "description" : "This is the status reason of the prescription",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/be-vs-request-note-type"
-      },
-      "name" : "BeVSRequestNoteType",
-      "description" : "Types of notes used in a referral prescription",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/be-vs-requested-services-nurse"
-      },
-      "name" : "BeVSRequestedServicesNurse",
-      "description" : "Codes indicating the requests that can be asked from a nurse.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/be-vs-requested-services-nurse-detail"
-      },
-      "name" : "BeVSRequestedServicesNurseDetail",
-      "description" : "Codes indicating the request details that can be asked from a nurse.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/be-vs-treatment-status-reason"
-      },
-      "name" : "BeVSTreatmentStatusReason",
-      "description" : "Codes to explain the current status of a treatment in a referral prescription.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/be-vs-co-prescriber-choice"
-      },
-      "name" : "BeVsCoPrescriberChoice",
-      "description" : "Type of intended performer choice",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/be-vs-proposal-type"
-      },
-      "name" : "BeVsProposalType",
-      "description" : "If the status of the request is proposal, this valueset indicates the different types of proposal",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/be-vs-request-intent"
-      },
-      "name" : "BeVsRequestIntent",
-      "description" : "The allowed intent codes in the context of referral prescription",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/be-cs-co-prescriber-choice"
-      },
-      "name" : "BeCSCoPrescriberChoice",
-      "description" : "Type of intended performer choice",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/be-communication-code"
-      },
-      "name" : "BeCommunicationCode",
-      "description" : "Communication codes in Belgium. To define a specific method of communicating. Initially defined as supporting CodeSystem for the referral prescription.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/be-vs-contrastfluid-use"
-      },
-      "name" : "BeContrastFluidUse",
-      "description" : "Whether use of contrast fluid should be considered.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/be-prescription-proposal-type"
-      },
-      "name" : "BePrescriptionProposalType",
-      "description" : "Prescription Proposal Type. Indicates the type of proposal (new or prolongation) as from the uses cases by NIHDI",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "CodeSystem"
-      }],
-      "reference" : {
-        "reference" : "CodeSystem/be-prescription-status-reason"
-      },
-      "name" : "BePrescriptionStatusReason",
-      "description" : "Status reason for the prescription. Initially defined as supporting CodeSystem for the referral prescription.",
       "exampleBoolean" : false
     },
     {
@@ -1233,52 +1135,6 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Practitioner"
-      }],
-      "reference" : {
-        "reference" : "Practitioner/Performer1"
-      },
-      "name" : "Performer1",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Practitioner"
-      }],
-      "reference" : {
-        "reference" : "Practitioner/Requester1"
-      },
-      "name" : "Requester1",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "NamingSystem"
-      }],
-      "reference" : {
-        "reference" : "NamingSystem/be-ns-coronalertcode"
-      },
-      "name" : "BeNSCoronalertcode",
-      "description" : "Code as generated by the Coronalert app.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "NamingSystem"
-      }],
-      "reference" : {
-        "reference" : "NamingSystem/be-ns-specimen"
-      },
-      "name" : "BeNSSpecimen",
-      "description" : "National identifier for a specimen when needed.",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "NamingSystem"
       }],
       "reference" : {
@@ -1291,13 +1147,25 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "OperationDefinition"
+        "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
-        "reference" : "OperationDefinition/be-op-cancel"
+        "reference" : "StructureDefinition/be-ext-urgent-communication"
       },
-      "name" : "be-op-cancel",
-      "description" : "Cancel Referral Prescription or Proposal",
+      "name" : "BeUrgentCommunication",
+      "description" : "When there is a need to urgently communicate results of an order.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/be-ext-validity-period"
+      },
+      "name" : "BeValidityPeriod",
+      "description" : "Begin and enddate of the validity of the request",
       "exampleBoolean" : false
     },
     {
@@ -1306,10 +1174,130 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/be-vs-referral-category"
+        "reference" : "ValueSet/be-vs-co-prescriber-choice"
       },
-      "name" : "BeReferralCategory",
-      "description" : "Codes to define the high level category for a referral prescription. SNOMED-CT codes in this valueset are just a draft proposal to give a general idea - pending an official valueset.",
+      "name" : "BeVsCoPrescriberChoice",
+      "description" : "Type of intended performer choice",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/be-vs-performer-task-status-reason"
+      },
+      "name" : "BeVSPerformerTaskStatusReason",
+      "description" : "Codes to explain the current status of a referral prescription.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/be-vs-prescription-status-reason"
+      },
+      "name" : "BeVSPrescriptionStatusReason",
+      "description" : "This is the status reason of the prescription",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/be-vs-proposal-type"
+      },
+      "name" : "BeVsProposalType",
+      "description" : "If the status of the request is proposal, this valueset indicates the different types of proposal",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/be-vs-requested-services-nurse"
+      },
+      "name" : "BeVSRequestedServicesNurse",
+      "description" : "Codes indicating the requests that can be asked from a nurse.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/be-vs-requested-services-nurse-detail"
+      },
+      "name" : "BeVSRequestedServicesNurseDetail",
+      "description" : "Codes indicating the request details that can be asked from a nurse.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/be-vs-request-intent"
+      },
+      "name" : "BeVsRequestIntent",
+      "description" : "The allowed intent codes in the context of referral prescription",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/be-vs-request-note-type"
+      },
+      "name" : "BeVSRequestNoteType",
+      "description" : "Types of notes used in a referral prescription",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/be-vs-treatment-status-reason"
+      },
+      "name" : "BeVSTreatmentStatusReason",
+      "description" : "Codes to explain the current status of a treatment in a referral prescription.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:primitive-type"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/be-year-month-day"
+      },
+      "name" : "BeYearMonthDay",
+      "description" : "a datetime of length 10 or empty",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/be-vs-bodysite-nursing"
+      },
+      "name" : "Body Site",
+      "description" : "Body Site",
       "exampleBoolean" : false
     },
     {
@@ -1604,6 +1592,17 @@
         "valueString" : "Practitioner"
       }],
       "reference" : {
+        "reference" : "Practitioner/Performer1"
+      },
+      "name" : "Performer1",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      }],
+      "reference" : {
         "reference" : "Practitioner/practitioner1"
       },
       "name" : "practitioner1",
@@ -1707,6 +1706,17 @@
       },
       "name" : "referralprescription-nursing-example6-compression-therapy",
       "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/Requester1"
+      },
+      "name" : "Requester1",
+      "exampleBoolean" : true
     },
     {
       "extension" : [{
