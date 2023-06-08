@@ -1,0 +1,88 @@
+{
+    "resourceType": "ServiceRequest",
+    "id": "be-referralprescription",
+    "meta": {
+        "profile": [
+            "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription"
+        ]
+    },
+    "extension": [
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/request-statusReason",
+            "valueCodeableConcept": {
+                "text": "Ready",
+                "coding": [
+                    {
+                        "system": "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason",
+                        "code": "ready"
+                    }
+                ]
+            }
+        },
+        {
+            "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-feedback-to-prescriber",
+            "valueBoolean": false
+        },
+        {
+            "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period",
+            "valuePeriod": {
+                "start": "2023-06-07",
+                "end": "2023-07-07"
+            }
+        },
+        {
+            "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-end-date",
+            "valueDateTime": "2023-07-07"
+        }
+    ],
+    "replaces": [
+        {
+            "reference": "ServiceRequest/ab4287a2-5a0f-4f1c-beea-31c88e898b65"
+        }
+    ],
+    "status": "active",
+    "intent": "order",
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "9632001"
+                }
+            ],
+            "text": "Nursing procedure"
+        }
+    ],
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "121005"
+            }
+        ],
+        "text": "Retrobulbar injection of therapeutic agent"
+    },
+    "subject": {
+        "identifier": {
+            "use": "official",
+            "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/ssin",
+            "value": "82050873308"
+        }
+    },
+    "authoredOn": "2023-06-07",
+    "requester": {
+        "reference": "PractitionerRole/83010100170-GP"
+    },
+    "reasonCode": [
+        {
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "177007"
+                }
+            ],
+            "text": "Poisoning by sawfly larvae"
+        }
+    ],
+    "patientInstruction": "Do that etc."
+}
