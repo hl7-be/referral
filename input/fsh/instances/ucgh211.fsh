@@ -12,8 +12,8 @@ InstanceOf: BeReferralPrescriptionNursing
 * subject.identifier.value = "38012699993"
 * extension[validity].valuePeriod.start = "2022-10-03"
 * extension[validity].valuePeriod.end = "2023-04-03"
-* performer[+].identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
-* performer[=].identifier.value = #persorthotist
+* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
+* extension[performerType][=].valueCodeableConcept.coding.code = #persorthotist
 * extension[coprescriber].extension[coprescriberNumber].valuePositiveInt = 2
 * extension[coprescriber].extension[coprescriber][+].extension[coprescriber].valueReference = Reference(ucgh211-1-1)
 * extension[coprescriber].extension[coprescriber][=].extension[coprescriptionStatus].valueCodeableConcept = TaskStatus#requested

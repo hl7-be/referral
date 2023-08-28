@@ -14,10 +14,10 @@ InstanceOf: BeReferralPrescriptionNursing
 * category =  $sct#9632001
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "38012699993"
-* performer[+].identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" 
-* performer[=].identifier.value = #persnurse
-* performer[+].identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty"
-* performer[=].identifier.value = #persdiabeticeducator 
+* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" 
+* extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
+* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty"
+* extension[performerType][=].valueCodeableConcept.coding.code = #persdiabeticeducator 
 * contained[+] = ucgh241p16-1-1
 
 

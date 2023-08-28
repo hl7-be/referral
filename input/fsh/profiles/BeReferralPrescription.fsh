@@ -29,7 +29,8 @@ Description: "The common structure for referral prescription."
     BeProposalType named proposalType 0..1 MS and
     //BeTaskReference named task 0..1 MS and
     BePSSInfo named pss 0..1 MS and
-    BeExtRecorder named recorder 0..1 MS
+    BeExtRecorder named recorder 0..1 MS and
+    BePerformerType named performerType 0..* MS
 * extension[statusReason].valueCodeableConcept 1..1
 * extension[statusReason].valueCodeableConcept from BeVSPrescriptionStatusReason (extensible)
 * extension[coprescriber] ^short = "Info about the other parties that have to take part in the prescription."
@@ -38,6 +39,7 @@ Description: "The common structure for referral prescription."
 * extension[feedback] ^short = "Give feedback to the prescriber"
 * extension[recorder] ^short = "The person responsable for this information, not necessarily the person who recorded the information"
 * extension[latestDraft] ^short = "The prescription must have left the draft status befor this moment"
+* extension[performerType] ^short = "Discipline of provider. Replaces .performerType because of wrong cardinality"
 //* extension[performertasks] ^short = "The subtasks as executed by different performers. Together they form the execution of the prescription as described in task extension"
 * identifier MS
 * identifier ^slicing.discriminator.type = #value
@@ -72,8 +74,7 @@ Description: "The common structure for referral prescription."
 * requester only BeContainedOrLogicalReference
 * requester only Reference(BePractitionerRole)
 * requester ^short = "Prescriber of the requested service"
-* performerType ..0 MS
-* performerType ^short = "Discipline of provider"
+* performerType 0..0 MS
 * performer  MS
 * performer only BeContainedOrLogicalReference
 * performer only Reference( BePractitionerRole )

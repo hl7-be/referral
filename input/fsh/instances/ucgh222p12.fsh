@@ -19,8 +19,8 @@ InstanceOf: BeReferralPrescriptionNursing
 * extension[validity].valuePeriod.start = "2022-10-03"
 * extension[validity].valuePeriod.end = "2023-04-03"
 * extension[feedback].valueBoolean = false
-* performer[+].identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
-* performer[=].identifier.value = #persnurse
+* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
+* extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 * requisition.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
 * requisition.value = "27e5a4a4-e043-11ed-b5ea-0242ac120002"
 * occurrenceDateTime = "2022-10-10"
@@ -39,8 +39,8 @@ InstanceOf: BeReferralPrescriptionNursing
 * extension[validity].valuePeriod.start = "2022-10-03"
 * extension[validity].valuePeriod.end = "2023-04-03"
 * extension[feedback].valueBoolean = false
-* performer[+].identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
-* performer[=].identifier.value = #persnurse
+* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
+* extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 * requisition.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
 * requisition.value = "27e5a4a4-e043-11ed-b5ea-0242ac120002"
 * occurrenceDateTime = "2022-10-10"
@@ -63,8 +63,8 @@ InstanceOf: BeReferralPrescriptionNursing
 * extension[feedback].valueBoolean = false
 //* orderDetail = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service-detail#tmp-hube-type-3
 * note.text = "Huber needle type: 20G x 25mm (not available for june release -> is device)"
-* performer[+].identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
-* performer[=].identifier.value = #persnurse
+* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
+* extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 * requisition.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
 * requisition.value = "27e5a4a4-e043-11ed-b5ea-0242ac120002"
 * occurrenceDateTime = "2022-10-10"

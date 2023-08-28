@@ -13,8 +13,8 @@ InstanceOf: BeReferralPrescriptionNursing
 * category =  $sct#9632001
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "38012699993"
-* performer[+].identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty"
-* performer[=].identifier.value = #persnurse
+* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty"
+* extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 * contained[+] = ucgh241p111-1-1
 // only one reasonCode possible
 

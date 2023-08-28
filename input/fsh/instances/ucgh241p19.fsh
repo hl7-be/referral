@@ -14,8 +14,8 @@ InstanceOf: BeReferralPrescriptionNursing
 * category =  $sct#9632001
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "38012699993"
-* performer[+].identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty"
-* performer[=].identifier.value = #persdiabeticeducator 
+* extension[performerType].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty"
+* extension[performerType].valueCodeableConcept.coding.code = #persdiabeticeducator 
 * occurrenceTiming[+].repeat.count  = 10
 * occurrenceTiming[=].repeat.duration = 0.5
 * occurrenceTiming[=].repeat.durationUnit = #h
