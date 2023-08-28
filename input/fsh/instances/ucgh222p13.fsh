@@ -29,8 +29,8 @@ InstanceOf: BeReferralPrescriptionNursing
 * extension[validity].valuePeriod.start = "2022-10-03"
 * extension[validity].valuePeriod.end = "2023-04-03"
 * extension[feedback].valueBoolean = false
-* performer[+].identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
-* performer[=].identifier.value = #persnurse
+* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
+* extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 * bodySite = $sct#14975008
 * bodySite.extension[bodyLaterality].valueCoding = $sct#419161000
 * note.text = "Flamazine"
@@ -52,8 +52,8 @@ InstanceOf: BeReferralPrescriptionNursing
 * extension[validity].valuePeriod.end = "2023-04-03"
 * extension[feedback].valueBoolean = false
 * note.text = "Melolin 10x10cm"
-* performer[+].identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
-* performer[=].identifier.value = #persnurse
+* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
+* extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 
 
 Instance: ucgh222p13-1-1

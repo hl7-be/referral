@@ -17,8 +17,8 @@ InstanceOf: BeReferralPrescriptionNursing
 * extension[validity].valuePeriod.start = "2023-01-26"
 * extension[validity].valuePeriod.end = "2023-07-26"
 * extension[feedback].valueBoolean = true
-* performer[+].identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
-* performer[=].identifier.value = #persnurse
+* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
+* extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 * reasonCode = $sct#44653001 //niet in Belgische module
 * code =  $sct#385796006
 * status = #active
@@ -100,8 +100,8 @@ InstanceOf: BeReferralPrescriptionNursing
 * extension[feedback].valueBoolean = true
 * occurrenceTiming.repeat.boundsDuration.unit = #mo
 * occurrenceTiming.repeat.boundsDuration.value = 1
-* performer[+].identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
-* performer[=].identifier.value = #persnurse
+* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
+* extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 * note.text = "long stretch bandage not available for june release"
 
 Instance: uc2a-3
@@ -123,8 +123,8 @@ InstanceOf: BeReferralPrescriptionNursing
 * extension[feedback].valueBoolean = true
 * occurrenceTiming.repeat.boundsDuration.unit = #mo
 * occurrenceTiming.repeat.boundsDuration.value = 3
-* performer[+].identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
-* performer[=].identifier.value = #persnurse
+* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
+* extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 
 
 

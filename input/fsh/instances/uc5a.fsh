@@ -24,8 +24,8 @@ InstanceOf: BeReferralPrescriptionNursing
 * extension[validity].valuePeriod.end = "2023-08-07"
 * extension[feedback].valueBoolean = true
 * occurrenceTiming.repeat.count = 1
-* performer[+].identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
-* performer[=].identifier.value = #persnurse
+* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
+* extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 * bodySite.extension[bodyLaterality].valueCoding = $sct#419161000
 * bodySite.coding = $sct#14975008
  
