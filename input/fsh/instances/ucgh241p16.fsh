@@ -20,14 +20,7 @@ InstanceOf: BeReferralPrescriptionNursing
 * extension[performerType][=].valueCodeableConcept.coding.code = #persdiabeticeducator 
 * contained[+] = ucgh241p16-1-1
 
-Instance: ucgh241p16-1-2
-InstanceOf: BeNursingCareRequest
-* basedOn = Reference(ucgh241p16-1)
-* code = $sct#385805005
-* status = #draft
-* intent = #order
-* subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
-* subject.identifier.value = "38012699993"
+
 
 
 
