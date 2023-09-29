@@ -21,7 +21,7 @@ InstanceOf: BeReferralPrescriptionNursing
 * contained[+] = ucgh241p16-1-1
 
 Instance: ucgh241p16-1-2
-InstanceOf: ServiceRequest
+InstanceOf: BeNursingCareRequest
 * basedOn = Reference(ucgh241p16-1)
 * code = $sct#385805005
 * status = #draft

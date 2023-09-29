@@ -24,7 +24,7 @@ InstanceOf: BeReferralPrescriptionNursing
 //BMI, hypertension are Observations, and cannot be added to the prescription.
 
 Instance: ucgh241p17-1-2
-InstanceOf: ServiceRequest
+InstanceOf: BeNursingCareRequest
 * basedOn = Reference(ucgh241p17-1)
 * code = $sct#385805005
 * status = #draft

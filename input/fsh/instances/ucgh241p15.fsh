@@ -20,7 +20,7 @@ InstanceOf: BeReferralPrescriptionNursing
 * note.text = "geen medische reden voor terugbetaling"
 
 Instance: ucgh241p15-1-2
-InstanceOf: ServiceRequest
+InstanceOf: BeNursingCareRequest
 * basedOn = Reference(ucgh241p15-1)
 * code = $temp-service#tmp-prep-rsed-5
 * status = #draft

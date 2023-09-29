@@ -19,7 +19,7 @@ InstanceOf: BeReferralPrescriptionNursing
 // only one reasonCode possible
 
 Instance: ucgh241p111-1-2
-InstanceOf: ServiceRequest
+InstanceOf: BeNursingCareRequest
 * basedOn = Reference(ucgh241p111-1)
 * code = $sct#225230008
 * status = #draft
