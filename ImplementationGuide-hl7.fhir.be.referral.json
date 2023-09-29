@@ -3,14 +3,14 @@
   "id" : "hl7.fhir.be.referral",
   "text" : {
     "status" : "extensions",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">Placeholder</div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>ReferralPrescription</h2><p>The official URL for this implementation guide is: </p><pre>https://www.ehealth.fgov.be/standards/fhir/referral/ImplementationGuide/hl7.fhir.be.referral</pre></div>"
   },
   "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/ImplementationGuide/hl7.fhir.be.referral",
   "version" : "1.0.0",
   "name" : "ReferralPrescription",
   "title" : "Referral Prescription",
   "status" : "draft",
-  "date" : "2023-09-05T14:28:58+00:00",
+  "date" : "2023-09-29T14:04:57+00:00",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -29,7 +29,7 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "5.0.0"
+    "version" : "5.3.0"
   },
   {
     "id" : "hl7ext",
@@ -290,6 +290,17 @@
       "extension" : [{
         "url" : "code",
         "valueString" : "apply-license"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-wg"
       },
       {
         "url" : "value",
@@ -580,6 +591,17 @@
       "extension" : [{
         "url" : "code",
         "valueCode" : "apply-license"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-wg"
       },
       {
         "url" : "value",
@@ -927,6 +949,17 @@
       },
       "name" : "BeNSSpecimen",
       "description" : "National identifier for a specimen when needed.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/BeNursingCareRequest"
+      },
+      "name" : "BeNursingCareRequest",
       "exampleBoolean" : false
     },
     {
@@ -1853,13 +1886,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "RequestGroup"
+        "valueString" : "ServiceRequest"
       }],
       "reference" : {
-        "reference" : "RequestGroup/ucgh222p13"
+        "reference" : "ServiceRequest/ucgh222p13"
       },
       "name" : "ucgh222p13",
-      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-request-group"
+      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing"
     },
     {
       "extension" : [{
@@ -1870,7 +1903,7 @@
         "reference" : "ServiceRequest/ucgh222p13-1"
       },
       "name" : "ucgh222p13-1",
-      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing"
+      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/BeNursingCareRequest"
     },
     {
       "extension" : [{
@@ -1886,13 +1919,46 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "MedicationRequest"
+      }],
+      "reference" : {
+        "reference" : "MedicationRequest/ucgh222p13-1-2"
+      },
+      "name" : "ucgh222p13-1-2",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ServiceRequest"
       }],
       "reference" : {
         "reference" : "ServiceRequest/ucgh222p13-2"
       },
       "name" : "ucgh222p13-2",
-      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing"
+      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/BeNursingCareRequest"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DeviceRequest"
+      }],
+      "reference" : {
+        "reference" : "DeviceRequest/ucgh222p13-2-1"
+      },
+      "name" : "ucgh222p13-2-1",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/ucgh222p13-bundle"
+      },
+      "name" : "ucgh222p13-bundle",
+      "exampleBoolean" : true
     },
     {
       "extension" : [{
@@ -1925,7 +1991,7 @@
         "reference" : "ServiceRequest/ucgh241p110-1-2"
       },
       "name" : "ucgh241p110-1-2",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/BeNursingCareRequest"
     },
     {
       "extension" : [{
@@ -1958,7 +2024,7 @@
         "reference" : "ServiceRequest/ucgh241p111-1-2"
       },
       "name" : "ucgh241p111-1-2",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/BeNursingCareRequest"
     },
     {
       "extension" : [{
@@ -1991,7 +2057,7 @@
         "reference" : "ServiceRequest/ucgh241p15-1-2"
       },
       "name" : "ucgh241p15-1-2",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/BeNursingCareRequest"
     },
     {
       "extension" : [{
@@ -2024,7 +2090,7 @@
         "reference" : "ServiceRequest/ucgh241p16-1-2"
       },
       "name" : "ucgh241p16-1-2",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/BeNursingCareRequest"
     },
     {
       "extension" : [{
@@ -2057,7 +2123,7 @@
         "reference" : "ServiceRequest/ucgh241p17-1-2"
       },
       "name" : "ucgh241p17-1-2",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/BeNursingCareRequest"
     },
     {
       "extension" : [{
@@ -2090,7 +2156,7 @@
         "reference" : "ServiceRequest/ucgh241p18-1-2"
       },
       "name" : "ucgh241p18-1-2",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/BeNursingCareRequest"
     },
     {
       "extension" : [{
@@ -2123,7 +2189,7 @@
         "reference" : "ServiceRequest/ucgh241p19-1-2"
       },
       "name" : "ucgh241p19-1-2",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/BeNursingCareRequest"
     },
     {
       "extension" : [{
