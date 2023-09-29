@@ -19,7 +19,7 @@ InstanceOf: BeReferralPrescriptionNursing
 //Katz score cannot be added to the prescription
 
 Instance: ucgh241p110-1-2
-InstanceOf: ServiceRequest
+InstanceOf: BeNursingCareRequest
 * basedOn = Reference(ucgh241p110-1)
 * code = $sct#225964003
 * status = #draft

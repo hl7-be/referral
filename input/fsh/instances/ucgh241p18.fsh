@@ -25,7 +25,7 @@ InstanceOf: BeReferralPrescriptionNursing
 //Insulin treatment, care path contract, GMF cannot be added to the prescription.
 
 Instance: ucgh241p18-1-2
-InstanceOf: ServiceRequest
+InstanceOf: BeNursingCareRequest
 * basedOn = Reference(ucgh241p18-1)
 * code = $sct#385805005
 * status = #draft
