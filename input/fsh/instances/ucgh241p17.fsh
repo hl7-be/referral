@@ -23,7 +23,14 @@ InstanceOf: BeReferralPrescriptionNursing
 * contained[+] = ucgh241p17-1-1
 //BMI, hypertension are Observations, and cannot be added to the prescription.
 
-
+Instance: ucgh241p17-1-2
+InstanceOf: BeNursingCareRequest
+* basedOn = Reference(ucgh241p17-1)
+* code = $sct#385805005
+* status = #draft
+* intent = #order
+* subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
+* subject.identifier.value = "38012699993"
 
 
 
