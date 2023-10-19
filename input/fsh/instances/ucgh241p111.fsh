@@ -18,15 +18,6 @@ InstanceOf: BeReferralPrescriptionNursing
 * contained[+] = ucgh241p111-1-1
 // only one reasonCode possible
 
-Instance: ucgh241p111-1-2
-InstanceOf: BeNursingCareRequest
-* basedOn = Reference(ucgh241p111-1)
-* code = $sct#225230008
-* status = #draft
-* intent = #order
-* subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
-* subject.identifier.value = "38012699993"
-
 
 
 

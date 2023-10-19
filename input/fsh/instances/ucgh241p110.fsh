@@ -18,14 +18,6 @@ InstanceOf: BeReferralPrescriptionNursing
 //disorientation (time/space), incontinency (nocturnal/occasional) cannot be added to the prescription.
 //Katz score cannot be added to the prescription
 
-Instance: ucgh241p110-1-2
-InstanceOf: BeNursingCareRequest
-* basedOn = Reference(ucgh241p110-1)
-* code = $sct#225964003
-* status = #draft
-* intent = #order
-* subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
-* subject.identifier.value = "38012699993"
 
 
 
