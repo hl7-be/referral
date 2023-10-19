@@ -19,14 +19,7 @@ InstanceOf: BeReferralPrescriptionNursing
 * note.extension[https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeableconcept].valueCodeableConcept = $sct#410666004
 * note.text = "geen medische reden voor terugbetaling"
 
-Instance: ucgh241p15-1-2
-InstanceOf: BeNursingCareRequest
-* basedOn = Reference(ucgh241p15-1)
-* code = $temp-service#tmp-prep-rsed-5
-* status = #draft
-* intent = #order
-* subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
-* subject.identifier.value = "38012699993"
+
 
 
 
