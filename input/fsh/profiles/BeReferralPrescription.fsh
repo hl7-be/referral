@@ -87,4 +87,4 @@ Description: "The common structure for referral prescription."
 * note MS 
 * note only BeCodedAnnotation
 * note.extension[https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeableconcept].valueCodeableConcept from BeVSRequestNoteType (required)
-* authoredOn only BeYearMonthDay
+* authoredOn obeys be-inv-long-date

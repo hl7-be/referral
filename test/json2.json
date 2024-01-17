@@ -1,0 +1,74 @@
+{
+    "resourceType": "ServiceRequest",
+    "id": "5cb65fda-9384-11ee-b9d1-0242ac120002",
+    "meta": {
+        "profile": [
+            "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription"
+        ]
+    },
+    "extension": [
+        {
+            "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-feedback-to-prescriber",
+            "valueBoolean": false
+        },
+        {
+            "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period",
+            "valuePeriod": {
+                "start": "2023-11-08",
+                "end": "2024-11-08"
+            }
+        }
+    ],
+    "status": "active",
+    "intent": "order",
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "9632001"
+                }
+            ]
+        }
+    ],
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "225964003"
+            }
+        ]
+    },
+    "subject": {
+        "identifier": {
+            "use": "official",
+            "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin",
+            "value": "00030499966"
+        }
+    },
+    "authoredOn": "2023-11-08",
+    "requester": {
+        "reference": "PractitionerRole/40799287001-PHYSICIAN"
+    },
+    "occurrenceTiming":{
+        "repeat": {
+            "frequency": 1,
+            "period": 1,
+            "periodUnit": "wk",
+            "duration": 36,
+            "durationUnit": "mo",
+            "countMax": 156,
+            "count": 156
+        }
+    },
+    "reasonCode": [
+        {
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "32798002"
+                }
+            ]
+        }
+    ]
+}
