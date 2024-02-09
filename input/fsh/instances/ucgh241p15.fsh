@@ -1,7 +1,7 @@
 Instance: ucgh241p15-1 
 InstanceOf: BeReferralPrescriptionNursing
 * reasonCode.coding.display = "Diabetes type 1"
-* authoredOn = "2022-10-03"
+* authoredOn = "2022-10-03T00:00:00+01:00"
 * requester =  Reference(ucgh241p15-1-1)
 * extension[feedback].valueBoolean = false
 * code = $temp-service#tmp-prep-rsed-5

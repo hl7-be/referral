@@ -24,4 +24,4 @@ Usage: #example
 * requester = Reference(requesterrole1)
 * note.text = "Extra info: Rosidal zwachtels → aan- en uitdoen / both underlegs"
 * reasonCode.text = "reason"
-* authoredOn = "2022-01-01"
+* authoredOn = "2022-01-01T00:00:00+01:00"

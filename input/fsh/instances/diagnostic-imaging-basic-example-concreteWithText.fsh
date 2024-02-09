@@ -20,4 +20,4 @@ Usage: #example
 * subject = Reference(patient1)
 * requester = Reference(requesterrole1)
 * reasonCode.text = "Fractuur? Ligamentair letsel?"
-* authoredOn = "2022-01-01"
+* authoredOn = "2022-01-01T00:00:00+01:00"

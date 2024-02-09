@@ -22,7 +22,7 @@ Usage: #example
 * occurrenceTiming.repeat.frequency = 1
 * occurrenceTiming.repeat.period = 1
 * occurrenceTiming.repeat.periodUnit = #wk
-* authoredOn = "2022-10-31"
+* authoredOn = "2022-10-31T00:00:00+01:00"
 * requester = Reference(requesterrole1)
 * reasonCode = $sct#309256001
 * note.text = "Frequency: 1x per week, startdatum 25/02/2021, einddatum 31/12/2021"

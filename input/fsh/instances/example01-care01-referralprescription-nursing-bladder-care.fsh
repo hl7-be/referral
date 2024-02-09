@@ -23,4 +23,4 @@ Usage: #inline
 * requester = Reference(requesterrole1)
 * performer[+] = Reference(practitionerrole1)
 * reasonCode.text = "reason"
-* authoredOn = "2020-01-01"
+* authoredOn = "2020-01-01T00:00:00+01:00"

@@ -2,7 +2,7 @@ Instance: ucgh241p111-1
 InstanceOf: BeReferralPrescriptionNursing
 * reasonCode.coding[+].display = "kidney failure"
 //* reasonCode.coding[+].display = "loss of blood pressure"
-* authoredOn = "2022-10-03"
+* authoredOn = "2022-10-03T00:00:00+01:00"
 * requester =  Reference(ucgh241p111-1-1)
 * extension[feedback].valueBoolean = false
 * code = $sct#225230008	

@@ -18,7 +18,7 @@ Usage: #example
 * code = $sct#413899004
 * subject = Reference(patient1)
 * occurrenceDateTime = "2021-02-25T00:00:00.000Z"
-* authoredOn = "2022-10-31"
+* authoredOn = "2022-10-31T00:00:00+01:00"
 * requester = Reference(requesterrole1)
 * reasonCode = $sct#309256001
 * note.text = "bloedafname, Frequency: eenmalig, nuchter"
