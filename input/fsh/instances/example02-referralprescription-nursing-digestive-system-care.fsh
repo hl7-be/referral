@@ -22,7 +22,7 @@ Usage: #example
 * occurrenceTiming.repeat.frequency = 2
 * occurrenceTiming.repeat.period = 1
 * occurrenceTiming.repeat.periodUnit = #d
-* authoredOn = "2022-10-31"
+* authoredOn = "2022-10-31T00:00:00+01:00"
 * requester = Reference(requesterrole1)
 * reasonCode = $sct#309256001
 * note.text = "patient can not move (niet verplaatsen)"

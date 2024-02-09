@@ -14,3 +14,4 @@ Description: "Subtask performed by one performer"
 * statusReason MS
 * statusReason from BeVSPerformerTaskStatusReason
 * basedOn MS
+* focus MS

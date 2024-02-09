@@ -1,6 +1,5 @@
 {
     "resourceType": "ServiceRequest",
-    "id": "98a55f7e-c25c-4d0c-bd07-4c276fcab3b5",
     "meta": {
         "profile": [
             "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription"
@@ -14,9 +13,13 @@
         {
             "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period",
             "valuePeriod": {
-                "start": "2024-01-01",
-                "end": "2024-12-31"
+                "start": "2024-01-19",
+                "end": "2024-02-18"
             }
+        },
+        {
+            "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-end-date",
+            "valueDateTime": "2024-02-18"
         }
     ],
     "status": "active",
@@ -28,7 +31,8 @@
                     "system": "http://snomed.info/sct",
                     "code": "9632001"
                 }
-            ]
+            ],
+            "text": "Nursing procedure"
         }
     ],
     "code": {
@@ -44,7 +48,71 @@
             "coding": [
                 {
                     "system": "http://snomed.info/sct",
-                    "code": "337414009"
+                    "code": "370858005"
+                }
+            ]
+        },
+        {
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "699826006"
+                }
+            ]
+        },
+        {
+            "coding": [
+                {
+                    "system": "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service-detail",
+                    "code": "tmp-foll-care-7"
+                }
+            ]
+        },
+        {
+            "coding": [
+                {
+                    "system": "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service-detail",
+                    "code": "tmp-star-nist-0"
+                }
+            ]
+        },
+        {
+            "coding": [
+                {
+                    "system": "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service-detail",
+                    "code": "tmp-addi->7.5-0"
+                }
+            ]
+        },
+        {
+            "coding": [
+                {
+                    "system": "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service-detail",
+                    "code": "tmp-addi-ions-3"
+                }
+            ]
+        },
+        {
+            "coding": [
+                {
+                    "system": "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service-detail",
+                    "code": "tmp-educ-tion-0"
+                }
+            ]
+        },
+        {
+            "coding": [
+                {
+                    "system": "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service-detail",
+                    "code": "tmp-educ-rial-8"
+                }
+            ]
+        },
+        {
+            "coding": [
+                {
+                    "system": "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service-detail",
+                    "code": "tmp-grou-sion-3"
                 }
             ]
         },
@@ -60,24 +128,24 @@
     "subject": {
         "identifier": {
             "use": "official",
-            "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin",
+            "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/ssin",
             "value": "00030599936"
         }
     },
-    "occurrenceTiming":{
-        "repeat": {
-            "frequency": 1,
-            "period": 1,
-            "periodUnit": "wk"
-        }
-    },
-    "authoredOn": "2023-11-08",
+    "authoredOn": "2024-01-19T15:20:14.062Z",
     "requester": {
-        "reference": "PractitionerRole/46843080001-PHYSICIAN"
+        "reference": "PractitionerRole/83010100170-PHYSICIAN"
     },
     "reasonCode": [
         {
-            "text": "at least some text should be here"
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "177007"
+                }
+            ],
+            "text": "Poisoning by sawfly larvae"
         }
-    ]
+    ],
+    "patientInstruction": "Do that etc."
 }

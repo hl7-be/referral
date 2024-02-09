@@ -32,7 +32,7 @@ InstanceOf: BeReferralPrescriptionNursing
 * intent = #order
 * category = $sct#9632001 //niet in Belgische module
 * priority = #routine
-* authoredOn = "2022-10-03"
+* authoredOn = "2022-10-03T00:00:00+01:00"
 * extension[feedback].valueBoolean = true
 
 

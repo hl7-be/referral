@@ -23,4 +23,4 @@ Usage: #example
 * performer[+] = Reference(practitionerrole1)
 * reasonCode = $sct#371081002 "Arthritis of knee"
 * reasonCode.text = "Patient mobility problems. Possibly arthritis of knee"
-* authoredOn = "2020-01-01"
+* authoredOn = "2020-01-01T00:00:00+01:00"

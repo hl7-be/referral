@@ -25,13 +25,13 @@ Usage: #example
 * requester = Reference(requesterrole1)
 * performer[+] = Reference(practitionerrole1)
 * reasonCode.text = "reason"
-* authoredOn = "2020-01-01"
+* authoredOn = "2020-01-01T00:00:00+01:00"
 
 Instance: example01-care02-colon-cleansing-referral-task
 InstanceOf: BeReferralTask
 * status = #draft
 * intent = #order
-* basedOn = Reference(example01-care02-colon-cleansing)
+* focus = Reference(example01-care02-colon-cleansing)
 
 Instance: example01-care02-colon-cleansing-performer-task
 InstanceOf: BePerformerTask

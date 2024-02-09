@@ -9,7 +9,7 @@ InstanceOf: BeReferralPrescriptionNursing
 * contained[+] = ucgh222p12-1-1
 * reasonCode.coding.display = "chemotherapy via \"implantable venous access port catheter\""
 * requester = Reference(ucgh222p12-1-1)
-* authoredOn = "2022-10-03"
+* authoredOn = "2022-10-03T00:00:00+01:00"
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "38012699993"
 * code = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service#tmp-dres-eter-4	
@@ -29,7 +29,7 @@ Instance: ucgh222p12-2
 InstanceOf: BeReferralPrescriptionNursing
 * contained[+] = ucgh222p12-1-1
 * requester = Reference(ucgh222p12-1-1)
-* authoredOn = "2022-10-03"
+* authoredOn = "2022-10-03T00:00:00+01:00"
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "38012699993"
 * code = $sct#175852005
@@ -51,7 +51,7 @@ InstanceOf: BeReferralPrescriptionNursing
 * contained[+] = ucgh222p12-1-1
 * reasonCode.coding.display = "chemotherapy via \"implantable venous access port catheter\""
 * requester = Reference(ucgh222p12-1-1)
-* authoredOn = "2022-10-03"
+* authoredOn = "2022-10-03T00:00:00+01:00"
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "38012699993"
 * code = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service#tmp-plac-edle-0 //? correct

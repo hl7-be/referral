@@ -4,7 +4,7 @@ Title: "diagnostic-imaging-basic-example-concreteWithDetails"
 Usage: #example
 * contained[+] = patient1
 * contained[+] = requesterrole1
-* authoredOn = "2020-01-01"
+* authoredOn = "2020-01-01T00:00:00+01:00"
 * requester = Reference(requesterrole1)
 * extension[feedback].valueBoolean = true
 * extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
