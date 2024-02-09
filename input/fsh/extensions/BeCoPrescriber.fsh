@@ -16,6 +16,8 @@ Description: "Other practitioners that must take part in this prescripiton"
 * ^jurisdiction = $jurisdiction#BE "Belgium"
 * . ^short = "BeCoPrescriber"
 * . ^definition = "Other practitioners that must take part in this prescripiton"
+* ^context.type = #element
+* ^context.expression = "Extension"
 * extension contains
     coprescriber 1..1 MS and
     coprescriptionStatus 1..1 MS and
