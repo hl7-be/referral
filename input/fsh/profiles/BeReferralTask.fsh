@@ -10,4 +10,4 @@ Description: "The task that is referred to in the referral prescription (this is
 * executionPeriod.end only BeYearMonthDay
 * intent MS
 * intent from BeVsRequestIntent (required)
-* basedOn MS
+* focus MS
