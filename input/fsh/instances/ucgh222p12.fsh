@@ -73,7 +73,7 @@ InstanceOf: BeReferralPrescriptionNursing
 Instance: ucgh222p12-1-1
 InstanceOf: BePractitionerRole
 * practitioner.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"
-* practitioner.identifier.value = "10829059"
+* practitioner.identifier.value = "10829059004"
 * code = https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty#persphysician
 
 

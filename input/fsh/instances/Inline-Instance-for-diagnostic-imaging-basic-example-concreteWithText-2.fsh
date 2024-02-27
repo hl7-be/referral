@@ -4,7 +4,7 @@ Usage: #inline
 * id = "Requester1"
 * identifier.use = #official
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"
-* identifier.value = "8888888888"
+* identifier.value = "88888888881"
 * name[0].use = #official
 * name[=].family = "McCoy"
 * name[=].given = "Leonard"
