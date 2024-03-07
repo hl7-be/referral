@@ -12,7 +12,7 @@ InstanceOf: BeReferralPrescriptionNursing
 * extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * reasonCode = $sct#267032009 
 * requester.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"
-* requester.identifier.value = "10829059"
+* requester.identifier.value = "10829059104"
 * authoredOn = "2023-02-07T00:00:00+01:00"
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "38012699993"

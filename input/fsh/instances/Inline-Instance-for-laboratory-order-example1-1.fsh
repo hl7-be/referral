@@ -4,7 +4,7 @@ Usage: #inline
 * id = "patient1"
 * identifier.use = #official
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
-* identifier.value = "9999999999"
+* identifier.value = "99999999999"
 * name.family = "Doe"
 * name.given = "Jane"
 * telecom.system = #phone

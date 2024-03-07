@@ -16,7 +16,7 @@ Usage: #example
 * priority = #routine
 * code = $sct#762238003
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
-* subject.identifier.value = "9999999999"
+* subject.identifier.value = "99999999999"
 * occurrenceTiming.repeat.boundsPeriod.start = "2022-04-19"
 * occurrenceTiming.repeat.boundsPeriod.end = "2023-04-19"
 * occurrenceTiming.repeat.frequency = 2
