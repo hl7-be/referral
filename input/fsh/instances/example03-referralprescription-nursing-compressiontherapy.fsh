@@ -3,13 +3,13 @@ InstanceOf: BeReferralPrescriptionNursing
 Title: "example03-referralprescription-nursing-compressiontherapy"
 Usage: #example
 * contained[+] = patient1
-* contained[+] = practitionerrole1
+//* contained[+] = practitionerrole1
 * contained[+] = requesterrole1
 * extension[statusReason].valueCodeableConcept = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason#inProgress "In Progress"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"
 * extension[feedback].valueBoolean = true
-* performer[+] = Reference(practitionerrole1)
+//* performer[+] = Reference(practitionerrole1)
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
 * identifier.value = "UHMEPVALUE"
 * status = #active

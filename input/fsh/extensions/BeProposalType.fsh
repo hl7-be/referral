@@ -16,8 +16,12 @@ Description: "Type of proposal"
 * ^jurisdiction = $jurisdiction#BE "Belgium"
 * . ^short = "BeProposalType"
 * . ^definition = "Type of proposal"
-* ^context.type = #element
-* ^context.expression = "ServiceRequest"
+* ^context[+].type = #element
+* ^context[=].expression = "ServiceRequest"
+* ^context[+].type = #element
+* ^context[=].expression = "RequestGroup"
+* ^context[+].type = #element
+* ^context[=].expression = "MedicationRequest"
 * url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-proposal-type" (exactly)
 * value[x] only CodeableConcept
 * valueCodeableConcept 0..1
