@@ -35,7 +35,7 @@ InstanceOf: BeReferralPrescriptionNursing
 * code = $sct#175852005
 * category =  $sct#9632001
 * intent = #order
-* status = #draft
+* status = #active
 * extension[validity].valuePeriod.start = "2022-10-03"
 * extension[validity].valuePeriod.end = "2023-04-03"
 * extension[feedback].valueBoolean = false
@@ -75,6 +75,59 @@ InstanceOf: BePractitionerRole
 * practitioner.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"
 * practitioner.identifier.value = "10829059004"
 * code = https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty#persphysician
+
+Instance: ucgh222p12-1-2
+InstanceOf: BeReferralTask
+* focus = Reference(ucgh222p12-1)
+* status = #accepted
+* intent = #order
+
+
+Instance: ucgh222p12-1-2-1
+InstanceOf: BeOrganizationTask
+* partOf = Reference(ucgh222p12-1-2)
+* focus = Reference(ucgh222p12-1)
+* status = #accepted 
+* intent = #order
+* owner.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/cbe"
+* owner.identifier.value = "0465698582"
+
+
+Instance: ucgh222p12-2-2
+InstanceOf: BeReferralTask
+* focus = Reference(ucgh222p12-1)
+* status = #accepted
+* intent = #order
+
+
+Instance: ucgh222p12-2-2-1
+InstanceOf: BeOrganizationTask
+* partOf = Reference(ucgh222p12-2-2)
+* focus = Reference(ucgh222p12-2)
+* status = #accepted 
+* intent = #order
+* owner.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/cbe"
+* owner.identifier.value = "0465698582"
+
+Instance: ucgh222p12-2-2-2
+InstanceOf: BePerformerTask
+* contained[+] = ucgh222p12-2-2-2-1
+* partOf = Reference(ucgh222p12-2-2)
+* focus = Reference(ucgh222p12-2)
+* basedOn = Reference(ucgh222p12-2-2-1)
+* status = #accepted 
+* intent = #order
+* owner = Reference(ucgh222p12-2-2-2-1)
+
+Instance: ucgh222p12-2-2-2-1
+InstanceOf: BePractitionerRole
+* practitioner.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"
+* practitioner.identifier.value = "41234567401"
+* code = https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty#persnurse
+
+
+
+
 
 
 
