@@ -25,10 +25,15 @@ Description: "The nursing profile specialized for medication. Note this profile 
     BeLatestEndDate named latest 0..1 MS and
     BeLatestDraftDate named latestDraft 0..1 MS and
     //BePerformerTaskReference named performertasks 0..* MS and
-    BePerformerReference named performer 0..* MS and 
+    //BePerformerReference named performer 0..* MS and 
     BeProposalType named proposalType 0..1 MS and
     //BeTaskReference named task 0..1 MS and
-    BePSSInfo named pss 0..1 MS 
+    BePSSInfo named pss 0..1 MS and 
+    BePerformerType named performerType 0..* MS and
+    http://hl7.org/fhir/4.0/StructureDefinition/extension-ServiceRequest.code named code 1..1 MS and 
+    http://hl7.org/fhir/4.0/StructureDefinition/extension-ServiceRequest.orderDetail named orderDetail 0..* MS and
+    http://hl7.org/fhir/4.0/StructureDefinition/extension-ServiceRequest.reasonCode named reasonCode 0..1 MS
+* extension[performerType] ^short = "Discipline of provider. Replaces .performerType because of wrong cardinality"
 * extension[coprescriber] ^short = "Info about the other parties that have to take part in the prescription."
 * extension[validity] ^short = "Validity period of the prescription"
 * extension[latest] ^short = "Request must be executed before"
@@ -54,18 +59,21 @@ Description: "The nursing profile specialized for medication. Note this profile 
 * subject only BeContainedOrLogicalReference
 * subject only Reference(BePatient)
 * subject MS
-* encounter MS
 * requester 1.. MS
 * requester only BeContainedOrLogicalReference
 * requester only Reference(BePractitioner)
-* performer ..0 MS
+* performer only BeContainedOrLogicalReference
+* performer only Reference( BePractitionerRole )
+* performer ^short = "Requested performer - typically reference to practitionerroles"
 * performerType ..0 MS
 * groupIdentifier MS
 * groupIdentifier ^short = "If needed to have a common identifier among different prescriptions."
 * note MS
+* note only BeCodedAnnotation
+* note.extension[https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeableconcept].valueCodeableConcept from BeVSRequestNoteType (required)
 * dosageInstruction.text 1.. MS
 * dosageInstruction.site MS
 * recorder MS
 * recorder ^short = "The person responsable for this information, not necessarily the person who recorded the information"
 * authoredOn 1.. MS
-* authoredOn only BeYearMonthDay
+* authoredOn obeys be-inv-long-date
