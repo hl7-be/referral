@@ -18,11 +18,29 @@ Description: "The common structure for referral prescription."
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
-* insert TopLevelPrescription
 * extension contains
-    $request-statusReason named statusReason 0..1 MS
+    $request-statusReason named statusReason 0..1 MS and
+    BeFeedbackToPrescriber named feedback 1..1 MS and
+    BeCoPrescriberInfo named coprescriber 0..1 MS and
+    BeValidityPeriod named validity 1..1 MS and
+    BeLatestEndDate named latest 0..1 MS and
+    BeLatestDraftDate named latestDraft 0..1 MS and
+    //BePerformerTaskReference named performertasks 0..* MS and
+    BeProposalType named proposalType 0..1 MS and
+    //BeTaskReference named task 0..1 MS and
+    BePSSInfo named pss 0..1 MS and
+    BeExtRecorder named recorder 0..1 MS and
+    BePerformerType named performerType 0..* MS
 * extension[statusReason].valueCodeableConcept 1..1
 * extension[statusReason].valueCodeableConcept from BeVSPrescriptionStatusReason (extensible)
+* extension[coprescriber] ^short = "Info about the other parties that have to take part in the prescription."
+* extension[validity] ^short = "Validity period of the prescription"
+* extension[latest] ^short = "Request must be executed before"
+* extension[feedback] ^short = "Give feedback to the prescriber"
+* extension[recorder] ^short = "The person responsable for this information, not necessarily the person who recorded the information"
+* extension[latestDraft] ^short = "The prescription must have left the draft status befor this moment"
+* extension[performerType] ^short = "Discipline of provider. Replaces .performerType because of wrong cardinality"
+//* extension[performertasks] ^short = "The subtasks as executed by different performers. Together they form the execution of the prescription as described in task extension"
 * identifier MS
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
@@ -32,4 +50,41 @@ Description: "The common structure for referral prescription."
 * identifier[UHMEP].system 1..
 * identifier[UHMEP].system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep" (exactly)
 * identifier[UHMEP].value 1..
-* insert CommonServiceRequest
+* basedOn MS
+* requisition MS
+* requisition ^short = "If needed to have a common identifier among different prescriptions."
+* status MS
+* intent MS
+* intent from BeVsRequestIntent (required)
+* category 1..1 MS
+* category from $be-vs-referral-category (extensible)
+* code MS
+* code from $procedure-code (example)
+* code ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
+* code ^binding.extension.valueString = "ServiceRequestCode"
+* code ^binding.description = "Codes for tests or services that can be carried out by a designated individual, organization or healthcare service."
+* orderDetail MS
+* subject only BeContainedOrLogicalReference
+* subject only Reference(BePatient)
+* subject MS
+* occurrence[x] MS
+* occurrence[x] ^short = "When service shall occur - once this is past, this prescription is no longer valid and the status shall reflect this."
+* authoredOn 1.. MS
+* requester 1.. MS
+* requester only BeContainedOrLogicalReference
+* requester only Reference(BePractitionerRole)
+* requester ^short = "Prescriber of the requested service"
+* performerType 0..0 MS
+* performer 0..0 MS
+* performer only BeContainedOrLogicalReference
+* performer only Reference( BePractitionerRole )
+* performer ^short = "Requested performer - typically reference to practitionerroles"
+* reasonCode 0..1 MS
+* supportingInfo 0..* MS
+* patientInstruction MS
+* bodySite MS
+* bodySite.extension contains BeExtLaterality named bodyLaterality 0..1
+* note MS 
+* note only BeCodedAnnotation
+* note.extension[https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeableconcept].valueCodeableConcept from BeVSRequestNoteType (required)
+* authoredOn obeys be-inv-long-date

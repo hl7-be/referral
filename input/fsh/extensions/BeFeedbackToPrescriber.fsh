@@ -14,11 +14,7 @@ Description: "Does the prescriber request feedback?"
 * ^contact[=].telecom.value = "message-structure@ehealth.fgov.be"
 * ^contact[=].telecom.use = #work
 * ^jurisdiction = $jurisdiction#BE "Belgium"
-* ^context[+].type = #element
-* ^context[=].expression = "ServiceRequest"
-* ^context[+].type = #element
-* ^context[=].expression = "RequestGroup"
-* ^context[+].type = #element
-* ^context[=].expression = "MedicationRequest"
+* ^context.type = #element
+* ^context.expression = "ServiceRequest"
 * valueBoolean 1..1 MS
 * value[x] only boolean 

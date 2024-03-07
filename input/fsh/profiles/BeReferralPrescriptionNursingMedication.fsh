@@ -18,8 +18,28 @@ Description: "The nursing profile specialized for medication. Note this profile 
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
-* insert TopLevelPrescription
-* insert NonServiceRequestPrescription
+* extension contains
+    BeFeedbackToPrescriber named feedback 0..1 MS and
+    BeCoPrescriberInfo named coprescriber 0..1 MS and
+    BeValidityPeriod named validity 1..1 MS and
+    BeLatestEndDate named latest 0..1 MS and
+    BeLatestDraftDate named latestDraft 0..1 MS and
+    //BePerformerTaskReference named performertasks 0..* MS and
+    //BePerformerReference named performer 0..* MS and 
+    BeProposalType named proposalType 0..1 MS and
+    //BeTaskReference named task 0..1 MS and
+    BePSSInfo named pss 0..1 MS and 
+    BePerformerType named performerType 0..* MS and
+    http://hl7.org/fhir/4.0/StructureDefinition/extension-ServiceRequest.code named code 1..1 MS and 
+    http://hl7.org/fhir/4.0/StructureDefinition/extension-ServiceRequest.orderDetail named orderDetail 0..* MS and
+    http://hl7.org/fhir/4.0/StructureDefinition/extension-ServiceRequest.reasonCode named reasonCode 0..1 MS
+* extension[performerType] ^short = "Discipline of provider. Replaces .performerType because of wrong cardinality"
+* extension[coprescriber] ^short = "Info about the other parties that have to take part in the prescription."
+* extension[validity] ^short = "Validity period of the prescription"
+* extension[latest] ^short = "Request must be executed before"
+* extension[feedback] ^short = "Give feedback to the prescriber"
+* extension[latestDraft] ^short = "The prescription must have left the draft status befor this moment"
+//* extension[performertasks] ^short = "The subtasks as executed by different performers. Together they form the execution of the prescription as described in task extension"
 * identifier MS
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
@@ -29,5 +49,31 @@ Description: "The nursing profile specialized for medication. Note this profile 
 * identifier[UHMEP].system 1..
 * identifier[UHMEP].system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep" (exactly)
 * identifier[UHMEP].value 1..
+* status MS
+* statusReason MS
+* intent MS
+* intent from BeVsRequestIntent (required)
+* category 1..1 MS
+* category from $procedure-code (example)
+* medication[x] MS
+* subject only BeContainedOrLogicalReference
+* subject only Reference(BePatient)
+* subject MS
+* requester 1.. MS
+* requester only BeContainedOrLogicalReference
+* requester only Reference(BePractitioner)
+* performer only BeContainedOrLogicalReference
+* performer only Reference( BePractitionerRole )
+* performer ^short = "Requested performer - typically reference to practitionerroles"
+* performerType ..0 MS
 * groupIdentifier MS
 * groupIdentifier ^short = "If needed to have a common identifier among different prescriptions."
+* note MS
+* note only BeCodedAnnotation
+* note.extension[https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeableconcept].valueCodeableConcept from BeVSRequestNoteType (required)
+* dosageInstruction.text 1.. MS
+* dosageInstruction.site MS
+* recorder MS
+* recorder ^short = "The person responsable for this information, not necessarily the person who recorded the information"
+* authoredOn 1.. MS
+* authoredOn obeys be-inv-long-date

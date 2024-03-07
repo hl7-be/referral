@@ -4,7 +4,7 @@ Usage: #example
 //* contained[+] = referral-task
 //* contained[+] = performer-task
 * contained[+] = patient1
-//* contained[+] = practitionerrole1
+* contained[+] = practitionerrole1
 * contained[+] = requesterrole1
 * extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * extension[validity].valuePeriod.start = "2020-01-01"
@@ -23,7 +23,7 @@ Usage: #example
 * occurrenceTiming.repeat.period = 1
 * occurrenceTiming.repeat.periodUnit = #d
 * requester = Reference(requesterrole1)
-//* performer[+] = Reference(practitionerrole1)
+* performer[+] = Reference(practitionerrole1)
 * reasonCode.text = "reason"
 * authoredOn = "2020-01-01T00:00:00+01:00"
 

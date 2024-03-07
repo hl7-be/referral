@@ -3,9 +3,9 @@ InstanceOf: BeReferralPrescriptionNursing
 Title: "referralprescription-nursing-example5-digestive-system-care"
 Usage: #example
 * contained[+] = patient1
-//* contained[+] = practitionerrole1
+* contained[+] = practitionerrole1
 * contained[+] = requesterrole1
-//* performer[+] = Reference(practitionerrole1)
+* performer[+] = Reference(practitionerrole1)
 * extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * extension[validity].valuePeriod.start = "2020-01-01"
 * extension[validity].valuePeriod.end = "2021-01-01"

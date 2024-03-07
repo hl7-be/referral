@@ -23,9 +23,5 @@ Description: "Information regarding the Prescription Search Support"
 * extension[guidanceResponse].value[x] only Reference(GuidanceResponse)
 * extension[rejectionReason] ^short = "reason for not following the PSS"
 * extension[rejectionReason].value[x] only Annotation
-* ^context[+].type = #element
-* ^context[=].expression = "ServiceRequest"
-* ^context[+].type = #element
-* ^context[=].expression = "RequestGroup"
-* ^context[+].type = #element
-* ^context[=].expression = "MedicationRequest"
+* ^context.type = #element
+* ^context.expression = "ServiceRequest"
