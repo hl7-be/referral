@@ -1,0 +1,171 @@
+{
+    "resourceType": "ServiceRequest",
+    "id": "template-21-specific-care",
+    "meta": {
+        "profile": [
+            "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription"
+        ]
+    },
+    "status": "active",
+    "intent": "order",
+    "extension": [
+      {
+        "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-feedback-to-prescriber",
+        "valueBoolean": true
+      },
+      {
+        "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period",
+        "valuePeriod": {
+          "start": "2023-01-26",
+          "end": "2023-07-26"
+        }
+      },
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/request-statusReason",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "inProgress",
+              "system": "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason",
+              "display": "In progress"
+            }
+          ]
+        }
+      },
+      {
+        "url": "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-performer-type",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty",
+              "code": "persnurse"
+            }
+          ]
+        }
+      }
+    ],
+    "category": [{
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "version": "http://snomed.info/sct/11000172109",
+                "code": "9632001"
+            }
+        ]
+    }],
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "version": "http://snomed.info/sct/11000172109",
+                "code": "9632001"
+            }
+        ]
+    },
+    "subject": {
+        "identifier": {
+            "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin",
+            "value": "90122712173"
+        }
+    },
+    "authoredOn": "2022-10-03T00:00:00+01:00",
+    "requester": {
+        "reference": "PractitionerRole/62120213032-GP"
+    },
+    "reasonCode": [
+        {
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000172109",
+                    "code": "problemCode"
+                }
+            ]
+        }
+    ],
+    "orderDetail": [
+        {
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "version": "http://snomed.info/sct/11000172109",
+                    "code": "care_code"
+                }
+            ]
+        }
+    ],
+    "occurrenceTiming": {
+        "repeat": {
+            "count": 10,
+            "period": 1,
+            "frequency": 1,
+            "periodUnit": "d"
+        }
+    },
+    "note": [
+        {
+            "text": "Medical Reason",
+            "extension": [
+                {
+                    "valueCodeableConcept": {
+                        "coding": [
+                            {
+                                "code": "410666004",
+                                "system": "http://snomed.info/sct"
+                            }
+                        ]
+                    },
+                    "url": "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeableconcept"
+                }
+            ]
+        },
+        {
+            "text": "Contraindications",
+            "extension": [
+                {
+                    "valueCodeableConcept": {
+                        "coding": [
+                            {
+                                "code": "103306004",
+                                "system": "http://snomed.info/sct"
+                            }
+                        ]
+                    },
+                    "url": "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeableconcept"
+                }
+            ]
+        },
+        {
+            "text": "General Remarks",
+            "extension": [
+                {
+                    "valueCodeableConcept": {
+                        "coding": [
+                            {
+                                "code": "772786005",
+                                "system": "http://snomed.info/sct"
+                            }
+                        ]
+                    },
+                    "url": "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeableconcept"
+                }
+            ]
+        },
+        {
+            "text": "Specific Instruction",
+            "extension": [
+                {
+                    "url": "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeableconcept",
+                    "valueCodeableConcept": {
+                        "coding": [
+                            {
+                                "code": "410666004",
+                                "system": "http://snomed.info/sct"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}
