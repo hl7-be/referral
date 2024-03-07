@@ -95,7 +95,7 @@ InstanceOf: BeOrganizationTask
 
 Instance: ucgh222p12-2-2
 InstanceOf: BeReferralTask
-* focus = Reference(ucgh222p12-1)
+* focus = Reference(ucgh222p12-2)
 * status = #accepted
 * intent = #order
 
