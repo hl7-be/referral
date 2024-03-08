@@ -75,7 +75,7 @@ Description: "The common structure for referral prescription."
 * requester only Reference(BePractitionerRole)
 * requester ^short = "Prescriber of the requested service"
 * performerType 0..0 MS
-* performer  MS
+* performer 0..0 MS
 * performer only BeContainedOrLogicalReference
 * performer only Reference( BePractitionerRole )
 * performer ^short = "Requested performer - typically reference to practitionerroles"

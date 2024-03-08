@@ -3,7 +3,7 @@ InstanceOf: BeReferralPrescriptionDiagnosticImaging
 Title: "diagnostic-imaging-basic-example-everything-contained"
 Usage: #example
 * contained[+] = patient1
-* contained[+] = practitionerrole1
+//* contained[+] = practitionerrole1
 * contained[+] = requesterrole1
 * extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * extension[validity].valuePeriod.start = "2020-01-01"
@@ -20,7 +20,8 @@ Usage: #example
 * code.text = "Some suggestion of what to do (this could also be expressed in a coding system)"
 * subject = Reference(patient1)
 * requester = Reference(requesterrole1)
-* performer[+] = Reference(practitionerrole1)
+* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
+* extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 * reasonCode = $sct#371081002 "Arthritis of knee"
 * reasonCode.text = "Patient mobility problems. Possibly arthritis of knee"
 * authoredOn = "2020-01-01T00:00:00+01:00"

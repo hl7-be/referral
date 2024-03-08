@@ -3,7 +3,7 @@ InstanceOf: BeReferralPrescriptionNursing
 Title: "referralprescription-nursing-example2-digestive-system-care"
 Usage: #example
 * contained[+] = patient1
-* contained[+] = practitionerrole1
+//* contained[+] = practitionerrole1
 * contained[+] = requesterrole1
 * extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * extension[validity].valuePeriod.start = "2020-10-10"
@@ -22,7 +22,8 @@ Usage: #example
 * occurrenceTiming.repeat.period = 1
 * occurrenceTiming.repeat.periodUnit = #d
 * requester = Reference(requesterrole1)
-* performer[+] = Reference(practitionerrole1)
+* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
+* extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 * note.text = "Patient cannot move"
 * reasonCode.text = "reason"
 * authoredOn = "2020-01-01T00:00:00+01:00"

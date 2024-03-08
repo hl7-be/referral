@@ -3,13 +3,14 @@ InstanceOf: BeReferralPrescriptionNursing
 Title: "example32-referralprescription-nursing-chronical-psychiatric"
 Usage: #example
 * contained[+] = patient1
-* contained[+] = practitionerrole1
+//* contained[+] = practitionerrole1
 * contained[+] = requesterrole1
 * extension[statusReason].valueCodeableConcept = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason#inProgress "In Progress"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"
 * extension[feedback].valueBoolean = true
-* performer[+] = Reference(practitionerrole1)
+* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
+* extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 * status = #active
 * intent = #order
 * category = $sct#9632001
