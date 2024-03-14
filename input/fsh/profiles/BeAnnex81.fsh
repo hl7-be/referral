@@ -8,7 +8,7 @@ Id: be-annex-81
 * intent =  #order
 * category.coding.system = "http://snomed.info/sct" (exactly)
 * category.coding.code = #9632001 (exactly)
-* code = $sct#385796006
+* code = BeTempRequestedService#tmp-prep-x081-2
 * extension[performerType].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
 * extension[performerType].valueCodeableConcept.coding.code = #persnurse
 * basedOn 1..1
