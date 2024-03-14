@@ -1,11 +1,11 @@
-Profile: BeReferralPrescription
-Parent: ServiceRequest
-Id: be-referralprescription
-Description: "The common structure for referral prescription."
-* ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription"
+Profile: BeReferralPrescriptionNursingMedication
+Parent: MedicationRequest
+Id: be-referralprescription-nursing-medication
+Description: "The nursing profile specialized for medication. Note this profile is based on the FHIR resource MedicationRequest. Dosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements)."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing-medication"
 * ^version = "0.2.0"
 * ^status = #draft
-* ^date = "2021-07-15T08:52:50+00:00"
+* ^date = "2022-05-03T10:04:16+02:00"
 * ^publisher = "HL7 Belgium"
 * ^contact[0].name = "HL7 Belgium"
 * ^contact[=].telecom.system = #url
@@ -19,10 +19,7 @@ Description: "The common structure for referral prescription."
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * insert TopLevelPrescription
-* extension contains
-    $request-statusReason named statusReason 0..1 MS
-* extension[statusReason].valueCodeableConcept 1..1
-* extension[statusReason].valueCodeableConcept from BeVSPrescriptionStatusReason (extensible)
+* insert NonServiceRequestPrescription
 * identifier MS
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
@@ -32,4 +29,5 @@ Description: "The common structure for referral prescription."
 * identifier[UHMEP].system 1..
 * identifier[UHMEP].system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep" (exactly)
 * identifier[UHMEP].value 1..
-* insert CommonServiceRequest
+* groupIdentifier MS
+* groupIdentifier ^short = "If needed to have a common identifier among different prescriptions."

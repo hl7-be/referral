@@ -8,9 +8,9 @@ Usage: #example
 * contained[+] = media1
 * contained[+] = Inline-Instance-for-laboratory-order-example1-3
 * contained[+] = specimen1
-* contained[+] = practitionerrole1
+//* contained[+] = practitionerrole1
 * contained[+] = requesterrole1
-* performer[+] = Reference(practitionerrole1)
+//* performer[+] = Reference(practitionerrole1)
 * extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * extension[validity].valuePeriod.start = "2020-10-10"
 * extension[validity].valuePeriod.start = "2021-10-10"

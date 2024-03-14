@@ -8,13 +8,13 @@ Description: "Temporary codes for indicating services that can be requested from
 * ^jurisdiction = urn:iso:std:iso:3166#BE "Belgium"
 * ^caseSensitive = true
 * ^experimental = false
-//* #tmp-prep-x081-2 "Preparing medication_Appendix 81"
-//* #tmp-prep-x081-2 ^designation[0].language = #fr-BE
-//* #tmp-prep-x081-2 ^designation[=].value = "Préparation des médicaments_Appendix 81"
-//* #tmp-prep-x081-2 ^designation[+].language = #nl-BE
-//* #tmp-prep-x081-2 ^designation[=].value = "Medicatie klaarzetten_Bijlage 81"
-//* #tmp-prep-x081-2 ^designation[+].language = #en
-//* #tmp-prep-x081-2 ^designation[=].value = "Preparing medication_Appendix 81"
+* #tmp-prep-x081-2 "Preparing medication_Appendix 81"
+* #tmp-prep-x081-2 ^designation[0].language = #fr-BE
+* #tmp-prep-x081-2 ^designation[=].value = "Préparation des médicaments_Appendix 81"
+* #tmp-prep-x081-2 ^designation[+].language = #nl-BE
+* #tmp-prep-x081-2 ^designation[=].value = "Medicatie klaarzetten_Bijlage 81"
+* #tmp-prep-x081-2 ^designation[+].language = #en
+* #tmp-prep-x081-2 ^designation[=].value = "Preparing medication_Appendix 81"
 //* #tmp-prep-ient-8 "Preparation and medication administration in the psychiatric patient"
 //* #tmp-prep-ient-8 ^designation[0].language = #fr-BE
 //* #tmp-prep-ient-8 ^designation[=].value = "Préparation des médicaments et administration à un patient psychiatrique"
