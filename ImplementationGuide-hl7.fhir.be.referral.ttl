@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "ReferralPrescription"] ; # 
   fhir:title [ fhir:v "Referral Prescription"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-09-29T14:15:09+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-03-15T09:11:04+00:00"^^xsd:dateTime] ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
        fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
@@ -331,7 +331,7 @@
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "hl7.fhir.uv.tools#current" ]
+       fhir:value [ fhir:v "hl7.fhir.uv.tools#0.1.0" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
@@ -869,6 +869,18 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-organization-task> ;
+         fhir:reference [ fhir:v "StructureDefinition/be-organization-task" ]
+       ] ;
+       fhir:name [ fhir:v "BeOrganizationTask" ] ;
+       fhir:description [ fhir:v "Subtask to assign the referral task and prescription to one or more members of this organisation" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-performer-task> ;
          fhir:reference [ fhir:v "StructureDefinition/be-performer-task" ]
        ] ;
@@ -1017,6 +1029,30 @@
        ] ;
        fhir:name [ fhir:v "BeReferralTask" ] ;
        fhir:description [ fhir:v "The task that is referred to in the referral prescription (this is the common task for the execution of the prescription). The subtasks per performer can be found in BePerformerTask" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SearchParameter" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/SearchParameter/be-sp-serviceRequest-statusReason> ;
+         fhir:reference [ fhir:v "SearchParameter/be-sp-serviceRequest-statusReason" ]
+       ] ;
+       fhir:name [ fhir:v "BeSPServiceRequestStatusReason" ] ;
+       fhir:description [ fhir:v "This SearchParameter enables query of ServiceRequests by the statusReason extension." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SearchParameter" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/SearchParameter/be-sp-task-status-profile> ;
+         fhir:reference [ fhir:v "SearchParameter/be-sp-task-status-profile" ]
+       ] ;
+       fhir:name [ fhir:v "BeSPTaskStatusProfile" ] ;
+       fhir:description [ fhir:v "This SearchParameter enables query of Tasks on the combination of status and profile" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1876,6 +1912,34 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Task" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Task/ucgh222p12-1-2> ;
+         fhir:reference [ fhir:v "Task/ucgh222p12-1-2" ]
+       ] ;
+       fhir:name [ fhir:v "ucgh222p12-1-2" ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-task"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-task>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Task" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Task/ucgh222p12-1-2-1> ;
+         fhir:reference [ fhir:v "Task/ucgh222p12-1-2-1" ]
+       ] ;
+       fhir:name [ fhir:v "ucgh222p12-1-2-1" ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-organization-task"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-organization-task>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "ServiceRequest" ]
        ] ) ;
        fhir:reference [
@@ -1887,6 +1951,59 @@
          fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing"^^xsd:anyURI ;
          fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing>
        ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Task" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Task/ucgh222p12-2-2> ;
+         fhir:reference [ fhir:v "Task/ucgh222p12-2-2" ]
+       ] ;
+       fhir:name [ fhir:v "ucgh222p12-2-2" ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-task"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-task>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Task" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Task/ucgh222p12-2-2-1> ;
+         fhir:reference [ fhir:v "Task/ucgh222p12-2-2-1" ]
+       ] ;
+       fhir:name [ fhir:v "ucgh222p12-2-2-1" ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-organization-task"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-organization-task>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Task" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Task/ucgh222p12-2-2-2> ;
+         fhir:reference [ fhir:v "Task/ucgh222p12-2-2-2" ]
+       ] ;
+       fhir:name [ fhir:v "ucgh222p12-2-2-2" ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-performer-task"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-performer-task>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/PractitionerRole/ucgh222p12-2-2-2-1> ;
+         fhir:reference [ fhir:v "PractitionerRole/ucgh222p12-2-2-2-1" ]
+       ] ;
+       fhir:name [ fhir:v "ucgh222p12-2-2-2-1" ] ;
+       fhir:example [ fhir:v "true"^^xsd:boolean ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;

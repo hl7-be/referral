@@ -1,0 +1,39 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/referral/Task/ucgh222p12-1-2-1> a fhir:Task ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ucgh222p12-1-2-1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-organization-task"^^xsd:anyURI ;
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-organization-task>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Task</b><a name=\"ucgh222p12-1-2-1\"> </a><a name=\"hcucgh222p12-1-2-1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Task &quot;ucgh222p12-1-2-1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-organization-task.html\">BeOrganizationTask</a></p></div><p><b>partOf</b>: <a href=\"Task-ucgh222p12-1-2.html\">Task/ucgh222p12-1-2</a></p><p><b>status</b>: accepted</p><p><b>intent</b>: order</p><p><b>focus</b>: <a href=\"ServiceRequest-ucgh222p12-1.html\">ServiceRequest/ucgh222p12-1</a></p><p><b>owner</b>: <span>BeCBENamingSystem/0465698582</span></p></div>"
+  ] ; # 
+  fhir:partOf ( [
+     fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Task/ucgh222p12-1-2> ;
+     fhir:reference [ fhir:v "Task/ucgh222p12-1-2" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "accepted"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:focus [
+     fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/ucgh222p12-1> ;
+     fhir:reference [ fhir:v "ServiceRequest/ucgh222p12-1" ]
+  ] ; # 
+  fhir:owner [
+     fhir:identifier [
+       fhir:system [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/cbe"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "0465698582" ]
+     ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

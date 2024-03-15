@@ -1,0 +1,49 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/referral/SearchParameter/be-sp-task-status-profile> a fhir:SearchParameter ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "be-sp-task-status-profile"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>statusProfile</h2><p>Parameter <code>statusProfile</code>:<code>composite</code></p><div><p>This SearchParameter enables query of Tasks on the combination of status and profile</p>\n</div><table class=\"grid\"><tr><td>Resource</td><td><a href=\"http://hl7.org/fhir/R4/task.html\">Task</a></td></tr><tr><td>Expression</td><td><code>(Task.status | Task.meta.profile).join('$')</code></td></tr><tr><td>Multiples</td><td><ul><li>multipleAnd: The parameter may only appear once</li><li>multipleOr: The parameter may have multiple values (separated by comma) where at least one must be true</li></ul></td></tr></table><p><b>Components</b></p><table class=\"grid\"><tr><td>http://hl7.org/fhir/SearchParameter/Task-status</td><td><code>status</code></td></tr><tr><td>http://hl7.org/fhir/SearchParameter/Resource-profile</td><td><code>_profile</code></td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/SearchParameter/be-sp-task-status-profile"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.0.0"] ; # 
+  fhir:name [ fhir:v "statusProfile"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2024-03-15T09:11:04+00:00"^^xsd:dateTime] ; # 
+  fhir:description [ fhir:v "This SearchParameter enables query of Tasks on the combination of status and profile"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BE" ] ;
+       fhir:display [ fhir:v "Belgium" ]
+     ] )
+  ] ) ; # 
+  fhir:code [ fhir:v "statusProfile"] ; # 
+  fhir:base ( [ fhir:v "Task"] ) ; # 
+  fhir:type [ fhir:v "composite"] ; # 
+  fhir:expression [ fhir:v "(Task.status | Task.meta.profile).join('$')"] ; # 
+  fhir:multipleOr [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:multipleAnd [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:component ( [
+     fhir:definition [
+       fhir:v "http://hl7.org/fhir/SearchParameter/Task-status"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/SearchParameter/Task-status>
+     ] ;
+     fhir:expression [ fhir:v "status" ]
+  ] [
+     fhir:definition [
+       fhir:v "http://hl7.org/fhir/SearchParameter/Resource-profile"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/SearchParameter/Resource-profile>
+     ] ;
+     fhir:expression [ fhir:v "_profile" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
