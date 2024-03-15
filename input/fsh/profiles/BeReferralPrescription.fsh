@@ -79,7 +79,7 @@ Description: "The common structure for referral prescription."
 * performer only BeContainedOrLogicalReference
 * performer only Reference( BePractitionerRole )
 * performer ^short = "Requested performer - typically reference to practitionerroles"
-* reasonCode 1..1 MS
+* reasonCode 0..1 MS
 * supportingInfo 0..* MS
 * patientInstruction MS
 * bodySite MS
@@ -87,4 +87,4 @@ Description: "The common structure for referral prescription."
 * note MS 
 * note only BeCodedAnnotation
 * note.extension[https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeableconcept].valueCodeableConcept from BeVSRequestNoteType (required)
-* authoredOn only BeYearMonthDay
+* authoredOn obeys be-inv-long-date

@@ -12,8 +12,8 @@ InstanceOf: BeReferralPrescriptionNursing
 * extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * reasonCode = $sct#267032009 
 * requester.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"
-* requester.identifier.value = "10829059"
-* authoredOn = "2023-02-07"
+* requester.identifier.value = "10829059004"
+* authoredOn = "2023-02-07T00:00:00+01:00"
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "38012699993"
 * category = $sct#9632001 //niet in Belgische module
@@ -34,7 +34,7 @@ Instance: referral-task-uc5a-1 //we cannot throw it away, because we need the st
 InstanceOf: BeReferralTask
 * status = #completed
 * intent = #order
-* basedOn = Reference(uc5a-1)
+* focus = Reference(uc5a-1)
 * executionPeriod.start = "2023-02-08"
 * executionPeriod.end = "2023-02-08"
 

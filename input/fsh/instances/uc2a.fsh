@@ -26,9 +26,9 @@ InstanceOf: BeReferralPrescriptionNursing
 * category = $sct#9632001 //niet in Belgische module
 * category.text = "Nursing procedure"
 * priority = #routine
-* authoredOn = "2023-01-26"
+* authoredOn = "2023-01-26T00:00:00+01:00"
 * requester.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi" //add reference to practitioner role because we need the discipline
-* requester.identifier.value = "10829059"
+* requester.identifier.value = "10829059004"
 * note.text = "Dalacin 350 mg / 8 uur, intraveneus gedurende zeven dagen, via een perifere katheter"
 
 Instance: referral-task-uc2a-1 //we cannot throw it away, because we need the statusReason!!!
@@ -36,7 +36,7 @@ InstanceOf: BeReferralTask
 * status = #draft
 * intent = #order
 * statusReason = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-treatment-status-reason#blacklistedcaregiver
-* basedOn = Reference(uc2a-1)
+* focus = Reference(uc2a-1)
 * executionPeriod.start = "2023-01-28"
 * executionPeriod.end = "2023-03-02"
 
@@ -87,8 +87,8 @@ InstanceOf: BeReferralPrescriptionNursing
 * extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * reasonCode = $sct#44653001 //niet in Belgische module
 * requester.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"
-* requester.identifier.value = "10829059"
-* authoredOn = "2023-01-26"
+* requester.identifier.value = "10829059004"
+* authoredOn = "2023-01-26T00:00:00+01:00"
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "38012699993"
 * category = $sct#9632001 //niet in Belgische module
@@ -110,8 +110,8 @@ InstanceOf: BeReferralPrescriptionNursing
 * code = $sct#225420001
 * reasonCode = $sct#44653001 //niet in Belgische module
 * requester.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"
-* requester.identifier.value = "10829059"
-* authoredOn = "2023-01-26"
+* requester.identifier.value = "10829059004"
+* authoredOn = "2023-01-26T00:00:00+01:00"
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "38012699993"
 * category = $sct#9632001 //niet in Belgische module

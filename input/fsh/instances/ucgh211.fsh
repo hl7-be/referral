@@ -6,7 +6,7 @@ InstanceOf: BeReferralPrescriptionNursing
 * contained[+] = ucgh211-1-4
 * reasonCode = $sct#298382003 //niet in Belgische module
 * requester.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi" //add reference to practitioner role because we need the discipline
-* requester.identifier.value = "10829059"
+* requester.identifier.value = "10829059004"
 * extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "38012699993"
@@ -32,7 +32,7 @@ InstanceOf: BeReferralPrescriptionNursing
 * intent = #order
 * category = $sct#9632001 //niet in Belgische module
 * priority = #routine
-* authoredOn = "2022-10-03"
+* authoredOn = "2022-10-03T00:00:00+01:00"
 * extension[feedback].valueBoolean = true
 
 
@@ -41,7 +41,7 @@ InstanceOf: BePractitionerRole
 Usage: #inline
 * active = true
 * practitioner.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"
-* practitioner.identifier.value = "52104044"
+* practitioner.identifier.value = "52104044521"
 * code = $cd-hcparty#persphysiotherapist
 
 Instance: ucgh211-1-2
@@ -49,7 +49,7 @@ InstanceOf: BePractitionerRole
 Usage: #inline
 * active = true
 * practitioner.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"
-* practitioner.identifier.value = "65258234"
+* practitioner.identifier.value = "65258234650"
 * code = $cd-hcparty#persoccupationaltherapist
 
 Instance: ucgh211-1-3
@@ -57,7 +57,7 @@ InstanceOf: BePractitionerRole
 Usage: #inline
 * active = true
 //* practitioner.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"
-//* practitioner.identifier.value = "45918612"
+//* practitioner.identifier.value = "45918612408"
 * code = $cd-hcparty#persnurse
 
 Instance: ucgh211-1-4
@@ -65,7 +65,7 @@ InstanceOf: BePractitionerRole
 Usage: #inline
 * active = true
 //* practitioner.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"
-//* practitioner.identifier.value = "10446207"
+//* practitioner.identifier.value = "10446207004"
 * code = $cd-hcparty#persgeneralphysician
 
 

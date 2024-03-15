@@ -16,13 +16,13 @@ Usage: #example
 * priority = #routine
 * code = $sct#762238003
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
-* subject.identifier.value = "9999999999"
+* subject.identifier.value = "99999999991"
 * occurrenceTiming.repeat.boundsPeriod.start = "2022-04-19"
 * occurrenceTiming.repeat.boundsPeriod.end = "2023-04-19"
 * occurrenceTiming.repeat.frequency = 2
 * occurrenceTiming.repeat.period = 1
 * occurrenceTiming.repeat.periodUnit = #d
-* authoredOn = "2022-10-31"
+* authoredOn = "2022-10-31T00:00:00+01:00"
 * requester = Reference(requesterrole1)
 * reasonCode = $sct#309256001
 * note.text = "patient can not move (niet verplaatsen)"

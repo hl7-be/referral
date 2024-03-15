@@ -1,7 +1,7 @@
 Instance: ucgh241p19-1 
 InstanceOf: BeReferralPrescriptionNursing
 * reasonCode.coding.display = "Diabetes type 2"
-* authoredOn = "2022-10-03"
+* authoredOn = "2022-10-03T00:00:00+01:00"
 * requester =  Reference(ucgh241p19-1-1)
 * extension[feedback].valueBoolean = false
 * orderDetail[+] = $temp-detail#tmp-with-tory-8
@@ -34,5 +34,5 @@ InstanceOf: BeReferralPrescriptionNursing
 Instance: ucgh241p19-1-1
 InstanceOf: BePractitionerRole
 * practitioner.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"
-* practitioner.identifier.value = "10829059"
+* practitioner.identifier.value = "10829059004"
 * code = https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty#persphysician

@@ -16,5 +16,7 @@ Description: "Request must be performed before"
 * ^jurisdiction = $jurisdiction#BE "Belgium"
 * . ^short = "BeLatestEndDate"
 * . ^definition = "Request must be performed before"
+* ^context.type = #element
+* ^context.expression = "ServiceRequest"
 * url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-end-date" (exactly)
 * value[x] only BeYearMonthDay

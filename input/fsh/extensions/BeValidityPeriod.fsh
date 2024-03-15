@@ -20,3 +20,5 @@ Description: "Begin and enddate of the validity of the request"
 * value[x] only Period
 * valuePeriod.start only BeYearMonthDay
 * valuePeriod.end only BeYearMonthDay
+* ^context.type = #element
+* ^context.expression = "ServiceRequest"

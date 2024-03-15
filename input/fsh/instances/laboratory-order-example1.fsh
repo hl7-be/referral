@@ -31,7 +31,7 @@ Usage: #example
 * orderDetail[+] = $loinc#20563-3 "Carboxyhemoglobin/Hemoglobin.total in Blood"
 * orderDetail[+].text = "Test described in text only"
 * subject = Reference(patient1)
-* authoredOn = "2015-11-01"
+* authoredOn = "2015-11-01T00:00:00+01:00"
 * requester = Reference(requesterrole1)
 * reasonCode = $some_nomenclature_system#123 "TheJustification"
 * supportingInfo[0] = Reference(observation1)

@@ -67,3 +67,4 @@ Description: "Codes indicating the request details that can be asked from a nurs
 * include $sct#87750000
 * include $sct#89826002
 * include $sct#90838004
+* include $sct#337414009

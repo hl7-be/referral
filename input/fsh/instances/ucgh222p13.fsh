@@ -19,7 +19,7 @@ InstanceOf: BeReferralPrescriptionNursing
 * contained[+] = ucgh222p13-1-1
 * reasonCode = $sct#46541008 //not in belgian extension
 * requester = Reference(ucgh222p13-1-1)
-* authoredOn = "2022-10-03"
+* authoredOn = "2022-10-03T00:00:00+01:00"
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "38012699993"
 * code = $sct#18629005
@@ -40,7 +40,7 @@ InstanceOf: BeReferralPrescriptionNursing
 * contained[+] = ucgh222p13-1-1
 * reasonCode = $sct#46541008 //not in belgian extension
 * requester = Reference(ucgh222p13-1-1)
-* authoredOn = "2022-10-03"
+* authoredOn = "2022-10-03T00:00:00+01:00"
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "38012699993"
 * code = $sct#225358003
@@ -59,7 +59,7 @@ InstanceOf: BeReferralPrescriptionNursing
 Instance: ucgh222p13-1-1
 InstanceOf: BePractitionerRole
 * practitioner.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"
-* practitioner.identifier.value = "10829059"
+* practitioner.identifier.value = "10829059004"
 * code = https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty#persphysician
 
 
