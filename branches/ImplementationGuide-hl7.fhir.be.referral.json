@@ -10,7 +10,7 @@
   "name" : "ReferralPrescription",
   "title" : "Referral Prescription",
   "status" : "draft",
-  "date" : "2023-09-29T14:15:09+00:00",
+  "date" : "2024-03-15T09:11:04+00:00",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -365,7 +365,7 @@
     },
     {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools#current"
+      "valueCode" : "hl7.fhir.uv.tools#0.1.0"
     },
     {
       "extension" : [{
@@ -957,6 +957,18 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/be-organization-task"
+      },
+      "name" : "BeOrganizationTask",
+      "description" : "Subtask to assign the referral task and prescription to one or more members of this organisation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/be-performer-task"
       },
       "name" : "BePerformerTask",
@@ -1104,6 +1116,30 @@
       },
       "name" : "BeReferralTask",
       "description" : "The task that is referred to in the referral prescription (this is the common task for the execution of the prescription). The subtasks per performer can be found in BePerformerTask",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/be-sp-serviceRequest-statusReason"
+      },
+      "name" : "BeSPServiceRequestStatusReason",
+      "description" : "This SearchParameter enables query of ServiceRequests by the statusReason extension.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "SearchParameter"
+      }],
+      "reference" : {
+        "reference" : "SearchParameter/be-sp-task-status-profile"
+      },
+      "name" : "BeSPTaskStatusProfile",
+      "description" : "This SearchParameter enables query of Tasks on the combination of status and profile",
       "exampleBoolean" : false
     },
     {
@@ -1853,6 +1889,28 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      }],
+      "reference" : {
+        "reference" : "Task/ucgh222p12-1-2"
+      },
+      "name" : "ucgh222p12-1-2",
+      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-task"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      }],
+      "reference" : {
+        "reference" : "Task/ucgh222p12-1-2-1"
+      },
+      "name" : "ucgh222p12-1-2-1",
+      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-organization-task"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ServiceRequest"
       }],
       "reference" : {
@@ -1860,6 +1918,50 @@
       },
       "name" : "ucgh222p12-2",
       "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      }],
+      "reference" : {
+        "reference" : "Task/ucgh222p12-2-2"
+      },
+      "name" : "ucgh222p12-2-2",
+      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-task"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      }],
+      "reference" : {
+        "reference" : "Task/ucgh222p12-2-2-1"
+      },
+      "name" : "ucgh222p12-2-2-1",
+      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-organization-task"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Task"
+      }],
+      "reference" : {
+        "reference" : "Task/ucgh222p12-2-2-2"
+      },
+      "name" : "ucgh222p12-2-2-2",
+      "exampleCanonical" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-performer-task"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "PractitionerRole"
+      }],
+      "reference" : {
+        "reference" : "PractitionerRole/ucgh222p12-2-2-2-1"
+      },
+      "name" : "ucgh222p12-2-2-2-1",
+      "exampleBoolean" : true
     },
     {
       "extension" : [{

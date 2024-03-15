@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SearchParameter xmlns="http://hl7.org/fhir">
+  <id value="be-sp-task-status-profile"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>statusProfile</h2><p>Parameter <code>statusProfile</code>:<code>composite</code></p><div><p>This SearchParameter enables query of Tasks on the combination of status and profile</p>
+</div><table class="grid"><tr><td>Resource</td><td><a href="http://hl7.org/fhir/R4/task.html">Task</a></td></tr><tr><td>Expression</td><td><code>(Task.status | Task.meta.profile).join('$')</code></td></tr><tr><td>Multiples</td><td><ul><li>multipleAnd: The parameter may only appear once</li><li>multipleOr: The parameter may have multiple values (separated by comma) where at least one must be true</li></ul></td></tr></table><p><b>Components</b></p><table class="grid"><tr><td>http://hl7.org/fhir/SearchParameter/Task-status</td><td><code>status</code></td></tr><tr><td>http://hl7.org/fhir/SearchParameter/Resource-profile</td><td><code>_profile</code></td></tr></table></div>
+  </text>
+  <url value="https://www.ehealth.fgov.be/standards/fhir/referral/SearchParameter/be-sp-task-status-profile"/>
+  <version value="1.0.0"/>
+  <name value="statusProfile"/>
+  <status value="active"/>
+  <date value="2024-03-15T09:11:04+00:00"/>
+  <description value="This SearchParameter enables query of Tasks on the combination of status and profile"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="BE"/>
+      <display value="Belgium"/>
+    </coding>
+  </jurisdiction>
+  <code value="statusProfile"/>
+  <base value="Task"/>
+  <type value="composite"/>
+  <expression value="(Task.status | Task.meta.profile).join('$')"/>
+  <multipleOr value="true"/>
+  <multipleAnd value="false"/>
+  <component>
+    <definition value="http://hl7.org/fhir/SearchParameter/Task-status"/>
+    <expression value="status"/>
+  </component>
+  <component>
+    <definition value="http://hl7.org/fhir/SearchParameter/Resource-profile"/>
+    <expression value="_profile"/>
+  </component>
+</SearchParameter>
