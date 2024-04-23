@@ -1,4 +1,7 @@
 RuleSet: CommonMedicationRequest
+* extension contains
+    https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeable-reference named device 0..* MS
+* extension[device].extension[reference].value[x] only Reference(DeviceDefinition)    
 * status MS
 * statusReason MS
 * intent MS

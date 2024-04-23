@@ -37,3 +37,6 @@ RuleSet: CommonServiceRequest
 * note only BeCodedAnnotation
 * note.extension[https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeableconcept].valueCodeableConcept from BeVSRequestNoteType (required)
 * authoredOn obeys be-inv-long-date
+* extension contains
+    https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeable-reference named device 0..* MS
+* extension[device].extension[reference].value[x] only Reference(DeviceDefinition)    
