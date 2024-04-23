@@ -27,8 +27,6 @@ Id: be-annex-81
 * code = BeTempRequestedService#tmp-prep-x081-2
 * extension[performerType].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
 * basedOn only Reference(BeAnnex81)
-* supportingInfo 1..* MS
-* supportingInfo ^slicing.discriminator.type = #type
-* supportingInfo ^slicing.discriminator.path = "resolve()"
-* supportingInfo ^slicing.rules = #open
+* reasonCode 1..* MS
+* reasonCode from BeVSAnnex81ReasonCode
 * obeys be-inv-annex-81-based-on

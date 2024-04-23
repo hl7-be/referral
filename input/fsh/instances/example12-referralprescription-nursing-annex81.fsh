@@ -24,7 +24,7 @@ Usage: #example
 * occurrenceTiming.repeat.periodUnit = #d
 * authoredOn = "2022-10-31T00:00:00+01:00"
 * requester = Reference(requesterrole1)
-* reasonCode = $sct#309256001
+* reasonCode = $sct#52448006
 * supportingInfo[+] = Reference(dementia-condition)
 * intent = #proposal
 
