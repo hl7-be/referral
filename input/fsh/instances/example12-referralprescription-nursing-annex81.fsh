@@ -1,5 +1,5 @@
 Instance: example12-referralprescription-nursing-annex81
-InstanceOf: BeAnnex81Request
+InstanceOf: BeAnnex81
 Title: "example12-referralprescription-nursing-annex81"
 Usage: #example
 * contained[+] = patient1
@@ -26,6 +26,7 @@ Usage: #example
 * requester = Reference(requesterrole1)
 * reasonCode = $sct#309256001
 * supportingInfo[+] = Reference(dementia-condition)
+* intent = #proposal
 
 Instance: dementia-condition
 InstanceOf: BeProblem
