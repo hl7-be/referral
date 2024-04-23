@@ -22,15 +22,13 @@ Id: be-annex-81
 * extension[latest] ^short = "Request must be executed before"
 * extension[feedback] ^short = "Give feedback to the prescriber"
 * extension[latestDraft] ^short = "The prescription must have left the draft status befor this moment"
-* intent =  #order
 * category.coding.system = "http://snomed.info/sct" (exactly)
 * category.coding.code = #9632001 (exactly)
 * code = BeTempRequestedService#tmp-prep-x081-2
 * extension[performerType].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
-* extension[performerType].valueCodeableConcept.coding.code = #persnurse
-* basedOn 1..1
-* basedOn only Reference(BeAnnex81Request)
+* basedOn only Reference(BeAnnex81)
 * supportingInfo 1..* MS
 * supportingInfo ^slicing.discriminator.type = #type
 * supportingInfo ^slicing.discriminator.path = "resolve()"
 * supportingInfo ^slicing.rules = #open
+* obeys be-inv-annex-81-based-on
