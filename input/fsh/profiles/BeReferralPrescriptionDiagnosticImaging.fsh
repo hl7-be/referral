@@ -1,5 +1,5 @@
 Profile: BeReferralPrescriptionDiagnosticImaging
-Parent: BeReferralPrescription
+Parent: BeReferralServiceRequest
 Id: be-referralprescription-diagnosticimaging
 Description: """Referral prescription for a generic diagnostic imaging.
 Please note in .orderDetail, a specific slicing is available to give guidance how to express acquisition modalities if needed. In future iterations of this profile, more slicing might provide additional guidance."""
