@@ -13,8 +13,11 @@ Description: "Envelope that allows different referralprescriptions to have an or
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
+* extension contains
+    http://hl7.org/fhir/4.0/StructureDefinition/extension-ServiceRequest.orderDetail named orderDetail 0..* MS and
+    http://hl7.org/fhir/4.0/StructureDefinition/extension-ServiceRequest.category named category 1..1 MS
+* extension[category].valueCodeableConcept from $be-vs-referral-category (extensible)
 * insert TopLevelPrescription
-* insert NonServiceRequestPrescription
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
@@ -33,3 +36,4 @@ Description: "Envelope that allows different referralprescriptions to have an or
 //* action.resource only Reference(BeReferralPrescription /* or BeReferralPrescriptionNursingMedication */ or BeReferralRequestGroup)
 * action.resource only Reference(BeCareRequest or BeCareRequestMedication)
 * groupIdentifier MS
+* code MS

@@ -71,7 +71,7 @@ Usage: #example
 * intent = #order
 * extension[validity].valuePeriod.start = "2023-01-26"
 * extension[validity].valuePeriod.end = "2023-07-26"
-* extension[code].valueCodeableConcept = $sct#385796006
+* code = $sct#385796006
 * action[+].id = "uc2a-1"
 * action[=].resource = Reference(uc2a-1)
 * action[+].id = "uc2a-2"
@@ -82,6 +82,7 @@ Usage: #example
 * action[=].resource = Reference(uc2a-3)
 * action[=].relatedAction[+].actionId = "uc2a-2"
 * action[=].relatedAction[=].relationship = #after-end
+* extension[category].valueCodeableConcept = $sct#9632001
 
 Instance: uc2a-2
 InstanceOf: BeReferralPrescriptionNursing
