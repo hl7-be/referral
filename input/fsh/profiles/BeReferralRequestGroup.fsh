@@ -33,7 +33,7 @@ Description: "Envelope that allows different referralprescriptions to have an or
 * action.relatedAction.actionId MS
 * action.relatedAction.relationship MS
 * action.resource 1.. MS
-//* action.resource only Reference(BeReferralPrescription /* or BeReferralPrescriptionNursingMedication */ or BeReferralRequestGroup)
+//* action.resource only Reference(BeReferralPrescription /* or BeReferralServiceRequestNursingMedication */ or BeReferralRequestGroup)
 * action.resource only Reference(BeCareRequest or BeCareRequestMedication)
 * groupIdentifier MS
 * code MS

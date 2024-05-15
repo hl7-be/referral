@@ -1,4 +1,4 @@
-Profile: BeReferralPrescriptionNursingMedication
+Profile: BeReferralServiceRequestNursingMedication
 Parent: MedicationRequest
 Id: be-referralprescription-nursing-medication
 Description: "The nursing profile specialized for medication. Note this profile is based on the FHIR resource MedicationRequest. Dosage is expected initially to be given in the corresponding text and optional site fields (as per the NIHDI requirements)."

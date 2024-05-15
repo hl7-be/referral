@@ -1,4 +1,4 @@
-Profile: BeReferralPrescription
+Profile: BeReferralServiceRequest
 Parent: ServiceRequest
 Id: be-referralprescription
 Description: "The common structure for referral prescription."

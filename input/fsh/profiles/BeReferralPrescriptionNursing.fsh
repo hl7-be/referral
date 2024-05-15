@@ -1,5 +1,5 @@
 Profile: BeReferralPrescriptionNursing
-Parent: BeReferralPrescription
+Parent: BeReferralServiceRequest
 Id: be-referralprescription-nursing
 Description: "The nursing profile, generic version. Please note the nursing referral for medication does NOT depend on this generic version but is a FHIR prodfile on a different FHIR resource (MedicationRequest)"
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing"
