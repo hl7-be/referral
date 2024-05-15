@@ -18,23 +18,8 @@ Description: "The nursing profile specialized for medication. Note this profile 
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
-* extension contains
-    BeFeedbackToPrescriber named feedback 0..1 MS and
-    BeCoPrescriberInfo named coprescriber 0..1 MS and
-    BeValidityPeriod named validity 1..1 MS and
-    BeLatestEndDate named latest 0..1 MS and
-    BeLatestDraftDate named latestDraft 0..1 MS and
-    //BePerformerTaskReference named performertasks 0..* MS and
-    BePerformerReference named performer 0..* MS and 
-    BeProposalType named proposalType 0..1 MS and
-    //BeTaskReference named task 0..1 MS and
-    BePSSInfo named pss 0..1 MS 
-* extension[coprescriber] ^short = "Info about the other parties that have to take part in the prescription."
-* extension[validity] ^short = "Validity period of the prescription"
-* extension[latest] ^short = "Request must be executed before"
-* extension[feedback] ^short = "Give feedback to the prescriber"
-* extension[latestDraft] ^short = "The prescription must have left the draft status befor this moment"
-//* extension[performertasks] ^short = "The subtasks as executed by different performers. Together they form the execution of the prescription as described in task extension"
+* insert TopLevelPrescription
+* insert NonServiceRequestPrescription
 * identifier MS
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
@@ -44,28 +29,5 @@ Description: "The nursing profile specialized for medication. Note this profile 
 * identifier[UHMEP].system 1..
 * identifier[UHMEP].system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep" (exactly)
 * identifier[UHMEP].value 1..
-* status MS
-* statusReason MS
-* intent MS
-* intent from BeVsRequestIntent (required)
-* category 1..1 MS
-* category from $procedure-code (example)
-* medication[x] MS
-* subject only BeContainedOrLogicalReference
-* subject only Reference(BePatient)
-* subject MS
-* encounter MS
-* requester 1.. MS
-* requester only BeContainedOrLogicalReference
-* requester only Reference(BePractitioner)
-* performer ..0 MS
-* performerType ..0 MS
 * groupIdentifier MS
 * groupIdentifier ^short = "If needed to have a common identifier among different prescriptions."
-* note MS
-* dosageInstruction.text 1.. MS
-* dosageInstruction.site MS
-* recorder MS
-* recorder ^short = "The person responsable for this information, not necessarily the person who recorded the information"
-* authoredOn 1.. MS
-* authoredOn only BeYearMonthDay

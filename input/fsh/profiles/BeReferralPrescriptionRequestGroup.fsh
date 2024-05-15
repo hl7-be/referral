@@ -10,6 +10,11 @@ Description: "Envelope that allows different referralprescriptions to have an or
 * ^contact.telecom.system = #url
 * ^contact.telecom.value = "http://hl7belgium.org"
 * ^jurisdiction = $jurisdiction#BE
+* extension ^slicing.discriminator.type = #value
+* extension ^slicing.discriminator.path = "url"
+* extension ^slicing.rules = #open
+* insert TopLevelPrescription
+* insert NonServiceRequestPrescription
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
@@ -26,5 +31,5 @@ Description: "Envelope that allows different referralprescriptions to have an or
 * action.relatedAction.relationship MS
 * action.resource 1.. MS
 //* action.resource only Reference(BeReferralPrescription /* or BeReferralPrescriptionNursingMedication */ or BeReferralPrescriptionRequestGroup)
-* action.resource only Reference(BeReferralPrescription or BeReferralPrescriptionRequestGroup)
+* action.resource only Reference(BeCareRequest or BeCareRequestMedication)
 * groupIdentifier MS

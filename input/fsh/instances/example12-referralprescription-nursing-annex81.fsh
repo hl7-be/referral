@@ -3,6 +3,7 @@ InstanceOf: BeAnnex81
 Title: "example12-referralprescription-nursing-annex81"
 Usage: #example
 * contained[+] = patient1
+//* contained[+] = practitionerrole1
 * contained[+] = requesterrole1
 * contained[+] = dementia-condition
 * extension[statusReason].valueCodeableConcept = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason#inProgress "In Progress"
