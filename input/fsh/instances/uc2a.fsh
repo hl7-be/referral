@@ -8,21 +8,21 @@ De arts Rik Hendrikson schrijft volgende behandeling voor:
 
 
 Instance: uc2a-1
-InstanceOf: BeReferralPrescriptionNursing
+InstanceOf: BeReferralCareServiceRequest
 * basedOn.identifier.system = "https://nonexistant.system.be/vidis"
 * basedOn.identifier.value = "medication-line-id"
 * extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "38012699993"
-* extension[validity].valuePeriod.start = "2023-01-26"
-* extension[validity].valuePeriod.end = "2023-07-26"
-* extension[feedback].valueBoolean = true
-* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
-* extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
+//* extension[validity].valuePeriod.start = "2023-01-26"
+//* extension[validity].valuePeriod.end = "2023-07-26"
+//* extension[feedback].valueBoolean = true
+//* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
+//* extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 * reasonCode = $sct#44653001 //niet in Belgische module
 * code =  $sct#385796006
 * status = #active
-* intent = #order
+//* intent = #order
 * category = $sct#9632001 //niet in Belgische module
 * category.text = "Nursing procedure"
 * priority = #routine
@@ -63,7 +63,7 @@ InstanceOf: BePerformerTask
 
 
 Instance: uc2a
-InstanceOf: BeReferralPrescriptionRequestGroup
+InstanceOf: BeReferralRequestGroup
 Usage: #example
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
 * identifier.value = "5752e55e-9d8a-11ed-a8fc-0242ac120002"
@@ -71,7 +71,7 @@ Usage: #example
 * intent = #order
 * extension[validity].valuePeriod.start = "2023-01-26"
 * extension[validity].valuePeriod.end = "2023-07-26"
-* extension[code].valueCodeableConcept = $sct#385796006
+* code = $sct#385796006
 * action[+].id = "uc2a-1"
 * action[=].resource = Reference(uc2a-1)
 * action[+].id = "uc2a-2"
@@ -82,9 +82,11 @@ Usage: #example
 * action[=].resource = Reference(uc2a-3)
 * action[=].relatedAction[+].actionId = "uc2a-2"
 * action[=].relatedAction[=].relationship = #after-end
+* extension[category].valueCodeableConcept = $sct#9632001
+* authoredOn = "2023-01-26T00:00:00+01:00"
 
 Instance: uc2a-2
-InstanceOf: BeReferralPrescriptionNursing
+InstanceOf: BeReferralCareServiceRequest
 * code = $sct#413899004
 //* orderDetail = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service-detail#tmp-long-etch-2
 * extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
@@ -96,15 +98,15 @@ InstanceOf: BeReferralPrescriptionNursing
 * subject.identifier.value = "38012699993"
 * category = $sct#9632001 //niet in Belgische module
 * category.text = "Nursing procedure"
-* intent = #order
+//* intent = #order
 * status = #draft
-* extension[validity].valuePeriod.start = "2023-01-26"
-* extension[validity].valuePeriod.end = "2023-07-26"
-* extension[feedback].valueBoolean = true
-* occurrenceTiming.repeat.boundsDuration.unit = #mo
-* occurrenceTiming.repeat.boundsDuration.value = 1
-* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
-* extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
+//* extension[validity].valuePeriod.start = "2023-01-26"
+//* extension[validity].valuePeriod.end = "2023-07-26"
+//* extension[feedback].valueBoolean = true
+//* occurrenceTiming.repeat.boundsDuration.unit = #mo
+//* occurrenceTiming.repeat.boundsDuration.value = 1
+//* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
+//* extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 * note.text = "long stretch bandage not available for june release"
 
 Instance: uc2a-3

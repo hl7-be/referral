@@ -17,3 +17,4 @@ RuleSet: TopLevelPrescription
 * extension[latest] ^short = "Request must be executed before"
 * extension[feedback] ^short = "Give feedback to the prescriber"
 * extension[latestDraft] ^short = "The prescription must have left the draft status befor this moment"
+* intent from BeVsRequestIntent (required)

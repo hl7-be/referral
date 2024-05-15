@@ -30,3 +30,6 @@ Id: be-annex-81
 * reasonCode 1..* MS
 * reasonCode from BeVSAnnex81ReasonCode
 * obeys be-inv-annex-81-based-on
+* authoredOn 1.. MS
+* authoredOn obeys be-inv-long-date
+

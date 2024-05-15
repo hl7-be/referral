@@ -1,5 +1,5 @@
 Profile: BeLabPrescription
-Parent: BeReferralPrescription
+Parent: BeReferralServiceRequest
 Id: be-lab-prescription
 Description: "This is the Belgian profile for a laboratory order."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-lab-prescription"

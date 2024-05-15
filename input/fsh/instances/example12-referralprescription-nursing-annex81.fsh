@@ -3,7 +3,6 @@ InstanceOf: BeAnnex81
 Title: "example12-referralprescription-nursing-annex81"
 Usage: #example
 * contained[+] = patient1
-//* contained[+] = practitionerrole1
 * contained[+] = requesterrole1
 * contained[+] = dementia-condition
 * extension[statusReason].valueCodeableConcept = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason#inProgress "In Progress"
@@ -11,7 +10,7 @@ Usage: #example
 * extension[validity].valuePeriod.end = "2023-04-19"
 * extension[feedback].valueBoolean = true
 * extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
-* extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
+* extension[performerType][=].valueCodeableConcept.coding.code = #persphysician
 * status = #active
 * category = $sct#9632001
 * category.text = "Nursing procedure"
