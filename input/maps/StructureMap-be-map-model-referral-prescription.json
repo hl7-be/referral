@@ -3,7 +3,7 @@
   "id" : "be-map-model-referral-prescription",
   "text" : {
     "status" : "additional",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><pre>map &quot;https://www.ehealth.fgov.be/standards/fhir/referral/StructureMap/be-map-model-referral-prescription&quot; = &quot;be-map-model-referral-prescription&quot;\r\n\r\nuses &quot;https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-model-referralprescription&quot; alias BeModelReferralPrescription as source\r\nuses &quot;https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription&quot; alias BeReferralPrescription as target\r\n\r\n\r\n\r\ngroup Main(source model : BeModelReferralPrescription, target profile : BeReferralPrescription) {\r\n    model.recordedDate as a -&gt; profile.authoredOn = a;\r\n    model.recorder as recorder -&gt; profile.extension = create('Extension') as ext, \r\n        ext.url = &quot;https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-recorder&quot;, \r\n        ext.value = recorder;\r\n    model.prescriber as prescriber -&gt; profile.requester = prescriber;\r\n    model.'co-prescriberNr' as nr, model.'co-prescriber' as co -&gt; profile.extension = create('Extension') as ext,\r\n    ext.url = &quot;https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-co-prescriber-info&quot;, \r\n    ext.value = recorder'c0';\r\n     \r\n}\r\n\r\n\r\n\r\n</pre></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><pre>map &quot;https://www.ehealth.fgov.be/standards/fhir/referral/StructureMap/be-map-model-referral-prescription&quot; = &quot;be-map-model-referral-prescription&quot;\r\n\r\nuses &quot;https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-model-referralprescription&quot; alias BeModelReferralPrescription as source\r\nuses &quot;https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest&quot; alias BeReferralPrescription as target\r\n\r\n\r\n\r\ngroup Main(source model : BeModelReferralPrescription, target profile : BeReferralPrescription) {\r\n    model.recordedDate as a -&gt; profile.authoredOn = a;\r\n    model.recorder as recorder -&gt; profile.extension = create('Extension') as ext, \r\n        ext.url = &quot;https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-recorder&quot;, \r\n        ext.value = recorder;\r\n    model.prescriber as prescriber -&gt; profile.requester = prescriber;\r\n    model.'co-prescriberNr' as nr, model.'co-prescriber' as co -&gt; profile.extension = create('Extension') as ext,\r\n    ext.url = &quot;https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-co-prescriber-info&quot;, \r\n    ext.value = recorder'c0';\r\n     \r\n}\r\n\r\n\r\n\r\n</pre></div>"
   },
   "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureMap/be-map-model-referral-prescription",
   "name" : "be-map-model-referral-prescription",
@@ -13,7 +13,7 @@
     "alias" : "BeModelReferralPrescription"
   },
   {
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription",
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest",
     "mode" : "target",
     "alias" : "BeReferralPrescription"
   }],

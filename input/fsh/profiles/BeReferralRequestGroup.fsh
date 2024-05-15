@@ -37,3 +37,5 @@ Description: "Envelope that allows different referralprescriptions to have an or
 * action.resource only Reference(BeReferralCareServiceRequest ) // or BeCareRequestMedication )
 * groupIdentifier MS
 * code MS
+* authoredOn 1.. MS
+* authoredOn obeys be-inv-long-date

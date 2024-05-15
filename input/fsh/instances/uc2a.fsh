@@ -83,6 +83,7 @@ Usage: #example
 * action[=].relatedAction[+].actionId = "uc2a-2"
 * action[=].relatedAction[=].relationship = #after-end
 * extension[category].valueCodeableConcept = $sct#9632001
+* authoredOn = "2023-01-26T00:00:00+01:00"
 
 Instance: uc2a-2
 InstanceOf: BeReferralCareServiceRequest
