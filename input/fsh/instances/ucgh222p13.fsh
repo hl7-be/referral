@@ -4,7 +4,7 @@
 //be given by a nurse. 
 
 Instance: ucgh222p13
-InstanceOf: BeReferralPrescriptionRequestGroup
+InstanceOf: BeReferralRequestGroup
 * extension[validity].valuePeriod.start = "2023-01-26"
 * extension[validity].valuePeriod.end = "2023-07-26"
 * extension[code].valueCodeableConcept = $sct#18629005
