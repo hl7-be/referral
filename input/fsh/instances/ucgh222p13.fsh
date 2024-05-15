@@ -19,7 +19,7 @@ InstanceOf: BeReferralRequestGroup
 * status = #draft
 
 Instance: ucgh222p13-1
-InstanceOf: BeReferralPrescriptionNursing
+InstanceOf: BeReferralCareServiceRequest
 * contained[+] = ucgh222p13-1-1
 * reasonCode = $sct#46541008 //not in belgian extension
 * requester = Reference(ucgh222p13-1-1)
@@ -28,19 +28,19 @@ InstanceOf: BeReferralPrescriptionNursing
 * subject.identifier.value = "38012699993"
 * code = $sct#18629005
 * category =  $sct#9632001
-* intent = #order
+//* intent = #order
 * status = #draft
-* extension[validity].valuePeriod.start = "2022-10-03"
-* extension[validity].valuePeriod.end = "2023-04-03"
-* extension[feedback].valueBoolean = false
-* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
-* extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
+//* extension[validity].valuePeriod.start = "2022-10-03"
+//* extension[validity].valuePeriod.end = "2023-04-03"
+//* extension[feedback].valueBoolean = false
+//* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
+//* extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 * bodySite = $sct#14975008
 * bodySite.extension[bodyLaterality].valueCoding = $sct#419161000
 * note.text = "Flamazine"
 
 Instance: ucgh222p13-2
-InstanceOf: BeReferralPrescriptionNursing
+InstanceOf: BeReferralCareServiceRequest
 * contained[+] = ucgh222p13-1-1
 * reasonCode = $sct#46541008 //not in belgian extension
 * requester = Reference(ucgh222p13-1-1)
@@ -50,14 +50,14 @@ InstanceOf: BeReferralPrescriptionNursing
 * code = $sct#225358003
 * orderDetail = $sct#3895009
 * category =  $sct#9632001
-* intent = #order
+//* intent = #order
 * status = #draft
-* extension[validity].valuePeriod.start = "2022-10-03"
-* extension[validity].valuePeriod.end = "2023-04-03"
-* extension[feedback].valueBoolean = false
+//* extension[validity].valuePeriod.start = "2022-10-03"
+//* extension[validity].valuePeriod.end = "2023-04-03"
+//* extension[feedback].valueBoolean = false
 * note.text = "Melolin 10x10cm"
-* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
-* extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
+//* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
+//* extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 
 
 Instance: ucgh222p13-1-1
