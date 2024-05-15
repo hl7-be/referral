@@ -4,7 +4,6 @@ RuleSet: CommonServiceRequest
 * requisition ^short = "If needed to have a common identifier among different prescriptions."
 * status MS
 * intent MS
-* intent from BeVsRequestIntent (required)
 * category 1..1 MS
 * category from $be-vs-referral-category (extensible)
 * code MS
