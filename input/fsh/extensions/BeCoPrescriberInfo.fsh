@@ -16,8 +16,12 @@ Description: "Info about the other practitioners that must take part in this pre
 * ^jurisdiction = $jurisdiction#BE "Belgium"
 * . ^short = "BeCoPrescriber"
 * . ^definition = "Other practitioners that must take part in this prescripiton"
-* ^context.type = #element
-* ^context.expression = "ServiceRequest"
+* ^context[+].type = #element
+* ^context[=].expression = "ServiceRequest"
+* ^context[+].type = #element
+* ^context[=].expression = "RequestGroup"
+* ^context[+].type = #element
+* ^context[=].expression = "MedicationRequest"
 * extension contains
     BeCoPrescriber named coprescriber 0..* MS and
     coprescriberNumber 1..1 MS 
