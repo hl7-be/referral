@@ -32,4 +32,6 @@ Id: be-annex-81
 * supportingInfo ^slicing.discriminator.path = "resolve()"
 * supportingInfo ^slicing.rules = #open
 * obeys be-inv-annex-81-based-on
+* authoredOn 1.. MS
+* authoredOn obeys be-inv-long-date
 
