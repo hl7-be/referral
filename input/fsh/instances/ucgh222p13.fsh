@@ -7,7 +7,8 @@ Instance: ucgh222p13
 InstanceOf: BeReferralRequestGroup
 * extension[validity].valuePeriod.start = "2023-01-26"
 * extension[validity].valuePeriod.end = "2023-07-26"
-* extension[code].valueCodeableConcept = $sct#18629005
+* extension[category].valueCodeableConcept = $sct#9632001
+* code = $sct#18629005
 * action[+].id = "ucgh222p13-1"
 * action[=].resource = Reference(ucgh222p13-1)
 * action[+].id = "ucgh222p13-2"
