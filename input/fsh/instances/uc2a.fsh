@@ -63,7 +63,7 @@ InstanceOf: BePerformerTask
 
 
 Instance: uc2a
-InstanceOf: BeReferralPrescriptionRequestGroup
+InstanceOf: BeReferralRequestGroup
 Usage: #example
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
 * identifier.value = "5752e55e-9d8a-11ed-a8fc-0242ac120002"
