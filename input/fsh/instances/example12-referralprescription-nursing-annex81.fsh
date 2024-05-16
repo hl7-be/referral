@@ -25,7 +25,7 @@ Usage: #example
 * authoredOn = "2022-10-31T00:00:00+01:00"
 * requester = Reference(requesterrole1)
 * reasonCode = $sct#52448006
-* supportingInfo[+] = Reference(dementia-condition)
+//* supportingInfo[+] = Reference(dementia-condition)
 * intent = #proposal
 
 Instance: dementia-condition
