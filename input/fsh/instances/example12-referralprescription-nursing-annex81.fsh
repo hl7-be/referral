@@ -3,8 +3,8 @@ InstanceOf: BeAnnex81
 Title: "example12-referralprescription-nursing-annex81"
 Usage: #example
 * contained[+] = patient1
-* contained[+] = requesterrole1
-* contained[+] = dementia-condition
+* contained[+] = requesterrole2
+//* contained[+] = dementia-condition
 * extension[statusReason].valueCodeableConcept = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason#inProgress "In Progress"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"
@@ -23,7 +23,7 @@ Usage: #example
 * occurrenceTiming.repeat.period = 1
 * occurrenceTiming.repeat.periodUnit = #d
 * authoredOn = "2022-10-31T00:00:00+01:00"
-* requester = Reference(requesterrole1)
+* requester = Reference(requesterrole2)
 * reasonCode = $sct#52448006
 //* supportingInfo[+] = Reference(dementia-condition)
 * intent = #proposal
