@@ -24,4 +24,4 @@ Usage: #definition
 * parameter.min = 0
 * parameter.max = "1"
 * parameter.documentation = "additional information for the approval"
-* parameter.type = #Annotation
+* parameter.type = #markdown
