@@ -22,3 +22,11 @@ Description: "The nursing profile, generic version. Please note the nursing refe
 * orderDetail from be-vs-requested-services-nurse-detail
 * supportingInfo MS
 * note MS
+* occurrenceTiming.repeat.count MS
+* occurrenceTiming.repeat.frequency MS
+* occurrenceTiming.repeat.duration MS
+* occurrenceTiming.repeat.durationUnit MS
+* occurrenceTiming.repeat.when MS
+* quantityQuantity.value MS
+* quantityQuantity.code MS
+* quantityQuantity.system MS
