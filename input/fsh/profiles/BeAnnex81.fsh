@@ -1,6 +1,10 @@
 Profile: BeAnnex81
 Parent: ServiceRequest
 Id: be-annex-81
+* identifier ^slicing.discriminator.type = #value
+* identifier ^slicing.discriminator.path = "system"
+* identifier ^slicing.rules = #open
+* insert TopLevelIndentifier
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
