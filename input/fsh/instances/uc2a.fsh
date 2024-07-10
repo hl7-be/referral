@@ -65,8 +65,8 @@ InstanceOf: BePerformerTask
 Instance: uc2a
 InstanceOf: BeReferralRequestGroup
 Usage: #example
-* identifier.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
-* identifier.value = "5752e55e-9d8a-11ed-a8fc-0242ac120002"
+* identifier[SHORT].value = "AB12X"
+* identifier[UHMEP].value = "5752e55e-9d8a-11ed-a8fc-0242ac120002"
 * status = #draft
 * intent = #order
 * extension[validity].valuePeriod.start = "2023-01-26"

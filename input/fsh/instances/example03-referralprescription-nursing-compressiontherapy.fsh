@@ -11,8 +11,9 @@ Usage: #example
 * extension[feedback].valueBoolean = true
 * extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
 * extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
-* identifier.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
-* identifier.value = "UHMEPVALUE"
+//
+* identifier[UHMEP].value = "UHMEPVALUE"
+* identifier[SHORT].value = "AB12X"
 * status = #active
 * intent = #order
 * category = $sct#9632001

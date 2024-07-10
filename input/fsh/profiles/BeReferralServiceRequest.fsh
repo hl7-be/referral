@@ -27,11 +27,7 @@ Description: "The common structure for referral prescription."
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"
 * identifier ^slicing.rules = #open
-* identifier contains UHMEP 0..1
-* identifier[UHMEP] ^short = "Reference ID of the UHMEP once available there"
-* identifier[UHMEP].system 1..
-* identifier[UHMEP].system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep" (exactly)
-* identifier[UHMEP].value 1..
+* insert TopLevelIndentifier
 * insert CommonServiceRequest
 * asNeeded[x] MS
 * intent from BeVsRequestIntent (required)
