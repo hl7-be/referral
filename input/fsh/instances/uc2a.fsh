@@ -65,7 +65,7 @@ InstanceOf: BePerformerTask
 Instance: uc2a
 InstanceOf: BeReferralRequestGroup
 Usage: #example
-* identifier[SHORT].value = "AB12X"
+* identifier[SHORT].value = "AB12EF"
 * identifier[UHMEP].value = "5752e55e-9d8a-11ed-a8fc-0242ac120002"
 * status = #draft
 * intent = #order
