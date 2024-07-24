@@ -13,7 +13,7 @@ Usage: #example
 * extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 
 * identifier[UHMEP].value = "UHMEPVALUE"
-* identifier[SHORT].value = "AB12X"
+* identifier[SHORT].value = "AB12EF"
 * status = #active
 * intent = #order
 * category = $sct#9632001

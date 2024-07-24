@@ -20,7 +20,7 @@ Usage: #example
 * extension[urgentCommunication].extension[instructions].valueString = "Send the requester an email, when the test is done."
 * extension[urgentCommunication].extension[contactway].extension[contactSystem].valueCodeableConcept = $contact-point-system_1#email "email"
 * extension[urgentCommunication].extension[contactway].extension[contactSystemValue].valueString = "doctor@mycabinet.be"
-* identifier[SHORT].value = "AB12X"
+* identifier[SHORT].value = "AB12EF"
 * identifier[UHMEP].value = "UHMEPVALUE"
 * status = #active
 * intent = #original-order
