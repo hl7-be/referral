@@ -11,3 +11,4 @@ Description: "The task that is referred to in the referral prescription (this is
 * intent MS
 * intent from BeVsRequestIntent (required)
 * focus MS
+* focus only Reference(BeReferralServiceRequest or BeAnnex81)
