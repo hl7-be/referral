@@ -1,7 +1,7 @@
 RuleSet: CommonServiceRequest
 * basedOn MS
-* requisition MS
-* requisition ^short = "If needed to have a common identifier among different prescriptions."
+//* requisition MS
+//* requisition ^short = "If needed to have a common identifier among different prescriptions."
 * status MS
 * intent MS
 * category 1..1 MS
