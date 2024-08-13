@@ -14,4 +14,6 @@ Description: "Subtask performed by one performer"
 * statusReason MS
 * statusReason from BeVSPerformerTaskStatusReason
 * basedOn MS
+* basedOn only Reference(BeOrganizationTask)
 * focus MS
+* focus only Reference(BeReferralServiceRequest or BeAnnex81 or BeReferralRequestGroup)
