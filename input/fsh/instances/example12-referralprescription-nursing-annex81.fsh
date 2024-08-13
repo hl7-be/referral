@@ -21,7 +21,7 @@ Usage: #example
 * occurrenceTiming.repeat.boundsPeriod.end = "2022-06-30"
 * occurrenceTiming.repeat.frequency = 1
 * occurrenceTiming.repeat.period = 1
-* occurrenceTiming.repeat.periodUnit = #d
+* occurrenceTiming.repeat.periodUnit = #wk
 * authoredOn = "2022-10-31T00:00:00+01:00"
 * requester = Reference(requesterrole2)
 * reasonCode = $sct#52448006

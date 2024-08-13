@@ -36,4 +36,7 @@ Id: be-annex-81
 * obeys be-inv-annex-81-based-on
 * authoredOn 1.. MS
 * authoredOn obeys be-inv-long-date
+* occurrenceTiming.repeat.frequency = 1
+* occurrenceTiming.repeat.period = 1
+* occurrenceTiming.repeat.periodUnit = #wk
 
