@@ -110,7 +110,7 @@ InstanceOf: BeReferralCareServiceRequest
 * note.text = "long stretch bandage not available for june release"
 
 Instance: uc2a-3
-InstanceOf: BeReferralPrescriptionNursing
+InstanceOf: BeReferralServiceRequestNursing
 * extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * code = $sct#225420001
 * reasonCode = $sct#44653001 //niet in Belgische module

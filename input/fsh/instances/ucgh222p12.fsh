@@ -5,7 +5,7 @@
 
 
 Instance: ucgh222p12-1
-InstanceOf: BeReferralPrescriptionNursing
+InstanceOf: BeReferralServiceRequestNursing
 * contained[+] = ucgh222p12-1-1
 * reasonCode.coding.display = "chemotherapy via \"implantable venous access port catheter\""
 * requester = Reference(ucgh222p12-1-1)
@@ -23,10 +23,10 @@ InstanceOf: BeReferralPrescriptionNursing
 * extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 * requisition.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
 * requisition.value = "27e5a4a4-e043-11ed-b5ea-0242ac120002"
-* occurrenceDateTime = "2022-10-10"
+* occurrenceTiming.event = "2022-10-10"
 
 Instance: ucgh222p12-2
-InstanceOf: BeReferralPrescriptionNursing
+InstanceOf: BeReferralServiceRequestNursing
 * contained[+] = ucgh222p12-1-1
 * requester = Reference(ucgh222p12-1-1)
 * authoredOn = "2022-10-03T00:00:00+01:00"
@@ -43,11 +43,11 @@ InstanceOf: BeReferralPrescriptionNursing
 * extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 * requisition.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
 * requisition.value = "27e5a4a4-e043-11ed-b5ea-0242ac120002"
-* occurrenceDateTime = "2022-10-10"
+* occurrenceTiming.event = "2022-10-10"
 * reasonCode.coding.display = "chemotherapy via \"implantable venous access port catheter\""
 
 Instance: ucgh222p12-3
-InstanceOf: BeReferralPrescriptionNursing
+InstanceOf: BeReferralServiceRequestNursing
 * contained[+] = ucgh222p12-1-1
 * reasonCode.coding.display = "chemotherapy via \"implantable venous access port catheter\""
 * requester = Reference(ucgh222p12-1-1)
@@ -67,7 +67,7 @@ InstanceOf: BeReferralPrescriptionNursing
 * extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 * requisition.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
 * requisition.value = "27e5a4a4-e043-11ed-b5ea-0242ac120002"
-* occurrenceDateTime = "2022-10-10"
+* occurrenceTiming.event = "2022-10-10"
 
 
 Instance: ucgh222p12-1-1

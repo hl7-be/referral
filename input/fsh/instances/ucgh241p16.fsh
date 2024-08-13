@@ -1,5 +1,5 @@
 Instance: ucgh241p16-1 
-InstanceOf: BeReferralPrescriptionNursing
+InstanceOf: BeReferralServiceRequestNursing
 * reasonCode.coding.display = "Diabetes type 1"
 * authoredOn = "2022-10-03T00:00:00+01:00"
 * requester =  Reference(ucgh241p16-1-1)

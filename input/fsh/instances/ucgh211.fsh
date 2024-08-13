@@ -1,5 +1,5 @@
 Instance: ucgh211-1
-InstanceOf: BeReferralPrescriptionNursing
+InstanceOf: BeReferralServiceRequestNursing
 * contained[+] = ucgh211-1-1
 * contained[+] = ucgh211-1-2
 * contained[+] = ucgh211-1-3

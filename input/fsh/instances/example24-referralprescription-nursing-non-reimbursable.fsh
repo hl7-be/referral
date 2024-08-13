@@ -1,5 +1,5 @@
 Instance: example24-referralprescription-nursing-non-reimbursable
-InstanceOf: BeReferralPrescriptionNursing
+InstanceOf: BeReferralServiceRequestNursing
 Title: "example24-referralprescription-nursing-non-reimbursable"
 Usage: #example
 * contained[+] = patient1

@@ -1,8 +1,8 @@
-Profile: BeReferralPrescriptionNursing
+Profile: BeReferralServiceRequestNursing
 Parent: BeReferralServiceRequest
-Id: be-referralprescription-nursing
+Id: be-referral-servicerequest-nursing
 Description: "The nursing profile, generic version. Please note the nursing referral for medication does NOT depend on this generic version but is a FHIR prodfile on a different FHIR resource (MedicationRequest)"
-* ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing"
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing"
 * ^status = #draft
 * ^date = "2021-07-15T08:52:50+00:00"
 * ^publisher = "HL7 Belgium"
@@ -27,6 +27,21 @@ Description: "The nursing profile, generic version. Please note the nursing refe
 * occurrenceTiming.repeat.duration MS
 * occurrenceTiming.repeat.durationUnit MS
 * occurrenceTiming.repeat.when MS
+* occurrenceTiming.repeat.boundsDuration MS
 * quantityQuantity.value MS
 * quantityQuantity.code MS
 * quantityQuantity.system MS
+* requester MS
+* subject MS
+* authoredOn MS
+* extension[validity] MS
+* extension[feedback] MS
+* extension[latest] MS
+* extension[performerType] MS
+* extension[device] MS
+* reasonCode MS
+* basedOn MS
+* occurrenceTiming MS
+* occurrence[x] only Timing
+* bodySite MS
+
