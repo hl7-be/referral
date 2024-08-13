@@ -1,5 +1,5 @@
 Instance: example01-care01-referralprescription-nursing-bladder-care
-InstanceOf: BeReferralPrescriptionNursing
+InstanceOf: BeReferralServiceRequestNursing
 Usage: #inline
 
 

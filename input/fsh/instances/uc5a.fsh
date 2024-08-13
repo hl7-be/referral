@@ -6,7 +6,7 @@ Note importante : La partie précisant que la demande d'analyse concerne le gluc
 */
 
 Instance: uc5a-1
-InstanceOf: BeReferralPrescriptionNursing
+InstanceOf: BeReferralServiceRequestNursing
 * code = $sct#17636008
 * orderDetail = $sct#87612001
 * extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"

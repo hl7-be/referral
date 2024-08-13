@@ -1,5 +1,5 @@
 Instance: example01-care02-colon-cleansing
-InstanceOf: BeReferralPrescriptionNursing
+InstanceOf: BeReferralServiceRequestNursing
 Usage: #example
 //* contained[+] = referral-task
 //* contained[+] = performer-task

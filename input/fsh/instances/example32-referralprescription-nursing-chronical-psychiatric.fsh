@@ -1,5 +1,5 @@
 Instance: example32-referralprescription-nursing-chronical-psychiatric
-InstanceOf: BeReferralPrescriptionNursing
+InstanceOf: BeReferralServiceRequestNursing
 Title: "example32-referralprescription-nursing-chronical-psychiatric"
 Usage: #example
 * contained[+] = patient1

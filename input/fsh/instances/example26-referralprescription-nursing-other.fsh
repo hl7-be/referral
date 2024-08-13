@@ -1,5 +1,5 @@
 Instance: example26-referralprescription-nursing-other
-InstanceOf: BeReferralPrescriptionNursing
+InstanceOf: BeReferralServiceRequestNursing
 Title: "example26-referralprescription-nursing-other"
 Usage: #example
 * contained[+] = patient1
@@ -18,7 +18,7 @@ Usage: #example
 * priority = #routine
 * code = $sct#413899004
 * subject = Reference(patient1)
-* occurrenceDateTime = "2021-02-25T00:00:00.000Z"
+* occurrenceTiming.event = "2021-02-25T00:00:00.000Z"
 * authoredOn = "2022-10-31T00:00:00+01:00"
 * requester = Reference(requesterrole1)
 * reasonCode = $sct#309256001

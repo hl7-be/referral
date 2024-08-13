@@ -1,5 +1,5 @@
 Instance: example09-referralprescription-nursing-woundcare
-InstanceOf: BeReferralPrescriptionNursing
+InstanceOf: BeReferralServiceRequestNursing
 Title: "example09-referralprescription-nursing-woundcare"
 Usage: #example
 * contained[+] = patient1

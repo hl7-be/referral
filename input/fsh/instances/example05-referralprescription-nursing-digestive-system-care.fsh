@@ -1,5 +1,5 @@
 Instance: example05-referralprescription-nursing-digestive-system-care
-InstanceOf: BeReferralPrescriptionNursing
+InstanceOf: BeReferralServiceRequestNursing
 Title: "example05-referralprescription-nursing-digestive-system-care"
 Usage: #example
 * contained[+] = patient1

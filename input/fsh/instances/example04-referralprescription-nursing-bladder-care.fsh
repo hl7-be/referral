@@ -1,5 +1,5 @@
 Instance: example04-referralprescription-nursing-bladder-care
-InstanceOf: BeReferralPrescriptionNursing
+InstanceOf: BeReferralServiceRequestNursing
 Title: "example04-referralprescription-nursing-bladder-care"
 Usage: #example
 * contained[+] = patient1
