@@ -13,7 +13,7 @@ Id: be-annex-81
     BeCoPrescriberInfo named coprescriber 0..1 MS and
     BeValidityPeriod named validity 1..1 MS and
     BeLatestEndDate named latest 0..1 MS and
-    BeLatestDraftDate named latestDraft 0..1 MS and
+    //BeLatestDraftDate named latestDraft 0..1 MS and
     //BePerformerTaskReference named performertasks 0..* MS and
     //BePerformerReference named performer 0..* MS and 
     BeProposalType named proposalType 0..1 MS and
@@ -25,7 +25,7 @@ Id: be-annex-81
 * extension[validity] ^short = "Validity period of the prescription"
 * extension[latest] ^short = "Request must be executed before"
 * extension[feedback] ^short = "Give feedback to the prescriber"
-* extension[latestDraft] ^short = "The prescription must have left the draft status befor this moment"
+//* extension[latestDraft] ^short = "The prescription must have left the draft status befor this moment"
 * category.coding.system = "http://snomed.info/sct" (exactly)
 * category.coding.code = #9632001 (exactly)
 * code = BeTempRequestedService#tmp-prep-x081-2
