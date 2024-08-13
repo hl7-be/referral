@@ -10,4 +10,4 @@ Description: "Subtask to assign the referral task and prescription to one or mor
 * owner only Reference(BeOrganization)
 * status MS
 * focus MS
-* intent from BeVSTaskIntent
+* intent from BeVSTaskIntent (required)
