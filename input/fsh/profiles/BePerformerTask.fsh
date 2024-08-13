@@ -7,6 +7,8 @@ Description: "Subtask performed by one performer"
 * partOf only Reference(BeReferralTask)
 * executionPeriod 0..1 MS
 * executionPeriod ^short = "Start and end date when the performer executed the task"
+* executionPeriod.start only BeYearMonthDay
+* executionPeriod.end only BeYearMonthDay
 * owner 1..1 MS
 * owner ^short = "Reference to the performer of the referral prescription"
 * owner only Reference(BePractitionerRole)
