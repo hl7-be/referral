@@ -1,5 +1,5 @@
-ValueSet: BeVsTaskIntent
-Title: "BeVsTaskIntent"
+ValueSet: BeVSTaskIntent
+Title: "BeVSTaskIntent"
 Id: be-vs-task-intent
 Description: "The allowed intent codes in the context of tasks in the field of referral prescriptions"
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-task-intent"
