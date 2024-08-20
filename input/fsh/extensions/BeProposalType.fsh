@@ -25,4 +25,4 @@ Description: "Type of proposal"
 * url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-proposal-type" (exactly)
 * value[x] only CodeableConcept
 * valueCodeableConcept 0..1
-* valueCodeableConcept from BeVsProposalType (required)
+* valueCodeableConcept from BeVSProposalType (required)

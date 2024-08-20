@@ -31,5 +31,5 @@ Description: "Other practitioners that must take part in this prescripiton"
 * url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-co-prescriber" (exactly)
 * extension[required].value[x] only CodeableConcept
 * extension[required].valueCodeableConcept 1..1
-* extension[required].valueCodeableConcept from BeVsCoPrescriberChoice (required)
+* extension[required].valueCodeableConcept from BeVSCoPrescriberChoice (required)
 * extension[required] ^short = "Importance of the signature for the prescription"
