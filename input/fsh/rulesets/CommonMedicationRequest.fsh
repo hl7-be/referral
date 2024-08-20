@@ -5,7 +5,7 @@ RuleSet: CommonMedicationRequest
 * status MS
 * statusReason MS
 * intent MS
-* intent from BeVsRequestIntent (required)
+* intent from BeVSRequestIntent (required)
 * category 1..1 MS
 * category from $procedure-code (example)
 * medication[x] MS

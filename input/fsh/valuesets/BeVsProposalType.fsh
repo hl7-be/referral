@@ -1,5 +1,5 @@
-ValueSet: BeVsProposalType
-Title: "BeVsProposalType"
+ValueSet: BeVSProposalType
+Title: "BeVSProposalType"
 Id: be-vs-proposal-type
 Description: "If the status of the request is proposal, this valueset indicates the different types of proposal"
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-proposal-type"

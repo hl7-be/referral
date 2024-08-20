@@ -30,6 +30,6 @@ Description: "The common structure for referral prescription."
 * insert TopLevelIndentifier
 * insert CommonServiceRequest
 * asNeeded[x] MS
-* intent from BeVsRequestIntent (required)
+* intent from BeVSRequestIntent (required)
 * obeys be-inv-body-site
 

@@ -1,5 +1,5 @@
-ValueSet: BeVsCoPrescriberChoice
-Title: "BeVsCoPrescriberChoice"
+ValueSet: BeVSCoPrescriberChoice
+Title: "BeVSCoPrescriberChoice"
 Id: be-vs-co-prescriber-choice
 Description: "Type of intended performer choice"
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-co-prescriber-choice"
