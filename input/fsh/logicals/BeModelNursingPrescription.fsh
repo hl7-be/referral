@@ -1,5 +1,6 @@
 Logical: BeModelNursingPrescription
 Parent: BeModelReferralPrescription
+* ^extension[http://hl7.org/fhir/tools/StructureDefinition/logical-target].valueBoolean = true
 * serviceRequestNumber 0..1 positiveInt "number of sessions prescribed" "number of sessions prescribed"
 * serviceRequestFrequency 0..1 CodeableConcept "frequency of the treatment" "frequency of the treatment"
 * serviceRequestDayPeriod 0..* CodeableConcept "period of the day on which the treatment must take place" "period of the day on which the treatment must take place"

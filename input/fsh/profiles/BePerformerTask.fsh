@@ -18,5 +18,5 @@ Description: "Subtask performed by one performer"
 * basedOn MS
 * basedOn only Reference(BeOrganizationTask)
 * focus MS
-* focus only Reference(BeReferralServiceRequest or BeAnnex81 or BeReferralRequestGroup)
+* focus only Reference(BeReferralServiceRequest or BeAnnex81) /* or BeReferralRequestGroup */ 
 * intent from BeVSTaskIntent (required)
