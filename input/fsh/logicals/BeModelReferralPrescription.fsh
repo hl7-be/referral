@@ -1,5 +1,6 @@
 Logical: BeModelReferralPrescription
 Description: "Logical model describing the model for the prescription referral. This draft is used in the HL7 Belgian workgroup for referral."
+* ^extension[http://hl7.org/fhir/tools/StructureDefinition/logical-target].valueBoolean = true
 * recordedDate 1..1 dateTime "When this prescription was created" "When this prescription was created"
 * recorder 1..1 Reference "The person who is responsable for the content, not necessarily the person who entered the content. This is either the prescriber, a co-prescriber or a performer. It is the last person who updated the resources." "The person who is responsable for the content, not necessarily the person who entered the content. This is either the prescriber, a co-prescriber or a performer. It is the last person who updated the resources."
 * prescriber 1..1 Reference "The prescribing healthcare party" "The prescribing healthcare party"
