@@ -18,7 +18,7 @@ InstanceOf: BeReferralServiceRequestNursing
 * status = #draft
 * extension[validity].valuePeriod.start = "2022-10-03"
 * extension[validity].valuePeriod.end = "2023-04-03"
-* extension[feedback].valueBoolean = false
+//* extension[feedback].valueBoolean = false
 * extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
 * extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 * requisition.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
@@ -38,7 +38,7 @@ InstanceOf: BeReferralServiceRequestNursing
 * status = #active
 * extension[validity].valuePeriod.start = "2022-10-03"
 * extension[validity].valuePeriod.end = "2023-04-03"
-* extension[feedback].valueBoolean = false
+//* extension[feedback].valueBoolean = false
 * extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
 * extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 * requisition.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
@@ -60,7 +60,7 @@ InstanceOf: BeReferralServiceRequestNursing
 * status = #draft
 * extension[validity].valuePeriod.start = "2022-10-03"
 * extension[validity].valuePeriod.end = "2023-04-03"
-* extension[feedback].valueBoolean = false
+//* extension[feedback].valueBoolean = false
 //* orderDetail = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service-detail#tmp-hube-type-3
 * note.text = "Huber needle type: 20G x 25mm (not available for june release -> is device)"
 * extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
