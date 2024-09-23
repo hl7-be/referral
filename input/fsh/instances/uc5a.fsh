@@ -40,6 +40,7 @@ InstanceOf: BeReferralTask
 
 Instance: performer-task-1-uc5a-1
 InstanceOf: BePerformerTask
+* authoredOn = "2020-01-01T00:00:00+01:00"
 * status = #completed
 * intent = #order
 * partOf = Reference(referral-task-uc5a-1)
