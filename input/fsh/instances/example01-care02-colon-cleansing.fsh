@@ -11,7 +11,7 @@ Usage: #example
 * extension[validity].valuePeriod.end = "2021-01-01"
 //* extension[task].valueReference = Reference(referral-task)
 //* extension[performertasks].valueReference[+] = Reference(performer-task)
-* extension[feedback].valueBoolean = true
+//* extension[feedback].valueBoolean = true
 * status = #active
 * intent = #order
 * category = $sct#9632001

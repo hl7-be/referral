@@ -35,7 +35,7 @@ Description: "The nursing profile, generic version. Please note the nursing refe
 * subject MS
 * authoredOn MS
 * extension[validity] MS
-* extension[feedback] MS
+//* extension[feedback] MS
 * extension[latest] MS
 * extension[performerType] MS
 * extension[device] MS

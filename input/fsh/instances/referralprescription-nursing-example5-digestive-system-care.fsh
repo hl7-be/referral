@@ -10,7 +10,7 @@ Usage: #example
 * extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * extension[validity].valuePeriod.start = "2020-01-01"
 * extension[validity].valuePeriod.end = "2021-01-01"
-* extension[feedback].valueBoolean = true
+//* extension[feedback].valueBoolean = true
 * status = #active
 * intent = #order
 * category = $sct#9632001

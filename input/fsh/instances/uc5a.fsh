@@ -22,7 +22,7 @@ InstanceOf: BeReferralServiceRequestNursing
 * status = #completed
 * extension[validity].valuePeriod.start = "2023-02-07"
 * extension[validity].valuePeriod.end = "2023-08-07"
-* extension[feedback].valueBoolean = true
+//* extension[feedback].valueBoolean = true
 * occurrenceTiming.repeat.count = 1
 * extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
 * extension[performerType][=].valueCodeableConcept.coding.code = #persnurse

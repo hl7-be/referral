@@ -3,7 +3,7 @@ InstanceOf: BeReferralServiceRequestNursing
 * reasonCode.coding.display = "Diabetes type 2"
 * authoredOn = "2022-10-03T00:00:00+01:00"
 * requester =  Reference(ucgh241p17-1-1)
-* extension[feedback].valueBoolean = false
+//* extension[feedback].valueBoolean = false
 * orderDetail[+] = $temp-detail#tmp-with-sion-8
 * orderDetail[+] = $temp-detail#tmp-indi-sion-8
 * code = $sct#385805005

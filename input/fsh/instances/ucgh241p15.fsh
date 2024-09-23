@@ -3,7 +3,7 @@ InstanceOf: BeReferralServiceRequestNursing
 * reasonCode.coding.display = "Diabetes type 1"
 * authoredOn = "2022-10-03T00:00:00+01:00"
 * requester =  Reference(ucgh241p15-1-1)
-* extension[feedback].valueBoolean = false
+//* extension[feedback].valueBoolean = false
 * code = $temp-service#tmp-prep-rsed-5
 * code.text = "(of $sct#385796006)? zie XLS"
 * extension[validity].valuePeriod.start = "2022-10-03"
