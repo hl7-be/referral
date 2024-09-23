@@ -85,6 +85,7 @@ InstanceOf: BeReferralTask
 
 Instance: ucgh222p12-1-2-1
 InstanceOf: BeOrganizationTask
+* authoredOn = "2020-01-01T00:00:00+01:00"
 * partOf = Reference(ucgh222p12-1-2)
 * focus = Reference(ucgh222p12-1)
 * status = #accepted 
@@ -102,6 +103,7 @@ InstanceOf: BeReferralTask
 
 Instance: ucgh222p12-2-2-1
 InstanceOf: BeOrganizationTask
+* authoredOn = "2020-01-01T00:00:00+01:00"
 * partOf = Reference(ucgh222p12-2-2)
 * focus = Reference(ucgh222p12-2)
 * status = #accepted 
@@ -111,6 +113,7 @@ InstanceOf: BeOrganizationTask
 
 Instance: ucgh222p12-2-2-2
 InstanceOf: BePerformerTask
+* authoredOn = "2020-01-01T00:00:00+01:00"
 * contained[+] = ucgh222p12-2-2-2-1
 * partOf = Reference(ucgh222p12-2-2)
 * focus = Reference(ucgh222p12-2)

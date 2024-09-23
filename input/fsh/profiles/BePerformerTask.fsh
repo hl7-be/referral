@@ -20,3 +20,5 @@ Description: "Subtask performed by one performer"
 * focus MS
 * focus only Reference(BeReferralServiceRequest or BeAnnex81) /* or BeReferralRequestGroup */ 
 * intent from BeVSTaskIntent (required)
+* authoredOn 1.. MS
+* authoredOn obeys be-inv-long-date

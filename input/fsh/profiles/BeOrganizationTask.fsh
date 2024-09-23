@@ -11,3 +11,5 @@ Description: "Subtask to assign the referral task and prescription to one or mor
 * status MS
 * focus MS
 * intent from BeVSTaskIntent (required)
+* authoredOn 1.. MS
+* authoredOn obeys be-inv-long-date
