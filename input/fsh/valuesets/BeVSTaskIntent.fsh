@@ -17,3 +17,4 @@ Description: "The allowed intent codes in the context of tasks in the field of r
 * ^jurisdiction = $jurisdiction#BE "Belgium"
 * ^experimental = false
 * include http://hl7.org/fhir/request-intent#order
+* include http://hl7.org/fhir/request-intent#proposal
