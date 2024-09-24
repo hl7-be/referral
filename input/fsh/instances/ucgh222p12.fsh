@@ -6,9 +6,9 @@
 
 Instance: ucgh222p12-1
 InstanceOf: BeReferralServiceRequestNursing
-* contained[+] = ucgh222p12-1-1
+
 * reasonCode.coding.display = "chemotherapy via \"implantable venous access port catheter\""
-* requester = Reference(ucgh222p12-1-1)
+* requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * authoredOn = "2022-10-03T00:00:00+01:00"
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "38012699993"
@@ -27,8 +27,8 @@ InstanceOf: BeReferralServiceRequestNursing
 
 Instance: ucgh222p12-2
 InstanceOf: BeReferralServiceRequestNursing
-* contained[+] = ucgh222p12-1-1
-* requester = Reference(ucgh222p12-1-1)
+
+* requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * authoredOn = "2022-10-03T00:00:00+01:00"
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "38012699993"
@@ -48,9 +48,9 @@ InstanceOf: BeReferralServiceRequestNursing
 
 Instance: ucgh222p12-3
 InstanceOf: BeReferralServiceRequestNursing
-* contained[+] = ucgh222p12-1-1
+
 * reasonCode.coding.display = "chemotherapy via \"implantable venous access port catheter\""
-* requester = Reference(ucgh222p12-1-1)
+* requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * authoredOn = "2022-10-03T00:00:00+01:00"
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "38012699993"
@@ -70,11 +70,11 @@ InstanceOf: BeReferralServiceRequestNursing
 * occurrenceTiming.event = "2022-10-10"
 
 
-Instance: ucgh222p12-1-1
-InstanceOf: BePractitionerRole
-* practitioner.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"
-* practitioner.identifier.value = "10829059004"
-* code = https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty#persphysician
+//Instance: ucgh222p12-1-1
+//InstanceOf: BePractitionerRole
+//* practitioner.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"
+//* practitioner.identifier.value = "10829059004"
+//* code = https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty#persphysician
 
 Instance: ucgh222p12-1-2
 InstanceOf: BeReferralTask
@@ -114,19 +114,19 @@ InstanceOf: BeOrganizationTask
 Instance: ucgh222p12-2-2-2
 InstanceOf: BePerformerTask
 * authoredOn = "2020-01-01T00:00:00+01:00"
-* contained[+] = ucgh222p12-2-2-2-1
+//* contained[+] = ucgh222p12-2-2-2-1
 * partOf = Reference(ucgh222p12-2-2)
 * focus = Reference(ucgh222p12-2)
 * basedOn = Reference(ucgh222p12-2-2-1)
 * status = #accepted 
 * intent = #order
-* owner = Reference(ucgh222p12-2-2-2-1)
+* owner.reference = "PractitionerRole/NURSE-45094508408"
 
-Instance: ucgh222p12-2-2-2-1
-InstanceOf: BePractitionerRole
-* practitioner.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"
-* practitioner.identifier.value = "41234567401"
-* code = https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty#persnurse
+//Instance: ucgh222p12-2-2-2-1
+//InstanceOf: BePractitionerRole
+//* practitioner.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"
+//* practitioner.identifier.value = "41234567401"
+//* code = https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty#persnurse
 
 
 

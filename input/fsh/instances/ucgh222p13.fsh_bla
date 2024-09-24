@@ -21,9 +21,9 @@ InstanceOf: BeReferralRequestGroup
 
 Instance: ucgh222p13-1
 InstanceOf: BeReferralCareServiceRequest
-* contained[+] = ucgh222p13-1-1
+
 * reasonCode = $sct#46541008 //not in belgian extension
-* requester = Reference(ucgh222p13-1-1)
+* requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * authoredOn = "2022-10-03T00:00:00+01:00"
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "38012699993"
@@ -42,9 +42,9 @@ InstanceOf: BeReferralCareServiceRequest
 
 Instance: ucgh222p13-2
 InstanceOf: BeReferralCareServiceRequest
-* contained[+] = ucgh222p13-1-1
+
 * reasonCode = $sct#46541008 //not in belgian extension
-* requester = Reference(ucgh222p13-1-1)
+* requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * authoredOn = "2022-10-03T00:00:00+01:00"
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "38012699993"
@@ -61,11 +61,11 @@ InstanceOf: BeReferralCareServiceRequest
 //* extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 
 
-Instance: ucgh222p13-1-1
-InstanceOf: BePractitionerRole
-* practitioner.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"
-* practitioner.identifier.value = "10829059004"
-* code = https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty#persphysician
+//Instance: ucgh222p13-1-1
+//InstanceOf: BePractitionerRole
+//* practitioner.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"
+//* practitioner.identifier.value = "10829059004"
+//* code = https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty#persphysician
 
 
 

@@ -2,7 +2,6 @@ Instance: example08-referralprescription-nursing-medication
 InstanceOf: BeReferralServiceRequestNursingMedication
 Title: "example08-referralprescription-nursing-medication"
 Usage: #example
-* contained[+] = patient1
 //* contained[+] = practitionerrole1
 
 
@@ -17,8 +16,9 @@ Usage: #example
 * category = $sct#76601001
 * priority = #routine
 * medicationCodeableConcept = $cnk-codes#0048454 "Hydroxocobalamine Acetate Sterop inj./drinkb. oploss. i.m./i.v./or. [amp.] 3 x 10 mg / 2 ml"
-* subject = Reference(patient1)
-* requester = Reference(requesterrole1)
+* subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
+* subject.identifier.value = "99999999999"
+* requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * note.text = "Vitamine B12"
 * dosageInstruction.text = "Frequency: 6 months - 1 X every 3 weeks"
 * dosageInstruction.timing.repeat.boundsDuration.value = 6

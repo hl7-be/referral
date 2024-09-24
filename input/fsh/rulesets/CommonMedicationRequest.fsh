@@ -9,13 +9,13 @@ RuleSet: CommonMedicationRequest
 * category 1..1 MS
 * category from $procedure-code (example)
 * medication[x] MS
-* subject only BeContainedOrLogicalReference
+* subject only BeNoContainedReference
 * subject only Reference(BePatient)
 * subject MS
 * requester 1.. MS
-* requester only BeContainedOrLogicalReference
+* requester only BeNoContainedReference
 * requester only Reference(BePractitioner)
-* performer only BeContainedOrLogicalReference
+* performer only BeNoContainedReference
 * performer only Reference( BePractitionerRole )
 * performer ^short = "Requested performer - typically reference to practitionerroles"
 * performerType ..0 MS

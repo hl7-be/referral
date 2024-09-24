@@ -2,7 +2,6 @@ Instance: example13-referralprescription-nursing-medication
 InstanceOf: BeReferralServiceRequestNursingMedication
 Title: "example13-referralprescription-nursing-medication"
 Usage: #example
-* contained[+] = patient1
 //* contained[+] = practitionerrole1
 
 
@@ -18,8 +17,9 @@ Usage: #example
 * category.text = "Patch"
 * priority = #routine
 * medicationCodeableConcept = $cnk-codes#2218253 "Durogesic transderm. pleister 10 x 50 µg / 1 u"
-* subject = Reference(patient1)
-* requester = Reference(requesterrole1)
+* subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
+* subject.identifier.value = "99999999999"
+* requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * note.text = "pijnpleister Durogesic 50 microgram (patch)"
 * dosageInstruction.text = "daily on yearly basis, 05/07/2021-04/07/2022, om de 72u (om de 3d)"
 * dosageInstruction.timing.repeat.boundsPeriod.start = "2021-07-05"

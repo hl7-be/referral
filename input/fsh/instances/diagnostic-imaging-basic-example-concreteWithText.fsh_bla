@@ -2,8 +2,7 @@ Instance: diagnostic-imaging-basic-example-concreteWithText
 InstanceOf: BeReferralPrescriptionDiagnosticImaging
 Title: "diagnostic-imaging-basic-example-concreteWithText"
 Usage: #example
-* contained[+] = patient1
-* contained[+] = requesterrole1
+
 * extension[validity].valuePeriod.start = "2020-01-01"
 * extension[validity].valuePeriod.end = "2021-01-01"
 //* extension[feedback].valueBoolean = true
@@ -17,7 +16,8 @@ Usage: #example
 * category = $sct#363679005 "Clinical imaging"
 * priority = #routine
 * code.text = "Rx + echo rechtervoet"
-* subject = Reference(patient1)
-* requester = Reference(requesterrole1)
+* subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
+* subject.identifier.value = "99999999999"
+* requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * reasonCode.text = "Fractuur? Ligamentair letsel?"
 * authoredOn = "2022-01-01T00:00:00+01:00"

@@ -2,7 +2,6 @@ Instance: example22-referralprescription-nursing-medication
 InstanceOf: BeReferralServiceRequestNursingMedication
 Title: "example22-referralprescription-nursing-medication"
 Usage: #example
-* contained[+] = patient1
 //* contained[+] = practitionerrole1
 //* extension[performertasks].valueReference[+] = Reference(performer-task)
 //* extension[feedback].valueBoolean = true
@@ -16,8 +15,9 @@ Usage: #example
 * category.text = "Oral"
 * priority = #routine
 * medicationCodeableConcept = $cnk-codes#2727196 "Metoject inj. oploss. s.c. [voorgev. spuit] 12 x 15 mg / 0,3 ml"
-* subject = Reference(patient1)
-* requester = Reference(requesterrole1)
+* subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
+* subject.identifier.value = "99999999999"
+* requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * note.text = "medrol per os in afbouwschema, gedurende 4 dagen 2 tabl in 1 inname/dag, daarna gedurende 4 dagen 1 tabl/dag, daarna gedurende 4 dagen 0.5 tabl/dag"
 * dosageInstruction[0].text = "gedurende 4 dagen 2 tabl in 1 inname/dag"
 * dosageInstruction[=].timing.repeat.boundsDuration.value = 4

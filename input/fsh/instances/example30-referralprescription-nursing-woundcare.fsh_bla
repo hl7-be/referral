@@ -2,7 +2,6 @@ Instance: example30-referralprescription-nursing-woundcare
 InstanceOf: BeReferralServiceRequestNursingMedication
 Title: "example30-referralprescription-nursing-woundcare"
 Usage: #example
-* contained[+] = patient1
 //* contained[+] = practitionerrole1
 
 
@@ -18,8 +17,9 @@ Usage: #example
 * category.text = "Nursing procedure"
 * priority = #routine
 * medicationCodeableConcept = $cnk-codes#2501013 "Flaminal gel Hydro 1 x 50 g"
-* subject = Reference(patient1)
-* requester = Reference(requesterrole1)
+* subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
+* subject.identifier.value = "99999999999"
+* requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * reasonCode = $sct#195450002
 * note.text = "wound care codeset/valueset is still missing (see orderDetail)/ waar komt de medicatie Flaminal Hydro"
 * dosageInstruction.text = "some note about the dose"
