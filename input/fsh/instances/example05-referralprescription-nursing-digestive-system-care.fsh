@@ -1,6 +1,7 @@
 Instance: example05-referralprescription-nursing-digestive-system-care
 InstanceOf: BeReferralServiceRequestNursing
-Title: "example05-referralprescription-nursing-digestive-system-care"
+Title: "Example 5: Digestive System care"
+Description: "One Care Prescription"
 Usage: #example
 //* contained[+] = practitionerrole1
 

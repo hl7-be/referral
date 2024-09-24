@@ -32,6 +32,7 @@ InstanceOf: BeReferralServiceRequestNursing
 
 Instance: referral-task-uc5a-1 //we cannot throw it away, because we need the statusReason!!!
 InstanceOf: BeReferralTask
+Usage: #definition
 * status = #completed
 * intent = #order
 * focus = Reference(uc5a-1)
@@ -40,6 +41,7 @@ InstanceOf: BeReferralTask
 
 Instance: performer-task-1-uc5a-1
 InstanceOf: BePerformerTask
+Usage: #definition
 * authoredOn = "2020-01-01T00:00:00+01:00"
 * status = #completed
 * intent = #order

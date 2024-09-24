@@ -27,11 +27,11 @@ Usage: #example
 //* supportingInfo[+] = Reference(dementia-condition)
 * intent = #proposal
 
-Instance: dementia-condition
-InstanceOf: BeProblem
-* code = $sct#52448006
-* recordedDate = "2024-03-11"
-* recorder = Reference(requesterrole1)
-* subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
-* subject.identifier.value = "99999999999"
-* category = https://www.ehealth.fgov.be/standards/fhir/core-clinical/CodeSystem/be-cs-problem-category#diagnosis
+//Instance: dementia-condition
+//InstanceOf: BeProblem
+//* code = $sct#52448006
+//* recordedDate = "2024-03-11"
+//* recorder = Reference(requesterrole1)
+//* subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
+//* subject.identifier.value = "99999999999"
+//* category = https://www.ehealth.fgov.be/standards/fhir/core-clinical/CodeSystem/be-cs-problem-category#diagnosis

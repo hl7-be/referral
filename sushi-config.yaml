@@ -12,9 +12,9 @@ releaseLabel: STU
 jurisdiction: urn:iso:std:iso:3166#BE "Belgium"
 dependencies:
   hl7.fhir.be.core: current
-  hl7.fhir.be.medication: 1.0.0
+  #hl7.fhir.be.medication: 1.0.0
   hl7.fhir.be.core-clinical: current
-  hl7.fhir.be.allergy: 1.1.0
+  #hl7.fhir.be.allergy: 1.1.0
   hl7.fhir.extensions.r4: 4.0.1
   hl7.fhir.extensions.r5: 4.0.1
 
@@ -77,3 +77,113 @@ parameters:
   apply-publisher: 'true'
   apply-version: 'true'
   path-expansion-params: Parameters-terminology-expansion.json
+
+resources:
+  ServiceRequest/example01-care02-colon-cleansing:
+    name: "Example 1b: Colon Cleansing"
+    description: One Care Referral Prescription
+  ServiceRequest/example02-referralprescription-nursing-digestive-system-care:
+    name: "Example 2: Digestive System Care"
+    description: One Care Referral Prescription
+  ServiceRequest/example03-referralprescription-nursing-compressiontherapy:
+    name: "Example 3: Compression therapy"
+    description: One Care Referral Prescription
+  ServiceRequest/example09-referralprescription-nursing-woundcare:
+    name: "Example 9: Wound care"
+    description: One Care Referral Prescription 
+  ServiceRequest/example12-referralprescription-nursing-annex81:
+    name: "Example 12: Annex 81"
+    description: Annex 81 proposal
+  ServiceRequest/example24-referralprescription-nursing-non-reimbursable:
+    name: "Example 24: Non reimbursable prescription"
+    description: One Care Referral Prescription
+  ServiceRequest/example26-referralprescription-nursing-other:
+    name: "Example 26: Generic prescription"
+    description: One Care Referral Prescription
+  ServiceRequest/example32-referralprescription-nursing-chronical-psychiatric:
+    name: "Example 32: Chronical Psychiatric"
+    description: One Care Referral Prescription
+  ServiceRequest/referralprescription-nursing-example2-digestive-system-care:
+    name: "Example 2b: Digestive System Care"
+    description: One Care Referral Prescription
+  ServiceRequest/referralprescription-nursing-example3-compression-therapy:
+    name: "Example 3b: Compression therapy"
+    description: One Care Referral Prescription
+  ServiceRequest/referralprescription-nursing-example5-digestive-system-care:
+    name: "Example 5: Digestive System Care"
+    description: One Care Referral Prescription
+  ServiceRequest/referralprescription-nursing-example6-compression-therapy:
+    name: "Example 6: Compression therapy"
+    description: One Care Referral Prescription
+  ServiceRequest/uc5a-1:
+    name: "Use Case 5a"
+    description: "On 02/07/2023, Dr. Hendrickx wants the nurse to take a blood test from Mrs. Dupont in order to analyze her glucose and cholesterol following general fatigue.\nHe writes a prescription for the nurse with the blood test to be done on Mrs. Dupont.\nThe nurse takes Mrs. Dupont's blood test the next day.\nImportant note: The part specifying that the analysis request concerns Mrs. Dupont's glucose and cholesterol should not be on this prescription. This is linked to the prescription for the Lab."
+  ServiceRequest/ucgh222p12-1:
+    name: "Use Case 1.2: see GitHub issue 222"
+    description: |
+      On 03/10/2022, Patient who has recently had chemotherapy via 
+      “implantable venous access port catheter” goes to doctor who prescribes 
+      a catheter dressing change and rinse of his/her “implantable venous access 
+      port catheter” (via CareSet ServiceRequest- group- and Device) with NaCl 
+      0.9% given by a nurse. Furthermore, the needle needs to be changed by a Huber 
+      needle 20G x 25mm.
+  ServiceRequest/ucgh222p12-2:
+    name: "Use Case 1.2: see GitHub issue 222"
+  ServiceRequest/ucgh222p12-3:
+    name: "Use Case 1.2: see GitHub issue 222"
+  ServiceRequest/ucgh241p15-1:
+    name: "Use Case 1.5: see GitHub issue 241"
+    description: |
+      On 03/10/2022, the patient consults his doctor (prescriber) and admits he has difficulty following his medication-treatment.
+      The prescriber detects no valid reason (“medical reason” via CareSet ProbCode) for refundable medication preparation (appendix 81) so he tells his patient that the asked help for his medication preparation will not be refundable. The patient still wants help even if it is not refundable. The prescriber completes the digital prescription for “medication prefill preparation – not refundable”. The digital prescription cannot be completed without the signature of the prescriber. As all “required signatures conditions” are fulfilled, the PrescriptionStatus is automatically set from Draft to Pending/Active. (In our Case “Active”).
+      The prescriber also prepares the medication scheme so the nurse that will be assigned to this prescription has all the necessary information to prepare the medication and fill the pillbox of the patient. He gives the medication scheme to the patient so that he can give it to his nurse.
+      The patient assigns a nurse to his prescription via the digital application. The assigned nurse consults the digital prescription via the digital application.
+      On 06/10/2022, the nurse goes to the patient who gives her his medication scheme. On a weekly basis, the nurse goes to the patient to prepare his medication and fill his pillbox according to the medication scheme received. This service is not refundable, and the nurse charges the patient himself.
+  ServiceRequest/ucgh241p16-1:
+    name: "Use Case 1.6: see GitHub issue 241"
+    description: |
+      On 03/10/2022, a patient goes to a doctor (prescriber) and is diagnosed as a diabetic type 1.
+      The patient is treated for his diabetes type 1 in a specialised convention center. This center has a convention about reimbursement with NIHDI. The patient needs some support at home and the convention center delegates care to a home nurse. The convention center has an agreement with this home nurse about remuneration.
+      The convention center physician (prescriber) makes a digital prescription “Diabetes education via convention center” via the digital application and specifies the type of education needed by the patient: “diabetic self-management”. The digital prescription cannot be completed without the signature of the prescriber. As all “required signatures conditions” are fulfilled, the PrescriptionStatus is automatically set from Draft to Pending/Active. (In our Case “Active”).
+      The convention centre enters the prescription ID in the digital application and, with consent of the patient, assigns their diabetes educator as caregiver of the prescription.
+      On 06/10/2022, the patient goes to the convention centre and follows his class on “diabetic self-management”.
+  ServiceRequest/ucgh241p17-1:
+    name: "Use Case 1.7: see GitHub issue 241"
+    description: |
+      On 03/10/2022, a 55-year-old patient who has diabetes type 2, a BMI < 30, arterial hypertension and a care model (zorgmodel) goes to a doctor (prescriber) who detects the need for diabetes education for the patient.
+      The prescriber prescribes 4 individual education sessions given by a nurse or a diabetes educator. The prescriber completes the digital prescription “Diabetes education with care model (preliminary path) – follow up of patients with diabetes type 2”. The digital prescription cannot be completed without the signature of the prescriber. As all “required signatures conditions” are fulfilled, the PrescriptionStatus is automatically set from Draft to Pending/Active. (In our Case “Active”).
+      The patient assigns his nurse to this prescription via the digital application.
+      The nurse consults the digital prescription he/she has been assigned to.
+      On 06/10/2022, the nurse meets the patient for a first diabetes education individual session. The three other individual sessions are planned (within the current year).
+  ServiceRequest/ucgh241p18-1:
+    name: "Use Case 1.8: see GitHub issue 241"
+    description: |
+      On 03/10/2022, a type 2 diabetic patient who has insulin treatment, a care path contract, and a complete global medical file (GMF) goes to a doctor (prescriber) who recommends to his patient 5 individual ½ hour education sessions about the “use of a blood glucose meter”. This session needs to be given by a diabetes educator (with recognition by NIHDI) at the residence of the patient to be refundable.
+      The prescriber completes the digital prescription “Diabetes education with care path” via the digital application. The digital prescription cannot be completed without the signature of the prescriber. As all “required signatures conditions” are fulfilled, the PrescriptionStatus is automatically set from Draft to Pending/Active. (In our Case “Active”).
+      The patient assigns his nurse (who is a certified diabetes educator) to this prescription via the digital application.
+      The diabetes educator consults the digital prescription he/she is assigned to.
+      On 06/10/2022, the diabetes educator goes to the patient’s home (with the blood glucose meter) for a first ½ hour individual diabetes education session about “use of a blood glucose meter”. The four other individual sessions are planned (within the current year).
+  ServiceRequest/ucgh241p19-1:
+    name: "Use Case 1.9: see GitHub issue 241"
+    description: |
+      On 03/10/2022, a diabetic patient goes to his doctor (prescriber) because he has some troubles about the self-management of his treatment.
+      The prescriber prescribes to his patient 10 sessions of ½ hour each of “education for self-care”. The prescriber fills in the digital prescription “Education and self-care for diabetes patients without a care path” via the digital application. The digital prescription cannot be completed without the signature of the prescriber. As all “required signatures conditions” are fulfilled, the PrescriptionStatus is automatically set from Draft to Pending/Active. (In our Case “Active”).
+      The patient assigns his nurse to this prescription via the digital application.
+      The nurse consults the digital prescription he/she is assigned to.
+      On 06/10/2022, the nurse meets the patient for a first diabetes education session. The nine other sessions are planned (within the current year).
+  ServiceRequest/ucgh241p110-1:
+    name: "Use Case 1.10: see GitHub issue 241"
+    description: |
+      On 03/10/2022, the patient who suffers from Parkingson’s disease goes to the doctor (prescriber) who detects that his patient needs assistance with his personal hygiene. The patient is disoriented in time and space and also has nocturnal urinary incontinence and occasional urinary incontinence.
+      The prescriber completes the digital prescription “Assisting with personal hygiene” via the digital prescription. The prescriber makes one attest for disorientation in time and space and another one for nocturnal urinary incontinence and occasional urinary incontinence. The prescriber gives both attests to the patient. The digital prescription cannot be completed without the signature of the prescriber. As all “required signatures conditions” are fulfilled, the PrescriptionStatus is automatically set from Draft to Pending/Active. (In our Case “Active”).
+      The patient assigns his nurse to this prescription via the digital application.
+      The nurse consults the digital prescription he/she is assigned to.
+      On 06/10/2022, the nurse goes to the patient’s home. The patient gives her his two attests. The nurse starts the care following the instructions on the digital prescription. She determines the patient score on a Katz scale (or index) and sends this to the consulting physician for refund determination.
+  ServiceRequest/ucgh241p111-1:
+    name: "Use Case 1.11: see GitHub issue 241"
+    description: |
+      On 03/10/2022, a patient goes to the doctor (prescriber) who diagnoses kidney failure and a loss of blood pressure. The patient is treated for his disease in a convention center.
+      In order to prevent the loss of residual renal functions, the prescriber (working in the convention center) completes a digital prescription for “chronic peritoneal dialysis” via the digital application. The digital prescription cannot be completed without the signature of the prescriber. As all “required signatures conditions” are fulfilled, the PrescriptionStatus is automatically set from Draft to Pending/Active. (In our Case “Active”).
+      The patient assigns his nurse to this prescription via the digital application. This nurse has made an agreement with the convention center about remuneration and receives orders by the prescriber of the convention center.
+      The nurse consults the digital prescription he/she is assigned to.
+      On 06/10/2022, the patient meets the nurse which follows instructions on prescription and starts the care.

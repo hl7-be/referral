@@ -30,15 +30,17 @@ Usage: #example
 
 Instance: example01-care02-colon-cleansing-referral-task
 InstanceOf: BeReferralTask
+Usage: #definition
 * status = #draft
 * intent = #order
 * focus = Reference(example01-care02-colon-cleansing)
 
 Instance: example01-care02-colon-cleansing-performer-task
 InstanceOf: BePerformerTask
+Usage: #definition
 * authoredOn = "2020-01-01T00:00:00+01:00"
 * status = #draft
 * intent = #order
 * partOf = Reference(example01-care02-colon-cleansing-referral-task)
-* owner = Reference(practitionerrole1)
+* owner.reference = "PractitionerRole/NURSE-45094508408"
 * executionPeriod.id = "1"

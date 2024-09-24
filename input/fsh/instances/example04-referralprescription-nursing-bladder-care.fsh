@@ -1,6 +1,7 @@
 Instance: example04-referralprescription-nursing-bladder-care
 InstanceOf: BeReferralServiceRequestNursing
-Title: "example04-referralprescription-nursing-bladder-care"
+Title: "Example 4: Bladder care"
+Description: "One Care Prescription"
 Usage: #example
 //* contained[+] = practitionerrole1
 
