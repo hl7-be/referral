@@ -1,30 +1,6 @@
 {
   "codeSystems" : [
     {
-      "url" : "http://dicom.nema.org/resources/ontology/DCM",
-      "version" : "01",
-      "status" : "active",
-      "name" : "DICOM Controlled Terminology Definitions",
-      "title" : null,
-      "description" : "DICOM Code Definitions (Coding Scheme Designator \"DCM\" Coding Scheme Version \"01\")",
-      "oids" : ["1.2.840.10008.2.16.4"],
-      "uses" : {
-      },
-      "http://tx.fhir.org/r4/ValueSet/dicom-cid-29-AcquisitionModality" : "AcquisitionModality"
-    },
-    {
-      "url" : "http://hl7.org/fhir/contact-point-system",
-      "version" : "4.0.1",
-      "status" : "active",
-      "name" : "ContactPointSystem",
-      "title" : "ContactPointSystem",
-      "description" : "Telecommunications form for contact point.",
-      "oids" : ["2.16.840.1.113883.4.642.4.72"],
-      "uses" : {
-      },
-      "ValueSet-be-vs-communication-method.html" : "BeCommunicationMethod"
-    },
-    {
       "url" : "http://hl7.org/fhir/request-intent",
       "version" : "4.0.1",
       "status" : "draft",
@@ -34,7 +10,8 @@
       "oids" : ["2.16.840.1.113883.4.642.4.114"],
       "uses" : {
       },
-      "ValueSet-be-vs-request-intent.html" : "BeVsRequestIntent"
+      "ValueSet-be-vs-request-intent.html" : "BeVSRequestIntent",
+      "ValueSet-be-vs-task-intent.html" : "BeVSTaskIntent"
     },
     {
       "url" : "http://hl7.org/fhir/request-status",
@@ -49,18 +26,6 @@
       "http://hl7.org/fhir/R4/valueset-request-status.html" : "RequestStatus"
     },
     {
-      "url" : "http://hl7.org/fhir/task-status",
-      "version" : "4.0.1",
-      "status" : "draft",
-      "name" : "TaskStatus",
-      "title" : "TaskStatus",
-      "description" : "The current status of the task.",
-      "oids" : ["2.16.840.1.113883.4.642.4.791"],
-      "uses" : {
-      },
-      "ValueSet-be-vs-co-prescription-status.html" : "BeCoPrescriptionStatus"
-    },
-    {
       "url" : "http://snomed.info/sct",
       "version" : null,
       "status" : "active",
@@ -70,16 +35,17 @@
       "oids" : ["2.16.840.1.113883.6.96"],
       "uses" : {
       },
-      "ValueSet-be-vs-referral-category.html" : "BeReferralCategory",
-      "ValueSet-be-vs-requested-services-nurse-detail.html" : "BeVSRequestedServicesNurseDetail",
-      "ValueSet-be-vs-requested-services-nurse.html" : "BeVSRequestedServicesNurse",
-      "ValueSet-be-vs-request-note-type.html" : "BeVSRequestNoteType",
       "ValueSet-be-vs-bodysite-nursing.html" : "Body Site",
-      "http://hl7.org/fhir/R4/valueset-procedure-code.html" : "Procedure Codes (SNOMED CT)"
+      "ValueSet-be-vs-annex-81-reason-code.html" : "BeVSAnnex81ReasonCode",
+      "ValueSet-be-vs-requested-services-nurse-detail.html" : "BeVSRequestedServicesNurseDetail",
+      "ValueSet-be-vs-referral-category.html" : "BeReferralCategory",
+      "ValueSet-be-vs-request-note-type.html" : "BeVSRequestNoteType",
+      "http://hl7.org/fhir/R4/valueset-procedure-code.html" : "Procedure Codes (SNOMED CT)",
+      "ValueSet-be-vs-requested-services-nurse.html" : "BeVSRequestedServicesNurse"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-      "version" : "2.1.0",
+      "version" : "3.1.0",
       "status" : "active",
       "name" : "ActReason",
       "title" : "ActReason",
@@ -91,36 +57,14 @@
     },
     {
       "url" : "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty",
-      "version" : "2.1.0",
+      "version" : "2.1.2",
       "status" : "active",
       "name" : "HCParty",
       "title" : "BeCdHcParty",
       "description" : "healthcare party in Belgium.",
       "uses" : {
       },
-      "https://build.fhir.org/ig/hl7-be/core//ValueSet-be-vs-cd-hcparty.html" : "List of health care parties in Belgium"
-    },
-    {
-      "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-communication-code",
-      "version" : "1.0.0",
-      "status" : "draft",
-      "name" : "BeCommunicationCode",
-      "title" : "BeCommunicationCode",
-      "description" : "Communication codes in Belgium. To define a specific method of communicating. Initially defined as supporting CodeSystem for the referral prescription.",
-      "uses" : {
-      },
-      "ValueSet-be-vs-communication-method.html" : "BeCommunicationMethod"
-    },
-    {
-      "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-co-prescriber-choice",
-      "version" : "1.0.0",
-      "status" : "draft",
-      "name" : "BeCSCoPrescriberChoice",
-      "title" : "BeCSCoPrescriberChoice",
-      "description" : "Type of intended performer choice",
-      "uses" : {
-      },
-      "ValueSet-be-vs-co-prescriber-choice.html" : "BeVsCoPrescriberChoice"
+      "https://build.fhir.org/ig/hl7-be/core/ValueSet-be-vs-cd-hcparty.html" : "BeVSCdHcParty"
     },
     {
       "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service",
@@ -145,17 +89,6 @@
       "ValueSet-be-vs-requested-services-nurse-detail.html" : "BeVSRequestedServicesNurseDetail"
     },
     {
-      "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-proposal-type",
-      "version" : "1.0.0",
-      "status" : "draft",
-      "name" : "BePrescriptionProposalType",
-      "title" : "BePrescriptionProposalType",
-      "description" : "Prescription Proposal Type. Indicates the type of proposal (new or prolongation) as from the uses cases by NIHDI",
-      "uses" : {
-      },
-      "ValueSet-be-vs-proposal-type.html" : "BeVsProposalType"
-    },
-    {
       "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason",
       "version" : "1.0.0",
       "status" : "draft",
@@ -176,17 +109,6 @@
       "uses" : {
       },
       "ValueSet-be-vs-treatment-status-reason.html" : "BeVSTreatmentStatusReason"
-    },
-    {
-      "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-vs-contrastfluid-use",
-      "version" : "1.0.0",
-      "status" : "draft",
-      "name" : "BeContrastFluidUse",
-      "title" : "BeContrastFluidUse",
-      "description" : "Whether use of contrast fluid should be considered.",
-      "uses" : {
-      },
-      "ValueSet-be-vs-contrastfluid-use.html" : "BeContrastFluidUse"
     }
   ]
 }

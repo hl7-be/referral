@@ -60,7 +60,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Task.intent","Task.intent","","","",1,1,"Y","","Y","code {[]} {[]}
 ","unknown | proposal | plan | order | original-order | reflex-order | filler-order | instance-order | option","Indicates the ""level"" of actionability associated with the Task, i.e. i+R[9]Cs this a proposed task, a planned task, an actionable task, etc.","This element is immutable.  Proposed tasks, planned tasks, etc. must be distinct instances.
 
-In most cases, Tasks will have an intent of ""order"".","","","","","","","","",,"required","","https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-request-intent","",,,,"Task.intent",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+In most cases, Tasks will have an intent of ""order"".","","","","","","","","",,"required","","https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-task-intent","",,,,"Task.intent",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Request.intent",".moodCode","FiveWs.class"
 "Task.priority","Task.priority","","","",0,1,"","","","code {[]} {[]}
 ","routine | urgent | asap | stat","Indicates how quickly the Task should be addressed with respect to other requests.","","Used to identify the service level expected while performing a task.","","If missing, this task should be performed with normal priority","","","","","",,"required","The task's priority.","http://hl7.org/fhir/ValueSet/request-priority|4.0.1","",,,,"Task.priority",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -71,7 +71,7 @@ In most cases, Tasks will have an intent of ""order"".","","","","","","","","",
 "Task.description","Task.description","","","",0,1,"","","Y","string {[]} {[]}
 ","Human-readable explanation of task","A free-text description of what is to be performed.","","","","","","","","","",,,,,"",,,,"Task.description",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".text"
-"Task.focus","Task.focus","","","",0,1,"Y","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Resource]]}
+"Task.focus","Task.focus","","","",0,1,"Y","","Y","Reference {[]} {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest], CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-annex-81]]}
 ","What task is acting on","The request being actioned or the resource being manipulated by this task.","If multiple resources need to be manipulated, use sub-tasks.  (This ensures that status can be tracked independently for each referenced resource.).","Used to identify the thing to be done.","","","","","","","",,,,,"",,,,"Task.focus",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=SUBJ].target","FiveWs.what[x]"
 "Task.for","Task.for","","Patient

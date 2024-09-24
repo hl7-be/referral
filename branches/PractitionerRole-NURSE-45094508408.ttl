@@ -1,0 +1,34 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/referral/PractitionerRole/NURSE-45094508408> a fhir:PractitionerRole ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "NURSE-45094508408"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole"^^xsd:anyURI ;
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: PractitionerRole NURSE-45094508408</b></p><a name=\"NURSE-45094508408\"> </a><a name=\"hcNURSE-45094508408\"> </a><a name=\"NURSE-45094508408-en-US\"> </a><p><b>practitioner</b>: <a href=\"Practitioner-practitioner2.html\">Practitioner Christopher Chapel (official)</a></p><p><b>code</b>: <span title=\"Codes:{https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty persnurse}\">nurse</span></p></div>"
+  ] ; # 
+  fhir:practitioner [
+     fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Practitioner/practitioner2> ;
+     fhir:reference [ fhir:v "Practitioner/practitioner2" ]
+  ] ; # 
+  fhir:code ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "persnurse" ] ;
+       fhir:display [ fhir:v "nurse" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,58 @@
+{
+  "resourceType" : "GraphDefinition",
+  "id" : "full-referral-prescription",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: GraphDefinition full-referral-prescription</b></p><a name=\"full-referral-prescription\"> </a><a name=\"hcfull-referral-prescription\"> </a><a name=\"full-referral-prescription-en-US\"> </a><p><b>url</b>: <a href=\"GraphDefinition-full-referral-prescription.html\">GraphDefinition full-referral-prescription</a></p><p><b>name</b>: full-referral-prescription</p><p><b>status</b>: Active</p><p><b>date</b>: 2024-09-20 15:31:51+0200</p><p><b>description</b>: </p><div><p>Specify to include all useful resources around a ServiceRequest that can be retrieved with the $graph operation.</p>\n</div><p><b>start</b>: ServiceRequest</p><blockquote><p><b>link</b></p><p><b>path</b>: ServiceRequest.requester</p><p><b>min</b>: 1</p><p><b>max</b>: 1</p><p><b>description</b>: Get the PractitionerRole of the requester of the ServiceRequest</p><blockquote><p><b>target</b></p><p><b>type</b>: PractitionerRole</p><blockquote><p><b>link</b></p></blockquote></blockquote></blockquote><blockquote><p><b>link</b></p><p><b>min</b>: 1</p><p><b>description</b>: Get all Tasks corresponding to the BeReferralTask + all BePerformerTasks linked to the ServiceRequest</p><blockquote><p><b>target</b></p><p><b>type</b>: Task</p><p><b>params</b>: focus={ref}</p><blockquote><p><b>link</b></p></blockquote></blockquote></blockquote></div>"
+  },
+  "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/GraphDefinition/full-referral-prescription",
+  "name" : "full-referral-prescription",
+  "status" : "active",
+  "date" : "2024-09-20T15:31:51+02:00",
+  "description" : "Specify to include all useful resources around a ServiceRequest that can be retrieved with the $graph operation.",
+  "start" : "ServiceRequest",
+  "link" : [{
+    "path" : "ServiceRequest.requester",
+    "min" : 1,
+    "max" : "1",
+    "description" : "Get the PractitionerRole of the requester of the ServiceRequest",
+    "target" : [{
+      "type" : "PractitionerRole",
+      "link" : [{
+        "path" : "PractitionerRole.practitioner",
+        "min" : 1,
+        "max" : "1",
+        "description" : "Get the Practitioner of the requester of the ServiceRequest",
+        "target" : [{
+          "type" : "Practitioner"
+        }]
+      }]
+    }]
+  },
+  {
+    "min" : 1,
+    "description" : "Get all Tasks corresponding to the BeReferralTask + all BePerformerTasks linked to the ServiceRequest",
+    "target" : [{
+      "type" : "Task",
+      "params" : "focus={ref}",
+      "link" : [{
+        "path" : "Task.owner",
+        "min" : 1,
+        "max" : "1",
+        "description" : "Get the PractitionerRole of the caregiver owner of the task",
+        "target" : [{
+          "type" : "PractitionerRole",
+          "link" : [{
+            "path" : "PractitionerRole.practitioner",
+            "min" : 1,
+            "max" : "1",
+            "description" : "Get the Practitioner of the caregiver owner of the task",
+            "target" : [{
+              "type" : "Practitioner"
+            }]
+          }]
+        }]
+      }]
+    }]
+  }]
+}

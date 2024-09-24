@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="be-op-approve-annex81"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: OperationDefinition be-op-approve-annex81</b></p><a name="be-op-approve-annex81"> </a><a name="hcbe-op-approve-annex81"> </a><a name="be-op-approve-annex81-en-US"> </a><p>URL: [base]/ServiceRequest/[id]/$approve</p><h3>Parameters</h3><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>annex81</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/servicerequest.html">ServiceRequest</a></td><td/><td><div><p>the instance the approval applies to</p>
+</div></td></tr><tr><td>IN</td><td>note</td><td/><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#markdown">markdown</a></td><td/><td><div><p>additional information for the approval</p>
+</div></td></tr><tr><td>OUT</td><td>location</td><td/><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td/><td><div><p>refId for the newly created approval</p>
+</div></td></tr></table></div>
+  </text>
+  <url value="https://www.ehealth.fgov.be/standards/fhir/referral/OperationDefinition/be-op-approve-annex81"/>
+  <version value="1.0.0"/>
+  <name value="approve"/>
+  <title value="BeOpApproveAnnex81"/>
+  <status value="draft"/>
+  <kind value="operation"/>
+  <date value="2024-09-24T14:40:03+00:00"/>
+  <description value="Creates an approval from an Annex81 proposal"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="BE"/>
+      <display value="Belgium"/>
+    </coding>
+  </jurisdiction>
+  <affectsState value="false"/>
+  <code value="approve"/>
+  <resource value="ServiceRequest"/>
+  <system value="false"/>
+  <type value="false"/>
+  <instance value="true"/>
+  <parameter>
+    <name value="annex81"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="the instance the approval applies to"/>
+    <type value="ServiceRequest"/>
+  </parameter>
+  <parameter>
+    <name value="note"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="additional information for the approval"/>
+    <type value="markdown"/>
+  </parameter>
+  <parameter>
+    <name value="location"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="refId for the newly created approval"/>
+    <type value="string"/>
+  </parameter>
+</OperationDefinition>
