@@ -4,7 +4,7 @@ Title: "referralprescription-nursing-example3-compression-therapy"
 Usage: #example
 //* contained[+] = practitionerrole1
 
-* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
+//* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
 * extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 * extension[validity].valuePeriod.start = "2020-01-01"
