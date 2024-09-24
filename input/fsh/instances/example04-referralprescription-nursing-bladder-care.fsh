@@ -4,7 +4,7 @@ Title: "example04-referralprescription-nursing-bladder-care"
 Usage: #example
 //* contained[+] = practitionerrole1
 
-* extension[statusReason].valueCodeableConcept = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason#inProgress "In Progress"
+//* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"
 //* extension[feedback].valueBoolean = true

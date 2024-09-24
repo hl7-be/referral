@@ -9,7 +9,7 @@ Instance: uc5a-1
 InstanceOf: BeReferralServiceRequestNursing
 * code = $sct#17636008
 * orderDetail = $sct#87612001
-* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
+//* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * reasonCode = $sct#267032009 
 * requester.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"
 * requester.identifier.value = "10829059004"

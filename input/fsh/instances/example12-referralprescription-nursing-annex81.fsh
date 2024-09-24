@@ -3,7 +3,7 @@ InstanceOf: BeAnnex81
 Title: "example12-referralprescription-nursing-annex81"
 Usage: #example
 //* contained[+] = dementia-condition
-* extension[statusReason].valueCodeableConcept = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason#inProgress "In Progress"
+//* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"
 //* extension[feedback].valueBoolean = true

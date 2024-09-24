@@ -4,7 +4,7 @@ Title: "referralprescription-nursing-example2-digestive-system-care"
 Usage: #example
 //* contained[+] = practitionerrole1
 
-* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
+//* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * extension[validity].valuePeriod.start = "2020-10-10"
 * extension[validity].valuePeriod.start = "2021-10-10"
 //* extension[feedback].valueBoolean = true
