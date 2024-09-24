@@ -1,13 +1,13 @@
-Profile: BeContainedOrLogicalReference
+Profile: BeNoContainedReference
 Parent: Reference
-Id: be-contained-or-logical-reference
-Description: "A reference limited to contained resources or resources with a logical identifier."
+Id: be-no-contained-reference
+Description: "A reference disallowing the use of contained references"
 * reference MS
 * identifier MS
-* obeys be-inv-contained-or-logical-reference
+* obeys be-inv-no-contained-reference
 
 
-Invariant:   be-inv-contained-or-logical-reference
-Description: "A reference must refer to a contained resource or have a logical identifier"
-Expression:  "reference.empty().not() or identifier.empty().not()"
+Invariant:   be-inv-no-contained-reference
+Description: "A reference must have a literal or  logical identifier"
+Expression:  "reference.empty().not() and (reference.empty().not() implies reference.toString().startsWith('#').not()) or identifier.empty().not()"
 Severity:    #error

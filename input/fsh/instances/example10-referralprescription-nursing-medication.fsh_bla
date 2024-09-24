@@ -2,7 +2,6 @@ Instance: example10-referralprescription-nursing-medication
 InstanceOf: BeReferralServiceRequestNursingMedication
 Title: "example10-referralprescription-nursing-medication"
 Usage: #example
-* contained[+] = patient1
 //* contained[+] = practitionerrole1
 //* extension[performertasks].valueReference[+] = Reference(performer-task)
 //* extension[feedback].valueBoolean = true
@@ -16,8 +15,9 @@ Usage: #example
 * category.text = "vaginal"
 * priority = #routine
 * medicationCodeableConcept = $cnk-codes#2966893 "Vagifem vag. tabl. 18 x 10 µg"
-* subject = Reference(patient1)
-* requester = Reference(requesterrole1)
+* subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
+* subject.identifier.value = "99999999999"
+* requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * note.text = "vagifem vaginaal inbrengen"
 * dosageInstruction.text = "Frequency: 6 months - 1 X every 3 weeks"
 * dosageInstruction.timing.repeat.boundsPeriod.start = "2021-06-30"

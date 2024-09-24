@@ -2,7 +2,6 @@ Instance: example23-referralprescription-nursing-medication
 InstanceOf: BeReferralServiceRequestNursingMedication
 Title: "example23-referralprescription-nursing-medication"
 Usage: #example
-* contained[+] = patient1
 //* contained[+] = practitionerrole1
 
 
@@ -18,8 +17,9 @@ Usage: #example
 * category.text = "Auricular"
 * priority = #routine
 * medicationCodeableConcept = $cnk-codes#0105965 "Cerulyx auric. druppels oploss. 10 ml 455 mg / 10 ml"
-* subject = Reference(patient1)
-* requester = Reference(requesterrole1)
+* subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
+* subject.identifier.value = "99999999999"
+* requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * note.text = "in beide oren, daarna 10 minuten op zij blijven liggen"
 * dosageInstruction.text = "frequency: 3 druppels 3x/dag gedurende 5 dagen"
 * dosageInstruction.patientInstruction = "daarna 10 minuten op zij blijven liggen"

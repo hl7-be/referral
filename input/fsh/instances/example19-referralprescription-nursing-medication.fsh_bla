@@ -2,7 +2,6 @@ Instance: example19-referralprescription-nursing-medication
 InstanceOf: BeReferralServiceRequestNursingMedication
 Title: "example19-referralprescription-nursing-medication"
 Usage: #example
-* contained[+] = patient1
 //* contained[+] = practitionerrole1
 //* extension[performertasks].valueReference[+] = Reference(performer-task)
 //* extension[feedback].valueBoolean = true
@@ -16,8 +15,9 @@ Usage: #example
 * category.text = "Subcutaan"
 * priority = #routine
 * medicationCodeableConcept = $cnk-codes#0278192 "Clexane inj. oploss. i.v./s.c. [voorgev. spuit] 10 x 4 000 IE anti-Xa / 0,4 ml"
-* subject = Reference(patient1)
-* requester = Reference(requesterrole1)
+* subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
+* subject.identifier.value = "99999999999"
+* requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * dosageInstruction.text = "frequency: 2x/dag subcutaan toedienen, vanaf operatie tot 20/8/2021 of tot INR > 2"
 * dosageInstruction.timing.repeat.boundsPeriod.start = "1900-01-01"
 * dosageInstruction.timing.repeat.boundsPeriod.end = "2021-08-20"

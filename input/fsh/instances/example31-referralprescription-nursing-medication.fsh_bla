@@ -2,7 +2,6 @@ Instance: example31-referralprescription-nursing-medication
 InstanceOf: BeReferralServiceRequestNursingMedication
 Title: "example31-referralprescription-nursing-medication"
 Usage: #example
-* contained[+] = patient1
 //* contained[+] = practitionerrole1
 
 
@@ -17,8 +16,9 @@ Usage: #example
 * category = $sct#733925000
 * priority = #routine
 * medicationCodeableConcept = $cnk-codes#3499415 "Clamoxyl inj./inf. oploss. (pdr. + solv.) i.m./i.v. [flac. + amp.] 10 x 1 g"
-* subject = Reference(patient1)
-* requester = Reference(requesterrole1)
+* subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
+* subject.identifier.value = "99999999999"
+* requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * reasonCode = $sct#195450002
 * note.text = "1 X per dag aanbrengen op de wonde - ulcer variqueux infecté - MI droit Amoxicilline (antibiotique)"
 * dosageInstruction.text = "1 X per dag"

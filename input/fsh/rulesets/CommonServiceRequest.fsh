@@ -12,19 +12,19 @@ RuleSet: CommonServiceRequest
 * code ^binding.extension.valueString = "ServiceRequestCode"
 * code ^binding.description = "Codes for tests or services that can be carried out by a designated individual, organization or healthcare service."
 * orderDetail MS
-* subject only BeContainedOrLogicalReference
+* subject only BeNoContainedReference
 * subject only Reference(BePatient)
 * subject MS
 * occurrence[x] MS
 * occurrence[x] ^short = "When service shall occur - once this is past, this prescription is no longer valid and the status shall reflect this."
 * authoredOn 1.. MS
 * requester 1.. MS
-* requester only BeContainedOrLogicalReference
+* requester only BeNoContainedReference
 * requester only Reference(BePractitionerRole)
 * requester ^short = "Prescriber of the requested service"
 * performerType 0..0 MS
 * performer 0..0 MS
-* performer only BeContainedOrLogicalReference
+* performer only BeNoContainedReference
 * performer only Reference( BePractitionerRole )
 * performer ^short = "Requested performer - typically reference to practitionerroles"
 * reasonCode 0..1 MS

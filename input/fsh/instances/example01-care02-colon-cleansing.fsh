@@ -3,9 +3,8 @@ InstanceOf: BeReferralServiceRequestNursing
 Usage: #example
 //* contained[+] = referral-task
 //* contained[+] = performer-task
-* contained[+] = patient1
 ////* contained[+] = practitionerrole1
-* contained[+] = requesterrole1
+
 * extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * extension[validity].valuePeriod.start = "2020-01-01"
 * extension[validity].valuePeriod.end = "2021-01-01"
@@ -18,11 +17,12 @@ Usage: #example
 * category.text = "Nursing procedure"
 * priority = #routine
 * code = $sct#386225006
-* subject = Reference(patient1)
+* subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
+* subject.identifier.value = "99999999999"
 * occurrenceTiming.repeat.frequency = 1
 * occurrenceTiming.repeat.period = 1
 * occurrenceTiming.repeat.periodUnit = #d
-* requester = Reference(requesterrole1)
+* requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
 * extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 * reasonCode.text = "reason"

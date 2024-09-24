@@ -2,7 +2,6 @@ Instance: example17-referralprescription-nursing-medication
 InstanceOf: BeReferralServiceRequestNursingMedication
 Title: "example17-referralprescription-nursing-medication"
 Usage: #example
-* contained[+] = patient1
 //* contained[+] = practitionerrole1
 
 
@@ -18,8 +17,9 @@ Usage: #example
 * category.text = "Subcutaan"
 * priority = #routine
 * medicationCodeableConcept = $cnk-codes#2727196 "Metoject inj. oploss. s.c. [voorgev. spuit] 12 x 15 mg / 0,3 ml"
-* subject = Reference(patient1)
-* requester = Reference(requesterrole1)
+* subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
+* subject.identifier.value = "99999999999"
+* requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * note.text = "toedienen Metoject 15mg"
 * dosageInstruction.text = "Frequency: 1x per week, gedurende 12 weken, vanaf 29/6/2021"
 * dosageInstruction.timing.repeat.boundsDuration.value = 12
