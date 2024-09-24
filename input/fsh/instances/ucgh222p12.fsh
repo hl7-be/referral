@@ -78,6 +78,7 @@ InstanceOf: BeReferralServiceRequestNursing
 
 Instance: ucgh222p12-1-2
 InstanceOf: BeReferralTask
+Usage: #definition
 * focus = Reference(ucgh222p12-1)
 * status = #accepted
 * intent = #order
@@ -85,6 +86,7 @@ InstanceOf: BeReferralTask
 
 Instance: ucgh222p12-1-2-1
 InstanceOf: BeOrganizationTask
+Usage: #definition
 * authoredOn = "2020-01-01T00:00:00+01:00"
 * partOf = Reference(ucgh222p12-1-2)
 * focus = Reference(ucgh222p12-1)
@@ -96,6 +98,7 @@ InstanceOf: BeOrganizationTask
 
 Instance: ucgh222p12-2-2
 InstanceOf: BeReferralTask
+Usage: #definition
 * focus = Reference(ucgh222p12-2)
 * status = #accepted
 * intent = #order
@@ -103,6 +106,7 @@ InstanceOf: BeReferralTask
 
 Instance: ucgh222p12-2-2-1
 InstanceOf: BeOrganizationTask
+Usage: #definition
 * authoredOn = "2020-01-01T00:00:00+01:00"
 * partOf = Reference(ucgh222p12-2-2)
 * focus = Reference(ucgh222p12-2)
@@ -113,6 +117,7 @@ InstanceOf: BeOrganizationTask
 
 Instance: ucgh222p12-2-2-2
 InstanceOf: BePerformerTask
+Usage: #definition
 * authoredOn = "2020-01-01T00:00:00+01:00"
 //* contained[+] = ucgh222p12-2-2-2-1
 * partOf = Reference(ucgh222p12-2-2)

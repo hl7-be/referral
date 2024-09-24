@@ -1,6 +1,7 @@
 Instance: example06-referralprescription-nursing-compression-therapy
 InstanceOf: BeReferralServiceRequestNursing
-Title: "example06-referralprescription-nursing-compression-therapy"
+Title: "Example 6: Compression therapy"
+Description: "One Care Prescription"
 Usage: #example
 //* contained[+] = practitionerrole1
 
