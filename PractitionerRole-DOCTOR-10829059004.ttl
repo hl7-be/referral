@@ -1,0 +1,34 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/referral/PractitionerRole/DOCTOR-10829059004> a fhir:PractitionerRole ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "DOCTOR-10829059004"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole"^^xsd:anyURI ;
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: PractitionerRole DOCTOR-10829059004</b></p><a name=\"DOCTOR-10829059004\"> </a><a name=\"hcDOCTOR-10829059004\"> </a><a name=\"DOCTOR-10829059004-en-US\"> </a><p><b>practitioner</b>: <a href=\"Practitioner-Requester1.html\">Practitioner Leonard McCoy (official)</a></p><p><b>code</b>: <span title=\"Codes:{https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty persphysician}\">physician</span></p></div>"
+  ] ; # 
+  fhir:practitioner [
+     fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Practitioner/Requester1> ;
+     fhir:reference [ fhir:v "Practitioner/Requester1" ]
+  ] ; # 
+  fhir:code ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "persphysician" ] ;
+       fhir:display [ fhir:v "physician" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

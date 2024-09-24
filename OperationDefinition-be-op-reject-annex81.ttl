@@ -1,0 +1,53 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/referral/OperationDefinition/be-op-reject-annex81> a fhir:OperationDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "be-op-reject-annex81"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition be-op-reject-annex81</b></p><a name=\"be-op-reject-annex81\"> </a><a name=\"hcbe-op-reject-annex81\"> </a><a name=\"be-op-reject-annex81-en-US\"> </a><p>URL: [base]/ServiceRequest/[id]/$approve</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>annex81</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/servicerequest.html\">ServiceRequest</a></td><td/><td><div><p>the instance the rejection applies to</p>\n</div></td></tr><tr><td>IN</td><td>note</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#markdown\">markdown</a></td><td/><td><div><p>additional information for the rejections</p>\n</div></td></tr></table></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/OperationDefinition/be-op-reject-annex81"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.0.0"] ; # 
+  fhir:name [ fhir:v "reject"] ; # 
+  fhir:title [ fhir:v "BeOpRejectAnnex81"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:kind [ fhir:v "operation"] ; # 
+  fhir:date [ fhir:v "2024-09-24T14:40:03+00:00"^^xsd:dateTime] ; # 
+  fhir:description [ fhir:v "Rejects an Annex81 proposal"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BE" ] ;
+       fhir:display [ fhir:v "Belgium" ]
+     ] )
+  ] ) ; # 
+  fhir:affectsState [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:code [ fhir:v "approve"] ; # 
+  fhir:resource ( [ fhir:v "ServiceRequest"] ) ; # 
+  fhir:system [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:type [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:instance [ fhir:v "true"^^xsd:boolean] ; # 
+  fhir:parameter ( [
+     fhir:name [ fhir:v "annex81" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "the instance the rejection applies to" ] ;
+     fhir:type [ fhir:v "ServiceRequest" ]
+  ] [
+     fhir:name [ fhir:v "note" ] ;
+     fhir:use [ fhir:v "in" ] ;
+     fhir:min [ fhir:v "0"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:documentation [ fhir:v "additional information for the rejections" ] ;
+     fhir:type [ fhir:v "markdown" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

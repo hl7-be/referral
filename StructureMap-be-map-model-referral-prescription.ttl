@@ -10,13 +10,13 @@
   fhir:id [ fhir:v "be-map-model-referral-prescription"] ; # 
   fhir:text [
      fhir:status [ fhir:v "additional" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><pre>map &quot;https://www.ehealth.fgov.be/standards/fhir/referral/StructureMap/be-map-model-referral-prescription&quot; = &quot;be-map-model-referral-prescription&quot;\r\n\r\nuses &quot;https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-model-referralprescription&quot; alias BeModelReferralPrescription as source\r\nuses &quot;https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription&quot; alias BeReferralPrescription as target\r\n\r\n\r\n\r\ngroup Main(source model : BeModelReferralPrescription, target profile : BeReferralPrescription) {\r\n    model.recordedDate as a -&gt; profile.authoredOn = a;\r\n    model.recorder as recorder -&gt; profile.extension = create('Extension') as ext, \r\n        ext.url = &quot;https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-recorder&quot;, \r\n        ext.value = recorder;\r\n    model.prescriber as prescriber -&gt; profile.requester = prescriber;\r\n    model.'co-prescriberNr' as nr, model.'co-prescriber' as co -&gt; profile.extension = create('Extension') as ext,\r\n    ext.url = &quot;https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-co-prescriber-info&quot;, \r\n    ext.value = recorder'c0';\r\n     \r\n}\r\n\r\n\r\n\r\n</pre></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><pre>map &quot;https://www.ehealth.fgov.be/standards/fhir/referral/StructureMap/be-map-model-referral-prescription&quot; = &quot;be-map-model-referral-prescription&quot;\r\n\r\nuses &quot;https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-model-referralprescription&quot; alias BeModelReferralPrescription as source\r\nuses &quot;https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest&quot; alias BeReferralPrescription as target\r\n\r\n\r\n\r\ngroup Main(source model : BeModelReferralPrescription, target profile : BeReferralPrescription) {\r\n    model.recordedDate as a -&gt; profile.authoredOn = a;\r\n    model.recorder as recorder -&gt; profile.extension = create('Extension') as ext, \r\n        ext.url = &quot;https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-recorder&quot;, \r\n        ext.value = recorder;\r\n    model.prescriber as prescriber -&gt; profile.requester = prescriber;\r\n    model.'co-prescriberNr' as nr, model.'co-prescriber' as co -&gt; profile.extension = create('Extension') as ext,\r\n    ext.url = &quot;https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-co-prescriber-info&quot;, \r\n    ext.value = recorder'c0';\r\n     \r\n}\r\n\r\n\r\n\r\n</pre></div>"
   ] ; # 
   fhir:url [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureMap/be-map-model-referral-prescription"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "1.0.0"] ; # 
   fhir:name [ fhir:v "be-map-model-referral-prescription"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-03-15T09:12:22+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-09-24T14:40:03+00:00"^^xsd:dateTime] ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
        fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
@@ -33,8 +33,8 @@
      fhir:alias [ fhir:v "BeModelReferralPrescription" ]
   ] [
      fhir:url [
-       fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription"^^xsd:anyURI ;
-       fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription>
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest"^^xsd:anyURI ;
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest>
      ] ;
      fhir:mode [ fhir:v "target" ] ;
      fhir:alias [ fhir:v "BeReferralPrescription" ]

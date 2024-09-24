@@ -1,0 +1,53 @@
+{
+  "resourceType" : "OperationDefinition",
+  "id" : "be-op-approve-annex81",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: OperationDefinition be-op-approve-annex81</b></p><a name=\"be-op-approve-annex81\"> </a><a name=\"hcbe-op-approve-annex81\"> </a><a name=\"be-op-approve-annex81-en-US\"> </a><p>URL: [base]/ServiceRequest/[id]/$approve</p><h3>Parameters</h3><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>annex81</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/servicerequest.html\">ServiceRequest</a></td><td/><td><div><p>the instance the approval applies to</p>\n</div></td></tr><tr><td>IN</td><td>note</td><td/><td>0..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#markdown\">markdown</a></td><td/><td><div><p>additional information for the approval</p>\n</div></td></tr><tr><td>OUT</td><td>location</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td><div><p>refId for the newly created approval</p>\n</div></td></tr></table></div>"
+  },
+  "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/OperationDefinition/be-op-approve-annex81",
+  "version" : "1.0.0",
+  "name" : "approve",
+  "title" : "BeOpApproveAnnex81",
+  "status" : "draft",
+  "kind" : "operation",
+  "date" : "2024-09-24T14:40:03+00:00",
+  "description" : "Creates an approval from an Annex81 proposal",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "BE",
+      "display" : "Belgium"
+    }]
+  }],
+  "affectsState" : false,
+  "code" : "approve",
+  "resource" : ["ServiceRequest"],
+  "system" : false,
+  "type" : false,
+  "instance" : true,
+  "parameter" : [{
+    "name" : "annex81",
+    "use" : "in",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "the instance the approval applies to",
+    "type" : "ServiceRequest"
+  },
+  {
+    "name" : "note",
+    "use" : "in",
+    "min" : 0,
+    "max" : "1",
+    "documentation" : "additional information for the approval",
+    "type" : "markdown"
+  },
+  {
+    "name" : "location",
+    "use" : "out",
+    "min" : 1,
+    "max" : "1",
+    "documentation" : "refId for the newly created approval",
+    "type" : "string"
+  }]
+}

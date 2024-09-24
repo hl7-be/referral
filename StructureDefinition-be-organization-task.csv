@@ -60,7 +60,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Task.intent","Task.intent","","","",1,1,"","","Y","code {[]} {[]}
 ","unknown | proposal | plan | order | original-order | reflex-order | filler-order | instance-order | option","Indicates the ""level"" of actionability associated with the Task, i.e. i+R[9]Cs this a proposed task, a planned task, an actionable task, etc.","This element is immutable.  Proposed tasks, planned tasks, etc. must be distinct instances.
 
-In most cases, Tasks will have an intent of ""order"".","","","","","","","","",,"required","Distinguishes whether the task is a proposal, plan or full order.","http://hl7.org/fhir/ValueSet/task-intent|4.0.1","",,,,"Task.intent",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+In most cases, Tasks will have an intent of ""order"".","","","","","","","","",,"required","","https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-task-intent","",,,,"Task.intent",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Request.intent",".moodCode","FiveWs.class"
 "Task.priority","Task.priority","","","",0,1,"","","","code {[]} {[]}
 ","routine | urgent | asap | stat","Indicates how quickly the Task should be addressed with respect to other requests.","","Used to identify the service level expected while performing a task.","","If missing, this task should be performed with normal priority","","","","","",,"required","The task's priority.","http://hl7.org/fhir/ValueSet/request-priority|4.0.1","",,,,"Task.priority",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -85,10 +85,10 @@ In most cases, Tasks will have an intent of ""order"".","","","","","","","","",
 ","Start and end time of execution","Identifies the time action was first taken against the task (start) and/or the time final action was taken against the task prior to marking it as completed (end).","","","","","","","","","",,,,,"",,,,"Task.executionPeriod",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.occurrence[x]",".effectiveTime","FiveWs.done[x]"
 "Task.authoredOn","Task.authoredOn","","Created Date
-","",0,1,"","","","dateTime {[]} {[]}
+","",1,1,"Y","","","dateTime {[]} {[]}
 ","Task Creation Date","The date and time this task was created.","","Most often used along with lastUpdated to track duration of task to supporting monitoring and management.","","","","","","","",,,,,"",,,,"Task.authoredOn",0,1,"inv-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","Request.authoredOn",".participation[typeCode=AUT].time","FiveWs.recorded"
+be-inv-long-date:date SHALL contain a long date (YYYY-MM-DDThh:mm:ss+zz:zz) {empty() or toString().length()=25}","Request.authoredOn",".participation[typeCode=AUT].time","FiveWs.recorded"
 "Task.lastModified","Task.lastModified","","Update Date
 ","",0,1,"","","Y","dateTime {[]} {[]}
 ","Task Last Modified Date","The date and time of last modification to this task.","","Used along with history to track task activity and time in a particular task state.  This enables monitoring and management.","","","","","","","",,,,,"",,,,"Task.lastModified",0,1,"inv-1

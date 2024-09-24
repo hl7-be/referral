@@ -1,20 +1,6 @@
 {
   "codeSystems" : [
     {
-      "url" : "http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_29.html",
-      "version" : "2024.1.20240120",
-      "status" : "active",
-      "name" : "AcquisitionModality",
-      "title" : null,
-      "description" : "Transitive closure of CID 29 AcquisitionModality",
-      "systems" : ["http://dicom.nema.org/resources/ontology/DCM"],
-      "oids" : ["1.2.840.10008.6.1.19"],
-      "sources" : ["1.2.840.10008.6.1.19"],
-      "uses" : {
-      },
-      "StructureDefinition-be-referralprescription-diagnosticimaging.html" : "BeReferralPrescriptionDiagnosticImaging"
-    },
-    {
       "url" : "http://hl7.org/fhir/ValueSet/procedure-code",
       "version" : "4.0.1",
       "status" : "draft",
@@ -26,7 +12,7 @@
       "sources" : ["2.16.840.1.113883.4.642.3.427"],
       "uses" : {
       },
-      "StructureDefinition-be-referralprescription.html" : "BeReferralPrescription"
+      "StructureDefinition-be-referral-servicerequest.html" : "BeReferralServiceRequest"
     },
     {
       "url" : "http://hl7.org/fhir/ValueSet/request-status",
@@ -44,10 +30,10 @@
     },
     {
       "url" : "https://www.ehealth.fgov.be/standards/fhir/core/ValueSet/be-vs-cd-hcparty",
-      "version" : "2.1.0",
+      "version" : "2.1.2",
       "status" : "draft",
       "name" : "BeVSCdHcParty",
-      "title" : "List of health care parties in Belgium",
+      "title" : "BeVSCdHcParty",
       "description" : "List of health care parties in Belgium",
       "systems" : [
         "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty"
@@ -57,71 +43,25 @@
       "StructureDefinition-be-ext-performer-type.html" : "BePerformerType"
     },
     {
+      "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-annex-81-reason-code",
+      "version" : "1.0.0",
+      "status" : "draft",
+      "name" : "BeVSAnnex81ReasonCode",
+      "title" : "BeVSAnnex81ReasonCode",
+      "description" : "Nurse diagnostics and observations giving cause to the Annex 81",
+      "systems" : ["http://snomed.info/sct"],
+      "uses" : {
+      },
+      "StructureDefinition-be-annex-81.html" : "BeAnnex81"
+    },
+    {
       "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-bodysite-nursing",
       "version" : "1.0.0",
       "status" : "active",
       "name" : "BeVSBodySiteNursing",
       "title" : "Body Site",
       "description" : "Body Site",
-      "systems" : ["http://snomed.info/sct"],
-      "uses" : {
-      },
-      "StructureDefinition-be-referralprescription-nursing.html" : "BeReferralPrescriptionNursing"
-    },
-    {
-      "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-co-prescriber-choice",
-      "version" : "1.0.0",
-      "status" : "active",
-      "name" : "BeVsCoPrescriberChoice",
-      "title" : "BeVsCoPrescriberChoice",
-      "description" : "Type of intended performer choice",
-      "systems" : [
-        "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-co-prescriber-choice"
-      ],
-      "uses" : {
-      },
-      "StructureDefinition-be-co-prescriber.html" : "BeCoPrescriber"
-    },
-    {
-      "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-co-prescription-status",
-      "version" : "1.0.0",
-      "status" : "active",
-      "name" : "BeCoPrescriptionStatus",
-      "title" : "BeCoPrescriptionStatus",
-      "description" : "This is the status of the prescription for the coprescriber",
-      "systems" : ["http://hl7.org/fhir/task-status"],
-      "uses" : {
-      },
-      "StructureDefinition-be-co-prescriber.html" : "BeCoPrescriber"
-    },
-    {
-      "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-communication-method",
-      "version" : "1.0.0",
-      "status" : "draft",
-      "name" : "BeCommunicationMethod",
-      "title" : "BeCommunicationMethod",
-      "description" : "Codes to define a communication method.",
-      "systems" : [
-        "http://hl7.org/fhir/contact-point-system",
-        "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-communication-code"
-      ],
-      "uses" : {
-      },
-      "StructureDefinition-be-ext-urgent-communication.html" : "BeUrgentCommunication"
-    },
-    {
-      "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-contrastfluid-use",
-      "version" : "1.0.0",
-      "status" : "draft",
-      "name" : "BeContrastFluidUse",
-      "title" : "BeContrastFluidUse",
-      "description" : "Codes to define the use of contrast fluid.",
-      "systems" : [
-        "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-vs-contrastfluid-use"
-      ],
-      "uses" : {
-      },
-      "StructureDefinition-be-ext-contrastfluiduse.html" : "BeContrastFluidUse"
+      "systems" : ["http://snomed.info/sct"]
     },
     {
       "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-performer-task-status-reason",
@@ -147,21 +87,7 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-be-referralprescription.html" : "BeReferralPrescription"
-    },
-    {
-      "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-proposal-type",
-      "version" : "1.0.0",
-      "status" : "active",
-      "name" : "BeVsProposalType",
-      "title" : "BeVsProposalType",
-      "description" : "If the status of the request is proposal, this valueset indicates the different types of proposal",
-      "systems" : [
-        "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-proposal-type"
-      ],
-      "uses" : {
-      },
-      "StructureDefinition-be-ext-proposal-type.html" : "BeProposalType"
+      "StructureDefinition-be-referral-servicerequest.html" : "BeReferralServiceRequest"
     },
     {
       "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-referral-category",
@@ -173,20 +99,19 @@
       "systems" : ["http://snomed.info/sct"],
       "uses" : {
       },
-      "StructureDefinition-be-referralprescription.html" : "BeReferralPrescription"
+      "StructureDefinition-be-referral-servicerequest.html" : "BeReferralServiceRequest"
     },
     {
       "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-request-intent",
       "version" : "1.0.0",
       "status" : "active",
-      "name" : "BeVsRequestIntent",
-      "title" : "BeVsRequestIntent",
+      "name" : "BeVSRequestIntent",
+      "title" : "BeVSRequestIntent",
       "description" : "The allowed intent codes in the context of referral prescription",
       "systems" : ["http://hl7.org/fhir/request-intent"],
       "uses" : {
       },
-      "StructureDefinition-be-referralprescription.html" : "BeReferralPrescription",
-      "StructureDefinition-be-referral-task.html" : "BeReferralTask"
+      "StructureDefinition-be-referral-servicerequest.html" : "BeReferralServiceRequest"
     },
     {
       "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-request-note-type",
@@ -198,7 +123,7 @@
       "systems" : ["http://snomed.info/sct"],
       "uses" : {
       },
-      "StructureDefinition-be-referralprescription.html" : "BeReferralPrescription"
+      "StructureDefinition-be-referral-servicerequest.html" : "BeReferralServiceRequest"
     },
     {
       "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-requested-services-nurse",
@@ -213,7 +138,7 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-be-referralprescription-nursing.html" : "BeReferralPrescriptionNursing"
+      "StructureDefinition-be-referral-servicerequest-nursing.html" : "BeReferralServiceRequestNursing"
     },
     {
       "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-requested-services-nurse-detail",
@@ -228,7 +153,21 @@
       ],
       "uses" : {
       },
-      "StructureDefinition-be-referralprescription-nursing.html" : "BeReferralPrescriptionNursing"
+      "StructureDefinition-be-referral-servicerequest-nursing.html" : "BeReferralServiceRequestNursing"
+    },
+    {
+      "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-task-intent",
+      "version" : "1.0.0",
+      "status" : "active",
+      "name" : "BeVSTaskIntent",
+      "title" : "BeVSTaskIntent",
+      "description" : "The allowed intent codes in the context of tasks in the field of referral prescriptions",
+      "systems" : ["http://hl7.org/fhir/request-intent"],
+      "uses" : {
+      },
+      "StructureDefinition-be-referral-task.html" : "BeReferralTask",
+      "StructureDefinition-be-performer-task.html" : "BePerformerTask",
+      "StructureDefinition-be-organization-task.html" : "BeOrganizationTask"
     },
     {
       "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-treatment-status-reason",

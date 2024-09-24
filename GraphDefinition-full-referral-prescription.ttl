@@ -1,0 +1,66 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/referral/GraphDefinition/full-referral-prescription> a fhir:GraphDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "full-referral-prescription"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: GraphDefinition full-referral-prescription</b></p><a name=\"full-referral-prescription\"> </a><a name=\"hcfull-referral-prescription\"> </a><a name=\"full-referral-prescription-en-US\"> </a><p><b>url</b>: <a href=\"GraphDefinition-full-referral-prescription.html\">GraphDefinition full-referral-prescription</a></p><p><b>name</b>: full-referral-prescription</p><p><b>status</b>: Active</p><p><b>date</b>: 2024-09-20 15:31:51+0200</p><p><b>description</b>: </p><div><p>Specify to include all useful resources around a ServiceRequest that can be retrieved with the $graph operation.</p>\n</div><p><b>start</b>: ServiceRequest</p><blockquote><p><b>link</b></p><p><b>path</b>: ServiceRequest.requester</p><p><b>min</b>: 1</p><p><b>max</b>: 1</p><p><b>description</b>: Get the PractitionerRole of the requester of the ServiceRequest</p><blockquote><p><b>target</b></p><p><b>type</b>: PractitionerRole</p><blockquote><p><b>link</b></p></blockquote></blockquote></blockquote><blockquote><p><b>link</b></p><p><b>min</b>: 1</p><p><b>description</b>: Get all Tasks corresponding to the BeReferralTask + all BePerformerTasks linked to the ServiceRequest</p><blockquote><p><b>target</b></p><p><b>type</b>: Task</p><p><b>params</b>: focus={ref}</p><blockquote><p><b>link</b></p></blockquote></blockquote></blockquote></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/GraphDefinition/full-referral-prescription"^^xsd:anyURI] ; # 
+  fhir:name [ fhir:v "full-referral-prescription"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:date [ fhir:v "2024-09-20T15:31:51+02:00"^^xsd:dateTime] ; # 
+  fhir:description [ fhir:v "Specify to include all useful resources around a ServiceRequest that can be retrieved with the $graph operation."] ; # 
+  fhir:start [ fhir:v "ServiceRequest"] ; # 
+  fhir:link ( [
+     fhir:path [ fhir:v "ServiceRequest.requester" ] ;
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:max [ fhir:v "1" ] ;
+     fhir:description [ fhir:v "Get the PractitionerRole of the requester of the ServiceRequest" ] ;
+     fhir:target ( [
+       fhir:type [ fhir:v "PractitionerRole" ] ;
+       fhir:link ( [
+         fhir:path [ fhir:v "PractitionerRole.practitioner" ] ;
+         fhir:min [ fhir:v "1"^^xsd:integer ] ;
+         fhir:max [ fhir:v "1" ] ;
+         fhir:description [ fhir:v "Get the Practitioner of the requester of the ServiceRequest" ] ;
+         fhir:target ( [
+           fhir:type [ fhir:v "Practitioner" ]
+         ] )
+       ] )
+     ] )
+  ] [
+     fhir:min [ fhir:v "1"^^xsd:integer ] ;
+     fhir:description [ fhir:v "Get all Tasks corresponding to the BeReferralTask + all BePerformerTasks linked to the ServiceRequest" ] ;
+     fhir:target ( [
+       fhir:type [ fhir:v "Task" ] ;
+       fhir:params [ fhir:v "focus={ref}" ] ;
+       fhir:link ( [
+         fhir:path [ fhir:v "Task.owner" ] ;
+         fhir:min [ fhir:v "1"^^xsd:integer ] ;
+         fhir:max [ fhir:v "1" ] ;
+         fhir:description [ fhir:v "Get the PractitionerRole of the caregiver owner of the task" ] ;
+         fhir:target ( [
+           fhir:type [ fhir:v "PractitionerRole" ] ;
+           fhir:link ( [
+             fhir:path [ fhir:v "PractitionerRole.practitioner" ] ;
+             fhir:min [ fhir:v "1"^^xsd:integer ] ;
+             fhir:max [ fhir:v "1" ] ;
+             fhir:description [ fhir:v "Get the Practitioner of the caregiver owner of the task" ] ;
+             fhir:target ( [
+               fhir:type [ fhir:v "Practitioner" ]
+             ] )
+           ] )
+         ] )
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

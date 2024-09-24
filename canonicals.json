@@ -1,19 +1,5 @@
 [
   {
-    "id" : "be-communication-code",
-    "type" : "CodeSystem",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-communication-code",
-    "version" : "1.0.0",
-    "name" : "BeCommunicationCode"
-  },
-  {
-    "id" : "be-cs-co-prescriber-choice",
-    "type" : "CodeSystem",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-co-prescriber-choice",
-    "version" : "1.0.0",
-    "name" : "BeCSCoPrescriberChoice"
-  },
-  {
     "id" : "be-cs-temp-requested-service",
     "type" : "CodeSystem",
     "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service",
@@ -26,13 +12,6 @@
     "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service-detail",
     "version" : "1.0.0",
     "name" : "BeTempRequestedServiceDetail"
-  },
-  {
-    "id" : "be-prescription-proposal-type",
-    "type" : "CodeSystem",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-proposal-type",
-    "version" : "1.0.0",
-    "name" : "BePrescriptionProposalType"
   },
   {
     "id" : "be-prescription-status-reason",
@@ -49,11 +28,11 @@
     "name" : "BeTreatmentStatusReason"
   },
   {
-    "id" : "be-vs-contrastfluid-use",
-    "type" : "CodeSystem",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-vs-contrastfluid-use",
+    "id" : "full-referral-prescription",
+    "type" : "GraphDefinition",
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/GraphDefinition/full-referral-prescription",
     "version" : "1.0.0",
-    "name" : "BeContrastFluidUse"
+    "name" : "full-referral-prescription"
   },
   {
     "id" : "hl7.fhir.be.referral",
@@ -63,20 +42,6 @@
     "name" : "ReferralPrescription"
   },
   {
-    "id" : "be-ns-coronalertcode",
-    "type" : "NamingSystem",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/be-ns-coronalertcode",
-    "version" : "1.0.0",
-    "name" : "BeNSCoronalertcode"
-  },
-  {
-    "id" : "be-ns-specimen",
-    "type" : "NamingSystem",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/be-ns-specimen",
-    "version" : "1.0.0",
-    "name" : "BeNSSpecimen"
-  },
-  {
     "id" : "be-ns-uhmep",
     "type" : "NamingSystem",
     "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/be-ns-uhmep",
@@ -84,11 +49,25 @@
     "name" : "BeUnadressedHealthMessageExchangePlatform"
   },
   {
-    "id" : "be-op-cancel",
-    "type" : "OperationDefinition",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/OperationDefinition/be-op-cancel",
+    "id" : "be-ns-uhmep-short",
+    "type" : "NamingSystem",
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/be-ns-uhmep-short",
     "version" : "1.0.0",
-    "name" : "cancel"
+    "name" : "BeNsUhmepShort"
+  },
+  {
+    "id" : "be-op-approve-annex81",
+    "type" : "OperationDefinition",
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/OperationDefinition/be-op-approve-annex81",
+    "version" : "1.0.0",
+    "name" : "approve"
+  },
+  {
+    "id" : "be-op-reject-annex81",
+    "type" : "OperationDefinition",
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/OperationDefinition/be-op-reject-annex81",
+    "version" : "1.0.0",
+    "name" : "reject"
   },
   {
     "id" : "be-sp-serviceRequest-statusReason",
@@ -105,20 +84,6 @@
     "name" : "statusProfile"
   },
   {
-    "id" : "BeDiagnosticImagingPrescription",
-    "type" : "StructureDefinition",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/BeDiagnosticImagingPrescription",
-    "version" : "1.0.0",
-    "name" : "BeDiagnosticImagingPrescription"
-  },
-  {
-    "id" : "BeLaboratoryPrescription",
-    "type" : "StructureDefinition",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/BeLaboratoryPrescription",
-    "version" : "1.0.0",
-    "name" : "BeLaboratoryPrescription"
-  },
-  {
     "id" : "BeModelNursingPrescription",
     "type" : "StructureDefinition",
     "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/BeModelNursingPrescription",
@@ -133,74 +98,11 @@
     "name" : "BeModelReferralPrescription"
   },
   {
-    "id" : "BeModelReferralRequestGroup",
+    "id" : "be-annex-81",
     "type" : "StructureDefinition",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/BeModelReferralRequestGroup",
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-annex-81",
     "version" : "1.0.0",
-    "name" : "BeModelReferralRequestGroup"
-  },
-  {
-    "id" : "BePhysiotherapyPrescription",
-    "type" : "StructureDefinition",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/BePhysiotherapyPrescription",
-    "version" : "1.0.0",
-    "name" : "BePhysiotherapyPrescription"
-  },
-  {
-    "id" : "be-co-prescriber",
-    "type" : "StructureDefinition",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-co-prescriber",
-    "version" : "1.0.0",
-    "name" : "BeCoPrescriber"
-  },
-  {
-    "id" : "be-co-prescriber-info",
-    "type" : "StructureDefinition",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-co-prescriber-info",
-    "version" : "1.0.0",
-    "name" : "BeCoPrescriberInfo"
-  },
-  {
-    "id" : "be-contained-or-logical-reference",
-    "type" : "StructureDefinition",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-contained-or-logical-reference",
-    "version" : "1.0.0",
-    "name" : "BeContainedOrLogicalReference"
-  },
-  {
-    "id" : "be-ext-contraindication",
-    "type" : "StructureDefinition",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-contraindication",
-    "version" : "1.0.0",
-    "name" : "BeContraindication"
-  },
-  {
-    "id" : "be-ext-contrastfluiduse",
-    "type" : "StructureDefinition",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-contrastfluiduse",
-    "version" : "1.0.0",
-    "name" : "BeContrastFluidUse"
-  },
-  {
-    "id" : "be-ext-feedback-to-prescriber",
-    "type" : "StructureDefinition",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-feedback-to-prescriber",
-    "version" : "1.0.0",
-    "name" : "BeFeedbackToPrescriber"
-  },
-  {
-    "id" : "be-ext-inform-party",
-    "type" : "StructureDefinition",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-inform-party",
-    "version" : "1.0.0",
-    "name" : "BeInformParty"
-  },
-  {
-    "id" : "be-ext-latest-draft-date",
-    "type" : "StructureDefinition",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-draft-date",
-    "version" : "1.0.0",
-    "name" : "BeLatestDraftDate"
+    "name" : "BeAnnex81"
   },
   {
     "id" : "be-ext-latest-end-date",
@@ -217,34 +119,6 @@
     "name" : "BePerformerType"
   },
   {
-    "id" : "be-ext-proposal-type",
-    "type" : "StructureDefinition",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-proposal-type",
-    "version" : "1.0.0",
-    "name" : "BeProposalType"
-  },
-  {
-    "id" : "be-ext-pss-info",
-    "type" : "StructureDefinition",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-pss-info",
-    "version" : "1.0.0",
-    "name" : "BePSSInfo"
-  },
-  {
-    "id" : "be-ext-supporting-info",
-    "type" : "StructureDefinition",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-supporting-info",
-    "version" : "1.0.0",
-    "name" : "BeSupportingInfo"
-  },
-  {
-    "id" : "be-ext-urgent-communication",
-    "type" : "StructureDefinition",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-urgent-communication",
-    "version" : "1.0.0",
-    "name" : "BeUrgentCommunication"
-  },
-  {
     "id" : "be-ext-validity-period",
     "type" : "StructureDefinition",
     "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period",
@@ -252,11 +126,11 @@
     "name" : "BeValidityPeriod"
   },
   {
-    "id" : "be-lab-prescription",
+    "id" : "be-no-contained-reference",
     "type" : "StructureDefinition",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-lab-prescription",
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-no-contained-reference",
     "version" : "1.0.0",
-    "name" : "BeLabPrescription"
+    "name" : "BeNoContainedReference"
   },
   {
     "id" : "be-organization-task",
@@ -273,39 +147,25 @@
     "name" : "BePerformerTask"
   },
   {
+    "id" : "be-referral-servicerequest",
+    "type" : "StructureDefinition",
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest",
+    "version" : "1.0.0",
+    "name" : "BeReferralServiceRequest"
+  },
+  {
+    "id" : "be-referral-servicerequest-nursing",
+    "type" : "StructureDefinition",
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing",
+    "version" : "1.0.0",
+    "name" : "BeReferralServiceRequestNursing"
+  },
+  {
     "id" : "be-referral-task",
     "type" : "StructureDefinition",
     "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-task",
     "version" : "1.0.0",
     "name" : "BeReferralTask"
-  },
-  {
-    "id" : "be-referralprescription",
-    "type" : "StructureDefinition",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription",
-    "version" : "1.0.0",
-    "name" : "BeReferralPrescription"
-  },
-  {
-    "id" : "be-referralprescription-diagnosticimaging",
-    "type" : "StructureDefinition",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-diagnosticimaging",
-    "version" : "1.0.0",
-    "name" : "BeReferralPrescriptionDiagnosticImaging"
-  },
-  {
-    "id" : "be-referralprescription-nursing",
-    "type" : "StructureDefinition",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing",
-    "version" : "1.0.0",
-    "name" : "BeReferralPrescriptionNursing"
-  },
-  {
-    "id" : "be-referralprescription-request-group",
-    "type" : "StructureDefinition",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-request-group",
-    "version" : "1.0.0",
-    "name" : "BeReferralPrescriptionRequestGroup"
   },
   {
     "id" : "be-year-month-day",
@@ -322,39 +182,18 @@
     "name" : "be-map-model-referral-prescription"
   },
   {
+    "id" : "be-vs-annex-81-reason-code",
+    "type" : "ValueSet",
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-annex-81-reason-code",
+    "version" : "1.0.0",
+    "name" : "BeVSAnnex81ReasonCode"
+  },
+  {
     "id" : "be-vs-bodysite-nursing",
     "type" : "ValueSet",
     "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-bodysite-nursing",
     "version" : "1.0.0",
     "name" : "BeVSBodySiteNursing"
-  },
-  {
-    "id" : "be-vs-co-prescriber-choice",
-    "type" : "ValueSet",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-co-prescriber-choice",
-    "version" : "1.0.0",
-    "name" : "BeVsCoPrescriberChoice"
-  },
-  {
-    "id" : "be-vs-co-prescription-status",
-    "type" : "ValueSet",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-co-prescription-status",
-    "version" : "1.0.0",
-    "name" : "BeCoPrescriptionStatus"
-  },
-  {
-    "id" : "be-vs-communication-method",
-    "type" : "ValueSet",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-communication-method",
-    "version" : "1.0.0",
-    "name" : "BeCommunicationMethod"
-  },
-  {
-    "id" : "be-vs-contrastfluid-use",
-    "type" : "ValueSet",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-contrastfluid-use",
-    "version" : "1.0.0",
-    "name" : "BeContrastFluidUse"
   },
   {
     "id" : "be-vs-performer-task-status-reason",
@@ -371,13 +210,6 @@
     "name" : "BeVSPrescriptionStatusReason"
   },
   {
-    "id" : "be-vs-proposal-type",
-    "type" : "ValueSet",
-    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-proposal-type",
-    "version" : "1.0.0",
-    "name" : "BeVsProposalType"
-  },
-  {
     "id" : "be-vs-referral-category",
     "type" : "ValueSet",
     "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-referral-category",
@@ -389,7 +221,7 @@
     "type" : "ValueSet",
     "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-request-intent",
     "version" : "1.0.0",
-    "name" : "BeVsRequestIntent"
+    "name" : "BeVSRequestIntent"
   },
   {
     "id" : "be-vs-request-note-type",
@@ -411,6 +243,13 @@
     "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-requested-services-nurse-detail",
     "version" : "1.0.0",
     "name" : "BeVSRequestedServicesNurseDetail"
+  },
+  {
+    "id" : "be-vs-task-intent",
+    "type" : "ValueSet",
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-task-intent",
+    "version" : "1.0.0",
+    "name" : "BeVSTaskIntent"
   },
   {
     "id" : "be-vs-treatment-status-reason",
