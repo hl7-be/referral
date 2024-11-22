@@ -1,0 +1,15 @@
+Logical: BeModelAssignment
+Description: "Logical model with the information for the assignment to a referral prescription of a care provider."
+* ^extension[http://hl7.org/fhir/tools/StructureDefinition/logical-target].valueBoolean = true
+* Identifier 1..1 Identifier "UUID (see Doc: https://docs.google.com/document/d/13qamEPfdQ2HgUiXmjwHQNchpEU3LsQHF5MN9jKufX2g/edit?usp=sharing )" "UUID (see Doc: https://docs.google.com/document/d/13qamEPfdQ2HgUiXmjwHQNchpEU3LsQHF5MN9jKufX2g/edit?usp=sharing )"
+* Intent 1..1 CodeableConcept "Defaults to \"Order\", since in this case it is always linked to a referral prescription." "Defaults to \"Order\", since in this case it is always linked to a referral prescription."
+* Status 1..1 CodeableConcept "Status of the task" "Status of the task"
+* StatusReason 0..1 CodeableConcept "Provides details on the status of the task" "Provides details on the status of the task"
+* OriginRequestId 1..1 Identifier "Reference to the associated referral prescription" "Reference to the associated referral prescription"
+* TreatmentStatusId 1..1 Reference(BeModelTreatmentStatus) "Reference to the \"TreatmentStatus\", the treatment tracking associated with the prescription" "Reference to the \"TreatmentStatus\", the treatment tracking associated with the prescription"
+* OrganizationID 0..1 Reference(BeModelOrganisationClaim) "Reference to the organization Task" "Reference to the organization Task"
+* Role 1..1 CodeableConcept "Role of the provider assigned to provide the requested service" "Role of the provider assigned to provide the requested service"
+* Actor 0..1 Identifier "NISS of the provider assigned to provide the requested service" "NISS of the provider assigned to provide the requested service"
+* Organisation 0..1 Identifier "Organization assigned to provide the requested service (e.g. WGK, ….). In this case, it is the organization that is responsible for assigning the correct provider" 
+* Startdate 0..1 dateTime "Start date of the prescription execution (encoded by the healthcare provider who performs the treatment)" "Start date of the prescription execution (encoded by the healthcare provider who performs the treatment)"
+* EndDate 0..1 dateTime "End date of the prescription execution (encoded by the healthcare provider who performs the treatment)" "End date of the prescription execution (encoded by the healthcare provider who performs the treatment)"
