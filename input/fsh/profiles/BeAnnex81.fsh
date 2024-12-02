@@ -26,10 +26,13 @@ Id: be-annex-81
 * extension[latest] ^short = "Request must be executed before"
 //* extension[feedback] ^short = "Give feedback to the prescriber"
 //* extension[latestDraft] ^short = "The prescription must have left the draft status befor this moment"
+* category MS
 * category.coding.system = "http://snomed.info/sct" (exactly)
 * category.coding.code = #9632001 (exactly)
+* code MS
 * code = BeTempRequestedService#tmp-prep-x081-2
 * extension[performerType].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
+* basedOn MS
 * basedOn only Reference(BeAnnex81)
 * reasonCode 1..* MS
 * reasonCode from BeVSAnnex81ReasonCode
@@ -39,4 +42,9 @@ Id: be-annex-81
 * occurrenceTiming.repeat.frequency = 1
 * occurrenceTiming.repeat.period = 1
 * occurrenceTiming.repeat.periodUnit = #wk
-
+* requester MS
+* requester only (BePractitionerRole)
+* subject MS
+* status MS
+* intent MS
+* identifier MS
