@@ -32,4 +32,5 @@ Description: "The common structure for referral prescription."
 * asNeeded[x] MS
 * intent from BeVSRequestIntent (required)
 * obeys be-inv-body-site
+* reasonCode 0..* MS
 
