@@ -9,7 +9,7 @@ Description: "Subtask to assign the referral task and prescription to one or mor
 * owner ^short = "Reference to the organisation that will assign performers to this referral task"
 * owner only Reference(BeOrganization)
 * status MS
-* focus MS
+* focus 1..1 MS
 * intent from BeVSTaskIntent (required)
 * authoredOn 1.. MS
 * authoredOn obeys be-inv-long-date
