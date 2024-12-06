@@ -9,6 +9,6 @@ Description: "The task that is referred to in the referral prescription (this is
 * executionPeriod.start only BeYearMonthDay
 * executionPeriod.end only BeYearMonthDay
 * intent MS
-* focus MS
+* focus 1.. MS
 * focus only Reference(BeReferralServiceRequest or BeAnnex81)
 * intent from BeVSTaskIntent (required)
