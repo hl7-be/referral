@@ -45,8 +45,8 @@ Id: be-annex-81
 * occurrenceTiming.repeat.frequency = 1
 * occurrenceTiming.repeat.period = 1
 * occurrenceTiming.repeat.periodUnit = #wk
-* requester MS
-* requester only Reference(BePractitionerRole)
+* requester 1..1 MS
+* requester only BeNoContainedReference(BePractitionerRole)
 * subject MS
 * status MS
 * intent MS
