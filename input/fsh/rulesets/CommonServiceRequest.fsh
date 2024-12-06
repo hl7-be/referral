@@ -27,7 +27,7 @@ RuleSet: CommonServiceRequest
 * performer only BeNoContainedReference
 * performer only Reference( BePractitionerRole )
 * performer ^short = "Requested performer - typically reference to practitionerroles"
-* reasonCode 0..1 MS
+* reasonCode 0..* MS
 * supportingInfo 0..* MS
 * patientInstruction MS
 * bodySite MS
