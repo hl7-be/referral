@@ -1,7 +1,7 @@
 Logical: BeModelAnnex81
 Description: "Logical model describing the model for the Annex81 proposal and approval"
 * ^extension[http://hl7.org/fhir/tools/StructureDefinition/logical-target].valueBoolean = true
-* Id 1..1 Identifier "UUID (see Doc Bart: https://docs.google.com/document/d/13qamEPfdQ2HgUiXmjwHQNchpEU3LsQHF5MN9jKufX2g/edit?usp=sharing )" "UUID (see Doc Bart: https://docs.google.com/document/d/13qamEPfdQ2HgUiXmjwHQNchpEU3LsQHF5MN9jKufX2g/edit?usp=sharing )"
+* Id 1..1 Identifier "UUID (see Doc  https://docs.google.com/document/d/13qamEPfdQ2HgUiXmjwHQNchpEU3LsQHF5MN9jKufX2g/edit?usp=sharing ). Absent during creation by client software, otherwise always present." "UUID (see Doc Bart: https://docs.google.com/document/d/13qamEPfdQ2HgUiXmjwHQNchpEU3LsQHF5MN9jKufX2g/edit?usp=sharing ) Absent during creation by client software, otherwise always present."
 * ShortCode 1..1 Identifier  "“Business” code allowing the healthcare professional to find a prescription associated with a patient" "“Business” code allowing the healthcare professional to find a prescription associated with a patient"
 * RecordedDate 1..1 dateTime  "Date of encoding of the information by the Recorder." "Date of encoding of the information by the Recorder."
 * CreationDate 1..1 dateTime "Creation date of the referral prescription. This date will not change throughout the process. This date corresponds to the first recordedDate recorded for this referral prescription." "Creation date of the referral prescription. This date will not change throughout the process. This date corresponds to the first recordedDate recorded for this referral prescription."
