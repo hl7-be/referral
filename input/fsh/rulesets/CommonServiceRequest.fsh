@@ -6,7 +6,7 @@ RuleSet: CommonServiceRequest
 * intent MS
 * category 1..1 MS
 * category from $be-vs-referral-category (extensible)
-* code MS
+* code 1..1 MS
 * code from $procedure-code (example)
 * code ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
 * code ^binding.extension.valueString = "ServiceRequestCode"
