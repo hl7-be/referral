@@ -7,3 +7,4 @@ Description: "Logical model with the information of a claim of an organisation t
 * TreatmentStatusId 1..1 Reference(BeModelTreatmentStatus) "Reference to the TreatmentStatus related to the prescription" "Reference to the TreatmentStatus related to the prescription"
 * Focus 1..1 Reference(BeModelReferralPrescription) "Reference to what the task acts on" "Reference to what the task acts on"
 * Organization 1..1 Identifier "Reference to the organization that will assign the providers to the prescription." "Reference to the organization that will assign the providers to the prescription." 
+* AuthoredOn 1..1 dateTime "Date the organisation claimed the prescription" "Date the organisation claimed the prescription"
