@@ -1,7 +1,7 @@
 Logical: BeModelAssignment
 Description: "Logical model with the information for the assignment to a referral prescription of a care provider."
 * ^extension[http://hl7.org/fhir/tools/StructureDefinition/logical-target].valueBoolean = true
-* Identifier 1..1 Identifier "UUID (see Doc: https://docs.google.com/document/d/13qamEPfdQ2HgUiXmjwHQNchpEU3LsQHF5MN9jKufX2g/edit?usp=sharing )" "UUID (see Doc: https://docs.google.com/document/d/13qamEPfdQ2HgUiXmjwHQNchpEU3LsQHF5MN9jKufX2g/edit?usp=sharing )"
+* Identifier 1..1 Identifier "UUID (see Doc: https://docs.google.com/document/d/13qamEPfdQ2HgUiXmjwHQNchpEU3LsQHF5MN9jKufX2g/edit?usp=sharing ) Absent during creation by client software, otherwise always present." "UUID (see Doc: https://docs.google.com/document/d/13qamEPfdQ2HgUiXmjwHQNchpEU3LsQHF5MN9jKufX2g/edit?usp=sharing ) Absent during creation by client software, otherwise always present."
 * Intent 1..1 CodeableConcept "Defaults to \"Order\", since in this case it is always linked to a referral prescription." "Defaults to \"Order\", since in this case it is always linked to a referral prescription."
 * Status 1..1 CodeableConcept "Status of the task" "Status of the task"
 * StatusReason 0..1 CodeableConcept "Provides details on the status of the task" "Provides details on the status of the task"

@@ -1,7 +1,7 @@
 Logical: BeModelOrganisationClaim
 Description: "Logical model with the information of a claim of an organisation to have the prescription fulfilled by one of its members."
 * ^extension[http://hl7.org/fhir/tools/StructureDefinition/logical-target].valueBoolean = true
-* Identifier 1..1 Identifier "UUID (see Doc: https://docs.google.com/document/d/13qamEPfdQ2HgUiXmjwHQNchpEU3LsQHF5MN9jKufX2g/edit?usp=sharing )" "UUID (see Doc: https://docs.google.com/document/d/13qamEPfdQ2HgUiXmjwHQNchpEU3LsQHF5MN9jKufX2g/edit?usp=sharing )"
+* Identifier 1..1 Identifier "UUID (see Doc: https://docs.google.com/document/d/13qamEPfdQ2HgUiXmjwHQNchpEU3LsQHF5MN9jKufX2g/edit?usp=sharing ) Absent during creation by client software, otherwise always present." "UUID (see Doc: https://docs.google.com/document/d/13qamEPfdQ2HgUiXmjwHQNchpEU3LsQHF5MN9jKufX2g/edit?usp=sharing ) Absent during creation by client software, otherwise always present."
 * Intent 1..1 CodeableConcept "Defaults to \"Order\"" "Defaults to \"Order\""
 * Status 1..1 CodeableConcept "Status of the task" "Status of the task"
 * TreatmentStatusId 1..1 Reference(BeModelTreatmentStatus) "Reference to the TreatmentStatus related to the prescription" "Reference to the TreatmentStatus related to the prescription"
