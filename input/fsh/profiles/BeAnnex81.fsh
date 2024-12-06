@@ -19,7 +19,10 @@ Id: be-annex-81
     //BeProposalType named proposalType 0..1 MS and
     //BeTaskReference named task 0..1 MS and
     //BePSSInfo named pss 0..1 MS and 
-    BePerformerType named performerType 0..* MS
+    BePerformerType named performerType 0..* MS and 
+    $request-statusReason named statusReason 0..1 MS
+* extension[statusReason].valueCodeableConcept 1..1
+* extension[statusReason].valueCodeableConcept from BeVSPrescriptionStatusReason (extensible)
 * extension[performerType] ^short = "Discipline of provider. Replaces .performerType because of wrong cardinality"
 //* extension[coprescriber] ^short = "Info about the other parties that have to take part in the prescription."
 * extension[validity] ^short = "Validity period of the prescription"
@@ -43,7 +46,7 @@ Id: be-annex-81
 * occurrenceTiming.repeat.period = 1
 * occurrenceTiming.repeat.periodUnit = #wk
 * requester MS
-* requester only (BePractitionerRole)
+* requester only Reference(BePractitionerRole)
 * subject MS
 * status MS
 * intent MS
