@@ -44,4 +44,3 @@ Description: "The nursing profile, generic version. Please note the nursing refe
 * occurrenceTiming MS
 * occurrence[x] only Timing
 * bodySite MS
-
