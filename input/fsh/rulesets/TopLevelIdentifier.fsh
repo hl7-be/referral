@@ -1,5 +1,5 @@
 RuleSet: TopLevelIndentifier
-* identifier contains UHMEP 0..1 and SHORT 0..1
+* identifier contains UHMEP 0..1 MS and SHORT 0..1 MS
 * identifier[UHMEP] ^short = "Reference ID of the UHMEP once available there"
 * identifier[UHMEP].system 1..
 * identifier[UHMEP].system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep" (exactly)
