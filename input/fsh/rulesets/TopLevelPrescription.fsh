@@ -1,6 +1,6 @@
 RuleSet: TopLevelPrescription
 * extension contains
-    //BeFeedbackToPrescriber named feedback 0..1 MS and
+    BeFeedbackToPrescriber named feedback 0..1 MS and
     //BeCoPrescriberInfo named coprescriber 0..1 MS and
     BeValidityPeriod named validity 1..1 MS and
     BeLatestEndDate named latest 0..1 MS and
@@ -15,6 +15,6 @@ RuleSet: TopLevelPrescription
 //* extension[coprescriber] ^short = "Info about the other parties that have to take part in the prescription."
 * extension[validity] ^short = "Validity period of the prescription"
 * extension[latest] ^short = "Request must be executed before"
-//* extension[feedback] ^short = "Give feedback to the prescriber"
+* extension[feedback] ^short = "Give feedback to the prescriber"
 //* extension[latestDraft] ^short = "The prescription must have left the draft status befor this moment"
 * intent from BeVSRequestIntent (required)

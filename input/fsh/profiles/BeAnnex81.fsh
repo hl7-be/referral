@@ -19,11 +19,11 @@ Id: be-annex-81
     //BeProposalType named proposalType 0..1 MS and
     //BeTaskReference named task 0..1 MS and
     //BePSSInfo named pss 0..1 MS and 
-    BePerformerType named performerType 0..* MS and 
+    //BePerformerType named performerType 0..* MS and 
     $request-statusReason named statusReason 0..1 MS
 * extension[statusReason].valueCodeableConcept 1..1
 * extension[statusReason].valueCodeableConcept from BeVSPrescriptionStatusReason (extensible)
-* extension[performerType] ^short = "Discipline of provider. Replaces .performerType because of wrong cardinality"
+//* extension[performerType] ^short = "Discipline of provider. Replaces .performerType because of wrong cardinality"
 //* extension[coprescriber] ^short = "Info about the other parties that have to take part in the prescription."
 * extension[validity] ^short = "Validity period of the prescription"
 * extension[latest] ^short = "Request must be executed before"
@@ -34,12 +34,12 @@ Id: be-annex-81
 * category.coding.code = #9632001 (exactly)
 * code 1..1 MS
 * code = BeTempRequestedService#tmp-prep-x081-2
-* extension[performerType].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
+//* extension[performerType].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
 * basedOn MS
 * basedOn only Reference(BeAnnex81)
 * reasonCode 1..* MS
 * reasonCode from BeVSAnnex81ReasonCode
-* obeys be-inv-annex-81-based-on
+* obeys be-inv-annex-81-based-on and be-inv-annex-81-note
 * authoredOn 1.. MS
 * authoredOn obeys be-inv-long-date
 * occurrenceTiming.repeat.frequency = 1
@@ -52,3 +52,7 @@ Id: be-annex-81
 * status MS
 * intent MS
 * identifier MS
+* note MS 
+* note only BeCodedAnnotation
+* note.extension[https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeableconcept].valueCodeableConcept from BeVSRequestNoteType (required)
+

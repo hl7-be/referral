@@ -35,12 +35,13 @@ Description: "The nursing profile, generic version. Please note the nursing refe
 * subject MS
 * authoredOn MS
 * extension[validity] MS
-//* extension[feedback] MS
+* extension[feedback] MS
 * extension[latest] MS
 * extension[performerType] MS
 * extension[device] MS
 * reasonCode MS
 * basedOn MS
+* basedOn only Reference(ServiceRequest or MedicationRequest)
 * occurrenceTiming MS
 * occurrence[x] only Timing
 * bodySite MS
