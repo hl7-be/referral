@@ -29,7 +29,7 @@ RuleSet: CommonServiceRequest
 * performer ^short = "Requested performer - typically reference to practitionerroles"
 * reasonCode 0..* MS
 * supportingInfo 0..* MS
-* patientInstruction MS
+//* patientInstruction MS
 * bodySite MS
 * bodySite.extension contains BeExtLaterality named bodyLaterality 0..1
 * note MS 
