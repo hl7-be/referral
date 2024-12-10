@@ -39,7 +39,7 @@ Id: be-annex-81
 * basedOn only Reference(BeAnnex81)
 * reasonCode 1..* MS
 * reasonCode from BeVSAnnex81ReasonCode
-* obeys be-inv-annex-81-based-on
+* obeys be-inv-annex-81-based-on and be-inv-annex-81-note
 * authoredOn 1.. MS
 * authoredOn obeys be-inv-long-date
 * occurrenceTiming.repeat.frequency = 1
@@ -52,3 +52,7 @@ Id: be-annex-81
 * status MS
 * intent MS
 * identifier MS
+* note MS 
+* note only BeCodedAnnotation
+* note.extension[https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeableconcept].valueCodeableConcept from BeVSRequestNoteType (required)
+
