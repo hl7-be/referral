@@ -41,6 +41,7 @@ Description: "The nursing profile, generic version. Please note the nursing refe
 * extension[device] MS
 * reasonCode MS
 * basedOn MS
+* basedOn only Reference(ServiceRequest or MedicationRequest)
 * occurrenceTiming MS
 * occurrence[x] only Timing
 * bodySite MS
