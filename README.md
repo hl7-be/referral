@@ -19,4 +19,3 @@ current state of affairs can be seen at: http://build.fhir.org/ig/hl7-be/referra
 
 Not to be used for any other purpose.
 
-
