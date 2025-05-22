@@ -14,15 +14,9 @@ Description: "Information regarding the Prescription Search Support"
 * ^contact[=].telecom.value = "message-structure@ehealth.fgov.be"
 * ^contact[=].telecom.use = #work
 * ^jurisdiction = $jurisdiction#BE "Belgium"
-* . ^short = "BePSSInfo"
 * . ^definition = "Prescription Search Support Info"
-* extension contains 
-    guidanceResponse 1..1 MS and
-    rejectionReason 0..1 MS
-* extension[guidanceResponse] ^short = "Reference to the GuidanceResponse from the PSS"
-* extension[guidanceResponse].value[x] only Reference(GuidanceResponse)
-* extension[rejectionReason] ^short = "reason for not following the PSS"
-* extension[rejectionReason].value[x] only Annotation
+* . ^short = "Identifier of the PSS guidance response"
+* value[x] only Identifier
 * ^context[+].type = #element
 * ^context[=].expression = "ServiceRequest"
 * ^context[+].type = #element
