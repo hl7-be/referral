@@ -12,15 +12,25 @@ InstanceOf: BeReferralServiceRequestDiagnosticImaging
 * category = $sct#363679005
 * code = $qsi#MR-upper-extremity-shoulder-wo-iv-contrast 
 * reasonCode = $sct#125605004
-* extension[relevantSupportingInformationAsAnnotationOrCodeableConcept][+].valueCodeableConcept.coding.code = $qsi#Bone-pain-shoulder  
-* extension[relevantSupportingInformationAsAnnotationOrCodeableConcept][+].valueAnnotation.text = "Diabetes: No"
-* extension[relevantSupportingInformationAsAnnotationOrCodeableConcept][+].valueAnnotation.text = "Pregnancy: No"
-* extension[relevantSupportingInformationAsAnnotationOrCodeableConcept][+].valueAnnotation.text = "Implants : No"
-* extension[relevantSupportingInformationAsAnnotationOrCodeableConcept][+].valueCodeableConcept.coding.code = $sct#293637006
-* extension[relevantSupportingInformationAsAnnotationOrCodeableConcept][+].valueAnnotation.text = "Metallic debris: No"
-* extension[relevantSupportingInformationAsAnnotationOrCodeableConcept][+].valueAnnotation.text = "Renal Dysfunction: No"
-* extension[relevantSupportingInformationAsAnnotationOrCodeableConcept][+].valueAnnotation.text = "Other: NA"
-* extension[relevantSupportingInformationAsAnnotationOrCodeableConcept][+].valueCodeableConcept.coding.code = $sct#64859006
-* extension[relevantSupportingInformationAsAnnotationOrCodeableConcept][+].valueCodeableConcept.coding.code = $sct#363680008
+* extension[relevantSupportingInformationAsCodeableConceptKeyValue][+].extension[key].valueCodeableConcept.coding = $qsi#Bone-pain-shoulder  
+* extension[relevantSupportingInformationAsCodeableConceptKeyValue][=].extension[value].valueCodeableConcept.coding = $sct#373066001
+* extension[relevantSupportingInformationAsCodeableConceptKeyValue][+].extension[key].valueCodeableConcept.coding = $sct#73211009
+* extension[relevantSupportingInformationAsCodeableConceptKeyValue][=].extension[value].valueCodeableConcept.coding = $sct#373067005
+* extension[relevantSupportingInformationAsCodeableConceptKeyValue][+].extension[key].valueCodeableConcept.coding = $sct#77386006
+* extension[relevantSupportingInformationAsCodeableConceptKeyValue][=].extension[value].valueCodeableConcept.coding = $sct#373067005
+* extension[relevantSupportingInformationAsCodeableConceptKeyValue][+].extension[key].valueCodeableConcept.coding = $sct#40388003 
+* extension[relevantSupportingInformationAsCodeableConceptKeyValue][=].extension[value].valueCodeableConcept.coding = $sct#373067005
+* extension[relevantSupportingInformationAsCodeableConceptKeyValue][+].extension[key].valueCodeableConcept.coding = $sct#293637006
+* extension[relevantSupportingInformationAsCodeableConceptKeyValue][=].extension[value].valueCodeableConcept.coding = $sct#373066001
+* extension[relevantSupportingInformationAsCodeableConceptKeyValue][+].extension[key].valueCodeableConcept.coding = $sct#422321007 //Metallic debris 
+* extension[relevantSupportingInformationAsCodeableConceptKeyValue][=].extension[value].valueCodeableConcept.coding = $sct#373067005
+* extension[relevantSupportingInformationAsCodeableConceptKeyValue][+].extension[key].valueCodeableConcept.coding = $sct#236423003 //Renal Dysfunction
+* extension[relevantSupportingInformationAsCodeableConceptKeyValue][=].extension[value].valueCodeableConcept.coding = $sct#373067005
+* extension[relevantSupportingInformationAsCodeableConceptKeyValue][+].extension[key].valueCodeableConcept.coding = $sct#74964007 // Other
+* extension[relevantSupportingInformationAsCodeableConceptKeyValue][=].extension[value].valueCodeableConcept.coding = $sct#373067005
+* extension[relevantSupportingInformationAsCodeableConceptKeyValue][+].extension[key].valueCodeableConcept.coding = $sct#64859006 
+* extension[relevantSupportingInformationAsCodeableConceptKeyValue][=].extension[value].valueCodeableConcept.coding = $sct#373066001
+* extension[relevantSupportingInformationAsCodeableConceptKeyValue][+].extension[key].valueCodeableConcept.coding = $sct#363680008 
+* extension[relevantSupportingInformationAsCodeableConceptKeyValue][=].extension[value].valueCodeableConcept.coding = $sct#373066001
 * bodySite = $sct#16982005
 * bodySite.extension[bodyLaterality].valueCoding = $sct#24028007

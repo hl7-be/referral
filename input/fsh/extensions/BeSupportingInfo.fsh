@@ -20,5 +20,10 @@ Description: "Relevant clinical information in the context of this prescription 
 * . ^short = "Supporting Information"
 * . ^isModifier = false
 * url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-supporting-info" (exactly)
-* value[x] 1..
-* value[x] only Annotation or CodeableConcept
+* extension contains key 1..1 MS and value 1..1 MS
+* extension[key].value[x] only CodeableConcept
+* extension[key] ^short = "Key of the as a preferably as a SNOMED CT code, e.g. 'allergy', 'diabetes', 'kidney function'"
+* extension[key].valueCodeableConcept.coding 1..1
+* extension[value].value[x] only CodeableConcept
+* extension[value] ^short = "Value of the key preferably as a SNOMED CT code, e.g. 'penicillin allergy', 'diabetes type 2', 'chronic kidney disease stage 3'"
+* extension[value].valueCodeableConcept.coding 1..1  

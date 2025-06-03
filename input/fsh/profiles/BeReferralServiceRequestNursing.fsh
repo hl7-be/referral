@@ -39,7 +39,7 @@ Description: "The nursing profile, generic version. Please note the nursing refe
 * extension[latest] MS
 * extension[performerType] MS
 * extension[device] MS
-* reasonCode MS
+* reasonCode 0..1 MS
 * basedOn MS
 * occurrenceTiming MS
 * occurrence[x] only Timing
