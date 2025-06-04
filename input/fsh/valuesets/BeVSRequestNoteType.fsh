@@ -8,3 +8,4 @@ Description: "Types of notes used in a referral prescription"
 * include $sct#385805005
 * include $sct#409073007
 * include $sct#55210009
+* include $sct#261004008

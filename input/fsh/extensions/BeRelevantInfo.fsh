@@ -1,8 +1,8 @@
-Extension: BeSupportingInfo
-Id: be-ext-supporting-info
-Title: "BeSupportingInfo"
+Extension: BeRelevantInfo
+Id: be-ext-relevant-info
+Title: "BeRelevantInfo"
 Description: "Relevant clinical information in the context of this prescription concerning for example allergies, kidney function, diabetic. This extension allows the use of an Annotation or codeableConcept but when more detailed information can be given, it is RECOMMENDED to express it as structured as possible using the appropriate elements."
-* ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-supporting-info"
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-relevant-info"
 * ^version = "0.2.0"
 * ^status = #draft
 * ^date = "2021-07-15T08:52:50+00:00"
@@ -19,7 +19,7 @@ Description: "Relevant clinical information in the context of this prescription 
 * ^context.expression = "ServiceRequest"
 * . ^short = "Supporting Information"
 * . ^isModifier = false
-* url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-supporting-info" (exactly)
+* url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-relevant-info" (exactly)
 * extension contains key 1..1 MS and value 1..1 MS
 * extension[key].value[x] only CodeableConcept
 * extension[key] ^short = "Key of the as a preferably as a SNOMED CT code, e.g. 'allergy', 'diabetes', 'kidney function'"
