@@ -18,3 +18,4 @@ Description: "Logical model describing the model for the prescription referral. 
 * ValidationEndDate 1..1 dateTime "End date of the prescription validity (encoded by the prescriber)" "End date of the prescription validity (encoded by the prescriber)"
 * Problem 0..* CodeableConcept "Medical problem or clinical context related to this request (for example: \"Open wound\", \"Broken leg\")." "Medical problem or clinical context related to this request (for example: \"Open wound\", \"Broken leg\")."
 * BodyLocation 0..* CodeableConcept "Anatomical location where the treatment should be applied (for example: \"Left arm\")." "Anatomical location where the treatment should be applied (for example: \"Left arm\")."
+
