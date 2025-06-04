@@ -6,7 +6,7 @@ RuleSet: CommonServiceRequest
 * intent MS
 * category 1..1 MS
 * category from $be-vs-referral-category (extensible)
-* code MS
+* code 1..1 MS
 * code from $procedure-code (example)
 * code ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
 * code ^binding.extension.valueString = "ServiceRequestCode"
@@ -27,8 +27,9 @@ RuleSet: CommonServiceRequest
 * performer only BeNoContainedReference
 * performer only Reference( BePractitionerRole )
 * performer ^short = "Requested performer - typically reference to practitionerroles"
+* reasonCode 0..* MS
 * supportingInfo 0..* MS
-* patientInstruction MS
+//* patientInstruction MS
 * bodySite MS
 * bodySite.extension contains BeExtLaterality named bodyLaterality 0..1
 * note MS 
