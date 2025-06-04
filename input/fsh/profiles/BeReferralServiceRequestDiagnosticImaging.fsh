@@ -2,8 +2,11 @@ Profile: BeReferralServiceRequestDiagnosticImaging
 Parent: BeReferralServiceRequest
 Id: be-referral-servicerequest-diagnosticimaging
 Description: """Referral prescription for a generic diagnostic imaging."""
-* extension contains BeSupportingInfo named relevantSupportingInformationAsCodeableConceptKeyValue 1..* MS
+* extension contains BeRelevantInfo named relevantSupportingInformationAsCodeableConceptKeyValue 1..* MS 
+    and BeExtCodeableReference named supportingInfo 0..* MS
+    and BePSSInfo named pssInfo 0..1 MS 
 * extension[relevantSupportingInformationAsCodeableConceptKeyValue] ^short = "Relevant clinical information in the context of this prescription concerning for example allergies, kidney function, diabetic. This extension allows the use of a codeableConcept pair."
+* extension[supportingInfo]  ^short = "Previous relevant information, e.g. previous imaging, lab results, etc."
 //* modifierExtension ^slicing.discriminator.type = #value
 //* modifierExtension ^slicing.discriminator.path = "url"
 //* modifierExtension ^slicing.rules = #open
@@ -28,7 +31,7 @@ Description: """Referral prescription for a generic diagnostic imaging."""
 * reasonCode ^short = "Diagnostic question, explanation/Justification for procedure or service"
 * reasonCode 1..* MS
 //* supportingInfo only Reference(Resource or Procedure or BeObservation or Condition or BeAllergyIntolerance or MedicationStatement or QuestionnaireResponse)
-* supportingInfo MS
-* supportingInfo ^short = "Previous relevant information, e.g. previous imaging, lab results, etc."
+* supportingInfo 0..0 MS
+
 * bodySite MS
 * priority MS
