@@ -18,7 +18,7 @@ Description: "Begin and enddate of the validity of the request"
 * . ^definition = "Begin and enddate of the validity of the request"
 * url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period" (exactly)
 * value[x] only Period
-* valuePeriod.start only BeYearMonthDay
-* valuePeriod.end only BeYearMonthDay
+//* valuePeriod.start only BeYearMonthDay
+//* valuePeriod.end only BeYearMonthDay
 * ^context.type = #element
 * ^context.expression = "ServiceRequest"

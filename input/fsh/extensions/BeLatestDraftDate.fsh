@@ -19,4 +19,4 @@ Description: "Request must leave draft status before"
 * ^context.type = #element
 * ^context.expression = "ServiceRequest"
 * url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-draft-date" (exactly)
-* value[x] only BeYearMonthDay
+//* value[x] only BeYearMonthDay
