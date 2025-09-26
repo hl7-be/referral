@@ -2,6 +2,7 @@ Extension: BePSSInfo
 Id: be-ext-pss-info
 Title: "BePSSInfo"
 Description: "Information regarding the Prescription Search Support"
+Context: ServiceRequest, RequestGroup, MedicationRequest
 // * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-pss-info"
 // * ^version = "0.2.0"
 // * ^date = "2022-05-03T10:04:16+02:00"
@@ -17,9 +18,3 @@ Description: "Information regarding the Prescription Search Support"
 * . ^definition = "Prescription Search Support Info"
 * . ^short = "Identifier of the PSS guidance response"
 * value[x] only Identifier
-* ^context[+].type = #element
-* ^context[=].expression = "ServiceRequest"
-* ^context[+].type = #element
-* ^context[=].expression = "RequestGroup"
-* ^context[+].type = #element
-* ^context[=].expression = "MedicationRequest"

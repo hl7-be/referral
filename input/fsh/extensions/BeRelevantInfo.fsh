@@ -3,8 +3,7 @@ Id: be-ext-relevant-info
 Title: "BeRelevantInfo"
 Description: "Relevant clinical information in the context of this prescription concerning for example allergies, kidney function, diabetic. This extension allows the use of an Annotation or codeableConcept but when more detailed information can be given, it is RECOMMENDED to express it as structured as possible using the appropriate elements."
 * ^status = #draft
-* ^context.type = #element
-* ^context.expression = "ServiceRequest"
+Context: ServiceRequest
 // * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-relevant-info"
 // * ^version = "0.2.0"
 // * ^date = "2021-07-15T08:52:50+00:00"
@@ -17,6 +16,8 @@ Description: "Relevant clinical information in the context of this prescription 
 // * ^contact[=].telecom.value = "message-structure@ehealth.fgov.be"
 // * ^contact[=].telecom.use = #work
 // * ^jurisdiction = $jurisdiction#BE "Belgium"
+// * ^context.type = #element
+// * ^context.expression = "ServiceRequest"
 * . ^short = "Supporting Information"
 * . ^isModifier = false
 * extension contains key 1..1 MS and value 1..1 MS

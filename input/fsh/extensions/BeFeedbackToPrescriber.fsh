@@ -1,13 +1,9 @@
 Extension: BeFeedbackToPrescriber
 Id: be-ext-feedback-to-prescriber
 Title: "BeFeedbackToPrescriber"
-* ^context[+].type = #element
-* ^context[=].expression = "ServiceRequest"
-* ^context[+].type = #element
-* ^context[=].expression = "RequestGroup"
-* ^context[+].type = #element
-* ^context[=].expression = "MedicationRequest"
 Description: "Whether the prescriber requests feedback on the processing of the order"
+Context: ServiceRequest, RequestGroup, MedicationRequest
+
 // * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-feedback-to-prescriber"
 // * ^date = "2022-05-03T10:04:16+02:00"
 // * ^publisher = "HL7 Belgium"

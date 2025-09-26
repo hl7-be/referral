@@ -2,6 +2,8 @@ Extension: BeValidityPeriod
 Id: be-ext-validity-period
 Title: "BeValidityPeriod"
 Description: "Begin and enddate of the validity of the request"
+Description: "Begin and end date of the validity of the request"
+Context: ServiceRequest, RequestGroup, MedicationRequest
 // * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period"
 // * ^version = "0.2.0"
 // * ^date = "2022-05-03T10:04:16+02:00"
@@ -20,10 +22,4 @@ Description: "Begin and enddate of the validity of the request"
 * value[x] only Period
 * valuePeriod.start only BeYearMonthDay
 * valuePeriod.end only BeYearMonthDay
-* ^context[+].type = #element
-* ^context[=].expression = "ServiceRequest"
-* ^context[+].type = #element
-* ^context[=].expression = "RequestGroup"
-* ^context[+].type = #element
-* ^context[=].expression = "MedicationRequest"
 
