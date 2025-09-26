@@ -6,12 +6,6 @@ Context: ServiceRequest, RequestGroup,  MedicationRequest
 
 * . ^short = "Latest End Date"
 * . ^definition = "Request must be performed before"
-* ^context[+].type = #element
-* ^context[=].expression = "ServiceRequest"
-* ^context[=].expression = "RequestGroup"
-* ^context[+].type = #element
-* ^context[=].expression = "MedicationRequest"
-* value[x] only BeYearMonthDay
 // * ^context[+].type = #element
 // * ^context[=].expression = "ServiceRequest"
 // * ^context[+].type = #element
