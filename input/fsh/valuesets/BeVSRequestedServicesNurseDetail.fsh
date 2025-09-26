@@ -1,8 +1,8 @@
 ValueSet: BeVSRequestedServicesNurseDetail
 Title: "BeVSRequestedServicesNurseDetail"
 Id: be-vs-requested-services-nurse-detail
-Description: "Codes indicating the request details that can be asked from a nurse."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-requested-services-nurse-detail"
+Description: "DEMONSTRATIVE EXAMPLE - Codes indicating the request details that can be asked from a nurse."
 * ^experimental = false
 * ^copyright = """
 *   This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement

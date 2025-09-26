@@ -1,9 +1,9 @@
 ValueSet: BeVSTaskIntent
 Title: "BeVSTaskIntent"
 Id: be-vs-task-intent
-Description: "The allowed intent codes in the context of tasks in the field of referral prescriptions"
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-task-intent"
 * ^version = "0.2.0"
+Description: "DEMONSTRATIVE EXAMPLE - The allowed intent codes in the context of tasks in the field of referral prescriptions"
 * ^status = #active
 * ^date = "2022-05-03T10:04:16+02:00"
 * ^publisher = "HL7 Belgium"

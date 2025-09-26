@@ -1,7 +1,6 @@
 Extension: BeFeedbackToPrescriber
 Id: be-ext-feedback-to-prescriber
 Title: "BeFeedbackToPrescriber"
-Description: "Does the prescriber request feedback?"
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-feedback-to-prescriber"
 * ^version = "0.2.0"
 * ^date = "2022-05-03T10:04:16+02:00"
@@ -20,5 +19,6 @@ Description: "Does the prescriber request feedback?"
 * ^context[=].expression = "RequestGroup"
 * ^context[+].type = #element
 * ^context[=].expression = "MedicationRequest"
+Description: "Whether the prescriber requests feedback on the processing of the order"
 * valueBoolean 1..1 MS
 * value[x] only boolean 
