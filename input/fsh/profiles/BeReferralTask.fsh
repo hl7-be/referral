@@ -13,6 +13,7 @@ Description: "The task that is referred to in the referral prescription (this is
 * statusReason MS
 * statusReason from BeVSTreatmentStatusReason (example)
 * statusReason ^binding.description = "The actual valueset will be provided when a terminology package is available. For current guidance, see the included [ValueSet](ValueSet-be-vs-treatment-status-reason.html)."
+
 * executionPeriod MS 
 * executionPeriod ^short = "Start and end date of the treatment"
 //* executionPeriod.start only BeYearMonthDay
@@ -20,4 +21,5 @@ Description: "The task that is referred to in the referral prescription (this is
 * intent MS
 * focus 1.. MS
 * focus only Reference(BeReferralServiceRequest or BeAnnex81)
-* intent from BeVSTaskIntent (required)* intent ^binding.description = "The actual valueset will be provided when a terminology package is available. For current guidance, see the included [ValueSet](ValueSet-be-vs-task-intent.html)."
+//* intent from BeVSTaskIntent
+* intent ^binding.description = "The actual valueset will be provided when a terminology package is available. For current guidance, see the included [ValueSet](ValueSet-be-vs-task-intent.html)."
