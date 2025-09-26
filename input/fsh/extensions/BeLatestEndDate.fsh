@@ -13,3 +13,7 @@ Context: ServiceRequest, RequestGroup,  MedicationRequest
 // * ^context[+].type = #element
 // * ^context[=].expression = "MedicationRequest"
 // * url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-end-date" (exactly)   //????
+
+//* value[x] only BeYearMonthDay
+* value[x] only dateTime
+

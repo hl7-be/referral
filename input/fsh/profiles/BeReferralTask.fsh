@@ -15,8 +15,8 @@ Description: "The task that is referred to in the referral prescription (this is
 * statusReason ^binding.description = "The actual valueset will be provided when a terminology package is available. For current guidance, see the included [ValueSet](ValueSet-be-vs-treatment-status-reason.html)."
 * executionPeriod MS 
 * executionPeriod ^short = "Start and end date of the treatment"
-* executionPeriod.start only BeYearMonthDay
-* executionPeriod.end only BeYearMonthDay
+//* executionPeriod.start only BeYearMonthDay
+//* executionPeriod.end only BeYearMonthDay
 * intent MS
 * focus 1.. MS
 * focus only Reference(BeReferralServiceRequest or BeAnnex81)
