@@ -6,8 +6,10 @@ RuleSet: CommonMedicationRequest
 * statusReason MS
 * intent MS
 * intent from BeVSRequestIntent (required)
+* intent ^binding.description = "The actual valueset will be provided when a terminology package is available. For current guidance, see the included [ValueSet](ValueSet-be-vs-request-intent.html)."
 * category 1..1 MS
 * category from $procedure-code (example)
+* category ^binding.description = "The actual valueset will be provided when a terminology package is available."
 * medication[x] MS
 * subject only BeNoContainedReference
 * subject only Reference(BePatient)

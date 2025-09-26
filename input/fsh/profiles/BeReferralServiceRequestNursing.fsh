@@ -17,9 +17,11 @@ Description: "The nursing profile, generic version. Please note the nursing refe
 * category.coding.system = "http://snomed.info/sct" (exactly)
 * category.coding.code = #9632001 (exactly)
 * code 1..
-* code from be-vs-requested-services-nurse (required)
+* code from be-vs-requested-services-nurse (example)
+* code ^binding.description = "The actual valueset will be provided when a terminology package is available. For current guidance, see the included [ValueSet](ValueSet-be-vs-requested-services-nurse.html)."
 * orderDetail ^short = "Details of the nursing activity"
-* orderDetail from be-vs-requested-services-nurse-detail
+* orderDetail from be-vs-requested-services-nurse-detail (example)
+* orderDetail ^binding.description = "The actual valueset will be provided when a terminology package is available. For current guidance, see the included [ValueSet](ValueSet-be-vs-requested-services-nurse-detail.html)."
 * supportingInfo MS
 * note MS
 * occurrenceTiming.repeat.count MS

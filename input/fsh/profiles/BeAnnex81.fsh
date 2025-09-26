@@ -22,7 +22,9 @@ Id: be-annex-81
     //BePerformerType named performerType 0..* MS and 
     $request-statusReason named statusReason 0..1 MS
 * extension[statusReason].valueCodeableConcept 1..1
-* extension[statusReason].valueCodeableConcept from BeVSPrescriptionStatusReason (extensible)
+* extension[statusReason].valueCodeableConcept from BeVSPrescriptionStatusReason (example)
+* extension[statusReason].valueCodeableConcept ^binding.description = "The actual valueset will be provided when a terminology package is available. For current guidance, see the included [ValueSet](ValueSet-be-vs-prescription-status-reason.html)."
+
 //* extension[performerType] ^short = "Discipline of provider. Replaces .performerType because of wrong cardinality"
 //* extension[coprescriber] ^short = "Info about the other parties that have to take part in the prescription."
 * extension[validity] ^short = "Validity period of the prescription"
@@ -38,8 +40,10 @@ Id: be-annex-81
 * basedOn MS
 * basedOn only Reference(BeAnnex81)
 * reasonCode 1..* MS
-* reasonCode from BeVSAnnex81ReasonCode
-* obeys be-inv-annex-81-based-on and be-inv-annex-81-note
+* reasonCode from BeVSAnnex81ReasonCode (example)
+* reasonCode ^binding.description = "The actual valueset will be provided when a terminology package is available. For current guidance, see the included [ValueSet](ValueSet-be-vs-annex-81-reason-code.html)."
+
+* obeys be-inv-annex-81-based-on //and be-inv-annex-81-note
 * authoredOn 1.. MS
 * authoredOn obeys be-inv-long-date
 * occurrenceTiming.repeat.frequency = 1
@@ -54,5 +58,7 @@ Id: be-annex-81
 * identifier MS
 * note MS 
 * note only BeCodedAnnotation
-* note.extension[https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeableconcept].valueCodeableConcept from BeVSRequestNoteType (required)
+* note.extension[https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeableconcept].valueCodeableConcept from BeVSRequestNoteType (example)
+* note.extension[https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeableconcept].valueCodeableConcept ^binding.description = "The actual valueset will be provided when a terminology package is available. For current guidance, see the included [ValueSet](ValueSet-be-vs-request-note-type.html)."
+
 

@@ -18,6 +18,7 @@ Description: "Subtask to assign the referral task and prescription to one or mor
 * owner only Reference(BeOrganization)
 * status MS
 * focus 1..1 MS
-* intent from BeVSTaskIntent (required)
+//* intent from BeVSTaskIntent (example)
+* intent ^binding.description = "The actual valueset will be provided when a terminology package is available. For current guidance, see the included [ValueSet](ValueSet-be-vs-task-intent.html)."
 * authoredOn 1.. MS
 * authoredOn obeys be-inv-long-date

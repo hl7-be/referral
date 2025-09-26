@@ -22,11 +22,13 @@ Description: "Subtask performed by one performer"
 * owner only Reference(BePractitionerRole)
 * status MS
 * statusReason MS
-* statusReason from BeVSPerformerTaskStatusReason
+* statusReason from BeVSPerformerTaskStatusReason (example)
+* intent ^binding.description = "The actual valueset will be provided when a terminology package is available. For current guidance, see the included [ValueSet](ValueSet-be-vs-performer-task-status-reason.html)."
 * basedOn MS
 * basedOn only Reference(BeOrganizationTask)
 * focus MS
 * focus only Reference(BeReferralServiceRequest or BeAnnex81) /* or BeReferralRequestGroup */ 
-* intent from BeVSTaskIntent (required)
+//* intent from BeVSTaskIntent
+* intent ^binding.description = "The actual valueset will be provided when a terminology package is available. For current guidance, see the included [ValueSet](ValueSet-be-vs-task-intent.html)."
 * authoredOn 1.. MS
 * authoredOn obeys be-inv-long-date

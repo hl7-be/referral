@@ -18,3 +18,5 @@ RuleSet: TopLevelPrescription
 * extension[feedback] ^short = "Give feedback to the prescriber"
 //* extension[latestDraft] ^short = "The prescription must have left the draft status befor this moment"
 * intent from BeVSRequestIntent (required)
+* intent ^binding.description = "The actual valueset will be provided when a terminology package is available. For current guidance, see the included [ValueSet](ValueSet-be-vs-request-intent.html)."
+

@@ -6,6 +6,8 @@ RuleSet: CommonServiceRequest
 * intent MS
 * category 1..1 MS
 * category from be-vs-referral-category (example)
+* category ^binding.description = "The actual valueset will be provided when a terminology package is available. For current guidance, see the included [ValueSet](ValueSet-be-vs-referral-category.html)."
+
 * code 1..1 MS
 * code from $procedure-code (example)
 * code ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
