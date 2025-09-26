@@ -1,8 +1,8 @@
 CodeSystem: BePrescriptionStatusReason
 Id: be-prescription-status-reason
 Title: "BePrescriptionStatusReason"
-* ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason"
 Description: "DEMONSTRATIVE EXAMPLE - Status reason for the prescription. Initially defined as supporting CodeSystem for the referral prescription."
+//* ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason"
 * ^caseSensitive = false
 * ^experimental = false
 //* #blackListed "Blacklisted prescriber"

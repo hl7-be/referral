@@ -5,21 +5,21 @@ Description: "DEMONSTRATIVE EXAMPLE - Codes to define the high level category fo
 Usage: #definition
 * experimental = false
 * title = "BeReferralCategory"
-* url = "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-referral-category"
-* version = "0.2.0"
 * name = "BeReferralCategory"
+// * url = "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-referral-category"
+// * version = "0.2.0"
 * status = #draft
-* date = "2021-10-07T15:14:36+02:00"
-* publisher = "HL7 Belgium"
-* contact[0].name = "HL7 Belgium"
-* contact[=].telecom.system = #url
-* contact[=].telecom.value = "http://hl7belgium.org"
-* contact[+].name = "Message-Structure"
-* contact[=].telecom.system = #email
-* contact[=].telecom.value = "message-structure@ehealth.fgov.be"
-* contact[=].telecom.use = #work
 * description = "Codes to define the high level category for a referral prescription. SNOMED-CT codes in this valueset are just a draft proposal to give a general idea - pending an official valueset."
-* jurisdiction = $jurisdiction#BE "Belgium"
+// * date = "2021-10-07T15:14:36+02:00"
+// * publisher = "HL7 Belgium"
+// * contact[0].name = "HL7 Belgium"
+// * contact[=].telecom.system = #url
+// * contact[=].telecom.value = "http://hl7belgium.org"
+// * contact[+].name = "Message-Structure"
+// * contact[=].telecom.system = #email
+// * contact[=].telecom.value = "message-structure@ehealth.fgov.be"
+// * contact[=].telecom.use = #work
+// * jurisdiction = $jurisdiction#BE "Belgium"
 * copyright = """
 *   This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement
     

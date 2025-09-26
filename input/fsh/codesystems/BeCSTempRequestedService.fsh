@@ -4,8 +4,8 @@ Title: "BeTempRequestedService"
 Description: "DEMONSTRATIVE EXAMPLE - Temporary codes for indicating services that can be requested from a Nurse"
 * ^status = #draft
 * ^content = #complete
-* ^version = "0.2.0"
-* ^jurisdiction = urn:iso:std:iso:3166#BE "Belgium"
+//* ^version = "0.2.0"
+//* ^jurisdiction = urn:iso:std:iso:3166#BE "Belgium"
 * ^caseSensitive = true
 * ^experimental = false
 * #tmp-prep-x081-2 "Preparing medication_Appendix 81"

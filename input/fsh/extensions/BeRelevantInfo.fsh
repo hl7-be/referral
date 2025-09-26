@@ -2,24 +2,23 @@ Extension: BeRelevantInfo
 Id: be-ext-relevant-info
 Title: "BeRelevantInfo"
 Description: "Relevant clinical information in the context of this prescription concerning for example allergies, kidney function, diabetic. This extension allows the use of an Annotation or codeableConcept but when more detailed information can be given, it is RECOMMENDED to express it as structured as possible using the appropriate elements."
-* ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-relevant-info"
-* ^version = "0.2.0"
 * ^status = #draft
-* ^date = "2021-07-15T08:52:50+00:00"
-* ^publisher = "HL7 Belgium"
-* ^contact[0].name = "HL7 Belgium"
-* ^contact[=].telecom.system = #url
-* ^contact[=].telecom.value = "http://hl7belgium.org"
-* ^contact[+].name = "Message-Structure"
-* ^contact[=].telecom.system = #email
-* ^contact[=].telecom.value = "message-structure@ehealth.fgov.be"
-* ^contact[=].telecom.use = #work
-* ^jurisdiction = $jurisdiction#BE "Belgium"
 * ^context.type = #element
 * ^context.expression = "ServiceRequest"
+// * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-relevant-info"
+// * ^version = "0.2.0"
+// * ^date = "2021-07-15T08:52:50+00:00"
+// * ^publisher = "HL7 Belgium"
+// * ^contact[0].name = "HL7 Belgium"
+// * ^contact[=].telecom.system = #url
+// * ^contact[=].telecom.value = "http://hl7belgium.org"
+// * ^contact[+].name = "Message-Structure"
+// * ^contact[=].telecom.system = #email
+// * ^contact[=].telecom.value = "message-structure@ehealth.fgov.be"
+// * ^contact[=].telecom.use = #work
+// * ^jurisdiction = $jurisdiction#BE "Belgium"
 * . ^short = "Supporting Information"
 * . ^isModifier = false
-* url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-relevant-info" (exactly)
 * extension contains key 1..1 MS and value 1..1 MS
 * extension[key].value[x] only CodeableConcept
 * extension[key] ^short = "Key of the as a preferably as a SNOMED CT code, e.g. 'allergy', 'diabetes', 'kidney function'"

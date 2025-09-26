@@ -1,20 +1,19 @@
 ValueSet: BeVSBodySiteNursing
 Id: be-vs-bodysite-nursing
 Title: "Body Site"
-* ^version = "1.0.0"
 * ^status = #active
-* ^date = "2021-01-10T10:59:49+00:00"
-* ^publisher = "eHealth Platform"
-* ^contact[0].name = "eHealth Platform"
-* ^contact[=].telecom.system = #url
-* ^contact[=].telecom.value = "https://www.ehealth.fgov.be"
-* ^contact[+].name = "Message structure"
-* ^contact[=].telecom.system = #email
-* ^contact[=].telecom.value = "message-structure@ehealth.fgov.be"
-* ^extension[http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm].valueInteger = 1
-* ^jurisdiction.coding[+] = urn:iso:std:iso:3166#BE
 * ^experimental = false
 Description: "DEMONSTRATIVE EXAMPLE - Body Site"
+// * ^version = "1.0.0"
+// * ^date = "2021-01-10T10:59:49+00:00"
+// * ^publisher = "eHealth Platform"
+// * ^contact[0].name = "eHealth Platform"
+// * ^contact[=].telecom.value = "https://www.ehealth.fgov.be"
+// * ^contact[+].name = "Message structure"
+// * ^contact[=].telecom.system = #email
+// * ^contact[=].telecom.value = "message-structure@ehealth.fgov.be"
+// * ^extension[http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm].valueInteger = 1
+// * ^jurisdiction.coding[+] = urn:iso:std:iso:3166#BE
 * ^copyright = """
 *   This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement
     

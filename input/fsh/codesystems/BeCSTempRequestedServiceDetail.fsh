@@ -4,7 +4,7 @@ Title: "BeTempRequestedServiceDetail"
 Description: "DEMONSTRATIVE EXAMPLE - Temporary codes for indicating service details that can be requested from a Nurse"
 * ^status = #draft
 * ^content = #complete
-* ^version = "0.2.0"
+// ^version = "0.2.0"
 * ^caseSensitive = true
 * ^experimental = false
 * ^count = 24
