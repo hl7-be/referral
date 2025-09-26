@@ -7,3 +7,4 @@ Description: "DEMONSTRATIVE EXAMPLE - Status reason for the Annex 81"
 * ^experimental = false
 * #approved "Approved"
 * #rejected "Rejected"
+* ^status = #draft
