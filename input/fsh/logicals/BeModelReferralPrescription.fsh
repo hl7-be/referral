@@ -1,4 +1,5 @@
 Logical: BeModelReferralPrescription
+Parent: Base
 Description: "Data model for the prescription referral."
 Characteristics: #can-be-target
 
