@@ -1,6 +1,8 @@
 Instance: example12-referralprescription-nursing-annex81
 InstanceOf: BeAnnex81
-Title: "example12-referralprescription-nursing-annex81"
+Title: "Example 12: Nursing - Annex 81"
+Description: "Specialized weekly nursing care for dementia patients under the Annex 81 reimbursement protocol. Includes cognitive stimulation activities, medication management, behavioral intervention strategies, safety assessment, and family support services. Designed to maintain functional capacity and quality of life for patients with cognitive impairment."
+
 Usage: #example
 //* contained[+] = dementia-condition
 //* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"

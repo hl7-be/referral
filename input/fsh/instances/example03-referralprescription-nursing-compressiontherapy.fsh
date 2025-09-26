@@ -1,6 +1,8 @@
 Instance: example03-referralprescription-nursing-compressiontherapy
 InstanceOf: BeReferralServiceRequestNursing
-Title: "example03-referralprescription-nursing-compressiontherapy"
+Title: "Example 3: Nursing - Compression therapy"
+Description: "Specialized compression therapy using Rosidal compression bandages, performed twice daily. Treatment protocol for bilateral lower extremity edema or venous insufficiency, including skin assessment, proper bandage application technique, circulation monitoring, and patient education on signs of complications."
+
 Usage: #example
 //* contained[+] = practitionerrole1
 

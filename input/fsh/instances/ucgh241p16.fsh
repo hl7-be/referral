@@ -1,6 +1,9 @@
 Instance: ucgh241p16-1 
 InstanceOf: BeReferralServiceRequestNursing
-* reasonCode.coding.display = "Diabetes type 1"
+Title: "Use Case GH241P16: Nursing - Diabetes Education with Instruction"
+Description: "Comprehensive diabetes education for Type 1 patient including instruction and guidance components. Can be performed by nurse or certified diabetes educator, focusing on disease understanding, self-management skills, and treatment adherence."
+
+* reasonCode.text = "Diabetes type 1"
 * authoredOn = "2022-10-03T00:00:00+01:00"
 * requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * extension[feedback].valueBoolean = false

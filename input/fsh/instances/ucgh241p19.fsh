@@ -1,6 +1,9 @@
 Instance: ucgh241p19-1 
 InstanceOf: BeReferralServiceRequestNursing
-* reasonCode.coding.display = "Diabetes type 2"
+Title: "Use Case GH241P19: Nursing - Diabetes Self-Care Education"
+Description: "Ten 30-minute educational sessions focusing on comprehensive diabetes self-care management for Type 2 patient. Covers dietary guidance, exercise planning, medication adherence, and complication prevention strategies. Insulin administration techniques addressed when applicable."
+
+* reasonCode.text = "Diabetes type 2"
 * authoredOn = "2022-10-03T00:00:00+01:00"
 * requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * extension[feedback].valueBoolean = false

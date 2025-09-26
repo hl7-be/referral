@@ -1,6 +1,9 @@
 Instance: ucgh241p18-1 
 InstanceOf: BeReferralServiceRequestNursing
-* reasonCode.coding.display = "Diabetes type 2"
+Title: "Use Case GH241P18: Nursing - Glucose Monitoring Training"
+Description: "Five 30-minute sessions for Type 2 diabetes patient focusing on blood glucose meter usage and monitoring techniques. Provided by diabetes educator, emphasizing proper testing technique, result interpretation, and pattern recognition. Device training included in education protocol."
+
+* reasonCode.text = "Diabetes type 2"
 * authoredOn = "2022-10-03T00:00:00+01:00"
 * requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * extension[feedback].valueBoolean = false

@@ -1,5 +1,7 @@
 Instance: example01-care02-colon-cleansing
 InstanceOf: BeReferralServiceRequestNursing
+Title: "Example 1 Care 2: Nursing - Colon cleansing"
+Description: "Daily nursing procedures for colon cleansing and bowel management. Includes administration of enemas, digital stimulation when indicated, management of bowel evacuation programs, and monitoring for complications such as impaction or autonomic dysreflexia in at-risk patients."
 Usage: #example
 //* contained[+] = referral-task
 //* contained[+] = performer-task

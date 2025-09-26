@@ -1,7 +1,8 @@
 Instance: example16-referralprescription-nursing-bladder-care
 InstanceOf: BeReferralServiceRequestNursing
-Title: "Example 16: Bladder care"
-Description: "One Care Prescription"
+Title: "Example 16: Nursing - Bladder care"
+Description: "One Care Prescription - Intensive bladder care program with twice-daily nursing interventions. Includes intermittent catheterization, bladder training protocols, pelvic floor exercises instruction, and management of neurogenic bladder conditions. Focuses on maintaining continence and preventing urinary tract complications."
+
 Usage: #example
 //* contained[+] = practitionerrole1
 
@@ -16,7 +17,7 @@ Usage: #example
 * category = $sct#9632001
 * category.text = "Nursing procedure"
 * priority = #routine
-* code = $temp-service#tmp-inte-tion-6
+* code = BeTempRequestedService#tmp-inte-tion-6
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "99999999999"
 * occurrenceTiming.repeat.boundsPeriod.start = "2021-07-06"

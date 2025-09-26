@@ -1,6 +1,8 @@
 Instance: example09-referralprescription-nursing-woundcare
 InstanceOf: BeReferralServiceRequestNursing
-Title: "example09-referralprescription-nursing-woundcare"
+Title: "Example 9: Nursing - Wound care"
+Description: "Comprehensive daily wound management including assessment, cleansing, debridement when indicated, and application of appropriate dressings. Incorporates wound measurement, photography for progression monitoring, infection surveillance, and coordination with physicians for treatment plan adjustments."
+
 Usage: #example
 //* contained[+] = practitionerrole1
 

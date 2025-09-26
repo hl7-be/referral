@@ -1,6 +1,8 @@
 Instance: example02-referralprescription-nursing-digestive-system-care
 InstanceOf: BeReferralServiceRequestNursing
-Title: "example02-referralprescription-nursing-digestive-system-care"
+Title: "Example 2: Nursing - Digestive System Care"
+Description: "Comprehensive nursing care for digestive system procedures, performed twice daily. Includes enteral feeding management, stoma care, and digestive health monitoring. Patient requires assistance due to mobility limitations and cannot perform self-care activities independently."
+
 Usage: #example
 ////* contained[+] = practitionerrole1
 

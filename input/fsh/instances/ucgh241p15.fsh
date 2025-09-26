@@ -1,10 +1,13 @@
 Instance: ucgh241p15-1 
 InstanceOf: BeReferralServiceRequestNursing
-* reasonCode.coding.display = "Diabetes type 1"
+Title: "Use Case GH241P15: Nursing - Diabetes Preparation"
+Description: "Preparatory nursing care for Type 1 diabetes patient without medical reimbursement indication. Includes initial assessment and preparation for ongoing diabetes management, though not covered under standard reimbursement protocols."
+
+* reasonCode.text = "Diabetes type 1"
 * authoredOn = "2022-10-03T00:00:00+01:00"
 * requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * extension[feedback].valueBoolean = false
-* code = $temp-service#tmp-prep-rsed-5
+* code = BeTempRequestedService#tmp-prep-rsed-5
 * code.text = "(of $sct#385796006)? zie XLS"
 * extension[validity].valuePeriod.start = "2022-10-03"
 * extension[validity].valuePeriod.end = "2023-04-03"

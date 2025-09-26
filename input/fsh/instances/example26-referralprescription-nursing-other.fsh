@@ -1,6 +1,8 @@
 Instance: example26-referralprescription-nursing-other
 InstanceOf: BeReferralServiceRequestNursing
-Title: "example26-referralprescription-nursing-other"
+Title: "Example 26: Nursing - Generic prescription"
+Description: "Blood collection procedure for laboratory testing purposes. One-time nursing visit for fasting blood draw, including patient preparation, venipuncture, specimen handling, and post-procedure monitoring. This generic prescription can be adapted for various laboratory test requirements."
+
 Usage: #example
 //* contained[+] = practitionerrole1
 

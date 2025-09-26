@@ -1,6 +1,8 @@
 Instance: example32-referralprescription-nursing-chronical-psychiatric
 InstanceOf: BeReferralServiceRequestNursing
-Title: "example32-referralprescription-nursing-chronical-psychiatric"
+Title: "Example 32: Nursing - Chronical Psychiatric"
+Description: "Daily nursing care for patients with chronic psychiatric conditions requiring long-term support. Includes medication administration, compliance monitoring, mental status assessment, and crisis intervention protocols. Focuses on maintaining stability and preventing psychiatric decompensation through consistent professional nursing oversight."
+
 Usage: #example
 //* contained[+] = practitionerrole1
 

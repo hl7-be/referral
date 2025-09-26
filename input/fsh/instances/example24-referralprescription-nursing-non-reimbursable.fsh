@@ -1,6 +1,8 @@
 Instance: example24-referralprescription-nursing-non-reimbursable
 InstanceOf: BeReferralServiceRequestNursing
-Title: "example24-referralprescription-nursing-non-reimbursable"
+Title: "Example 24: Nursing - Non-reimbursable"
+Description: "Weekly specialized nursing services not covered by standard reimbursement schemes. Includes customized care interventions tailored to individual patient needs that fall outside conventional coverage criteria. Requires private payment arrangement or alternative funding sources."
+
 Usage: #example
 //* contained[+] = practitionerrole1
 

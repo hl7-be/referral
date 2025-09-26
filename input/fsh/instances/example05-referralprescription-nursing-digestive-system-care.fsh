@@ -1,7 +1,8 @@
 Instance: example05-referralprescription-nursing-digestive-system-care
 InstanceOf: BeReferralServiceRequestNursing
-Title: "Example 5: Digestive System care"
-Description: "One Care Prescription"
+Title: "Example 5: Nursing - Digestive System Care"
+Description: "One Care Prescription: Daily nursing interventions for complex digestive system management including enteral nutrition support, bowel care programs, and gastrointestinal symptom control. Encompasses assessment of nutritional status, administration of specialized feeding regimens, and monitoring for complications."
+
 Usage: #example
 //* contained[+] = practitionerrole1
 

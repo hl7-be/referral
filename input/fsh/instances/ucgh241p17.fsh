@@ -1,6 +1,9 @@
 Instance: ucgh241p17-1 
 InstanceOf: BeReferralServiceRequestNursing
-* reasonCode.coding.display = "Diabetes type 2"
+Title: "Use Case GH241P17: Nursing - Type 2 Diabetes Education Sessions"
+Description: "Series of 4 diabetes education sessions for Type 2 diabetes patient with supervision and individual sessions. Addresses lifestyle modifications, medication management, and monitoring techniques. Note: BMI and hypertension observations are documented separately."
+
+* reasonCode.text = "Diabetes type 2"
 * authoredOn = "2022-10-03T00:00:00+01:00"
 * requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * extension[feedback].valueBoolean = false

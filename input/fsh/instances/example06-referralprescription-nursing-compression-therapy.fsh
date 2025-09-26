@@ -1,7 +1,7 @@
 Instance: example06-referralprescription-nursing-compression-therapy
 InstanceOf: BeReferralServiceRequestNursing
-Title: "Example 6: Compression therapy"
-Description: "One Care Prescription"
+Title: "Example 6: Nursing - Compression therapy"
+Description: "One Care Prescription: Daily professional compression therapy for treatment of lymphedema or severe venous disorders. Includes comprehensive limb assessment, application of medical-grade compression systems, monitoring for skin breakdown, and adjustment of compression levels based on patient response."
 Usage: #example
 //* contained[+] = practitionerrole1
 

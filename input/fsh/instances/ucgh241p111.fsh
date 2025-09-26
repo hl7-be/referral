@@ -1,6 +1,9 @@
 Instance: ucgh241p111-1 
 InstanceOf: BeReferralServiceRequestNursing
-* reasonCode.coding[+].display = "kidney failure"
+Title: "Use Case GH241P111: Nursing - Kidney Failure Monitoring"
+Description: "Chronic peritoneal dialysis management for kidney failure patient, focusing on dialysis procedures and monitoring. Includes assessment of fluid balance, blood pressure monitoring, and detection of dialysis-related complications. Regular nursing intervention to maintain dialysis efficacy."
+
+* reasonCode.text = "kidney failure"
 //* reasonCode.coding[+].display = "loss of blood pressure"
 * authoredOn = "2022-10-03T00:00:00+01:00"
 * requester.reference = "PractitionerRole/DOCTOR-10829059004"

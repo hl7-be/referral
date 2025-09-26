@@ -1,5 +1,7 @@
 Instance: example01-care01-referralprescription-nursing-bladder-care
 InstanceOf: BeReferralServiceRequestNursing
+Title: "Example 1 Care 1: Nursing - Bladder care"
+Description: "Daily bladder care nursing interventions for patients with urinary dysfunction. Includes catheter management, bladder scanning, continence assessment, and implementation of individualized toileting schedules to optimize bladder function and prevent complications."
 Usage: #inline
 
 
@@ -14,7 +16,7 @@ Usage: #inline
 * category = $sct#9632001
 * category.text = "Nursing procedure"
 * priority = #routine
-* code = $temp-service#tmp-inte-tion-6
+* code = BeTempRequestedService#tmp-inte-tion-6
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "99999999999"
 * occurrenceTiming.repeat.frequency = 1

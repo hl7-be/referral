@@ -1,7 +1,8 @@
 Instance: example04-referralprescription-nursing-bladder-care
 InstanceOf: BeReferralServiceRequestNursing
-Title: "Example 4: Bladder care"
-Description: "One Care Prescription"
+Title: "Example 4: Nursing - Bladder care"
+Description: "One Care Prescription - Comprehensive bladder catheter management program with maintenance visits every 6 weeks. Includes catheter replacement, bladder irrigation, urinary output monitoring, infection prevention protocols, and patient/caregiver education on proper catheter care between nursing visits."
+
 Usage: #example
 //* contained[+] = practitionerrole1
 
@@ -16,7 +17,7 @@ Usage: #example
 * category = $sct#9632001
 * category.text = "Nursing procedure"
 * priority = #routine
-* code = $temp-service#tmp-remo-tube-9
+* code = BeTempRequestedService#tmp-remo-tube-9
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "99999999999"
 * occurrenceTiming.repeat.boundsPeriod.start = "2021-04-01"

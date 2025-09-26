@@ -1,6 +1,9 @@
 Instance: ucgh241p110-1 
 InstanceOf: BeReferralServiceRequestNursing
-* reasonCode.coding.display = "parkinson's disease"
+Title: "Use Case GH241P110: Nursing - Parkinson's Disease Care"
+Description: "Specialized nursing care for Parkinson's disease patient including medication administration and symptom management. Addresses motor symptoms, medication timing, and safety considerations. Note: Disorientation, incontinence issues, and Katz scores are documented separately in patient assessment."
+
+* reasonCode.text = "parkinson's disease"
 * authoredOn = "2022-10-03T00:00:00+01:00"
 * requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * extension[feedback].valueBoolean = false
