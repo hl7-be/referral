@@ -21,5 +21,7 @@ Context: ServiceRequest, RequestGroup, MedicationRequest
 // * ^context[=].expression = "RequestGroup"
 // * ^context[+].type = #element
 // * ^context[=].expression = "MedicationRequest"
+* . ^short = "Feedback to prescriber"
+* . ^definition = "Whether the prescriber requests feedback on the processing of the order"
 * valueBoolean 1..1 MS
 * value[x] only boolean 

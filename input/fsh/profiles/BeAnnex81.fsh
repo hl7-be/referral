@@ -1,5 +1,6 @@
 Profile: BeAnnex81
 Parent: ServiceRequest
+Description: "Annex81 proposal and approval"
 Id: be-annex-81
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "system"

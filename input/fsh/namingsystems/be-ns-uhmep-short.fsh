@@ -1,7 +1,7 @@
 Instance: be-ns-uhmep-short
 InstanceOf: NamingSystem
 Title: "BeNsUhmepShort"
-Description: "UHMEP userfriendly namingsystem"
+Description: "Naming system identifier for the UHMEP user friendly short code"
 Usage: #definition
 * name = "BeNsUhmepShort"
 * date = "2024-07-10"

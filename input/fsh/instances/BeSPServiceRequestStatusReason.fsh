@@ -1,8 +1,9 @@
-Instance: be-sp-serviceRequest-statusReason
+Instance: BeSPServiceRequestStatusReason
 InstanceOf: SearchParameter
 Title: "BeSPServiceRequestStatusReason"
 Usage: #definition
-* url = "https://www.ehealth.fgov.be/standards/fhir/referral/SearchParameter/be-sp-serviceRequest-statusReason"
+//* url = "https://www.ehealth.fgov.be/standards/fhir/referral/SearchParameter/be-sp-serviceRequest-statusReason"
+* id = "be-sp-serviceRequest-statusReason"
 * status = #active
 * description = "This SearchParameter enables query of ServiceRequests by the statusReason extension."
 * name = "statusReason"

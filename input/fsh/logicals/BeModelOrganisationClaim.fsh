@@ -1,5 +1,6 @@
 Logical: BeModelOrganisationClaim
 * AuthoredOn 1..1 dateTime "Date the organisation claimed the prescription" "Date the organisation claimed the prescription"Description: "Information of a claim of an organisation to have the prescription fulfilled."
+Description: "Information of a claim of an organisation to have the prescription fulfilled."
 Characteristics: #can-be-target
 * identifier 1..1 Identifier "Business identifier" "Business Identifier. Absent during creation by client software, otherwise always present."
 * intent 1..1 CodeableConcept "Defaults to 'Order'" "Defaults to 'Order'"
