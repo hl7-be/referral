@@ -11,13 +11,13 @@ RuleSet: CommonMedicationRequest
 * category from $procedure-code (example)
 * category ^binding.description = "The actual valueset will be provided when a terminology package is available."
 * medication[x] MS
-* subject only BeNoContainedReference
+//* subject only BeNoContainedReference
 * subject only Reference(BePatient)
 * subject MS
 * requester 1.. MS
-* requester only BeNoContainedReference
+//* requester only BeNoContainedReference
 * requester only Reference(BePractitioner)
-* performer only BeNoContainedReference
+//* performer only BeNoContainedReference
 * performer only Reference( BePractitionerRole )
 * performer ^short = "Requested performer - typically reference to practitionerroles"
 * performerType ..0 MS
