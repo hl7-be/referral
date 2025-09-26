@@ -5,8 +5,8 @@ InstanceOf: BeReferralServiceRequestNursing
 * requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * extension[feedback].valueBoolean = false
 * code = $sct#385805005
-* orderDetail[+] = $temp-detail#tmp-with-tion-7
-* orderDetail[+] = $temp-detail#tmp-guid-care-5
+* orderDetail[+] = BeTempRequestedServiceDetail#tmp-with-tion-7
+* orderDetail[+] = BeTempRequestedServiceDetail#tmp-guid-care-5
 * extension[validity].valuePeriod.start = "2022-10-03"
 * extension[validity].valuePeriod.end = "2023-04-03"
 * status = #draft
