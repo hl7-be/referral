@@ -1,4 +1,10 @@
 RuleSet: TopLevelIndentifier
+
+
+* identifier ^slicing.discriminator.type = #value
+* identifier ^slicing.discriminator.path = "system"
+* identifier ^slicing.rules = #open
+
 * identifier contains UHMEP 0..1 MS and SHORT 0..1 MS
 * identifier[UHMEP] ^short = "Reference ID of the UHMEP once available there"
 * identifier[UHMEP].system 1..
