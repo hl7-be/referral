@@ -6,13 +6,15 @@
 
 Instance: ucgh222p12-1
 InstanceOf: BeReferralServiceRequestNursing
+Title: "Use Case GH222P12-1: Nursing - Port Catheter Dressing"
+Description: "Catheter dressing change for patient with implantable venous access port following chemotherapy. Single nursing visit scheduled for port maintenance to prevent infection and ensure proper functioning of the central venous access device."
 
-* reasonCode.coding.display = "chemotherapy via \"implantable venous access port catheter\""
+* reasonCode.text = "chemotherapy via 'implantable venous access port catheter'"
 * requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * authoredOn = "2022-10-03T00:00:00+01:00"
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "38012699993"
-* code = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service#tmp-dres-eter-4	
+* code = BeTempRequestedService#tmp-dres-eter-4	
 * category =  $sct#9632001
 * intent = #order
 * status = #draft
@@ -27,6 +29,8 @@ InstanceOf: BeReferralServiceRequestNursing
 
 Instance: ucgh222p12-2
 InstanceOf: BeReferralServiceRequestNursing
+Title: "Use Case GH222P12-2: Nursing - Port Catheter Rinse"
+Description: "Rinsing procedure for implantable venous access port catheter with NaCl 0.9% solution. Essential maintenance for patients receiving chemotherapy through central venous access, preventing catheter occlusion and maintaining patency."
 
 * requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * authoredOn = "2022-10-03T00:00:00+01:00"
@@ -44,17 +48,19 @@ InstanceOf: BeReferralServiceRequestNursing
 * requisition.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
 * requisition.value = "27e5a4a4-e043-11ed-b5ea-0242ac120002"
 * occurrenceTiming.event = "2022-10-10"
-* reasonCode.coding.display = "chemotherapy via \"implantable venous access port catheter\""
+* reasonCode.text = "chemotherapy via 'implantable venous access port catheter'"
 
 Instance: ucgh222p12-3
 InstanceOf: BeReferralServiceRequestNursing
+Title: "Use Case GH222P12-3: Nursing - Huber Needle Placement"
+Description: "Placement or replacement of Huber needle (20G x 25mm) for accessing implantable venous port. Specialized nursing procedure requiring proper technique to access subcutaneous port while maintaining sterility and preventing complications."
 
-* reasonCode.coding.display = "chemotherapy via \"implantable venous access port catheter\""
+* reasonCode.text = "chemotherapy via 'implantable venous access port catheter'"
 * requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * authoredOn = "2022-10-03T00:00:00+01:00"
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "38012699993"
-* code = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service#tmp-plac-edle-0 //? correct
+* code = BeTempRequestedService#tmp-plac-edle-0 //? correct
 * category =  $sct#9632001
 * intent = #order
 * status = #draft
@@ -85,7 +91,7 @@ Usage: #definition
 
 
 Instance: ucgh222p12-1-2-1
-InstanceOf: BeOrganizationTask
+InstanceOf: BeAssignmentTask
 Usage: #definition
 * authoredOn = "2020-01-01T00:00:00+01:00"
 * partOf = Reference(ucgh222p12-1-2)
@@ -105,7 +111,7 @@ Usage: #definition
 
 
 Instance: ucgh222p12-2-2-1
-InstanceOf: BeOrganizationTask
+InstanceOf: BeAssignmentTask
 Usage: #definition
 * authoredOn = "2020-01-01T00:00:00+01:00"
 * partOf = Reference(ucgh222p12-2-2)
