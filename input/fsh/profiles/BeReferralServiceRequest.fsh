@@ -104,6 +104,7 @@ Description: "The common structure for referral prescription."
 * identifier ^slicing.rules = #open
 //* asNeeded[x] MS
 * intent from BeVSRequestIntent (required)
-* obeys be-inv-body-site
+
+//* obeys be-inv-body-site
 * reasonCode 0..* MS
 
