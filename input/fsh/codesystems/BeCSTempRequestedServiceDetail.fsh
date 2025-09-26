@@ -108,7 +108,7 @@ Description: "DEMONSTRATIVE EXAMPLE - Temporary codes for indicating service det
 * #tmp-educ-ight-0 ^designation[=].value = "Education to insight"
 * #tmp-guid-care-5 "Guidance if not self-care"
 * #tmp-guid-care-5 ^designation[0].language = #fr-BE
-* #tmp-guid-care-5 ^designation[=].value = "Begeleiding indien geen zelfzorg "
+* #tmp-guid-care-5 ^designation[=].value = "Begeleiding indien geen zelfzorg"
 * #tmp-guid-care-5 ^designation[+].language = #nl-BE
 * #tmp-guid-care-5 ^designation[=].value = "Des conseils sinon des soins personnels"
 * #tmp-guid-care-5 ^designation[+].language = #en
@@ -122,42 +122,42 @@ Description: "DEMONSTRATIVE EXAMPLE - Temporary codes for indicating service det
 * #tmp-foll-tion-5 ^designation[=].value = "Follow-up after education"
 * #tmp-foll-care-7 "Follow-up of the patient who does not switch to self-care"
 * #tmp-foll-care-7 ^designation[0].language = #fr-BE
-* #tmp-foll-care-7 ^designation[=].value = "Opvolging van de patiënt die niet overstapt op zelfzorg "
+* #tmp-foll-care-7 ^designation[=].value = "Opvolging van de patiënt die niet overstapt op zelfzorg"
 * #tmp-foll-care-7 ^designation[+].language = #nl-BE
 * #tmp-foll-care-7 ^designation[=].value = "Suivi du patient qui ne passe pas aux soins personnels"
 * #tmp-foll-care-7 ^designation[+].language = #en
 * #tmp-foll-care-7 ^designation[=].value = "Follow-up of the patient who does not switch to self-care"
 * #tmp-star-nist-0 "Start insulin or GLP 1 agonist"
 * #tmp-star-nist-0 ^designation[0].language = #fr-BE
-* #tmp-star-nist-0 ^designation[=].value = "Start insuline of GLP 1-agonist "
+* #tmp-star-nist-0 ^designation[=].value = "Start insuline of GLP 1-agonist"
 * #tmp-star-nist-0 ^designation[+].language = #nl-BE
 * #tmp-star-nist-0 ^designation[=].value = "Démarrer l'insuline ou l'agoniste du GLP 1"
 * #tmp-star-nist-0 ^designation[+].language = #en
 * #tmp-star-nist-0 ^designation[=].value = "Start insulin or GLP 1 agonist"
 * #tmp-addi->7.5-0 "Additional education HBA1C>7.5"
 * #tmp-addi->7.5-0 ^designation[0].language = #fr-BE
-* #tmp-addi->7.5-0 ^designation[=].value = "Bijkomende educatie HBA1C>7.5 "
+* #tmp-addi->7.5-0 ^designation[=].value = "Bijkomende educatie HBA1C>7.5"
 * #tmp-addi->7.5-0 ^designation[+].language = #nl-BE
 * #tmp-addi->7.5-0 ^designation[=].value = "Formation complémentaire HBA1C>7.5"
 * #tmp-addi->7.5-0 ^designation[+].language = #en
 * #tmp-addi->7.5-0 ^designation[=].value = "Additional education HBA1C>7.5"
 * #tmp-addi-ions-3 "Additional education switching from 1 to 2 injections"
 * #tmp-addi-ions-3 ^designation[0].language = #fr-BE
-* #tmp-addi-ions-3 ^designation[=].value = "Bijkomende educatie omschakeling van 1 naar 2 injecties "
+* #tmp-addi-ions-3 ^designation[=].value = "Bijkomende educatie omschakeling van 1 naar 2 injecties"
 * #tmp-addi-ions-3 ^designation[+].language = #nl-BE
 * #tmp-addi-ions-3 ^designation[=].value = "Formation complémentaire passage de 1 à 2 injections"
 * #tmp-addi-ions-3 ^designation[+].language = #en
 * #tmp-addi-ions-3 ^designation[=].value = "Additional education switching from 1 to 2 injections"
 * #tmp-educ-tion-0 "Education in patients on oral medication"
 * #tmp-educ-tion-0 ^designation[0].language = #fr-BE
-* #tmp-educ-tion-0 ^designation[=].value = "Educatie bij patiënten met orale medicatie "
+* #tmp-educ-tion-0 ^designation[=].value = "Educatie bij patiënten met orale medicatie"
 * #tmp-educ-tion-0 ^designation[+].language = #nl-BE
 * #tmp-educ-tion-0 ^designation[=].value = "Éducation des patients sous médication orale"
 * #tmp-educ-tion-0 ^designation[+].language = #en
 * #tmp-educ-tion-0 ^designation[=].value = "Education in patients on oral medication"
 * #tmp-educ-rial-8 "Education material"
 * #tmp-educ-rial-8 ^designation[0].language = #fr-BE
-* #tmp-educ-rial-8 ^designation[=].value = "Educatie materiaal "
+* #tmp-educ-rial-8 ^designation[=].value = "Educatie materiaal"
 * #tmp-educ-rial-8 ^designation[+].language = #nl-BE
 * #tmp-educ-rial-8 ^designation[=].value = "Matériel pédagogique"
 * #tmp-educ-rial-8 ^designation[+].language = #en
