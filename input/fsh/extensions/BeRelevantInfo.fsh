@@ -5,7 +5,7 @@ Description: "Relevant clinical information in the context of this prescription 
 Context: ServiceRequest
 // * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-relevant-info"
 // * ^version = "0.2.0"
-* ^status = #draft
+* ^status = #active
 // * ^date = "2021-07-15T08:52:50+00:00"
 // * ^publisher = "HL7 Belgium"
 // * ^contact[0].name = "HL7 Belgium"
