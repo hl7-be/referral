@@ -2,7 +2,7 @@ CodeSystem: BeTempRequestedService
 Id: be-cs-temp-requested-service
 Title: "BeTempRequestedService"
 Description: "DEMONSTRATIVE EXAMPLE - Temporary codes for indicating services that can be requested from a Nurse"
-* ^status = #draft
+* ^status = #active
 * ^content = #complete
 //* ^version = "0.2.0"
 //* ^jurisdiction = urn:iso:std:iso:3166#BE "Belgium"
