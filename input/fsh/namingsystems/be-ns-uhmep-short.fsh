@@ -8,5 +8,5 @@ Usage: #definition
 * status = #active
 * kind = #identifier
 * uniqueId.type = #uri
-* uniqueId.value = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep-short"
+* uniqueId.value = "https://www.ehealth.fgov.be/standards/fhir/drp/NamingSystem/uhmep-short"
 * uniqueId.preferred = true
