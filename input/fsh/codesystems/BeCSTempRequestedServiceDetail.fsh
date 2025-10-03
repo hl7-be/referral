@@ -2,7 +2,7 @@ CodeSystem: BeTempRequestedServiceDetail
 Id: be-cs-temp-requested-service-detail
 Title: "BeTempRequestedServiceDetail"
 Description: "DEMONSTRATIVE EXAMPLE - Temporary codes for indicating service details that can be requested from a Nurse"
-* ^status = #draft
+* ^status = #active
 * ^content = #complete
 // ^version = "0.2.0"
 * ^caseSensitive = true
