@@ -17,7 +17,7 @@ Description: "Catheter dressing change for patient with implantable venous acces
 * code = BeTempRequestedService#tmp-dres-eter-4	
 * category =  $sct#9632001
 * intent = #order
-* status = #draft
+* status = #active
 * extension[validity].valuePeriod.start = "2022-10-03"
 * extension[validity].valuePeriod.end = "2023-04-03"
 * extension[feedback].valueBoolean = false
@@ -63,7 +63,7 @@ Description: "Placement or replacement of Huber needle (20G x 25mm) for accessin
 * code = BeTempRequestedService#tmp-plac-edle-0 //? correct
 * category =  $sct#9632001
 * intent = #order
-* status = #draft
+* status = #active
 * extension[validity].valuePeriod.start = "2022-10-03"
 * extension[validity].valuePeriod.end = "2023-04-03"
 * extension[feedback].valueBoolean = false
