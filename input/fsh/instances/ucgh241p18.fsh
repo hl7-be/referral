@@ -12,7 +12,7 @@ Description: "Five 30-minute sessions for Type 2 diabetes patient focusing on bl
 * code = $sct#385805005
 * extension[validity].valuePeriod.start = "2022-10-03"
 * extension[validity].valuePeriod.end = "2023-04-03"
-* status = #draft
+* status = #active
 * intent = #order
 * category =  $sct#9632001
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
