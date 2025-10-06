@@ -1,4 +1,5 @@
 canonical: https://www.ehealth.fgov.be/standards/fhir/drp
+url: https://www.ehealth.fgov.be/standards/fhir/drp
 fhirVersion: 4.0.1
 FSHOnly: false
 applyExtensionMetadataToRoot: false
@@ -18,6 +19,23 @@ dependencies:
   #hl7.fhir.be.allergy: 1.1.0
   #hl7.fhir.extensions.r4: 4.0.1
   #hl7.fhir.extensions.r5: 4.0.1
+
+# The publisher can be a single item or a list, each with a name and
+# optional url and/or email. The first publisher's name will be used
+# as IG.publisher.  The contact details and/or additional publishers
+# will be translated into IG.contact values.
+publisher:
+  name: eHealth Platform 
+  url: https://www.ehealth.fgov.be/standards/fhir
+  email: support@be-ehealth-standards.atlassian.net
+
+# ContactDetail is required by the template.
+contact:
+  - name: Message Structure eHealth
+    telecom:
+      - system: email
+        value: support@be-ehealth-standards.atlassian.net
+        use: work
 
 # The pages property corresponds to IG.definition.page. SUSHI can
 # auto-generate the page list, but if the author includes pages in
