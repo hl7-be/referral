@@ -3,7 +3,7 @@ Id: be-vs-bodysite-nursing
 Title: "Body Site"
 Description: "DEMONSTRATIVE EXAMPLE - Body Site"
 // * ^version = "1.0.0"
-* ^status = #draft
+* ^status = #active
 // * ^date = "2021-01-10T10:59:49+00:00"
 // * ^publisher = "eHealth Platform"
 // * ^contact[0].name = "eHealth Platform"

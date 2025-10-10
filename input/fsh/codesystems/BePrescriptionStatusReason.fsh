@@ -16,4 +16,4 @@ Description: "DEMONSTRATIVE EXAMPLE - Status reason for the prescription. Initia
 //* #inactive "Inactive"
 * #cancelingReason "Canceling reason"
 * #expired "Expired"
-* ^status = #draft
+* ^status = #active

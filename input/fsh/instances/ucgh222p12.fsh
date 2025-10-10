@@ -17,13 +17,13 @@ Description: "Catheter dressing change for patient with implantable venous acces
 * code = BeTempRequestedService#tmp-dres-eter-4	
 * category =  $sct#9632001
 * intent = #order
-* status = #draft
+* status = #active
 * extension[validity].valuePeriod.start = "2022-10-03"
 * extension[validity].valuePeriod.end = "2023-04-03"
 * extension[feedback].valueBoolean = false
 * extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
 * extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
-* requisition.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
+* requisition.system = "https://www.ehealth.fgov.be/standards/fhir/drp/NamingSystem/uhmep"
 * requisition.value = "27e5a4a4-e043-11ed-b5ea-0242ac120002"
 * occurrenceTiming.event = "2022-10-10"
 
@@ -45,7 +45,7 @@ Description: "Rinsing procedure for implantable venous access port catheter with
 * extension[feedback].valueBoolean = false
 * extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
 * extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
-* requisition.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
+* requisition.system = "https://www.ehealth.fgov.be/standards/fhir/drp/NamingSystem/uhmep"
 * requisition.value = "27e5a4a4-e043-11ed-b5ea-0242ac120002"
 * occurrenceTiming.event = "2022-10-10"
 * reasonCode.text = "chemotherapy via 'implantable venous access port catheter'"
@@ -63,15 +63,15 @@ Description: "Placement or replacement of Huber needle (20G x 25mm) for accessin
 * code = BeTempRequestedService#tmp-plac-edle-0 //? correct
 * category =  $sct#9632001
 * intent = #order
-* status = #draft
+* status = #active
 * extension[validity].valuePeriod.start = "2022-10-03"
 * extension[validity].valuePeriod.end = "2023-04-03"
 * extension[feedback].valueBoolean = false
-//* orderDetail = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service-detail#tmp-hube-type-3
+//* orderDetail = https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-temp-requested-service-detail#tmp-hube-type-3
 * note.text = "Huber needle type: 20G x 25mm (not available for june release -> is device)"
 * extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
 * extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
-* requisition.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
+* requisition.system = "https://www.ehealth.fgov.be/standards/fhir/drp/NamingSystem/uhmep"
 * requisition.value = "27e5a4a4-e043-11ed-b5ea-0242ac120002"
 * occurrenceTiming.event = "2022-10-10"
 

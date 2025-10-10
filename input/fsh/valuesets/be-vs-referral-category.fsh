@@ -8,7 +8,7 @@ Usage: #definition
 // * url = "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-referral-category"
 // * version = "0.2.0"
 // * name = "BeReferralCategory"
-* status = #draft
+* status = #active
 // * date = "2021-10-07T15:14:36+02:00"
 // * publisher = "HL7 Belgium"
 // * contact[0].name = "HL7 Belgium"

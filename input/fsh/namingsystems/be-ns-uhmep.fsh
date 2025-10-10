@@ -18,5 +18,5 @@ Usage: #definition
 * description = "UHMEP naming system"
 * jurisdiction = $jurisdiction#BE "Belgium"
 * uniqueId.type = #uri
-* uniqueId.value = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
+* uniqueId.value = "https://www.ehealth.fgov.be/standards/fhir/drp/NamingSystem/uhmep"
 * uniqueId.preferred = true

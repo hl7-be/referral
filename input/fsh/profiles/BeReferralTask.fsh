@@ -8,7 +8,7 @@ Description: "The task that is referred to in the referral prescription (this is
 * identifier contains UHMEP 0..1 MS
 * identifier[UHMEP] ^short = "Reference ID of the UHMEP once available there"
 * identifier[UHMEP].system 1..
-* identifier[UHMEP].system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep" (exactly)
+* identifier[UHMEP].system = "https://www.ehealth.fgov.be/standards/fhir/drp/NamingSystem/uhmep" (exactly)
 * identifier[UHMEP].value 1..
 * statusReason MS
 * statusReason from BeVSTreatmentStatusReason (example)

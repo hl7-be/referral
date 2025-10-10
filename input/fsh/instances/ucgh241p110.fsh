@@ -10,7 +10,7 @@ Description: "Specialized nursing care for Parkinson's disease patient including
 * code = $sct#225964003	
 * extension[validity].valuePeriod.start = "2022-10-03"
 * extension[validity].valuePeriod.end = "2023-04-03"
-* status = #draft
+* status = #active
 * intent = #order
 * category =  $sct#9632001
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"

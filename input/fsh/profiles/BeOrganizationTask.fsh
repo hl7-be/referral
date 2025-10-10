@@ -8,7 +8,7 @@ Description: "Subtask to assign the referral task and prescription to one or mor
 * identifier contains UHMEP 0..1 MS
 * identifier[UHMEP] ^short = "Reference ID of the UHMEP once available there"
 * identifier[UHMEP].system 1..
-* identifier[UHMEP].system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep" (exactly)
+* identifier[UHMEP].system = "https://www.ehealth.fgov.be/standards/fhir/drp/NamingSystem/uhmep" (exactly)
 * identifier[UHMEP].value 1..
 * partOf 1..1 MS
 * partOf ^short = "Reference to the BeReferral task linked to the prescription"
