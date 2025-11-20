@@ -8,8 +8,7 @@ Characteristics: #can-be-target
 * priorityReason 0..1 CodeableConcept "The reason for the priority assigned to a referral or transfer request." "The reason for the priority assigned to a referral or transfer request."
 * additionalInfo 0..* Reference "Additional information that may be needed in the future to act on the request." "Additional information that may be needed in the future to act on the request."
 * previousExams 0..* Reference "Procedures that are related to this referral request." "Procedures that are related to this referral request."
-* pssInfo 0..1 Identifier "Identifier of the prescription in the PSS system." "Identifier of the prescription search in the PSS system."
-
+* pssIdentifier 0..1 Identifier "Identifier of the prescription in the PSS system." "Identifier of the prescription in the PSS system."
 
 
 
@@ -28,5 +27,4 @@ Characteristics: #can-be-target
 * explanationForRequest 0..1 Annotation "Explanation/Justification for the referral." "Explanation/Justification for the referral."
 * bodySite 0..* CodeableConcept "Anatomical location where the treatment should be applied (for example: 'Left arm')." "Anatomical location where the treatment should be applied (for example: 'Left arm')."
 * bodyLaterality 0..1 CodeableConcept "Laterality of the anatomical location where the treatment should be applied (for example: 'Left')." "Laterality of the anatomical location where the treatment should be applied (for example: \"Left\")."
-* pssIdentifier 0..* Identifier "Identifier of the prescription in the PSS system." "Identifier of the prescription in the PSS system."
 

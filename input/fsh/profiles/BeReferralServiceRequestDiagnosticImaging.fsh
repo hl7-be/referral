@@ -5,6 +5,10 @@ Description: "The common structure for referral prescription."
 * ^status = #draft
 
 
+* extension[BeValidityPeriod].valuePeriod.start 1..1
+* extension[BeValidityPeriod].valuePeriod.end 1..1
+
+
 // * extension contains BeRelevantInfo named relevantSupportingInformationAsCodeableConceptKeyValue 1..* MS 
 //     and BeExtCodeableReference named supportingInfo 0..* MS
 //     and BePSSInfo named pssInfo 0..1 MS 
@@ -15,9 +19,10 @@ Description: "The common structure for referral prescription."
 * category.coding.system = "http://snomed.info/sct" (exactly)
 * category.coding.code = #363679005 (exactly)
 
-* reasonCode ^short = "Diagnostic question, explanation/Justification for procedure or service"
-* reasonCode 1..* MS
+// * reasonCode ^short = "Diagnostic question, explanation/Justification for procedure or service"
+// * reasonCode 1..* MS
 //* supportingInfo only Reference(Resource or Procedure or BeObservation or Condition or BeAllergyIntolerance or MedicationStatement or QuestionnaireResponse)
 
-* bodySite MS
+// * bodySite MS
 * priority MS
+
