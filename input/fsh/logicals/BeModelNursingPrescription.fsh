@@ -10,6 +10,7 @@ Characteristics: #can-be-target
 * contraIndications 0..1 Annotation "Medical contraindications (e.g. 'Latex allergy'). 103306004 : 'Contraindication to (x)\"" "Medical contraindications (e.g. 'Latex allergy'). 103306004 : 'Contraindication to (x)'"
 * medicalReason 0..1 Annotation "Medical reasons for the prescription (e.g. 'Infected wound requiring follow-up'). 410666004 : \"Reason For (x)\"" "Medical reasons for the prescription (e.g. 'Infected wound requiring follow-up'). 410666004 : 'Reason For (x)'"
 
+* careRequested from BeVSBodySiteNursing
 // * careRequested from BeVSCareRequestedNursing
 // * description from BeVSCareDetailNursing
 

@@ -1,4 +1,5 @@
 Logical: BeModelOrganisationClaim
+Parent: Base
 Description: "Information of a claim of an organisation to have the prescription fulfilled."
 Characteristics: #can-be-target
 * identifier 1..1 Identifier "Business identifier" "Business Identifier. Absent during creation by client software, otherwise always present."
