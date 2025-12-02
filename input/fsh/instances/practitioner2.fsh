@@ -1,10 +1,10 @@
 Instance: practitioner2
 InstanceOf: BePractitioner
-Title: "practitioner2"
+Title: "Nurse"
 Usage: #example
 * identifier.use = #official
 * identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"
-* identifier.value = "88888888881"
+* identifier.value = "45094508408"
 * name[0].use = #official
 * name[=].family = "Chapel"
 * name[=].given = "Christopher"

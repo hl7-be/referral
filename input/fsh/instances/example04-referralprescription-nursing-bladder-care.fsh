@@ -1,27 +1,30 @@
 Instance: example04-referralprescription-nursing-bladder-care
-InstanceOf: BeReferralPrescriptionNursing
-Title: "example04-referralprescription-nursing-bladder-care"
+InstanceOf: BeReferralServiceRequestNursing
+Title: "Example 4: Nursing - Bladder care"
+Description: "One Care Prescription - Comprehensive bladder catheter management program with maintenance visits every 6 weeks. Includes catheter replacement, bladder irrigation, urinary output monitoring, infection prevention protocols, and patient/caregiver education on proper catheter care between nursing visits."
+
 Usage: #example
-* contained[+] = patient1
-* contained[+] = practitionerrole1
-* contained[+] = requesterrole1
-* extension[statusReason].valueCodeableConcept = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason#inProgress "In Progress"
+//* contained[+] = practitionerrole1
+
+//* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"
 * extension[feedback].valueBoolean = true
-* performer[+] = Reference(practitionerrole1)
+* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
+* extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 * status = #active
 * intent = #order
 * category = $sct#9632001
 * category.text = "Nursing procedure"
 * priority = #routine
-* code = $temp-service#tmp-remo-tube-9
-* subject = Reference(patient1)
+* code = BeTempRequestedService#tmp-remo-tube-9
+* subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
+* subject.identifier.value = "99999999999"
 * occurrenceTiming.repeat.boundsPeriod.start = "2021-04-01"
 * occurrenceTiming.repeat.boundsPeriod.end = "2022-03-31"
 * occurrenceTiming.repeat.frequency = 1
 * occurrenceTiming.repeat.period = 6
 * occurrenceTiming.repeat.periodUnit = #wk
 * authoredOn = "2022-10-31T00:00:00+01:00"
-* requester = Reference(requesterrole1)
+* requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * reasonCode = $sct#309256001

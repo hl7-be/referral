@@ -1,30 +1,34 @@
 Instance: example09-referralprescription-nursing-woundcare
-InstanceOf: BeReferralPrescriptionNursing
-Title: "example09-referralprescription-nursing-woundcare"
+InstanceOf: BeReferralServiceRequestNursing
+Title: "Example 9: Nursing - Wound care"
+Description: "Comprehensive daily wound management including assessment, cleansing, debridement when indicated, and application of appropriate dressings. Incorporates wound measurement, photography for progression monitoring, infection surveillance, and coordination with physicians for treatment plan adjustments."
+
 Usage: #example
-* contained[+] = patient1
-* contained[+] = practitionerrole1
-* contained[+] = requesterrole1
-* extension[statusReason].valueCodeableConcept = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason#inProgress "In Progress"
+//* contained[+] = practitionerrole1
+
+//* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"
 * extension[feedback].valueBoolean = true
-* performer[+] = Reference(practitionerrole1)
-* identifier.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
-* identifier.value = "UHMEPVALUE"
+* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
+* extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
+
+* identifier[UHMEP].value = "UHMEPVALUE"
+* identifier[SHORT].value = "AB12EF"
 * status = #active
 * intent = #order
 * category = $sct#9632001
 * category.text = "Nursing procedure"
 * priority = #routine
 * code = $sct#225358003
-* subject = Reference(patient1)
+* subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
+* subject.identifier.value = "99999999999"
 * occurrenceTiming.repeat.boundsPeriod.start = "2022-10-31"
 * occurrenceTiming.repeat.boundsPeriod.end = "2022-11-14"
 * occurrenceTiming.repeat.frequency = 1
 * occurrenceTiming.repeat.period = 1
 * occurrenceTiming.repeat.periodUnit = #d
 * authoredOn = "2022-10-31T00:00:00+01:00"
-* requester = Reference(requesterrole1)
+* requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * reasonCode = $sct#309256001
 * note.text = "wound care codeset/valueset is still missing (see orderDetail)"

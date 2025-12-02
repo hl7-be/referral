@@ -1,0 +1,35 @@
+Instance: example23-referralprescription-nursing-medication
+InstanceOf: BeReferralServiceRequestNursingMedication
+Title: "example23-referralprescription-nursing-medication"
+Usage: #example
+//* contained[+] = practitionerrole1
+
+
+//* extension[performertasks].valueReference[+] = Reference(performer-task)
+* extension[feedback].valueBoolean = true
+
+* identifier[UHMEP].value = "UHMEPVALUE"
+* identifier[SHORT].value = "AB12EF"
+* status = #active
+* statusReason = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason#inProgress "In Progress"
+* intent = #order
+* category = $be-nursing-medication-category#auricular
+* category.text = "Auricular"
+* priority = #routine
+* medicationCodeableConcept = $cnk-codes#0105965 "Cerulyx auric. druppels oploss. 10 ml 455 mg / 10 ml"
+* subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
+* subject.identifier.value = "99999999999"
+* requester.reference = "PractitionerRole/DOCTOR-10829059004"
+* note.text = "in beide oren, daarna 10 minuten op zij blijven liggen"
+* dosageInstruction.text = "frequency: 3 druppels 3x/dag gedurende 5 dagen"
+* dosageInstruction.patientInstruction = "daarna 10 minuten op zij blijven liggen"
+* dosageInstruction.timing.repeat.boundsDuration.value = 5
+* dosageInstruction.timing.repeat.boundsDuration.system = "http://hl7.org/fhir/ValueSet/ucum-units"
+* dosageInstruction.timing.repeat.boundsDuration.unit = "d"
+* dosageInstruction.timing.repeat.frequency = 3
+* dosageInstruction.timing.repeat.period = 1
+* dosageInstruction.timing.repeat.periodUnit = #d
+* dosageInstruction.site = $sct#34338003
+* extension[validity].valuePeriod.start = "2022-10-10"
+* extension[validity].valuePeriod.start = "2022-10-12"
+* authoredOn = "2022-10-31T00:00:00+01:00"

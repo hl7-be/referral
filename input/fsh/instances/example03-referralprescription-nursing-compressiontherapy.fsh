@@ -1,30 +1,34 @@
 Instance: example03-referralprescription-nursing-compressiontherapy
-InstanceOf: BeReferralPrescriptionNursing
-Title: "example03-referralprescription-nursing-compressiontherapy"
+InstanceOf: BeReferralServiceRequestNursing
+Title: "Example 3: Nursing - Compression therapy"
+Description: "Specialized compression therapy using Rosidal compression bandages, performed twice daily. Treatment protocol for bilateral lower extremity edema or venous insufficiency, including skin assessment, proper bandage application technique, circulation monitoring, and patient education on signs of complications."
+
 Usage: #example
-* contained[+] = patient1
-* contained[+] = practitionerrole1
-* contained[+] = requesterrole1
-* extension[statusReason].valueCodeableConcept = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason#inProgress "In Progress"
+//* contained[+] = practitionerrole1
+
+//* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * extension[validity].valuePeriod.start = "2022-04-19"
 * extension[validity].valuePeriod.end = "2023-04-19"
 * extension[feedback].valueBoolean = true
-* performer[+] = Reference(practitionerrole1)
-* identifier.system = "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
-* identifier.value = "UHMEPVALUE"
+* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
+* extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
+//
+* identifier[UHMEP].value = "UHMEPVALUE"
+* identifier[SHORT].value = "AB12EF"
 * status = #active
 * intent = #order
 * category = $sct#9632001
 * category.text = "Nursing procedure"
 * priority = #routine
 * code = $sct#413899004
-* subject = Reference(patient1)
+* subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
+* subject.identifier.value = "99999999999"
 * occurrenceTiming.repeat.boundsPeriod.start = "2022-04-19"
 * occurrenceTiming.repeat.boundsPeriod.end = "2023-04-19"
 * occurrenceTiming.repeat.frequency = 2
 * occurrenceTiming.repeat.period = 1
 * occurrenceTiming.repeat.periodUnit = #d
 * authoredOn = "2022-10-31T00:00:00+01:00"
-* requester = Reference(requesterrole1)
+* requester.reference = "PractitionerRole/DOCTOR-10829059004"
 * reasonCode = $sct#309256001
 * note.text = "Rosidal zwachtels ->  aan- en uitdoen / both underlegs"

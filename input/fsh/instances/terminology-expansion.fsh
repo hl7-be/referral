@@ -1,5 +1,5 @@
 Instance: terminology-expansion
 InstanceOf: Parameters
-Usage: #example
+Usage: #definition
 * parameter[+].name = "includeDesignations"
 * parameter[=].valueBoolean = true

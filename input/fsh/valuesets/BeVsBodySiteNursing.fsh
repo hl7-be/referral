@@ -1,20 +1,27 @@
 ValueSet: BeVSBodySiteNursing
 Id: be-vs-bodysite-nursing
 Title: "Body Site"
-Description: "Body Site"
-* ^version = "1.0.0"
+Description: "DEMONSTRATIVE EXAMPLE - Body Site"
+// * ^version = "1.0.0"
 * ^status = #active
-* ^date = "2021-01-10T10:59:49+00:00"
-* ^publisher = "eHealth Platform"
-* ^contact[0].name = "eHealth Platform"
-* ^contact[=].telecom.system = #url
-* ^contact[=].telecom.value = "https://www.ehealth.fgov.be"
-* ^contact[+].name = "Message structure"
-* ^contact[=].telecom.system = #email
-* ^contact[=].telecom.value = "message-structure@ehealth.fgov.be"
-* ^extension[http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm].valueInteger = 1
-* ^jurisdiction.coding[+] = urn:iso:std:iso:3166#BE
+// * ^date = "2021-01-10T10:59:49+00:00"
+// * ^publisher = "eHealth Platform"
+// * ^contact[0].name = "eHealth Platform"
+// * ^contact[=].telecom.system = #url
+// * ^contact[=].telecom.value = "https://www.ehealth.fgov.be"
+// * ^contact[+].name = "Message structure"
+// * ^contact[=].telecom.system = #email
+// * ^contact[=].telecom.value = "message-structure@ehealth.fgov.be"
+// * ^extension[http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm].valueInteger = 1
+// * ^jurisdiction.coding[+] = urn:iso:std:iso:3166#BE
 * ^experimental = false
+* ^copyright = """
+*   This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement
+    
+*   The SNOMED International IPS Terminology is distributed by International Health Terminology Standards Development Organisation, trading as SNOMED International, and is subject the terms of the [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/). For more information, see [SNOMED IPS Terminology](https://www.snomed.org/snomed-ct/Other-SNOMED-products/international-patient-summary-terminology)
+    
+*   The HL7 International IPS implementation guides incorporate SNOMED CT®, used by permission of the International Health Terminology Standards Development Organisation, trading as SNOMED International. SNOMED CT was originally created by the College of American Pathologists. SNOMED CT is a registered trademark of the International Health Terminology Standards Development Organisation, all rights reserved. Implementers of SNOMED CT should review [usage terms](https://www.snomed.org/get-snomed) or directly contact SNOMED International: info@snomed.org
+"""
 * $sct#31640002
 * $sct#789699009
 * $sct#78277001

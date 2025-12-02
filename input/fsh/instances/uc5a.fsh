@@ -6,10 +6,10 @@ Note importante : La partie précisant que la demande d'analyse concerne le gluc
 */
 
 Instance: uc5a-1
-InstanceOf: BeReferralPrescriptionNursing
+InstanceOf: BeReferralServiceRequestNursing
 * code = $sct#17636008
 * orderDetail = $sct#87612001
-* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
+//* extension[statusReason].valueCodeableConcept = $be-status-reason#inProgress "In progress"
 * reasonCode = $sct#267032009 
 * requester.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"
 * requester.identifier.value = "10829059004"
@@ -26,12 +26,13 @@ InstanceOf: BeReferralPrescriptionNursing
 * occurrenceTiming.repeat.count = 1
 * extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
 * extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
-* bodySite.extension[bodyLaterality].valueCoding = $sct#419161000
+//* bodySite.extension[bodyLaterality].valueCoding = $sct#419161000
 * bodySite.coding = $sct#14975008
  
 
 Instance: referral-task-uc5a-1 //we cannot throw it away, because we need the statusReason!!!
 InstanceOf: BeReferralTask
+Usage: #definition
 * status = #completed
 * intent = #order
 * focus = Reference(uc5a-1)
@@ -40,6 +41,8 @@ InstanceOf: BeReferralTask
 
 Instance: performer-task-1-uc5a-1
 InstanceOf: BePerformerTask
+Usage: #definition
+* authoredOn = "2020-01-01T00:00:00+01:00"
 * status = #completed
 * intent = #order
 * partOf = Reference(referral-task-uc5a-1)

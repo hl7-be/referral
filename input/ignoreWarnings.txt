@@ -1,13 +1,18 @@
-// Add warning and/or information messages here after you've confirmed that they aren't really a problem
-// (And include comments like this justifying why)
+== Suppressed Messages ==
 
-// This is inherited from the base resource
-WARNING: StructureDefinition/myObservation: StructureDefinition.snapshot.element[15].mapping[3].map: value should not start or finish with whitespace
+# Add warning and/or information messages here after you've confirmed that they aren't really a problem
+# (And include comments like this justifying why)
+# See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
 
-// We're expecting these to not match the slice - we're showing how you can use slicing to define the one repetition you want even when many repetitions might be present
-INFORMATION: Patient/example: Patient.name[0]: This element does not match any known slice for the profile http://somewhere.org/fhir/uv/myig/StructureDefinition/mypatient
-INFORMATION: Patient/example: Patient.name[1]: This element does not match any known slice for the profile http://somewhere.org/fhir/uv/myig/StructureDefinition/mypatient
 
-// If this was a real IG, there should be examples for these profiles too.  But it's not, and I'm lazy...
-WARNING: http://somewhere.org/fhir/uv/myig/StructureDefinition/myObservation: The Implementation Guide contains no examples for this profile
-WARNING: http://somewhere.org/fhir/uv/myig/StructureDefinition/mypractitioner: The Implementation Guide contains no examples for this profile
+# All codesystems in this IG are informative therefore can be draft
+Reference to draft CodeSystem %
+
+# some valuesets include semantic tags (FSN terms) and some without (preferred terms)
+This SNOMED-CT based include has some concepts with semantic tags (FSN terms) and some without (preferred terms) - check that this is what is intended %
+
+# not all extensions are currently covered by examples
+The Implementation Guide contains no examples for this extension
+
+# multiple matches should be interpreted as per current dependencies when possible. Issues
+There are multiple different potential matches for the url % It might be a good idea to fix to the correct version to reduce the likelihood of a wrong version being selected by an implementation/implementer, or use the [IG Parameter `pin-canonicals`](https://hl7.org/fhir/tools/CodeSystem-ig-parameters.html).
