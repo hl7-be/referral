@@ -3,8 +3,8 @@ Parent: Base
 Description: "Data model for the prescription referral."
 Characteristics: #can-be-target
 
-* identifier 1..1 Identifier "Business identifier of the request"
-* shortCode 1..1 CodeableConcept "Business code allowing the healthcare professional to find a prescription associated with a patient"
+* identifier 0..1 Identifier "Business identifier of the request"
+* shortCode 0..1 CodeableConcept "Business code allowing the healthcare professional to find a prescription associated with a patient"
 * recordedDate 1..1 dateTime "Date of recording of the information by the Recorder."
 * creationDate 1..1 dateTime "Date of creation of the referral prescription" "Date of creation of the referral prescription. This date will not change throughout the process. This date corresponds to the first recordedDate recorded for this referral prescription." 
 * patient 1..1 Identifier "Identification of the patient. The unique identifier must be: NISS, National Registry Number or Bis Patient" "Is the unique identifier of the patient. The unique identifier must be: NISS, National Registry Number or Bis Patient"
