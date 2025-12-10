@@ -34,3 +34,4 @@ Alias: $cd-hcparty = https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/
 Alias: $qsi = https://qsimedical.com
 
 Alias: $SRSupportingInfoExt = http://hl7.org/fhir/5.0/StructureDefinition/extension-ServiceRequest.supportingInfo
+Alias: $BeCodeableReference = https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeable-reference

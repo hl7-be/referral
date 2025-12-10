@@ -41,9 +41,8 @@ Description: "The common structure for referral prescription."
 
 
 
-
 // --------------------------------------------------------
-// 1. Diagnostic hypothesis & attention-worthy conditions (CodeableConcept)
+// 1. Diagnostic hypothesis (CodeableConcept) on reasonCode
 // --------------------------------------------------------
 
 * reasonCode ^slicing.discriminator[0].type = #pattern
@@ -51,58 +50,82 @@ Description: "The common structure for referral prescription."
 * reasonCode ^slicing.rules = #open
 
 * reasonCode contains
-    diagnosticHypothesis 0..1 and
-    attentionCondition 0..*
+    diagnosticHypothesis 0..1
 
-// Diagnostic hypothesis: the main thing being investigated
 * reasonCode[diagnosticHypothesis] from http://example.org/fhir/ValueSet/diagnostic-hypothesis (preferred)
-* reasonCode[diagnosticHypothesis] ^short = "Diagnostic hypothesis for the requested procedure"
+* reasonCode[diagnosticHypothesis] ^short = "Diagnostic hypothesis for the requested imaging procedure"
 * reasonCode[diagnosticHypothesis] ^definition =
-    "The primary diagnostic hypothesis that this procedure is intended to investigate."
-
-// Attention-worthy conditions: other clinically relevant conditions (coded)
-* reasonCode[attentionCondition] from http://example.org/fhir/ValueSet/attention-conditions (preferred)
-* reasonCode[attentionCondition] ^short =
-    "Other conditions or factors that deserve attention for this procedure (coded)"
-* reasonCode[attentionCondition] ^definition =
-    "Conditions, risk factors, or other coded statements considered important for planning or performing the procedure."
-
+    "The primary diagnostic hypothesis that this imaging procedure is intended to investigate."
 
 // --------------------------------------------------------
-// 2. Prior exams & attention-worthy conditions as references (pure R4 supportingInfo)
+// 2. SupportingInfo slices (prior exams & attention-worthy conditions)
 // --------------------------------------------------------
 
-// Slice supportingInfo by the type of referenced resources
+// Slice supportingInfo by target profile/type of the referenced resource
 * supportingInfo ^slicing.discriminator[0].type = #profile
 * supportingInfo ^slicing.discriminator[0].path = "resolve()"
 * supportingInfo ^slicing.rules = #open
 
 * supportingInfo contains
     priorExam 0..* and
-    attentionConditionRef 0..*
+    attentionCondition 0..*
 
-// 2a. Prior exams: ImagingStudy / DiagnosticReport
+// 2a. Prior exams: previous imaging or diagnostic reports
 * supportingInfo[priorExam] only Reference(ImagingStudy or DiagnosticReport)
 * supportingInfo[priorExam] ^short = "Prior diagnostic exams relevant to this request"
 * supportingInfo[priorExam] ^definition =
-    "References to prior imaging studies or diagnostic reports that provide clinical context."
+    "References to prior imaging studies or diagnostic reports that provide clinical context for this imaging request."
 
-// 2b. Attention-worthy conditions as references
-* supportingInfo[attentionConditionRef] only Reference(Condition or Observation)
-* supportingInfo[attentionConditionRef] ^short =
-    "Attention-worthy conditions or findings as referenced resources"
-* supportingInfo[attentionConditionRef] ^definition =
-    "References to conditions, observations, or findings that may influence the requested procedure (e.g. comorbidities, risk factors)."
+// 2b. Attention-worthy conditions: conditions/findings the performer should be aware of
+* supportingInfo[attentionCondition] only Reference(Condition or Observation)
+* supportingInfo[attentionCondition] ^short =
+    "Attention-worthy conditions or findings (as resources, with optional coded form)"
+* supportingInfo[attentionCondition] ^definition =
+    "References to conditions, comorbidities, risk factors, or observations that the performer should consider when executing the imaging procedure."
 
 
 // --------------------------------------------------------
-// 3. Optional: xversion supportingInfo extension (R5-style) for forward compatibility
+// 3. OPTION B – attach be-ext-codeable-reference to attentionCondition
+//    to allow a CodeableConcept *and* a Reference-like semantics
 // --------------------------------------------------------
 
-// This does NOT replace supportingInfo and we do NOT try to constrain
-// valueCodeableReference here (R4 does not know CodeableReference as a native type).
-// We simply make it available so R5/xversion-aware tooling can use it.
+// Allow the Belgian CodeableReference extension on the attentionCondition slice
+// (This is a complex extension with child slices `reference` and `concept`.)
+* supportingInfo[attentionCondition].extension contains
+    be-ext-codeable-reference named attentionCodeableRef 0..1
 
-* extension contains $SRSupportingInfoExt named supportingInfoR5 0..* MS
-* extension[supportingInfoR5] ^short = "R5-style supportingInfo (CodeableReference) for forward compatibility"
-* extension[supportingInfoR5] ^definition = "Backported R5 ServiceRequest.supportingInfo as an extension. In R4, this is treated as an opaque extension; structural modeling is done with the native supportingInfo slices."
+* supportingInfo[attentionCondition].extension[attentionCodeableRef] ^short =
+    "CodeableReference-like wrapper (concept + reference) for the attention condition"
+* supportingInfo[attentionCondition].extension[attentionCodeableRef] ^definition =
+    "Belgian CodeableReference extension, allowing a coded representation and/or a reference for the attention-worthy condition."
+
+// You can further guide usage in prose, but you generally do not need to
+// constrain the internal concept/reference slices in the profile:
+//   - Extension.extension[reference].valueReference : Reference(Resource)
+//   - Extension.extension[concept].valueCodeableConcept : CodeableConcept
+// See the be-ext-codeable-reference definition for details.
+
+
+// --------------------------------------------------------
+// 4. OPTION A – pure R4 (no be-ext-codeable-reference) – COMMENTED OUT
+// --------------------------------------------------------
+
+// If you ever want the simpler, R4-only model without the CodeableReference-like
+// extension, just remove the block in section 3 above and you can keep this
+// commented block as documentation:
+//
+// // Pure R4 version: no extra extension, just the two slices
+// // * supportingInfo ^slicing.discriminator[0].type = #profile
+// // * supportingInfo ^slicing.discriminator[0].path = "resolve()"
+// // * supportingInfo ^slicing.rules = #open
+// //
+// // * supportingInfo contains
+// //     priorExam 0..* and
+// //     attentionCondition 0..*
+// //
+// // * supportingInfo[priorExam] only Reference(ImagingStudy or DiagnosticReport)
+// // * supportingInfo[priorExam] ^short = "Prior diagnostic exams relevant to this request"
+// //
+// // * supportingInfo[attentionCondition] only Reference(Condition or Observation)
+// // * supportingInfo[attentionCondition] ^short =
+// //     "Attention-worthy conditions or findings as referenced resources"
