@@ -14,13 +14,13 @@ Characteristics: #can-be-target
 * statusReason 0..1 CodeableConcept "Gives the reason for the status of the referral prescription (treatment has been changed, patient is allergic, patient refuses, …)" "Gives the reason for the status of the referral prescription (treatment has been changed, patient is allergic, patient refuses, ...)"
 * statusReason from BeVSPrescriptionStatusReason
 * careRequested 1..1 CodeableConcept "Type of care requested (e.g. 'Compression therapy', 'Sample collection', CT Scan)." "Type of care requested (e.g. 'Compression therapy', 'Sample collection', 'CT Scan')."
-* careRequested from 
+//* careRequested from 
 * description 0..1 CodeableConcept "Additional details on the requested care" "Additional details on the requested care"
 * discipline 1..1 CodeableConcept "Category of the requested care (nursing, radiology, ...)" "Category of the requested care (nursing, radiology, ...)"
-* discipline from 
+//* discipline from 
 
 * type 1..1 CodeableConcept "Type of the request or prescription ('Prescription' or 'Proposal')." "Type of the request or prescription ('Prescription' or 'Proposal')."
-* type from 
+//* type from 
 * originRequestId 0..1 Identifier "Reference to the ID of the original request (useful when the request is an extension of another one)." "Reference to the ID of the original request (useful when the request is an extension of another one)."
 
 //* validityPeriod 1..1 Period "Start and end date of the prescription validity (encoded by the prescriber)" "End date of the prescription validity (encoded by the prescriber)"
