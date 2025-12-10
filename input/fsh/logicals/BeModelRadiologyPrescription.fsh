@@ -23,7 +23,7 @@ Characteristics: #can-be-target
 // * description from BeVSCareDetailNursing
 
 //* problem 0..* Reference(Condition) "The clinical condition that is the reason for the referral." "The clinical condition that is the reason for the referral."
-* problem 0..* Reference "Indications supporting the referral request." "Indications supporting the referral request."
+//* problem 0..* Reference "Indications supporting the referral request." "Indications supporting the referral request."
 * explanationForRequest 0..1 Annotation "Explanation/Justification for the referral." "Explanation/Justification for the referral."
 * bodySite 0..* CodeableConcept "Anatomical location where the treatment should be applied (for example: 'Left arm')." "Anatomical location where the treatment should be applied (for example: 'Left arm')."
 * bodyLaterality 0..1 CodeableConcept "Laterality of the anatomical location where the treatment should be applied (for example: 'Left')." "Laterality of the anatomical location where the treatment should be applied (for example: \"Left\")."

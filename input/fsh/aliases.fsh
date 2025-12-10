@@ -32,3 +32,5 @@ Alias: $cnk_product_codes = https://www.ehealth.fgov.be/standards/fhir/medicatio
 Alias: $cd-hcparty = https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty
 //Alias: $temp-detail = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service-detail
 Alias: $qsi = https://qsimedical.com
+
+Alias: $SRSupportingInfoExt = http://hl7.org/fhir/5.0/StructureDefinition/extension-ServiceRequest.supportingInfo
