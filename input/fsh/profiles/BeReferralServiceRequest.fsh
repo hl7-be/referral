@@ -80,6 +80,7 @@ Description: "The common structure for referral prescription."
 
 * intent MS
 //* intent from http://fhir.org/VCL?v1=(http://hl7.org/fhir/request-intent)(order;proposal)
+* intent from BeVSRequestIntent
 
 // Define the parent slice
 * category contains discipline 0..1 MS
