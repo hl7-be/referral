@@ -26,7 +26,7 @@ Description: "Subtask performed by one performer"
 * intent ^binding.description = "The actual valueset will be provided when a terminology package is available. For current guidance, see the included [ValueSet](ValueSet-be-vs-performer-task-status-reason.html)."
 
 * basedOn MS
-* basedOn only Reference(BeAssignmentTask)
+* basedOn only Reference(BeOrganizationTask)
 * focus MS
 * focus only Reference(BeReferralServiceRequest or BeAnnex81) /* or BeReferralRequestGroup */ 
 //* intent from BeVSTaskIntent

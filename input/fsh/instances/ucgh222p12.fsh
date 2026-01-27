@@ -91,7 +91,7 @@ Usage: #definition
 
 
 Instance: ucgh222p12-1-2-1
-InstanceOf: BeAssignmentTask
+InstanceOf: BeOrganizationTask
 Usage: #definition
 * authoredOn = "2020-01-01T00:00:00+01:00"
 * partOf = Reference(ucgh222p12-1-2)
@@ -111,7 +111,7 @@ Usage: #definition
 
 
 Instance: ucgh222p12-2-2-1
-InstanceOf: BeAssignmentTask
+InstanceOf: BeOrganizationTask
 Usage: #definition
 * authoredOn = "2020-01-01T00:00:00+01:00"
 * partOf = Reference(ucgh222p12-2-2)
