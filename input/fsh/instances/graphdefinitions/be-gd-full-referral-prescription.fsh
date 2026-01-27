@@ -1,4 +1,5 @@
-Instance: full-referral-prescription
+Instance: BeGDFullReferralPrescription
+Id: full-referral-prescription
 InstanceOf: GraphDefinition
 Title: "BeGDFullReferralPrescription"
 Usage: #definition

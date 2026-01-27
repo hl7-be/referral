@@ -1,4 +1,5 @@
-Instance: be-op-reject-annex81
+Instance: BeOpRejectAnnex81
+Id: be-op-reject-annex81
 InstanceOf: OperationDefinition
 Title: "BeOpRejectAnnex81"
 Description: "Rejects an Annex81 proposal"
