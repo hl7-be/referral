@@ -1,11 +1,6 @@
 This is the HL7 Belgium FHIR Implementation Guide for the [Referral prescription workgroup](https://wiki.hl7belgium.org/index.php?title=Procedure_Referral_Workgroup).  
 General guidance is available on the [Guidance page](guidance.html)
-\
-   <div>
-	<blockquote class="stu-note">
-	<strong>This documentation and set of artefacts are still undergoing development.</strong>
-	</blockquote>
-  </div>
+
    <div>
 	<blockquote class="stu-note">
 	<strong>This implementation guide contains only demonstrative example for terminology resources.</strong>
