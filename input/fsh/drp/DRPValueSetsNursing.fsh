@@ -13,6 +13,7 @@ ValueSet: BeVSNursingPrescriptionTechnicalType
 Id: be-vs-nursing-prescription-technical-type
 Title: "DRP Nursing Prescription Technical Type"
 Description: "Technical types of nursing prescriptions using SNOMED CT codes."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-nursing-prescription-technical-type"
 * ^experimental = false
 * ^copyright = """This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO)."""
 * $sct#385796006 "Medication prefill preparation (procedure)"
@@ -33,6 +34,7 @@ ValueSet: BeVSAnnex81TechnicalType
 Id: be-vs-annex81-technical-type
 Title: "DRP Annex 81 Technical Type"
 Description: "Technical type for Annex 81 prescriptions."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-annex81-technical-type"
 * ^experimental = false
 * include BeCSPrescriptionType#annex-81
 
@@ -44,6 +46,7 @@ ValueSet: BeVSNursingCareRequested
 Id: be-vs-nursing-care-requested
 Title: "DRP Nursing Care Requested"
 Description: "Clinical care services that can be prescribed for nursing care using SNOMED CT."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-nursing-care-requested"
 * ^experimental = false
 * ^copyright = """This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO)."""
 * $sct#385796006 "Medication prefill preparation (procedure)"
@@ -64,6 +67,7 @@ ValueSet: BeVSAnnex81CareRequested
 Id: be-vs-annex81-care-requested
 Title: "DRP Annex 81 Care Requested"
 Description: "Clinical care services for Annex 81 prescriptions."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-annex81-care-requested"
 * ^experimental = false
 * ^copyright = """This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO)."""
 * $sct#385796006 "Medication prefill preparation (procedure)"
@@ -76,6 +80,7 @@ ValueSet: BeVSEducationTypeWithoutTrajectory
 Id: be-vs-education-type-without-trajectory
 Title: "DRP Education Type Without Trajectory"
 Description: "Types of diabetes education for patients without a trajectory."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-education-type-without-trajectory"
 * ^experimental = false
 * include codes from system BeCSdiabeticEducationTypeWithoutTrajectory
 
@@ -87,6 +92,7 @@ ValueSet: BeVSEducationTypeWithTrajectory
 Id: be-vs-education-type-with-trajectory
 Title: "DRP Education Type With Trajectory"
 Description: "Types of diabetes education for education within a care trajectory."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-education-type-with-trajectory"
 * ^experimental = false
 * include codes from system BeCSdiabeticEducationTypeWithTrajectory
 
@@ -98,6 +104,7 @@ ValueSet: BeVSEducatorType
 Id: be-vs-educator-type
 Title: "DRP Educator Type"
 Description: "Types of educators for diabetes education activities."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-educator-type"
 * ^experimental = false
 * ^copyright = """This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO)."""
 * $sct#106292003 "Professional nurse (occupation)"
@@ -111,6 +118,7 @@ ValueSet: BeVSSessionType
 Id: be-vs-session-type
 Title: "DRP Session Type"
 Description: "Types of sessions for education or care activities (standard)."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-session-type"
 * ^experimental = false
 * BeCSSessionTypes#individual-session
 * BeCSSessionTypes#group-session
@@ -123,6 +131,7 @@ ValueSet: BeVSSessionTypeExtended
 Id: be-vs-session-type-extended
 Title: "DRP Session Type Extended"
 Description: "Types of sessions for education or care activities (extended, including combination)."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-session-type-extended"
 * ^experimental = false
 * include codes from system BeCSSessionTypes
 
@@ -134,6 +143,7 @@ ValueSet: BeVSSampleSubstanceType
 Id: be-vs-sample-substance-type
 Title: "DRP Sample Substance Type"
 Description: "Types of samples/substances that can be collected."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-sample-substance-type"
 * ^experimental = false
 * ^copyright = """This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO)."""
 * $sct#45710003 "Sputum (substance)"
@@ -153,6 +163,7 @@ ValueSet: BeVSGlycemiaMeasurementTime
 Id: be-vs-glycemia-measurement-time
 Title: "DRP Glycemia Measurement Time"
 Description: "Timing of glycemia measurements."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-glycemia-measurement-time"
 * ^experimental = false
 * include codes from system BeCSGlycemiaMeasurementTiming
 
@@ -164,6 +175,7 @@ ValueSet: BeVSParameterType
 Id: be-vs-parameter-type
 Title: "DRP Parameter Type"
 Description: "Types of parameters/vital signs that can be measured."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-parameter-type"
 * ^experimental = false
 * ^copyright = """This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO)."""
 * $sct#75367002 "Blood Pressure (observable entity)"
@@ -189,6 +201,7 @@ ValueSet: BeVSAnnex81NursingDiagnosis
 Id: be-vs-annex81-nursing-diagnosis
 Title: "DRP Annex 81 Nursing Diagnosis"
 Description: "Nursing diagnoses/findings that can motivate an Annex 81 request."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-annex81-nursing-diagnosis"
 * ^experimental = false
 * ^copyright = """This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO)."""
 * $sct#275928001 "Drugs - partial non-compliance (finding)"
@@ -208,6 +221,7 @@ ValueSet: BeVSAnnex81MedicalProblem
 Id: be-vs-annex81-medical-problem
 Title: "DRP Annex 81 Medical Problem"
 Description: "Medical problems/conditions that can justify an Annex 81 request."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-annex81-medical-problem"
 * ^experimental = false
 * ^copyright = """This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO)."""
 * $sct#52448006 "Dementia (disorder)"
@@ -224,6 +238,7 @@ ValueSet: BeVSDiabetesEducationIdentifier
 Id: be-vs-diabetes-education-identifier
 Title: "DRP Diabetes Education Identifier"
 Description: "Identifiers to distinguish types of diabetes education prescriptions."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-diabetes-education-identifier"
 * ^experimental = false
 * ^copyright = """This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO)."""
 * $sct#211141000172109 "Within a convention centre"

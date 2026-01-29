@@ -13,6 +13,7 @@ ValueSet: BeVSCategoriesOfCare
 Id: be-vs-categories-of-care
 Title: "DRP Categories of Care"
 Description: "Categories of care that can be prescribed by a GP in the DRP project. Currently limited to nursing care."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-categories-of-care"
 * ^experimental = false
 * ^copyright = """This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO)."""
 * $sct#9632001 "Nursing procedure (procedure)"
@@ -25,6 +26,7 @@ ValueSet: BeVSBodySite
 Id: be-vs-body-site
 Title: "DRP Body Site"
 Description: "Anatomical body sites based on SNOMED CT for use in referral prescriptions."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-body-site"
 * ^experimental = false
 * ^copyright = """This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO)."""
 * $sct#31640002 "Occipital bone structure"
@@ -94,6 +96,7 @@ ValueSet: BeVSBodyLaterality
 Id: be-vs-body-laterality
 Title: "DRP Body Laterality"
 Description: "Laterality qualifiers (left, right, bilateral) based on SNOMED CT."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-body-laterality"
 * ^experimental = false
 * ^copyright = """This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO)."""
 * $sct#7771000 "Left (qualifier value)"
@@ -108,6 +111,7 @@ ValueSet: BeVSBodyTopography
 Id: be-vs-body-topography
 Title: "DRP Body Topography"
 Description: "Topographical qualifiers for body sites based on SNOMED CT."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-body-topography"
 * ^experimental = false
 * ^copyright = """This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO)."""
 * $sct#261183002 "Upper (qualifier value)"
@@ -131,5 +135,6 @@ ValueSet: BeVSNoteTypes
 Id: be-vs-note-type
 Title: "DRP Note Type"
 Description: "Types of notes that can be associated with a prescription."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-note-type"
 * ^experimental = false
 * include codes from system BeCSNoteTypes

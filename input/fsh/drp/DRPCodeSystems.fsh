@@ -10,6 +10,7 @@ CodeSystem: BeCSPrescriptionType
 Id: be-cs-prescription-type
 Title: "DRP Prescription Type"
 Description: "Technical types of prescriptions supported by the DRP system. Used for routing and workflow purposes."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-prescription-type"
 * ^experimental = false
 * ^caseSensitive = true
 
@@ -98,6 +99,7 @@ CodeSystem: BeCSGenericCareTypes
 Id: be-cs-generic-care-types
 Title: "DRP Generic Care Types"
 Description: "Types of care that can be prescribed via the generic prescription."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-generic-care-types"
 * ^experimental = false
 * ^caseSensitive = true
 
@@ -162,6 +164,7 @@ CodeSystem: BeCSdiabeticEducationTypeWithoutTrajectory
 Id: be-cs-diabetic-education-type-for-patients-without-trajectory
 Title: "DRP Diabetic Education Type Without Trajectory"
 Description: "Types of diabetes education for patients without a trajectory."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-diabetic-education-type-for-patients-without-trajectory"
 * ^experimental = false
 * ^caseSensitive = true
 
@@ -202,6 +205,7 @@ CodeSystem: BeCSdiabeticEducationTypeWithTrajectory
 Id: be-cs-diabetic-education-type-with-trajectory
 Title: "DRP Diabetic Education Type With Trajectory"
 Description: "Types of diabetes education for education within a care trajectory."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-diabetic-education-type-with-trajectory"
 * ^experimental = false
 * ^caseSensitive = true
 
@@ -266,6 +270,7 @@ CodeSystem: BeCSGlycemiaMeasurementTiming
 Id: be-cs-glycemia-measurement-timing
 Title: "DRP Glycemia Measurement Timing"
 Description: "Timing of glycemia measurements."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-glycemia-measurement-timing"
 * ^experimental = false
 * ^caseSensitive = true
 
@@ -300,6 +305,7 @@ CodeSystem: BeCSNoteTypes
 Id: be-cs-note-types
 Title: "DRP Note Types"
 Description: "Types of notes that can be associated with a prescription."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-note-types"
 * ^experimental = false
 * ^caseSensitive = true
 
@@ -328,6 +334,7 @@ CodeSystem: BeCSSessionTypes
 Id: be-cs-session-types
 Title: "DRP Session Types"
 Description: "Types of sessions for education or care activities."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-session-types"
 * ^experimental = false
 * ^caseSensitive = true
 
