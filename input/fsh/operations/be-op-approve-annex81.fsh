@@ -1,5 +1,4 @@
-Instance: BeOpApproveAnnex81
-Id: be-op-approve-annex81
+Instance: be-op-approve-annex81
 InstanceOf: OperationDefinition
 Title: "BeOpApproveAnnex81"
 Description: "Creates an approval from an Annex81 proposal"
