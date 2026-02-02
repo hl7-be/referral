@@ -1,6 +1,6 @@
 Instance: BeSPServiceRequestStatusReason
 InstanceOf: SearchParameter
-Title: "BeSPServiceRequestStatusReason"
+Title: "Service Request Status Reason"
 Usage: #definition
 //* url = "https://www.ehealth.fgov.be/standards/fhir/referral/SearchParameter/be-sp-serviceRequest-statusReason"
 * id = "be-sp-serviceRequest-statusReason"

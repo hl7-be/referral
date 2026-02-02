@@ -126,6 +126,12 @@ Description: "Topographical qualifiers for body sites based on SNOMED CT."
 * $sct#352730000 "Above (qualifier value)"
 * $sct#260521003 "Internal (qualifier value)"
 * $sct#261074009 "External (qualifier value)"
+* $sct#261129000
+* $sct#90069004
+* $sct#37197008
+* $sct#264153007
+* $sct#261184008
+* $sct#261123004
 
 // ----------------------------------------------------------------------------
 // 5. Note Type

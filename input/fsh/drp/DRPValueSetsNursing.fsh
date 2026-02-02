@@ -36,7 +36,7 @@ Title: "DRP Annex 81 Technical Type"
 Description: "Technical type for Annex 81 prescriptions."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-annex81-technical-type"
 * ^experimental = false
-* include BeCSPrescriptionType#annex-81
+* include BeCSPrescriptionType#medication-prefill-preparation-appendix-81
 
 // ----------------------------------------------------------------------------
 // 3. Nursing Care Requested (SNOMED CT)

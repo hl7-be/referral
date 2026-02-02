@@ -68,6 +68,19 @@ Description: "Technical types of prescriptions supported by the DRP system. Used
   * ^designation[+].language = #fr-BE
   * ^designation[=].value = "Préparation des médicaments (Non remboursé)"
 
+* #medication-prefill-preparation-appendix-81 "Preparing medication (Appendix 81)"
+  * ^designation[0].language = #nl-BE
+  * ^designation[=].value = "Medicatie klaarzetten (bijlage 81)"
+  * ^designation[+].language = #fr-BE
+  * ^designation[=].value = "Préparation de médicaments (annexe 81)"
+
+* #medication-prefill-preparation-not-refunded "Preparation of medicines (Not refunded)"
+  * ^designation[0].language = #nl-BE
+  * ^designation[=].value = "Medicatie klaarzetten (Niet terugbetaald)"
+  * ^designation[+].language = #fr-BE
+  * ^designation[=].value = "Préparation des médicaments (Non remboursé)"
+
+
 * #parameters "Measurement of parameters"
   * ^designation[0].language = #nl-BE
   * ^designation[=].value = "Meting van parameters"
@@ -86,11 +99,6 @@ Description: "Technical types of prescriptions supported by the DRP system. Used
   * ^designation[+].language = #fr-BE
   * ^designation[=].value = "Soins infirmiers génériques"
 
-* #annex-81 "Preparing medication (Appendix 81)"
-  * ^designation[0].language = #nl-BE
-  * ^designation[=].value = "Medicatie klaarzetten (bijlage 81)"
-  * ^designation[+].language = #fr-BE
-  * ^designation[=].value = "Préparation de médicaments (annexe 81)"
 
 // ----------------------------------------------------------------------------
 // 2. Generic Care Types
@@ -326,6 +334,12 @@ Description: "Types of notes that can be associated with a prescription."
   * ^designation[=].value = "Medische reden"
   * ^designation[+].language = #fr-BE
   * ^designation[=].value = "Raison médicale"
+
+* #comment-prescriber "Comment from the doctor/prescriber"
+  * ^designation[0].language = #nl-BE
+  * ^designation[=].value = "Opmerking van de arts/voorschrijver"
+  * ^designation[+].language = #fr-BE
+  * ^designation[=].value = "Commentaire du médecin/prescripteur"
 
 // ----------------------------------------------------------------------------
 // 7. Session Types
