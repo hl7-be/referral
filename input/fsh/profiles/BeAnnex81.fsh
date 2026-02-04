@@ -32,9 +32,22 @@ Id: be-annex-81
 * extension[latest] ^short = "Request must be executed before"
 //* extension[feedback] ^short = "Give feedback to the prescriber"
 //* extension[latestDraft] ^short = "The prescription must have left the draft status befor this moment"
-* category MS
-* category.coding.system = "http://snomed.info/sct" (exactly)
-* category.coding.code = #9632001 (exactly)
+* category 1..* MS
+* category ^slicing.discriminator.type = #pattern
+* category ^slicing.discriminator.path = "$this"
+* category ^slicing.rules = #open
+* category ^slicing.ordered = false
+* category ^slicing.description = "Slice to allow profile type category and additional use-case specific categories"
+* category contains
+    referralType 1..1 MS and
+    other 0..* MS
+* category[referralType] from be-vs-categories-of-care (required)
+* category[referralType] = $sct#9632001 "Nursing procedure (procedure)"
+* category[referralType] ^short = "Category that identifies the type of referral"
+* category[referralType] ^binding.description = "Categories of care that can be prescribed. See [ValueSet](ValueSet-be-vs-categories-of-care.html)."
+* category[other] from be-vs-annex81-technical-type (example)
+* category[other] ^short = "Technical type for Annex 81 prescriptions"
+* category[other] ^binding.description = "Technical type for Annex 81 prescriptions. See [ValueSet](ValueSet-be-vs-annex81-technical-type.html)."
 * code 1..1 MS
 * code = BeTempRequestedService#tmp-prep-x081-2
 //* extension[performerType].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?

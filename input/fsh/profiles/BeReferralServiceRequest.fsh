@@ -21,9 +21,21 @@ Description: "The common structure for referral prescription."
 //* requisition ^short = "If needed to have a common identifier among different prescriptions."
 * status MS
 * intent MS
-* category 1..1 MS
-* category from be-vs-referral-category (example)
-* category ^binding.description = "The actual valueset will be provided when a terminology package is available. For current guidance, see the included [ValueSet](ValueSet-be-vs-referral-category.html)."
+* category 1..* MS
+* category ^slicing.discriminator.type = #pattern
+* category ^slicing.discriminator.path = "$this"
+* category ^slicing.rules = #open
+* category ^slicing.ordered = false
+* category ^slicing.description = "Slice to allow profile type category and additional use-case specific categories"
+* category contains
+    referralType 1..1 MS and
+    other 0..* MS
+* category[referralType] from be-vs-categories-of-care (required)
+* category[referralType] ^short = "Category that identifies the type of referral (e.g., nursing, physiotherapy)"
+* category[referralType] ^binding.description = "Categories of care that can be prescribed. See [ValueSet](ValueSet-be-vs-categories-of-care.html)."
+* category[other] from be-vs-prescription-type (example)
+* category[other] ^short = "Additional categories for use-case specific purposes (e.g., prescription type)"
+* category[other] ^binding.description = "Technical types of prescriptions for routing and workflow. See [ValueSet](ValueSet-be-vs-prescription-type.html)."
 
 * code 1..1 MS
 * code from $procedure-code (example)

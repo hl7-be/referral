@@ -14,8 +14,11 @@ Description: "The nursing profile, generic version. Please note the nursing refe
 // * ^contact[=].telecom.value = "message-structure@ehealth.fgov.be"
 // * ^contact[=].telecom.use = #work
 // * ^jurisdiction = $jurisdiction#BE "Belgium"
-* category.coding.system = "http://snomed.info/sct" (exactly)
-* category.coding.code = #9632001 (exactly)
+* category[referralType] = $sct#9632001 "Nursing procedure (procedure)"
+* category[other] from be-vs-nursing-prescription-technical-type (example)
+* category[other] ^short = "Additional categories such as technical prescription type for nursing referrals"
+* category[other] ^binding.description = "Technical types of nursing prescriptions (e.g., medication prefill, diabetic care education, specimen collection)."
+
 * code 1..
 * code from be-vs-requested-services-nurse (example)
 * code ^binding.description = "The actual valueset will be provided when a terminology package is available. For current guidance, see the included [ValueSet](ValueSet-be-vs-requested-services-nurse.html)."

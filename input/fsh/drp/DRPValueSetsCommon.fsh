@@ -144,3 +144,15 @@ Description: "Types of notes that can be associated with a prescription."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-note-type"
 * ^experimental = false
 * include codes from system BeCSNoteTypes
+
+// ----------------------------------------------------------------------------
+// 6. Prescription Type
+// ValueSet for the DRP Prescription Type CodeSystem
+// ----------------------------------------------------------------------------
+ValueSet: BeVSPrescriptionType
+Id: be-vs-prescription-type
+Title: "DRP Prescription Type"
+Description: "Technical types of prescriptions supported by the DRP system. Used for routing and workflow purposes."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-prescription-type"
+* ^experimental = false
+* include codes from system BeCSPrescriptionType
