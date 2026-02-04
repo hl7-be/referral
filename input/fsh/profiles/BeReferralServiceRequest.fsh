@@ -74,6 +74,10 @@ Description: "The common structure for referral prescription."
 // * extension ^slicing.discriminator.path = "url"
 // * extension ^slicing.rules = #open
 
+* replaces MS
+* replaces ^short = "The request that this is a continuation of"
+* replaces ^comment = "In cases where a request needs to be extended or prolonged, this element can be used to indicate that the current prescription is a continuation of the referenced one. This reference can be a logical reference (with an identifier), or just the display indicating the relevant prescription data, or a literal reference, to an external or contained resource. Usage guidance will be further detailed."
+
 * extension contains
     BeFeedbackToPrescriber named feedback 0..1 MS and
     //BeCoPrescriberInfo named coprescriber 0..1 MS and
