@@ -22,7 +22,7 @@ Description: "The common structure for referral prescription."
 * status MS
 * intent MS
 * category 1..* MS
-* category ^slicing.discriminator.type = #pattern
+* category ^slicing.discriminator.type = #value
 * category ^slicing.discriminator.path = "$this"
 * category ^slicing.rules = #open
 * category ^slicing.ordered = false

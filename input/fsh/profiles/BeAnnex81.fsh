@@ -33,7 +33,7 @@ Id: be-annex-81
 //* extension[feedback] ^short = "Give feedback to the prescriber"
 //* extension[latestDraft] ^short = "The prescription must have left the draft status befor this moment"
 * category 1..* MS
-* category ^slicing.discriminator.type = #pattern
+* category ^slicing.discriminator.type = #value
 * category ^slicing.discriminator.path = "$this"
 * category ^slicing.rules = #open
 * category ^slicing.ordered = false
