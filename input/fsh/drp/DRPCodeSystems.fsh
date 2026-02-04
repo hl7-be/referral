@@ -166,16 +166,17 @@ Description: "Types of care that can be prescribed via the generic prescription.
   * ^designation[=].value = "Autre"
 
 // ----------------------------------------------------------------------------
-// 3. Diabetic Education Type for Patients Without a Trajectory
+// 3. Diabetic Education Type (merged from Without/With Trajectory)
 // ----------------------------------------------------------------------------
-CodeSystem: BeCSdiabeticEducationTypeWithoutTrajectory
-Id: be-cs-diabetic-education-type-for-patients-without-trajectory
-Title: "DRP Diabetic Education Type Without Trajectory"
-Description: "Types of diabetes education for patients without a trajectory."
-* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-diabetic-education-type-for-patients-without-trajectory"
+CodeSystem: BeCSdiabeticEducationType
+Id: be-cs-diabetic-education-type
+Title: "DRP Diabetic Education Type"
+Description: "Types of diabetes education activities."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-diabetic-education-type"
 * ^experimental = false
 * ^caseSensitive = true
 
+// Codes for patients without a trajectory
 * #diabetic-education-self-care "Education to self-care"
   * ^designation[0].language = #nl-BE
   * ^designation[=].value = "Educatie tot zelfzorg"
@@ -206,17 +207,7 @@ Description: "Types of diabetes education for patients without a trajectory."
   * ^designation[+].language = #fr-BE
   * ^designation[=].value = "Autre (non remboursé)"
 
-// ----------------------------------------------------------------------------
-// 4. Diabetic Education Type Within Care Trajectory
-// ----------------------------------------------------------------------------
-CodeSystem: BeCSdiabeticEducationTypeWithTrajectory
-Id: be-cs-diabetic-education-type-with-trajectory
-Title: "DRP Diabetic Education Type With Trajectory"
-Description: "Types of diabetes education for education within a care trajectory."
-* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-diabetic-education-type-with-trajectory"
-* ^experimental = false
-* ^caseSensitive = true
-
+// Codes for education within a care trajectory
 * #diabetic-education-disease-lifestyle "Information about disease and healthy lifestyle"
   * ^designation[0].language = #nl-BE
   * ^designation[=].value = "Informatie over ziekte en gezonde levensstijl"

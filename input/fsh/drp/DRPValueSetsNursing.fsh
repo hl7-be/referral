@@ -82,7 +82,11 @@ Title: "DRP Education Type Without Trajectory"
 Description: "Types of diabetes education for patients without a trajectory."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-education-type-without-trajectory"
 * ^experimental = false
-* include codes from system BeCSdiabeticEducationTypeWithoutTrajectory
+* BeCSdiabeticEducationType#diabetic-education-self-care
+* BeCSdiabeticEducationType#diabetic-education-understanding
+* BeCSdiabeticEducationType#diabetic-education-no-self-care
+* BeCSdiabeticEducationType#diabetic-education-follow-up
+* BeCSdiabeticEducationType#diabetic-education-other
 
 // ----------------------------------------------------------------------------
 // 6. Diabetic Education Type With Trajectory
@@ -94,7 +98,15 @@ Title: "DRP Education Type With Trajectory"
 Description: "Types of diabetes education for education within a care trajectory."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-education-type-with-trajectory"
 * ^experimental = false
-* include codes from system BeCSdiabeticEducationTypeWithTrajectory
+* BeCSdiabeticEducationType#diabetic-education-disease-lifestyle
+* BeCSdiabeticEducationType#diabetic-education-no-transition
+* BeCSdiabeticEducationType#diabetic-education-start-insulin-glp1
+* BeCSdiabeticEducationType#diabetic-education-additional-hba1c
+* BeCSdiabeticEducationType#diabetic-education-additional-injections
+* BeCSdiabeticEducationType#diabetic-education-oral-medication
+* BeCSdiabeticEducationType#diabetic-education-glucose-meter
+* BeCSdiabeticEducationType#diabetic-education-material
+* BeCSdiabeticEducationType#diabetic-education-glycemic-regulation
 
 // ----------------------------------------------------------------------------
 // 7. Educator Type

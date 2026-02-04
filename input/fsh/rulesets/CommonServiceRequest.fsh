@@ -36,7 +36,7 @@ RuleSet: CommonServiceRequest
 * bodySite.extension contains BeExtLaterality named bodyLaterality 0..1
 * note MS 
 * note only BeCodedAnnotation
-* note.extension[https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeableconcept].valueCodeableConcept from BeVSRequestNoteType (required)
+* note.extension[https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeableconcept].valueCodeableConcept from be-vs-note-type (required)
 * authoredOn obeys be-inv-long-date
 * extension contains
     https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeable-reference named device 0..* MS
