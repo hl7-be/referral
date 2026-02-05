@@ -39,15 +39,15 @@ Id: be-annex-81
 * category ^slicing.ordered = false
 * category ^slicing.description = "Slice to allow profile type category and additional use-case specific categories"
 * category contains
-    referralType 1..1 MS and
-    other 0..* MS
-* category[referralType] from be-vs-categories-of-care (required)
-* category[referralType] = $sct#9632001 "Nursing procedure (procedure)"
-* category[referralType] ^short = "Category that identifies the type of referral"
-* category[referralType] ^binding.description = "Categories of care that can be prescribed. See [ValueSet](ValueSet-be-vs-categories-of-care.html)."
-* category[other] from be-vs-annex81-technical-type (example)
-* category[other] ^short = "Technical type for Annex 81 prescriptions"
-* category[other] ^binding.description = "Technical type for Annex 81 prescriptions. See [ValueSet](ValueSet-be-vs-annex81-technical-type.html)."
+    discipline 1..1 MS and
+    annex81TechnicalType 0..1 MS
+* category[discipline] from be-vs-categories-of-care (required)
+* category[discipline] = $sct#9632001 "Nursing procedure (procedure)"
+* category[discipline] ^short = "Category that identifies the type of referral"
+* category[discipline] ^binding.description = "Categories of care that can be prescribed. See [ValueSet](ValueSet-be-vs-categories-of-care.html)."
+* category[annex81TechnicalType] from be-vs-annex81-technical-type (example)
+* category[annex81TechnicalType] ^short = "Technical type for Annex 81 prescriptions"
+* category[annex81TechnicalType] ^binding.description = "Technical type for Annex 81 prescriptions. See [ValueSet](ValueSet-be-vs-annex81-technical-type.html)."
 * code 1..1 MS
 * code = BeTempRequestedService#tmp-prep-x081-2
 //* extension[performerType].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
