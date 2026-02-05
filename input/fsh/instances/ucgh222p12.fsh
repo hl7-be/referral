@@ -15,7 +15,7 @@ Description: "Catheter dressing change for patient with implantable venous acces
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "38012699993"
 * code = BeTempRequestedService#tmp-dres-eter-4	
-* category =  $sct#9632001
+* category[discipline] =  $sct#9632001
 * intent = #order
 * status = #active
 * extension[validity].valuePeriod.start = "2022-10-03"
@@ -37,7 +37,7 @@ Description: "Rinsing procedure for implantable venous access port catheter with
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "38012699993"
 * code = $sct#175852005
-* category =  $sct#9632001
+* category[discipline] =  $sct#9632001
 * intent = #order
 * status = #active
 * extension[validity].valuePeriod.start = "2022-10-03"
@@ -61,7 +61,7 @@ Description: "Placement or replacement of Huber needle (20G x 25mm) for accessin
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "38012699993"
 * code = BeTempRequestedService#tmp-plac-edle-0 //? correct
-* category =  $sct#9632001
+* category[discipline] =  $sct#9632001
 * intent = #order
 * status = #active
 * extension[validity].valuePeriod.start = "2022-10-03"

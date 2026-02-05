@@ -16,8 +16,8 @@ InstanceOf: BeReferralServiceRequestNursing
 * authoredOn = "2023-02-07T00:00:00+01:00"
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
 * subject.identifier.value = "38012699993"
-* category = $sct#9632001 //niet in Belgische module
-* category.text = "Nursing procedure"
+* category[discipline] = $sct#9632001
+* category[discipline].text = "Nursing procedure"
 * intent = #order
 * status = #completed
 * extension[validity].valuePeriod.start = "2023-02-07"
