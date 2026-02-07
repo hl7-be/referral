@@ -33,7 +33,7 @@ Description: "The common structure for referral prescription."
 * category[discipline] from be-vs-categories-of-care (required)
 * category[discipline] ^short = "Category that identifies the type of referral (e.g., nursing, physiotherapy)"
 * category[discipline] ^binding.description = "Categories of care that can be prescribed. See [ValueSet](ValueSet-be-vs-categories-of-care.html)."
-* category[prescriptionType] from be-vs-prescription-type (example)
+* category[prescriptionType] from be-vs-prescription-type (required)
 * category[prescriptionType] ^short = "Additional categories for use-case specific purposes (e.g., prescription type)"
 * category[prescriptionType] ^binding.description = "Technical types of prescriptions for routing and workflow. See [ValueSet](ValueSet-be-vs-prescription-type.html)."
 

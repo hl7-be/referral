@@ -45,7 +45,7 @@ Id: be-annex-81
 * category[discipline] = $sct#9632001 "Nursing procedure (procedure)"
 * category[discipline] ^short = "Category that identifies the type of referral"
 * category[discipline] ^binding.description = "Categories of care that can be prescribed. See [ValueSet](ValueSet-be-vs-categories-of-care.html)."
-* category[annex81TechnicalType] from be-vs-annex81-technical-type (example)
+* category[annex81TechnicalType] from be-vs-annex81-technical-type (required)
 * category[annex81TechnicalType] ^short = "Technical type for Annex 81 prescriptions"
 * category[annex81TechnicalType] ^binding.description = "Technical type for Annex 81 prescriptions. See [ValueSet](ValueSet-be-vs-annex81-technical-type.html)."
 * code 1..1 MS
