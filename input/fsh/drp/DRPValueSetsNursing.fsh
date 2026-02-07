@@ -24,7 +24,6 @@ Description: "Technical types of nursing prescriptions using SNOMED CT codes."
 * $sct#225964003 "Assisting with personal hygiene (procedure)"
 * $sct#225230008 "Chronic peritoneal dialysis (procedure)"
 * $sct#61746007 "Taking patient vital signs (procedure)"
-* $sct#9632001 "Nursing procedure (procedure)"
 
 // ----------------------------------------------------------------------------
 // 2. Annex 81 Technical Type
