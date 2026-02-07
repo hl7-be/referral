@@ -14,8 +14,8 @@ Usage: #example
 * extension[performerType][=].valueCodeableConcept.coding.code = #persnurse
 * status = #active
 * intent = #order
-* category[discipline] = $sct#9632001
-* category[discipline].text = "Nursing procedure"
+//* category[discipline] = $sct#9632001
+//* category[discipline].text = "Nursing procedure"
 * priority = #routine
 * code = $sct#182777000
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"

@@ -12,8 +12,8 @@ Usage: #example
 //* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
 //* extension[performerType][=].valueCodeableConcept.coding.code = #persphysician
 * status = #active
-* category[discipline] = $sct#9632001
-* category[discipline].text = "Nursing procedure"
+//* category[discipline] = $sct#9632001
+//* category[discipline].text = "Nursing procedure"
 * priority = #routine
 * code = BeTempRequestedService#tmp-prep-x081-2
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"

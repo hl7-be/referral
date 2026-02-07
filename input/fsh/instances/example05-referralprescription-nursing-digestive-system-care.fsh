@@ -17,8 +17,8 @@ Usage: #example
 * identifier[SHORT].value = "AB12EF"
 * status = #active
 * intent = #order
-* category[discipline] = $sct#9632001
-* category[discipline].text = "Nursing procedure"
+//* category[discipline] = $sct#9632001
+//* category[discipline].text = "Nursing procedure"
 * priority = #routine
 * code = $sct#174297001
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"

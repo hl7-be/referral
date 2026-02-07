@@ -10,8 +10,8 @@ Usage: #example
 * extension[feedback].valueBoolean = true
 * status = #active
 * intent = #order
-* category[discipline] = $sct#9632001
-* category[discipline].text = "Nursing procedure"
+//* category[discipline] = $sct#9632001
+//* category[discipline].text = "Nursing procedure"
 * priority = #routine
 * code = $sct#762238003
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"
