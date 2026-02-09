@@ -14,7 +14,7 @@ Description: "The nursing profile, generic version. Please note the nursing refe
 // * ^contact[=].telecom.value = "message-structure@ehealth.fgov.be"
 // * ^contact[=].telecom.use = #work
 // * ^jurisdiction = $jurisdiction#BE "Belgium"
-* category[discipline] = $sct#9632001 "Nursing procedure (procedure)"
+* category[discipline] = $sct#9632001
 //* category[prescriptionType] 0..0
 * category contains
     nursingPrescriptionTechnicalType 0..1 MS
