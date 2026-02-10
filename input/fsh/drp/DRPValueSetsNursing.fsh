@@ -1,29 +1,31 @@
 // ============================================================================
 // DRP Nursing-Specific ValueSets
-// Based on DRP-ValueList-V0.5.docx
+// Based on DRP-ValueList-V0.7.docx
 // ============================================================================
 
 Alias: $sct = http://snomed.info/sct|http://snomed.info/sct/11000172109
 
 // ----------------------------------------------------------------------------
 // 1. Nursing Prescription Technical Type
-// OVERLAP: Similar to BeVSRequestedServicesNurse but uses SNOMED for care codes
 // ----------------------------------------------------------------------------
 ValueSet: BeVSNursingPrescriptionTechnicalType
 Id: be-vs-nursing-prescription-technical-type
 Title: "DRP Nursing Prescription Technical Type"
-Description: "Technical types of nursing prescriptions using SNOMED CT codes."
+Description: "Technical types of nursing prescriptions for routing and workflow purposes."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-nursing-prescription-technical-type"
 * ^experimental = false
-* ^copyright = """This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO)."""
-* $sct#385796006 "Medication prefill preparation (procedure)"
-* $sct#385805005 "Diabetic care education (procedure)"
-* $sct#17636008 "Specimen collection (procedure)"
-* $sct#166900001 "Glucometer blood sugar (procedure)"
-* $sct#127606004 "Therapeutic phlebotomy (procedure)"
-* $sct#225964003 "Assisting with personal hygiene (procedure)"
-* $sct#225230008 "Chronic peritoneal dialysis (procedure)"
-* $sct#61746007 "Taking patient vital signs (procedure)"
+* BeCSPrescriptionType#medication-prefill-preparation-not-refunded
+* BeCSPrescriptionType#diabetic-education-within-care-trajectory
+* BeCSPrescriptionType#diabetic-education-within-start-trajectory
+* BeCSPrescriptionType#diabetic-education-without-care-trajectory
+* BeCSPrescriptionType#diabetic-education-convention-center
+* BeCSPrescriptionType#sampling
+* BeCSPrescriptionType#glycemic-test
+* BeCSPrescriptionType#bloodletting
+* BeCSPrescriptionType#hygienic-care
+* BeCSPrescriptionType#chronic-dialysis
+* BeCSPrescriptionType#parameters
+* BeCSPrescriptionType#generic
 
 // ----------------------------------------------------------------------------
 // 2. Annex 81 Technical Type
