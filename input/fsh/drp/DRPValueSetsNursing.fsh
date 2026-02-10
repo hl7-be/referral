@@ -25,7 +25,7 @@ Description: "Technical types of nursing prescriptions for routing and workflow 
 * BeCSPrescriptionType#hygienic-care
 * BeCSPrescriptionType#chronic-dialysis
 * BeCSPrescriptionType#parameters
-* BeCSPrescriptionType#generic
+* BeCSPrescriptionType#generic-nursing
 
 // ----------------------------------------------------------------------------
 // 2. Annex 81 Technical Type

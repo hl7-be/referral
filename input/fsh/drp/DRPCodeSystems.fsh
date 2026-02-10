@@ -93,7 +93,7 @@ Description: "Technical types of prescriptions supported by the DRP system. Used
   * ^designation[+].language = #fr-BE
   * ^designation[=].value = "Prélèvement d'échantillon"
 
-* #generic "Generic nursing care"
+* #generic-nursing "Generic nursing care"
   * ^designation[0].language = #nl-BE
   * ^designation[=].value = "Verpleegkundige zorgen generiek"
   * ^designation[+].language = #fr-BE
