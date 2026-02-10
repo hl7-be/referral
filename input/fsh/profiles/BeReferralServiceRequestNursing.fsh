@@ -16,11 +16,11 @@ Description: "The nursing profile, generic version. Please note the nursing refe
 // * ^jurisdiction = $jurisdiction#BE "Belgium"
 * category[discipline] = $sct#9632001
 //* category[prescriptionType] 0..0
-* category contains
-    nursingPrescriptionTechnicalType 0..1 MS
-* category[nursingPrescriptionTechnicalType] from be-vs-nursing-prescription-technical-type (required)
-* category[nursingPrescriptionTechnicalType] ^short = "Additional categories such as technical prescription type for nursing referrals"
-* category[nursingPrescriptionTechnicalType] ^binding.description = "Technical types of nursing prescriptions (e.g., medication prefill, diabetic care education, specimen collection)."
+// * category contains
+//     nursingPrescriptionTechnicalType 0..1 MS
+* category[prescriptionType] from be-vs-nursing-prescription-technical-type (required)
+* category[prescriptionType] ^short = "Technical prescription type for nursing referrals"
+* category[prescriptionType] ^binding.description = "Technical types of nursing prescriptions (e.g., medication prefill, diabetic care education, specimen collection)."
 
 * code 1..
 * code from be-vs-requested-services-nurse (example)
