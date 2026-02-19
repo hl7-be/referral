@@ -1,0 +1,221 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "example-drp-nursing-bloodletting",
+  "meta": {
+    "profile": [
+      "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"
+    ],
+    "extension": [
+      {
+        "id": "39387fba-519b-4b85-b5ab-e2d83439e8da",
+        "url": "https://www.ehealth.fgov.be/standards/fhir/infsec/StructureDefinition/be-ext-key-pseudonymization",
+        "extension": [
+          {
+            "url": "key",
+            "valueString": "urn:be:fgov:pseudo:v2:AgC0at-UHtBNiAfY03X8ETtR0z8vUkqyhm5_PRFBCI82bE3Sch3WbZ1E6w267MMwSAc6ymz2AyEmMFD9-vIyYsTFPA:eyJhdWQiOiJ1aG1lcF92MSIsImVuYyI6IkEyNTZHQ00iLCJleHAiOjE3NzE1MDgzOTMsImlhdCI6MTc3MTQyMTk5MywiYWxnIjoiZGlyIiwia2lkIjoiYWMwNWIzMjktMzhhOS00NTE0LThlMGMtMjI0NTcyOTI4ZWI5In0..hGiaC2_ahm1jwk0g.AxP_PBRD3BJSaOj2yc3O1dg0OmGyjYSXWd277sN17YCKAZXxpu4N3DkLwRtNhB-uFph0r4-1Od6FUa2F6n8kzln3UpU1DNnIAh-2fcxRVMdDj3rsgR3zctHRG_fYyOB_Cu8SG7HRteMDbztWC6qIguCmV-Dhhc_P8ChDGHGIxiPODlZlHI6A.B4VheP8vM7mquJuqjTdwiA",
+            "_valueString": {
+              "extension": [
+                {
+                  "url": "https://www.ehealth.fgov.be/standards/fhir/infsec/StructureDefinition/be-ext-pseudonymization",
+                  "extension": [
+                    {
+                      "url": "marker",
+                      "valueBoolean": true
+                    },
+                    {
+                      "url": "format",
+                      "valueCode": "direct"
+                    },
+                    {
+                      "url": "version",
+                      "valuePositiveInt": 2
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "9632001",
+          "system": "http://snomed.info/sct"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
+          "code": "bloodletting",
+          "system": "https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-prescription-type"
+        }
+      ]
+    }
+  ],
+  "extension": [
+    {
+      "url": "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-validity-period",
+      "valuePeriod": {
+        "start": "2026-02-18"
+      }
+    },
+    {
+      "url": "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-feedback-to-prescriber",
+      "valueBoolean": false
+    }
+  ],
+  "status": "draft",
+  "intent": "order",
+  "priority": "routine",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "127606004"
+      }
+    ],
+    "text": "urn:be:fgov:pseudo-encrypted:v1:39387fba-519b-4b85-b5ab-e2d83439e8da:Bloodletting",
+    "_text": {
+      "extension": [
+        {
+          "url": "https://www.ehealth.fgov.be/standards/fhir/infsec/StructureDefinition/be-ext-pseudonymization",
+          "extension": [
+            {
+              "url": "marker",
+              "valueBoolean": true
+            },
+            {
+              "url": "format",
+              "valueCode": "encrypted"
+            },
+            {
+              "url": "version",
+              "valuePositiveInt": 1
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "quantityQuantity": {
+    "value": 300,
+    "unit": "milliliter",
+    "system": "http://unitsofmeasure.org",
+    "code": "mL"
+  },
+  "subject": {
+    "identifier": {
+      "use": "official",
+      "system": "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin",
+      "value": "urn:be:fgov:pseudo:v2:BACqcXnqLoHO05sKK9xJlc3M-BC8BYziQgroNnyqcMmRuZBOJxPhmtj_0_ESZA9MOO32E1yEsU0O8nJeYEXwJv5IEQCV6fOT2D5fqQS_481GDfNi7EU3p8en00jwq4F16CdIA0eh8Q0fvpfyn1rVtCkFrGCA6XY5o4OpYzkedMRyHPquUw:eyJhdWQiOiJ1aG1lcF92MSIsImVuYyI6IkEyNTZHQ00iLCJleHAiOjE3NzE1MDgzOTQsImlhdCI6MTc3MTQyMTk5NCwiYWxnIjoiZGlyIiwia2lkIjoiYWMwNWIzMjktMzhhOS00NTE0LThlMGMtMjI0NTcyOTI4ZWI5In0..tklVn8zE7JJCIIjS.yEIqAFgHQh0q95oxC8bCww-panYblvjVHZrue9PQMeSXWVTtjlrVN3ZCq2_fby665KAQ_tTWuQB2a3h5rWiihy2f36J6OXbZJUBooftPMvtPCn7zqmpFdC6b7ksHqfYDFRm2MM5mVGutTGF5gas2_neqtkq5hazN-0vDZGm7I77La68IBWg5.z4XWRXMd2hyEIqKGUJ6V9Q",
+      "_value": {
+        "extension": [
+          {
+            "url": "https://www.ehealth.fgov.be/standards/fhir/infsec/StructureDefinition/be-ext-pseudonymization",
+            "extension": [
+              {
+                "url": "marker",
+                "valueBoolean": true
+              },
+              {
+                "url": "format",
+                "valueCode": "direct"
+              },
+              {
+                "url": "version",
+                "valuePositiveInt": 2
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "occurrenceTiming": {
+    "repeat": {
+      "boundsDuration": {
+        "value": 1,
+        "system": "http://unitsofmeasure.org",
+        "code": "wk"
+      },
+      "count": 3,
+      "frequency": 3,
+      "period": 1,
+      "periodUnit": "wk"
+    }
+  },
+  "authoredOn": "2026-02-18T14:39:54+01:00",
+  "requester": {
+    "reference": "PractitionerRole/72101230445-PHYSICIAN"
+  },
+  "reasonCode": [
+    {
+      "text": "urn:be:fgov:pseudo-encrypted:v1:39387fba-519b-4b85-b5ab-e2d83439e8da:AAAAAAAAAAAAAAAAxS+XL/80D2mbT+V4bE4qvqwhOO6sH+O+CNM=",
+      "_text": {
+        "extension": [
+          {
+            "url": "https://www.ehealth.fgov.be/standards/fhir/infsec/StructureDefinition/be-ext-pseudonymization",
+            "extension": [
+              {
+                "url": "marker",
+                "valueBoolean": true
+              },
+              {
+                "url": "format",
+                "valueCode": "encrypted"
+              },
+              {
+                "url": "version",
+                "valuePositiveInt": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "note": [
+    {
+      "extension": [
+        {
+          "url": "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeableconcept",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-note-types",
+                "code": "medical-reason"
+              }
+            ]
+          }
+        }
+      ],
+      "text": "urn:be:fgov:pseudo-encrypted:v1:39387fba-519b-4b85-b5ab-e2d83439e8da:AAAAAAAAAAAAAAAAzCOSIfI6ED2ASazNne+4JUwv3EBXXT+Q5VgISeOe",
+      "_text": {
+        "extension": [
+          {
+            "url": "https://www.ehealth.fgov.be/standards/fhir/infsec/StructureDefinition/be-ext-pseudonymization",
+            "extension": [
+              {
+                "url": "marker",
+                "valueBoolean": true
+              },
+              {
+                "url": "format",
+                "valueCode": "encrypted"
+              },
+              {
+                "url": "version",
+                "valuePositiveInt": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

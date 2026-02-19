@@ -32,7 +32,7 @@ Id: be-annex-81
 * extension[latest] ^short = "Request must be executed before"
 //* extension[feedback] ^short = "Give feedback to the prescriber"
 //* extension[latestDraft] ^short = "The prescription must have left the draft status befor this moment"
-* category 1..* MS
+* category 2..2 MS
 * category ^slicing.discriminator.type = #value
 * category ^slicing.discriminator.path = "$this"
 * category ^slicing.rules = #open
@@ -40,22 +40,36 @@ Id: be-annex-81
 * category ^slicing.description = "Slice to allow profile type category and additional use-case specific categories"
 * category contains
     discipline 1..1 MS and
-    annex81TechnicalType 0..1 MS
+    annex81TechnicalType 1..1 MS
 * category[discipline] from be-vs-categories-of-care (required)
-* category[discipline] = $sct#9632001 "Nursing procedure (procedure)"
+* category[discipline] = $sct#9632001
 * category[discipline] ^short = "Category that identifies the type of referral"
 * category[discipline] ^binding.description = "Categories of care that can be prescribed. See [ValueSet](ValueSet-be-vs-categories-of-care.html)."
 * category[annex81TechnicalType] from be-vs-annex81-technical-type (required)
 * category[annex81TechnicalType] ^short = "Technical type for Annex 81 prescriptions"
 * category[annex81TechnicalType] ^binding.description = "Technical type for Annex 81 prescriptions. See [ValueSet](ValueSet-be-vs-annex81-technical-type.html)."
 * code 1..1 MS
-* code = BeTempRequestedService#tmp-prep-x081-2
+* code = $sct#385796006
 //* extension[performerType].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
 * basedOn MS
 * basedOn only Reference(BeAnnex81)
-* reasonCode 1..* MS
-* reasonCode from BeVSAnnex81ReasonCode (example)
-* reasonCode ^binding.description = "The actual valueset will be provided when a terminology package is available. For current guidance, see the included [ValueSet](ValueSet-be-vs-annex-81-reason-code.html)."
+
+* reasonCode 2..* MS
+* reasonCode ^slicing.discriminator.type = #value
+* reasonCode ^slicing.discriminator.path = "$this"
+* reasonCode ^slicing.rules = #open
+* reasonCode ^slicing.ordered = false
+* reasonCode ^slicing.description = "Slice to force a nursing diagnosis and a medical problem to be present"
+* reasonCode contains
+    nursingDiagnosis 1..* MS and
+    medicalProblem 1..* MS
+* reasonCode[nursingDiagnosis] from BeVSAnnex81NursingDiagnosis (example)
+* reasonCode[nursingDiagnosis] ^short = "Nursing diagnosis for Annex 81"
+* reasonCode[nursingDiagnosis] ^binding.description = "For guidance, see the included [ValueSet](ValueSet-be-vs-annex81-nursing-diagnosis.html)."
+* reasonCode[medicalProblem] from BeVSAnnex81MedicalProblem (example)
+* reasonCode[medicalProblem] ^short = "Medical problems for Annex 81"
+* reasonCode[medicalProblem] ^binding.description = "For current guidance, see the included [ValueSet](ValueSet-be-vs-annex81-medical-problem.html)."
+
 
 * obeys be-inv-annex-81-based-on //and be-inv-annex-81-note
 * authoredOn 1.. MS
