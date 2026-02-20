@@ -78,7 +78,7 @@ Description: "Clinical care services for Annex 81 prescriptions."
 // NEW - No existing overlap
 // ----------------------------------------------------------------------------
 ValueSet: BeVSEducationTypeWithoutTrajectory
-Id: be-vs-education-type-without-trajectory
+Id: be-vs-drp-diabetes-education-type-without-trajectory
 Title: "DRP Education Type Without Trajectory"
 Description: "Types of diabetes education for patients without a trajectory."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-education-type-without-trajectory"
@@ -94,7 +94,7 @@ Description: "Types of diabetes education for patients without a trajectory."
 // NEW - No existing overlap
 // ----------------------------------------------------------------------------
 ValueSet: BeVSEducationTypeWithTrajectory
-Id: be-vs-education-type-with-trajectory
+Id: be-vs-drp-diabetes-education-type-with-trajectory
 Title: "DRP Education Type With Trajectory"
 Description: "Types of diabetes education for education within a care trajectory."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-education-type-with-trajectory"
@@ -114,7 +114,7 @@ Description: "Types of diabetes education for education within a care trajectory
 // NEW - No existing overlap
 // ----------------------------------------------------------------------------
 ValueSet: BeVSEducatorType
-Id: be-vs-educator-type
+Id: be-vs-drp-diabetes-educator-type
 Title: "DRP Educator Type"
 Description: "Types of educators for diabetes education activities."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-educator-type"
@@ -128,7 +128,7 @@ Description: "Types of educators for diabetes education activities."
 // NEW - No existing overlap
 // ----------------------------------------------------------------------------
 ValueSet: BeVSSessionType
-Id: be-vs-session-type
+Id: be-vs-drp-session-type
 Title: "DRP Session Type"
 Description: "Types of sessions for education or care activities (standard)."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-session-type"

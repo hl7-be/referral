@@ -155,3 +155,14 @@ Description: "Technical types of prescriptions supported by the DRP system. Used
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-prescription-type"
 * ^experimental = false
 * include codes from system BeCSPrescriptionType
+
+
+ValueSet: BeVSGenericCareTypes
+Id: be-vs-drp-generic-care-types
+Title: "DRP Generic Care Types"
+Description: "DRP Generic Care Types."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-generic-care-types"
+* ^experimental = false
+
+* include codes from system BeCSGenericCareTypes
+
