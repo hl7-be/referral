@@ -21,7 +21,7 @@ Description: "The common structure for referral prescription."
 //* requisition ^short = "If needed to have a common identifier among different prescriptions."
 * status MS
 * intent MS
-* category 1..* MS
+* category 2..2 MS
 * category ^slicing.discriminator.type = #value
 * category ^slicing.discriminator.path = "$this"
 * category ^slicing.rules = #open
@@ -29,7 +29,7 @@ Description: "The common structure for referral prescription."
 * category ^slicing.description = "Slice to allow profile type category and additional use-case specific categories"
 * category contains
     discipline 1..1 MS and
-    prescriptionType 0..1 MS
+    prescriptionType 1..1 MS
 * category[discipline] from be-vs-categories-of-care (required)
 * category[discipline] ^short = "Category that identifies the type of referral (e.g., nursing, physiotherapy)"
 * category[discipline] ^binding.description = "Categories of care that can be prescribed. See [ValueSet](ValueSet-be-vs-categories-of-care.html)."
