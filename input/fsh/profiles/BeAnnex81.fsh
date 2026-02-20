@@ -53,9 +53,22 @@ Id: be-annex-81
 //* extension[performerType].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
 * basedOn MS
 * basedOn only Reference(BeAnnex81)
-* reasonCode 1..* MS
-* reasonCode from BeVSAnnex81ReasonCode (example)
-* reasonCode ^binding.description = "The actual valueset will be provided when a terminology package is available. For current guidance, see the included [ValueSet](ValueSet-be-vs-annex-81-reason-code.html)."
+
+* reasonCode 2..* MS
+* reasonCode ^slicing.discriminator.type = #value
+* reasonCode ^slicing.discriminator.path = "$this"
+* reasonCode ^slicing.rules = #open
+* reasonCode ^slicing.ordered = false
+* reasonCode ^slicing.description = "Slice to force a nursing diagnosis and a medical problem to be present"
+* reasonCode contains
+    nursingDiagnosis 1..* MS and
+    medicalProblem 1..* MS
+* reasonCode[nursingDiagnosis] from BeVSAnnex81NursingDiagnosis (example)
+* reasonCode[nursingDiagnosis] ^short = "Nursing diagnosis for Annex 81"
+* reasonCode[nursingDiagnosis] ^binding.description = "For guidance, see the included [ValueSet](ValueSet-be-vs-annex81-nursing-diagnosis.html)."
+* reasonCode[medicalProblem] from BeVSAnnex81MedicalProblem (example)
+* reasonCode[medicalProblem] ^short = "Medical problems for Annex 81"
+* reasonCode[medicalProblem] ^binding.description = "For current guidance, see the included [ValueSet](ValueSet-be-vs-annex81-medical-problem.html)."
 
 * obeys be-inv-annex-81-based-on //and be-inv-annex-81-note
 * authoredOn 1.. MS
