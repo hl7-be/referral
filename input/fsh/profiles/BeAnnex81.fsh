@@ -32,7 +32,7 @@ Id: be-annex-81
 * extension[latest] ^short = "Request must be executed before"
 //* extension[feedback] ^short = "Give feedback to the prescriber"
 //* extension[latestDraft] ^short = "The prescription must have left the draft status befor this moment"
-* category 1..* MS
+* category 2..2 MS
 * category ^slicing.discriminator.type = #value
 * category ^slicing.discriminator.path = "$this"
 * category ^slicing.rules = #open
@@ -40,7 +40,7 @@ Id: be-annex-81
 * category ^slicing.description = "Slice to allow profile type category and additional use-case specific categories"
 * category contains
     discipline 1..1 MS and
-    annex81TechnicalType 0..1 MS
+    annex81TechnicalType 1..1 MS
 * category[discipline] from be-vs-categories-of-care (required)
 * category[discipline] = $sct#9632001
 * category[discipline] ^short = "Category that identifies the type of referral"
