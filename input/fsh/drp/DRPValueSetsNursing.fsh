@@ -59,6 +59,20 @@ Description: "Clinical care services that can be prescribed for nursing care usi
 * $sct#225230008 "Chronic peritoneal dialysis (procedure)"
 * $sct#61746007 "Taking patient vital signs (procedure)"
 * $sct#9632001 "Nursing procedure (procedure)"
+* BeCSGenericCareTypes#preparation-and-administration-of-medication-to-psychiatric-patient
+* BeCSGenericCareTypes#catheter-care
+// New codes
+* $sct#18629005 "Administration of drug or medicament (procedure)"
+* $sct#53950000 "Respiratory therapy (procedure)"
+* $sct#384719006 "Procedure on gastrointestinal tract (procedure)"
+* $sct#118674002 "Procedure on genitourinary system (procedure)"
+* $sct#225358003 "Wound care (regime/therapy)"
+* $sct#413899004 "Compression bandaging (procedure)"
+
+
+
+
+
 
 // ----------------------------------------------------------------------------
 // 4. Annex 81 Requested (SNOMED CT)
