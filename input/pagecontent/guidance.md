@@ -9,7 +9,10 @@ The requested performer in a referral prescription is typically a reference to a
 It is RECOMMENDED in case of a related person as performer, the related person is included using the [contained mechanism](https://www.hl7.org/fhir/references.html#contained).
 
 ### Keeping track of the execution of a referral prescription
-The task or treatment that should be executed as a fulfillment of the referral prescription SHALL be tracked using the task resource in the BeTaskReference extension on the ServiceRequest or MedicationRequest. The status of the task SHALL be identical to the status of the referral prescription. Additional status information on the treatment SHALL be provided in the statusReason field of the Task. The owner of the task is empty, because the different owners of the Task are handled in the PerformerTaskReference extension (see: many performers for one prescription). The full duration of the execution of the treatment is stored in the executionPeriod field of the BeTaskReference extension. The intent of the task SHALL be identical to the intent of the prescription. 
+
+For the general workflow management patterns using Task (assigning execution, tracking status, requesting changes, tracking completion), see [Cross-Cutting Functionalities](functionalities.html#workflow-management-patterns).
+
+The task or treatment that should be executed as a fulfillment of the referral prescription SHALL be tracked using the task resource in the BeTaskReference extension on the ServiceRequest or MedicationRequest. The status of the task SHALL be identical to the status of the referral prescription. Additional status information on the treatment SHALL be provided in the statusReason field of the Task. The owner of the task is empty, because the different owners of the Task are handled in the PerformerTaskReference extension (see: many performers for one prescription). The full duration of the execution of the treatment is stored in the executionPeriod field of the BeTaskReference extension. The intent of the task SHALL be identical to the intent of the prescription.
 
 ### The procedure or observation executing the referral prescription
 
@@ -33,6 +36,8 @@ Take note the nursing medication referral prescription profile is based on the F
 *   When the referral is for administration of eyedrops (or other ointments) in a post-operative context, the date of the operation SHALL always be given using .encounter and providing minimal encounter information. Also, which eye SHALL be defined using .dosageInstruction.site. 
 
 #### Prescribing multiple actions
+
+For the general pattern on grouping related orders, see [Grouping Orders](functionalities.html#grouping-orders-bundle).
 
 Each prescription, be it a ServiceRequest or a MedicationRequest for medication administration, can only contain one action (that can be repeatable). Sometimes the GP wants to prescribe multiple actions that are linked together. E.g. the patient needs an urethral tube, a colon cleansing, but before that the patient needs to be anesthetized using a subcutan injection with 5mg Midazolam.
 
@@ -99,7 +104,7 @@ When describing the prescription of multiple actions, we showed that multiple re
 
 #### The prescription is different from the service/task itself
 
-As prescription is a form that represents the question from one practitioner to another to perform a particular task. The prescription has some statuses, e.g., it can be in draft, it can be active, it can be completed. Next to the prescription, there is also the task, which also has some statuses: it can (e.g.) be on hold, in progress or completed. These are different things, but the referral prescription system wants to keep information about the two things.
+A prescription is a form that represents the question from one practitioner to another to perform a particular task. The prescription has some statuses, e.g., it can be in draft, it can be active, it can be completed. Next to the prescription, there is also the task, which also has some statuses: it can (e.g.) be on hold, in progress or completed. These are different things, but the referral prescription system wants to keep information about the two things. See [Workflow Management Patterns](functionalities.html#workflow-management-patterns) for the general patterns on how orders and tasks interact.
 
 Therefore, there are two resources that are handled at the same time, the request and the task with the profile BeReferralTask.
 
