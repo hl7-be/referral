@@ -1,6 +1,6 @@
 ### Workflow Management Patterns
 
-This page describes the workflow management patterns used in this implementation guide. These patterns are aligned with the [FHIR Clinical Order Workflows (COW)](https://build.fhir.org/ig/HL7/clinical-order-workflows/) approach, which provides a standardized framework for managing the lifecycle of clinical orders and their execution.
+This page describes the workflow management patterns used in this implementation guide. These patterns are aligned with the [FHIR Clinical Order Workflows (COW)](https://build.fhir.org/ig/HL7/fhir-cow-ig/) approach, which provides a standardized framework for managing the lifecycle of clinical orders and their execution.
 
 In summary, the Task resource is the central coordination mechanism for workflow management. Orders (ServiceRequest, MedicationRequest) represent the clinical intent, while Tasks represent the workflow state and coordination of execution.
 
@@ -10,11 +10,7 @@ Execution of an order is coordinated through Tasks. The main coordination Task r
 
 When multiple fillers are involved in executing the order, each filler MAY have their own Task to track their part of the execution. These filler-level Tasks reference the main coordination Task and allow each performer to independently manage their portion of the work.
 
-<div>
-<blockquote class="stu-note">
-<strong>Summary:</strong> One main Task per order for overall coordination. Optional sub-Tasks per filler for tracking individual contributions.
-</blockquote>
-</div>
+> Execution is done with a Task object. One Task for overall coordination of each order. Optional sub-Tasks per filler or organization for tracking their individual contributions and statuses.
 
 #### Pattern 2: Workflow Status Tracking
 
@@ -38,11 +34,7 @@ Examples of change requests via Task:
 * **Request modification**: A filler creates a Task asking the placer to update order content (e.g. change in dosage, timing, or scope).
 * **Request status change**: An intermediary creates a Task to request the placer to put an order on hold.
 
-<div>
-<blockquote class="stu-note">
-<strong>Key principle:</strong> Only the placer modifies orders. All other parties request changes through Tasks.
-</blockquote>
-</div>
+> Only the placer modifies orders. All other parties request changes through Tasks.
 
 #### Pattern 4: Tracking Workflow Completion Status
 
@@ -50,7 +42,7 @@ When an order involves repeated or multiple activities (e.g. a series of therapy
 
 The completion status is expressed as a ratio - for example, **8 out of 10 sessions completed**. This is represented using a `Ratio` data type in `Task.output`, where the numerator indicates the number of completed activities and the denominator indicates the total number of expected activities.
 
-This pattern enables both the placer and filler to have a clear, quantifiable view of how much of the prescribed work has been accomplished.
+This pattern enables both the placer and filler to have a clear, quantifiable view of how much of the prescribed work has been accomplished. For detailed guidance on tracking progress in clinical order workflows, see the [COW Tracking Progress](https://build.fhir.org/ig/HL7/fhir-cow-ig/en/tracking-progress.html) page.
 
 #### Pattern 5: Grouping of Orders
 
@@ -64,3 +56,13 @@ When multiple orders are clinically related and should be managed together, they
   * Any other coordination logic between the grouped orders
 
 See the [guidance on prescribing multiple actions](guidance.html#prescribing-multiple-actions) for detailed examples of RequestGroup usage.
+
+#### Pattern 6: Bundling Resources at Order Time
+
+When an order is created, it may be necessary to include related resources together as a single submission. This is done using a FHIR Bundle (transaction or message). Typical examples include:
+
+* **Composite requests**: Multiple related ServiceRequests and/or MedicationRequests submitted together with a RequestGroup that defines their relationships.
+* **Patient demographics**: A contained or referenced Patient resource with the relevant demographic information (e.g. gender, date of birth) needed by the filler.
+* **Supporting resources**: QuestionnaireResponses (e.g. safety checklists), Conditions, Observations, or other clinical resources referenced by the order's `supportingInfo`.
+
+Bundling ensures that all resources needed to act on the order are available atomically, without requiring the filler to resolve external references at the time of receipt.
