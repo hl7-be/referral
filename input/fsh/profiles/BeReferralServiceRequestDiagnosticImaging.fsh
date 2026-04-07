@@ -89,7 +89,7 @@ Description: "The common structure for referral prescription."
 * supportingInfo[priorRequest].extension[priorRequestCodeableRef] ^definition =
     "CodeableReference extension allowing a coded imaging modality (from BeVSImagingModality) alongside the reference to the prior ServiceRequest."
 // Bind the concept part of the CodeableReference to the imaging modality valueset
- * supportingInfo[priorRequest].extension[priorRequestCodeableRef].extension[concept].valueCodeableConcept from BeVSImagingModality (preferred)
+* supportingInfo[priorRequest].extension[priorRequestCodeableRef].extension[concept].valueCodeableConcept from BeVSImagingModality (preferred)
 
 // 2c. Attention-worthy conditions: conditions/findings the performer should be aware of (as resources)
 * supportingInfo[attentionCondition] only Reference(Condition or Observation)
@@ -124,4 +124,4 @@ Description: "The common structure for referral prescription."
     "Coded patient condition (QSI)"
 * supportingInfo[patientCondition].extension[patientConditionCodeableRef] ^definition =
     "CodeableReference extension allowing a QSI-coded patient condition alongside the reference."
-// * supportingInfo[patientCondition].extension[patientConditionCodeableRef].extension[concept].valueCodeableConcept from <QSI ValueSet TBD> (preferred)
+//* supportingInfo[patientCondition].extension[patientConditionCodeableRef].extension[concept].valueCodeableConcept from <QSI ValueSet TBD> (preferred)
