@@ -34,7 +34,7 @@ Design notes:
 * ^status = #draft
 * ^experimental = true
 * ^caseSensitive = true
-* ^content = #complete
+* ^content = #supplement
 
 // --------------------------------------------------------------------
 // Property definitions
