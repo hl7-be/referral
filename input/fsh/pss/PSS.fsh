@@ -1,4 +1,3 @@
-
 CodeSystem: PrecoordinatedRadiologyCS
 Id: precoordinated-radiology
 Title: "Precoordinated Radiology Exam Code System (Demo)"
