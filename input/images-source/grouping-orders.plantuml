@@ -1,0 +1,33 @@
+@startuml
+'skinparam linetype ortho
+skinparam linetype polyline
+hide circle
+hide stereotype
+
+'!pragma layout smetana
+
+skinparam class<<MD>> {
+ BorderColor DarkSlateGray
+ BackgroundColor WhiteSmoke
+ HeaderBackgroundColor #909090
+}
+
+skinparam class<<TM>> {
+ BorderColor #505090
+ BackgroundColor APPLICATION
+ HeaderBackgroundColor SkyBlue
+}
+
+    class "**ServiceRequest /**\n**MedicationRequest**" as SR<<TM>> {
+        |_ id 1..1
+        |_ status 1..1
+        |_ intent 1..1
+        |_ code 1..1
+        |_ subject 1..1
+        |_ requester 1..1
+        |_ requisition 0..1
+    }
+
+RG -r- SR : "action.resource\nreferences       "
+RG ..> SR : "relatedAction\ndefines order"
+@enduml

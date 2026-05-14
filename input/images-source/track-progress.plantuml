@@ -1,0 +1,47 @@
+@startuml
+'skinparam linetype ortho
+skinparam linetype polyline
+hide circle
+hide stereotype
+
+'!pragma layout smetana
+
+skinparam class<<MD>> {
+ BorderColor DarkSlateGray
+ BackgroundColor WhiteSmoke
+ HeaderBackgroundColor #909090
+}
+
+skinparam class<<TM>> {
+ BorderColor #505090
+ BackgroundColor APPLICATION
+ HeaderBackgroundColor SkyBlue
+}
+
+    class "**Order**" as MO<<TM>> {
+        |_ id: **""order1""  **
+'        --
+    }
+
+
+    class "**Progress Tracker**" as T<<TM>> {
+            |_ task
+              |_ focus: **""order1""**
+              |_ status: **""1..1""**
+              |_ output
+                |_ type : **""progress-ratio""  ** 
+                |_ value
+                  |_ numerator : **""3""**
+                  |_ denominator : **""10""**
+'          --
+    }
+
+'LR -r-* LRL :"       "
+'LRL -d[hidden]- LS
+'LRL -d- LRL: "contains"
+'LS -d- LS: "parent"
+'MO ||-d-o{ SO :"      "
+'MO -d[hidden]-{ SO 
+MO .r. T : "                "
+'SO -u- T: "                                  "
+@enduml

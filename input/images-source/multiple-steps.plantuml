@@ -1,0 +1,51 @@
+@startuml
+'skinparam linetype ortho
+skinparam linetype polyline
+hide circle
+hide stereotype
+
+'!pragma layout smetana
+
+skinparam class<<MD>> {
+ BorderColor DarkSlateGray
+ BackgroundColor WhiteSmoke
+ HeaderBackgroundColor #909090
+}
+
+skinparam class<<TM>> {
+ BorderColor #505090
+ BackgroundColor APPLICATION
+ HeaderBackgroundColor SkyBlue
+}
+
+    class "**ServiceRequest**\n**(Parent)**" as PSR<<TM>> {
+        |_ id 1..1
+        |_ status 1..1
+        |_ intent 1..1
+        |_ code 1..1
+        .. overall procedure ..
+        |_ subject 1..1
+        |_ requester 1..1
+    }
+
+    class "**ServiceRequest**\n**(Child Step 1)**" as CSR1<<TM>> {
+        |_ id 1..1
+        |_ basedOn 1..1
+        |_ code 1..1
+        .. step 1 specific ..
+        |_ status 1..1
+        |_ performer 0..*
+    }
+
+    class "**ServiceRequest**\n**(Child Step 2)**" as CSR2<<TM>> {
+        |_ id 1..1
+        |_ basedOn 1..1
+        |_ code 1..1
+        .. step 2 specific ..
+        |_ status 1..1
+        |_ performer 0..*
+    }
+
+CSR1 -u- PSR : "basedOn       "
+CSR2 -u- PSR : "basedOn       "
+@enduml

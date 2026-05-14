@@ -1,0 +1,62 @@
+@startuml
+'skinparam linetype ortho
+skinparam linetype polyline
+hide circle
+hide stereotype
+
+'!pragma layout smetana
+
+skinparam class<<MD>> {
+ BorderColor DarkSlateGray
+ BackgroundColor WhiteSmoke
+ HeaderBackgroundColor #909090
+}
+
+skinparam class<<TM>> {
+ BorderColor #505090
+ BackgroundColor APPLICATION
+ HeaderBackgroundColor SkyBlue
+}
+
+    class "**ServiceRequest**" as SR<<TM>> {
+        |_ id 1..1
+        |_ status 1..1
+        |_ intent 1..1
+        |_ code 1..1
+        |_ subject 1..1
+        |_ requester 1..1
+    }
+
+    class "**Provenance**\n**(Signature 1)**" as P1<<TM>> {
+        |_ target 1..*
+        |_ recorded 1..1
+        |_ agent 1..*
+        .. agent elements ..
+        |_ who 1..1
+        |_ role 0..*
+        .. signature elements ..
+        |_ signature 0..*
+        |_ type 1..1
+        |_ when 1..1
+        |_ who 1..1
+        |_ data 0..1
+    }
+
+    class "**Provenance**\n**(Signature 2)**" as P2<<TM>> {
+        |_ target 1..*
+        |_ recorded 1..1
+        |_ agent 1..*
+        .. agent elements ..
+        |_ who 1..1
+        |_ role 0..*
+        .. signature elements ..
+        |_ signature 0..*
+        |_ type 1..1
+        |_ when 1..1
+        |_ who 1..1
+        |_ data 0..1
+    }
+
+P1 -r- SR : "target       "
+P2 -r- SR : "target       "
+@enduml
