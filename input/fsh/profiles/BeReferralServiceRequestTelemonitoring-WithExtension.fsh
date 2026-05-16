@@ -18,8 +18,9 @@ Description: "Referral prescription for remote monitoring of vital parameters (i
 // --- category slicing (follows the #473 pattern: discipline + prescriptionType)
 // TODO: pick the correct SNOMED discipline code for telemonitoring
 * category[discipline] = $sct#XXXXXXXXX "Telemonitoring (procedure)"
-* category[prescriptionType] from be-vs-telemonitoring-prescription-type (required)
-* category[prescriptionType] ^short = "Technical type of telemonitoring prescription"
+// TODO: define and bind a telemonitoring-specific prescriptionType valueset
+//       (analogous to be-vs-nursing-prescription-technical-type).
+//       For now, prescriptionType inherits the base binding (be-vs-prescription-type).
 
 // LM: identifier
 * identifier MS
