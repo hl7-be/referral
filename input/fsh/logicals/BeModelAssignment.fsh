@@ -1,4 +1,5 @@
 Logical: BeModelAssignment
+Parent: Base
 Description: "Logical model with the information for the assignment to a referral prescription of a care provider."
 Characteristics: #can-be-target
 * identifier 1..1 Identifier "Business identifier. Absent during creation by client software, otherwise always present."

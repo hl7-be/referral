@@ -1,4 +1,5 @@
 Logical: BeModelAnnex81
+Parent: Base
 Description: "Logical model describing the model for the Annex81 proposal and approval"
 Characteristics: #can-be-target
 

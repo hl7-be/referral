@@ -2,8 +2,9 @@ Profile: BeReferralServiceRequest
 Parent: ServiceRequest
 Id: be-referral-servicerequest
 Description: "The common structure for referral prescription."
-* ^status = #active
-// * ^url = "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest"
+
+* ^status = #draft
+// * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest"
 // * ^version = "0.2.0"
 // * ^date = "2021-07-15T08:52:50+00:00"
 // * ^publisher = "HL7 Belgium"
@@ -16,9 +17,51 @@ Description: "The common structure for referral prescription."
 // * ^contact[=].telecom.use = #work
 // * ^jurisdiction = $jurisdiction#BE "Belgium"
 
-* basedOn MS
-//* requisition MS
-//* requisition ^short = "If needed to have a common identifier among different prescriptions."
+// * identifier ^slicing.discriminator[0].type = #value
+// * identifier ^slicing.discriminator[0].path = "system"
+// * identifier ^slicing.rules = #open
+
+// * identifier contains uhmepId 0..1 and shortCode 0..1
+
+// * identifier[uhmepId] ^short = "Business identifier of the request"
+// * identifier[uhmepId] ^definition = "Business identifier of the request"
+// * identifier[uhmepId].system 1..1
+// * identifier[uhmepId].system = "http://example.org/fhir/identifier-system/business-id"
+
+// * identifier[shortCode] ^short = "Business code allowing the healthcare professional to find a prescription associated with a patient"
+// * identifier[shortCode] ^definition = "Business code allowing the healthcare professional to find a prescription associated with a patient"
+// * identifier[shortCode].system 1..1
+// * identifier[shortCode].system = "http://example.org/fhir/identifier-system/short-code"
+
+
+* extension contains
+    // BeFeedbackToPrescriber named feedback 0..1 MS and
+    //BeCoPrescriberInfo named coprescriber 0..1 MS and
+    BeRecordedDate named recordedDate 0..1 and
+    $request-statusReason named statusReason 0..1 MS and
+    BeValidityPeriod named validity 1..1 MS and
+
+
+
+    // BeLatestEndDate named latest 0..1 MS and
+    //BeLatestDraftDate named latestDraft 0..1 MS and
+    //BePerformerTaskReference named performertasks 0..* MS and
+    //BePerformerReference named performer 0..* MS and 
+    //BeProposalType named proposalType 0..1 MS and
+    //BeTaskReference named task 0..1 MS and
+    BePSSInfo named pss 0..1 MS  
+    // BePerformerType named performerType 0..* MS and
+    // https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeable-reference named device 0..* MS
+
+
+
+* authoredOn 1.. MS
+
+* requester 1.. MS
+//* requester only BeNoContainedReference
+* requester only Reference(BePractitionerRole)
+* requester ^short = "Prescriber of the requested service"
+
 * status MS
 * intent MS
 * category 1..* MS
@@ -42,17 +85,52 @@ Description: "The common structure for referral prescription."
 * code ^binding.extension.url = "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"
 * code ^binding.extension.valueString = "ServiceRequestCode"
 * code ^binding.description = "Codes for tests or services that can be carried out by a designated individual, organization or healthcare service."
-* orderDetail MS
-//* subject only BeNoContainedReference
+
+* category 1..* MS
+* category ^slicing.discriminator[0].type = #pattern
+* category ^slicing.discriminator[0].path = "coding.system"
+* category ^slicing.rules = #open
+
+* intent MS
+//* intent from http://fhir.org/VCL?v1=(http://hl7.org/fhir/request-intent)(order;proposal)
+* intent from BeVSRequestIntent
+
+// Define the parent slice
+* category contains discipline 0..1 MS
+
+* category[discipline] from be-vs-referral-category (example)
+* category[discipline] ^short = "Type of category (radiology, nursing, etc.)"
+
+
 * subject only Reference(BePatient)
 * subject MS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* basedOn MS
+//* requisition MS
+//* requisition ^short = "If needed to have a common identifier among different prescriptions."
+
+
+
+* orderDetail MS
+//* subject only BeNoContainedReference
 * occurrence[x] MS
 * occurrence[x] ^short = "When service shall occur - once this is past, this prescription is no longer valid and the status shall reflect this."
-* authoredOn 1.. MS
-* requester 1.. MS
-//* requester only BeNoContainedReference
-* requester only Reference(BePractitionerRole)
-* requester ^short = "Prescriber of the requested service"
+
 * performerType 0..0 MS
 * performer 0..0 MS
 //* performer only BeNoContainedReference
@@ -96,27 +174,23 @@ Description: "The common structure for referral prescription."
     
 //* extension[coprescriber] ^short = "Info about the other parties that have to take part in the prescription."
 * extension[validity] ^short = "Validity period of the prescription"
-* extension[latest] ^short = "Request must be executed before"
-* extension[feedback] ^short = "Whether prescriber requests feedback"
+//* extension[latest] ^short = "Request must be executed before"
+//* extension[feedback] ^short = "Whether prescriber requests feedback"
 //* extension[latestDraft] ^short = "The prescription must have left the draft status befor this moment"
 * extension[statusReason].valueCodeableConcept 1..1
 * extension[statusReason].valueCodeableConcept from BeVSPrescriptionStatusReason (example)
-* extension[device].extension[reference].value[x] only Reference(DeviceDefinition)    
-* extension[performerType] ^short = "Discipline of provider. Replaces .performerType because of insufficient cardinality"
+//* extension[device].extension[reference].value[x] only Reference(DeviceDefinition)    
+//* extension[performerType] ^short = "Discipline of provider. Replaces .performerType because of insufficient cardinality"
 
 
 //* intent from BeVSRequestIntent (example)
-* intent ^binding.description = "The actual valueset will be provided when a terminology package is available. For current guidance, see the included [ValueSet](ValueSet-be-vs-request-intent.html)."
 
 * insert TopLevelIndentifier
 //* insert CommonServiceRequest
 
-* identifier MS
-* identifier ^slicing.discriminator.type = #value
-* identifier ^slicing.discriminator.path = "system"
-* identifier ^slicing.rules = #open
-//* asNeeded[x] MS
 
 //* obeys be-inv-body-site
 * reasonCode 0..* MS
+* reasonReference 0..* MS
+
 

@@ -30,5 +30,8 @@ Alias: $procedure-code = http://hl7.org/fhir/ValueSet/procedure-code
 //Alias: $be-vs-referral-category = https://www.ehealth.fgov.be/standards/fhir/drp/ValueSet/be-vs-referral-category
 Alias: $cnk_product_codes = https://www.ehealth.fgov.be/standards/fhir/medication/NamingSystem/be-ns-cnk-codes
 Alias: $cd-hcparty = https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty
-//Alias: $temp-detail = https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-temp-requested-service-detail
+//Alias: $temp-detail = https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service-detail
 Alias: $qsi = https://qsimedical.com
+
+Alias: $SRSupportingInfoExt = http://hl7.org/fhir/5.0/StructureDefinition/extension-ServiceRequest.supportingInfo
+Alias: $BeCodeableReference = https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeable-reference
