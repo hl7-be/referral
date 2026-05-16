@@ -16,8 +16,8 @@ Characteristics: #can-be-target
 * description 0..1 CodeableConcept "Additional details on the requested care" "Additional details on the requested care"
 * type 1..1 CodeableConcept "Type of the request or prescription ('Prescription' or 'Proposal')." "Type of the request or prescription ('Prescription' or 'Proposal')."
 * originRequestId 0..1 Identifier "Reference to the ID of the original request (useful when the request is an extension of another one)." "Reference to the ID of the original request (useful when the request is an extension of another one)."
-* validationStartDate 1..1 dateTime "Start date of the prescription validity (encoded by the prescriber)." "Start date of the prescription validity (encoded by the prescriber)."
-* validationEndDate 1..1 dateTime "End date of the prescription validity (encoded by the prescriber)" "End date of the prescription validity (encoded by the prescriber)"
+* validityStartDate 1..1 dateTime "Start date of the prescription validity (encoded by the prescriber)." "Start date of the prescription validity (encoded by the prescriber)."
+* validityEndDate 1..1 dateTime "End date of the prescription validity (encoded by the prescriber)" "End date of the prescription validity (encoded by the prescriber)"
 * problem 0..* CodeableConcept "Medical problem or clinical context related to this request (for example: 'Open wound', 'Broken leg')." "Medical problem or clinical context related to this request (for example: 'Open wound', 'Broken leg')."
 * bodyLocation 0..* CodeableConcept "Anatomical location where the treatment should be applied (for example: 'Left arm')." "Anatomical location where the treatment should be applied (for example: 'Left arm')."
 

@@ -1,0 +1,45 @@
+@startuml
+hide circle
+
+BeReferralPrescription <|-- RemoteMonitoringPrescription
+
+class BeReferralPrescription{
+  |_identifier 1..1 Identifier 
+  |_shortCode 1..1 CodeableConcept 
+  |_recordedDate 1..1 dateTime
+  |_creationDate 1..1 dateTime
+  |_patient 1..1 Identifier 
+  |_author 1..1 Identifier
+  |_status 1..1 CodeableConcept
+  |_statusReason 0..1 CodeableConcept
+  |_careRequested 1..1 CodeableConcept
+  |_discipline 1..1 CodeableConcept 
+  |_description 0..1 CodeableConcept
+  |_type 1..1 CodeableConcept 
+  |_originRequestId 0..1 Identifier 
+  |_validityStartDate 1..1 dateTime 
+  |_validityEndDate 1..1 dateTime 
+  |_problem 0..* CodeableConcept 
+  |_bodyLocation 0..* CodeableConcept
+}
+
+class RemoteMonitoringPrescription{
+  |_ measurementSchedule 0..1 Timing "Monitoring duration and measurement frequency  "
+  |_ monitoringPlan 1..* "Parameter to monitor"
+    |_ parameter 1..1 CodeableConcept "What is measured (LOINC/SNOMED)"
+    |_ threshold 0..* "Absolute threshold rule"
+      |_ range 1..1 Range "Numeric threshold (max and/or min) with unit"
+      |_ sustainedFor 0..1 Duration "Trigger only if breached for this long"
+    |_ targetRange 0..1 Range "Clinically desired range (TBD — goal tracking / display) "
+    |_ maxIncrease 0..* Ratio "Max allowed increase per time window (e.g. 2 kg / 7 d)"
+    |_ maxDecrease 0..* Ratio "Max allowed decrease per time window (e.g. 3 kg / 14 d)  "
+}
+
+note right of RemoteMonitoringPrescription
+  Inherits all fields of BeReferralPrescription.
+  In the FHIR profile, maxIncrease + maxDecrease
+  collapse into a single signed `change` Ratio
+  (positive numerator = increase, negative = decrease).
+end note
+
+@enduml
