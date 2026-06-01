@@ -37,7 +37,7 @@ Description: "Referral prescription for remote monitoring of vital parameters (i
 * occurrenceTiming MS
 
 // LM: diagnosis
-* reasonCode MS
+// * reasonCode MS
 
 // LM: careRequested — type of monitoring service (SNOMED CT, regime/therapy)
 // Candidate codes:
@@ -68,7 +68,7 @@ Description: "Per-parameter telemonitoring rule: parameter, thresholds, target r
 * extension contains
     parameter 1..1 MS and
     threshold 0..* MS and
-    targetRange 0..1 MS and
+//    targetRange 0..1 MS and
     change 0..* MS
 
 // LM: monitoringPlan.parameter — what is measured (LOINC)
@@ -87,8 +87,8 @@ Description: "Per-parameter telemonitoring rule: parameter, thresholds, target r
 * extension[threshold].extension[sustainedFor].valueDuration MS
 
 // LM: monitoringPlan.targetRange
-* extension[targetRange].value[x] only Range
-* extension[targetRange].valueRange MS
+//* extension[targetRange].value[x] only Range
+//* extension[targetRange].valueRange MS
 
 // LM: monitoringPlan.maxIncrease + maxDecrease — collapsed into a single signed Ratio.
 //     Positive numerator = increase, negative = decrease.
