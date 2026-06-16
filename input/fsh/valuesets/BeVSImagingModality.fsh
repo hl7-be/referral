@@ -1,7 +1,7 @@
 
 ValueSet: BeVSImagingModality
 Id: be-vs-imaging-modality
-Title: "eReferral Imaging Modality"
+Title: "eReferral Imaging Modality ValueSet"
 Description: "Allowed modalities for imaging requests."
 * ^status = #active
 

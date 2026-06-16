@@ -1,6 +1,6 @@
 CodeSystem: BeCSPSSIndication
 Id: be-cs-pss-indication
-Title: "PSS Indication"
+Title: "PSS Indication ValueSet"
 Description: "PSS indication codes for diagnostic imaging requests."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/pss/ValueSet/be-cs-pss-indication"
 * ^status = #draft
