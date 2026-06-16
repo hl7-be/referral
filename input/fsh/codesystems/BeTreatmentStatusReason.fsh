@@ -6,6 +6,6 @@ Description: "DEMONSTRATIVE EXAMPLE - Status reason for the treatment. Initially
 * ^status = #active
 * ^caseSensitive = false
 * ^experimental = false
-* #stoppedtemporarily "Stopped temporarily"
-* #blacklistedcaregiver "Blacklisted Caregiver"
-* #blacklistedprescriber "Blacklisted Prescriber"
+* #stopped-temporarily "Stopped temporarily"
+* #blacklisted-caregiver "Blacklisted Caregiver"
+* #blacklisted-prescriber "Blacklisted Prescriber"

@@ -1,4 +1,4 @@
-Profile: BeAssignmentTask
+Profile: BeOrganizationTask
 Parent: Task
 Id: be-organization-task
 Description: "Subtask to assign the referral task and prescription to one or more members of this organisation"

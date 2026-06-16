@@ -21,9 +21,21 @@ Description: "The common structure for referral prescription."
 //* requisition ^short = "If needed to have a common identifier among different prescriptions."
 * status MS
 * intent MS
-* category 1..1 MS
-* category from be-vs-referral-category (example)
-* category ^binding.description = "The actual valueset will be provided when a terminology package is available. For current guidance, see the included [ValueSet](ValueSet-be-vs-referral-category.html)."
+* category 1..* MS
+* category ^slicing.discriminator.type = #value
+* category ^slicing.discriminator.path = "coding.system"
+* category ^slicing.rules = #open
+* category ^slicing.ordered = false
+* category ^slicing.description = "Slice to allow profile type category and additional use-case specific categories"
+* category contains
+    discipline 1..1 MS and
+    prescriptionType 0..1 MS
+* category[discipline] from be-vs-categories-of-care (preferred)
+* category[discipline] ^short = "Category that identifies the type of referral (e.g., nursing, physiotherapy)"
+* category[discipline] ^binding.description = "Categories of care that can be prescribed. See [ValueSet](ValueSet-be-vs-categories-of-care.html)."
+* category[prescriptionType] from be-vs-prescription-type (preferred)
+* category[prescriptionType] ^short = "Additional category that can be taylored to use-case specific purposes (e.g., prescription type for nursing, etc.)"
+* category[prescriptionType] ^binding.description = "Technical types of prescriptions for routing and workflow. See [ValueSet](ValueSet-be-vs-prescription-type.html)."
 
 * code 1..1 MS
 * code from $procedure-code (example)
@@ -53,7 +65,7 @@ Description: "The common structure for referral prescription."
 * bodySite.extension contains BeExtLaterality named bodyLaterality 0..1
 * note MS 
 * note only BeCodedAnnotation
-* note.extension[https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeableconcept].valueCodeableConcept from BeVSRequestNoteType (example)
+* note.extension[https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeableconcept].valueCodeableConcept from be-vs-note-type (preferred)
 * authoredOn obeys be-inv-long-date
 
 
@@ -61,6 +73,10 @@ Description: "The common structure for referral prescription."
 // * extension ^slicing.discriminator.type = #value
 // * extension ^slicing.discriminator.path = "url"
 // * extension ^slicing.rules = #open
+
+* replaces MS
+* replaces ^short = "The request that this is a continuation of"
+* replaces ^comment = "In cases where a request needs to be extended or prolonged, this element can be used to indicate that the current prescription is a continuation of the referenced one. This reference can be a logical reference (with an identifier), or just the display indicating the relevant prescription data, or a literal reference, to an external or contained resource. Usage guidance will be further detailed."
 
 * extension contains
     BeFeedbackToPrescriber named feedback 0..1 MS and
@@ -84,7 +100,7 @@ Description: "The common structure for referral prescription."
 * extension[feedback] ^short = "Whether prescriber requests feedback"
 //* extension[latestDraft] ^short = "The prescription must have left the draft status befor this moment"
 * extension[statusReason].valueCodeableConcept 1..1
-* extension[statusReason].valueCodeableConcept from BeVSPrescriptionStatusReason (example)
+* extension[statusReason].valueCodeableConcept from BeVSPrescriptionStatusReason (preferred)
 * extension[device].extension[reference].value[x] only Reference(DeviceDefinition)    
 * extension[performerType] ^short = "Discipline of provider. Replaces .performerType because of insufficient cardinality"
 
@@ -103,4 +119,3 @@ Description: "The common structure for referral prescription."
 
 //* obeys be-inv-body-site
 * reasonCode 0..* MS
-

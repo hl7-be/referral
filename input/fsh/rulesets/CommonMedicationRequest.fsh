@@ -23,7 +23,7 @@ RuleSet: CommonMedicationRequest
 * performerType ..0 MS
 * note MS
 * note only BeCodedAnnotation
-* note.extension[https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeableconcept].valueCodeableConcept from BeVSRequestNoteType (required)
+* note.extension[https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeableconcept].valueCodeableConcept from be-vs-note-type (required)
 * dosageInstruction.text 1.. MS
 * dosageInstruction.site MS
 * recorder MS

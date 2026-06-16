@@ -1,0 +1,25 @@
+ValueSet: BeVSBodyTopography
+Id: be-vs-body-topography
+Title: "eReferral Body Topography"
+Description: "Topographical qualifiers for body sites based on SNOMED CT."
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-body-topography"
+* ^experimental = false
+* ^copyright = """This value set includes content from SNOMED CT, which is copyright Â© 2002+ International Health Terminology Standards Development Organisation (IHTSDO)."""
+* $sct#261183002 "Upper (qualifier value)"
+* $sct#261122009 "Lower (qualifier value)"
+* $sct#255561001 "Medial (qualifier value)"
+* $sct#49370004 "Lateral (qualifier value)"
+* $sct#264217000 "Superior (qualifier value)"
+* $sct#261089000 "Inferior (qualifier value)"
+* $sct#255551008 "Posterior/Back (qualifier value)"
+* $sct#255549009 "Anterior/Front (qualifier value)"
+* $sct#351726001 "Below (qualifier value)"
+* $sct#352730000 "Above (qualifier value)"
+* $sct#260521003 "Internal (qualifier value)"
+* $sct#261074009 "External (qualifier value)"
+* $sct#261129000
+* $sct#90069004
+* $sct#37197008
+* $sct#264153007
+* $sct#261184008
+* $sct#261123004
