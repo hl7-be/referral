@@ -15,9 +15,6 @@ Description: "The nursing profile, generic version. Please note the nursing refe
 // * ^contact[=].telecom.use = #work
 // * ^jurisdiction = $jurisdiction#BE "Belgium"
 * category[discipline] = $sct#9632001
-//* category[prescriptionType] 0..0
-// * category contains
-//     nursingPrescriptionTechnicalType 0..1 MS
 * category[prescriptionType] from be-vs-nursing-prescription-technical-type (required)
 * category[prescriptionType] ^short = "Technical prescription type for nursing referrals"
 * category[prescriptionType] ^binding.description = "Technical types of nursing prescriptions (e.g., medication prefill, diabetic care education, specimen collection)."
