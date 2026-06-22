@@ -3,7 +3,6 @@
 // Based on DRP-ValueList-V0.7.docx
 // ============================================================================
 
-Alias: $sct = http://snomed.info/sct|http://snomed.info/sct/11000172109
 
 // ----------------------------------------------------------------------------
 // 1. Nursing Prescription Technical Type
