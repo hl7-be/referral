@@ -1,7 +1,7 @@
-ValueSet: BeVSAnnex81ReasonCode
-Title: "BeVSAnnex81ReasonCode"
-Id: be-vs-annex-81-reason-code
-Description: "DEMONSTRATIVE EXAMPLE - Nurse diagnostics and observations giving cause to the Annex 81"
+ValueSet: BeVSCareProposalReasonCode
+Title: "BeVSCareProposalReasonCode"
+Id: be-vs-care-proposal-reason-code
+Description: "DEMONSTRATIVE EXAMPLE - Nurse diagnostics and observations giving cause to the care proposal (Annex 81)"
 * ^experimental = false
 * ^copyright = """
 *   This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement

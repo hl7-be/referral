@@ -1,5 +1,5 @@
-Instance: example12-referralprescription-nursing-annex81
-InstanceOf: BeAnnex81
+Instance: example12-referralprescription-nursing-careproposal
+InstanceOf: CareProposal
 Title: "Example 12: Nursing - Annex 81"
 Description: "Specialized weekly nursing care for dementia patients under the Annex 81 reimbursement protocol. Includes cognitive stimulation activities, medication management, behavioral intervention strategies, safety assessment, and family support services. Designed to maintain functional capacity and quality of life for patients with cognitive impairment."
 
@@ -12,8 +12,8 @@ Usage: #example
 //* extension[performerType][+].valueCodeableConcept.coding.system = "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" //other code?
 //* extension[performerType][=].valueCodeableConcept.coding.code = #persphysician
 * status = #active
-* category = $sct#9632001
-* category.text = "Nursing procedure"
+* category[discipline] = $sct#9632001
+* category[discipline].text = "Nursing procedure"
 * priority = #routine
 * code = BeTempRequestedService#tmp-prep-x081-2
 * subject.identifier.system = "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"

@@ -20,6 +20,6 @@ Description: "The task that is referred to in the referral prescription (this is
 //* executionPeriod.end only BeYearMonthDay
 * intent MS
 * focus 1.. MS
-* focus only Reference(BeReferralServiceRequest or BeAnnex81)
+* focus only Reference(BeReferralServiceRequest or CareProposal)
 //* intent from BeVSTaskIntent
 * intent ^binding.description = "The actual valueset will be provided when a terminology package is available. For current guidance, see the included [ValueSet](ValueSet-be-vs-task-intent.html)."
