@@ -11,3 +11,8 @@ Two such specializations exist as instantiations of this model:
 - **Re-order** (*continuation of care*) — the *prolongation* flow. When an existing prescription is continued, extended, or superseded, the new prescription is a re-order of the previous one. This relationship is expressed with `replaces`, pointing back to the prescription that is being continued (as opposed to `basedOn`, which points to an upstream proposal or plan).
 
 Both are **specializations of the same common model**: they reuse the shared structure and differ only in the workflow-specific rules and in the way they relate to other requests (`basedOn` for a proposal it fulfils, `replaces` for a prescription it continues). Additional use cases can be introduced the same way — by specializing `BeReferralServiceRequest` rather than by redefining it.
+
+<figure>
+  {% include care-proposal.svg %}
+  <figcaption>CareProposal as a specialization of the common BeReferralServiceRequest model (click a class to open its definition)</figcaption>
+</figure>

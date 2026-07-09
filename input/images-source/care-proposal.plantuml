@@ -1,0 +1,41 @@
+@startuml care-proposal
+hide circle
+
+class BeReferralServiceRequest [[StructureDefinition-be-referral-servicerequest.html]] {
+  |_identifier 1..1 Identifier
+  |_status 1..1 code
+  |_intent 1..1 code
+  |_category 1..* CodeableConcept
+    |_discipline 1..1 (categories-of-care)
+    |_prescriptionType 0..1
+  |_code 1..1 CodeableConcept
+  |_subject 1..1 Reference(BePatient)
+  |_occurrence[x] 0..1
+  |_authoredOn 1..1 dateTime
+  |_requester 1..1 Reference(BePractitionerRole)
+  |_reasonCode 0..* CodeableConcept
+  |_basedOn 0..* Reference "fulfils an upstream proposal / plan"
+  |_replaces 0..* Reference "continuation of care"
+  |_ext.validity 1..1 Period
+  |_ext.feedback 0..1 boolean
+  |_ext.statusReason 0..1 CodeableConcept
+}
+
+class CareProposal [[StructureDefinition-care-proposal.html]] {
+  |_category[discipline] = Nursing procedure (fixed)
+  |_code from BeVSRequestedServicesNurse
+  |_basedOn only Reference(CareProposal)
+  |_reasonCode 1..* from BeVSCareProposalReasonCode
+  |_requester 1..1
+  |_occurrenceTiming weekly (frequency 1 / 1 wk)
+  |_(inv) intent = order implies basedOn exists
+}
+
+BeReferralServiceRequest <|-- CareProposal
+
+note right of CareProposal
+  Proposal-and-approval flow (formerly Annex 81).
+  The approval links back to the proposal via basedOn.
+end note
+
+@enduml
