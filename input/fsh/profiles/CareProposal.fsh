@@ -12,8 +12,10 @@ Id: care-proposal
 // Fixed discipline: the care proposal is always nursing care
 * category[discipline] = $sct#9632001 (exactly)
 
-// Fixed requested service code for the care proposal
-* code = BeTempRequestedService#tmp-prep-x081-2
+// Requested service is a nursing act (bound to the nursing services value set,
+// not fixed to a single code)
+* code from BeVSRequestedServicesNurse (example)
+* code ^binding.description = "The actual valueset will be provided when a terminology package is available. For current guidance, see the included [ValueSet](ValueSet-be-vs-requested-services-nurse.html)."
 
 // An approved care proposal is always based on a preceding proposal
 * basedOn only Reference(CareProposal)
