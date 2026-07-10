@@ -16,19 +16,19 @@ class BeReferralServiceRequest [[StructureDefinition-be-referral-servicerequest.
   |_reasonCode 0..* CodeableConcept
   |_basedOn 0..* Reference "fulfils an upstream proposal / plan"
   |_replaces 0..* Reference "continuation of care"
+  |_occurrenceTiming weekly (frequency 1 / 1 wk)
   |_ext.validity 1..1 Period
   |_ext.feedback 0..1 boolean
   |_ext.statusReason 0..1 CodeableConcept
 }
 
 class CareProposal [[StructureDefinition-care-proposal.html]] {
+  |_ intent = proposal
   |_category[discipline] = Nursing procedure (fixed)
   |_code from BeVSRequestedServicesNurse
-  |_basedOn only Reference(CareProposal)
   |_reasonCode 1..* from BeVSCareProposalReasonCode
-  |_requester 1..1
-  |_occurrenceTiming weekly (frequency 1 / 1 wk)
-  |_(inv) intent = order implies basedOn exists
+'  |_basedOn only Reference(CareProposal)
+'  |_requester 1..1
 }
 
 BeReferralServiceRequest <|-- CareProposal
