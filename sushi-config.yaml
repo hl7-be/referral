@@ -1,5 +1,5 @@
 canonical: https://www.ehealth.fgov.be/standards/fhir/drp
-url: https://www.ehealth.fgov.be/standards/fhir/drp
+#url: https://www.ehealth.fgov.be/standards/fhir/drp
 fhirVersion: 4.0.1
 FSHOnly: false
 applyExtensionMetadataToRoot: false
@@ -71,6 +71,9 @@ pages:
 # * useContext
 # * copyright
 # * packageId
+resources:
+  Parameters/terminology-expansion:
+    description: "Terminology expansion parameters used to include designations."
 
 # The menu property will be used to generate the input/menu.xml file.
 # The menu is represented as a simple structure where the YAML key
@@ -93,6 +96,8 @@ parameters:
   apply-jurisdiction: 'true'
   apply-publisher: 'true'
   apply-version: 'true'
+  propagate-status: true
+  excludettl: true
   path-expansion-params: Parameters-terminology-expansion.json
   pin-canonicals: pin-multiples
   path-history: https://www.ehealth.fgov.be/standards/fhir/drp/history.html
