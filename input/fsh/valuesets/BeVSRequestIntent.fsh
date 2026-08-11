@@ -2,7 +2,7 @@ ValueSet: BeVSRequestIntent
 Title: "BeVSRequestIntent"
 Id: be-vs-request-intent
 Description: "eReferral allowed intent codes in the context of referral prescription"
-* ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-request-intent"
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/drp/ValueSet/be-vs-request-intent"
 * ^version = "0.2.0"
 * ^status = #active
 * ^date = "2022-05-03T10:04:16+02:00"
