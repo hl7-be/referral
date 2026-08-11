@@ -4,7 +4,7 @@ Title: "BeOpApproveAnnex81"
 Description: "Creates an approval from an Annex81 proposal"
 Usage: #definition
 * version = "0.2.0"
-* name = "approve"
+* name = "Approve"
 * status = #draft
 * kind = #operation
 * affectsState = false

@@ -15,7 +15,7 @@ Usage: #definition
 * jurisdiction.coding[+] = urn:iso:std:iso:3166#BE
   
 
-* name = "Full-referral-prescription"
+* name = "FullReferralPrescription"
 * status = #active
 * date = "2024-09-20T15:31:51+02:00"
 * description = "Specify to include all useful resources around a ServiceRequest that can be retrieved with the $graph operation."

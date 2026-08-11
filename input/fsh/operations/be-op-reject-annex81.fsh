@@ -4,7 +4,7 @@ Title: "BeOpRejectAnnex81"
 Description: "Rejects an Annex81 proposal"
 Usage: #definition
 * version = "0.2.0"
-* name = "reject"
+* name = "Reject"
 * status = #draft
 * kind = #operation
 * affectsState = false
