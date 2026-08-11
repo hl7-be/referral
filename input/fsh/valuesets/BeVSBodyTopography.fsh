@@ -4,7 +4,7 @@ Title: "eReferral Body Topography"
 Description: "Topographical qualifiers for body sites based on SNOMED CT."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-body-topography"
 * ^experimental = false
-* ^copyright = """This value set includes content from SNOMED CT, which is copyright Â© 2002+ International Health Terminology Standards Development Organisation (IHTSDO)."""
+* ^copyright = """This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement."""
 * $sct#261183002 "Upper (qualifier value)"
 * $sct#261122009 "Lower (qualifier value)"
 * $sct#255561001 "Medial (qualifier value)"

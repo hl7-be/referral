@@ -4,7 +4,7 @@ Title: "eReferral Body Site"
 Description: "Anatomical body sites based on SNOMED CT for use in referral prescriptions."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-body-site"
 * ^experimental = false
-* ^copyright = """This value set includes content from SNOMED CT, which is copyright Â© 2002+ International Health Terminology Standards Development Organisation (IHTSDO)."""
+* ^copyright = """This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement."""
 * $sct#31640002 "Occipital bone structure"
 * $sct#789699009 "Structure of occipital condyle"
 * $sct#78277001 "Temporal lobe structure"

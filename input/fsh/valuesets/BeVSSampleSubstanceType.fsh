@@ -4,7 +4,7 @@ Title: "eReferral Sample Substance Type"
 Description: "Types of samples/substances that can be collected."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-sample-substance-type"
 * ^experimental = false
-* ^copyright = """This value set includes content from SNOMED CT, which is copyright Â© 2002+ International Health Terminology Standards Development Organisation (IHTSDO)."""
+* ^copyright = """This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement."""
 * $sct#45710003 "Sputum (substance)"
 * $sct#78014005 "Urine (substance)"
 * $sct#87612001 "Blood (substance)"

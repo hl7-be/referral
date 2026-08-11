@@ -5,7 +5,7 @@ Title: "eReferral/PSS Diagnostic Imaging Procedure"
 Description: "Diagnostic care services that can be prescribed for diagnostic imaging using SNOMED CT."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-diagnostic-imaging-procedure"
 * ^experimental = false
-* ^copyright = """This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO)."""
+* ^copyright = """This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement."""
 * $sct#32962002 "Computed tomography of abdomen with contrast (procedure)"
 * $sct#396101000119105 "Computed tomography of abdomen without contrast (procedure)"
 * $sct#16444991000119100 "Computed tomography of kidney, ureter and urinary bladder without contrast (procedure)"

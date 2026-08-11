@@ -4,7 +4,7 @@ Title: "eReferral Parameter Type"
 Description: "Types of parameters/vital signs that can be measured."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-parameter-type"
 * ^experimental = false
-* ^copyright = """This value set includes content from SNOMED CT, which is copyright Â© 2002+ International Health Terminology Standards Development Organisation (IHTSDO)."""
+* ^copyright = """This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement."""
 * $sct#75367002 "Blood Pressure (observable entity)"
 * $sct#163033001 "Lying Blood Pressure (observable entity)"
 * $sct#163034007 "Standing Blood Pressure (observable entity)"

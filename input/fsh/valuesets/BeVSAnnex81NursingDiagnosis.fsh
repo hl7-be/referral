@@ -4,7 +4,7 @@ Title: "eReferral Annex 81 Nursing Diagnosis"
 Description: "Nursing diagnoses/findings that can motivate an Annex 81 request."
 * ^url = "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-annex81-nursing-diagnosis"
 * ^experimental = false
-* ^copyright = """This value set includes content from SNOMED CT, which is copyright Â© 2002+ International Health Terminology Standards Development Organisation (IHTSDO)."""
+* ^copyright = """This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement."""
 * $sct#275928001 "Drugs - partial non-compliance (finding)"
 * $sct#1290542000 "Unintentional misuse of medication (finding)"
 * $sct#129834002 "Non-compliance with medication regimen (finding)"
