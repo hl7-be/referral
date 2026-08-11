@@ -3,7 +3,7 @@ InstanceOf: GraphDefinition
 Title: "BeGDFullReferralPrescription"
 Usage: #definition
 //* url = "https://www.ehealth.fgov.be/standards/fhir/drp/GraphDefinition/full-referral-prescription"
-* version = "1.0.0"
+* version = "1.1.0"
 * publisher = "eHealth Platform"
 * contact[0].name = "eHealth Platform"
 * contact[=].telecom.system = #url
@@ -15,7 +15,7 @@ Usage: #definition
 * jurisdiction.coding[+] = urn:iso:std:iso:3166#BE
   
 
-* name = "full-referral-prescription"
+* name = "Full-referral-prescription"
 * status = #active
 * date = "2024-09-20T15:31:51+02:00"
 * description = "Specify to include all useful resources around a ServiceRequest that can be retrieved with the $graph operation."
