@@ -11,15 +11,15 @@ Description: "Topographical qualifiers for body sites based on SNOMED CT."
 * $sct#49370004 "Lateral (qualifier value)"
 * $sct#264217000 "Superior (qualifier value)"
 * $sct#261089000 "Inferior (qualifier value)"
-* $sct#255551008 "Posterior/Back (qualifier value)"
-* $sct#255549009 "Anterior/Front (qualifier value)"
+* $sct#255551008 "Posterior (qualifier value)"
+* $sct#255549009 "Anterior (qualifier value)"
 * $sct#351726001 "Below (qualifier value)"
-* $sct#352730000 "Above (qualifier value)"
+* $sct#352730000 "Supra- (qualifier value)"
 * $sct#260521003 "Internal (qualifier value)"
 * $sct#261074009 "External (qualifier value)"
-* $sct#261129000
-* $sct#90069004
-* $sct#37197008
-* $sct#264153007
-* $sct#261184008
-* $sct#261123004
+* $sct#261129000 "Mediolateral (qualifier value)"
+* $sct#90069004 "Posterolateral (qualifier value)"
+* $sct#37197008 "Anterolateral (qualifier value)"
+* $sct#264153007 "Posterior pole (qualifier value"
+* $sct#261184008 "Upper anterior (qualifier value)"
+* $sct#261123004 "Lower anterior (qualifier value)"
