@@ -86,7 +86,7 @@ Description: "The diagnostic imaging profile. Generic version."
 // --------------------------------------------------------
 * supportingInfo ^slicing.discriminator.type = #value
 * supportingInfo ^slicing.discriminator.path =
-    "extension('https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-radiology-supporting-info-role').value"
+    "extension('https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-radiology-supporting-info-role').value"
 * supportingInfo ^slicing.rules = #open
 
 * supportingInfo contains

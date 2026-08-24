@@ -3,7 +3,7 @@ Id: be-ext-codeable-concept
 Title: "CodeableConcept Extension for Reference"
 Description: "Extension able to hold a coded concept on a Reference element."
 Context: Reference
-* ^url = "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-codeable-concept"
+* ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-codeable-concept"
 * ^status = #draft
 * . ^short = "Coded concept"
 * . ^isModifier = false

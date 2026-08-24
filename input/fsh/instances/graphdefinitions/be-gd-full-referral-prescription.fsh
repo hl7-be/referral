@@ -2,7 +2,7 @@ Instance: full-referral-prescription
 InstanceOf: GraphDefinition
 Title: "BeGDFullReferralPrescription"
 Usage: #definition
-//* url = "https://www.ehealth.fgov.be/standards/fhir/drp/GraphDefinition/full-referral-prescription"
+//* url = "https://www.ehealth.fgov.be/standards/fhir/referral/GraphDefinition/full-referral-prescription"
 * version = "1.1.0"
 * publisher = "eHealth Platform"
 * contact[0].name = "eHealth Platform"

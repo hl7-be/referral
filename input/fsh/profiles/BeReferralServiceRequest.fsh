@@ -3,7 +3,7 @@ Parent: ServiceRequest
 Id: be-referral-servicerequest
 Description: "The common structure for referral prescription."
 * ^status = #active
-// * ^url = "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest"
+// * ^url = "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest"
 // * ^version = "0.2.0"
 // * ^date = "2021-07-15T08:52:50+00:00"
 // * ^publisher = "HL7 Belgium"

@@ -6,7 +6,7 @@ Usage: #definition
 
 * status = #active
 * name = "BeQuestionnaireImagingAttentionConditions"
-* url = "https://www.ehealth.fgov.be/standards/fhir/drp/Questionnaire/be-questionnaire-imaging-attention-conditions"
+* url = "https://www.ehealth.fgov.be/standards/fhir/referral/Questionnaire/be-questionnaire-imaging-attention-conditions"
 
 // At least one item must be answered
 * extension[0].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-constraint"
