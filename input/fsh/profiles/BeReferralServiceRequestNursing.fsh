@@ -21,9 +21,9 @@ Description: "The nursing profile, generic version. Please note the nursing refe
 
 * code 1..
 * code from be-vs-nursing-care-requested (preferred)
-* code ^binding.description = "The actual valueset will be provided when a terminology package is available. For current guidance, see the included [ValueSet](ValueSet-be-vs-requested-services-nurse.html)."
+* code ^binding.description = "The actual valueset will be provided when a terminology package is available."
 * orderDetail ^short = "Details of the nursing activity"
-* orderDetail ^binding.description = "The actual valueset will be provided when a terminology package is available. For current guidance, see the included [ValueSet](ValueSet-be-vs-requested-services-nurse-detail.html)."
+* orderDetail ^binding.description = "The actual valueset will be provided when a terminology package is available."
 * supportingInfo MS
 * note MS
 * occurrenceTiming.repeat.count MS
