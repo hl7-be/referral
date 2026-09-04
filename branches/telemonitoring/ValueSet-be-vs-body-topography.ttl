@@ -1,0 +1,137 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/ValueSet/be-vs-body-topography> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "be-vs-body-topography"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet be-vs-body-topography</b></p><a name=\"be-vs-body-topography\"> </a><a name=\"hcbe-vs-body-topography\"> </a><ul><li>Include these codes as defined in <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><span title=\"Version is explicitly stated to be http://snomed.info/sct/11000172109\"> version ?http://snomed.info/sct/11000172109</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"http://snomed.info/sct/11000172109/id/261183002\">261183002</a></td><td>Upper (qualifier value)</td></tr><tr><td><a href=\"http://snomed.info/sct/11000172109/id/261122009\">261122009</a></td><td>Lower (qualifier value)</td></tr><tr><td><a href=\"http://snomed.info/sct/11000172109/id/255561001\">255561001</a></td><td>Medial (qualifier value)</td></tr><tr><td><a href=\"http://snomed.info/sct/11000172109/id/49370004\">49370004</a></td><td>Lateral (qualifier value)</td></tr><tr><td><a href=\"http://snomed.info/sct/11000172109/id/264217000\">264217000</a></td><td>Superior (qualifier value)</td></tr><tr><td><a href=\"http://snomed.info/sct/11000172109/id/261089000\">261089000</a></td><td>Inferior (qualifier value)</td></tr><tr><td><a href=\"http://snomed.info/sct/11000172109/id/255551008\">255551008</a></td><td>Posterior/Back (qualifier value)</td></tr><tr><td><a href=\"http://snomed.info/sct/11000172109/id/255549009\">255549009</a></td><td>Anterior/Front (qualifier value)</td></tr><tr><td><a href=\"http://snomed.info/sct/11000172109/id/351726001\">351726001</a></td><td>Below (qualifier value)</td></tr><tr><td><a href=\"http://snomed.info/sct/11000172109/id/352730000\">352730000</a></td><td>Above (qualifier value)</td></tr><tr><td><a href=\"http://snomed.info/sct/11000172109/id/260521003\">260521003</a></td><td>Internal (qualifier value)</td></tr><tr><td><a href=\"http://snomed.info/sct/11000172109/id/261074009\">261074009</a></td><td>External (qualifier value)</td></tr><tr><td><a href=\"http://snomed.info/sct/11000172109/id/261129000\">261129000</a></td><td/></tr><tr><td><a href=\"http://snomed.info/sct/11000172109/id/90069004\">90069004</a></td><td/></tr><tr><td><a href=\"http://snomed.info/sct/11000172109/id/37197008\">37197008</a></td><td/></tr><tr><td><a href=\"http://snomed.info/sct/11000172109/id/264153007\">264153007</a></td><td/></tr><tr><td><a href=\"http://snomed.info/sct/11000172109/id/261184008\">261184008</a></td><td/></tr><tr><td><a href=\"http://snomed.info/sct/11000172109/id/261123004\">261123004</a></td><td/></tr></table></li></ul></div>"
+  ] ;
+  fhir:ValueSet.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-body-topography"] ;
+  fhir:ValueSet.version [ fhir:value "1.0.0"] ;
+  fhir:ValueSet.name [ fhir:value "BeVSBodyTopography"] ;
+  fhir:ValueSet.title [ fhir:value "DRP Body Topography"] ;
+  fhir:ValueSet.status [ fhir:value "active"] ;
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:ValueSet.date [ fhir:value "2026-06-30T11:27:00+00:00"^^xsd:dateTime] ;
+  fhir:ValueSet.publisher [ fhir:value "eHealth Platform"] ;
+  fhir:ValueSet.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "eHealth Platform" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.ehealth.fgov.be/standards/fhir" ]
+     ], [
+       fhir:index 1 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "support@be-ehealth-standards.atlassian.net" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:ContactDetail.name [ fhir:value "Message Structure eHealth" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "support@be-ehealth-standards.atlassian.net" ] ;
+       fhir:ContactPoint.use [ fhir:value "work" ]
+     ]
+  ] ;
+  fhir:ValueSet.description [ fhir:value "Topographical qualifiers for body sites based on SNOMED CT."] ;
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "BE" ] ;
+       fhir:Coding.display [ fhir:value "Belgium" ]
+     ]
+  ] ;
+  fhir:ValueSet.copyright [ fhir:value "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO)."] ;
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:ValueSet.compose.include.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "261183002" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Upper (qualifier value)" ]
+       ], [
+         fhir:index 1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "261122009" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Lower (qualifier value)" ]
+       ], [
+         fhir:index 2 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "255561001" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Medial (qualifier value)" ]
+       ], [
+         fhir:index 3 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "49370004" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Lateral (qualifier value)" ]
+       ], [
+         fhir:index 4 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "264217000" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Superior (qualifier value)" ]
+       ], [
+         fhir:index 5 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "261089000" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Inferior (qualifier value)" ]
+       ], [
+         fhir:index 6 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "255551008" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Posterior/Back (qualifier value)" ]
+       ], [
+         fhir:index 7 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "255549009" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Anterior/Front (qualifier value)" ]
+       ], [
+         fhir:index 8 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "351726001" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Below (qualifier value)" ]
+       ], [
+         fhir:index 9 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "352730000" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Above (qualifier value)" ]
+       ], [
+         fhir:index 10 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "260521003" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Internal (qualifier value)" ]
+       ], [
+         fhir:index 11 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "261074009" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "External (qualifier value)" ]
+       ], [
+         fhir:index 12 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "261129000" ]
+       ], [
+         fhir:index 13 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "90069004" ]
+       ], [
+         fhir:index 14 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "37197008" ]
+       ], [
+         fhir:index 15 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "264153007" ]
+       ], [
+         fhir:index 16 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "261184008" ]
+       ], [
+         fhir:index 17 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "261123004" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/ValueSet/be-vs-body-topography.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

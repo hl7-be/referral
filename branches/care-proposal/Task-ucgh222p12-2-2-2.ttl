@@ -1,0 +1,50 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/Task/ucgh222p12-2-2-2> a fhir:Task ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ucgh222p12-2-2-2"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-performer-task" ;
+       fhir:index 0 ;
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-performer-task>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Task ucgh222p12-2-2-2</b></p><a name=\"ucgh222p12-2-2-2\"> </a><a name=\"hcucgh222p12-2-2-2\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-performer-task.html\">BePerformerTask</a></p></div><p><b>basedOn</b>: <a href=\"Task-ucgh222p12-2-2-1.html\">Task: status = accepted; intent = order; authoredOn = 2020-01-01 00:00:00+0100</a></p><p><b>partOf</b>: <a href=\"Task-ucgh222p12-2-2.html\">Task: status = accepted; intent = order</a></p><p><b>status</b>: Accepted</p><p><b>intent</b>: order</p><p><b>focus</b>: <a href=\"ServiceRequest-ucgh222p12-2.html\">ServiceRequest Flushing of central line</a></p><p><b>authoredOn</b>: 2020-01-01 00:00:00+0100</p><p><b>owner</b>: <a href=\"PractitionerRole-NURSE-45094508408.html\">PractitionerRole nurse</a></p></div>"
+  ] ;
+  fhir:Task.basedOn [
+     fhir:index 0 ;
+     fhir:link <https://www.ehealth.fgov.be/standards/fhir/drp/Task/ucgh222p12-2-2-1> ;
+     fhir:Reference.reference [ fhir:value "Task/ucgh222p12-2-2-1" ]
+  ] ;
+  fhir:Task.partOf [
+     fhir:index 0 ;
+     fhir:link <https://www.ehealth.fgov.be/standards/fhir/drp/Task/ucgh222p12-2-2> ;
+     fhir:Reference.reference [ fhir:value "Task/ucgh222p12-2-2" ]
+  ] ;
+  fhir:Task.status [ fhir:value "accepted"] ;
+  fhir:Task.intent [ fhir:value "order"] ;
+  fhir:Task.focus [
+     fhir:link <https://www.ehealth.fgov.be/standards/fhir/drp/ServiceRequest/ucgh222p12-2> ;
+     fhir:Reference.reference [ fhir:value "ServiceRequest/ucgh222p12-2" ]
+  ] ;
+  fhir:Task.authoredOn [ fhir:value "2020-01-01T00:00:00+01:00"^^xsd:dateTime] ;
+  fhir:Task.owner [
+     fhir:link <https://www.ehealth.fgov.be/standards/fhir/drp/PractitionerRole/NURSE-45094508408> ;
+     fhir:Reference.reference [ fhir:value "PractitionerRole/NURSE-45094508408" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/Task/ucgh222p12-2-2-2.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

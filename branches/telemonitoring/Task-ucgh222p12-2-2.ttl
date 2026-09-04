@@ -1,0 +1,35 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/Task/ucgh222p12-2-2> a fhir:Task ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ucgh222p12-2-2"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-task" ;
+       fhir:index 0 ;
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-task>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Task ucgh222p12-2-2</b></p><a name=\"ucgh222p12-2-2\"> </a><a name=\"hcucgh222p12-2-2\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referral-task.html\">BeReferralTask</a></p></div><p><b>status</b>: Accepted</p><p><b>intent</b>: order</p><p><b>focus</b>: <a href=\"ServiceRequest-ucgh222p12-2.html\">ServiceRequest 175852005</a></p></div>"
+  ] ;
+  fhir:Task.status [ fhir:value "accepted"] ;
+  fhir:Task.intent [ fhir:value "order"] ;
+  fhir:Task.focus [
+     fhir:link <https://www.ehealth.fgov.be/standards/fhir/drp/ServiceRequest/ucgh222p12-2> ;
+     fhir:Reference.reference [ fhir:value "ServiceRequest/ucgh222p12-2" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/Task/ucgh222p12-2-2.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,311 @@
+{
+  "package": "hl7.fhir.be.drp",
+  "version": "1.0.0",
+  "fhirVersion": "4.0.1",
+  "jurisdiction": "BE",
+  "extensions": [
+    {
+      "url": "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-feedback-to-prescriber",
+      "title": "BeFeedbackToPrescriber",
+      "types": [
+        "boolean",
+        "boolean"
+      ]
+    },
+    {
+      "url": "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-latest-end-date",
+      "title": "BeLatestEndDate",
+      "types": [
+        "dateTime"
+      ]
+    },
+    {
+      "url": "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-performer-type",
+      "title": "BePerformerType",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-pss-info",
+      "title": "BePSSInfo",
+      "types": [
+        "Identifier"
+      ]
+    },
+    {
+      "url": "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-recorded-date",
+      "title": "BeRecordedDate",
+      "types": [
+        "dateTime"
+      ]
+    },
+    {
+      "url": "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-relevant-info",
+      "title": "BeRelevantInfo",
+      "types": [
+        "CodeableConcept",
+        "string",
+        "Extension",
+        "Coding",
+        "string",
+        "CodeableConcept",
+        "string",
+        "Extension",
+        "Coding",
+        "string",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
+      "url": "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-request-device",
+      "title": "BeRequestDevice",
+      "types": [
+        "Reference",
+        "CodeableConcept",
+        "base64Binary",
+        "boolean",
+        "canonical",
+        "code",
+        "date",
+        "dateTime",
+        "decimal",
+        "id",
+        "instant",
+        "integer",
+        "markdown",
+        "oid",
+        "positiveInt",
+        "string",
+        "time",
+        "unsignedInt",
+        "uri",
+        "url",
+        "uuid",
+        "Address",
+        "Age",
+        "Annotation",
+        "Attachment",
+        "CodeableConcept",
+        "Coding",
+        "ContactPoint",
+        "Count",
+        "Distance",
+        "Duration",
+        "HumanName",
+        "Identifier",
+        "Money",
+        "Period",
+        "Quantity",
+        "Range",
+        "Ratio",
+        "Reference",
+        "SampledData",
+        "Signature",
+        "Timing",
+        "ContactDetail",
+        "Contributor",
+        "DataRequirement",
+        "Expression",
+        "ParameterDefinition",
+        "RelatedArtifact",
+        "TriggerDefinition",
+        "UsageContext",
+        "Dosage",
+        "Meta"
+      ]
+    },
+    {
+      "url": "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-request-priority-reason",
+      "title": "BeRequestPriorityReason",
+      "types": [
+        "CodeableConcept"
+      ]
+    },
+    {
+      "url": "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-urgency-justification",
+      "title": "BeUrgencyJustification",
+      "types": [
+        "string"
+      ]
+    },
+    {
+      "url": "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-validity-period",
+      "title": "BeValidityPeriod",
+      "types": [
+        "Period"
+      ]
+    }
+  ],
+  "profiles": {
+    "ServiceRequest": [
+      {
+        "url": "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest",
+        "title": "BeReferralServiceRequest"
+      },
+      {
+        "url": "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-diagnosticimaging",
+        "title": "BeReferralServiceRequestDiagnosticImaging"
+      },
+      {
+        "url": "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing",
+        "title": "BeReferralServiceRequestNursing"
+      }
+    ],
+    "QuestionnaireResponse": [
+      {
+        "url": "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-imaging-attention-conditions-response",
+        "title": "BeImagingAttentionConditionsResponse"
+      }
+    ],
+    "Task": [
+      {
+        "url": "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-task",
+        "title": "BeReferralTask"
+      }
+    ]
+  },
+  "usage": {
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-NamingSystem.url": [
+      "NamingSystem"
+    ],
+    "http://hl7.org/fhir/5.0/StructureDefinition/extension-NamingSystem.version": [
+      "NamingSystem"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice-explanation": [
+      "StructureDefinition.snapshot.element.constraint"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName": [
+      "StructureDefinition.differential.element.binding",
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet": [
+      "StructureDefinition.snapshot.element.binding"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/questionnaire-constraint": [
+      "Questionnaire"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/request-statusReason|5.3.0": [
+      "ServiceRequest"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
+      "StructureDefinition.snapshot.element.type"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics": [
+      "StructureDefinition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/translation": [
+      "Questionnaire.item.text"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/expansion-parameters": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name": [
+      "ImplementationGuide.definition.page",
+      "ImplementationGuide.definition.page.page"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment": [
+      "ImplementationGuide.dependsOn"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
+      "ImplementationGuide.definition.resource"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version": [
+      "StructureDefinition.snapshot"
+    ],
+    "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-ext-laterality": [
+      "ServiceRequest.bodySite"
+    ],
+    "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeable-reference": [
+      "ServiceRequest.supportingInfo"
+    ],
+    "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-ext-codeableconcept": [
+      "ServiceRequest.note"
+    ],
+    "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-feedback-to-prescriber": [
+      "ServiceRequest"
+    ],
+    "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-latest-end-date": [
+      "ServiceRequest"
+    ],
+    "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-performer-type": [
+      "ServiceRequest"
+    ],
+    "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-pss-info": [
+      "ServiceRequest"
+    ],
+    "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-recorded-date": [
+      "ServiceRequest"
+    ],
+    "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-request-device": [
+      "ServiceRequest"
+    ],
+    "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-urgency-justification": [
+      "ServiceRequest"
+    ],
+    "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-validity-period": [
+      "ServiceRequest"
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/ServiceRequest/example12-referralprescription-nursing-annex81> a fhir:ServiceRequest ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "example12-referralprescription-nursing-annex81"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-annex-81" ;
+       fhir:index -1 ;
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-annex-81>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest example12-referralprescription-nursing-annex81</b></p><a name=\"example12-referralprescription-nursing-annex81\"> </a><a name=\"hcexample12-referralprescription-nursing-annex81\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-annex-81.html\">BeAnnex81</a></p></div><p><b>BeValidityPeriod</b>: 2022-04-19 --&gt; 2023-04-19</p><p><b>status</b>: Active</p><p><b>intent</b>: Proposal</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 9632001}\">Nursing procedure</span></p><p><b>priority</b>: Routine</p><p><b>code</b>: <span title=\"Codes:{https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-temp-requested-service tmp-prep-x081-2}\">Preparing medication_Appendix 81</span></p><p><b>subject</b>: Identifier: BeSSINNamingSystem/99999999999</p><p><b>occurrence</b>: Once per 1 week</p><p><b>authoredOn</b>: 2022-10-31 00:00:00+0100</p><p><b>requester</b>: <a href=\"PractitionerRole-NURSE-45094508408.html\">PractitionerRole nurse</a></p><p><b>reasonCode</b>: <span title=\"Codes:{http://snomed.info/sct 52448006}\">52448006</span></p></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index -1 ;
+     fhir:Extension.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-validity-period" ] ;
+     fhir:Extension.valuePeriod [
+       fhir:Period.start [ fhir:value "2022-04-19"^^xsd:date ] ;
+       fhir:Period.end [ fhir:value "2023-04-19"^^xsd:date ]
+     ]
+  ] ;
+  fhir:ServiceRequest.status [ fhir:value "active"] ;
+  fhir:ServiceRequest.intent [ fhir:value "proposal"] ;
+  fhir:ServiceRequest.category [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       a sct:9632001 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+       fhir:Coding.code [ fhir:value "9632001" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "Nursing procedure" ]
+  ] ;
+  fhir:ServiceRequest.priority [ fhir:value "routine"] ;
+  fhir:ServiceRequest.code [
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-temp-requested-service" ] ;
+       fhir:Coding.code [ fhir:value "tmp-prep-x081-2" ]
+     ]
+  ] ;
+  fhir:ServiceRequest.subject [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin" ] ;
+       fhir:Identifier.value [ fhir:value "99999999999" ]
+     ]
+  ] ;
+  fhir:ServiceRequest.occurrenceTiming [
+     fhir:Timing.repeat [
+       fhir:Timing.repeat.boundsPeriod [
+         fhir:Period.start [ fhir:value "2021-07-02"^^xsd:date ] ;
+         fhir:Period.end [ fhir:value "2022-06-30"^^xsd:date ]
+       ] ;
+       fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ] ;
+       fhir:Timing.repeat.period [ fhir:value "1"^^xsd:decimal ] ;
+       fhir:Timing.repeat.periodUnit [ fhir:value "wk" ]
+     ]
+  ] ;
+  fhir:ServiceRequest.authoredOn [ fhir:value "2022-10-31T00:00:00+01:00"^^xsd:dateTime] ;
+  fhir:ServiceRequest.requester [
+     fhir:link <https://www.ehealth.fgov.be/standards/fhir/drp/PractitionerRole/NURSE-45094508408> ;
+     fhir:Reference.reference [ fhir:value "PractitionerRole/NURSE-45094508408" ]
+  ] ;
+  fhir:ServiceRequest.reasonCode [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       a sct:52448006 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+       fhir:Coding.code [ fhir:value "52448006" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/ServiceRequest/example12-referralprescription-nursing-annex81.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

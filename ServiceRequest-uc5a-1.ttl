@@ -1,0 +1,143 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/ServiceRequest/uc5a-1> a fhir:ServiceRequest ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "uc5a-1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+       fhir:l <https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest uc5a-1</b></p><a name=\"uc5a-1\"> </a><a name=\"hcuc5a-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referral-servicerequest-nursing.html\">BeReferralServiceRequestNursing</a></p></div><p><b>BeValidityPeriod</b>: 2023-02-07 --&gt; 2023-08-07</p><p><b>BeFeedbackToPrescriber</b>: true</p><p><b>BePerformerType</b>: <span title=\"Codes:{https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty persnurse}\">nurse</span></p><p><b>status</b>: Completed</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 9632001}\">Nursing procedure</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 17636008}\">17636008</span></p><p><b>orderDetail</b>: <span title=\"Codes:{http://snomed.info/sct 87612001}\">87612001</span></p><p><b>subject</b>: Identifier: <a href=\"https://www.ehealth.fgov.be/standards/fhir/core/2.1.2/NamingSystem-be-ssin.html\" title=\"NISS/INSZ\">BeSSINNamingSystem</a>/38012699993</p><p><b>occurrence</b>: Count 1  times, Once</p><p><b>authoredOn</b>: 2023-02-07 00:00:00+0100</p><p><b>requester</b>: Identifier: BeNIHDINamingSystem/10829059004</p><p><b>reasonCode</b>: <span title=\"Codes:{http://snomed.info/sct 267032009}\">267032009</span></p><p><b>bodySite</b>: <span title=\"Codes:{http://snomed.info/sct 14975008}\">14975008</span></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-validity-period"^^xsd:anyURI ;
+       fhir:l <https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-validity-period>
+     ] ;
+     fhir:value [
+       a fhir:Period ;
+       fhir:start [ fhir:v "2023-02-07"^^xsd:date ] ;
+       fhir:end [ fhir:v "2023-08-07"^^xsd:date ]
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-feedback-to-prescriber"^^xsd:anyURI ;
+       fhir:l <https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-feedback-to-prescriber>
+     ] ;
+     fhir:value [
+       a fhir:Boolean ;
+       fhir:v true
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-performer-type"^^xsd:anyURI ;
+       fhir:l <https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-performer-type>
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty"^^xsd:anyURI ;
+           fhir:l <https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty>
+         ] ;
+         fhir:code [ fhir:v "persnurse" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       a sct:9632001 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:version [ fhir:v "http://snomed.info/sct/11000172109" ] ;
+       fhir:code [ fhir:v "9632001" ]
+     ] ) ;
+     fhir:text [ fhir:v "Nursing procedure" ]
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:17636008 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:version [ fhir:v "http://snomed.info/sct/11000172109" ] ;
+       fhir:code [ fhir:v "17636008" ]
+     ] )
+  ] ; # 
+  fhir:orderDetail ( [
+     fhir:coding ( [
+       a sct:87612001 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:version [ fhir:v "http://snomed.info/sct/11000172109" ] ;
+       fhir:code [ fhir:v "87612001" ]
+     ] )
+  ] ) ; # 
+  fhir:subject [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"^^xsd:anyURI ;
+         fhir:l <https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin>
+       ] ;
+       fhir:value [ fhir:v "38012699993" ]
+     ]
+  ] ; # 
+  fhir:occurrence [
+     a fhir:Timing ;
+     fhir:repeat [
+       fhir:count [ fhir:v "1"^^xsd:positiveInteger ]
+     ]
+  ] ; # 
+  fhir:authoredOn [ fhir:v "2023-02-07T00:00:00+01:00"^^xsd:dateTime] ; # 
+  fhir:requester [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"^^xsd:anyURI ;
+         fhir:l <https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi>
+       ] ;
+       fhir:value [ fhir:v "10829059004" ]
+     ]
+  ] ; # 
+  fhir:reasonCode ( [
+     fhir:coding ( [
+       a sct:267032009 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:version [ fhir:v "http://snomed.info/sct/11000172109" ] ;
+       fhir:code [ fhir:v "267032009" ]
+     ] )
+  ] ) ; # 
+  fhir:bodySite ( [
+     fhir:coding ( [
+       a sct:14975008 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:version [ fhir:v "http://snomed.info/sct/11000172109" ] ;
+       fhir:code [ fhir:v "14975008" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

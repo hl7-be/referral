@@ -1,0 +1,41 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/Practitioner/Requester1> a fhir:Practitioner ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "Requester1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitioner"^^xsd:anyURI ;
+       fhir:l <https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitioner>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\"><p class=\"res-header-id\"><b>Generated Narrative: Practitioner Requester1</b></p><a name=\"Requester1\"> </a><a name=\"hcRequester1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: en</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"https://www.ehealth.fgov.be/standards/fhir/core/2.1.2/StructureDefinition-be-practitioner.html\">BePractitioner</a></p></div><p><b>identifier</b>: BeNIHDINamingSystem/10829059004 (use: official, )</p><p><b>name</b>: Leonard McCoy (Official), Bones (Nickname)</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:system [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi"^^xsd:anyURI ;
+       fhir:l <https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/nihdi>
+     ] ;
+     fhir:value [ fhir:v "10829059004" ]
+  ] ) ; # 
+  fhir:name ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:family [ fhir:v "McCoy" ] ;
+     fhir:given ( [ fhir:v "Leonard" ] )
+  ] [
+     fhir:use [ fhir:v "nickname" ] ;
+     fhir:given ( [ fhir:v "Bones" ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

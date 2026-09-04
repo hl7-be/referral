@@ -1,0 +1,38 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/Task/example01-care02-colon-cleansing-performer-task> a fhir:Task ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "example01-care02-colon-cleansing-performer-task"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-performer-task"^^xsd:anyURI ;
+       fhir:l <https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-performer-task>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Task example01-care02-colon-cleansing-performer-task</b></p><a name=\"example01-care02-colon-cleansing-performer-task\"> </a><a name=\"hcexample01-care02-colon-cleansing-performer-task\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-performer-task.html\">BePerformerTask</a></p></div><p><b>partOf</b>: <a href=\"Task-example01-care02-colon-cleansing-referral-task.html\">Task: status = draft; intent = order</a></p><p><b>status</b>: Draft</p><p><b>intent</b>: order</p><p><b>executionPeriod</b>: ?? --&gt; (ongoing)</p><p><b>authoredOn</b>: 2020-01-01 00:00:00+0100</p><p><b>owner</b>: <a href=\"PractitionerRole-NURSE-45094508408.html\">PractitionerRole nurse</a></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:partOf ( [
+     fhir:l <https://www.ehealth.fgov.be/standards/fhir/drp/Task/example01-care02-colon-cleansing-referral-task> ;
+     fhir:reference [ fhir:v "Task/example01-care02-colon-cleansing-referral-task" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:executionPeriod [
+     fhir:id [ fhir:v "1" ]
+  ] ; # 
+  fhir:authoredOn [ fhir:v "2020-01-01T00:00:00+01:00"^^xsd:dateTime] ; # 
+  fhir:owner [
+     fhir:l <https://www.ehealth.fgov.be/standards/fhir/drp/PractitionerRole/NURSE-45094508408> ;
+     fhir:reference [ fhir:v "PractitionerRole/NURSE-45094508408" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

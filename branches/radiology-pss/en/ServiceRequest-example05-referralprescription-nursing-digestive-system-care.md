@@ -1,0 +1,122 @@
+# Example 5: Nursing - Digestive System Care - Digital Referral Prescription Implementation Guide v1.0.0
+
+## Example ServiceRequest: Example 5: Nursing - Digestive System Care
+
+Profile: [BeReferralServiceRequestNursing](StructureDefinition-be-referral-servicerequest-nursing.md)
+
+**BeValidityPeriod**: 2022-04-19 --> 2023-04-19
+
+**BeFeedbackToPrescriber**: true
+
+**BePerformerType**: nurse
+
+**identifier**: [BeUnadressedHealthMessageExchangePlatform](NamingSystem-be-ns-uhmep.md)/UHMEPVALUE, [BeNsUhmepShort](NamingSystem-be-ns-uhmep-short.md)/AB12EF
+
+**status**: Active
+
+**intent**: Order
+
+**category**: Nursing procedure
+
+**priority**: Routine
+
+**code**: Manual removal of impacted faeces from rectum
+
+**subject**: Identifier: BeSSINNamingSystem/99999999999
+
+**occurrence**: Once per 1 day
+
+**authoredOn**: 2022-10-31 00:00:00+0100
+
+**requester**: [PractitionerRole physician](PractitionerRole-DOCTOR-10829059004.md)
+
+**reasonCode**: Cold foot
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "ServiceRequest",
+  "id" : "example05-referralprescription-nursing-digestive-system-care",
+  "meta" : {
+    "profile" : ["https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"]
+  },
+  "extension" : [{
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-validity-period",
+    "valuePeriod" : {
+      "start" : "2022-04-19",
+      "end" : "2023-04-19"
+    }
+  },
+  {
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-feedback-to-prescriber",
+    "valueBoolean" : true
+  },
+  {
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-performer-type",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty",
+        "code" : "persnurse"
+      }]
+    }
+  }],
+  "identifier" : [{
+    "system" : "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep",
+    "value" : "UHMEPVALUE"
+  },
+  {
+    "system" : "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep-short",
+    "value" : "AB12EF"
+  }],
+  "status" : "active",
+  "intent" : "order",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "version" : "http://snomed.info/sct/11000172109",
+      "code" : "9632001"
+    }],
+    "text" : "Nursing procedure"
+  }],
+  "priority" : "routine",
+  "code" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "version" : "http://snomed.info/sct/11000172109",
+      "code" : "174297001"
+    }]
+  },
+  "subject" : {
+    "identifier" : {
+      "system" : "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin",
+      "value" : "99999999999"
+    }
+  },
+  "occurrenceTiming" : {
+    "repeat" : {
+      "boundsPeriod" : {
+        "start" : "2021-04-23",
+        "end" : "2022-04-22"
+      },
+      "frequency" : 1,
+      "period" : 1,
+      "periodUnit" : "d"
+    }
+  },
+  "authoredOn" : "2022-10-31T00:00:00+01:00",
+  "requester" : {
+    "reference" : "PractitionerRole/DOCTOR-10829059004"
+  },
+  "reasonCode" : [{
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "version" : "http://snomed.info/sct/11000172109",
+      "code" : "309256001"
+    }]
+  }]
+}
+
+```

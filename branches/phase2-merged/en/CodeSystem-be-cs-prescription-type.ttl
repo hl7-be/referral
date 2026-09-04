@@ -1,0 +1,206 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-prescription-type> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "be-cs-prescription-type"] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem be-cs-prescription-type</b></p><a name=\"be-cs-prescription-type\"> </a><a name=\"hcbe-cs-prescription-type\"> </a><p>This case-sensitive code system <code>https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-prescription-type</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">hygienic-care<a name=\"be-cs-prescription-type-hygienic-care\"> </a></td><td>Hygienic care</td></tr><tr><td style=\"white-space:nowrap\">bloodletting<a name=\"be-cs-prescription-type-bloodletting\"> </a></td><td>Bloodletting</td></tr><tr><td style=\"white-space:nowrap\">chronic-dialysis<a name=\"be-cs-prescription-type-chronic-dialysis\"> </a></td><td>Chronic home dialysis</td></tr><tr><td style=\"white-space:nowrap\">diabetic-education-within-care-trajectory<a name=\"be-cs-prescription-type-diabetic-education-within-care-trajectory\"> </a></td><td>Diabetes education within a care trajectory</td></tr><tr><td style=\"white-space:nowrap\">diabetic-education-within-start-trajectory<a name=\"be-cs-prescription-type-diabetic-education-within-start-trajectory\"> </a></td><td>Diabetes education within a start trajectory</td></tr><tr><td style=\"white-space:nowrap\">diabetic-education-without-care-trajectory<a name=\"be-cs-prescription-type-diabetic-education-without-care-trajectory\"> </a></td><td>Diabetes education for patients without a trajectory</td></tr><tr><td style=\"white-space:nowrap\">diabetic-education-convention-center<a name=\"be-cs-prescription-type-diabetic-education-convention-center\"> </a></td><td>Diabetes education within a convention centre</td></tr><tr><td style=\"white-space:nowrap\">glycemic-test<a name=\"be-cs-prescription-type-glycemic-test\"> </a></td><td>Glycemic control with glucometer</td></tr><tr><td style=\"white-space:nowrap\">medication-prefill-preparation<a name=\"be-cs-prescription-type-medication-prefill-preparation\"> </a></td><td>Preparation of medicines (Not refunded)</td></tr><tr><td style=\"white-space:nowrap\">medication-prefill-preparation-appendix-81<a name=\"be-cs-prescription-type-medication-prefill-preparation-appendix-81\"> </a></td><td>Preparing medication (Appendix 81)</td></tr><tr><td style=\"white-space:nowrap\">medication-prefill-preparation-not-refunded<a name=\"be-cs-prescription-type-medication-prefill-preparation-not-refunded\"> </a></td><td>Preparation of medicines (Not refunded)</td></tr><tr><td style=\"white-space:nowrap\">parameters<a name=\"be-cs-prescription-type-parameters\"> </a></td><td>Measurement of parameters</td></tr><tr><td style=\"white-space:nowrap\">sampling<a name=\"be-cs-prescription-type-sampling\"> </a></td><td>Sample collection</td></tr><tr><td style=\"white-space:nowrap\">generic-nursing<a name=\"be-cs-prescription-type-generic-nursing\"> </a></td><td>Generic nursing care</td></tr><tr><td style=\"white-space:nowrap\">diagnostic-imaging-appendix-82<a name=\"be-cs-prescription-type-diagnostic-imaging-appendix-82\"> </a></td><td>Diagnostic imaging (Appendix 82)</td></tr></table><p><b>Additional Language Displays</b></p><table class=\"codes\"><tr><td><b>Code</b></td><td><b>French (Belgium) (fr)</b></td><td><b>Nederlands (België) (Dutch (Belgium), nl)</b></td></tr><tr><td>hygienic-care</td><td>Soins d'hygiène</td><td>Hygiënische zorg</td></tr><tr><td>bloodletting</td><td>Saignée</td><td>Aderlating</td></tr><tr><td>chronic-dialysis</td><td>Dialyse chronique à domicile</td><td>Chronische thuisdialyse</td></tr><tr><td>diabetic-education-within-care-trajectory</td><td>Ã‰ducation au diabète dans un trajet de soins</td><td>Diabeteseducatie binnen een zorgtraject</td></tr><tr><td>diabetic-education-within-start-trajectory</td><td>Ã‰ducation au diabète dans un trajet de démarrage</td><td>Diabeteseducatie binnen een opstarttraject</td></tr><tr><td>diabetic-education-without-care-trajectory</td><td>Ã‰ducation au diabète pour les patients sans trajectoire</td><td>Diabeteseducatie voor patiënten zonder traject</td></tr><tr><td>diabetic-education-convention-center</td><td>Ã‰ducation au diabète dans un centre de convention</td><td>Diabeteseducatie binnen een conventiecentrum</td></tr><tr><td>glycemic-test</td><td>ContrÃ´le glycémique avec glucomètre</td><td>Glycemiecontrole met glucometer</td></tr><tr><td>medication-prefill-preparation</td><td>Préparation des médicaments (Non remboursé)</td><td>Medicatie klaarzetten (Niet terugbetaald)</td></tr><tr><td>medication-prefill-preparation-appendix-81</td><td>Préparation de médicaments (annexe 81)</td><td>Medicatie klaarzetten (bijlage 81)</td></tr><tr><td>medication-prefill-preparation-not-refunded</td><td>Préparation des médicaments (Non remboursé)</td><td>Medicatie klaarzetten (Niet terugbetaald)</td></tr><tr><td>parameters</td><td>Mesure des paramètres</td><td>Meting van parameters</td></tr><tr><td>sampling</td><td>Prélèvement d'échantillon</td><td>Staalafname</td></tr><tr><td>generic-nursing</td><td>Soins infirmiers génériques</td><td>Verpleegkundige zorgen generiek</td></tr><tr><td>diagnostic-imaging-appendix-82</td><td>Imagerie Médicale (Annex 82)</td><td>Diagnostische beeldvorming (Bijlage 82)</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-prescription-type"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.0.0"] ; # 
+  fhir:name [ fhir:v "BeCSPrescriptionType"] ; # 
+  fhir:title [ fhir:v "eReferral Prescription Type"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-06-19T10:26:42+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "eHealth Platform"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "eHealth Platform" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.ehealth.fgov.be/standards/fhir" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "support@be-ehealth-standards.atlassian.net" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Message Structure eHealth" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "support@be-ehealth-standards.atlassian.net" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Technical types of prescriptions supported by the eReferral system. Used for routing and workflow purposes."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BE" ] ;
+       fhir:display [ fhir:v "Belgium" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "15"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "hygienic-care" ] ;
+     fhir:display [ fhir:v "Hygienic care" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "nl-BE" ] ;
+       fhir:value [ fhir:v "Hygiënische zorg" ]
+     ] [
+       fhir:language [ fhir:v "fr-BE" ] ;
+       fhir:value [ fhir:v "Soins d'hygiène" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "bloodletting" ] ;
+     fhir:display [ fhir:v "Bloodletting" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "nl-BE" ] ;
+       fhir:value [ fhir:v "Aderlating" ]
+     ] [
+       fhir:language [ fhir:v "fr-BE" ] ;
+       fhir:value [ fhir:v "Saignée" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "chronic-dialysis" ] ;
+     fhir:display [ fhir:v "Chronic home dialysis" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "nl-BE" ] ;
+       fhir:value [ fhir:v "Chronische thuisdialyse" ]
+     ] [
+       fhir:language [ fhir:v "fr-BE" ] ;
+       fhir:value [ fhir:v "Dialyse chronique à domicile" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "diabetic-education-within-care-trajectory" ] ;
+     fhir:display [ fhir:v "Diabetes education within a care trajectory" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "nl-BE" ] ;
+       fhir:value [ fhir:v "Diabeteseducatie binnen een zorgtraject" ]
+     ] [
+       fhir:language [ fhir:v "fr-BE" ] ;
+       fhir:value [ fhir:v "Ã‰ducation au diabète dans un trajet de soins" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "diabetic-education-within-start-trajectory" ] ;
+     fhir:display [ fhir:v "Diabetes education within a start trajectory" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "nl-BE" ] ;
+       fhir:value [ fhir:v "Diabeteseducatie binnen een opstarttraject" ]
+     ] [
+       fhir:language [ fhir:v "fr-BE" ] ;
+       fhir:value [ fhir:v "Ã‰ducation au diabète dans un trajet de démarrage" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "diabetic-education-without-care-trajectory" ] ;
+     fhir:display [ fhir:v "Diabetes education for patients without a trajectory" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "nl-BE" ] ;
+       fhir:value [ fhir:v "Diabeteseducatie voor patiënten zonder traject" ]
+     ] [
+       fhir:language [ fhir:v "fr-BE" ] ;
+       fhir:value [ fhir:v "Ã‰ducation au diabète pour les patients sans trajectoire" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "diabetic-education-convention-center" ] ;
+     fhir:display [ fhir:v "Diabetes education within a convention centre" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "nl-BE" ] ;
+       fhir:value [ fhir:v "Diabeteseducatie binnen een conventiecentrum" ]
+     ] [
+       fhir:language [ fhir:v "fr-BE" ] ;
+       fhir:value [ fhir:v "Ã‰ducation au diabète dans un centre de convention" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "glycemic-test" ] ;
+     fhir:display [ fhir:v "Glycemic control with glucometer" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "nl-BE" ] ;
+       fhir:value [ fhir:v "Glycemiecontrole met glucometer" ]
+     ] [
+       fhir:language [ fhir:v "fr-BE" ] ;
+       fhir:value [ fhir:v "ContrÃ´le glycémique avec glucomètre" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "medication-prefill-preparation" ] ;
+     fhir:display [ fhir:v "Preparation of medicines (Not refunded)" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "nl-BE" ] ;
+       fhir:value [ fhir:v "Medicatie klaarzetten (Niet terugbetaald)" ]
+     ] [
+       fhir:language [ fhir:v "fr-BE" ] ;
+       fhir:value [ fhir:v "Préparation des médicaments (Non remboursé)" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "medication-prefill-preparation-appendix-81" ] ;
+     fhir:display [ fhir:v "Preparing medication (Appendix 81)" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "nl-BE" ] ;
+       fhir:value [ fhir:v "Medicatie klaarzetten (bijlage 81)" ]
+     ] [
+       fhir:language [ fhir:v "fr-BE" ] ;
+       fhir:value [ fhir:v "Préparation de médicaments (annexe 81)" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "medication-prefill-preparation-not-refunded" ] ;
+     fhir:display [ fhir:v "Preparation of medicines (Not refunded)" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "nl-BE" ] ;
+       fhir:value [ fhir:v "Medicatie klaarzetten (Niet terugbetaald)" ]
+     ] [
+       fhir:language [ fhir:v "fr-BE" ] ;
+       fhir:value [ fhir:v "Préparation des médicaments (Non remboursé)" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "parameters" ] ;
+     fhir:display [ fhir:v "Measurement of parameters" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "nl-BE" ] ;
+       fhir:value [ fhir:v "Meting van parameters" ]
+     ] [
+       fhir:language [ fhir:v "fr-BE" ] ;
+       fhir:value [ fhir:v "Mesure des paramètres" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "sampling" ] ;
+     fhir:display [ fhir:v "Sample collection" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "nl-BE" ] ;
+       fhir:value [ fhir:v "Staalafname" ]
+     ] [
+       fhir:language [ fhir:v "fr-BE" ] ;
+       fhir:value [ fhir:v "Prélèvement d'échantillon" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "generic-nursing" ] ;
+     fhir:display [ fhir:v "Generic nursing care" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "nl-BE" ] ;
+       fhir:value [ fhir:v "Verpleegkundige zorgen generiek" ]
+     ] [
+       fhir:language [ fhir:v "fr-BE" ] ;
+       fhir:value [ fhir:v "Soins infirmiers génériques" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "diagnostic-imaging-appendix-82" ] ;
+     fhir:display [ fhir:v "Diagnostic imaging (Appendix 82)" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "nl-BE" ] ;
+       fhir:value [ fhir:v "Diagnostische beeldvorming (Bijlage 82)" ]
+     ] [
+       fhir:language [ fhir:v "fr-BE" ] ;
+       fhir:value [ fhir:v "Imagerie Médicale (Annex 82)" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

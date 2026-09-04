@@ -1,0 +1,114 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/GraphDefinition/full-referral-prescription> a fhir:GraphDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "full-referral-prescription"] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: GraphDefinition full-referral-prescription</b></p><a name=\"full-referral-prescription\"> </a><a name=\"hcfull-referral-prescription\"> </a><p><b>StructureDefinition FMM Level</b>: 1</p><p><b>url</b>: <a href=\"GraphDefinition-full-referral-prescription.html\">GraphDefinition full-referral-prescription</a></p><p><b>version</b>: 1.0.0</p><p><b>name</b>: full-referral-prescription</p><p><b>status</b>: Active</p><p><b>date</b>: 2024-09-20 15:31:51+0200</p><p><b>publisher</b>: eHealth Platform</p><p><b>contact</b>: eHealth Platform: <a href=\"https://www.ehealth.fgov.be\">https://www.ehealth.fgov.be</a>, Message structure: <a href=\"mailto:message-structure@ehealth.fgov.be\">message-structure@ehealth.fgov.be</a></p><p><b>description</b>: </p><div><p>Specify to include all useful resources around a ServiceRequest that can be retrieved with the $graph operation.</p>\n</div><p><b>jurisdiction</b>: <span title=\"Codes:{urn:iso:std:iso:3166 BE}\">Belgium</span></p><p><b>start</b>: ServiceRequest</p><blockquote><p><b>link</b></p><p><b>path</b>: ServiceRequest.requester</p><p><b>min</b>: 1</p><p><b>max</b>: 1</p><p><b>description</b>: Get the PractitionerRole of the requester of the ServiceRequest</p><blockquote><p><b>target</b></p><p><b>type</b>: PractitionerRole</p><blockquote><p><b>link</b></p><p><b>path</b>: PractitionerRole.practitioner</p><p><b>min</b>: 1</p><p><b>max</b>: 1</p><p><b>description</b>: Get the Practitioner of the requester of the ServiceRequest</p><h3>Targets</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td>Practitioner</td></tr></table></blockquote></blockquote></blockquote><blockquote><p><b>link</b></p><p><b>min</b>: 1</p><p><b>description</b>: Get all Tasks corresponding to the BeReferralTask + all BePerformerTasks linked to the ServiceRequest</p><blockquote><p><b>target</b></p><p><b>type</b>: Task</p><p><b>params</b>: focus={ref}</p><blockquote><p><b>link</b></p><p><b>path</b>: Task.owner</p><p><b>min</b>: 1</p><p><b>max</b>: 1</p><p><b>description</b>: Get the PractitionerRole of the caregiver owner of the task</p><blockquote><p><b>target</b></p><p><b>type</b>: PractitionerRole</p><blockquote><p><b>link</b></p><p><b>path</b>: PractitionerRole.practitioner</p><p><b>min</b>: 1</p><p><b>max</b>: 1</p><p><b>description</b>: Get the Practitioner of the caregiver owner of the task</p><h3>Targets</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td>Practitioner</td></tr></table></blockquote></blockquote></blockquote></blockquote></blockquote></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index -1 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm" ] ;
+     fhir:Extension.valueInteger [ fhir:value "1"^^xsd:integer ]
+  ] ;
+  fhir:GraphDefinition.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/drp/GraphDefinition/full-referral-prescription"] ;
+  fhir:GraphDefinition.version [ fhir:value "1.0.0"] ;
+  fhir:GraphDefinition.name [ fhir:value "full-referral-prescription"] ;
+  fhir:GraphDefinition.status [ fhir:value "active"] ;
+  fhir:GraphDefinition.date [ fhir:value "2024-09-20T15:31:51+02:00"^^xsd:dateTime] ;
+  fhir:GraphDefinition.publisher [ fhir:value "eHealth Platform"] ;
+  fhir:GraphDefinition.contact [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "eHealth Platform" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.ehealth.fgov.be" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "Message structure" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "message-structure@ehealth.fgov.be" ]
+     ]
+  ] ;
+  fhir:GraphDefinition.description [ fhir:value "Specify to include all useful resources around a ServiceRequest that can be retrieved with the $graph operation."] ;
+  fhir:GraphDefinition.jurisdiction [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "BE" ]
+     ]
+  ] ;
+  fhir:GraphDefinition.start [ fhir:value "ServiceRequest"] ;
+  fhir:GraphDefinition.link [
+     fhir:index -1 ;
+     fhir:GraphDefinition.link.path [ fhir:value "ServiceRequest.requester" ] ;
+     fhir:GraphDefinition.link.min [ fhir:value "1"^^xsd:integer ] ;
+     fhir:GraphDefinition.link.max [ fhir:value "1" ] ;
+     fhir:GraphDefinition.link.description [ fhir:value "Get the PractitionerRole of the requester of the ServiceRequest" ] ;
+     fhir:GraphDefinition.link.target [
+       fhir:index -1 ;
+       fhir:GraphDefinition.link.target.type [ fhir:value "PractitionerRole" ] ;
+       fhir:GraphDefinition.link.target.link [
+         fhir:index -1 ;
+         fhir:GraphDefinition.link.path [ fhir:value "PractitionerRole.practitioner" ] ;
+         fhir:GraphDefinition.link.min [ fhir:value "1"^^xsd:integer ] ;
+         fhir:GraphDefinition.link.max [ fhir:value "1" ] ;
+         fhir:GraphDefinition.link.description [ fhir:value "Get the Practitioner of the requester of the ServiceRequest" ] ;
+         fhir:GraphDefinition.link.target [
+           fhir:index -1 ;
+           fhir:GraphDefinition.link.target.type [ fhir:value "Practitioner" ]
+         ]
+       ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:GraphDefinition.link.min [ fhir:value "1"^^xsd:integer ] ;
+     fhir:GraphDefinition.link.description [ fhir:value "Get all Tasks corresponding to the BeReferralTask + all BePerformerTasks linked to the ServiceRequest" ] ;
+     fhir:GraphDefinition.link.target [
+       fhir:index -1 ;
+       fhir:GraphDefinition.link.target.type [ fhir:value "Task" ] ;
+       fhir:GraphDefinition.link.target.params [ fhir:value "focus={ref}" ] ;
+       fhir:GraphDefinition.link.target.link [
+         fhir:index -1 ;
+         fhir:GraphDefinition.link.path [ fhir:value "Task.owner" ] ;
+         fhir:GraphDefinition.link.min [ fhir:value "1"^^xsd:integer ] ;
+         fhir:GraphDefinition.link.max [ fhir:value "1" ] ;
+         fhir:GraphDefinition.link.description [ fhir:value "Get the PractitionerRole of the caregiver owner of the task" ] ;
+         fhir:GraphDefinition.link.target [
+           fhir:index -1 ;
+           fhir:GraphDefinition.link.target.type [ fhir:value "PractitionerRole" ] ;
+           fhir:GraphDefinition.link.target.link [
+             fhir:index -1 ;
+             fhir:GraphDefinition.link.path [ fhir:value "PractitionerRole.practitioner" ] ;
+             fhir:GraphDefinition.link.min [ fhir:value "1"^^xsd:integer ] ;
+             fhir:GraphDefinition.link.max [ fhir:value "1" ] ;
+             fhir:GraphDefinition.link.description [ fhir:value "Get the Practitioner of the caregiver owner of the task" ] ;
+             fhir:GraphDefinition.link.target [
+               fhir:index -1 ;
+               fhir:GraphDefinition.link.target.type [ fhir:value "Practitioner" ]
+             ]
+           ]
+         ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/GraphDefinition/full-referral-prescription.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

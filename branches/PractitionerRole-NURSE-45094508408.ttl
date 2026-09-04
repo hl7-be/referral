@@ -1,0 +1,38 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/PractitionerRole/NURSE-45094508408> a fhir:PractitionerRole ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "NURSE-45094508408"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole"^^xsd:anyURI ;
+       fhir:l <https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: PractitionerRole NURSE-45094508408</b></p><a name=\"NURSE-45094508408\"> </a><a name=\"hcNURSE-45094508408\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"https://www.ehealth.fgov.be/standards/fhir/core/2.1.2/StructureDefinition-be-practitionerrole.html\">BePractitionerRole</a></p></div><p><b>practitioner</b>: <a href=\"Practitioner-practitioner2.html\">Practitioner Christopher Chapel (official)</a></p><p><b>code</b>: <span title=\"Codes:{https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty persnurse}\">nurse</span></p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:practitioner [
+     fhir:l <https://www.ehealth.fgov.be/standards/fhir/drp/Practitioner/practitioner2> ;
+     fhir:reference [ fhir:v "Practitioner/practitioner2" ]
+  ] ; # 
+  fhir:code ( [
+     fhir:coding ( [
+       fhir:system [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty"^^xsd:anyURI ;
+         fhir:l <https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty>
+       ] ;
+       fhir:code [ fhir:v "persnurse" ] ;
+       fhir:display [ fhir:v "nurse" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

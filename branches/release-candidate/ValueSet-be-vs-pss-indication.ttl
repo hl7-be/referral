@@ -1,0 +1,68 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/ValueSet/be-vs-pss-indication> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "be-vs-pss-indication"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet be-vs-pss-indication</b></p><a name=\"be-vs-pss-indication\"> </a><a name=\"hcbe-vs-pss-indication\"> </a><ul><li>Include all codes defined in <a href=\"CodeSystem-be-cs-pss-indication.html\"><code>https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-cs-pss-indication</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?1.1.0</span></li></ul></div>"
+  ] ;
+  fhir:ValueSet.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-pss-indication"] ;
+  fhir:ValueSet.version [ fhir:value "1.1.0"] ;
+  fhir:ValueSet.name [ fhir:value "BeVSPSSIndication"] ;
+  fhir:ValueSet.title [ fhir:value "PSS Indication"] ;
+  fhir:ValueSet.status [ fhir:value "active"] ;
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:ValueSet.date [ fhir:value "2026-08-11T09:14:04+00:00"^^xsd:dateTime] ;
+  fhir:ValueSet.publisher [ fhir:value "eHealth Platform"] ;
+  fhir:ValueSet.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "eHealth Platform" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.ehealth.fgov.be/standards/fhir" ]
+     ], [
+       fhir:index 1 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "support@be-ehealth-standards.atlassian.net" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:ContactDetail.name [ fhir:value "Message Structure eHealth" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "support@be-ehealth-standards.atlassian.net" ] ;
+       fhir:ContactPoint.use [ fhir:value "work" ]
+     ]
+  ] ;
+  fhir:ValueSet.description [ fhir:value "Indication codes for diagnostic imaging requests as PSS Internal Codes."] ;
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "BE" ] ;
+       fhir:Coding.display [ fhir:value "Belgium" ]
+     ]
+  ] ;
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-cs-pss-indication" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/ValueSet/be-vs-pss-indication.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

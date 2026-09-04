@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GraphDefinition xmlns="http://hl7.org/fhir">
+  <id value="full-referral-prescription"/>
+  <language value="en"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: GraphDefinition full-referral-prescription</b></p><a name="full-referral-prescription"> </a><a name="hcfull-referral-prescription"> </a><p><b>StructureDefinition FMM Level</b>: 1</p><p><b>url</b>: <a href="GraphDefinition-full-referral-prescription.html">GraphDefinition full-referral-prescription</a></p><p><b>version</b>: 1.0.0</p><p><b>name</b>: full-referral-prescription</p><p><b>status</b>: Active</p><p><b>date</b>: 2024-09-20 15:31:51+0200</p><p><b>publisher</b>: eHealth Platform</p><p><b>contact</b>: eHealth Platform: <a href="https://www.ehealth.fgov.be">https://www.ehealth.fgov.be</a>, Message structure: <a href="mailto:message-structure@ehealth.fgov.be">message-structure@ehealth.fgov.be</a></p><p><b>description</b>: </p><div><p>Specify to include all useful resources around a ServiceRequest that can be retrieved with the $graph operation.</p>
+</div><p><b>jurisdiction</b>: <span title="Codes:{urn:iso:std:iso:3166 BE}">Belgium</span></p><p><b>start</b>: ServiceRequest</p><blockquote><p><b>link</b></p><p><b>path</b>: ServiceRequest.requester</p><p><b>min</b>: 1</p><p><b>max</b>: 1</p><p><b>description</b>: Get the PractitionerRole of the requester of the ServiceRequest</p><blockquote><p><b>target</b></p><p><b>type</b>: PractitionerRole</p><blockquote><p><b>link</b></p><p><b>path</b>: PractitionerRole.practitioner</p><p><b>min</b>: 1</p><p><b>max</b>: 1</p><p><b>description</b>: Get the Practitioner of the requester of the ServiceRequest</p><h3>Targets</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Type</b></td></tr><tr><td style="display: none">*</td><td>Practitioner</td></tr></table></blockquote></blockquote></blockquote><blockquote><p><b>link</b></p><p><b>min</b>: 1</p><p><b>description</b>: Get all Tasks corresponding to the BeReferralTask + all BePerformerTasks linked to the ServiceRequest</p><blockquote><p><b>target</b></p><p><b>type</b>: Task</p><p><b>params</b>: focus={ref}</p><blockquote><p><b>link</b></p><p><b>path</b>: Task.owner</p><p><b>min</b>: 1</p><p><b>max</b>: 1</p><p><b>description</b>: Get the PractitionerRole of the caregiver owner of the task</p><blockquote><p><b>target</b></p><p><b>type</b>: PractitionerRole</p><blockquote><p><b>link</b></p><p><b>path</b>: PractitionerRole.practitioner</p><p><b>min</b>: 1</p><p><b>max</b>: 1</p><p><b>description</b>: Get the Practitioner of the caregiver owner of the task</p><h3>Targets</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Type</b></td></tr><tr><td style="display: none">*</td><td>Practitioner</td></tr></table></blockquote></blockquote></blockquote></blockquote></blockquote></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="1"/>
+  </extension>
+  <url value="https://www.ehealth.fgov.be/standards/fhir/drp/GraphDefinition/full-referral-prescription"/>
+  <version value="1.0.0"/>
+  <name value="full-referral-prescription"/>
+  <status value="active"/>
+  <date value="2024-09-20T15:31:51+02:00"/>
+  <publisher value="eHealth Platform"/>
+  <contact>
+    <name value="eHealth Platform"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.ehealth.fgov.be"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="Message structure"/>
+    <telecom>
+      <system value="email"/>
+      <value value="message-structure@ehealth.fgov.be"/>
+    </telecom>
+  </contact>
+  <description value="Specify to include all useful resources around a ServiceRequest that can be retrieved with the $graph operation."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="BE"/>
+    </coding>
+  </jurisdiction>
+  <start value="ServiceRequest"/>
+  <link>
+    <path value="ServiceRequest.requester"/>
+    <min value="1"/>
+    <max value="1"/>
+    <description value="Get the PractitionerRole of the requester of the ServiceRequest"/>
+    <target>
+      <type value="PractitionerRole"/>
+      <link>
+        <path value="PractitionerRole.practitioner"/>
+        <min value="1"/>
+        <max value="1"/>
+        <description value="Get the Practitioner of the requester of the ServiceRequest"/>
+        <target>
+          <type value="Practitioner"/>
+        </target>
+      </link>
+    </target>
+  </link>
+  <link>
+    <min value="1"/>
+    <description value="Get all Tasks corresponding to the BeReferralTask + all BePerformerTasks linked to the ServiceRequest"/>
+    <target>
+      <type value="Task"/>
+      <params value="focus={ref}"/>
+      <link>
+        <path value="Task.owner"/>
+        <min value="1"/>
+        <max value="1"/>
+        <description value="Get the PractitionerRole of the caregiver owner of the task"/>
+        <target>
+          <type value="PractitionerRole"/>
+          <link>
+            <path value="PractitionerRole.practitioner"/>
+            <min value="1"/>
+            <max value="1"/>
+            <description value="Get the Practitioner of the caregiver owner of the task"/>
+            <target>
+              <type value="Practitioner"/>
+            </target>
+          </link>
+        </target>
+      </link>
+    </target>
+  </link>
+</GraphDefinition>

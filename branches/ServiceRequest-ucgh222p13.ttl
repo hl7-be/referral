@@ -1,0 +1,98 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/ucgh222p13> a fhir:ServiceRequest ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ucgh222p13"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing"^^xsd:anyURI ;
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referralprescription-nursing>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: ServiceRequest</b><a name=\"ucgh222p13\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource ServiceRequest &quot;ucgh222p13&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referralprescription-nursing.html\">BeReferralPrescriptionNursing</a></p></div><p><b>BeFeedbackToPrescriber</b>: false</p><p><b>BeValidityPeriod</b>: 2022-10-03 --&gt; 2023-04-03</p><p><b>BePerformerType</b>: nurse <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://build.fhir.org/ig/hl7-be/core//CodeSystem-cd-hcparty.html\">BeCdHcParty</a>#persnurse)</span></p><p><b>status</b>: draft</p><p><b>intent</b>: order</p><p><b>category</b>: 9632001 <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#9632001)</span></p><p><b>code</b>: 225358003 <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#225358003)</span></p><p><b>subject</b>: <span>id: 38012699993</span></p><p><b>authoredOn</b>: 2022-10-03</p><p><b>requester</b>: <a href=\"PractitionerRole-ucgh222p13-1-1.html\">PractitionerRole/ucgh222p13-1-1</a></p><p><b>reasonCode</b>: 46541008 <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#46541008)</span></p><p><b>bodySite</b>: 14975008 <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT[BE]</a>#14975008)</span></p></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-feedback-to-prescriber"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "false"^^xsd:boolean ]
+  ] [
+     fhir:url [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Period ;
+       fhir:start [ fhir:v "2022-10-03"^^xsd:date ] ;
+       fhir:end [ fhir:v "2023-04-03"^^xsd:date ]
+     ]
+  ] [
+     fhir:url [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-performer-type"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "persnurse" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       a sct:9632001 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:version [ fhir:v "http://snomed.info/sct/11000172109" ] ;
+       fhir:code [ fhir:v "9632001" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:225358003 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:version [ fhir:v "http://snomed.info/sct/11000172109" ] ;
+       fhir:code [ fhir:v "225358003" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:identifier [
+       fhir:system [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "38012699993" ]
+     ]
+  ] ; # 
+  fhir:authoredOn [ fhir:v "2022-10-03"^^xsd:date] ; # 
+  fhir:requester [
+     fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/PractitionerRole/ucgh222p13-1-1> ;
+     fhir:reference [ fhir:v "PractitionerRole/ucgh222p13-1-1" ]
+  ] ; # 
+  fhir:reasonCode ( [
+     fhir:coding ( [
+       a sct:46541008 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:version [ fhir:v "http://snomed.info/sct/11000172109" ] ;
+       fhir:code [ fhir:v "46541008" ]
+     ] )
+  ] ) ; # 
+  fhir:bodySite ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-ext-laterality"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Coding, sct:419161000 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:version [ fhir:v "http://snomed.info/sct/11000172109" ] ;
+         fhir:code [ fhir:v "419161000" ]
+       ]
+     ] ) ;
+     fhir:coding ( [
+       a sct:14975008 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:version [ fhir:v "http://snomed.info/sct/11000172109" ] ;
+       fhir:code [ fhir:v "14975008" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

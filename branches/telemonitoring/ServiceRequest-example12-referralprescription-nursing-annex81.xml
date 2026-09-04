@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ServiceRequest xmlns="http://hl7.org/fhir">
+  <id value="example12-referralprescription-nursing-annex81"/>
+  <meta>
+    <profile value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-annex-81"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ServiceRequest example12-referralprescription-nursing-annex81</b></p><a name="example12-referralprescription-nursing-annex81"> </a><a name="hcexample12-referralprescription-nursing-annex81"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-be-annex-81.html">BeAnnex81</a></p></div><p><b>BeValidityPeriod</b>: 2022-04-19 --&gt; 2023-04-19</p><p><b>status</b>: Active</p><p><b>intent</b>: Proposal</p><p><b>category</b>: <span title="Codes:{http://snomed.info/sct 9632001}">Nursing procedure</span></p><p><b>priority</b>: Routine</p><p><b>code</b>: <span title="Codes:{https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-temp-requested-service tmp-prep-x081-2}">Preparing medication_Appendix 81</span></p><p><b>subject</b>: Identifier: BeSSINNamingSystem/99999999999</p><p><b>occurrence</b>: Once per 1 week</p><p><b>authoredOn</b>: 2022-10-31 00:00:00+0100</p><p><b>requester</b>: <a href="PractitionerRole-NURSE-45094508408.html">PractitionerRole nurse</a></p><p><b>reasonCode</b>: <span title="Codes:{http://snomed.info/sct 52448006}">52448006</span></p></div>
+  </text>
+  <extension url="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-validity-period">
+    <valuePeriod>
+      <start value="2022-04-19"/>
+      <end value="2023-04-19"/>
+    </valuePeriod>
+  </extension>
+  <status value="active"/>
+  <intent value="proposal"/>
+  <category>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <version value="http://snomed.info/sct/11000172109"/>
+      <code value="9632001"/>
+    </coding>
+    <text value="Nursing procedure"/>
+  </category>
+  <priority value="routine"/>
+  <code>
+    <coding>
+      <system value="https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-temp-requested-service"/>
+      <code value="tmp-prep-x081-2"/>
+    </coding>
+  </code>
+  <subject>
+    <identifier>
+      <system value="https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"/>
+      <value value="99999999999"/>
+    </identifier>
+  </subject>
+  <occurrenceTiming>
+    <repeat>
+      <boundsPeriod>
+        <start value="2021-07-02"/>
+        <end value="2022-06-30"/>
+      </boundsPeriod>
+      <frequency value="1"/>
+      <period value="1"/>
+      <periodUnit value="wk"/>
+    </repeat>
+  </occurrenceTiming>
+  <authoredOn value="2022-10-31T00:00:00+01:00"/>
+  <requester>
+    <reference value="PractitionerRole/NURSE-45094508408"/>
+  </requester>
+  <reasonCode>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <version value="http://snomed.info/sct/11000172109"/>
+      <code value="52448006"/>
+    </coding>
+  </reasonCode>
+</ServiceRequest>

@@ -1,0 +1,82 @@
+{
+  "codeSystems" : [{
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-annex81-status-reason",
+    "version" : "1.0.0",
+    "status" : "draft",
+    "name" : "BeCSAnnex81StatusReason",
+    "title" : "BeCSAnnex81StatusReason",
+    "description" : "DEMONSTRATIVE EXAMPLE - Status reason for the Annex 81"
+  },
+  {
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-imaging-modality",
+    "version" : "1.0.0",
+    "status" : "draft",
+    "name" : "BeCSImagingModality",
+    "title" : "BeCSImagingModality",
+    "description" : "Imaging modality types for prior imaging requests"
+  },
+  {
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-imaging-priority",
+    "version" : "1.0.0",
+    "status" : "draft",
+    "name" : "BeCSImagingPriority",
+    "title" : "BeCSImagingPriority",
+    "description" : "Priority codes for diagnostic imaging requests"
+  },
+  {
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-implant-type",
+    "version" : "1.0.0",
+    "status" : "draft",
+    "name" : "BeCSImplantType",
+    "title" : "BeCSImplantType",
+    "description" : "Types of implants relevant for diagnostic imaging attention conditions"
+  },
+  {
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-request-track",
+    "version" : "1.0.0",
+    "status" : "draft",
+    "name" : "BeCSRequestTrack",
+    "title" : "BeCSRequestTrack",
+    "description" : "Care setting track codes for diagnostic imaging requests"
+  },
+  {
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-temp-requested-service",
+    "version" : "1.0.0",
+    "status" : "draft",
+    "name" : "BeTempRequestedService",
+    "title" : "BeTempRequestedService",
+    "description" : "DEMONSTRATIVE EXAMPLE - Temporary codes for indicating services that can be requested from a Nurse"
+  },
+  {
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-temp-requested-service-detail",
+    "version" : "1.0.0",
+    "status" : "draft",
+    "name" : "BeTempRequestedServiceDetail",
+    "title" : "BeTempRequestedServiceDetail",
+    "description" : "DEMONSTRATIVE EXAMPLE - Temporary codes for indicating service details that can be requested from a Nurse"
+  },
+  {
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-prescription-status-reason",
+    "version" : "1.0.0",
+    "status" : "draft",
+    "name" : "BePrescriptionStatusReason",
+    "title" : "BePrescriptionStatusReason",
+    "description" : "DEMONSTRATIVE EXAMPLE - Status reason for the prescription. Initially defined as supporting CodeSystem for the referral prescription."
+  },
+  {
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-treatment-status-reason",
+    "version" : "1.0.0",
+    "status" : "draft",
+    "name" : "BeTreatmentStatusReason",
+    "title" : "BeTreatmentStatusReason",
+    "description" : "DEMONSTRATIVE EXAMPLE - Status reason for the treatment. Initially defined as supporting CodeSystem for the referral prescription."
+  },
+  {
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/precoordinated-radiology",
+    "version" : "1.0.0",
+    "status" : "draft",
+    "name" : "PrecoordinatedRadiologyCS",
+    "title" : "Precoordinated Radiology Exam Code System (Demo)",
+    "description" : "Demonstration CodeSystem showing how precoordinated radiology exam concepts\ncan be decomposed into their SNOMED CT dimensional attributes — as if each\nconcept were analysed as a SNOMED CT postcoordinated expression flattened\ninto properties.\n\nDimensions modelled (property `code` = SNOMED CT attribute SCTID):\n  * Modality / imaging action  -> 360037004 |Method (attribute)|\n  * Body region (multi-valued) -> 363704007 |Procedure site (attribute)|\n  * Contrast agent             -> 405813007 |Using substance (attribute)|\n  * Imaging phase (multi-val.) -> qualifier for pre- / post-contrast (SCTID TBD)\n  * Indication / reason        -> 363703001 |Has intent (attribute)|\n  * Technique qualifier        -> 272394005 (e.g. low-dose CT)\n\nDesign notes:\n  * Each property's `code` is the SCTID of the SNOMED CT *attribute*\n    (metaconcept). The imaging-phase attribute SCTID is still a\n    placeholder (`SCT-ATTR-IMAGING-PHASE`) pending selection of the\n    appropriate SNOMED |Phase|-style attribute.\n  * Each property's `value` is a SNOMED CT Coding. Placeholders are\n    used for the concept SCTIDs (SCT-*) — replace these before publishing.\n  * A concept carries `Procedure site` multiple times when the exam\n    covers multiple body regions.\n  * Absence of `Using substance` models an exam without contrast.\n  * 'wo/w' exams carry `Using substance` once (contrast is used at\n    some point) plus two `Imaging phase` values — `pre-contrast` and\n    `post-contrast` — making both phases machine-readable."
+  }]
+}

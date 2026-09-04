@@ -1,0 +1,104 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/ServiceRequest/referralprescription-nursing-example2-digestive-system-care> a fhir:ServiceRequest ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "referralprescription-nursing-example2-digestive-system-care"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing" ;
+       fhir:index 0 ;
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest referralprescription-nursing-example2-digestive-system-care</b></p><a name=\"referralprescription-nursing-example2-digestive-system-care\"> </a><a name=\"hcreferralprescription-nursing-example2-digestive-system-care\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referral-servicerequest-nursing.html\">BeReferralServiceRequestNursing</a></p></div><p><b>BeValidityPeriod</b>: 2021-10-10 --&gt; (ongoing)</p><p><b>BeFeedbackToPrescriber</b>: true</p><p><b>BePerformerType</b>: <span title=\"Codes:{https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty persnurse}\">nurse</span></p><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 9632001}\">Nursing procedure</span></p><p><b>priority</b>: Routine</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 762238003}\">Attention to nasogastric tube</span></p><p><b>subject</b>: Identifier: BeSSINNamingSystem/99999999999</p><p><b>occurrence</b>: 2 per 1 day</p><p><b>authoredOn</b>: 2020-01-01 00:00:00+0100</p><p><b>requester</b>: <a href=\"PractitionerRole-DOCTOR-10829059004.html\">PractitionerRole physician</a></p><p><b>reasonCode</b>: <span title=\"Codes:\">reason</span></p><p><b>note</b>: </p><blockquote><div><p>Patient cannot move</p>\n</div></blockquote></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-validity-period" ] ;
+     fhir:Extension.valuePeriod [
+       fhir:Period.start [ fhir:value "2021-10-10"^^xsd:date ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Extension.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-feedback-to-prescriber" ] ;
+     fhir:Extension.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index 2 ;
+     fhir:Extension.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-performer-type" ] ;
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" ] ;
+         fhir:Coding.code [ fhir:value "persnurse" ]
+       ]
+     ]
+  ] ;
+  fhir:ServiceRequest.status [ fhir:value "active"] ;
+  fhir:ServiceRequest.intent [ fhir:value "order"] ;
+  fhir:ServiceRequest.category [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:9632001 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+       fhir:Coding.code [ fhir:value "9632001" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "Nursing procedure" ]
+  ] ;
+  fhir:ServiceRequest.priority [ fhir:value "routine"] ;
+  fhir:ServiceRequest.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:762238003 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+       fhir:Coding.code [ fhir:value "762238003" ]
+     ]
+  ] ;
+  fhir:ServiceRequest.subject [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin" ] ;
+       fhir:Identifier.value [ fhir:value "99999999999" ]
+     ]
+  ] ;
+  fhir:ServiceRequest.occurrenceTiming [
+     fhir:Timing.repeat [
+       fhir:Timing.repeat.boundsPeriod [
+         fhir:Period.start [ fhir:value "2021-07-08"^^xsd:date ] ;
+         fhir:Period.end [ fhir:value "2022-07-07"^^xsd:date ]
+       ] ;
+       fhir:Timing.repeat.frequency [ fhir:value "2"^^xsd:positiveInteger ] ;
+       fhir:Timing.repeat.period [ fhir:value "1"^^xsd:decimal ] ;
+       fhir:Timing.repeat.periodUnit [ fhir:value "d" ]
+     ]
+  ] ;
+  fhir:ServiceRequest.authoredOn [ fhir:value "2020-01-01T00:00:00+01:00"^^xsd:dateTime] ;
+  fhir:ServiceRequest.requester [
+     fhir:link <https://www.ehealth.fgov.be/standards/fhir/drp/PractitionerRole/DOCTOR-10829059004> ;
+     fhir:Reference.reference [ fhir:value "PractitionerRole/DOCTOR-10829059004" ]
+  ] ;
+  fhir:ServiceRequest.reasonCode [
+     fhir:index 0 ;
+     fhir:CodeableConcept.text [ fhir:value "reason" ]
+  ] ;
+  fhir:ServiceRequest.note [
+     fhir:index 0 ;
+     fhir:Annotation.text [ fhir:value "Patient cannot move" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/ServiceRequest/referralprescription-nursing-example2-digestive-system-care.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

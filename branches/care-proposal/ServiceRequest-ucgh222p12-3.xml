@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ServiceRequest xmlns="http://hl7.org/fhir">
+  <id value="ucgh222p12-3"/>
+  <meta>
+    <profile value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ServiceRequest ucgh222p12-3</b></p><a name="ucgh222p12-3"> </a><a name="hcucgh222p12-3"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-be-referral-servicerequest-nursing.html">BeReferralServiceRequestNursing</a></p></div><p><b>BeValidityPeriod</b>: 2022-10-03 --&gt; 2023-04-03</p><p><b>BeFeedbackToPrescriber</b>: false</p><p><b>BePerformerType</b>: <span title="Codes:{https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty persnurse}">nurse</span></p><p><b>requisition</b>: <a href="NamingSystem-be-ns-uhmep.html" title="UHMEP naming system">BeUnadressedHealthMessageExchangePlatform</a>/27e5a4a4-e043-11ed-b5ea-0242ac120002</p><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title="Codes:{http://snomed.info/sct 9632001}">Nursing procedure</span></p><p><b>code</b>: <span title="Codes:{https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-temp-requested-service tmp-plac-edle-0}">Place/replace needle</span></p><p><b>subject</b>: Identifier: BeSSINNamingSystem/38012699993</p><p><b>occurrence</b>: Events: 2022-10-10 </p><p><b>authoredOn</b>: 2022-10-03 00:00:00+0100</p><p><b>requester</b>: <a href="PractitionerRole-DOCTOR-10829059004.html">PractitionerRole physician</a></p><p><b>reasonCode</b>: <span title="Codes:">chemotherapy via 'implantable venous access port catheter'</span></p><p><b>note</b>: </p><blockquote><div><p>Huber needle type: 20G x 25mm (not available for june release -&gt; is device)</p>
+</div></blockquote></div>
+  </text>
+  <extension url="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-validity-period">
+    <valuePeriod>
+      <start value="2022-10-03"/>
+      <end value="2023-04-03"/>
+    </valuePeriod>
+  </extension>
+  <extension url="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-feedback-to-prescriber">
+    <valueBoolean value="false"/>
+  </extension>
+  <extension url="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-performer-type">
+    <valueCodeableConcept>
+      <coding>
+        <system value="https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty"/>
+        <code value="persnurse"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <requisition>
+    <system value="https://www.ehealth.fgov.be/standards/fhir/drp/NamingSystem/uhmep"/>
+    <value value="27e5a4a4-e043-11ed-b5ea-0242ac120002"/>
+  </requisition>
+  <status value="active"/>
+  <intent value="order"/>
+  <category>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <version value="http://snomed.info/sct/11000172109"/>
+      <code value="9632001"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-temp-requested-service"/>
+      <code value="tmp-plac-edle-0"/>
+    </coding>
+  </code>
+  <subject>
+    <identifier>
+      <system value="https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"/>
+      <value value="38012699993"/>
+    </identifier>
+  </subject>
+  <occurrenceTiming>
+    <event value="2022-10-10"/>
+  </occurrenceTiming>
+  <authoredOn value="2022-10-03T00:00:00+01:00"/>
+  <requester>
+    <reference value="PractitionerRole/DOCTOR-10829059004"/>
+  </requester>
+  <reasonCode>
+    <text value="chemotherapy via 'implantable venous access port catheter'"/>
+  </reasonCode>
+  <note>
+    <text value="Huber needle type: 20G x 25mm (not available for june release -&gt; is device)"/>
+  </note>
+</ServiceRequest>

@@ -1,0 +1,67 @@
+{
+  "resourceType" : "ServiceRequest",
+  "id" : "ucgh222p12-1",
+  "meta" : {
+    "profile" : ["https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"]
+  },
+  "language" : "en",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest ucgh222p12-1</b></p><a name=\"ucgh222p12-1\"> </a><a name=\"hcucgh222p12-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referral-servicerequest-nursing.html\">BeReferralServiceRequestNursing</a></p></div><p><b>BeValidityPeriod</b>: 2022-10-03 --&gt; 2023-04-03</p><p><b>BeFeedbackToPrescriber</b>: false</p><p><b>BePerformerType</b>: <span title=\"Codes:{https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty persnurse}\">nurse</span></p><p><b>requisition</b>: <a href=\"NamingSystem-be-ns-uhmep.html\" title=\"UHMEP naming system\">BeUnadressedHealthMessageExchangePlatform</a>/27e5a4a4-e043-11ed-b5ea-0242ac120002</p><p><b>status</b>: Draft</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 9632001}\">Nursing procedure</span></p><p><b>code</b>: <span title=\"Codes:{https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-temp-requested-service tmp-dres-eter-4}\">Dressing change catheter</span></p><p><b>subject</b>: Identifier: BeSSINNamingSystem/38012699993</p><p><b>occurrence</b>: Events: 2022-10-10 </p><p><b>authoredOn</b>: 2022-10-03 00:00:00+0100</p><p><b>requester</b>: <a href=\"PractitionerRole-DOCTOR-10829059004.html\">PractitionerRole physician</a></p><p><b>reasonCode</b>: <span title=\"Codes:\">chemotherapy via 'implantable venous access port catheter'</span></p></div>"
+  },
+  "extension" : [{
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-validity-period",
+    "valuePeriod" : {
+      "start" : "2022-10-03",
+      "end" : "2023-04-03"
+    }
+  },
+  {
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-feedback-to-prescriber",
+    "valueBoolean" : false
+  },
+  {
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-performer-type",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty",
+        "code" : "persnurse"
+      }]
+    }
+  }],
+  "requisition" : {
+    "system" : "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep",
+    "value" : "27e5a4a4-e043-11ed-b5ea-0242ac120002"
+  },
+  "status" : "draft",
+  "intent" : "order",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "version" : "http://snomed.info/sct/11000172109",
+      "code" : "9632001"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-temp-requested-service",
+      "code" : "tmp-dres-eter-4"
+    }]
+  },
+  "subject" : {
+    "identifier" : {
+      "system" : "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin",
+      "value" : "38012699993"
+    }
+  },
+  "occurrenceTiming" : {
+    "event" : ["2022-10-10"]
+  },
+  "authoredOn" : "2022-10-03T00:00:00+01:00",
+  "requester" : {
+    "reference" : "PractitionerRole/DOCTOR-10829059004"
+  },
+  "reasonCode" : [{
+    "text" : "chemotherapy via 'implantable venous access port catheter'"
+  }]
+}

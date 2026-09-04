@@ -1,0 +1,511 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/BeModelAnnex81> a fhir:StructureDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "BeModelAnnex81"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: StructureDefinition BeModelAnnex81</b></p><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"border: 0px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;\"><tr style=\"border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top\"><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"The logical name of the element\">Name</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Information about the use of the element\">Flags</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Minimum and Maximum # of times the element can appear in the instance\">Card.</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px; width: 100px\" class=\"hierarchy\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Reference to the type of the element\">Type</a></th><th style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px\" class=\"hierarchy\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Additional information about the element\">Description &amp; Constraints</a><span style=\"float: right\"><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Legend for this format\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/></a></span></th></tr><tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_element.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Element\" class=\"hierarchy\"/> <a href=\"StructureDefinition-BeModelAnnex81-definitions.html#BeModelAnnex81\" title=\"Logical model describing the model for the Annex81 proposal and approval\">BeModelAnnex81</a><a name=\"BeModelAnnex81\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><span style=\"opacity: 0.5\">0</span><span style=\"opacity: 0.5\">..</span><span style=\"opacity: 0.5\">*</span></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://build.fhir.org/types.html#Base\">Base</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">BeModelAnnex81<br/><span style=\"font-weight:bold\">Instances of this type can be the target of a Reference</span></td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_datatype.gif\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-BeModelAnnex81-definitions.html#BeModelAnnex81.identifier\" title=\"Business identifier of the Annex81 proposal / approval\">identifier</a><a name=\"BeModelAnnex81.identifier\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\">Identifier</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Business identifier of the Annex81 proposal / approval</td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_datatype.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-BeModelAnnex81-definitions.html#BeModelAnnex81.shortCode\" title=\"'Business' code allowing the healthcare professional to find a prescription associated with a patient\">shortCode</a><a name=\"BeModelAnnex81.shortCode\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\">Identifier</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Business short identifier allowing the healthcare professional to find a prescription associated with a patient</td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-BeModelAnnex81-definitions.html#BeModelAnnex81.recordedDate\" title=\"Date of encoding of the information by the Recorder.\">recordedDate</a><a name=\"BeModelAnnex81.recordedDate\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#dateTime\">dateTime</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Date of encoding of the information by the Recorder.</td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-BeModelAnnex81-definitions.html#BeModelAnnex81.creationDate\" title=\"Creation date of the referral prescription. This date will not change throughout the process. This date corresponds to the first recordedDate recorded for this referral prescription.\">creationDate</a><a name=\"BeModelAnnex81.creationDate\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#dateTime\">dateTime</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Creation date of the referral prescription. This date will not change throughout the process. This date corresponds to the first recordedDate recorded for this referral prescription.</td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_datatype.gif\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-BeModelAnnex81-definitions.html#BeModelAnnex81.author\" title=\"Is the unique identifier of the person who encodes the prescription (e.g. a doctor, nurse, midwife or dentist) and takes responsibility for their content. The unique identifier must be the National Register Number (NISS) or bis number.\">author</a><a name=\"BeModelAnnex81.author\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\">Identifier</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">The person who encodes the prescription (e.g. a doctor, nurse, midwife or dentist) and takes responsibility for their content. The unique identifier must be the National Register Number (NISS) or bis number.</td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_datatype.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-BeModelAnnex81-definitions.html#BeModelAnnex81.status\" title=\"Is the status of the referral prescription (e.g. planned, complete, stopped, suspended, in progress, ….)\">status</a><a name=\"BeModelAnnex81.status\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#CodeableConcept\">CodeableConcept</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Is the status of the referral prescription (e.g. planned, complete, stopped, suspended, in progress, ….)</td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_datatype.gif\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-BeModelAnnex81-definitions.html#BeModelAnnex81.statusReason\" title=\"Gives the reason for the status of the referral prescription (treatment has been changed, patient is allergic, patient refuses, …)\">statusReason</a><a name=\"BeModelAnnex81.statusReason\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#CodeableConcept\">CodeableConcept</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Gives the reason for the status of the referral prescription (treatment has been changed, patient is allergic, patient refuses, …)</td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_datatype.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-BeModelAnnex81-definitions.html#BeModelAnnex81.careRequested\" title=\"Type of care requested (list of acts that each profession can do (not nomenclature code)) (snomed-ct code (procedure))\">careRequested</a><a name=\"BeModelAnnex81.careRequested\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#CodeableConcept\">CodeableConcept</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Type of care requested (list of acts that each profession can do (not nomenclature code)) (snomed-ct code (procedure))</td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_datatype.gif\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-BeModelAnnex81-definitions.html#BeModelAnnex81.patient\" title=\"Is the patient's unique identifier. The unique identifier must be the National Patient Registry Number (NISS) or the patient bis\">patient</a><a name=\"BeModelAnnex81.patient\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\">Identifier</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">The patient's identification. The unique identifier must be the National Patient Registry Number (NISS) or the patient bis</td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_datatype.gif\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-BeModelAnnex81-definitions.html#BeModelAnnex81.originRequestId\" title=\"Reference to the original prescription on which the prescription is based (prescriptionId), care plan, follow-up path, ….  referenceId. Reference to the CarePlan that addresses this prescription.\">originRequestId</a><a name=\"BeModelAnnex81.originRequestId\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#Identifier\">Identifier</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Reference to the original prescription on which the prescription is based (prescriptionId), care plan, follow-up path, ….  referenceId. Reference to the CarePlan that addresses this prescription.</td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-BeModelAnnex81-definitions.html#BeModelAnnex81.validationStartDate\" title=\"Start date of the prescription validity (encoded by the prescriber).\">validationStartDate</a><a name=\"BeModelAnnex81.validationStartDate\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#dateTime\">dateTime</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Start date of the prescription validity (encoded by the prescriber).</td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-BeModelAnnex81-definitions.html#BeModelAnnex81.validationEndDate\" title=\"End date of the prescription validity (encoded by the prescriber)\">validationEndDate</a><a name=\"BeModelAnnex81.validationEndDate\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#dateTime\">dateTime</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">End date of the prescription validity (encoded by the prescriber)</td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_datatype.gif\" alt=\".\" style=\"background-color: #F7F7F7; background-color: inherit\" title=\"Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-BeModelAnnex81-definitions.html#BeModelAnnex81.problem\" title=\"Reason for the request. The problem (code or reference) that is the main reason for this prescription (example: problem justifying the patient's inability to manage his medications).\">problem</a><a name=\"BeModelAnnex81.problem\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">0..*</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#CodeableConcept\">CodeableConcept</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Reason for the request. The problem (code or reference) that is the main reason for this prescription (example: problem justifying the patient's inability to manage his medications).<br/></td></tr>#xD;\n<tr style=\"border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white\"><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)\" class=\"hierarchy\"><img src=\"tbl_spacer.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"tbl_vjoin_end.png\" alt=\".\" style=\"background-color: inherit\" class=\"hierarchy\"/><img src=\"icon_primitive.png\" alt=\".\" style=\"background-color: white; background-color: inherit\" title=\"Primitive Data Type\" class=\"hierarchy\"/> <a href=\"StructureDefinition-BeModelAnnex81-definitions.html#BeModelAnnex81.feedbackNeeded\" title=\"Boolean – true if the prescriber requests feedback. If he wants to add other care providers, this will be mentioned in free text in the note. Here by default &quot;True&quot;\">feedbackNeeded</a><a name=\"BeModelAnnex81.feedbackNeeded\"> </a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"/><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">1..1</td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\"><a href=\"http://hl7.org/fhir/R4/datatypes.html#boolean\">boolean</a></td><td style=\"vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px\" class=\"hierarchy\">Boolean - true if the prescriber requests feedback. If he wants to add other care providers, this will be mentioned in free text in the note. Here by default \"True\"</td></tr>#xD;\n<tr><td colspan=\"5\" class=\"hierarchy\"><br/><a href=\"https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views\" title=\"Legend for this format\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC\" alt=\"doco\" style=\"background-color: inherit\"/> Documentation for this format</a></td></tr></table></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-type-characteristics" ] ;
+     fhir:Extension.valueCode [ fhir:value "can-be-target" ]
+  ] ;
+  fhir:StructureDefinition.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/BeModelAnnex81"] ;
+  fhir:StructureDefinition.version [ fhir:value "1.0.0"] ;
+  fhir:StructureDefinition.name [ fhir:value "BeModelAnnex81"] ;
+  fhir:StructureDefinition.status [ fhir:value "active"] ;
+  fhir:StructureDefinition.date [ fhir:value "2026-06-30T11:27:00+00:00"^^xsd:dateTime] ;
+  fhir:StructureDefinition.publisher [ fhir:value "eHealth Platform"] ;
+  fhir:StructureDefinition.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "eHealth Platform" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.ehealth.fgov.be/standards/fhir" ]
+     ], [
+       fhir:index 1 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "support@be-ehealth-standards.atlassian.net" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:ContactDetail.name [ fhir:value "Message Structure eHealth" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "support@be-ehealth-standards.atlassian.net" ] ;
+       fhir:ContactPoint.use [ fhir:value "work" ]
+     ]
+  ] ;
+  fhir:StructureDefinition.description [ fhir:value "Logical model describing the model for the Annex81 proposal and approval"] ;
+  fhir:StructureDefinition.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "BE" ] ;
+       fhir:Coding.display [ fhir:value "Belgium" ]
+     ]
+  ] ;
+  fhir:StructureDefinition.fhirVersion [ fhir:value "4.0.1"] ;
+  fhir:StructureDefinition.kind [ fhir:value "logical"] ;
+  fhir:StructureDefinition.abstract [ fhir:value "false"^^xsd:boolean] ;
+  fhir:StructureDefinition.type [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/BeModelAnnex81"] ;
+  fhir:StructureDefinition.baseDefinition [
+     fhir:value "http://hl7.org/fhir/StructureDefinition/Base" ;
+     fhir:link <http://hl7.org/fhir/StructureDefinition/Base>
+  ] ;
+  fhir:StructureDefinition.derivation [ fhir:value "specialization"] ;
+  fhir:StructureDefinition.snapshot [
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version" ] ;
+       fhir:Extension.valueString [ fhir:value "4.0.1" ]
+     ] ;
+     fhir:StructureDefinition.snapshot.element [
+       fhir:index 0 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81" ] ;
+       fhir:ElementDefinition.short [ fhir:value "BeModelAnnex81" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Logical model describing the model for the Annex81 proposal and approval" ] ;
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "*" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "Base" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "*" ]
+       ] ;
+       fhir:ElementDefinition.isModifier [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 1 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.identifier" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.identifier" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Business identifier of the Annex81 proposal / approval" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Business identifier of the Annex81 proposal / approval" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeModelAnnex81.identifier" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "Identifier" ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.shortCode" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.shortCode" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Business short identifier allowing the healthcare professional to find a prescription associated with a patient" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "'Business' code allowing the healthcare professional to find a prescription associated with a patient" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeModelAnnex81.shortCode" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "Identifier" ]
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.recordedDate" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.recordedDate" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Date of encoding of the information by the Recorder." ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Date of encoding of the information by the Recorder." ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeModelAnnex81.recordedDate" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "dateTime" ]
+       ]
+     ], [
+       fhir:index 4 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.creationDate" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.creationDate" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Creation date of the referral prescription. This date will not change throughout the process. This date corresponds to the first recordedDate recorded for this referral prescription." ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Creation date of the referral prescription. This date will not change throughout the process. This date corresponds to the first recordedDate recorded for this referral prescription." ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeModelAnnex81.creationDate" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "dateTime" ]
+       ]
+     ], [
+       fhir:index 5 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.author" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.author" ] ;
+       fhir:ElementDefinition.short [ fhir:value "The person who encodes the prescription (e.g. a doctor, nurse, midwife or dentist) and takes responsibility for their content. The unique identifier must be the National Register Number (NISS) or bis number." ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Is the unique identifier of the person who encodes the prescription (e.g. a doctor, nurse, midwife or dentist) and takes responsibility for their content. The unique identifier must be the National Register Number (NISS) or bis number." ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeModelAnnex81.author" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "Identifier" ]
+       ]
+     ], [
+       fhir:index 6 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.status" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.status" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Is the status of the referral prescription (e.g. planned, complete, stopped, suspended, in progress, ….)" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Is the status of the referral prescription (e.g. planned, complete, stopped, suspended, in progress, ….)" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeModelAnnex81.status" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
+       ]
+     ], [
+       fhir:index 7 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.statusReason" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.statusReason" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Gives the reason for the status of the referral prescription (treatment has been changed, patient is allergic, patient refuses, …)" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Gives the reason for the status of the referral prescription (treatment has been changed, patient is allergic, patient refuses, …)" ] ;
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeModelAnnex81.statusReason" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
+       ]
+     ], [
+       fhir:index 8 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.careRequested" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.careRequested" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Type of care requested (list of acts that each profession can do (not nomenclature code)) (snomed-ct code (procedure))" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Type of care requested (list of acts that each profession can do (not nomenclature code)) (snomed-ct code (procedure))" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeModelAnnex81.careRequested" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
+       ]
+     ], [
+       fhir:index 9 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.patient" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.patient" ] ;
+       fhir:ElementDefinition.short [ fhir:value "The patient's identification. The unique identifier must be the National Patient Registry Number (NISS) or the patient bis" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Is the patient's unique identifier. The unique identifier must be the National Patient Registry Number (NISS) or the patient bis" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeModelAnnex81.patient" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "Identifier" ]
+       ]
+     ], [
+       fhir:index 10 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.originRequestId" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.originRequestId" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Reference to the original prescription on which the prescription is based (prescriptionId), care plan, follow-up path, ….  referenceId. Reference to the CarePlan that addresses this prescription." ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Reference to the original prescription on which the prescription is based (prescriptionId), care plan, follow-up path, ….  referenceId. Reference to the CarePlan that addresses this prescription." ] ;
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeModelAnnex81.originRequestId" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "Identifier" ]
+       ]
+     ], [
+       fhir:index 11 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.validationStartDate" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.validationStartDate" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Start date of the prescription validity (encoded by the prescriber)." ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Start date of the prescription validity (encoded by the prescriber)." ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeModelAnnex81.validationStartDate" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "dateTime" ]
+       ]
+     ], [
+       fhir:index 12 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.validationEndDate" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.validationEndDate" ] ;
+       fhir:ElementDefinition.short [ fhir:value "End date of the prescription validity (encoded by the prescriber)" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "End date of the prescription validity (encoded by the prescriber)" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeModelAnnex81.validationEndDate" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "dateTime" ]
+       ]
+     ], [
+       fhir:index 13 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.problem" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.problem" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Reason for the request. The problem (code or reference) that is the main reason for this prescription (example: problem justifying the patient's inability to manage his medications)." ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Reason for the request. The problem (code or reference) that is the main reason for this prescription (example: problem justifying the patient's inability to manage his medications)." ] ;
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "*" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeModelAnnex81.problem" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "*" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
+       ]
+     ], [
+       fhir:index 14 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.feedbackNeeded" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.feedbackNeeded" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Boolean - true if the prescriber requests feedback. If he wants to add other care providers, this will be mentioned in free text in the note. Here by default \"True\"" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Boolean – true if the prescriber requests feedback. If he wants to add other care providers, this will be mentioned in free text in the note. Here by default \"True\"" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.base [
+         fhir:ElementDefinition.base.path [ fhir:value "BeModelAnnex81.feedbackNeeded" ] ;
+         fhir:ElementDefinition.base.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+         fhir:ElementDefinition.base.max [ fhir:value "1" ]
+       ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "boolean" ]
+       ]
+     ]
+  ] ;
+  fhir:StructureDefinition.differential [
+     fhir:StructureDefinition.differential.element [
+       fhir:index 0 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81" ] ;
+       fhir:ElementDefinition.short [ fhir:value "BeModelAnnex81" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Logical model describing the model for the Annex81 proposal and approval" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.identifier" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.identifier" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Business identifier of the Annex81 proposal / approval" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Business identifier of the Annex81 proposal / approval" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "Identifier" ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.shortCode" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.shortCode" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Business short identifier allowing the healthcare professional to find a prescription associated with a patient" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "'Business' code allowing the healthcare professional to find a prescription associated with a patient" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "Identifier" ]
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.recordedDate" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.recordedDate" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Date of encoding of the information by the Recorder." ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Date of encoding of the information by the Recorder." ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "dateTime" ]
+       ]
+     ], [
+       fhir:index 4 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.creationDate" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.creationDate" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Creation date of the referral prescription. This date will not change throughout the process. This date corresponds to the first recordedDate recorded for this referral prescription." ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Creation date of the referral prescription. This date will not change throughout the process. This date corresponds to the first recordedDate recorded for this referral prescription." ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "dateTime" ]
+       ]
+     ], [
+       fhir:index 5 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.author" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.author" ] ;
+       fhir:ElementDefinition.short [ fhir:value "The person who encodes the prescription (e.g. a doctor, nurse, midwife or dentist) and takes responsibility for their content. The unique identifier must be the National Register Number (NISS) or bis number." ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Is the unique identifier of the person who encodes the prescription (e.g. a doctor, nurse, midwife or dentist) and takes responsibility for their content. The unique identifier must be the National Register Number (NISS) or bis number." ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "Identifier" ]
+       ]
+     ], [
+       fhir:index 6 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.status" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.status" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Is the status of the referral prescription (e.g. planned, complete, stopped, suspended, in progress, ….)" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Is the status of the referral prescription (e.g. planned, complete, stopped, suspended, in progress, ….)" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
+       ]
+     ], [
+       fhir:index 7 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.statusReason" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.statusReason" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Gives the reason for the status of the referral prescription (treatment has been changed, patient is allergic, patient refuses, …)" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Gives the reason for the status of the referral prescription (treatment has been changed, patient is allergic, patient refuses, …)" ] ;
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
+       ]
+     ], [
+       fhir:index 8 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.careRequested" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.careRequested" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Type of care requested (list of acts that each profession can do (not nomenclature code)) (snomed-ct code (procedure))" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Type of care requested (list of acts that each profession can do (not nomenclature code)) (snomed-ct code (procedure))" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
+       ]
+     ], [
+       fhir:index 9 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.patient" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.patient" ] ;
+       fhir:ElementDefinition.short [ fhir:value "The patient's identification. The unique identifier must be the National Patient Registry Number (NISS) or the patient bis" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Is the patient's unique identifier. The unique identifier must be the National Patient Registry Number (NISS) or the patient bis" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "Identifier" ]
+       ]
+     ], [
+       fhir:index 10 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.originRequestId" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.originRequestId" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Reference to the original prescription on which the prescription is based (prescriptionId), care plan, follow-up path, ….  referenceId. Reference to the CarePlan that addresses this prescription." ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Reference to the original prescription on which the prescription is based (prescriptionId), care plan, follow-up path, ….  referenceId. Reference to the CarePlan that addresses this prescription." ] ;
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "Identifier" ]
+       ]
+     ], [
+       fhir:index 11 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.validationStartDate" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.validationStartDate" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Start date of the prescription validity (encoded by the prescriber)." ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Start date of the prescription validity (encoded by the prescriber)." ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "dateTime" ]
+       ]
+     ], [
+       fhir:index 12 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.validationEndDate" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.validationEndDate" ] ;
+       fhir:ElementDefinition.short [ fhir:value "End date of the prescription validity (encoded by the prescriber)" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "End date of the prescription validity (encoded by the prescriber)" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "dateTime" ]
+       ]
+     ], [
+       fhir:index 13 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.problem" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.problem" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Reason for the request. The problem (code or reference) that is the main reason for this prescription (example: problem justifying the patient's inability to manage his medications)." ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Reason for the request. The problem (code or reference) that is the main reason for this prescription (example: problem justifying the patient's inability to manage his medications)." ] ;
+       fhir:ElementDefinition.min [ fhir:value "0"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "*" ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "CodeableConcept" ]
+       ]
+     ], [
+       fhir:index 14 ;
+       fhir:Element.id [ fhir:value "BeModelAnnex81.feedbackNeeded" ] ;
+       fhir:ElementDefinition.path [ fhir:value "BeModelAnnex81.feedbackNeeded" ] ;
+       fhir:ElementDefinition.short [ fhir:value "Boolean - true if the prescriber requests feedback. If he wants to add other care providers, this will be mentioned in free text in the note. Here by default \"True\"" ] ;
+       fhir:ElementDefinition.definition [ fhir:value "Boolean – true if the prescriber requests feedback. If he wants to add other care providers, this will be mentioned in free text in the note. Here by default \"True\"" ] ;
+       fhir:ElementDefinition.min [ fhir:value "1"^^xsd:nonNegativeInteger ] ;
+       fhir:ElementDefinition.max [ fhir:value "1" ] ;
+       fhir:ElementDefinition.type [
+         fhir:index 0 ;
+         fhir:ElementDefinition.type.code [ fhir:value "boolean" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/BeModelAnnex81.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

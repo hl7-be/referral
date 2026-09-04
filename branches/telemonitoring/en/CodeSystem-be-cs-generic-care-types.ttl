@@ -1,0 +1,184 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-generic-care-types> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "be-cs-generic-care-types"] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem be-cs-generic-care-types</b></p><a name=\"be-cs-generic-care-types\"> </a><a name=\"hcbe-cs-generic-care-types\"> </a><p>This case-sensitive code system <code>https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-generic-care-types</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">administration-of-medication<a name=\"be-cs-generic-care-types-administration-of-medication\"> </a></td><td>Administration of medication</td></tr><tr><td style=\"white-space:nowrap\">preparation-and-administration-of-medication-to-psychiatric-patient<a name=\"be-cs-generic-care-types-preparation-and-administration-of-medication-to-psychiatric-patient\"> </a></td><td>Preparation and administration of medication to a psychiatric patient</td></tr><tr><td style=\"white-space:nowrap\">respiratory-care<a name=\"be-cs-generic-care-types-respiratory-care\"> </a></td><td>Respiratory care</td></tr><tr><td style=\"white-space:nowrap\">gastrointestinal-care<a name=\"be-cs-generic-care-types-gastrointestinal-care\"> </a></td><td>Gastrointestinal care</td></tr><tr><td style=\"white-space:nowrap\">urogenital-care<a name=\"be-cs-generic-care-types-urogenital-care\"> </a></td><td>Urogenital care</td></tr><tr><td style=\"white-space:nowrap\">catheter-care<a name=\"be-cs-generic-care-types-catheter-care\"> </a></td><td>Catheter care</td></tr><tr><td style=\"white-space:nowrap\">wound-care<a name=\"be-cs-generic-care-types-wound-care\"> </a></td><td>Wound care</td></tr><tr><td style=\"white-space:nowrap\">compression-therapy<a name=\"be-cs-generic-care-types-compression-therapy\"> </a></td><td>Compression therapy</td></tr><tr><td style=\"white-space:nowrap\">other-care<a name=\"be-cs-generic-care-types-other-care\"> </a></td><td>Other</td></tr></table><p><b>Additional Language Displays</b></p><table class=\"codes\"><tr><td><b>Code</b></td><td><b>French (Belgium) (fr)</b></td><td><b>Nederlands (België) (Dutch (Belgium), nl)</b></td></tr><tr><td>administration-of-medication</td><td>Administration du médicament</td><td>Toediening geneesmiddel</td></tr><tr><td>preparation-and-administration-of-medication-to-psychiatric-patient</td><td>Préparation et administration de médicaments à un patient psychiatrique</td><td>Voorbereiding en medicatietoediening bij een psychiatrische patiënt</td></tr><tr><td>respiratory-care</td><td>Soins des voies respiratoires</td><td>Zorgen aan de luchtwegen</td></tr><tr><td>gastrointestinal-care</td><td>Soins gastro-intestinaux</td><td>Gastro-intestinale zorgen</td></tr><tr><td>urogenital-care</td><td>Soins urogénitaux</td><td>Uro-genitale zorgen</td></tr><tr><td>catheter-care</td><td>Soins de cathéters</td><td>Katheterzorg</td></tr><tr><td>wound-care</td><td>Soins de plaies</td><td>Wondzorg</td></tr><tr><td>compression-therapy</td><td>Thérapie de compression</td><td>Compressietherapie</td></tr><tr><td>other-care</td><td>Autre</td><td>Andere</td></tr></table></div>"
+  ] ;
+  fhir:CodeSystem.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-generic-care-types"] ;
+  fhir:CodeSystem.version [ fhir:value "1.0.0"] ;
+  fhir:CodeSystem.name [ fhir:value "BeCSGenericCareTypes"] ;
+  fhir:CodeSystem.title [ fhir:value "DRP Generic Care Types"] ;
+  fhir:CodeSystem.status [ fhir:value "active"] ;
+  fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:CodeSystem.date [ fhir:value "2026-06-30T11:27:00+00:00"^^xsd:dateTime] ;
+  fhir:CodeSystem.publisher [ fhir:value "eHealth Platform"] ;
+  fhir:CodeSystem.contact [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "eHealth Platform" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.ehealth.fgov.be/standards/fhir" ]
+     ], [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "support@be-ehealth-standards.atlassian.net" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "Message Structure eHealth" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "support@be-ehealth-standards.atlassian.net" ] ;
+       fhir:ContactPoint.use [ fhir:value "work" ]
+     ]
+  ] ;
+  fhir:CodeSystem.description [ fhir:value "Types of care that can be prescribed via the generic prescription."] ;
+  fhir:CodeSystem.jurisdiction [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "BE" ] ;
+       fhir:Coding.display [ fhir:value "Belgium" ]
+     ]
+  ] ;
+  fhir:CodeSystem.caseSensitive [ fhir:value "true"^^xsd:boolean] ;
+  fhir:CodeSystem.content [ fhir:value "complete"] ;
+  fhir:CodeSystem.count [ fhir:value "9"^^xsd:nonNegativeInteger] ;
+  fhir:CodeSystem.concept [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "administration-of-medication" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Administration of medication" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index -1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Toediening geneesmiddel" ]
+     ], [
+       fhir:index -1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Administration du médicament" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "preparation-and-administration-of-medication-to-psychiatric-patient" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Preparation and administration of medication to a psychiatric patient" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index -1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Voorbereiding en medicatietoediening bij een psychiatrische patiënt" ]
+     ], [
+       fhir:index -1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Préparation et administration de médicaments à un patient psychiatrique" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "respiratory-care" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Respiratory care" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index -1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Zorgen aan de luchtwegen" ]
+     ], [
+       fhir:index -1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Soins des voies respiratoires" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "gastrointestinal-care" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Gastrointestinal care" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index -1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Gastro-intestinale zorgen" ]
+     ], [
+       fhir:index -1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Soins gastro-intestinaux" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "urogenital-care" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Urogenital care" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index -1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Uro-genitale zorgen" ]
+     ], [
+       fhir:index -1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Soins urogénitaux" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "catheter-care" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Catheter care" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index -1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Katheterzorg" ]
+     ], [
+       fhir:index -1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Soins de cathéters" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "wound-care" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Wound care" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index -1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Wondzorg" ]
+     ], [
+       fhir:index -1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Soins de plaies" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "compression-therapy" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Compression therapy" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index -1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Compressietherapie" ]
+     ], [
+       fhir:index -1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Thérapie de compression" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "other-care" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Other" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index -1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Andere" ]
+     ], [
+       fhir:index -1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Autre" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-generic-care-types.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

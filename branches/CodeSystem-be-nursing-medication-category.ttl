@@ -1,0 +1,215 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-nursing-medication-category> a fhir:CodeSystem;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "be-nursing-medication-category"]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This code system <code>https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-nursing-medication-category</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">eyedrops-ointment-post-oper<a name=\"be-nursing-medication-category-eyedrops-ointment-post-oper\"> </a></td><td>eyedrops ointment post oper</td></tr><tr><td style=\"white-space:nowrap\">eyedrops-ointment-not-post-oper<a name=\"be-nursing-medication-category-eyedrops-ointment-not-post-oper\"> </a></td><td>eyedrops ointment not post oper</td></tr><tr><td style=\"white-space:nowrap\">oral<a name=\"be-nursing-medication-category-oral\"> </a></td><td>oral</td></tr><tr><td style=\"white-space:nowrap\">rectal<a name=\"be-nursing-medication-category-rectal\"> </a></td><td>rectal</td></tr><tr><td style=\"white-space:nowrap\">vaginal<a name=\"be-nursing-medication-category-vaginal\"> </a></td><td>vaginal</td></tr><tr><td style=\"white-space:nowrap\">pulmonary<a name=\"be-nursing-medication-category-pulmonary\"> </a></td><td>pulmonary</td></tr><tr><td style=\"white-space:nowrap\">nasal<a name=\"be-nursing-medication-category-nasal\"> </a></td><td>nasal</td></tr><tr><td style=\"white-space:nowrap\">auricular<a name=\"be-nursing-medication-category-auricular\"> </a></td><td>auricular</td></tr><tr><td style=\"white-space:nowrap\">other<a name=\"be-nursing-medication-category-other\"> </a></td><td>other</td></tr></table><p><b>Additional Language Displays</b></p><table class=\"codes\"><tr><td><b>Code</b></td><td><b>English (English, en)</b></td><td><b>French (fr)</b></td><td><b>Nederlands (Dutch, nl)</b></td></tr><tr><td>eyedrops-ointment-post-oper</td><td>Eyedrops or ointment post operation</td><td>Applic gouttes ou pommade ophta phase post-op</td><td>Aanbrengen oogdruppels of oogzalf postoperatieve</td></tr><tr><td>eyedrops-ointment-not-post-oper</td><td>Eyedrops or ointment not post operation</td><td>Applic gouttes ou pommade ophta phase (non phase post-op)</td><td>Aanbrengen oogdruppels of oogzalf (niet postoperatieve)</td></tr><tr><td>oral</td><td>Oral medication</td><td>Per os</td><td>Orale medicatie</td></tr><tr><td>rectal</td><td>Rectal</td><td>Rectal</td><td>Rectaal</td></tr><tr><td>vaginal</td><td>Vaginal</td><td>Vaginal</td><td>Vaginaal</td></tr><tr><td>pulmonary</td><td>Pulmonary</td><td>Pulmonaire</td><td>Longen</td></tr><tr><td>nasal</td><td>Nasal</td><td>Nasal</td><td>Neus</td></tr><tr><td>auricular</td><td>Auricular</td><td>Auriculaire</td><td>Auriculaire</td></tr><tr><td>other</td><td>Other</td><td>Autre</td><td>Andere</td></tr></table></div>"
+  ]; # 
+  fhir:CodeSystem.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-nursing-medication-category"]; # 
+  fhir:CodeSystem.version [ fhir:value "0.2.0"]; # 
+  fhir:CodeSystem.name [ fhir:value "BeNursingMedicationCategory"]; # 
+  fhir:CodeSystem.title [ fhir:value "BeNursingMedicationCategory"]; # 
+  fhir:CodeSystem.status [ fhir:value "draft"]; # 
+  fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean]; # 
+  fhir:CodeSystem.date [ fhir:value "2022-05-03T10:04:16+02:00"^^xsd:dateTime]; # 
+  fhir:CodeSystem.publisher [ fhir:value "HL7 Belgium"]; # 
+  fhir:CodeSystem.contact [
+     fhir:index 0;
+     fhir:ContactDetail.name [ fhir:value "HL7 Belgium" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://hl7belgium.org" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:ContactDetail.name [ fhir:value "Message-Structure" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "email" ];
+       fhir:ContactPoint.value [ fhir:value "message-structure@ehealth.fgov.be" ];
+       fhir:ContactPoint.use [ fhir:value "work" ]
+     ]
+  ]; # 
+  fhir:CodeSystem.description [ fhir:value "Nursing codes in Belgium. To define details in nursing activities for the medication category. Initially defined as supporting CodeSystem for the referral prescription."]; # 
+  fhir:CodeSystem.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ];
+       fhir:Coding.code [ fhir:value "BE" ];
+       fhir:Coding.display [ fhir:value "Belgium" ]
+     ]
+  ]; # 
+  fhir:CodeSystem.caseSensitive [ fhir:value "false"^^xsd:boolean]; # 
+  fhir:CodeSystem.content [ fhir:value "complete"]; # 
+  fhir:CodeSystem.count [ fhir:value "9"^^xsd:nonNegativeInteger]; # 
+  fhir:CodeSystem.concept [
+     fhir:index 0;
+     fhir:CodeSystem.concept.code [ fhir:value "eyedrops-ointment-post-oper" ];
+     fhir:CodeSystem.concept.display [ fhir:value "eyedrops ointment post oper" ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Eyedrops or ointment post operation" ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Aanbrengen oogdruppels of oogzalf postoperatieve" ]
+     ], [
+       fhir:index 2;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Applic gouttes ou pommade ophta phase post-op" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:CodeSystem.concept.code [ fhir:value "eyedrops-ointment-not-post-oper" ];
+     fhir:CodeSystem.concept.display [ fhir:value "eyedrops ointment not post oper" ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Eyedrops or ointment not post operation" ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Aanbrengen oogdruppels of oogzalf (niet postoperatieve)" ]
+     ], [
+       fhir:index 2;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Applic gouttes ou pommade ophta phase (non phase post-op)" ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:CodeSystem.concept.code [ fhir:value "oral" ];
+     fhir:CodeSystem.concept.display [ fhir:value "oral" ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Oral medication" ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Orale medicatie" ]
+     ], [
+       fhir:index 2;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Per os" ]
+     ]
+  ], [
+     fhir:index 3;
+     fhir:CodeSystem.concept.code [ fhir:value "rectal" ];
+     fhir:CodeSystem.concept.display [ fhir:value "rectal" ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Rectal" ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Rectaal" ]
+     ], [
+       fhir:index 2;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Rectal" ]
+     ]
+  ], [
+     fhir:index 4;
+     fhir:CodeSystem.concept.code [ fhir:value "vaginal" ];
+     fhir:CodeSystem.concept.display [ fhir:value "vaginal" ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Vaginal" ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Vaginaal" ]
+     ], [
+       fhir:index 2;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Vaginal" ]
+     ]
+  ], [
+     fhir:index 5;
+     fhir:CodeSystem.concept.code [ fhir:value "pulmonary" ];
+     fhir:CodeSystem.concept.display [ fhir:value "pulmonary" ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Pulmonary" ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Longen" ]
+     ], [
+       fhir:index 2;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Pulmonaire" ]
+     ]
+  ], [
+     fhir:index 6;
+     fhir:CodeSystem.concept.code [ fhir:value "nasal" ];
+     fhir:CodeSystem.concept.display [ fhir:value "nasal" ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Nasal" ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Neus" ]
+     ], [
+       fhir:index 2;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Nasal" ]
+     ]
+  ], [
+     fhir:index 7;
+     fhir:CodeSystem.concept.code [ fhir:value "auricular" ];
+     fhir:CodeSystem.concept.display [ fhir:value "auricular" ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Auricular" ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Auriculaire" ]
+     ], [
+       fhir:index 2;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Auriculaire" ]
+     ]
+  ], [
+     fhir:index 8;
+     fhir:CodeSystem.concept.code [ fhir:value "other" ];
+     fhir:CodeSystem.concept.display [ fhir:value "other" ];
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Other" ]
+     ], [
+       fhir:index 1;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Andere" ]
+     ], [
+       fhir:index 2;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr" ];
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Autre" ]
+     ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-nursing-medication-category.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,83 @@
+{
+  "resourceType" : "ServiceRequest",
+  "id" : "ucgh241p19-1",
+  "meta" : {
+    "profile" : ["https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"]
+  },
+  "language" : "en",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest ucgh241p19-1</b></p><a name=\"ucgh241p19-1\"> </a><a name=\"hcucgh241p19-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referral-servicerequest-nursing.html\">BeReferralServiceRequestNursing</a></p></div><p><b>BeValidityPeriod</b>: 2022-10-03 --&gt; 2023-04-03</p><p><b>BeFeedbackToPrescriber</b>: false</p><p><b>BePerformerType</b>: <span title=\"Codes:{https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty persdiabeticeducator}\">diabetis educator</span></p><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 9632001}\">9632001</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 385805005}\">385805005</span></p><p><b>orderDetail</b>: <span title=\"Codes:{https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-temp-requested-service-detail tmp-with-tory-8}\">Without trajectory</span>, <span title=\"Codes:{https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-temp-requested-service-detail tmp-guid-care-5}\">Guidance if not self-care</span></p><p><b>subject</b>: Identifier: BeSSINNamingSystem/38012699993</p><p><b>occurrence</b>: Count 10  times, Duration 0.5?? , Once</p><p><b>authoredOn</b>: 2022-10-03 00:00:00+0100</p><p><b>requester</b>: <a href=\"PractitionerRole-DOCTOR-10829059004.html\">PractitionerRole physician</a></p><p><b>reasonCode</b>: <span title=\"Codes:\">Diabetes type 2</span></p><p><b>note</b>: </p><blockquote><div><p>education for self care</p>\n</div></blockquote></div>"
+  },
+  "extension" : [{
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-validity-period",
+    "valuePeriod" : {
+      "start" : "2022-10-03",
+      "end" : "2023-04-03"
+    }
+  },
+  {
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-feedback-to-prescriber",
+    "valueBoolean" : false
+  },
+  {
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-performer-type",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty",
+        "code" : "persdiabeticeducator"
+      }]
+    }
+  }],
+  "status" : "active",
+  "intent" : "order",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "version" : "http://snomed.info/sct/11000172109",
+      "code" : "9632001"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "version" : "http://snomed.info/sct/11000172109",
+      "code" : "385805005"
+    }]
+  },
+  "orderDetail" : [{
+    "coding" : [{
+      "system" : "https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-temp-requested-service-detail",
+      "code" : "tmp-with-tory-8"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-temp-requested-service-detail",
+      "code" : "tmp-guid-care-5"
+    }]
+  }],
+  "subject" : {
+    "identifier" : {
+      "system" : "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin",
+      "value" : "38012699993"
+    }
+  },
+  "occurrenceTiming" : {
+    "repeat" : {
+      "count" : 10,
+      "duration" : 0.5,
+      "durationUnit" : "h"
+    }
+  },
+  "authoredOn" : "2022-10-03T00:00:00+01:00",
+  "requester" : {
+    "reference" : "PractitionerRole/DOCTOR-10829059004"
+  },
+  "reasonCode" : [{
+    "text" : "Diabetes type 2"
+  }],
+  "note" : [{
+    "text" : "education for self care"
+  }]
+}

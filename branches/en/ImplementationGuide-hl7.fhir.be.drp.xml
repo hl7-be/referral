@@ -1,0 +1,1531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="hl7.fhir.be.drp"/>
+  <language value="en"/>
+  <text>
+    <status value="generated"/><div xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><p class="res-header-id"><b>Generated Narrative: ImplementationGuide hl7.fhir.be.drp</b></p><a name="hl7.fhir.be.drp"> </a><a name="hchl7.fhir.be.drp"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: en</p></div><h2>DigitalReferralPrescription</h2><p>The official URL for this implementation guide is: </p><pre>https://www.ehealth.fgov.be/standards/fhir/drp/ImplementationGuide/hl7.fhir.be.drp</pre><div><p>Digital Referral Prescription Implementation Guide</p>
+</div></div>
+  </text>
+  <url value="https://www.ehealth.fgov.be/standards/fhir/drp/ImplementationGuide/hl7.fhir.be.drp"/>
+  <version value="1.0.0"/>
+  <name value="DigitalReferralPrescription"/>
+  <title value="Digital Referral Prescription Implementation Guide"/>
+  <status value="draft"/>
+  <date value="2025-11-20T14:16:37+00:00"/>
+  <description value="Digital Referral Prescription Implementation Guide"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="BE"/>
+      <display value="Belgium"/>
+    </coding>
+  </jurisdiction>
+  <packageId value="hl7.fhir.be.drp"/>
+  <license value="CC0-1.0"/>
+  <fhirVersion value="4.0.1"/>
+  <dependsOn id="hl7tx">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on HL7 Terminology"/>
+    </extension>
+    <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+    <packageId value="hl7.terminology.r4"/>
+    <version value="7.0.0"/>
+  </dependsOn>
+  <dependsOn id="hl7ext">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"/>
+    </extension>
+    <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
+    <packageId value="hl7.fhir.uv.extensions.r4"/>
+    <version value="5.2.0"/>
+  </dependsOn>
+  <dependsOn id="hl7_fhir_be_core">
+    <uri value="https://www.ehealth.fgov.be/standards/fhir/core/ImplementationGuide/hl7.fhir.be.core"/>
+    <packageId value="hl7.fhir.be.core"/>
+    <version value="2.1.2"/>
+  </dependsOn>
+  <dependsOn id="hl7_fhir_be_core_clinical">
+    <uri value="https://www.ehealth.fgov.be/standards/fhir/core-clinical/ImplementationGuide/hl7.fhir.be.core-clinical"/>
+    <packageId value="hl7.fhir.be.core-clinical"/>
+    <version value="1.0.0"/>
+  </dependsOn>
+  <definition>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="copyrightyear"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2022+"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="releaselabel"/>
+      </extension>
+      <extension url="value">
+        <valueString value="STU"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="shownav"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-contact"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-jurisdiction"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-publisher"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-expansion-params"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Parameters-terminology-expansion.json"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="pin-canonicals"/>
+      </extension>
+      <extension url="value">
+        <valueString value="pin-multiples"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="autoload-resources"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-qa"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/qa"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/pages"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-output"/>
+      </extension>
+      <extension url="value">
+        <valueString value="output"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-suppressed-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/ignoreWarnings.txt"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-history"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://www.ehealth.fgov.be/standards/fhir/drp/history.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-md"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page-md.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-context"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-copyright"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-wg"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="active-tables"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="fmm-definition"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://hl7.org/fhir/versions.html#maturity"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="propagate-status"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="excludelogbinaryformat"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="tabbed-snapshots"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="i18n-default-lang"/>
+      </extension>
+      <extension url="value">
+        <valueString value="en"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/expansion-parameters">
+      <valueReference>
+        <reference value="Parameters/expansion-parameters"/>
+      </valueReference>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
+      <valueCode value="hl7.fhir.uv.tools.r4#0.8.0"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="copyrightyear"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2022+"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="releaselabel"/>
+      </extension>
+      <extension url="value">
+        <valueString value="STU"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="shownav"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-contact"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-jurisdiction"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-publisher"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-expansion-params"/>
+      </extension>
+      <extension url="value">
+        <valueString value="Parameters-terminology-expansion.json"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="pin-canonicals"/>
+      </extension>
+      <extension url="value">
+        <valueString value="pin-multiples"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="autoload-resources"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-qa"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/qa"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/pages"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-output"/>
+      </extension>
+      <extension url="value">
+        <valueString value="output"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-suppressed-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/ignoreWarnings.txt"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-history"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://www.ehealth.fgov.be/standards/fhir/drp/history.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="template-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="template-md"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page-md.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-context"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-copyright"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-wg"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="active-tables"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="fmm-definition"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://hl7.org/fhir/versions.html#maturity"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="propagate-status"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="excludelogbinaryformat"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="tabbed-snapshots"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="i18n-default-lang"/>
+      </extension>
+      <extension url="value">
+        <valueString value="en"/>
+      </extension>
+    </extension>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-annex-81"/>
+      </reference>
+      <name value="BeAnnex81"/>
+      <description value="Annex81 proposal and approval"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-organization-task"/>
+      </reference>
+      <name value="BeAssignmentTask"/>
+      <description value="Subtask to assign the referral task and prescription to one or more members of this organisation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/be-cs-annex81-status-reason"/>
+      </reference>
+      <name value="BeCSAnnex81StatusReason"/>
+      <description value="DEMONSTRATIVE EXAMPLE - Status reason for the Annex 81"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-ext-feedback-to-prescriber"/>
+      </reference>
+      <name value="BeFeedbackToPrescriber"/>
+      <description value="Whether the prescriber requests feedback on the processing of the order"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-ext-latest-end-date"/>
+      </reference>
+      <name value="BeLatestEndDate"/>
+      <description value="Request must be performed before"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/BeModelAnnex81"/>
+      </reference>
+      <name value="BeModelAnnex81"/>
+      <description value="Logical model describing the model for the Annex81 proposal and approval"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/BeModelAssignment"/>
+      </reference>
+      <name value="BeModelAssignment"/>
+      <description value="Logical model with the information for the assignment to a referral prescription of a care provider."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/BeModelNursingPrescription"/>
+      </reference>
+      <name value="BeModelNursingPrescription"/>
+      <description value="Data model for the nursing prescription referral."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/BeModelOrganisationClaim"/>
+      </reference>
+      <name value="BeModelOrganisationClaim"/>
+      <description value="Information of a claim of an organisation to have the prescription fulfilled."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/BeModelRadiologyPrescription"/>
+      </reference>
+      <name value="BeModelRadiologyPrescription"/>
+      <description value="Data model for the nursing prescription referral."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/BeModelReferralPrescription"/>
+      </reference>
+      <name value="BeModelReferralPrescription"/>
+      <description value="Data model for the prescription referral."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/BeModelTreatmentStatus"/>
+      </reference>
+      <name value="BeModelTreatmentStatus"/>
+      <description value="Logical model with the information for the status of the treatment."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="NamingSystem"/>
+      </extension>
+      <reference>
+        <reference value="NamingSystem/be-ns-uhmep-short"/>
+      </reference>
+      <name value="BeNsUhmepShort"/>
+      <description value="Naming system identifier for the UHMEP user friendly short code"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-performer-task"/>
+      </reference>
+      <name value="BePerformerTask"/>
+      <description value="Subtask performed by one performer"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-ext-performer-type"/>
+      </reference>
+      <name value="BePerformerType"/>
+      <description value="Types of performers that can execute this request"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/be-prescription-status-reason"/>
+      </reference>
+      <name value="BePrescriptionStatusReason"/>
+      <description value="DEMONSTRATIVE EXAMPLE - Status reason for the prescription. Initially defined as supporting CodeSystem for the referral prescription."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-ext-pss-info"/>
+      </reference>
+      <name value="BePSSInfo"/>
+      <description value="Information regarding the Prescription Search Support"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-referral-category"/>
+      </reference>
+      <name value="BeReferralCategory"/>
+      <description value="DEMONSTRATIVE EXAMPLE - Codes to define the high level category for a referral prescription. SNOMED-CT codes in this valueset are just a draft proposal to give a general idea - pending an official valueset."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-referral-servicerequest"/>
+      </reference>
+      <name value="BeReferralServiceRequest"/>
+      <description value="The common structure for referral prescription."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-referral-servicerequest-diagnosticimaging"/>
+      </reference>
+      <name value="BeReferralServiceRequestDiagnosticImaging"/>
+      <description value="The common structure for referral prescription."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-referral-servicerequest-nursing"/>
+      </reference>
+      <name value="BeReferralServiceRequestNursing"/>
+      <description value="The nursing profile, generic version. Please note the nursing referral for medication does NOT depend on this generic version but is a FHIR prodfile on a different FHIR resource (MedicationRequest)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-referral-task"/>
+      </reference>
+      <name value="BeReferralTask"/>
+      <description value="The task that is referred to in the referral prescription (this is the common task for the execution of the prescription). The subtasks per performer can be found in BePerformerTask"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-ext-relevant-info"/>
+      </reference>
+      <name value="BeRelevantInfo"/>
+      <description value="Relevant clinical information in the context of this prescription concerning for example allergies, kidney function, diabetic. This extension allows the use of an Annotation or codeableConcept but when more detailed information can be given, it is RECOMMENDED to express it as structured as possible using the appropriate elements."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="SearchParameter"/>
+      </extension>
+      <reference>
+        <reference value="SearchParameter/be-sp-serviceRequest-statusReason"/>
+      </reference>
+      <name value="BeSPServiceRequestStatusReason"/>
+      <description value="This SearchParameter enables query of ServiceRequests by the statusReason extension."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/be-cs-temp-requested-service"/>
+      </reference>
+      <name value="BeTempRequestedService"/>
+      <description value="DEMONSTRATIVE EXAMPLE - Temporary codes for indicating services that can be requested from a Nurse"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/be-cs-temp-requested-service-detail"/>
+      </reference>
+      <name value="BeTempRequestedServiceDetail"/>
+      <description value="DEMONSTRATIVE EXAMPLE - Temporary codes for indicating service details that can be requested from a Nurse"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/be-treatment-status-reason"/>
+      </reference>
+      <name value="BeTreatmentStatusReason"/>
+      <description value="DEMONSTRATIVE EXAMPLE - Status reason for the treatment. Initially defined as supporting CodeSystem for the referral prescription."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="NamingSystem"/>
+      </extension>
+      <reference>
+        <reference value="NamingSystem/be-ns-uhmep"/>
+      </reference>
+      <name value="BeUnadressedHealthMessageExchangePlatform"/>
+      <description value="UHMEP naming system"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/be-ext-validity-period"/>
+      </reference>
+      <name value="BeValidityPeriod"/>
+      <description value="Begin and end date of the validity of the request"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-annex-81-reason-code"/>
+      </reference>
+      <name value="BeVSAnnex81ReasonCode"/>
+      <description value="DEMONSTRATIVE EXAMPLE - Nurse diagnostics and observations giving cause to the Annex 81"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-annex81-status-reason"/>
+      </reference>
+      <name value="BeVSAnnex81StatusReason"/>
+      <description value="DEMONSTRATIVE EXAMPLE - Status reason of the Annex 81"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-performer-task-status-reason"/>
+      </reference>
+      <name value="BeVSPerformerTaskStatusReason"/>
+      <description value="DEMONSTRATIVE EXAMPLE - Codes for the current status of a referral prescription."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-prescription-status-reason"/>
+      </reference>
+      <name value="BeVSPrescriptionStatusReason"/>
+      <description value="DEMONSTRATIVE EXAMPLE - Reasons for the status of the prescription"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-requested-services-nurse"/>
+      </reference>
+      <name value="BeVSRequestedServicesNurse"/>
+      <description value="DEMONSTRATIVE EXAMPLE - Codes indicating the requests that can be asked from a nurse."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-requested-services-nurse-detail"/>
+      </reference>
+      <name value="BeVSRequestedServicesNurseDetail"/>
+      <description value="DEMONSTRATIVE EXAMPLE - Codes indicating the request details that can be asked from a nurse."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-request-intent"/>
+      </reference>
+      <name value="BeVSRequestIntent"/>
+      <description value="DEMONSTRATIVE EXAMPLE - The allowed intent codes in the context of referral prescription"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-request-note-type"/>
+      </reference>
+      <name value="BeVSRequestNoteType"/>
+      <description value="DEMONSTRATIVE EXAMPLE - Types of notes used in a referral prescription"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-task-intent"/>
+      </reference>
+      <name value="BeVSTaskIntent"/>
+      <description value="DEMONSTRATIVE EXAMPLE - The allowed intent codes in the context of tasks in the field of referral prescriptions"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-treatment-status-reason"/>
+      </reference>
+      <name value="BeVSTreatmentStatusReason"/>
+      <description value="DEMONSTRATIVE EXAMPLE - Codes for the current status of a treatment in a referral prescription."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/be-vs-bodysite-nursing"/>
+      </reference>
+      <name value="Body Site"/>
+      <description value="DEMONSTRATIVE EXAMPLE - Body Site"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/example12-referralprescription-nursing-annex81"/>
+      </reference>
+      <name value="Example 12: Annex 81"/>
+      <description value="Annex 81 proposal"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-annex-81"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/example16-referralprescription-nursing-bladder-care"/>
+      </reference>
+      <name value="Example 16: Nursing - Bladder care"/>
+      <description value="One Care Prescription - Intensive bladder care program with twice-daily nursing interventions. Includes intermittent catheterization, bladder training protocols, pelvic floor exercises instruction, and management of neurogenic bladder conditions. Focuses on maintaining continence and preventing urinary tract complications."/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/example01-care02-colon-cleansing"/>
+      </reference>
+      <name value="Example 1b: Colon Cleansing"/>
+      <description value="One Care Referral Prescription"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/example24-referralprescription-nursing-non-reimbursable"/>
+      </reference>
+      <name value="Example 24: Non reimbursable prescription"/>
+      <description value="One Care Referral Prescription"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/example26-referralprescription-nursing-other"/>
+      </reference>
+      <name value="Example 26: Generic prescription"/>
+      <description value="One Care Referral Prescription"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/example02-referralprescription-nursing-digestive-system-care"/>
+      </reference>
+      <name value="Example 2: Digestive System Care"/>
+      <description value="One Care Referral Prescription"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/referralprescription-nursing-example2-digestive-system-care"/>
+      </reference>
+      <name value="Example 2b: Digestive System Care"/>
+      <description value="One Care Referral Prescription"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/example32-referralprescription-nursing-chronical-psychiatric"/>
+      </reference>
+      <name value="Example 32: Chronical Psychiatric"/>
+      <description value="One Care Referral Prescription"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/example03-referralprescription-nursing-compressiontherapy"/>
+      </reference>
+      <name value="Example 3: Compression therapy"/>
+      <description value="One Care Referral Prescription"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/referralprescription-nursing-example3-compression-therapy"/>
+      </reference>
+      <name value="Example 3b: Compression therapy"/>
+      <description value="One Care Referral Prescription"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/example04-referralprescription-nursing-bladder-care"/>
+      </reference>
+      <name value="Example 4: Nursing - Bladder care"/>
+      <description value="One Care Prescription - Comprehensive bladder catheter management program with maintenance visits every 6 weeks. Includes catheter replacement, bladder irrigation, urinary output monitoring, infection prevention protocols, and patient/caregiver education on proper catheter care between nursing visits."/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/referralprescription-nursing-example5-digestive-system-care"/>
+      </reference>
+      <name value="Example 5: Digestive System Care"/>
+      <description value="One Care Referral Prescription"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/example05-referralprescription-nursing-digestive-system-care"/>
+      </reference>
+      <name value="Example 5: Nursing - Digestive System Care"/>
+      <description value="One Care Prescription: Daily nursing interventions for complex digestive system management including enteral nutrition support, bowel care programs, and gastrointestinal symptom control. Encompasses assessment of nutritional status, administration of specialized feeding regimens, and monitoring for complications."/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/referralprescription-nursing-example6-compression-therapy"/>
+      </reference>
+      <name value="Example 6: Compression therapy"/>
+      <description value="One Care Referral Prescription"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/example06-referralprescription-nursing-compression-therapy"/>
+      </reference>
+      <name value="Example 6: Nursing - Compression therapy"/>
+      <description value="One Care Prescription: Daily professional compression therapy for treatment of lymphedema or severe venous disorders. Includes comprehensive limb assessment, application of medical-grade compression systems, monitoring for skin breakdown, and adjustment of compression levels based on patient response."/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/example09-referralprescription-nursing-woundcare"/>
+      </reference>
+      <name value="Example 9: Wound care"/>
+      <description value="One Care Referral Prescription"/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/example01-care02-colon-cleansing-performer-task"/>
+      </reference>
+      <name value="example01-care02-colon-cleansing-performer-task"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/example01-care02-colon-cleansing-referral-task"/>
+      </reference>
+      <name value="example01-care02-colon-cleansing-referral-task"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/practitioner2"/>
+      </reference>
+      <name value="Nurse"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/NURSE-45094508408"/>
+      </reference>
+      <name value="Nurse Requester"/>
+      <description value="Nurse acting as a Requester"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/performer-task-1-uc5a-1"/>
+      </reference>
+      <name value="performer-task-1-uc5a-1"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/Requester1"/>
+      </reference>
+      <name value="Physician"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/DOCTOR-10829059004"/>
+      </reference>
+      <name value="Physician Requester"/>
+      <description value="Physician acting as a Requester"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/referral-task"/>
+      </reference>
+      <name value="referral-task"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/referral-task-uc5a-1"/>
+      </reference>
+      <name value="referral-task-uc5a-1"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Parameters"/>
+      </extension>
+      <reference>
+        <reference value="Parameters/terminology-expansion"/>
+      </reference>
+      <name value="terminology-expansion"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/ucgh222p12-1-2"/>
+      </reference>
+      <name value="ucgh222p12-1-2"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/ucgh222p12-1-2-1"/>
+      </reference>
+      <name value="ucgh222p12-1-2-1"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/ucgh222p12-2-2"/>
+      </reference>
+      <name value="ucgh222p12-2-2"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/ucgh222p12-2-2-1"/>
+      </reference>
+      <name value="ucgh222p12-2-2-1"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Task"/>
+      </extension>
+      <reference>
+        <reference value="Task/ucgh222p12-2-2-2"/>
+      </reference>
+      <name value="ucgh222p12-2-2-2"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="PractitionerRole"/>
+      </extension>
+      <reference>
+        <reference value="PractitionerRole/DOCTOR-12009390800"/>
+      </reference>
+      <name value="Urgency Physician Requester"/>
+      <description value="Urgency Physician acting as a Requester"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/ucgh241p110-1"/>
+      </reference>
+      <name value="Use Case 1.10: see GitHub issue 241"/>
+      <description value="On 03/10/2022, the patient who suffers from Parkingson’s disease goes to the doctor (prescriber) who detects that his patient needs assistance with his personal hygiene. The patient is disoriented in time and space and also has nocturnal urinary incontinence and occasional urinary incontinence.&#xA;The prescriber completes the digital prescription “Assisting with personal hygiene” via the digital prescription. The prescriber makes one attest for disorientation in time and space and another one for nocturnal urinary incontinence and occasional urinary incontinence. The prescriber gives both attests to the patient. The digital prescription cannot be completed without the signature of the prescriber. As all “required signatures conditions” are fulfilled, the PrescriptionStatus is automatically set from Draft to Pending/Active. (In our Case “Active”).&#xA;The patient assigns his nurse to this prescription via the digital application.&#xA;The nurse consults the digital prescription he/she is assigned to.&#xA;On 06/10/2022, the nurse goes to the patient’s home. The patient gives her his two attests. The nurse starts the care following the instructions on the digital prescription. She determines the patient score on a Katz scale (or index) and sends this to the consulting physician for refund determination."/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/ucgh241p111-1"/>
+      </reference>
+      <name value="Use Case 1.11: see GitHub issue 241"/>
+      <description value="On 03/10/2022, a patient goes to the doctor (prescriber) who diagnoses kidney failure and a loss of blood pressure. The patient is treated for his disease in a convention center.&#xA;In order to prevent the loss of residual renal functions, the prescriber (working in the convention center) completes a digital prescription for “chronic peritoneal dialysis” via the digital application. The digital prescription cannot be completed without the signature of the prescriber. As all “required signatures conditions” are fulfilled, the PrescriptionStatus is automatically set from Draft to Pending/Active. (In our Case “Active”).&#xA;The patient assigns his nurse to this prescription via the digital application. This nurse has made an agreement with the convention center about remuneration and receives orders by the prescriber of the convention center.&#xA;The nurse consults the digital prescription he/she is assigned to.&#xA;On 06/10/2022, the patient meets the nurse which follows instructions on prescription and starts the care."/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/ucgh222p12-1"/>
+      </reference>
+      <name value="Use Case 1.2: see GitHub issue 222"/>
+      <description value="On 03/10/2022, Patient who has recently had chemotherapy via &#xA;“implantable venous access port catheter” goes to doctor who prescribes &#xA;a catheter dressing change and rinse of his/her “implantable venous access &#xA;port catheter” (via CareSet ServiceRequest- group- and Device) with NaCl &#xA;0.9% given by a nurse. Furthermore, the needle needs to be changed by a Huber &#xA;needle 20G x 25mm."/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/ucgh222p12-2"/>
+      </reference>
+      <name value="Use Case 1.2: see GitHub issue 222"/>
+      <description value="Rinsing procedure for implantable venous access port catheter with NaCl 0.9% solution. Essential maintenance for patients receiving chemotherapy through central venous access, preventing catheter occlusion and maintaining patency."/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/ucgh222p12-3"/>
+      </reference>
+      <name value="Use Case 1.2: see GitHub issue 222"/>
+      <description value="Placement or replacement of Huber needle (20G x 25mm) for accessing implantable venous port. Specialized nursing procedure requiring proper technique to access subcutaneous port while maintaining sterility and preventing complications."/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/ucgh241p15-1"/>
+      </reference>
+      <name value="Use Case 1.5: see GitHub issue 241"/>
+      <description value="On 03/10/2022, the patient consults his doctor (prescriber) and admits he has difficulty following his medication-treatment.&#xA;The prescriber detects no valid reason (“medical reason” via CareSet ProbCode) for refundable medication preparation (appendix 81) so he tells his patient that the asked help for his medication preparation will not be refundable. The patient still wants help even if it is not refundable. The prescriber completes the digital prescription for “medication prefill preparation – not refundable”. The digital prescription cannot be completed without the signature of the prescriber. As all “required signatures conditions” are fulfilled, the PrescriptionStatus is automatically set from Draft to Pending/Active. (In our Case “Active”).&#xA;The prescriber also prepares the medication scheme so the nurse that will be assigned to this prescription has all the necessary information to prepare the medication and fill the pillbox of the patient. He gives the medication scheme to the patient so that he can give it to his nurse.&#xA;The patient assigns a nurse to his prescription via the digital application. The assigned nurse consults the digital prescription via the digital application.&#xA;On 06/10/2022, the nurse goes to the patient who gives her his medication scheme. On a weekly basis, the nurse goes to the patient to prepare his medication and fill his pillbox according to the medication scheme received. This service is not refundable, and the nurse charges the patient himself."/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/ucgh241p16-1"/>
+      </reference>
+      <name value="Use Case 1.6: see GitHub issue 241"/>
+      <description value="On 03/10/2022, a patient goes to a doctor (prescriber) and is diagnosed as a diabetic type 1.&#xA;The patient is treated for his diabetes type 1 in a specialised convention center. This center has a convention about reimbursement with NIHDI. The patient needs some support at home and the convention center delegates care to a home nurse. The convention center has an agreement with this home nurse about remuneration.&#xA;The convention center physician (prescriber) makes a digital prescription “Diabetes education via convention center” via the digital application and specifies the type of education needed by the patient: “diabetic self-management”. The digital prescription cannot be completed without the signature of the prescriber. As all “required signatures conditions” are fulfilled, the PrescriptionStatus is automatically set from Draft to Pending/Active. (In our Case “Active”).&#xA;The convention centre enters the prescription ID in the digital application and, with consent of the patient, assigns their diabetes educator as caregiver of the prescription.&#xA;On 06/10/2022, the patient goes to the convention centre and follows his class on “diabetic self-management”."/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/ucgh241p17-1"/>
+      </reference>
+      <name value="Use Case 1.7: see GitHub issue 241"/>
+      <description value="On 03/10/2022, a 55-year-old patient who has diabetes type 2, a BMI &lt; 30, arterial hypertension and a care model (zorgmodel) goes to a doctor (prescriber) who detects the need for diabetes education for the patient.&#xA;The prescriber prescribes 4 individual education sessions given by a nurse or a diabetes educator. The prescriber completes the digital prescription “Diabetes education with care model (preliminary path) – follow up of patients with diabetes type 2”. The digital prescription cannot be completed without the signature of the prescriber. As all “required signatures conditions” are fulfilled, the PrescriptionStatus is automatically set from Draft to Pending/Active. (In our Case “Active”).&#xA;The patient assigns his nurse to this prescription via the digital application.&#xA;The nurse consults the digital prescription he/she has been assigned to.&#xA;On 06/10/2022, the nurse meets the patient for a first diabetes education individual session. The three other individual sessions are planned (within the current year)."/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/ucgh241p18-1"/>
+      </reference>
+      <name value="Use Case 1.8: see GitHub issue 241"/>
+      <description value="On 03/10/2022, a type 2 diabetic patient who has insulin treatment, a care path contract, and a complete global medical file (GMF) goes to a doctor (prescriber) who recommends to his patient 5 individual ½ hour education sessions about the “use of a blood glucose meter”. This session needs to be given by a diabetes educator (with recognition by NIHDI) at the residence of the patient to be refundable.&#xA;The prescriber completes the digital prescription “Diabetes education with care path” via the digital application. The digital prescription cannot be completed without the signature of the prescriber. As all “required signatures conditions” are fulfilled, the PrescriptionStatus is automatically set from Draft to Pending/Active. (In our Case “Active”).&#xA;The patient assigns his nurse (who is a certified diabetes educator) to this prescription via the digital application.&#xA;The diabetes educator consults the digital prescription he/she is assigned to.&#xA;On 06/10/2022, the diabetes educator goes to the patient’s home (with the blood glucose meter) for a first ½ hour individual diabetes education session about “use of a blood glucose meter”. The four other individual sessions are planned (within the current year)."/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/ucgh241p19-1"/>
+      </reference>
+      <name value="Use Case 1.9: see GitHub issue 241"/>
+      <description value="On 03/10/2022, a diabetic patient goes to his doctor (prescriber) because he has some troubles about the self-management of his treatment.&#xA;The prescriber prescribes to his patient 10 sessions of ½ hour each of “education for self-care”. The prescriber fills in the digital prescription “Education and self-care for diabetes patients without a care path” via the digital application. The digital prescription cannot be completed without the signature of the prescriber. As all “required signatures conditions” are fulfilled, the PrescriptionStatus is automatically set from Draft to Pending/Active. (In our Case “Active”).&#xA;The patient assigns his nurse to this prescription via the digital application.&#xA;The nurse consults the digital prescription he/she is assigned to.&#xA;On 06/10/2022, the nurse meets the patient for a first diabetes education session. The nine other sessions are planned (within the current year)."/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ServiceRequest"/>
+      </extension>
+      <reference>
+        <reference value="ServiceRequest/uc5a-1"/>
+      </reference>
+      <name value="Use Case 5a"/>
+      <description value="On 02/07/2023, Dr. Hendrickx wants the nurse to take a blood test from Mrs. Dupont in order to analyze her glucose and cholesterol following general fatigue.&#xA;He writes a prescription for the nurse with the blood test to be done on Mrs. Dupont.&#xA;The nurse takes Mrs. Dupont's blood test the next day.&#xA;Important note: The part specifying that the analysis request concerns Mrs. Dupont's glucose and cholesterol should not be on this prescription. This is linked to the prescription for the Lab."/>
+      <exampleCanonical value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+    </resource>
+    <page>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+        <valueUrl value="toc.html"/>
+      </extension>
+      <nameUrl value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="index.html"/>
+        </extension>
+        <nameUrl value="index.html"/>
+        <title value="Home"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="guidance.html"/>
+        </extension>
+        <nameUrl value="guidance.html"/>
+        <title value="Guidance"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="changes.html"/>
+        </extension>
+        <nameUrl value="changes.html"/>
+        <title value="Changes"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="downloads.html"/>
+        </extension>
+        <nameUrl value="downloads.html"/>
+        <title value="Downloads"/>
+        <generation value="html"/>
+      </page>
+    </page>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/capabilities"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/examples"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/extensions"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/models"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/operations"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/profiles"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/vocabulary"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/maps"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/testing"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/history"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="fsh-generated/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="template/config"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="input/assets"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="input/images"/>
+    </parameter>
+    <parameter>
+      <code value="path-tx-cache"/>
+      <value value="input-cache/txcache"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>

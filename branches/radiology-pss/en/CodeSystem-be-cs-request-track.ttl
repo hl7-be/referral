@@ -1,0 +1,95 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-request-track> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "be-cs-request-track"] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem be-cs-request-track</b></p><a name=\"be-cs-request-track\"> </a><a name=\"hcbe-cs-request-track\"> </a><p>This case-insensitive code system <code>https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-request-track</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">inpatient<a name=\"be-cs-request-track-inpatient\"> </a></td><td>Inpatient</td></tr><tr><td style=\"white-space:nowrap\">ambulatory<a name=\"be-cs-request-track-ambulatory\"> </a></td><td>Ambulatory</td></tr><tr><td style=\"white-space:nowrap\">urgency<a name=\"be-cs-request-track-urgency\"> </a></td><td>Urgency</td></tr></table><p><b>Additional Language Displays</b></p><table class=\"codes\"><tr><td><b>Code</b></td><td><b>English (English, en)</b></td><td><b>French (Belgium) (fr)</b></td><td><b>Nederlands (België) (Dutch (Belgium), nl)</b></td></tr><tr><td>inpatient</td><td>Inpatient</td><td>Hospitalisé</td><td>Opname</td></tr><tr><td>ambulatory</td><td>Ambulatory</td><td>Ambulatoire</td><td>Ambulant</td></tr><tr><td>urgency</td><td>Urgency</td><td>Urgence</td><td>Spoedgeval</td></tr></table></div>"
+  ] ;
+  fhir:CodeSystem.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-request-track"] ;
+  fhir:CodeSystem.version [ fhir:value "1.0.0"] ;
+  fhir:CodeSystem.name [ fhir:value "BeCSRequestTrack"] ;
+  fhir:CodeSystem.title [ fhir:value "BeCSRequestTrack"] ;
+  fhir:CodeSystem.status [ fhir:value "draft"] ;
+  fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:CodeSystem.date [ fhir:value "2026-09-04T09:25:18+00:00"^^xsd:dateTime] ;
+  fhir:CodeSystem.description [ fhir:value "Care setting track codes for diagnostic imaging requests"] ;
+  fhir:CodeSystem.jurisdiction [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "BE" ] ;
+       fhir:Coding.display [ fhir:value "Belgium" ]
+     ]
+  ] ;
+  fhir:CodeSystem.caseSensitive [ fhir:value "false"^^xsd:boolean] ;
+  fhir:CodeSystem.content [ fhir:value "complete"] ;
+  fhir:CodeSystem.count [ fhir:value "3"^^xsd:nonNegativeInteger] ;
+  fhir:CodeSystem.concept [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "inpatient" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Inpatient" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index -1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Inpatient" ]
+     ], [
+       fhir:index -1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Hospitalisé" ]
+     ], [
+       fhir:index -1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Opname" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "ambulatory" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Ambulatory" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index -1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Ambulatory" ]
+     ], [
+       fhir:index -1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Ambulatoire" ]
+     ], [
+       fhir:index -1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Ambulant" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "urgency" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Urgency" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index -1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Urgency" ]
+     ], [
+       fhir:index -1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Urgence" ]
+     ], [
+       fhir:index -1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Spoedgeval" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-request-track.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

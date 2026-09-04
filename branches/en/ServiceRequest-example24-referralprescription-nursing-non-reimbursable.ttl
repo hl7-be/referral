@@ -1,0 +1,128 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/ServiceRequest/example24-referralprescription-nursing-non-reimbursable> a fhir:ServiceRequest ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "example24-referralprescription-nursing-non-reimbursable"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+       fhir:l <https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\"><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest example24-referralprescription-nursing-non-reimbursable</b></p><a name=\"example24-referralprescription-nursing-non-reimbursable\"> </a><a name=\"hcexample24-referralprescription-nursing-non-reimbursable\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: en</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referral-servicerequest-nursing.html\">BeReferralServiceRequestNursing</a></p></div><p><b>BeValidityPeriod</b>: 2022-04-19 --&gt; 2023-04-19</p><p><b>BeFeedbackToPrescriber</b>: true</p><p><b>BePerformerType</b>: <span title=\"Codes:{https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty persnurse}\">nurse</span></p><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 9632001}\">Nursing procedure</span></p><p><b>priority</b>: Routine</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 182777000}\">182777000</span></p><p><b>subject</b>: Identifier: BeSSINNamingSystem/99999999999</p><p><b>occurrence</b>: Once per 1 week</p><p><b>authoredOn</b>: 2022-10-31 00:00:00+0100</p><p><b>requester</b>: <a href=\"PractitionerRole-DOCTOR-10829059004.html\">PractitionerRole physician</a></p><p><b>reasonCode</b>: <span title=\"Codes:{http://snomed.info/sct 309256001}\">309256001</span></p><p><b>note</b>: </p><blockquote><div><p>Frequency: 1x per week, startdatum 25/02/2021, einddatum 31/12/2021</p>\n</div></blockquote></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-validity-period"^^xsd:anyURI ;
+       fhir:l <https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-validity-period>
+     ] ;
+     fhir:value [
+       a fhir:Period ;
+       fhir:start [ fhir:v "2022-04-19"^^xsd:date ] ;
+       fhir:end [ fhir:v "2023-04-19"^^xsd:date ]
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-feedback-to-prescriber"^^xsd:anyURI ;
+       fhir:l <https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-feedback-to-prescriber>
+     ] ;
+     fhir:value [
+       a fhir:Boolean ;
+       fhir:v true
+     ]
+  ] [
+     fhir:url [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-performer-type"^^xsd:anyURI ;
+       fhir:l <https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-performer-type>
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [
+           fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty"^^xsd:anyURI ;
+           fhir:l <https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty>
+         ] ;
+         fhir:code [ fhir:v "persnurse" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       a sct:9632001 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:version [ fhir:v "http://snomed.info/sct/11000172109" ] ;
+       fhir:code [ fhir:v "9632001" ]
+     ] ) ;
+     fhir:text [ fhir:v "Nursing procedure" ]
+  ] ) ; # 
+  fhir:priority [ fhir:v "routine"] ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:182777000 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:version [ fhir:v "http://snomed.info/sct/11000172109" ] ;
+       fhir:code [ fhir:v "182777000" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"^^xsd:anyURI ;
+         fhir:l <https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin>
+       ] ;
+       fhir:value [ fhir:v "99999999999" ]
+     ]
+  ] ; # 
+  fhir:occurrence [
+     a fhir:Timing ;
+     fhir:repeat [
+       fhir:bounds [
+         a fhir:Period ;
+         fhir:start [ fhir:v "2021-02-25"^^xsd:date ] ;
+         fhir:end [ fhir:v "2021-12-31"^^xsd:date ]
+       ] ;
+       fhir:frequency [ fhir:v "1"^^xsd:positiveInteger ] ;
+       fhir:period [ fhir:v "1"^^xsd:decimal ] ;
+       fhir:periodUnit [ fhir:v "wk" ]
+     ]
+  ] ; # 
+  fhir:authoredOn [ fhir:v "2022-10-31T00:00:00+01:00"^^xsd:dateTime] ; # 
+  fhir:requester [
+     fhir:l <https://www.ehealth.fgov.be/standards/fhir/drp/PractitionerRole/DOCTOR-10829059004> ;
+     fhir:reference [ fhir:v "PractitionerRole/DOCTOR-10829059004" ]
+  ] ; # 
+  fhir:reasonCode ( [
+     fhir:coding ( [
+       a sct:309256001 ;
+       fhir:system [
+         fhir:v "http://snomed.info/sct"^^xsd:anyURI ;
+         fhir:l <http://snomed.info/sct>
+       ] ;
+       fhir:version [ fhir:v "http://snomed.info/sct/11000172109" ] ;
+       fhir:code [ fhir:v "309256001" ]
+     ] )
+  ] ) ; # 
+  fhir:note ( [
+     fhir:text [ fhir:v "Frequency: 1x per week, startdatum 25/02/2021, einddatum 31/12/2021" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

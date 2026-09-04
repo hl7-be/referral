@@ -1,0 +1,450 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+
+
+
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Body Site - Digital Referral Prescription Implementation Guide v1.0.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <link href="assets/css/project.css" rel="stylesheet"/>
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/hl7-be.css" rel="stylesheet"/>
+<!-- Placeholder for child template CSS declarations -->
+<!-- eHealth Platform -->
+<!-- active -->
+
+<link href="assets/css/federal-colors.css" rel="stylesheet"/>
+
+<link href="assets/css/lforms.min.css" rel="stylesheet"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+    <script type="text/javascript" src="assets/js/direction-management.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script type="text/javascript" src="assets/js/prism.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-fhirpath.js"></script>
+	  <script type="text/javascript" src="assets/js/prism-cql.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"7.34"}
+    h3,h4,h5,h6{--heading-prefix:"7.34"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+        
+<!-- eHealth Platform -->
+<!-- active -->
+
+<div id="ig-nav">
+  <a id="standards-logo" no-external="true" href="index.html">
+    <img height="50" alt="Welcome on standards website" src="assets/images/standards.svg"/>
+  </a>
+</div>
+
+
+
+        <div id="ig-status" data-fhir="generated">
+          <p><span style="font-size:12pt;font-weight:bold">Digital Referral Prescription Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">1.0.0 - STU
+
+
+
+  <img alt="Belgium flag" src="../assets/images/bel.svg" height="16" title="Belgium"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment" data-fhir="generated">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="guidance.html">Guidance</a>
+  </li>
+  <li>
+    <a href="datamodels.html">Data Models</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html#structures-logical-models">Logical Models</a>
+      </li>
+      <li>
+        <a href="artifacts.html#structures-resource-profiles">Profiles</a>
+      </li>
+      <li>
+        <a href="artifacts.html#structures-extension-definitions">Extensions</a>
+      </li>
+      <li>
+        <a href="artifacts.html#terminology-value-sets">Value Sets</a>
+      </li>
+      <li>
+        <a href="artifacts.html#terminology-code-systems">Code Systems</a>
+      </li>
+      <li>
+        <a href="artifacts.html#terminology-naming-systems">Naming Systems</a>
+      </li>
+      <li>
+        <a href="artifacts.html#example-example-instances">Examples</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+  <li>
+    <a href="changes.html">Changes</a>
+  </li>
+  <li>
+    <a href="https://www.ehealth.fgov.be/standards/fhir/drp/history.html">History</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+
+              
+
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment" data-fhir="generated">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Body Site</b></li>
+
+          <span style="float: var(--ig-right);">
+
+            <a href="ValueSet-be-vs-treatment-status-reason.ttl.html">&lt; prev</a> | 
+
+            <a href="#bottom">bottom</a>
+
+          | <a href="ValueSet-be-vs-bodysite-nursing-testing.html">next &gt;</a>
+
+          </span>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<!-- layouts\layout-valueset -->
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Digital Referral Prescription Implementation Guide, published by eHealth Platform. This guide is not an authorized publication; it is the continuous build for version 1.0.0  built by the FHIR (HL7&reg; FHIR&reg; Standard) CI Build. This version is based on the current content of <a href='https://github.com/hl7-be/referral/tree/care-proposal'>https://github.com/hl7-be/referral/tree/care-proposal</a> and changes regularly. See the <a href='https://www.ehealth.fgov.be/standards/fhir/drp/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="ValueSet-be-vs-bodysite-nursing.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-be-vs-bodysite-nursing.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-be-vs-bodysite-nursing.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+  <a name="root"> </a>
+  <h2 id="root">ValueSet: Body Site
+
+  </h2>
+  <table class="colsi" data-fhir="generated">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://www.ehealth.fgov.be/standards/fhir/drp/ValueSet/be-vs-bodysite-nursing<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://www.ehealth.fgov.be/standards/fhir/drp/ValueSet/be-vs-bodysite-nursing"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">1.0.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://www.ehealth.fgov.be/standards/fhir/drp/ValueSet/be-vs-bodysite-nursing|1.0.0"/></span>
+      </td>
+      <td style="text-align: right;border-left-style: hidden" title="Enable this to see changes since the last official release">
+        <span id="toggle-change-display"><label style="margin:0;font-weight:normal" for="showChanges">Highlight text changes?</label>
+  
+        <input style="margin:0" type="checkbox" id="showChanges" onchange="toggleChanges()"/>
+  
+      </span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="5">
+        
+          Active
+          
+
+            as of 
+2026-07-10
+
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">BeVSBodySiteNursing</span></td>
+    </tr>
+
+
+
+
+
+    <tr>
+      <td colspan="6"><p><em>Copyright/Legal</em>: *   This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement</p>
+
+<ul>
+  <li>
+    <p>The SNOMED International IPS Terminology is distributed by International Health Terminology Standards Development Organisation, trading as SNOMED International, and is subject the terms of the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International Public License</a>. For more information, see <a href="https://www.snomed.org/snomed-ct/Other-SNOMED-products/international-patient-summary-terminology">SNOMED IPS Terminology</a></p>
+  </li>
+  <li>
+    <p>The HL7 International IPS implementation guides incorporate SNOMED CT®, used by permission of the International Health Terminology Standards Development Organisation, trading as SNOMED International. SNOMED CT was originally created by the College of American Pathologists. SNOMED CT is a registered trademark of the International Health Terminology Standards Development Organisation, all rights reserved. Implementers of SNOMED CT should review <a href="https://www.snomed.org/get-snomed">usage terms</a> or directly contact SNOMED International: info@snomed.org</p>
+  </li>
+</ul>
+</td>
+    </tr>
+
+  </table>
+
+<p>
+<p>DEMONSTRATIVE EXAMPLE - Body Site</p>
+
+</p>
+
+
+  <p>
+    <b>References</b>
+  </p>
+  
+<p>This value set is not used here; it may be used elsewhere (e.g. specifications and/or implementations that use this content)</p>
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <a name="definition"> </a>
+
+<!-- Content Logical Definition heading in the fragment -->
+  <h3>Logical Definition (CLD)</h3>
+<div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated"><p class="res-header-id"></p><a name="be-vs-bodysite-nursing"> </a><a name="hcbe-vs-bodysite-nursing"> </a>
+<ul><li>Include these codes as defined in <a href="http://www.snomed.org/"><code>http://snomed.info/sct</code></a><span title="Version is explicitly stated to be http://snomed.info/sct/11000172109"> version &#x1F4CD;http://snomed.info/sct/11000172109</span><table class="none" data-fhir="generated"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/31640002">31640002</a></td><td style="color: #cccccc">Occipital bone</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/789699009">789699009</a></td><td style="color: #cccccc">Structure of occipital condyle</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/78277001">78277001</a></td><td style="color: #cccccc">Temporal lobe</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/117590005">117590005</a></td><td style="color: #cccccc">Ear-related structure</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/302549007">302549007</a></td><td style="color: #cccccc">Entire face</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/81745001">81745001</a></td><td style="color: #cccccc">Eye</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/60819002">60819002</a></td><td style="color: #cccccc">Buccal region of face</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/48477009">48477009</a></td><td style="color: #cccccc">Lip</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/1797002">1797002</a></td><td style="color: #cccccc">Nostril</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/45206002">45206002</a></td><td style="color: #cccccc">Nose</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/123851003">123851003</a></td><td style="color: #cccccc">Mouth region</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/727234005">727234005</a></td><td style="color: #cccccc">Entire back structure excluding neck</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/51185008">51185008</a></td><td style="color: #cccccc">Thorax</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/113345001">113345001</a></td><td style="color: #cccccc">Abdomen</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/85710004">85710004</a></td><td style="color: #cccccc">Ischium</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/302543008">302543008</a></td><td style="color: #cccccc">Entire hip region</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/30547001">30547001</a></td><td></td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/182281004">182281004</a></td><td style="color: #cccccc">Entire lower limb</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/421235005">421235005</a></td><td style="color: #cccccc">Structure of femur (body structure)</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/87342007">87342007</a></td><td style="color: #cccccc">Fibula</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/78234002">78234002</a></td><td style="color: #cccccc">Shin</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/72696002">72696002</a></td><td style="color: #cccccc">Knee</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/182034009">182034009</a></td><td style="color: #cccccc">Entire iliac crest</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/731694000">731694000</a></td><td style="color: #cccccc">Entire bone of pubis</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/54735007">54735007</a></td><td style="color: #cccccc">Sacral bone</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/53505006">53505006</a></td><td style="color: #cccccc">Anus</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/76784001">76784001</a></td><td style="color: #cccccc">Vagina</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/18911002">18911002</a></td><td style="color: #cccccc">Penis</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/56459004">56459004</a></td><td style="color: #cccccc">Foot</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/344001">344001</a></td><td style="color: #cccccc">Ankle</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/360857004">360857004</a></td><td style="color: #cccccc">Malleolar structure of fibula</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/76853006">76853006</a></td><td style="color: #cccccc">Heel</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/78883009">78883009</a></td><td style="color: #cccccc">Great toe</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/55078004">55078004</a></td><td style="color: #cccccc">Second toe</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/78132007">78132007</a></td><td style="color: #cccccc">Third toe</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/80349001">80349001</a></td><td style="color: #cccccc">Fourth toe</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/39915008">39915008</a></td><td style="color: #cccccc">Fifth toe</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/244187005">244187005</a></td><td style="color: #cccccc">Skin over instep of foot</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/16982005">16982005</a></td><td style="color: #cccccc">Shoulder</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/79601000">79601000</a></td><td style="color: #cccccc">Scapula</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/53120007">53120007</a></td><td style="color: #cccccc">Upper extremity</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/14975008">14975008</a></td><td style="color: #cccccc">Forearm</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/127949000">127949000</a></td><td style="color: #cccccc">Elbow region</td></tr><tr><td><a href="http://snomed.info/sct/11000172109/id/85562004">85562004</a></td><td style="color: #cccccc">Hand</td></tr></table></li></ul></div>
+
+  <p>&#160;</p>
+  <a name="expansion"> </a>
+  <h3 id="expansion">Expansion</h3>
+
+  <div xmlns="http://www.w3.org/1999/xhtml" data-fhir="generated"><p class="res-header-id"/><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion from 178.104.103.200.sslip.io based on SNOMED CT Belgian Edition edition 15-May 2026<span class="copy-text-inline"><button data-clipboard-text="http://snomed.info/sct|http://snomed.info/sct/11000172109/version/20260515" title="Click to Copy URL" class="btn-copy"> </button></span></p><p>This value set contains 43 concepts</p><table class="codes" data-fhir="generated"><tr><td><b>System</b></td><td style="white-space:nowrap"><b>Code</b></td><td><b>Display (en)</b></td><td><b>Inactive</b></td><td><b><a href="http://hl7.org/fhir/concept-properties#status">status</a></b></td><td><b>Other Display (English)</b></td><td><b>Display (Nederlands)</b></td><td><b>Display (French)</b></td><td><b>JSON</b></td><td><b>XML</b></td></tr><tr><td><a name="x-http://snomed.info/sct-31640002"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/31640002">31640002</a></td><td>Occipital bone</td><td/><td/><td>Occipital bone structure (body structure)</td><td>os occipitale</td><td>os occipital</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;31640002&quot;, &quot;display&quot;: &quot;Occipital bone&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;31640002&quot;&gt;&lt;display value=&quot;Occipital bone&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-789699009"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/789699009">789699009</a></td><td>Structure of occipital condyle</td><td/><td/><td>Structure of occipital condyle (body structure)</td><td>structuur van de condylus occipitalis</td><td>structure du condyle occipital</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;789699009&quot;, &quot;display&quot;: &quot;Structure of occipital condyle&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;789699009&quot;&gt;&lt;display value=&quot;Structure of occipital condyle&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-78277001"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/78277001">78277001</a></td><td>Temporal lobe</td><td/><td/><td>Temporal lobe structure (body structure)</td><td>lobus temporalis</td><td>lobe temporal</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;78277001&quot;, &quot;display&quot;: &quot;Temporal lobe&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;78277001&quot;&gt;&lt;display value=&quot;Temporal lobe&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-117590005"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/117590005">117590005</a></td><td>Ear-related structure</td><td/><td/><td>Ear</td><td>auris</td><td>oreille</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;117590005&quot;, &quot;display&quot;: &quot;Ear-related structure&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;117590005&quot;&gt;&lt;display value=&quot;Ear-related structure&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-302549007"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/302549007">302549007</a></td><td>Entire face</td><td/><td/><td>Entire face (body structure)</td><td>volledig gezicht</td><td>face entière</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;302549007&quot;, &quot;display&quot;: &quot;Entire face&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;302549007&quot;&gt;&lt;display value=&quot;Entire face&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-81745001"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/81745001">81745001</a></td><td>Eye</td><td/><td/><td>Structure of eye proper</td><td>structuur van oog</td><td>globe oculaire</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;81745001&quot;, &quot;display&quot;: &quot;Eye&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;81745001&quot;&gt;&lt;display value=&quot;Eye&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-60819002"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/60819002">60819002</a></td><td>Buccal region of face</td><td/><td/><td>Cheek structure (body structure)</td><td>wang</td><td>bucca</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;60819002&quot;, &quot;display&quot;: &quot;Buccal region of face&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;60819002&quot;&gt;&lt;display value=&quot;Buccal region of face&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-48477009"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/48477009">48477009</a></td><td>Lip</td><td/><td/><td>Lip structure (body structure)</td><td>structuur van lip van mond</td><td>lèvre</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;48477009&quot;, &quot;display&quot;: &quot;Lip&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;48477009&quot;&gt;&lt;display value=&quot;Lip&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-1797002"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/1797002">1797002</a></td><td>Nostril</td><td/><td/><td>Structure of anterior naris (body structure)</td><td>uitwendig neusgat</td><td>orifice nasal antérieur</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;1797002&quot;, &quot;display&quot;: &quot;Nostril&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;1797002&quot;&gt;&lt;display value=&quot;Nostril&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-45206002"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/45206002">45206002</a></td><td>Nose</td><td/><td/><td>Nasal structure (body structure)</td><td>nasus</td><td>nasus</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;45206002&quot;, &quot;display&quot;: &quot;Nose&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;45206002&quot;&gt;&lt;display value=&quot;Nose&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-123851003"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/123851003">123851003</a></td><td>Mouth region</td><td/><td/><td>Anatomical region including the lips, perioral region of face and internal region of mouth (teeth, gums, oral cavity, tongue, oral mucosa and minor salivary glands).</td><td>mondgebied</td><td>région de la bouche</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;123851003&quot;, &quot;display&quot;: &quot;Mouth region&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;123851003&quot;&gt;&lt;display value=&quot;Mouth region&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-727234005"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/727234005">727234005</a></td><td>Entire back structure excluding neck</td><td/><td/><td>Entire posterior region of trunk</td><td>gehele rug exclusief nek</td><td>totalité de la partie dorsale du tronc</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;727234005&quot;, &quot;display&quot;: &quot;Entire back structure excluding neck&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;727234005&quot;&gt;&lt;display value=&quot;Entire back structure excluding neck&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-51185008"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/51185008">51185008</a></td><td>Thorax</td><td/><td/><td>Thoracic structure (body structure)</td><td>structuur van thorax</td><td>thorax</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;51185008&quot;, &quot;display&quot;: &quot;Thorax&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;51185008&quot;&gt;&lt;display value=&quot;Thorax&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-113345001"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/113345001">113345001</a></td><td>Abdomen</td><td>inactive</td><td>inactive</td><td>Abdominopelvic structure</td><td>buik</td><td>structure de l'abdomen</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;113345001&quot;, &quot;display&quot;: &quot;Abdomen&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;113345001&quot;&gt;&lt;display value=&quot;Abdomen&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-85710004"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/85710004">85710004</a></td><td>Ischium</td><td/><td/><td>Bone structure of ischium (body structure)</td><td>os ischii</td><td>structure osseuse de l'ischium</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;85710004&quot;, &quot;display&quot;: &quot;Ischium&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;85710004&quot;&gt;&lt;display value=&quot;Ischium&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-302543008"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/302543008">302543008</a></td><td>Entire hip region</td><td/><td/><td>Entire hip region (body structure)</td><td>volledige coxa</td><td>totalité de la région de la hanche</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;302543008&quot;, &quot;display&quot;: &quot;Entire hip region&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;302543008&quot;&gt;&lt;display value=&quot;Entire hip region&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-182281004"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/182281004">182281004</a></td><td>Entire lower limb</td><td/><td/><td>Entire LL - Lower limb</td><td>been</td><td>totalité du membre inférieur</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;182281004&quot;, &quot;display&quot;: &quot;Entire lower limb&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;182281004&quot;&gt;&lt;display value=&quot;Entire lower limb&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-421235005"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/421235005">421235005</a></td><td>Structure of femur</td><td>inactive</td><td>inactive</td><td>Structure of femur (body structure)</td><td>os femoris</td><td></td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;421235005&quot;, &quot;display&quot;: &quot;Structure of femur&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;421235005&quot;&gt;&lt;display value=&quot;Structure of femur&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-87342007"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/87342007">87342007</a></td><td>Fibula</td><td/><td/><td>Bone structure of fibula (body structure)</td><td>fibula</td><td>fibula</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;87342007&quot;, &quot;display&quot;: &quot;Fibula&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;87342007&quot;&gt;&lt;display value=&quot;Fibula&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-78234002"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/78234002">78234002</a></td><td>Shin</td><td/><td/><td>Shin structure (body structure)</td><td>scheen</td><td>région antérieure de la jambe</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;78234002&quot;, &quot;display&quot;: &quot;Shin&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;78234002&quot;&gt;&lt;display value=&quot;Shin&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-72696002"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/72696002">72696002</a></td><td>Knee</td><td/><td/><td>The body part defined by the knee joint and its surrounding structures</td><td>structuur van knieregio</td><td>région du genou</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;72696002&quot;, &quot;display&quot;: &quot;Knee&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;72696002&quot;&gt;&lt;display value=&quot;Knee&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-182034009"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/182034009">182034009</a></td><td>Entire iliac crest</td><td/><td/><td>Entire iliac crest (body structure)</td><td>gehele bekkenkam</td><td>totalité de la crête iliaque</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;182034009&quot;, &quot;display&quot;: &quot;Entire iliac crest&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;182034009&quot;&gt;&lt;display value=&quot;Entire iliac crest&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-731694000"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/731694000">731694000</a></td><td>Entire bone of pubis</td><td/><td/><td>Entire bone of pubis (body structure)</td><td>volledig bot van os pubis</td><td>totalité de l'os pubien</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;731694000&quot;, &quot;display&quot;: &quot;Entire bone of pubis&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;731694000&quot;&gt;&lt;display value=&quot;Entire bone of pubis&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-54735007"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/54735007">54735007</a></td><td>Sacral bone</td><td/><td/><td>Bone structure of sacrum (body structure)</td><td>os sacrum</td><td>os sacrum</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;54735007&quot;, &quot;display&quot;: &quot;Sacral bone&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;54735007&quot;&gt;&lt;display value=&quot;Sacral bone&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-53505006"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/53505006">53505006</a></td><td>Anus</td><td/><td/><td>Anal structure (body structure)</td><td>anus</td><td>anus</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;53505006&quot;, &quot;display&quot;: &quot;Anus&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;53505006&quot;&gt;&lt;display value=&quot;Anus&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-76784001"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/76784001">76784001</a></td><td>Vagina</td><td/><td/><td>Vaginal structure (body structure)</td><td>schede</td><td>structure vaginale</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;76784001&quot;, &quot;display&quot;: &quot;Vagina&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;76784001&quot;&gt;&lt;display value=&quot;Vagina&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-18911002"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/18911002">18911002</a></td><td>Penis</td><td/><td/><td>Penis structure</td><td>structuur van penis</td><td>penis</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;18911002&quot;, &quot;display&quot;: &quot;Penis&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;18911002&quot;&gt;&lt;display value=&quot;Penis&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-56459004"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/56459004">56459004</a></td><td>Foot</td><td/><td/><td>Foot structure (body structure)</td><td>voet</td><td>structure du pied</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;56459004&quot;, &quot;display&quot;: &quot;Foot&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;56459004&quot;&gt;&lt;display value=&quot;Foot&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-344001"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/344001">344001</a></td><td>Ankle</td><td/><td/><td>Ankle region structure (body structure)</td><td>enkelregio</td><td>région de la cheville</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;344001&quot;, &quot;display&quot;: &quot;Ankle&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;344001&quot;&gt;&lt;display value=&quot;Ankle&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-360857004"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/360857004">360857004</a></td><td>Malleolar structure of fibula</td><td/><td/><td>Malleolar structure of fibula (body structure)</td><td>structuur van malleolus van fibula</td><td>malléole du péroné</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;360857004&quot;, &quot;display&quot;: &quot;Malleolar structure of fibula&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;360857004&quot;&gt;&lt;display value=&quot;Malleolar structure of fibula&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-76853006"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/76853006">76853006</a></td><td>Heel</td><td/><td/><td>Calcaneal region</td><td>structuur van hiel</td><td>structure du talon</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;76853006&quot;, &quot;display&quot;: &quot;Heel&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;76853006&quot;&gt;&lt;display value=&quot;Heel&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-78883009"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/78883009">78883009</a></td><td>Great toe</td><td/><td/><td>Big toe structure</td><td>digitus I van voet</td><td>gros orteil</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;78883009&quot;, &quot;display&quot;: &quot;Great toe&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;78883009&quot;&gt;&lt;display value=&quot;Great toe&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-55078004"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/55078004">55078004</a></td><td>Second toe</td><td/><td/><td>Second toe structure (body structure)</td><td>structuur van digitus secundus pedis</td><td>deuxième orteil</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;55078004&quot;, &quot;display&quot;: &quot;Second toe&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;55078004&quot;&gt;&lt;display value=&quot;Second toe&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-78132007"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/78132007">78132007</a></td><td>Third toe</td><td/><td/><td>Third toe structure (body structure)</td><td>digitus pedis III</td><td>orteil III</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;78132007&quot;, &quot;display&quot;: &quot;Third toe&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;78132007&quot;&gt;&lt;display value=&quot;Third toe&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-80349001"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/80349001">80349001</a></td><td>Fourth toe</td><td/><td/><td>Fourth toe structure (body structure)</td><td>structuur van digitus IV van voet</td><td>orteil IV</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;80349001&quot;, &quot;display&quot;: &quot;Fourth toe&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;80349001&quot;&gt;&lt;display value=&quot;Fourth toe&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-39915008"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/39915008">39915008</a></td><td>Fifth toe</td><td/><td/><td>Fifth toe structure (body structure)</td><td>digitus quintus pedis</td><td>cinquième orteil</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;39915008&quot;, &quot;display&quot;: &quot;Fifth toe&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;39915008&quot;&gt;&lt;display value=&quot;Fifth toe&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-244187005"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/244187005">244187005</a></td><td>Skin over instep of foot</td><td/><td/><td>Skin structure over instep of foot</td><td>huid van wreef</td><td>peau recouvrant le cou-de-pied</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;244187005&quot;, &quot;display&quot;: &quot;Skin over instep of foot&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;244187005&quot;&gt;&lt;display value=&quot;Skin over instep of foot&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-16982005"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/16982005">16982005</a></td><td>Shoulder</td><td/><td/><td>The body part defined by the shoulder joint and its surrounding structures</td><td>schouder</td><td>région de l'épaule</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;16982005&quot;, &quot;display&quot;: &quot;Shoulder&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;16982005&quot;&gt;&lt;display value=&quot;Shoulder&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-79601000"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/79601000">79601000</a></td><td>Scapula</td><td/><td/><td>Bone structure of scapula (body structure)</td><td>scapula</td><td>scapula</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;79601000&quot;, &quot;display&quot;: &quot;Scapula&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;79601000&quot;&gt;&lt;display value=&quot;Scapula&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-53120007"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/53120007">53120007</a></td><td>Upper extremity</td><td/><td/><td>Upper extremity, including shoulder, arm, forearm, wrist, and hand</td><td>structuur van bovenste lidmaat</td><td>structure du membre supérieur</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;53120007&quot;, &quot;display&quot;: &quot;Upper extremity&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;53120007&quot;&gt;&lt;display value=&quot;Upper extremity&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-14975008"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/14975008">14975008</a></td><td>Forearm</td><td/><td/><td>Forearm structure (body structure)</td><td>structuur van onderarm</td><td>avant-bras</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;14975008&quot;, &quot;display&quot;: &quot;Forearm&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;14975008&quot;&gt;&lt;display value=&quot;Forearm&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-127949000"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/127949000">127949000</a></td><td>Elbow region</td><td/><td/><td>Elbow</td><td>elleboog</td><td>région du coude</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;127949000&quot;, &quot;display&quot;: &quot;Elbow region&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;127949000&quot;&gt;&lt;display value=&quot;Elbow region&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr><tr><td><a name="x-http://snomed.info/sct-85562004"> </a><code>http://snomed.info/sct</code></td><td style="white-space:nowrap">  <a href="http://snomed.info/id/85562004">85562004</a></td><td>Hand</td><td/><td/><td>Hand structure (body structure)</td><td>hand</td><td>main</td><td><span class="copy-text-inline"><button data-clipboard-text="{&quot;system&quot;: &quot;http://snomed.info/sct&quot;, &quot;version&quot;: &quot;http://snomed.info/sct/11000172109/version/20260515&quot;, &quot;code&quot;: &quot;85562004&quot;, &quot;display&quot;: &quot;Hand&quot;}" title="Click to Copy as Coding" class="btn-copy"> </button></span></td><td><span class="copy-text-inline"><button data-clipboard-text="&lt;coding&gt;&lt;system value=&quot;http://snomed.info/sct&quot;&gt;&lt;version value=&quot;http://snomed.info/sct/11000172109/version/20260515&quot;&gt;&lt;code value=&quot;85562004&quot;&gt;&lt;display value=&quot;Hand&quot;&gt;&lt;/coding&gt;" title="Click to Copy as Coding" class="btn-copy"> </button></span></td></tr></table></div>
+
+  <hr/>
+  <p>
+    <a href="http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#terminology">Description of the above table(s)</a>.
+  </p>
+
+  
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+  <script type="text/javascript" src="assets/js/flags.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <script type="text/javascript" src="assets/js/togglechanges.js"> </script>
+  <script type="text/javascript" src="assets/js/requirements-table.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container" data-fhir="generated">  <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:var(--ig-left);">&#xA0;
+
+                <a href="ValueSet-be-vs-treatment-status-reason.ttl.html">&lt; prev</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">top</a>
+              </td>
+              <td style="text-align:var(--ig-right);">&#xA0;
+
+                <a href="ValueSet-be-vs-bodysite-nursing-testing.html">next ></a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+
+
+
+          IG © 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.ehealth.fgov.be/standards/fhir">eHealth Platform</a>.  
+          Package hl7.fhir.be.drp#1.0.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>.
+          Generated 
+  <span title="2026-07-10 10:52:00 +0000">
+    2026-07-10
+  </span>
+
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+            <!-- eHealth Platform -->
+<!-- active -->
+
+Links:
+<a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+<a style="color: var(--footer-hyperlink-text-color)" href="../qa.html">QA Report</a>
+
+
+<span class="footer-logos-row">
+  <a id="belgium-logo" href="https://www.belgium.be/en" target="_blank">
+    <img alt="belgium.be" src="assets/images/logo-be.png"/>
+  </a>
+  <a id="ehealth-logo" href="https://www.ehealth.fgov.be" style="text-decoration:none">
+    <img height="50" alt="Welcome to ehealth website" src="assets/images/logo-ehealth.png"/>
+  </a>
+</span>
+
+
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

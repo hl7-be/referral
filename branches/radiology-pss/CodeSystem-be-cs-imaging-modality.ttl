@@ -1,0 +1,190 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-imaging-modality> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "be-cs-imaging-modality"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem be-cs-imaging-modality</b></p><a name=\"be-cs-imaging-modality\"> </a><a name=\"hcbe-cs-imaging-modality\"> </a><p>This case-insensitive code system <code>https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-imaging-modality</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">ct<a name=\"be-cs-imaging-modality-ct\"> </a></td><td>CT</td></tr><tr><td style=\"white-space:nowrap\">cbct<a name=\"be-cs-imaging-modality-cbct\"> </a></td><td>CBCT</td></tr><tr><td style=\"white-space:nowrap\">mri<a name=\"be-cs-imaging-modality-mri\"> </a></td><td>MRI</td></tr><tr><td style=\"white-space:nowrap\">x-ray<a name=\"be-cs-imaging-modality-x-ray\"> </a></td><td>X-Ray</td></tr><tr><td style=\"white-space:nowrap\">ultrasound<a name=\"be-cs-imaging-modality-ultrasound\"> </a></td><td>Ultrasound</td></tr><tr><td style=\"white-space:nowrap\">other<a name=\"be-cs-imaging-modality-other\"> </a></td><td>Other (free text)</td></tr><tr><td style=\"white-space:nowrap\">unknown<a name=\"be-cs-imaging-modality-unknown\"> </a></td><td>Unknown</td></tr></table><p><b>Additional Language Displays</b></p><table class=\"codes\"><tr><td><b>Code</b></td><td><b>Deutsch (German, de)</b></td><td><b>English (English, en)</b></td><td><b>French (Belgium) (fr)</b></td><td><b>Nederlands (België) (Dutch (Belgium), nl)</b></td></tr><tr><td>ct</td><td>CT</td><td>CT</td><td>CT</td><td>CT</td></tr><tr><td>cbct</td><td>CBCT</td><td>CBCT</td><td>CBCT</td><td>CBCT</td></tr><tr><td>mri</td><td>MRT</td><td>MRI</td><td>IRM</td><td>NMR</td></tr><tr><td>x-ray</td><td>Röntgen</td><td>X-Ray</td><td>RX</td><td>RX</td></tr><tr><td>ultrasound</td><td>Ultraschall</td><td>Ultrasound</td><td>Echographie</td><td>Echografie</td></tr><tr><td>other</td><td>Sonstiges (Freitext)</td><td>Other (free text)</td><td>Autre (texte libre)</td><td>Andere (vrije tekst)</td></tr><tr><td>unknown</td><td>Unbekannt</td><td>Unknown</td><td>Inconnu</td><td>Onbekend</td></tr></table></div>"
+  ] ;
+  fhir:CodeSystem.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-imaging-modality"] ;
+  fhir:CodeSystem.version [ fhir:value "1.0.0"] ;
+  fhir:CodeSystem.name [ fhir:value "BeCSImagingModality"] ;
+  fhir:CodeSystem.title [ fhir:value "BeCSImagingModality"] ;
+  fhir:CodeSystem.status [ fhir:value "draft"] ;
+  fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:CodeSystem.date [ fhir:value "2026-09-04T09:25:18+00:00"^^xsd:dateTime] ;
+  fhir:CodeSystem.description [ fhir:value "Imaging modality types for prior imaging requests"] ;
+  fhir:CodeSystem.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "BE" ] ;
+       fhir:Coding.display [ fhir:value "Belgium" ]
+     ]
+  ] ;
+  fhir:CodeSystem.caseSensitive [ fhir:value "false"^^xsd:boolean] ;
+  fhir:CodeSystem.content [ fhir:value "complete"] ;
+  fhir:CodeSystem.count [ fhir:value "7"^^xsd:nonNegativeInteger] ;
+  fhir:CodeSystem.concept [
+     fhir:index 0 ;
+     fhir:CodeSystem.concept.code [ fhir:value "ct" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "CT" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "CT" ]
+     ], [
+       fhir:index 1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "CT" ]
+     ], [
+       fhir:index 2 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "CT" ]
+     ], [
+       fhir:index 3 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "de" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "CT" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "cbct" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "CBCT" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "CBCT" ]
+     ], [
+       fhir:index 1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "CBCT" ]
+     ], [
+       fhir:index 2 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "CBCT" ]
+     ], [
+       fhir:index 3 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "de" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "CBCT" ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:CodeSystem.concept.code [ fhir:value "mri" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "MRI" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "MRI" ]
+     ], [
+       fhir:index 1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "IRM" ]
+     ], [
+       fhir:index 2 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "NMR" ]
+     ], [
+       fhir:index 3 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "de" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "MRT" ]
+     ]
+  ], [
+     fhir:index 3 ;
+     fhir:CodeSystem.concept.code [ fhir:value "x-ray" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "X-Ray" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "X-Ray" ]
+     ], [
+       fhir:index 1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "RX" ]
+     ], [
+       fhir:index 2 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "RX" ]
+     ], [
+       fhir:index 3 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "de" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Röntgen" ]
+     ]
+  ], [
+     fhir:index 4 ;
+     fhir:CodeSystem.concept.code [ fhir:value "ultrasound" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Ultrasound" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Ultrasound" ]
+     ], [
+       fhir:index 1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Echographie" ]
+     ], [
+       fhir:index 2 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Echografie" ]
+     ], [
+       fhir:index 3 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "de" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Ultraschall" ]
+     ]
+  ], [
+     fhir:index 5 ;
+     fhir:CodeSystem.concept.code [ fhir:value "other" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Other (free text)" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Other (free text)" ]
+     ], [
+       fhir:index 1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Autre (texte libre)" ]
+     ], [
+       fhir:index 2 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Andere (vrije tekst)" ]
+     ], [
+       fhir:index 3 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "de" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Sonstiges (Freitext)" ]
+     ]
+  ], [
+     fhir:index 6 ;
+     fhir:CodeSystem.concept.code [ fhir:value "unknown" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Unknown" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Unknown" ]
+     ], [
+       fhir:index 1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Inconnu" ]
+     ], [
+       fhir:index 2 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Onbekend" ]
+     ], [
+       fhir:index 3 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "de" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Unbekannt" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-imaging-modality.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

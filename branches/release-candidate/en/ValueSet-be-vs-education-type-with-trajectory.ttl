@@ -1,0 +1,97 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/ValueSet/be-vs-education-type-with-trajectory> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "be-vs-education-type-with-trajectory"] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet be-vs-education-type-with-trajectory</b></p><a name=\"be-vs-education-type-with-trajectory\"> </a><a name=\"hcbe-vs-education-type-with-trajectory\"> </a><ul><li>Include these codes as defined in <a href=\"CodeSystem-be-cs-diabetic-education-type.html\"><code>https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-diabetic-education-type</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?1.1.0</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"CodeSystem-be-cs-diabetic-education-type.html#be-cs-diabetic-education-type-diabetic-education-disease-lifestyle\">diabetic-education-disease-lifestyle</a></td><td style=\"color: #cccccc\">Information about disease and healthy lifestyle</td></tr><tr><td><a href=\"CodeSystem-be-cs-diabetic-education-type.html#be-cs-diabetic-education-type-diabetic-education-no-transition\">diabetic-education-no-transition</a></td><td style=\"color: #cccccc\">Follow-up of patients who do not switch to self-care</td></tr><tr><td><a href=\"CodeSystem-be-cs-diabetic-education-type.html#be-cs-diabetic-education-type-diabetic-education-start-insulin-glp1\">diabetic-education-start-insulin-glp1</a></td><td style=\"color: #cccccc\">Start insulin or GLP 1 agonist</td></tr><tr><td><a href=\"CodeSystem-be-cs-diabetic-education-type.html#be-cs-diabetic-education-type-diabetic-education-additional-hba1c\">diabetic-education-additional-hba1c</a></td><td style=\"color: #cccccc\">Additional education HBA1C&gt;7.5</td></tr><tr><td><a href=\"CodeSystem-be-cs-diabetic-education-type.html#be-cs-diabetic-education-type-diabetic-education-additional-injections\">diabetic-education-additional-injections</a></td><td style=\"color: #cccccc\">Additional education switching from 1 to 2 injections</td></tr><tr><td><a href=\"CodeSystem-be-cs-diabetic-education-type.html#be-cs-diabetic-education-type-diabetic-education-oral-medication\">diabetic-education-oral-medication</a></td><td style=\"color: #cccccc\">Education for patient with oral medication</td></tr><tr><td><a href=\"CodeSystem-be-cs-diabetic-education-type.html#be-cs-diabetic-education-type-diabetic-education-glucose-meter\">diabetic-education-glucose-meter</a></td><td style=\"color: #cccccc\">Use of blood glucose meter</td></tr><tr><td><a href=\"CodeSystem-be-cs-diabetic-education-type.html#be-cs-diabetic-education-type-diabetic-education-material\">diabetic-education-material</a></td><td style=\"color: #cccccc\">Educational material</td></tr><tr><td><a href=\"CodeSystem-be-cs-diabetic-education-type.html#be-cs-diabetic-education-type-diabetic-education-glycemic-regulation\">diabetic-education-glycemic-regulation</a></td><td style=\"color: #cccccc\">Providing information about blood glucose regulation</td></tr></table></li></ul></div>"
+  ] ;
+  fhir:ValueSet.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-education-type-with-trajectory"] ;
+  fhir:ValueSet.version [ fhir:value "1.1.0"] ;
+  fhir:ValueSet.name [ fhir:value "BeVSEducationTypeWithTrajectory"] ;
+  fhir:ValueSet.title [ fhir:value "eReferral Education Type With Trajectory"] ;
+  fhir:ValueSet.status [ fhir:value "active"] ;
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:ValueSet.date [ fhir:value "2026-08-11T09:14:04+00:00"^^xsd:dateTime] ;
+  fhir:ValueSet.publisher [ fhir:value "eHealth Platform"] ;
+  fhir:ValueSet.contact [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "eHealth Platform" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.ehealth.fgov.be/standards/fhir" ]
+     ], [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "support@be-ehealth-standards.atlassian.net" ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "Message Structure eHealth" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "support@be-ehealth-standards.atlassian.net" ] ;
+       fhir:ContactPoint.use [ fhir:value "work" ]
+     ]
+  ] ;
+  fhir:ValueSet.description [ fhir:value "Types of diabetes education for education within a care trajectory."] ;
+  fhir:ValueSet.jurisdiction [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "BE" ] ;
+       fhir:Coding.display [ fhir:value "Belgium" ]
+     ]
+  ] ;
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index -1 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-diabetic-education-type" ] ;
+       fhir:ValueSet.compose.include.concept [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "diabetic-education-disease-lifestyle" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "diabetic-education-no-transition" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "diabetic-education-start-insulin-glp1" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "diabetic-education-additional-hba1c" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "diabetic-education-additional-injections" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "diabetic-education-oral-medication" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "diabetic-education-glucose-meter" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "diabetic-education-material" ]
+       ], [
+         fhir:index -1 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "diabetic-education-glycemic-regulation" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/ValueSet/be-vs-education-type-with-trajectory.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,83 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/ValueSet/be-vs-annex81-nursing-diagnosis> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "be-vs-annex81-nursing-diagnosis"] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet be-vs-annex81-nursing-diagnosis</b></p><a name=\"be-vs-annex81-nursing-diagnosis\"> </a><a name=\"hcbe-vs-annex81-nursing-diagnosis\"> </a><ul><li>Include these codes as defined in <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><span title=\"Version is not explicitly stated. No matching Code System found\"> version Not Stated (use latest from terminology server)</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"http://snomed.info/id/275928001\">275928001</a></td><td>Drugs - partial non-compliance (finding)</td></tr><tr><td><a href=\"http://snomed.info/id/1290542000\">1290542000</a></td><td>Unintentional misuse of medication (finding)</td></tr><tr><td><a href=\"http://snomed.info/id/129834002\">129834002</a></td><td>Non-compliance with medication regimen (finding)</td></tr><tr><td><a href=\"http://snomed.info/id/448176008\">448176008</a></td><td>Uses less medication than prescribed (finding)</td></tr><tr><td><a href=\"http://snomed.info/id/359748005\">359748005</a></td><td>Patient's condition unchanged (finding)</td></tr><tr><td><a href=\"http://snomed.info/id/271299001\">271299001</a></td><td>Patient's condition worsened (finding)</td></tr><tr><td><a href=\"http://snomed.info/id/62014003\">62014003</a></td><td>Adverse reaction caused by drug (disorder)</td></tr><tr><td><a href=\"http://snomed.info/id/708014007\">708014007</a></td><td>Does not have an informal caregiver (finding)</td></tr></table></li></ul></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-annex81-nursing-diagnosis"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.0.0"] ; # 
+  fhir:name [ fhir:v "BeVSAnnex81NursingDiagnosis"] ; # 
+  fhir:title [ fhir:v "eReferral Annex 81 Nursing Diagnosis"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-06-19T10:26:42+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "eHealth Platform"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "eHealth Platform" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.ehealth.fgov.be/standards/fhir" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "support@be-ehealth-standards.atlassian.net" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Message Structure eHealth" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "support@be-ehealth-standards.atlassian.net" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Nursing diagnoses/findings that can motivate an Annex 81 request."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BE" ] ;
+       fhir:display [ fhir:v "Belgium" ]
+     ] )
+  ] ) ; # 
+  fhir:copyright [ fhir:v "This value set includes content from SNOMED CT, which is copyright Â© 2002+ International Health Terminology Standards Development Organisation (IHTSDO)."] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "275928001" ] ;
+         fhir:display [ fhir:v "Drugs - partial non-compliance (finding)" ]
+       ] [
+         fhir:code [ fhir:v "1290542000" ] ;
+         fhir:display [ fhir:v "Unintentional misuse of medication (finding)" ]
+       ] [
+         fhir:code [ fhir:v "129834002" ] ;
+         fhir:display [ fhir:v "Non-compliance with medication regimen (finding)" ]
+       ] [
+         fhir:code [ fhir:v "448176008" ] ;
+         fhir:display [ fhir:v "Uses less medication than prescribed (finding)" ]
+       ] [
+         fhir:code [ fhir:v "359748005" ] ;
+         fhir:display [ fhir:v "Patient's condition unchanged (finding)" ]
+       ] [
+         fhir:code [ fhir:v "271299001" ] ;
+         fhir:display [ fhir:v "Patient's condition worsened (finding)" ]
+       ] [
+         fhir:code [ fhir:v "62014003" ] ;
+         fhir:display [ fhir:v "Adverse reaction caused by drug (disorder)" ]
+       ] [
+         fhir:code [ fhir:v "708014007" ] ;
+         fhir:display [ fhir:v "Does not have an informal caregiver (finding)" ]
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

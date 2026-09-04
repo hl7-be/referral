@@ -1,0 +1,70 @@
+{
+  "resourceType" : "ServiceRequest",
+  "id" : "example01-care02-colon-cleansing",
+  "meta" : {
+    "profile" : ["https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"]
+  },
+  "language" : "en",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest example01-care02-colon-cleansing</b></p><a name=\"example01-care02-colon-cleansing\"> </a><a name=\"hcexample01-care02-colon-cleansing\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referral-servicerequest-nursing.html\">BeReferralServiceRequestNursing</a></p></div><p><b>BeValidityPeriod</b>: 2020-01-01 --&gt; 2021-01-01</p><p><b>BeFeedbackToPrescriber</b>: true</p><p><b>BePerformerType</b>: <span title=\"Codes:{https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty persnurse}\">nurse</span></p><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 9632001}\">Nursing procedure</span></p><p><b>priority</b>: Routine</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 386225006}\">386225006</span></p><p><b>subject</b>: Identifier: BeSSINNamingSystem/99999999999</p><p><b>occurrence</b>: Once per 1 day</p><p><b>authoredOn</b>: 2020-01-01 00:00:00+0100</p><p><b>requester</b>: <a href=\"PractitionerRole-DOCTOR-10829059004.html\">PractitionerRole physician</a></p><p><b>reasonCode</b>: <span title=\"Codes:\">reason</span></p></div>"
+  },
+  "extension" : [{
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-validity-period",
+    "valuePeriod" : {
+      "start" : "2020-01-01",
+      "end" : "2021-01-01"
+    }
+  },
+  {
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-feedback-to-prescriber",
+    "valueBoolean" : true
+  },
+  {
+    "url" : "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-performer-type",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty",
+        "code" : "persnurse"
+      }]
+    }
+  }],
+  "status" : "active",
+  "intent" : "order",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "version" : "http://snomed.info/sct/11000172109",
+      "code" : "9632001"
+    }],
+    "text" : "Nursing procedure"
+  }],
+  "priority" : "routine",
+  "code" : {
+    "coding" : [{
+      "system" : "http://snomed.info/sct",
+      "version" : "http://snomed.info/sct/11000172109",
+      "code" : "386225006"
+    }]
+  },
+  "subject" : {
+    "identifier" : {
+      "system" : "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin",
+      "value" : "99999999999"
+    }
+  },
+  "occurrenceTiming" : {
+    "repeat" : {
+      "frequency" : 1,
+      "period" : 1,
+      "periodUnit" : "d"
+    }
+  },
+  "authoredOn" : "2020-01-01T00:00:00+01:00",
+  "requester" : {
+    "reference" : "PractitionerRole/DOCTOR-10829059004"
+  },
+  "reasonCode" : [{
+    "text" : "reason"
+  }]
+}

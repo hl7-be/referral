@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ServiceRequest xmlns="http://hl7.org/fhir">
+  <id value="example05-referralprescription-nursing-digestive-system-care"/>
+  <meta>
+    <profile value="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ServiceRequest example05-referralprescription-nursing-digestive-system-care</b></p><a name="example05-referralprescription-nursing-digestive-system-care"> </a><a name="hcexample05-referralprescription-nursing-digestive-system-care"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-be-referral-servicerequest-nursing.html">BeReferralServiceRequestNursing</a></p></div><p><b>BeValidityPeriod</b>: 2022-04-19 --&gt; 2023-04-19</p><p><b>BeFeedbackToPrescriber</b>: true</p><p><b>BePerformerType</b>: <span title="Codes:{https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty persnurse}">nurse</span></p><p><b>identifier</b>: <a href="NamingSystem-be-ns-uhmep.html" title="UHMEP naming system">BeUnadressedHealthMessageExchangePlatform</a>/UHMEPVALUE, <a href="NamingSystem-be-ns-uhmep-short.html" title="Naming system identifier for the UHMEP user friendly short code">BeNsUhmepShort</a>/AB12EF</p><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title="Codes:{http://snomed.info/sct 9632001}">Nursing procedure</span></p><p><b>priority</b>: Routine</p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 174297001}">174297001</span></p><p><b>subject</b>: Identifier: BeSSINNamingSystem/99999999999</p><p><b>occurrence</b>: Once per 1 day</p><p><b>authoredOn</b>: 2022-10-31 00:00:00+0100</p><p><b>requester</b>: <a href="PractitionerRole-DOCTOR-10829059004.html">PractitionerRole physician</a></p><p><b>reasonCode</b>: <span title="Codes:{http://snomed.info/sct 309256001}">309256001</span></p></div>
+  </text>
+  <extension url="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-validity-period">
+    <valuePeriod>
+      <start value="2022-04-19"/>
+      <end value="2023-04-19"/>
+    </valuePeriod>
+  </extension>
+  <extension url="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-feedback-to-prescriber">
+    <valueBoolean value="true"/>
+  </extension>
+  <extension url="https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-performer-type">
+    <valueCodeableConcept>
+      <coding>
+        <system value="https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty"/>
+        <code value="persnurse"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <identifier>
+    <system value="https://www.ehealth.fgov.be/standards/fhir/drp/NamingSystem/uhmep"/>
+    <value value="UHMEPVALUE"/>
+  </identifier>
+  <identifier>
+    <system value="https://www.ehealth.fgov.be/standards/fhir/drp/NamingSystem/uhmep-short"/>
+    <value value="AB12EF"/>
+  </identifier>
+  <status value="active"/>
+  <intent value="order"/>
+  <category>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <version value="http://snomed.info/sct/11000172109"/>
+      <code value="9632001"/>
+    </coding>
+    <text value="Nursing procedure"/>
+  </category>
+  <priority value="routine"/>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <version value="http://snomed.info/sct/11000172109"/>
+      <code value="174297001"/>
+    </coding>
+  </code>
+  <subject>
+    <identifier>
+      <system value="https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin"/>
+      <value value="99999999999"/>
+    </identifier>
+  </subject>
+  <occurrenceTiming>
+    <repeat>
+      <boundsPeriod>
+        <start value="2021-04-23"/>
+        <end value="2022-04-22"/>
+      </boundsPeriod>
+      <frequency value="1"/>
+      <period value="1"/>
+      <periodUnit value="d"/>
+    </repeat>
+  </occurrenceTiming>
+  <authoredOn value="2022-10-31T00:00:00+01:00"/>
+  <requester>
+    <reference value="PractitionerRole/DOCTOR-10829059004"/>
+  </requester>
+  <reasonCode>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <version value="http://snomed.info/sct/11000172109"/>
+      <code value="309256001"/>
+    </coding>
+  </reasonCode>
+</ServiceRequest>

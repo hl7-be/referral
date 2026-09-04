@@ -1,0 +1,45 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/Task/ucgh222p12-2-2-1> a fhir:Task ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ucgh222p12-2-2-1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-organization-task"^^xsd:anyURI ;
+       fhir:l <https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-organization-task>
+     ] )
+  ] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\"><p class=\"res-header-id\"><b>Generated Narrative: Task ucgh222p12-2-2-1</b></p><a name=\"ucgh222p12-2-2-1\"> </a><a name=\"hcucgh222p12-2-2-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: en</p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-organization-task.html\">BeAssignmentTask</a></p></div><p><b>partOf</b>: <a href=\"Task-ucgh222p12-2-2.html\">Task: status = accepted; intent = order</a></p><p><b>status</b>: Accepted</p><p><b>intent</b>: order</p><p><b>focus</b>: <a href=\"ServiceRequest-ucgh222p12-2.html\">ServiceRequest 175852005</a></p><p><b>authoredOn</b>: 2020-01-01 00:00:00+0100</p><p><b>owner</b>: Identifier: BeCBENamingSystem/0465698582</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:partOf ( [
+     fhir:l <https://www.ehealth.fgov.be/standards/fhir/drp/Task/ucgh222p12-2-2> ;
+     fhir:reference [ fhir:v "Task/ucgh222p12-2-2" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "accepted"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:focus [
+     fhir:l <https://www.ehealth.fgov.be/standards/fhir/drp/ServiceRequest/ucgh222p12-2> ;
+     fhir:reference [ fhir:v "ServiceRequest/ucgh222p12-2" ]
+  ] ; # 
+  fhir:authoredOn [ fhir:v "2020-01-01T00:00:00+01:00"^^xsd:dateTime] ; # 
+  fhir:owner [
+     fhir:identifier [
+       fhir:system [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/cbe"^^xsd:anyURI ;
+         fhir:l <https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/cbe>
+       ] ;
+       fhir:value [ fhir:v "0465698582" ]
+     ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,1660 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/referral/ImplementationGuide/hl7.fhir.be.referral> a fhir:ImplementationGuide ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "hl7.fhir.be.referral"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide hl7.fhir.be.referral</b></p><a name=\"hl7.fhir.be.referral\"> </a><a name=\"hchl7.fhir.be.referral\"> </a><a name=\"hl7.fhir.be.referral-en-US\"> </a><h2>ReferralPrescription</h2><p>The official URL for this implementation guide is: </p><pre>https://www.ehealth.fgov.be/standards/fhir/referral/ImplementationGuide/hl7.fhir.be.referral</pre></div>"
+  ] ; # 
+  fhir:url [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/ImplementationGuide/hl7.fhir.be.referral"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.0.0"] ; # 
+  fhir:name [ fhir:v "ReferralPrescription"] ; # 
+  fhir:title [ fhir:v "Referral Prescription"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2024-11-21T15:28:09+00:00"^^xsd:dateTime] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BE" ] ;
+       fhir:display [ fhir:v "Belgium" ]
+     ] )
+  ] ) ; # 
+  fhir:packageId [ fhir:v "hl7.fhir.be.referral"] ; # 
+  fhir:license [ fhir:v "CC0-1.0"] ; # 
+  fhir:fhirVersion ( [ fhir:v "4.0.1"] ) ; # 
+  fhir:dependsOn ( [
+     fhir:id [ fhir:v "hl7tx" ] ;
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Automatically added as a dependency - all IGs depend on HL7 Terminology" ]
+     ] ) ;
+     fhir:uri [
+       fhir:v "http://terminology.hl7.org/ImplementationGuide/hl7.terminology"^^xsd:anyURI ;
+       fhir:link <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
+     ] ;
+     fhir:packageId [ fhir:v "hl7.terminology.r4" ] ;
+     fhir:version [ fhir:v "6.1.0" ]
+  ] [
+     fhir:id [ fhir:v "hl7ext" ] ;
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack" ]
+     ] ) ;
+     fhir:uri [
+       fhir:v "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions>
+     ] ;
+     fhir:packageId [ fhir:v "hl7.fhir.uv.extensions.r4" ] ;
+     fhir:version [ fhir:v "5.1.0" ]
+  ] [
+     fhir:id [ fhir:v "hl7_fhir_be_core" ] ;
+     fhir:uri [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/core/ImplementationGuide/hl7.fhir.be.core"^^xsd:anyURI ;
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/core/ImplementationGuide/hl7.fhir.be.core>
+     ] ;
+     fhir:packageId [ fhir:v "hl7.fhir.be.core" ] ;
+     fhir:version [ fhir:v "current" ]
+  ] [
+     fhir:id [ fhir:v "hl7_fhir_be_core_clinical" ] ;
+     fhir:uri [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/core-clinical/ImplementationGuide/hl7.fhir.be.core-clinical"^^xsd:anyURI ;
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/core-clinical/ImplementationGuide/hl7.fhir.be.core-clinical>
+     ] ;
+     fhir:packageId [ fhir:v "hl7.fhir.be.core-clinical" ] ;
+     fhir:version [ fhir:v "current" ]
+  ] ) ; # 
+  fhir:definition [
+     fhir:extension ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "copyrightyear" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "2022+" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "releaselabel" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "STU" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "shownav" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-contact" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-jurisdiction" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-publisher" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-version" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-expansion-params" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Parameters-terminology-expansion.json" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "autoload-resources" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-liquid" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template/liquid" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-liquid" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "input/liquid" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-qa" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "temp/qa" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-temp" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "temp/pages" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-output" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "output" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-suppressed-warnings" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "input/ignoreWarnings.txt" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-history" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/history.html" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template-html" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template-page.html" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template-md" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template-page-md.html" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-context" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-copyright" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-license" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-wg" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "active-tables" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "fmm-definition" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "http://hl7.org/fhir/versions.html#maturity" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "propagate-status" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "excludelogbinaryformat" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "tabbed-snapshots" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "hl7.fhir.uv.tools.r4#0.3.0" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "copyrightyear" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "2022+" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "releaselabel" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "STU" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "shownav" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-contact" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-jurisdiction" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-publisher" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-version" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-expansion-params" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Parameters-terminology-expansion.json" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "autoload-resources" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-liquid" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template/liquid" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-liquid" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "input/liquid" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-qa" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "temp/qa" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-temp" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "temp/pages" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-output" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "output" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-suppressed-warnings" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "input/ignoreWarnings.txt" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-history" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/history.html" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template-html" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template-page.html" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template-md" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template-page-md.html" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-context" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-copyright" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-license" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-wg" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "active-tables" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "fmm-definition" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "http://hl7.org/fhir/versions.html#maturity" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "propagate-status" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "excludelogbinaryformat" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "tabbed-snapshots" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] ) ;
+     fhir:resource ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-annex-81> ;
+         fhir:reference [ fhir:v "StructureDefinition/be-annex-81" ]
+       ] ;
+       fhir:name [ fhir:v "BeAnnex81" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "GraphDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/GraphDefinition/full-referral-prescription> ;
+         fhir:reference [ fhir:v "GraphDefinition/full-referral-prescription" ]
+       ] ;
+       fhir:name [ fhir:v "BeGDFullReferralPrescription" ] ;
+       fhir:description [ fhir:v "Specify to include all useful resources around a ServiceRequest that can be retrieved with the $graph operation." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-latest-end-date> ;
+         fhir:reference [ fhir:v "StructureDefinition/be-ext-latest-end-date" ]
+       ] ;
+       fhir:name [ fhir:v "BeLatestEndDate" ] ;
+       fhir:description [ fhir:v "Request must be performed before" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:logical" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/BeModelNursingPrescription> ;
+         fhir:reference [ fhir:v "StructureDefinition/BeModelNursingPrescription" ]
+       ] ;
+       fhir:name [ fhir:v "BeModelNursingPrescription" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:logical" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/BeModelReferralPrescription> ;
+         fhir:reference [ fhir:v "StructureDefinition/BeModelReferralPrescription" ]
+       ] ;
+       fhir:name [ fhir:v "BeModelReferralPrescription" ] ;
+       fhir:description [ fhir:v "Logical model describing the model for the prescription referral. This draft is used in the HL7 Belgian workgroup for referral." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:complex-type" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-no-contained-reference> ;
+         fhir:reference [ fhir:v "StructureDefinition/be-no-contained-reference" ]
+       ] ;
+       fhir:name [ fhir:v "BeNoContainedReference" ] ;
+       fhir:description [ fhir:v "A reference disallowing the use of contained references" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "NamingSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/be-ns-uhmep-short> ;
+         fhir:reference [ fhir:v "NamingSystem/be-ns-uhmep-short" ]
+       ] ;
+       fhir:name [ fhir:v "BeNsUhmepShort" ] ;
+       fhir:description [ fhir:v "UHMEP userfriendly namingsystem" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OperationDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/OperationDefinition/be-op-approve-annex81> ;
+         fhir:reference [ fhir:v "OperationDefinition/be-op-approve-annex81" ]
+       ] ;
+       fhir:name [ fhir:v "BeOpApproveAnnex81" ] ;
+       fhir:description [ fhir:v "Creates an approval from an Annex81 proposal" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OperationDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/OperationDefinition/be-op-reject-annex81> ;
+         fhir:reference [ fhir:v "OperationDefinition/be-op-reject-annex81" ]
+       ] ;
+       fhir:name [ fhir:v "BeOpRejectAnnex81" ] ;
+       fhir:description [ fhir:v "Rejects an Annex81 proposal" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-organization-task> ;
+         fhir:reference [ fhir:v "StructureDefinition/be-organization-task" ]
+       ] ;
+       fhir:name [ fhir:v "BeOrganizationTask" ] ;
+       fhir:description [ fhir:v "Subtask to assign the referral task and prescription to one or more members of this organisation" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-performer-task> ;
+         fhir:reference [ fhir:v "StructureDefinition/be-performer-task" ]
+       ] ;
+       fhir:name [ fhir:v "BePerformerTask" ] ;
+       fhir:description [ fhir:v "Subtask performed by one performer" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-performer-type> ;
+         fhir:reference [ fhir:v "StructureDefinition/be-ext-performer-type" ]
+       ] ;
+       fhir:name [ fhir:v "BePerformerType" ] ;
+       fhir:description [ fhir:v "Types of performers that can execute this request" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-prescription-status-reason> ;
+         fhir:reference [ fhir:v "CodeSystem/be-prescription-status-reason" ]
+       ] ;
+       fhir:name [ fhir:v "BePrescriptionStatusReason" ] ;
+       fhir:description [ fhir:v "Status reason for the prescription. Initially defined as supporting CodeSystem for the referral prescription." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-referral-category> ;
+         fhir:reference [ fhir:v "ValueSet/be-vs-referral-category" ]
+       ] ;
+       fhir:name [ fhir:v "BeReferralCategory" ] ;
+       fhir:description [ fhir:v "Codes to define the high level category for a referral prescription. SNOMED-CT codes in this valueset are just a draft proposal to give a general idea - pending an official valueset." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest> ;
+         fhir:reference [ fhir:v "StructureDefinition/be-referral-servicerequest" ]
+       ] ;
+       fhir:name [ fhir:v "BeReferralServiceRequest" ] ;
+       fhir:description [ fhir:v "The common structure for referral prescription." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing> ;
+         fhir:reference [ fhir:v "StructureDefinition/be-referral-servicerequest-nursing" ]
+       ] ;
+       fhir:name [ fhir:v "BeReferralServiceRequestNursing" ] ;
+       fhir:description [ fhir:v "The nursing profile, generic version. Please note the nursing referral for medication does NOT depend on this generic version but is a FHIR prodfile on a different FHIR resource (MedicationRequest)" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-task> ;
+         fhir:reference [ fhir:v "StructureDefinition/be-referral-task" ]
+       ] ;
+       fhir:name [ fhir:v "BeReferralTask" ] ;
+       fhir:description [ fhir:v "The task that is referred to in the referral prescription (this is the common task for the execution of the prescription). The subtasks per performer can be found in BePerformerTask" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SearchParameter" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/SearchParameter/be-sp-serviceRequest-statusReason> ;
+         fhir:reference [ fhir:v "SearchParameter/be-sp-serviceRequest-statusReason" ]
+       ] ;
+       fhir:name [ fhir:v "BeSPServiceRequestStatusReason" ] ;
+       fhir:description [ fhir:v "This SearchParameter enables query of ServiceRequests by the statusReason extension." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "SearchParameter" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/SearchParameter/be-sp-task-status-profile> ;
+         fhir:reference [ fhir:v "SearchParameter/be-sp-task-status-profile" ]
+       ] ;
+       fhir:name [ fhir:v "BeSPTaskStatusProfile" ] ;
+       fhir:description [ fhir:v "This SearchParameter enables query of Tasks on the combination of status and profile" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service> ;
+         fhir:reference [ fhir:v "CodeSystem/be-cs-temp-requested-service" ]
+       ] ;
+       fhir:name [ fhir:v "BeTempRequestedService" ] ;
+       fhir:description [ fhir:v "Temporary codes for indicating services that can be requested from a Nurse" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-cs-temp-requested-service-detail> ;
+         fhir:reference [ fhir:v "CodeSystem/be-cs-temp-requested-service-detail" ]
+       ] ;
+       fhir:name [ fhir:v "BeTempRequestedServiceDetail" ] ;
+       fhir:description [ fhir:v "Temporary codes for indicating service details that can be requested from a Nurse" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CodeSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/CodeSystem/be-treatment-status-reason> ;
+         fhir:reference [ fhir:v "CodeSystem/be-treatment-status-reason" ]
+       ] ;
+       fhir:name [ fhir:v "BeTreatmentStatusReason" ] ;
+       fhir:description [ fhir:v "Status reason for the treatment. Initially defined as supporting CodeSystem for the referral prescription." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "NamingSystem" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/be-ns-uhmep> ;
+         fhir:reference [ fhir:v "NamingSystem/be-ns-uhmep" ]
+       ] ;
+       fhir:name [ fhir:v "BeUnadressedHealthMessageExchangePlatform" ] ;
+       fhir:description [ fhir:v "UHMEP naming system" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-ext-validity-period> ;
+         fhir:reference [ fhir:v "StructureDefinition/be-ext-validity-period" ]
+       ] ;
+       fhir:name [ fhir:v "BeValidityPeriod" ] ;
+       fhir:description [ fhir:v "Begin and enddate of the validity of the request" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-annex-81-reason-code> ;
+         fhir:reference [ fhir:v "ValueSet/be-vs-annex-81-reason-code" ]
+       ] ;
+       fhir:name [ fhir:v "BeVSAnnex81ReasonCode" ] ;
+       fhir:description [ fhir:v "Nurse diagnostics and observations giving cause to the Annex 81" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-performer-task-status-reason> ;
+         fhir:reference [ fhir:v "ValueSet/be-vs-performer-task-status-reason" ]
+       ] ;
+       fhir:name [ fhir:v "BeVSPerformerTaskStatusReason" ] ;
+       fhir:description [ fhir:v "Codes to explain the current status of a referral prescription." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-prescription-status-reason> ;
+         fhir:reference [ fhir:v "ValueSet/be-vs-prescription-status-reason" ]
+       ] ;
+       fhir:name [ fhir:v "BeVSPrescriptionStatusReason" ] ;
+       fhir:description [ fhir:v "This is the status reason of the prescription" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-requested-services-nurse> ;
+         fhir:reference [ fhir:v "ValueSet/be-vs-requested-services-nurse" ]
+       ] ;
+       fhir:name [ fhir:v "BeVSRequestedServicesNurse" ] ;
+       fhir:description [ fhir:v "Codes indicating the requests that can be asked from a nurse." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-requested-services-nurse-detail> ;
+         fhir:reference [ fhir:v "ValueSet/be-vs-requested-services-nurse-detail" ]
+       ] ;
+       fhir:name [ fhir:v "BeVSRequestedServicesNurseDetail" ] ;
+       fhir:description [ fhir:v "Codes indicating the request details that can be asked from a nurse." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-request-intent> ;
+         fhir:reference [ fhir:v "ValueSet/be-vs-request-intent" ]
+       ] ;
+       fhir:name [ fhir:v "BeVSRequestIntent" ] ;
+       fhir:description [ fhir:v "The allowed intent codes in the context of referral prescription" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-request-note-type> ;
+         fhir:reference [ fhir:v "ValueSet/be-vs-request-note-type" ]
+       ] ;
+       fhir:name [ fhir:v "BeVSRequestNoteType" ] ;
+       fhir:description [ fhir:v "Types of notes used in a referral prescription" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-task-intent> ;
+         fhir:reference [ fhir:v "ValueSet/be-vs-task-intent" ]
+       ] ;
+       fhir:name [ fhir:v "BeVSTaskIntent" ] ;
+       fhir:description [ fhir:v "The allowed intent codes in the context of tasks in the field of referral prescriptions" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-treatment-status-reason> ;
+         fhir:reference [ fhir:v "ValueSet/be-vs-treatment-status-reason" ]
+       ] ;
+       fhir:name [ fhir:v "BeVSTreatmentStatusReason" ] ;
+       fhir:description [ fhir:v "Codes to explain the current status of a treatment in a referral prescription." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:primitive-type" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-year-month-day> ;
+         fhir:reference [ fhir:v "StructureDefinition/be-year-month-day" ]
+       ] ;
+       fhir:name [ fhir:v "BeYearMonthDay" ] ;
+       fhir:description [ fhir:v "a datetime of length 10 or empty" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ValueSet/be-vs-bodysite-nursing> ;
+         fhir:reference [ fhir:v "ValueSet/be-vs-bodysite-nursing" ]
+       ] ;
+       fhir:name [ fhir:v "Body Site" ] ;
+       fhir:description [ fhir:v "Body Site" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/example12-referralprescription-nursing-annex81> ;
+         fhir:reference [ fhir:v "ServiceRequest/example12-referralprescription-nursing-annex81" ]
+       ] ;
+       fhir:name [ fhir:v "Example 12: Annex 81" ] ;
+       fhir:description [ fhir:v "Annex 81 proposal" ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-annex-81"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-annex-81>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/example16-referralprescription-nursing-bladder-care> ;
+         fhir:reference [ fhir:v "ServiceRequest/example16-referralprescription-nursing-bladder-care" ]
+       ] ;
+       fhir:name [ fhir:v "Example 16: Bladder care" ] ;
+       fhir:description [ fhir:v "One Care Prescription" ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/example01-care02-colon-cleansing> ;
+         fhir:reference [ fhir:v "ServiceRequest/example01-care02-colon-cleansing" ]
+       ] ;
+       fhir:name [ fhir:v "Example 1b: Colon Cleansing" ] ;
+       fhir:description [ fhir:v "One Care Referral Prescription" ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/example24-referralprescription-nursing-non-reimbursable> ;
+         fhir:reference [ fhir:v "ServiceRequest/example24-referralprescription-nursing-non-reimbursable" ]
+       ] ;
+       fhir:name [ fhir:v "Example 24: Non reimbursable prescription" ] ;
+       fhir:description [ fhir:v "One Care Referral Prescription" ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/example26-referralprescription-nursing-other> ;
+         fhir:reference [ fhir:v "ServiceRequest/example26-referralprescription-nursing-other" ]
+       ] ;
+       fhir:name [ fhir:v "Example 26: Generic prescription" ] ;
+       fhir:description [ fhir:v "One Care Referral Prescription" ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/example02-referralprescription-nursing-digestive-system-care> ;
+         fhir:reference [ fhir:v "ServiceRequest/example02-referralprescription-nursing-digestive-system-care" ]
+       ] ;
+       fhir:name [ fhir:v "Example 2: Digestive System Care" ] ;
+       fhir:description [ fhir:v "One Care Referral Prescription" ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/referralprescription-nursing-example2-digestive-system-care> ;
+         fhir:reference [ fhir:v "ServiceRequest/referralprescription-nursing-example2-digestive-system-care" ]
+       ] ;
+       fhir:name [ fhir:v "Example 2b: Digestive System Care" ] ;
+       fhir:description [ fhir:v "One Care Referral Prescription" ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/example32-referralprescription-nursing-chronical-psychiatric> ;
+         fhir:reference [ fhir:v "ServiceRequest/example32-referralprescription-nursing-chronical-psychiatric" ]
+       ] ;
+       fhir:name [ fhir:v "Example 32: Chronical Psychiatric" ] ;
+       fhir:description [ fhir:v "One Care Referral Prescription" ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/example03-referralprescription-nursing-compressiontherapy> ;
+         fhir:reference [ fhir:v "ServiceRequest/example03-referralprescription-nursing-compressiontherapy" ]
+       ] ;
+       fhir:name [ fhir:v "Example 3: Compression therapy" ] ;
+       fhir:description [ fhir:v "One Care Referral Prescription" ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/referralprescription-nursing-example3-compression-therapy> ;
+         fhir:reference [ fhir:v "ServiceRequest/referralprescription-nursing-example3-compression-therapy" ]
+       ] ;
+       fhir:name [ fhir:v "Example 3b: Compression therapy" ] ;
+       fhir:description [ fhir:v "One Care Referral Prescription" ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/example04-referralprescription-nursing-bladder-care> ;
+         fhir:reference [ fhir:v "ServiceRequest/example04-referralprescription-nursing-bladder-care" ]
+       ] ;
+       fhir:name [ fhir:v "Example 4: Bladder care" ] ;
+       fhir:description [ fhir:v "One Care Prescription" ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/example05-referralprescription-nursing-digestive-system-care> ;
+         fhir:reference [ fhir:v "ServiceRequest/example05-referralprescription-nursing-digestive-system-care" ]
+       ] ;
+       fhir:name [ fhir:v "Example 5: Digestive System care" ] ;
+       fhir:description [ fhir:v "One Care Prescription" ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/referralprescription-nursing-example5-digestive-system-care> ;
+         fhir:reference [ fhir:v "ServiceRequest/referralprescription-nursing-example5-digestive-system-care" ]
+       ] ;
+       fhir:name [ fhir:v "Example 5: Digestive System Care" ] ;
+       fhir:description [ fhir:v "One Care Referral Prescription" ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/example06-referralprescription-nursing-compression-therapy> ;
+         fhir:reference [ fhir:v "ServiceRequest/example06-referralprescription-nursing-compression-therapy" ]
+       ] ;
+       fhir:name [ fhir:v "Example 6: Compression therapy" ] ;
+       fhir:description [ fhir:v "One Care Prescription" ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/referralprescription-nursing-example6-compression-therapy> ;
+         fhir:reference [ fhir:v "ServiceRequest/referralprescription-nursing-example6-compression-therapy" ]
+       ] ;
+       fhir:name [ fhir:v "Example 6: Compression therapy" ] ;
+       fhir:description [ fhir:v "One Care Referral Prescription" ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/example09-referralprescription-nursing-woundcare> ;
+         fhir:reference [ fhir:v "ServiceRequest/example09-referralprescription-nursing-woundcare" ]
+       ] ;
+       fhir:name [ fhir:v "Example 9: Wound care" ] ;
+       fhir:description [ fhir:v "One Care Referral Prescription" ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Task" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Task/example01-care02-colon-cleansing-performer-task> ;
+         fhir:reference [ fhir:v "Task/example01-care02-colon-cleansing-performer-task" ]
+       ] ;
+       fhir:name [ fhir:v "example01-care02-colon-cleansing-performer-task" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Task" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Task/example01-care02-colon-cleansing-referral-task> ;
+         fhir:reference [ fhir:v "Task/example01-care02-colon-cleansing-referral-task" ]
+       ] ;
+       fhir:name [ fhir:v "example01-care02-colon-cleansing-referral-task" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Practitioner" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Practitioner/practitioner2> ;
+         fhir:reference [ fhir:v "Practitioner/practitioner2" ]
+       ] ;
+       fhir:name [ fhir:v "Nurse" ] ;
+       fhir:example [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/PractitionerRole/NURSE-45094508408> ;
+         fhir:reference [ fhir:v "PractitionerRole/NURSE-45094508408" ]
+       ] ;
+       fhir:name [ fhir:v "Nurse Requester" ] ;
+       fhir:description [ fhir:v "Nurse acting as a Requester" ] ;
+       fhir:example [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Task" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Task/performer-task-1-uc5a-1> ;
+         fhir:reference [ fhir:v "Task/performer-task-1-uc5a-1" ]
+       ] ;
+       fhir:name [ fhir:v "performer-task-1-uc5a-1" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Practitioner" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Practitioner/Requester1> ;
+         fhir:reference [ fhir:v "Practitioner/Requester1" ]
+       ] ;
+       fhir:name [ fhir:v "Physician" ] ;
+       fhir:example [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "PractitionerRole" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/PractitionerRole/DOCTOR-10829059004> ;
+         fhir:reference [ fhir:v "PractitionerRole/DOCTOR-10829059004" ]
+       ] ;
+       fhir:name [ fhir:v "Physician Requester" ] ;
+       fhir:description [ fhir:v "Physician acting as a Requester" ] ;
+       fhir:example [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Task" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Task/referral-task> ;
+         fhir:reference [ fhir:v "Task/referral-task" ]
+       ] ;
+       fhir:name [ fhir:v "referral-task" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Task" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Task/referral-task-uc5a-1> ;
+         fhir:reference [ fhir:v "Task/referral-task-uc5a-1" ]
+       ] ;
+       fhir:name [ fhir:v "referral-task-uc5a-1" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Parameters" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Parameters/terminology-expansion> ;
+         fhir:reference [ fhir:v "Parameters/terminology-expansion" ]
+       ] ;
+       fhir:name [ fhir:v "terminology-expansion" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Task" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Task/ucgh222p12-1-2> ;
+         fhir:reference [ fhir:v "Task/ucgh222p12-1-2" ]
+       ] ;
+       fhir:name [ fhir:v "ucgh222p12-1-2" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Task" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Task/ucgh222p12-1-2-1> ;
+         fhir:reference [ fhir:v "Task/ucgh222p12-1-2-1" ]
+       ] ;
+       fhir:name [ fhir:v "ucgh222p12-1-2-1" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Task" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Task/ucgh222p12-2-2> ;
+         fhir:reference [ fhir:v "Task/ucgh222p12-2-2" ]
+       ] ;
+       fhir:name [ fhir:v "ucgh222p12-2-2" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Task" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Task/ucgh222p12-2-2-1> ;
+         fhir:reference [ fhir:v "Task/ucgh222p12-2-2-1" ]
+       ] ;
+       fhir:name [ fhir:v "ucgh222p12-2-2-1" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Task" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/Task/ucgh222p12-2-2-2> ;
+         fhir:reference [ fhir:v "Task/ucgh222p12-2-2-2" ]
+       ] ;
+       fhir:name [ fhir:v "ucgh222p12-2-2-2" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/ucgh241p110-1> ;
+         fhir:reference [ fhir:v "ServiceRequest/ucgh241p110-1" ]
+       ] ;
+       fhir:name [ fhir:v "Use Case 1.10: see GitHub issue 241" ] ;
+       fhir:description [ fhir:v "On 03/10/2022, the patient who suffers from Parkingson’s disease goes to the doctor (prescriber) who detects that his patient needs assistance with his personal hygiene. The patient is disoriented in time and space and also has nocturnal urinary incontinence and occasional urinary incontinence.\nThe prescriber completes the digital prescription “Assisting with personal hygiene” via the digital prescription. The prescriber makes one attest for disorientation in time and space and another one for nocturnal urinary incontinence and occasional urinary incontinence. The prescriber gives both attests to the patient. The digital prescription cannot be completed without the signature of the prescriber. As all “required signatures conditions” are fulfilled, the PrescriptionStatus is automatically set from Draft to Pending/Active. (In our Case “Active”).\nThe patient assigns his nurse to this prescription via the digital application.\nThe nurse consults the digital prescription he/she is assigned to.\nOn 06/10/2022, the nurse goes to the patient’s home. The patient gives her his two attests. The nurse starts the care following the instructions on the digital prescription. She determines the patient score on a Katz scale (or index) and sends this to the consulting physician for refund determination." ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/ucgh241p111-1> ;
+         fhir:reference [ fhir:v "ServiceRequest/ucgh241p111-1" ]
+       ] ;
+       fhir:name [ fhir:v "Use Case 1.11: see GitHub issue 241" ] ;
+       fhir:description [ fhir:v "On 03/10/2022, a patient goes to the doctor (prescriber) who diagnoses kidney failure and a loss of blood pressure. The patient is treated for his disease in a convention center.\nIn order to prevent the loss of residual renal functions, the prescriber (working in the convention center) completes a digital prescription for “chronic peritoneal dialysis” via the digital application. The digital prescription cannot be completed without the signature of the prescriber. As all “required signatures conditions” are fulfilled, the PrescriptionStatus is automatically set from Draft to Pending/Active. (In our Case “Active”).\nThe patient assigns his nurse to this prescription via the digital application. This nurse has made an agreement with the convention center about remuneration and receives orders by the prescriber of the convention center.\nThe nurse consults the digital prescription he/she is assigned to.\nOn 06/10/2022, the patient meets the nurse which follows instructions on prescription and starts the care." ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/ucgh222p12-1> ;
+         fhir:reference [ fhir:v "ServiceRequest/ucgh222p12-1" ]
+       ] ;
+       fhir:name [ fhir:v "Use Case 1.2: see GitHub issue 222" ] ;
+       fhir:description [ fhir:v "On 03/10/2022, Patient who has recently had chemotherapy via \n“implantable venous access port catheter” goes to doctor who prescribes \na catheter dressing change and rinse of his/her “implantable venous access \nport catheter” (via CareSet ServiceRequest- group- and Device) with NaCl \n0.9% given by a nurse. Furthermore, the needle needs to be changed by a Huber \nneedle 20G x 25mm." ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/ucgh222p12-2> ;
+         fhir:reference [ fhir:v "ServiceRequest/ucgh222p12-2" ]
+       ] ;
+       fhir:name [ fhir:v "Use Case 1.2: see GitHub issue 222" ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/ucgh222p12-3> ;
+         fhir:reference [ fhir:v "ServiceRequest/ucgh222p12-3" ]
+       ] ;
+       fhir:name [ fhir:v "Use Case 1.2: see GitHub issue 222" ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/ucgh241p15-1> ;
+         fhir:reference [ fhir:v "ServiceRequest/ucgh241p15-1" ]
+       ] ;
+       fhir:name [ fhir:v "Use Case 1.5: see GitHub issue 241" ] ;
+       fhir:description [ fhir:v "On 03/10/2022, the patient consults his doctor (prescriber) and admits he has difficulty following his medication-treatment.\nThe prescriber detects no valid reason (“medical reason” via CareSet ProbCode) for refundable medication preparation (appendix 81) so he tells his patient that the asked help for his medication preparation will not be refundable. The patient still wants help even if it is not refundable. The prescriber completes the digital prescription for “medication prefill preparation – not refundable”. The digital prescription cannot be completed without the signature of the prescriber. As all “required signatures conditions” are fulfilled, the PrescriptionStatus is automatically set from Draft to Pending/Active. (In our Case “Active”).\nThe prescriber also prepares the medication scheme so the nurse that will be assigned to this prescription has all the necessary information to prepare the medication and fill the pillbox of the patient. He gives the medication scheme to the patient so that he can give it to his nurse.\nThe patient assigns a nurse to his prescription via the digital application. The assigned nurse consults the digital prescription via the digital application.\nOn 06/10/2022, the nurse goes to the patient who gives her his medication scheme. On a weekly basis, the nurse goes to the patient to prepare his medication and fill his pillbox according to the medication scheme received. This service is not refundable, and the nurse charges the patient himself." ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/ucgh241p16-1> ;
+         fhir:reference [ fhir:v "ServiceRequest/ucgh241p16-1" ]
+       ] ;
+       fhir:name [ fhir:v "Use Case 1.6: see GitHub issue 241" ] ;
+       fhir:description [ fhir:v "On 03/10/2022, a patient goes to a doctor (prescriber) and is diagnosed as a diabetic type 1.\nThe patient is treated for his diabetes type 1 in a specialised convention center. This center has a convention about reimbursement with NIHDI. The patient needs some support at home and the convention center delegates care to a home nurse. The convention center has an agreement with this home nurse about remuneration.\nThe convention center physician (prescriber) makes a digital prescription “Diabetes education via convention center” via the digital application and specifies the type of education needed by the patient: “diabetic self-management”. The digital prescription cannot be completed without the signature of the prescriber. As all “required signatures conditions” are fulfilled, the PrescriptionStatus is automatically set from Draft to Pending/Active. (In our Case “Active”).\nThe convention centre enters the prescription ID in the digital application and, with consent of the patient, assigns their diabetes educator as caregiver of the prescription.\nOn 06/10/2022, the patient goes to the convention centre and follows his class on “diabetic self-management”." ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/ucgh241p17-1> ;
+         fhir:reference [ fhir:v "ServiceRequest/ucgh241p17-1" ]
+       ] ;
+       fhir:name [ fhir:v "Use Case 1.7: see GitHub issue 241" ] ;
+       fhir:description [ fhir:v "On 03/10/2022, a 55-year-old patient who has diabetes type 2, a BMI < 30, arterial hypertension and a care model (zorgmodel) goes to a doctor (prescriber) who detects the need for diabetes education for the patient.\nThe prescriber prescribes 4 individual education sessions given by a nurse or a diabetes educator. The prescriber completes the digital prescription “Diabetes education with care model (preliminary path) – follow up of patients with diabetes type 2”. The digital prescription cannot be completed without the signature of the prescriber. As all “required signatures conditions” are fulfilled, the PrescriptionStatus is automatically set from Draft to Pending/Active. (In our Case “Active”).\nThe patient assigns his nurse to this prescription via the digital application.\nThe nurse consults the digital prescription he/she has been assigned to.\nOn 06/10/2022, the nurse meets the patient for a first diabetes education individual session. The three other individual sessions are planned (within the current year)." ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/ucgh241p18-1> ;
+         fhir:reference [ fhir:v "ServiceRequest/ucgh241p18-1" ]
+       ] ;
+       fhir:name [ fhir:v "Use Case 1.8: see GitHub issue 241" ] ;
+       fhir:description [ fhir:v "On 03/10/2022, a type 2 diabetic patient who has insulin treatment, a care path contract, and a complete global medical file (GMF) goes to a doctor (prescriber) who recommends to his patient 5 individual ½ hour education sessions about the “use of a blood glucose meter”. This session needs to be given by a diabetes educator (with recognition by NIHDI) at the residence of the patient to be refundable.\nThe prescriber completes the digital prescription “Diabetes education with care path” via the digital application. The digital prescription cannot be completed without the signature of the prescriber. As all “required signatures conditions” are fulfilled, the PrescriptionStatus is automatically set from Draft to Pending/Active. (In our Case “Active”).\nThe patient assigns his nurse (who is a certified diabetes educator) to this prescription via the digital application.\nThe diabetes educator consults the digital prescription he/she is assigned to.\nOn 06/10/2022, the diabetes educator goes to the patient’s home (with the blood glucose meter) for a first ½ hour individual diabetes education session about “use of a blood glucose meter”. The four other individual sessions are planned (within the current year)." ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/ucgh241p19-1> ;
+         fhir:reference [ fhir:v "ServiceRequest/ucgh241p19-1" ]
+       ] ;
+       fhir:name [ fhir:v "Use Case 1.9: see GitHub issue 241" ] ;
+       fhir:description [ fhir:v "On 03/10/2022, a diabetic patient goes to his doctor (prescriber) because he has some troubles about the self-management of his treatment.\nThe prescriber prescribes to his patient 10 sessions of ½ hour each of “education for self-care”. The prescriber fills in the digital prescription “Education and self-care for diabetes patients without a care path” via the digital application. The digital prescription cannot be completed without the signature of the prescriber. As all “required signatures conditions” are fulfilled, the PrescriptionStatus is automatically set from Draft to Pending/Active. (In our Case “Active”).\nThe patient assigns his nurse to this prescription via the digital application.\nThe nurse consults the digital prescription he/she is assigned to.\nOn 06/10/2022, the nurse meets the patient for a first diabetes education session. The nine other sessions are planned (within the current year)." ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ServiceRequest" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/ServiceRequest/uc5a-1> ;
+         fhir:reference [ fhir:v "ServiceRequest/uc5a-1" ]
+       ] ;
+       fhir:name [ fhir:v "Use Case 5a" ] ;
+       fhir:description [ fhir:v "On 02/07/2023, Dr. Hendrickx wants the nurse to take a blood test from Mrs. Dupont in order to analyze her glucose and cholesterol following general fatigue.\nHe writes a prescription for the nurse with the blood test to be done on Mrs. Dupont.\nThe nurse takes Mrs. Dupont's blood test the next day.\nImportant note: The part specifying that the analysis request concerns Mrs. Dupont's glucose and cholesterol should not be on this prescription. This is linked to the prescription for the Lab." ] ;
+       fhir:example [
+         fhir:v "https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing"^^xsd:anyURI ;
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/be-referral-servicerequest-nursing>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://www.ehealth.fgov.be/standards/fhir/referral/StructureMap/be-map-model-referral-prescription> ;
+         fhir:reference [ fhir:v "StructureMap/be-map-model-referral-prescription" ]
+       ]
+     ] ) ;
+     fhir:page [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "toc.html"^^xsd:anyURI ]
+       ] ) ;
+       fhir:name [ fhir:v "toc.html"^^xsd:anyURI ] ;
+       fhir:title [ fhir:v "Table of Contents" ] ;
+       fhir:generation [ fhir:v "html" ] ;
+       fhir:page ( [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "index.html"^^xsd:anyURI ]
+         ] ) ;
+         fhir:name [ fhir:v "index.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Home" ] ;
+         fhir:generation [ fhir:v "html" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "guidance.html"^^xsd:anyURI ]
+         ] ) ;
+         fhir:name [ fhir:v "guidance.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Guidance" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "changes.html"^^xsd:anyURI ]
+         ] ) ;
+         fhir:name [ fhir:v "changes.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Changes" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "downloads.html"^^xsd:anyURI ]
+         ] ) ;
+         fhir:name [ fhir:v "downloads.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Downloads" ] ;
+         fhir:generation [ fhir:v "html" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "mapping.html"^^xsd:anyURI ]
+         ] ) ;
+         fhir:name [ fhir:v "mapping.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Mapping" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] )
+     ] ;
+     fhir:parameter ( [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/capabilities" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/examples" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/extensions" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/models" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/operations" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/profiles" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/resources" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/vocabulary" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/maps" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/testing" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/history" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "fsh-generated/resources" ]
+     ] [
+       fhir:code [ fhir:v "path-pages" ] ;
+       fhir:value [ fhir:v "template/config" ]
+     ] [
+       fhir:code [ fhir:v "path-pages" ] ;
+       fhir:value [ fhir:v "input/images" ]
+     ] [
+       fhir:code [ fhir:v "path-tx-cache" ] ;
+       fhir:value [ fhir:v "input-cache/txcache" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

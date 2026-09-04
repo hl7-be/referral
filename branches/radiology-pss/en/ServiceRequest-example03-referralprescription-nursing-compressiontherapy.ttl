@@ -1,0 +1,121 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/ServiceRequest/example03-referralprescription-nursing-compressiontherapy> a fhir:ServiceRequest ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "example03-referralprescription-nursing-compressiontherapy"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing" ;
+       fhir:index -1 ;
+       fhir:link <https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest-nursing>
+     ]
+  ] ;
+  fhir:Resource.language [ fhir:value "en"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest example03-referralprescription-nursing-compressiontherapy</b></p><a name=\"example03-referralprescription-nursing-compressiontherapy\"> </a><a name=\"hcexample03-referralprescription-nursing-compressiontherapy\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referral-servicerequest-nursing.html\">BeReferralServiceRequestNursing</a></p></div><p><b>BeValidityPeriod</b>: 2022-04-19 --&gt; 2023-04-19</p><p><b>BeFeedbackToPrescriber</b>: true</p><p><b>BePerformerType</b>: <span title=\"Codes:{https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty persnurse}\">nurse</span></p><p><b>identifier</b>: <a href=\"NamingSystem-be-ns-uhmep.html\" title=\"UHMEP naming system\">BeUnadressedHealthMessageExchangePlatform</a>/UHMEPVALUE, <a href=\"NamingSystem-be-ns-uhmep-short.html\" title=\"Naming system identifier for the UHMEP user friendly short code\">BeNsUhmepShort</a>/AB12EF</p><p><b>status</b>: Active</p><p><b>intent</b>: Order</p><p><b>category</b>: <span title=\"Codes:{http://snomed.info/sct 9632001}\">Nursing procedure</span></p><p><b>priority</b>: Routine</p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 413899004}\">Compression bandaging</span></p><p><b>subject</b>: Identifier: BeSSINNamingSystem/99999999999</p><p><b>occurrence</b>: 2 per 1 day</p><p><b>authoredOn</b>: 2022-10-31 00:00:00+0100</p><p><b>requester</b>: <a href=\"PractitionerRole-DOCTOR-10829059004.html\">PractitionerRole physician</a></p><p><b>reasonCode</b>: <span title=\"Codes:{http://snomed.info/sct 309256001}\">Cold foot</span></p><p><b>note</b>: </p><blockquote><div><p>Rosidal zwachtels -&gt;  aan- en uitdoen / both underlegs</p>\n</div></blockquote></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index -1 ;
+     fhir:Extension.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-validity-period" ] ;
+     fhir:Extension.valuePeriod [
+       fhir:Period.start [ fhir:value "2022-04-19"^^xsd:date ] ;
+       fhir:Period.end [ fhir:value "2023-04-19"^^xsd:date ]
+     ]
+  ], [
+     fhir:index -1 ;
+     fhir:Extension.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-feedback-to-prescriber" ] ;
+     fhir:Extension.valueBoolean [ fhir:value "true"^^xsd:boolean ]
+  ], [
+     fhir:index -1 ;
+     fhir:Extension.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-ext-performer-type" ] ;
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index -1 ;
+         fhir:Coding.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/core/CodeSystem/cd-hcparty" ] ;
+         fhir:Coding.code [ fhir:value "persnurse" ]
+       ]
+     ]
+  ] ;
+  fhir:ServiceRequest.identifier [
+     fhir:index -1 ;
+     fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep" ] ;
+     fhir:Identifier.value [ fhir:value "UHMEPVALUE" ]
+  ], [
+     fhir:index -1 ;
+     fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep-short" ] ;
+     fhir:Identifier.value [ fhir:value "AB12EF" ]
+  ] ;
+  fhir:ServiceRequest.status [ fhir:value "active"] ;
+  fhir:ServiceRequest.intent [ fhir:value "order"] ;
+  fhir:ServiceRequest.category [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       a sct:9632001 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+       fhir:Coding.code [ fhir:value "9632001" ]
+     ] ;
+     fhir:CodeableConcept.text [ fhir:value "Nursing procedure" ]
+  ] ;
+  fhir:ServiceRequest.priority [ fhir:value "routine"] ;
+  fhir:ServiceRequest.code [
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       a sct:413899004 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+       fhir:Coding.code [ fhir:value "413899004" ]
+     ]
+  ] ;
+  fhir:ServiceRequest.subject [
+     fhir:Reference.identifier [
+       fhir:Identifier.system [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/core/NamingSystem/ssin" ] ;
+       fhir:Identifier.value [ fhir:value "99999999999" ]
+     ]
+  ] ;
+  fhir:ServiceRequest.occurrenceTiming [
+     fhir:Timing.repeat [
+       fhir:Timing.repeat.boundsPeriod [
+         fhir:Period.start [ fhir:value "2022-04-19"^^xsd:date ] ;
+         fhir:Period.end [ fhir:value "2023-04-19"^^xsd:date ]
+       ] ;
+       fhir:Timing.repeat.frequency [ fhir:value "2"^^xsd:positiveInteger ] ;
+       fhir:Timing.repeat.period [ fhir:value "1"^^xsd:decimal ] ;
+       fhir:Timing.repeat.periodUnit [ fhir:value "d" ]
+     ]
+  ] ;
+  fhir:ServiceRequest.authoredOn [ fhir:value "2022-10-31T00:00:00+01:00"^^xsd:dateTime] ;
+  fhir:ServiceRequest.requester [
+     fhir:link <https://www.ehealth.fgov.be/standards/fhir/drp/PractitionerRole/DOCTOR-10829059004> ;
+     fhir:Reference.reference [ fhir:value "PractitionerRole/DOCTOR-10829059004" ]
+  ] ;
+  fhir:ServiceRequest.reasonCode [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       a sct:309256001 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+       fhir:Coding.code [ fhir:value "309256001" ]
+     ]
+  ] ;
+  fhir:ServiceRequest.note [
+     fhir:index -1 ;
+     fhir:Annotation.text [ fhir:value "Rosidal zwachtels ->  aan- en uitdoen / both underlegs" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/ServiceRequest/example03-referralprescription-nursing-compressiontherapy.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
