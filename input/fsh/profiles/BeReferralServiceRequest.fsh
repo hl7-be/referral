@@ -17,8 +17,9 @@ Description: "The common structure for referral prescription."
 // * ^jurisdiction = $jurisdiction#BE "Belgium"
 
 * basedOn MS
-//* requisition MS
-//* requisition ^short = "If needed to have a common identifier among different prescriptions."
+* requisition MS
+* requisition ^short = "Identifier shared by the prescriptions created together"
+* requisition ^comment = "The prescriptions created together in one session (e.g. placement, monitoring, replacement and removal of a bladder catheter) are separate requests that share this identifier. Each one keeps its own identifier and status. See the Clinical Order Workflows guidance on grouped, independent requests."
 * status MS
 * intent MS
 * category 1..1 MS

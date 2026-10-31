@@ -4,6 +4,7 @@ Description: "Data model for the prescription referral."
 Characteristics: #can-be-target
 
 * identifier 1..1 Identifier "Business identifier of the request"
+* groupIdentifier 0..1 Identifier "Identifier shared by the prescriptions created together" "Common identifier of the referral prescriptions that the prescriber created together in one session, for the same patient (e.g. placement, monitoring, replacement and removal of a bladder catheter). Each prescription stays a separate prescription, with its own identifier, shortCode and status. *TODO* Not in the element table of the business document (FR v2.18); derived from the mock-ups (\"fait partie d'un ensemble de N prescriptions\") and section 3.1.3 Regroupement."
 * shortCode 1..1 CodeableConcept "Business code allowing the healthcare professional to find a prescription associated with a patient"
 * recordedDate 1..1 dateTime "Date of recording of the information by the Recorder."
 * creationDate 1..1 dateTime "Date of creation of the referral prescription" "Date of creation of the referral prescription. This date will not change throughout the process. This date corresponds to the first recordedDate recorded for this referral prescription." 
