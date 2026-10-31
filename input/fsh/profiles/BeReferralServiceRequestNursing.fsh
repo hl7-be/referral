@@ -41,6 +41,8 @@ Description: "The nursing profile, generic version. Please note the nursing refe
 * extension[latest] MS
 * extension[performerType] MS
 * extension[device] MS
+* extension[device] ^short = "Device used for the care (e.g. catheter type)"
+* extension[device] ^comment = "The device type goes in the concept part. When a size is given (e.g. catheter calibre CH 14), the reference part points to a contained DeviceDefinition with that type and a property carrying the size (UCUM [Ch])."
 * reasonCode 0..1 MS
 * basedOn MS
 * basedOn only Reference(ServiceRequest or MedicationRequest)

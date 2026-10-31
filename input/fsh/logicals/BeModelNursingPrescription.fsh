@@ -8,6 +8,9 @@ Characteristics: #can-be-target
 //* BodyLocation 0..* CodeableConcept "Anatomical location where the treatment should be applied (for example: \"Left arm\")." "Anatomical location where the treatment should be applied (for example: \"Left arm\")."
 * generalRemarks 0..* Annotation "General remarks concerning the treatment or request." "General remarks concerning the treatment or request."
 * contraIndications 0..1 Annotation "Medical contraindications (e.g. 'Latex allergy'). 103306004 : 'Contraindication to (x)\"" "Medical contraindications (e.g. 'Latex allergy'). 103306004 : 'Contraindication to (x)'"
+* device 0..* BackboneElement "Device used for the requested care (e.g. catheter, oxygen nasal cannula)." "Device used for the requested care (e.g. \"Cathéter à demeure\", \"Cathéter central de type PICC\", \"Lunettes à oxygène\"). Fields marked \"CareSet Device\" in the business document."
+* device.type 1..1 CodeableConcept "Type of device (e.g. \"Indwelling urinary catheter\")." "Type of device (e.g. \"Indwelling urinary catheter\")."
+* device.size 0..1 Quantity "Size of the device (e.g. catheter calibre in Charrière, CH 14)." "Size of the device (e.g. catheter calibre in Charrière, CH 14). The business document gives an integer (\"Calibre du cathéter (Charrière-CH)\")."
 * medicalReason 0..1 Annotation "Medical reasons for the prescription (e.g. 'Infected wound requiring follow-up'). 410666004 : \"Reason For (x)\"" "Medical reasons for the prescription (e.g. 'Infected wound requiring follow-up'). 410666004 : 'Reason For (x)'"
 
 // * careRequested from BeVSCareRequestedNursing
