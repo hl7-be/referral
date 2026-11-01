@@ -61,12 +61,13 @@ Description: "Referral prescription for remote monitoring of vital parameters (i
 
 Extension: BeTelemonitoringPlan
 Id: be-ext-telemonitoring-plan
-Description: "Per-parameter telemonitoring rule: parameter, thresholds, target range, change limits."
+Description: "Per-parameter telemonitoring rule: parameter, baseline measurement, thresholds, change limits."
 * ^context.type = #element
 * ^context.expression = "ServiceRequest"
 
 * extension contains
     parameter 1..1 MS and
+    baseline 0..1 MS and
     threshold 0..* MS and
 //    targetRange 0..1 MS and
     change 0..* MS
@@ -76,6 +77,13 @@ Description: "Per-parameter telemonitoring rule: parameter, thresholds, target r
 * extension[parameter].value[x] only CodeableConcept
 * extension[parameter].valueCodeableConcept MS
 * extension[parameter] ^short = "Parameter being measured (LOINC)"
+
+// LM: monitoringPlan.baseline — reference measurement the rules are evaluated against
+// (e.g. reference weight 80 kg). Should reference a standalone Observation, not a contained one.
+* extension[baseline].value[x] only Reference(Observation)
+* extension[baseline].valueReference MS
+* extension[baseline] ^short = "Baseline/reference measurement (e.g. reference weight)"
+* extension[baseline] ^comment = "The referenced Observation should not be a contained resource."
 
 // LM: monitoringPlan.threshold (range + sustainedFor)
 * extension[threshold].extension contains

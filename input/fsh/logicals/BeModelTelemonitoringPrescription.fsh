@@ -9,6 +9,7 @@ Characteristics: #can-be-target
 * monitoringPlan 1..* Base "Parameter to monitor"
   * parameter 1..1 CodeableConcept "What is measured (LOINC)"
     // 29463-7 Body weight, 8480-6 Systolic BP, 8462-4 Diastolic BP, 8867-4 Heart rate
+  * baseline 0..1 Reference(Observation) "Baseline/reference measurement the rules are evaluated against (e.g. reference weight 80 kg)"
   * threshold 0..* Base "Absolute threshold rule (BP, HR)"
     * range 1..1 Range "Numeric threshold (max and/or min values) with unit"
     * sustainedFor 0..1 Duration "Trigger only if breached for this long (e.g. 3 days)"

@@ -27,10 +27,11 @@ class RemoteMonitoringPrescription{
   |_ measurementSchedule 0..1 Timing "Monitoring duration and measurement frequency  "
   |_ monitoringPlan 1..* "Parameter to monitor"
     |_ parameter 1..1 CodeableConcept "What is measured (LOINC/SNOMED)"
+    |_ baseline 0..1 Reference(Observation) "Baseline/reference measurement (e.g. reference weight)"
     |_ threshold 0..* "Absolute threshold rule"
       |_ range 1..1 Range "Numeric threshold (max and/or min) with unit"
       |_ sustainedFor 0..1 Duration "Trigger only if breached for this long"
-    |_ targetRange 0..1 Range "Clinically desired range (TBD — goal tracking / display) "
+'    |_ targetRange 0..1 Range "Clinically desired range (TBD — goal tracking / display) "
     |_ maxIncrease 0..* Ratio "Max allowed increase per time window (e.g. 2 kg / 7 d)"
     |_ maxDecrease 0..* Ratio "Max allowed decrease per time window (e.g. 3 kg / 14 d)  "
 }
