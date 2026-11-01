@@ -1,0 +1,15 @@
+"Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)"
+"BeModelOrganisationClaim","BeModelOrganisationClaim","","","",0,*,"","","","null {[]} {[]}
+","BeModelOrganisationClaim","Information of a claim of an organisation to have the prescription fulfilled.","","","","","","","","","",,,,,"",,,,"Base",0,*,"",""
+"BeModelOrganisationClaim.identifier","BeModelOrganisationClaim.identifier","","","",1,1,"","","","Identifier {[]} {[]}
+","Business identifier","Business Identifier. Absent during creation by client software, otherwise always present.","","","","","","","","","",,,,,"",,,,"BeModelOrganisationClaim.identifier",1,1,"",""
+"BeModelOrganisationClaim.intent","BeModelOrganisationClaim.intent","","","",1,1,"","","","CodeableConcept {[]} {[]}
+","Defaults to 'Order'","Defaults to 'Order'","","","","","","","","","",,,,,"",,,,"BeModelOrganisationClaim.intent",1,1,"",""
+"BeModelOrganisationClaim.status","BeModelOrganisationClaim.status","","","",1,1,"","","","CodeableConcept {[]} {[]}
+","Status of the task","Status of the task","","","","","","","","","",,,,,"",,,,"BeModelOrganisationClaim.status",1,1,"",""
+"BeModelOrganisationClaim.treatmentStatusId","BeModelOrganisationClaim.treatmentStatusId","","","",1,1,"","","","Reference {[]} {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/BeModelTreatmentStatus]]}
+","Reference to the TreatmentStatus related to the prescription","Reference to the TreatmentStatus related to the prescription","","","","","","","","","",,,,,"",,,,"BeModelOrganisationClaim.treatmentStatusId",1,1,"",""
+"BeModelOrganisationClaim.focus","BeModelOrganisationClaim.focus","","","",1,1,"","","","Reference {[]} {[CanonicalType[https://www.ehealth.fgov.be/standards/fhir/referral/StructureDefinition/BeModelReferralPrescription]]}
+","Reference to what the task acts on","Reference to what the task acts on","","","","","","","","","",,,,,"",,,,"BeModelOrganisationClaim.focus",1,1,"",""
+"BeModelOrganisationClaim.organization","BeModelOrganisationClaim.organization","","","",1,1,"","","","Identifier {[]} {[]}
+","Reference to the organization that will assign the providers to the prescription.","Reference to the organization that will assign the providers to the prescription.","","","","","","","","","",,,,,"",,,,"BeModelOrganisationClaim.organization",1,1,"",""

@@ -1,0 +1,370 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/precoordinated-radiology> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "precoordinated-radiology"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem precoordinated-radiology</b></p><a name=\"precoordinated-radiology\"> </a><a name=\"hcprecoordinated-radiology\"> </a><p><b>Properties</b></p><p><b>This code system defines the following properties for its concepts</b></p><table class=\"grid\"><tr><td><b>Name</b></td><td><b>Code</b></td><td><b>URI</b></td><td><b>Type</b></td><td><b>Description</b></td></tr><tr><td>360037004</td><td>360037004</td><td>http://snomed.info/sct</td><td>Coding</td><td>SNOMED CT |Method (attribute)| — the imaging action (e.g. CT, angiography).</td></tr><tr><td>363704007</td><td>363704007</td><td>http://snomed.info/sct</td><td>Coding</td><td>SNOMED CT |Procedure site (attribute)| — body region imaged. Multi-valued when the exam covers several regions.</td></tr><tr><td>405813007</td><td>405813007</td><td>http://snomed.info/sct</td><td>Coding</td><td>SNOMED CT |Using substance (attribute)| — contrast agent used, when applicable.</td></tr><tr><td>21191007</td><td>21191007</td><td>http://snomed.info/sct</td><td>Coding</td><td>Imaging phase relative to contrast administration (pre-contrast, post-contrast). Multi-valued when both phases are acquired (e.g. 'wo/w iv contrast').</td></tr><tr><td>363703001</td><td>363703001</td><td>http://snomed.info/sct</td><td>Coding</td><td>SNOMED CT |Has intent (attribute)| — indication / reason for the exam (e.g. stone evaluation).</td></tr><tr><td>272394005</td><td>272394005</td><td>http://snomed.info/sct</td><td>Coding</td><td>Technique qualifier (e.g. low dose).</td></tr></table><p><b>Concepts</b></p><p>This code system supplement <code>https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/precoordinated-radiology</code> defines properties on the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>360037004</b></td><td><b>363704007</b></td><td><b>405813007</b></td><td><b>21191007</b></td><td><b>363703001</b></td><td><b>272394005</b></td></tr><tr><td style=\"white-space:nowrap\">CT-ABD-W<a name=\"precoordinated-radiology-CT-ABD-W\"> </a></td><td>CT, abdomen, w iv contrast</td><td><a href=\"http://snomed.info/sct/11000172109/id/77477000\" title=\"{http://snomed.info/sct 77477000}\">Computed tomography</a></td><td><a href=\"http://snomed.info/sct/11000172109/id/818983003\" title=\"{http://snomed.info/sct 818983003}\">Abdominal structure</a></td><td><a href=\"http://snomed.info/sct/11000172109/id/263543005\" title=\"{http://snomed.info/sct 263543005}\">Intravenous iodinated contrast</a></td><td><a href=\"http://snomed.info/sct/11000172109/id/SCT-PHASE-POST\" title=\"{http://snomed.info/sct SCT-PHASE-POST}\">Post-contrast phase</a></td><td/><td/></tr><tr><td style=\"white-space:nowrap\">CT-ABD-WO<a name=\"precoordinated-radiology-CT-ABD-WO\"> </a></td><td>CT, abdomen, wo iv contrast</td><td><a href=\"http://snomed.info/sct/11000172109/id/77477000\" title=\"{http://snomed.info/sct 77477000}\">Computed tomography</a></td><td><a href=\"http://snomed.info/sct/11000172109/id/818983003\" title=\"{http://snomed.info/sct 818983003}\">Abdominal structure</a></td><td/><td><a href=\"http://snomed.info/sct/11000172109/id/707761002\" title=\"{http://snomed.info/sct 707761002}\">Pre-contrast (native) phase</a></td><td/><td/></tr><tr><td style=\"white-space:nowrap\">CT-ABD-WOW<a name=\"precoordinated-radiology-CT-ABD-WOW\"> </a></td><td>CT, abdomen, wo/w iv contrast</td><td><a href=\"http://snomed.info/sct/11000172109/id/77477000\" title=\"{http://snomed.info/sct 77477000}\">Computed tomography</a></td><td><a href=\"http://snomed.info/sct/11000172109/id/818983003\" title=\"{http://snomed.info/sct 818983003}\">Abdominal structure</a></td><td><a href=\"http://snomed.info/sct/11000172109/id/263543005\" title=\"{http://snomed.info/sct 263543005}\">Intravenous iodinated contrast</a></td><td><a href=\"http://snomed.info/sct/11000172109/id/707761002\" title=\"{http://snomed.info/sct 707761002}\">Pre-contrast (native) phase</a>, <a href=\"http://snomed.info/sct/11000172109/id/SCT-PHASE-POST\" title=\"{http://snomed.info/sct SCT-PHASE-POST}\">Post-contrast phase</a></td><td/><td/></tr><tr><td style=\"white-space:nowrap\">CT-ABDPEL-KUB<a name=\"precoordinated-radiology-CT-ABDPEL-KUB\"> </a></td><td>CT, abdomen-pelvis, KUB-stone eval, wo iv contrast</td><td><a href=\"http://snomed.info/sct/11000172109/id/77477000\" title=\"{http://snomed.info/sct 77477000}\">Computed tomography</a></td><td><a href=\"http://snomed.info/sct/11000172109/id/818983003\" title=\"{http://snomed.info/sct 818983003}\">Abdominal structure</a>, <a href=\"http://snomed.info/sct/11000172109/id/12921003\" title=\"{http://snomed.info/sct 12921003}\">Pelvic structure</a></td><td/><td/><td><a href=\"http://snomed.info/sct/11000172109/id/SCT-STONE-EVAL\" title=\"{http://snomed.info/sct SCT-STONE-EVAL}\">Urinary tract stone evaluation</a></td><td/></tr><tr><td style=\"white-space:nowrap\">CTA-ABDPELLE<a name=\"precoordinated-radiology-CTA-ABDPELLE\"> </a></td><td>CT, angiography, abdomen-pelvis-lower extremity, w iv contrast</td><td><a href=\"http://snomed.info/sct/11000172109/id/418272005\" title=\"{http://snomed.info/sct 418272005}\">CT angiography</a></td><td><a href=\"http://snomed.info/sct/11000172109/id/818983003\" title=\"{http://snomed.info/sct 818983003}\">Abdominal structure</a>, <a href=\"http://snomed.info/sct/11000172109/id/12921003\" title=\"{http://snomed.info/sct 12921003}\">Pelvic structure</a>, <a href=\"http://snomed.info/sct/11000172109/id/61685007\" title=\"{http://snomed.info/sct 61685007}\">Lower limb structure</a></td><td><a href=\"http://snomed.info/sct/11000172109/id/263543005\" title=\"{http://snomed.info/sct 263543005}\">Intravenous iodinated contrast</a></td><td/><td/><td/></tr><tr><td style=\"white-space:nowrap\">CTA-CORONARY-LD<a name=\"precoordinated-radiology-CTA-CORONARY-LD\"> </a></td><td>CT, angiography, heart, coronary arteries, w iv contrast, low dose</td><td><a href=\"http://snomed.info/sct/11000172109/id/418272005\" title=\"{http://snomed.info/sct 418272005}\">CT angiography</a></td><td><a href=\"http://snomed.info/sct/11000172109/id/SCT-HEART\" title=\"{http://snomed.info/sct SCT-HEART}\">Heart structure</a>, <a href=\"http://snomed.info/sct/11000172109/id/41801008\" title=\"{http://snomed.info/sct 41801008}\">Coronary artery structure</a></td><td><a href=\"http://snomed.info/sct/11000172109/id/263543005\" title=\"{http://snomed.info/sct 263543005}\">Intravenous iodinated contrast</a></td><td/><td/><td><a href=\"http://snomed.info/sct/11000172109/id/SCT-LOW-DOSE\" title=\"{http://snomed.info/sct SCT-LOW-DOSE}\">Low dose technique</a></td></tr></table></div>"
+  ] ;
+  fhir:CodeSystem.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/precoordinated-radiology"] ;
+  fhir:CodeSystem.version [ fhir:value "1.0.0"] ;
+  fhir:CodeSystem.name [ fhir:value "PrecoordinatedRadiologyCS"] ;
+  fhir:CodeSystem.title [ fhir:value "Precoordinated Radiology Exam Code System (Demo)"] ;
+  fhir:CodeSystem.status [ fhir:value "draft"] ;
+  fhir:CodeSystem.experimental [ fhir:value "true"^^xsd:boolean] ;
+  fhir:CodeSystem.date [ fhir:value "2026-09-04T09:25:18+00:00"^^xsd:dateTime] ;
+  fhir:CodeSystem.description [ fhir:value "Demonstration CodeSystem showing how precoordinated radiology exam concepts\ncan be decomposed into their SNOMED CT dimensional attributes — as if each\nconcept were analysed as a SNOMED CT postcoordinated expression flattened\ninto properties.\n\nDimensions modelled (property `code` = SNOMED CT attribute SCTID):\n  * Modality / imaging action  -> 360037004 |Method (attribute)|\n  * Body region (multi-valued) -> 363704007 |Procedure site (attribute)|\n  * Contrast agent             -> 405813007 |Using substance (attribute)|\n  * Imaging phase (multi-val.) -> qualifier for pre- / post-contrast (SCTID TBD)\n  * Indication / reason        -> 363703001 |Has intent (attribute)|\n  * Technique qualifier        -> 272394005 (e.g. low-dose CT)\n\nDesign notes:\n  * Each property's `code` is the SCTID of the SNOMED CT *attribute*\n    (metaconcept). The imaging-phase attribute SCTID is still a\n    placeholder (`SCT-ATTR-IMAGING-PHASE`) pending selection of the\n    appropriate SNOMED |Phase|-style attribute.\n  * Each property's `value` is a SNOMED CT Coding. Placeholders are\n    used for the concept SCTIDs (SCT-*) — replace these before publishing.\n  * A concept carries `Procedure site` multiple times when the exam\n    covers multiple body regions.\n  * Absence of `Using substance` models an exam without contrast.\n  * 'wo/w' exams carry `Using substance` once (contrast is used at\n    some point) plus two `Imaging phase` values — `pre-contrast` and\n    `post-contrast` — making both phases machine-readable."] ;
+  fhir:CodeSystem.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "BE" ] ;
+       fhir:Coding.display [ fhir:value "Belgium" ]
+     ]
+  ] ;
+  fhir:CodeSystem.caseSensitive [ fhir:value "true"^^xsd:boolean] ;
+  fhir:CodeSystem.content [ fhir:value "supplement"] ;
+  fhir:CodeSystem.property [
+     fhir:index 0 ;
+     fhir:CodeSystem.property.code [ fhir:value "360037004" ] ;
+     fhir:CodeSystem.property.uri [ fhir:value "http://snomed.info/sct" ] ;
+     fhir:CodeSystem.property.description [ fhir:value "SNOMED CT |Method (attribute)| — the imaging action (e.g. CT, angiography)." ] ;
+     fhir:CodeSystem.property.type [ fhir:value "Coding" ]
+  ], [
+     fhir:index 1 ;
+     fhir:CodeSystem.property.code [ fhir:value "363704007" ] ;
+     fhir:CodeSystem.property.uri [ fhir:value "http://snomed.info/sct" ] ;
+     fhir:CodeSystem.property.description [ fhir:value "SNOMED CT |Procedure site (attribute)| — body region imaged. Multi-valued when the exam covers several regions." ] ;
+     fhir:CodeSystem.property.type [ fhir:value "Coding" ]
+  ], [
+     fhir:index 2 ;
+     fhir:CodeSystem.property.code [ fhir:value "405813007" ] ;
+     fhir:CodeSystem.property.uri [ fhir:value "http://snomed.info/sct" ] ;
+     fhir:CodeSystem.property.description [ fhir:value "SNOMED CT |Using substance (attribute)| — contrast agent used, when applicable." ] ;
+     fhir:CodeSystem.property.type [ fhir:value "Coding" ]
+  ], [
+     fhir:index 3 ;
+     fhir:CodeSystem.property.code [ fhir:value "21191007" ] ;
+     fhir:CodeSystem.property.uri [ fhir:value "http://snomed.info/sct" ] ;
+     fhir:CodeSystem.property.description [ fhir:value "Imaging phase relative to contrast administration (pre-contrast, post-contrast). Multi-valued when both phases are acquired (e.g. 'wo/w iv contrast')." ] ;
+     fhir:CodeSystem.property.type [ fhir:value "Coding" ]
+  ], [
+     fhir:index 4 ;
+     fhir:CodeSystem.property.code [ fhir:value "363703001" ] ;
+     fhir:CodeSystem.property.uri [ fhir:value "http://snomed.info/sct" ] ;
+     fhir:CodeSystem.property.description [ fhir:value "SNOMED CT |Has intent (attribute)| — indication / reason for the exam (e.g. stone evaluation)." ] ;
+     fhir:CodeSystem.property.type [ fhir:value "Coding" ]
+  ], [
+     fhir:index 5 ;
+     fhir:CodeSystem.property.code [ fhir:value "272394005" ] ;
+     fhir:CodeSystem.property.uri [ fhir:value "http://snomed.info/sct" ] ;
+     fhir:CodeSystem.property.description [ fhir:value "Technique qualifier (e.g. low dose)." ] ;
+     fhir:CodeSystem.property.type [ fhir:value "Coding" ]
+  ] ;
+  fhir:CodeSystem.concept [
+     fhir:index 0 ;
+     fhir:CodeSystem.concept.code [ fhir:value "CT-ABD-W" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "CT, abdomen, w iv contrast" ] ;
+     fhir:CodeSystem.concept.property [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "360037004" ] ;
+       fhir:CodeSystem.concept.property.valueCoding [
+         a sct:77477000 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+         fhir:Coding.code [ fhir:value "77477000" ] ;
+         fhir:Coding.display [ fhir:value "Computed tomography" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "363704007" ] ;
+       fhir:CodeSystem.concept.property.valueCoding [
+         a sct:818983003 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+         fhir:Coding.code [ fhir:value "818983003" ] ;
+         fhir:Coding.display [ fhir:value "Abdominal structure" ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "405813007" ] ;
+       fhir:CodeSystem.concept.property.valueCoding [
+         a sct:263543005 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+         fhir:Coding.code [ fhir:value "263543005" ] ;
+         fhir:Coding.display [ fhir:value "Intravenous iodinated contrast" ]
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "21191007" ] ;
+       fhir:CodeSystem.concept.property.valueCoding [
+         a sct:SCT-PHASE-POST ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+         fhir:Coding.code [ fhir:value "SCT-PHASE-POST" ] ;
+         fhir:Coding.display [ fhir:value "Post-contrast phase" ]
+       ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "CT-ABD-WO" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "CT, abdomen, wo iv contrast" ] ;
+     fhir:CodeSystem.concept.property [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "360037004" ] ;
+       fhir:CodeSystem.concept.property.valueCoding [
+         a sct:77477000 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+         fhir:Coding.code [ fhir:value "77477000" ] ;
+         fhir:Coding.display [ fhir:value "Computed tomography" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "363704007" ] ;
+       fhir:CodeSystem.concept.property.valueCoding [
+         a sct:818983003 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+         fhir:Coding.code [ fhir:value "818983003" ] ;
+         fhir:Coding.display [ fhir:value "Abdominal structure" ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "21191007" ] ;
+       fhir:CodeSystem.concept.property.valueCoding [
+         a sct:707761002 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+         fhir:Coding.code [ fhir:value "707761002" ] ;
+         fhir:Coding.display [ fhir:value "Pre-contrast (native) phase" ]
+       ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:CodeSystem.concept.code [ fhir:value "CT-ABD-WOW" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "CT, abdomen, wo/w iv contrast" ] ;
+     fhir:CodeSystem.concept.property [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "360037004" ] ;
+       fhir:CodeSystem.concept.property.valueCoding [
+         a sct:77477000 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+         fhir:Coding.code [ fhir:value "77477000" ] ;
+         fhir:Coding.display [ fhir:value "Computed tomography" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "363704007" ] ;
+       fhir:CodeSystem.concept.property.valueCoding [
+         a sct:818983003 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+         fhir:Coding.code [ fhir:value "818983003" ] ;
+         fhir:Coding.display [ fhir:value "Abdominal structure" ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "405813007" ] ;
+       fhir:CodeSystem.concept.property.valueCoding [
+         a sct:263543005 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+         fhir:Coding.code [ fhir:value "263543005" ] ;
+         fhir:Coding.display [ fhir:value "Intravenous iodinated contrast" ]
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "21191007" ] ;
+       fhir:CodeSystem.concept.property.valueCoding [
+         a sct:707761002 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+         fhir:Coding.code [ fhir:value "707761002" ] ;
+         fhir:Coding.display [ fhir:value "Pre-contrast (native) phase" ]
+       ]
+     ], [
+       fhir:index 4 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "21191007" ] ;
+       fhir:CodeSystem.concept.property.valueCoding [
+         a sct:SCT-PHASE-POST ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+         fhir:Coding.code [ fhir:value "SCT-PHASE-POST" ] ;
+         fhir:Coding.display [ fhir:value "Post-contrast phase" ]
+       ]
+     ]
+  ], [
+     fhir:index 3 ;
+     fhir:CodeSystem.concept.code [ fhir:value "CT-ABDPEL-KUB" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "CT, abdomen-pelvis, KUB-stone eval, wo iv contrast" ] ;
+     fhir:CodeSystem.concept.property [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "360037004" ] ;
+       fhir:CodeSystem.concept.property.valueCoding [
+         a sct:77477000 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+         fhir:Coding.code [ fhir:value "77477000" ] ;
+         fhir:Coding.display [ fhir:value "Computed tomography" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "363704007" ] ;
+       fhir:CodeSystem.concept.property.valueCoding [
+         a sct:818983003 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+         fhir:Coding.code [ fhir:value "818983003" ] ;
+         fhir:Coding.display [ fhir:value "Abdominal structure" ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "363704007" ] ;
+       fhir:CodeSystem.concept.property.valueCoding [
+         a sct:12921003 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+         fhir:Coding.code [ fhir:value "12921003" ] ;
+         fhir:Coding.display [ fhir:value "Pelvic structure" ]
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "363703001" ] ;
+       fhir:CodeSystem.concept.property.valueCoding [
+         a sct:SCT-STONE-EVAL ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+         fhir:Coding.code [ fhir:value "SCT-STONE-EVAL" ] ;
+         fhir:Coding.display [ fhir:value "Urinary tract stone evaluation" ]
+       ]
+     ]
+  ], [
+     fhir:index 4 ;
+     fhir:CodeSystem.concept.code [ fhir:value "CTA-ABDPELLE" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "CT, angiography, abdomen-pelvis-lower extremity, w iv contrast" ] ;
+     fhir:CodeSystem.concept.property [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "360037004" ] ;
+       fhir:CodeSystem.concept.property.valueCoding [
+         a sct:418272005 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+         fhir:Coding.code [ fhir:value "418272005" ] ;
+         fhir:Coding.display [ fhir:value "CT angiography" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "363704007" ] ;
+       fhir:CodeSystem.concept.property.valueCoding [
+         a sct:818983003 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+         fhir:Coding.code [ fhir:value "818983003" ] ;
+         fhir:Coding.display [ fhir:value "Abdominal structure" ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "363704007" ] ;
+       fhir:CodeSystem.concept.property.valueCoding [
+         a sct:12921003 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+         fhir:Coding.code [ fhir:value "12921003" ] ;
+         fhir:Coding.display [ fhir:value "Pelvic structure" ]
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "363704007" ] ;
+       fhir:CodeSystem.concept.property.valueCoding [
+         a sct:61685007 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+         fhir:Coding.code [ fhir:value "61685007" ] ;
+         fhir:Coding.display [ fhir:value "Lower limb structure" ]
+       ]
+     ], [
+       fhir:index 4 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "405813007" ] ;
+       fhir:CodeSystem.concept.property.valueCoding [
+         a sct:263543005 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+         fhir:Coding.code [ fhir:value "263543005" ] ;
+         fhir:Coding.display [ fhir:value "Intravenous iodinated contrast" ]
+       ]
+     ]
+  ], [
+     fhir:index 5 ;
+     fhir:CodeSystem.concept.code [ fhir:value "CTA-CORONARY-LD" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "CT, angiography, heart, coronary arteries, w iv contrast, low dose" ] ;
+     fhir:CodeSystem.concept.property [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "360037004" ] ;
+       fhir:CodeSystem.concept.property.valueCoding [
+         a sct:418272005 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+         fhir:Coding.code [ fhir:value "418272005" ] ;
+         fhir:Coding.display [ fhir:value "CT angiography" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "363704007" ] ;
+       fhir:CodeSystem.concept.property.valueCoding [
+         a sct:SCT-HEART ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+         fhir:Coding.code [ fhir:value "SCT-HEART" ] ;
+         fhir:Coding.display [ fhir:value "Heart structure" ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "363704007" ] ;
+       fhir:CodeSystem.concept.property.valueCoding [
+         a sct:41801008 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+         fhir:Coding.code [ fhir:value "41801008" ] ;
+         fhir:Coding.display [ fhir:value "Coronary artery structure" ]
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "405813007" ] ;
+       fhir:CodeSystem.concept.property.valueCoding [
+         a sct:263543005 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+         fhir:Coding.code [ fhir:value "263543005" ] ;
+         fhir:Coding.display [ fhir:value "Intravenous iodinated contrast" ]
+       ]
+     ], [
+       fhir:index 4 ;
+       fhir:CodeSystem.concept.property.code [ fhir:value "272394005" ] ;
+       fhir:CodeSystem.concept.property.valueCoding [
+         a sct:SCT-LOW-DOSE ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.version [ fhir:value "http://snomed.info/sct/11000172109" ] ;
+         fhir:Coding.code [ fhir:value "SCT-LOW-DOSE" ] ;
+         fhir:Coding.display [ fhir:value "Low dose technique" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/precoordinated-radiology.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

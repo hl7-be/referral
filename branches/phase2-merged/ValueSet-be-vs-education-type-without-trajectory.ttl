@@ -1,0 +1,67 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/ValueSet/be-vs-education-type-without-trajectory> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "be-vs-education-type-without-trajectory"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet be-vs-education-type-without-trajectory</b></p><a name=\"be-vs-education-type-without-trajectory\"> </a><a name=\"hcbe-vs-education-type-without-trajectory\"> </a><ul><li>Include these codes as defined in <a href=\"CodeSystem-be-cs-diabetic-education-type.html\"><code>https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-diabetic-education-type</code></a><span title=\"Version is not explicitly stated, which means it is fixed to the version provided in this specification\"> version ?1.0.0</span><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"CodeSystem-be-cs-diabetic-education-type.html#be-cs-diabetic-education-type-diabetic-education-self-care\">diabetic-education-self-care</a></td><td style=\"color: #cccccc\">Education to self-care</td></tr><tr><td><a href=\"CodeSystem-be-cs-diabetic-education-type.html#be-cs-diabetic-education-type-diabetic-education-understanding\">diabetic-education-understanding</a></td><td style=\"color: #cccccc\">Education to insight</td></tr><tr><td><a href=\"CodeSystem-be-cs-diabetic-education-type.html#be-cs-diabetic-education-type-diabetic-education-no-self-care\">diabetic-education-no-self-care</a></td><td style=\"color: #cccccc\">Support in the absence of self-management</td></tr><tr><td><a href=\"CodeSystem-be-cs-diabetic-education-type.html#be-cs-diabetic-education-type-diabetic-education-follow-up\">diabetic-education-follow-up</a></td><td style=\"color: #cccccc\">Follow-up after education</td></tr><tr><td><a href=\"CodeSystem-be-cs-diabetic-education-type.html#be-cs-diabetic-education-type-diabetic-education-other\">diabetic-education-other</a></td><td style=\"color: #cccccc\">Other (not reimbursed)</td></tr></table></li></ul></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/terminology/ValueSet/be-vs-education-type-without-trajectory"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.0.0"] ; # 
+  fhir:name [ fhir:v "BeVSEducationTypeWithoutTrajectory"] ; # 
+  fhir:title [ fhir:v "eReferral Education Type Without Trajectory"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-06-19T10:26:42+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "eHealth Platform"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "eHealth Platform" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.ehealth.fgov.be/standards/fhir" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "support@be-ehealth-standards.atlassian.net" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Message Structure eHealth" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "support@be-ehealth-standards.atlassian.net" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Types of diabetes education for patients without a trajectory."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BE" ] ;
+       fhir:display [ fhir:v "Belgium" ]
+     ] )
+  ] ) ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-diabetic-education-type"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "diabetic-education-self-care" ]
+       ] [
+         fhir:code [ fhir:v "diabetic-education-understanding" ]
+       ] [
+         fhir:code [ fhir:v "diabetic-education-no-self-care" ]
+       ] [
+         fhir:code [ fhir:v "diabetic-education-follow-up" ]
+       ] [
+         fhir:code [ fhir:v "diabetic-education-other" ]
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

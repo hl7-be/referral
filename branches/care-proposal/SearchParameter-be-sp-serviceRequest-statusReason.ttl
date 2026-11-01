@@ -1,0 +1,69 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/SearchParameter/be-sp-serviceRequest-statusReason> a fhir:SearchParameter ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "be-sp-serviceRequest-statusReason"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: SearchParameter be-sp-serviceRequest-statusReason</b></p><a name=\"be-sp-serviceRequest-statusReason\"> </a><a name=\"hcbe-sp-serviceRequest-statusReason\"> </a><h2>statusReason</h2><p>Parameter <code>statusReason</code>:<code>token</code></p><div><p>This SearchParameter enables query of ServiceRequests by the statusReason extension.</p>\n</div><table class=\"grid\"><tr><td>Resource</td><td><a href=\"http://hl7.org/fhir/R4/servicerequest.html\">ServiceRequest</a></td></tr><tr><td>Expression</td><td><code>extension.where(url= 'http://hl7.org/fhir/StructureDefinition/request-statusReason').value.ofType(CodeableConcept)</code></td></tr><tr><td>Multiples</td><td><ul><li>multipleAnd: The parameter may only appear once</li><li>multipleOr: The parameter may have multiple values (separated by comma) where at least one must be true</li></ul></td></tr></table></div>"
+  ] ;
+  fhir:SearchParameter.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/drp/SearchParameter/be-sp-serviceRequest-statusReason"] ;
+  fhir:SearchParameter.version [ fhir:value "1.0.0"] ;
+  fhir:SearchParameter.name [ fhir:value "statusReason"] ;
+  fhir:SearchParameter.status [ fhir:value "active"] ;
+  fhir:SearchParameter.date [ fhir:value "2026-07-10T10:52:30+00:00"^^xsd:dateTime] ;
+  fhir:SearchParameter.publisher [ fhir:value "eHealth Platform"] ;
+  fhir:SearchParameter.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "eHealth Platform" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.ehealth.fgov.be/standards/fhir" ]
+     ], [
+       fhir:index 1 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "support@be-ehealth-standards.atlassian.net" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:ContactDetail.name [ fhir:value "Message Structure eHealth" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "support@be-ehealth-standards.atlassian.net" ] ;
+       fhir:ContactPoint.use [ fhir:value "work" ]
+     ]
+  ] ;
+  fhir:SearchParameter.description [ fhir:value "This SearchParameter enables query of ServiceRequests by the statusReason extension."] ;
+  fhir:SearchParameter.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "BE" ] ;
+       fhir:Coding.display [ fhir:value "Belgium" ]
+     ]
+  ] ;
+  fhir:SearchParameter.code [ fhir:value "statusReason"] ;
+  fhir:SearchParameter.base [
+     fhir:value "ServiceRequest" ;
+     fhir:index 0
+  ] ;
+  fhir:SearchParameter.type [ fhir:value "token"] ;
+  fhir:SearchParameter.expression [ fhir:value "extension.where(url= 'http://hl7.org/fhir/StructureDefinition/request-statusReason').value.ofType(CodeableConcept)"] ;
+  fhir:SearchParameter.multipleOr [ fhir:value "true"^^xsd:boolean] ;
+  fhir:SearchParameter.multipleAnd [ fhir:value "false"^^xsd:boolean] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/SearchParameter/be-sp-serviceRequest-statusReason.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

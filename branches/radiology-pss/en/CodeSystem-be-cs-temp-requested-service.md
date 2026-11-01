@@ -1,0 +1,364 @@
+# BeTempRequestedService - Digital Referral Prescription Implementation Guide v1.0.0
+
+## CodeSystem: BeTempRequestedService 
+
+ 
+DEMONSTRATIVE EXAMPLE - Temporary codes for indicating services that can be requested from a Nurse 
+
+This Code system is referenced in the definition of the following value sets:
+
+* [BeVSRequestedServicesNurse](ValueSet-be-vs-requested-services-nurse.md)
+
+-------
+
+ [Description of the above table(s)](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#terminology). 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "CodeSystem",
+  "id" : "be-cs-temp-requested-service",
+  "url" : "https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-temp-requested-service",
+  "version" : "1.0.0",
+  "name" : "BeTempRequestedService",
+  "title" : "BeTempRequestedService",
+  "status" : "draft",
+  "experimental" : false,
+  "date" : "2026-09-04T09:25:18+00:00",
+  "description" : "DEMONSTRATIVE EXAMPLE - Temporary codes for indicating services that can be requested from a Nurse",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "BE",
+      "display" : "Belgium"
+    }]
+  }],
+  "caseSensitive" : true,
+  "content" : "complete",
+  "count" : 20,
+  "concept" : [{
+    "code" : "tmp-prep-x081-2",
+    "display" : "Preparing medication_Appendix 81",
+    "designation" : [{
+      "language" : "fr-BE",
+      "value" : "Préparation des médicaments_Appendix 81"
+    },
+    {
+      "language" : "nl-BE",
+      "value" : "Medicatie klaarzetten_Bijlage 81"
+    },
+    {
+      "language" : "en",
+      "value" : "Preparing medication_Appendix 81"
+    }]
+  },
+  {
+    "code" : "tmp-prep-rsed-5",
+    "display" : "Preparing medication_not reimbursed",
+    "designation" : [{
+      "language" : "fr-BE",
+      "value" : "Préparation des médicaments_non remboursée"
+    },
+    {
+      "language" : "nl-BE",
+      "value" : "Medicatie klaarzetten_niet terugbetaald"
+    },
+    {
+      "language" : "en",
+      "value" : "Preparing medication_not reimbursed"
+    }]
+  },
+  {
+    "code" : "tmp-inte-tion-6",
+    "display" : "intermittent bladder catheterization",
+    "designation" : [{
+      "language" : "fr-BE",
+      "value" : "Sondage vésical intermittent"
+    },
+    {
+      "language" : "nl-BE",
+      "value" : "intermittente blaassondage"
+    },
+    {
+      "language" : "en",
+      "value" : "intermittent bladder catheterization"
+    }]
+  },
+  {
+    "code" : "tmp-remo-tube-9",
+    "display" : "remove bladder tube",
+    "designation" : [{
+      "language" : "fr-BE",
+      "value" : "Retrait de la sonde vésicale"
+    },
+    {
+      "language" : "nl-BE",
+      "value" : "blaassondage verwijderen"
+    },
+    {
+      "language" : "en",
+      "value" : "remove bladder tube"
+    }]
+  },
+  {
+    "code" : "tmp-repl-tube-0",
+    "display" : "replace bladder tube",
+    "designation" : [{
+      "language" : "fr-BE",
+      "value" : "Remplacement de la sonde vésicale"
+    },
+    {
+      "language" : "nl-BE",
+      "value" : "blaassondage vervangen"
+    },
+    {
+      "language" : "en",
+      "value" : "replace bladder tube"
+    }]
+  },
+  {
+    "code" : "tmp-inse-tube-9",
+    "display" : "insert bladder tube",
+    "designation" : [{
+      "language" : "fr-BE",
+      "value" : "Placement de la sonde vésicale"
+    },
+    {
+      "language" : "nl-BE",
+      "value" : "blaassondage plaatsen"
+    },
+    {
+      "language" : "en",
+      "value" : "insert bladder tube"
+    }]
+  },
+  {
+    "code" : "tmp-blad-sion-4",
+    "display" : "bladder tube supervision",
+    "designation" : [{
+      "language" : "fr-BE",
+      "value" : "Supervision de la sonde vésicale"
+    },
+    {
+      "language" : "nl-BE",
+      "value" : "blaassondage toezicht"
+    },
+    {
+      "language" : "en",
+      "value" : "bladder tube supervision"
+    }]
+  },
+  {
+    "code" : "tmp-blad-ance-2",
+    "display" : "bladder instillation performance",
+    "designation" : [{
+      "language" : "fr-BE",
+      "value" : "Mise en oeuvre de l’instillation vésicale"
+    },
+    {
+      "language" : "nl-BE",
+      "value" : "blaasinstillatie uitvoering"
+    },
+    {
+      "language" : "en",
+      "value" : "bladder instillation performance"
+    }]
+  },
+  {
+    "code" : "tmp-blad-ring-1",
+    "display" : "bladder instillation monitoring",
+    "designation" : [{
+      "language" : "fr-BE",
+      "value" : "Supervision de l’instillation vésicale"
+    },
+    {
+      "language" : "nl-BE",
+      "value" : "blaasinstillatie toezicht"
+    },
+    {
+      "language" : "en",
+      "value" : "bladder instillation monitoring"
+    }]
+  },
+  {
+    "code" : "tmp-supr-ring-9",
+    "display" : "suprapubic bladder monitoring",
+    "designation" : [{
+      "language" : "fr-BE",
+      "value" : "Supervision de la sonde vésicale sus-pubienne"
+    },
+    {
+      "language" : "nl-BE",
+      "value" : "suprapubische blaassonde toezicht"
+    },
+    {
+      "language" : "en",
+      "value" : "suprapubic bladder monitoring"
+    }]
+  },
+  {
+    "code" : "tmp-moni-eter-9",
+    "display" : "Monitoring catheter",
+    "designation" : [{
+      "language" : "fr-BE",
+      "value" : "Supervision d’un cathéter"
+    },
+    {
+      "language" : "nl-BE",
+      "value" : "Toezicht katheter"
+    },
+    {
+      "language" : "en",
+      "value" : "Monitoring catheter"
+    }]
+  },
+  {
+    "code" : "tmp-dres-eter-4",
+    "display" : "Dressing change catheter",
+    "designation" : [{
+      "language" : "fr-BE",
+      "value" : "Changement d’un pansement de cathéter"
+    },
+    {
+      "language" : "nl-BE",
+      "value" : "Verbandwissel katheter"
+    },
+    {
+      "language" : "en",
+      "value" : "Dressing change catheter"
+    }]
+  },
+  {
+    "code" : "tmp-care-tube-6",
+    "display" : "care for tracheostomy tube",
+    "designation" : [{
+      "language" : "fr-BE",
+      "value" : "entretien du tube de trachéotomie"
+    },
+    {
+      "language" : "nl-BE",
+      "value" : "zorgen aan tracheacanule"
+    },
+    {
+      "language" : "en",
+      "value" : "care for tracheostomy tube"
+    }]
+  },
+  {
+    "code" : "tmp-care-tube-1",
+    "display" : "care for gastric tube",
+    "designation" : [{
+      "language" : "fr-BE",
+      "value" : "entretien du tube gastrique"
+    },
+    {
+      "language" : "nl-BE",
+      "value" : "zorgen aan maagsonde"
+    },
+    {
+      "language" : "en",
+      "value" : "care for gastric tube"
+    }]
+  },
+  {
+    "code" : "tmp-gast-care-1",
+    "display" : "gastrostomy tube care",
+    "designation" : [{
+      "language" : "fr-BE",
+      "value" : "entretien de la sonde de gastrostomie"
+    },
+    {
+      "language" : "nl-BE",
+      "value" : "zorgen aan gastrostomiesonde"
+    },
+    {
+      "language" : "en",
+      "value" : "gastrostomy tube care"
+    }]
+  },
+  {
+    "code" : "tmp-care-eter-9",
+    "display" : "care for a catheter",
+    "designation" : [{
+      "language" : "fr-BE",
+      "value" : "prendre soin d'un cathéter"
+    },
+    {
+      "language" : "nl-BE",
+      "value" : "zorgen aan een catheter"
+    },
+    {
+      "language" : "en",
+      "value" : "care for a catheter"
+    }]
+  },
+  {
+    "code" : "tmp-repl-tube-5",
+    "display" : "replace tracheostomy tube",
+    "designation" : [{
+      "language" : "fr-BE",
+      "value" : "remplacer le tube de trachéotomie"
+    },
+    {
+      "language" : "nl-BE",
+      "value" : "vervangen tracheacanule"
+    },
+    {
+      "language" : "en",
+      "value" : "replace tracheostomy tube"
+    }]
+  },
+  {
+    "code" : "tmp-clea-tube-3",
+    "display" : "clean tracheostomy tube",
+    "designation" : [{
+      "language" : "fr-BE",
+      "value" : "nettoyer la canule de trachéotomie"
+    },
+    {
+      "language" : "nl-BE",
+      "value" : "reinigen tracheacanule"
+    },
+    {
+      "language" : "en",
+      "value" : "clean tracheostomy tube"
+    }]
+  },
+  {
+    "code" : "tmp-spec-act0-5",
+    "display" : "Specific technical provision (B2 act - C act)",
+    "designation" : [{
+      "language" : "fr-BE",
+      "value" : "Disposition technique spécifique (loi B2 - loi C)"
+    },
+    {
+      "language" : "nl-BE",
+      "value" : "Specifieke technische verstrekking (B2 handeling - C handeling)"
+    },
+    {
+      "language" : "en",
+      "value" : "Specific technical provision (B2 act - C act)"
+    }]
+  },
+  {
+    "code" : "tmp-plac-edle-0",
+    "display" : "Place/replace needle",
+    "designation" : [{
+      "language" : "fr-BE",
+      "value" : "Placer/remplacer l'aiguille"
+    },
+    {
+      "language" : "nl-BE",
+      "value" : "Plaatsen/vervangen naald"
+    },
+    {
+      "language" : "en",
+      "value" : "Place/replace needle"
+    }]
+  }]
+}
+
+```

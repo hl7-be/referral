@@ -1,0 +1,95 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-request-track> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "be-cs-request-track"] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem be-cs-request-track</b></p><a name=\"be-cs-request-track\"> </a><a name=\"hcbe-cs-request-track\"> </a><p>This case-insensitive code system <code>https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-request-track</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">inpatient<a name=\"be-cs-request-track-inpatient\"> </a></td><td>Inpatient</td></tr><tr><td style=\"white-space:nowrap\">ambulatory<a name=\"be-cs-request-track-ambulatory\"> </a></td><td>Ambulatory</td></tr><tr><td style=\"white-space:nowrap\">urgency<a name=\"be-cs-request-track-urgency\"> </a></td><td>Urgency</td></tr></table><p><b>Additional Language Displays</b></p><table class=\"codes\"><tr><td><b>Code</b></td><td><b>English (English, en)</b></td><td><b>French (Belgium) (fr)</b></td><td><b>Nederlands (België) (Dutch (Belgium), nl)</b></td></tr><tr><td>inpatient</td><td>Inpatient</td><td>Hospitalisé</td><td>Opname</td></tr><tr><td>ambulatory</td><td>Ambulatory</td><td>Ambulatoire</td><td>Ambulant</td></tr><tr><td>urgency</td><td>Urgency</td><td>Urgence</td><td>Spoedgeval</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-request-track"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.0.0"] ; # 
+  fhir:name [ fhir:v "BeCSRequestTrack"] ; # 
+  fhir:title [ fhir:v "eReferral Request Track"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-06-19T10:26:42+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "eHealth Platform"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "eHealth Platform" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.ehealth.fgov.be/standards/fhir" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "support@be-ehealth-standards.atlassian.net" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Message Structure eHealth" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "support@be-ehealth-standards.atlassian.net" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Care setting track codes for diagnostic imaging requests"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BE" ] ;
+       fhir:display [ fhir:v "Belgium" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v false] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "3"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "inpatient" ] ;
+     fhir:display [ fhir:v "Inpatient" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "en" ] ;
+       fhir:value [ fhir:v "Inpatient" ]
+     ] [
+       fhir:language [ fhir:v "fr-BE" ] ;
+       fhir:value [ fhir:v "Hospitalisé" ]
+     ] [
+       fhir:language [ fhir:v "nl-BE" ] ;
+       fhir:value [ fhir:v "Opname" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "ambulatory" ] ;
+     fhir:display [ fhir:v "Ambulatory" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "en" ] ;
+       fhir:value [ fhir:v "Ambulatory" ]
+     ] [
+       fhir:language [ fhir:v "fr-BE" ] ;
+       fhir:value [ fhir:v "Ambulatoire" ]
+     ] [
+       fhir:language [ fhir:v "nl-BE" ] ;
+       fhir:value [ fhir:v "Ambulant" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "urgency" ] ;
+     fhir:display [ fhir:v "Urgency" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "en" ] ;
+       fhir:value [ fhir:v "Urgency" ]
+     ] [
+       fhir:language [ fhir:v "fr-BE" ] ;
+       fhir:value [ fhir:v "Urgence" ]
+     ] [
+       fhir:language [ fhir:v "nl-BE" ] ;
+       fhir:value [ fhir:v "Spoedgeval" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

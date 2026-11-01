@@ -1,0 +1,34 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/Task/referral-task-uc5a-1> a fhir:Task ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "referral-task-uc5a-1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-task"^^xsd:anyURI ;
+       fhir:l <https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-task>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Task referral-task-uc5a-1</b></p><a name=\"referral-task-uc5a-1\"> </a><a name=\"hcreferral-task-uc5a-1\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-be-referral-task.html\">BeReferralTask</a></p></div><p><b>status</b>: Completed</p><p><b>intent</b>: order</p><p><b>focus</b>: <a href=\"ServiceRequest-uc5a-1.html\">ServiceRequest 17636008</a></p><p><b>executionPeriod</b>: 2023-02-08 --&gt; 2023-02-08</p></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:intent [ fhir:v "order"] ; # 
+  fhir:focus [
+     fhir:l <https://www.ehealth.fgov.be/standards/fhir/drp/ServiceRequest/uc5a-1> ;
+     fhir:reference [ fhir:v "ServiceRequest/uc5a-1" ]
+  ] ; # 
+  fhir:executionPeriod [
+     fhir:start [ fhir:v "2023-02-08"^^xsd:date ] ;
+     fhir:end [ fhir:v "2023-02-08"^^xsd:date ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

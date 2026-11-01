@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>HL7.FHIR.BE.REFERRAL\Logical Models - FHIR v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/hl7-be.css" rel="stylesheet"/>
+<!-- Placeholder for child template CSS declarations -->
+<!--  -->
+<!-- draft -->
+
+<link href="assets/css/colors.css" rel="stylesheet"/>
+
+<link href="assets/css/affiliate.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+<!--
+  Questionnaire:
+-->
+    <link href="assets/css/lforms.min.css" rel="stylesheet"/>
+
+
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"5"}
+    h3,h4,h5,h6{--heading-prefix:"5"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+
+        
+<!--  -->
+<!-- draft -->
+
+<div id="ig-nav">
+  <a id="hl7-logo" no-external="true" href="https://hl7-be.github.io">
+    <img height="65" alt="HL7 Belgium" src="assets/images/hl7be-logo-header.png"/>
+  </a>
+</div>
+<div id="fhir-nav">
+  <a id="fhir-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+<div id="ig-search">
+  <a id="hl7-search-lnk" no-external="true" href="http://hl7.org/fhir/search.cfm"><img alt="Search FHIR" src="assets/images/search.png"/></a>
+</div>
+
+<!-- Left logo - typically the publisher's logo - project or affiliate -->
+        <div id="project-nav">
+          <a id="project-logo" no-external="true" href="http://hl7.eu">
+            <img height="71" alt="Project home" src="assets/images/scribe.png"/>
+          </a>
+        </div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">HL7 BE Referral Prescription WG Implementation Guide (work in progress)</span><br/>0.2.0 - STU</p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul
+	xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+	<li>
+		<a href="index.html">IG Home</a>
+	</li>
+	<li>
+		<a href="guidance.html">Guidance</a>
+	</li>
+	<li>
+		<a href="toc.html">Table of Contents</a>
+	</li>
+	<li class="dropdown">
+		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret"></b>
+		</a>
+		<ul class="dropdown-menu">
+			<li>
+				<a href="howto.html">How to use this Publication</a>
+			</li>
+			<li>
+				<a href="standardsstatus.html">Standards Status</a>
+			</li>
+			<li>
+				<a href="privacy.html">Privacy considerations</a>
+			</li>
+			<li>
+				<a href="security.html">Security considerations</a>
+			</li>
+			<li>
+				<a target="_blank" href="http://hl7.org/fhir/R4/index.html">FHIR Spec<img src="external.png" style="text-align: baseline"/>
+				</a>
+			</li>
+		</ul>
+	</li>
+	<li class="dropdown">
+		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Functional Description<b class="caret"></b>
+		</a>
+		<ul class="dropdown-menu">
+			<li>
+				<a href="usecases.html">Use Cases</a>
+			</li>
+			<li>
+				<a href="logical-models.html">Logical Models</a>
+			</li>
+<!--
+			<li>
+				<a target="_blank" href="#">Services &amp; Transactions</a>
+			</li>
+-->
+		</ul>
+
+	</li>
+	<li class="dropdown">
+		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Detailed Specifications<b class="caret"></b>
+		</a>
+		<ul class="dropdown-menu">
+			<li>
+				<a href="artifacts.html">Artifact Index</a>
+			</li>
+		</ul>
+	</li>
+	<li class="dropdown">
+		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Terminology<b class="caret"></b>
+		</a>
+		<ul class="dropdown-menu">
+			<li>
+				<a href="terminology.html">Terminology Resources</a>
+			</li>
+		</ul>
+	</li>
+<!--
+	<li class="dropdown">
+		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Project-specific
+			<b class="caret"></b>
+		</a>
+		<ul class="dropdown-menu">
+			<li>
+				<a href="#">Core Profiles</a>
+			</li>
+			<li class="divider"></li>
+			<li>
+				<a href="#">DZOP</a>
+			</li>
+            <li>
+				<a href="#">EFRO</a>
+			</li>
+		</ul>
+	</li>
+-->
+	<li class="dropdown">
+		<a data-toggle="dropdown" href="#" class="dropdown-toggle">Implementation<b class="caret"></b></a>
+		<ul class="dropdown-menu">
+			<li><a href="testdata.html">Test Data<img src="external.png" style="text-align: baseline"/></a></li>
+			<li><a target="_blank" href="openapi.html">OpenAPI</a></li>
+			<li><a href="testservers.html">Test Servers<img src="external.png" style="text-align: baseline"/></a></li>
+			<li><a href="downloads.html">Downloads</a></li>
+		</ul>
+	</li>
+</ul>      
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+    
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Logical Models</b></li>
+          
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">HL7 BE Referral Prescription WG Implementation Guide (work in progress) - Local Development build (v0.2.0). See the <a href="https://www.ehealth.fgov.be/standards/fhir/referral/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Logical Models</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<h1 id="referral-prescriptions">Referral Prescriptions</h1>
+<h2 id="prescription-one-step">Prescription: one step</h2>
+<p>Practical examples (example 1) indicate that a (nursing) prescription can consist of multiple steps:</p>
+<ul>
+  <li>First, administer a painkiller</li>
+  <li>Secondly, do a colonic cleansing</li>
+  <li>Thirdly, put in a bladder probe</li>
+</ul>
+
+<p>NIHDI stores the prescriptions on a UHMEP system. Every item on the UHMEP system exists on its own and there are no meaningful links between the items on the UHMEP system. They can be executed by different performers.
+If we allow only 1 prescription per message, this will be the situation:</p>
+
+<ul>
+  <li>it is possible to link prescriptions (using requisition on the level of ServiceRequest)</li>
+  <li>
+    <p>because BeReferralPrescriptionNursingMedication is of type MedicationRequest, there is no requisition, but groupIdentfier is used here in that way</p>
+  </li>
+  <li>indicating an order or a sequence is not possible</li>
+</ul>
+
+<div>
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="190px" preserveAspectRatio="none" style="width:937px;height:190px;background:#FFFFFF;" version="1.1" viewBox="0 0 937 190" width="937px" zoomAndPan="magnify"><defs><filter height="300%" id="fj4xh9dyf56zn" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0" /><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" /><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3" /><feBlend in="SourceGraphic" in2="blurOut3" mode="normal" /></filter></defs><g><!--MD5=[359721788ec939e1ab6735adf9ae7251]
+class BeReferralPrescription--><rect codeLine="8" fill="#FEFECE" filter="url(#fj4xh9dyf56zn)" height="60.8047" id="BeReferralPrescription" style="stroke:#A80036;stroke-width:1.5;" width="172" x="370.5" y="7" /><ellipse cx="385.5" cy="23" fill="#A9DCDF" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" /><path d="M385.6094,18.3438 L384.4531,23.4219 L386.7813,23.4219 L385.6094,18.3438 Z M384.125,16.1094 L387.1094,16.1094 L390.4688,28.5 L388.0156,28.5 L387.25,25.4375 L383.9688,25.4375 L383.2188,28.5 L380.7813,28.5 L384.125,16.1094 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="140" x="399.5" y="27.1543">BeReferralPrescription</text><line style="stroke:#A80036;stroke-width:1.5;" x1="371.5" x2="541.5" y1="39" y2="39" /><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="93" x="376.5" y="53.2104">UHMEP identifier</text><line style="stroke:#A80036;stroke-width:1.5;" x1="371.5" x2="541.5" y1="59.8047" y2="59.8047" /><!--MD5=[d4c45c964e5bd919737061b4f67e532a]
+class BeNursingPrescription--><rect fill="#FEFECE" filter="url(#fj4xh9dyf56zn)" height="48" id="BeNursingPrescription" style="stroke:#A80036;stroke-width:1.5;" width="171" x="7" y="128" /><ellipse cx="22" cy="144" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" /><path d="M24.9688,149.6406 Q24.3906,149.9375 23.75,150.0781 Q23.1094,150.2344 22.4063,150.2344 Q19.9063,150.2344 18.5781,148.5938 Q17.2656,146.9375 17.2656,143.8125 Q17.2656,140.6875 18.5781,139.0313 Q19.9063,137.375 22.4063,137.375 Q23.1094,137.375 23.75,137.5313 Q24.4063,137.6875 24.9688,137.9844 L24.9688,140.7031 Q24.3438,140.125 23.75,139.8594 Q23.1563,139.5781 22.5313,139.5781 Q21.1875,139.5781 20.5,140.6563 Q19.8125,141.7188 19.8125,143.8125 Q19.8125,145.9063 20.5,146.9844 Q21.1875,148.0469 22.5313,148.0469 Q23.1563,148.0469 23.75,147.7813 Q24.3438,147.5 24.9688,146.9219 L24.9688,149.6406 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="139" x="36" y="148.1543">BeNursingPrescription</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="177" y1="160" y2="160" /><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="177" y1="168" y2="168" /><!--MD5=[a54779efc2025b5bc3450d1756142bcc]
+class BeDiagnosticImagingPrescription--><rect fill="#FEFECE" filter="url(#fj4xh9dyf56zn)" height="48" id="BeDiagnosticImagingPrescription" style="stroke:#A80036;stroke-width:1.5;" width="238" x="213.5" y="128" /><ellipse cx="228.5" cy="144" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" /><path d="M231.4688,149.6406 Q230.8906,149.9375 230.25,150.0781 Q229.6094,150.2344 228.9063,150.2344 Q226.4063,150.2344 225.0781,148.5938 Q223.7656,146.9375 223.7656,143.8125 Q223.7656,140.6875 225.0781,139.0313 Q226.4063,137.375 228.9063,137.375 Q229.6094,137.375 230.25,137.5313 Q230.9063,137.6875 231.4688,137.9844 L231.4688,140.7031 Q230.8438,140.125 230.25,139.8594 Q229.6563,139.5781 229.0313,139.5781 Q227.6875,139.5781 227,140.6563 Q226.3125,141.7188 226.3125,143.8125 Q226.3125,145.9063 227,146.9844 Q227.6875,148.0469 229.0313,148.0469 Q229.6563,148.0469 230.25,147.7813 Q230.8438,147.5 231.4688,146.9219 L231.4688,149.6406 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="206" x="242.5" y="148.1543">BeDiagnosticImagingPrescription</text><line style="stroke:#A80036;stroke-width:1.5;" x1="214.5" x2="450.5" y1="160" y2="160" /><line style="stroke:#A80036;stroke-width:1.5;" x1="214.5" x2="450.5" y1="168" y2="168" /><!--MD5=[266452077b323be7bca9a1df21ae8ef1]
+class BeLaboratoryPrescription--><rect fill="#FEFECE" filter="url(#fj4xh9dyf56zn)" height="48" id="BeLaboratoryPrescription" style="stroke:#A80036;stroke-width:1.5;" width="190" x="486.5" y="128" /><ellipse cx="501.5" cy="144" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" /><path d="M504.4688,149.6406 Q503.8906,149.9375 503.25,150.0781 Q502.6094,150.2344 501.9063,150.2344 Q499.4063,150.2344 498.0781,148.5938 Q496.7656,146.9375 496.7656,143.8125 Q496.7656,140.6875 498.0781,139.0313 Q499.4063,137.375 501.9063,137.375 Q502.6094,137.375 503.25,137.5313 Q503.9063,137.6875 504.4688,137.9844 L504.4688,140.7031 Q503.8438,140.125 503.25,139.8594 Q502.6563,139.5781 502.0313,139.5781 Q500.6875,139.5781 500,140.6563 Q499.3125,141.7188 499.3125,143.8125 Q499.3125,145.9063 500,146.9844 Q500.6875,148.0469 502.0313,148.0469 Q502.6563,148.0469 503.25,147.7813 Q503.8438,147.5 504.4688,146.9219 L504.4688,149.6406 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="158" x="515.5" y="148.1543">BeLaboratoryPrescription</text><line style="stroke:#A80036;stroke-width:1.5;" x1="487.5" x2="675.5" y1="160" y2="160" /><line style="stroke:#A80036;stroke-width:1.5;" x1="487.5" x2="675.5" y1="168" y2="168" /><!--MD5=[d2970cbb0ce44044b1ced11155609ca5]
+class BePhysiotherapyPrescription--><rect fill="#FEFECE" filter="url(#fj4xh9dyf56zn)" height="48" id="BePhysiotherapyPrescription" style="stroke:#A80036;stroke-width:1.5;" width="211" x="712" y="128" /><ellipse cx="727" cy="144" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" /><path d="M729.9688,149.6406 Q729.3906,149.9375 728.75,150.0781 Q728.1094,150.2344 727.4063,150.2344 Q724.9063,150.2344 723.5781,148.5938 Q722.2656,146.9375 722.2656,143.8125 Q722.2656,140.6875 723.5781,139.0313 Q724.9063,137.375 727.4063,137.375 Q728.1094,137.375 728.75,137.5313 Q729.4063,137.6875 729.9688,137.9844 L729.9688,140.7031 Q729.3438,140.125 728.75,139.8594 Q728.1563,139.5781 727.5313,139.5781 Q726.1875,139.5781 725.5,140.6563 Q724.8125,141.7188 724.8125,143.8125 Q724.8125,145.9063 725.5,146.9844 Q726.1875,148.0469 727.5313,148.0469 Q728.1563,148.0469 728.75,147.7813 Q729.3438,147.5 729.9688,146.9219 L729.9688,149.6406 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="179" x="741" y="148.1543">BePhysiotherapyPrescription</text><line style="stroke:#A80036;stroke-width:1.5;" x1="713" x2="922" y1="160" y2="160" /><line style="stroke:#A80036;stroke-width:1.5;" x1="713" x2="922" y1="168" y2="168" /><!--MD5=[500ec50b9a493cf86b49b5533eb10763]
+class BeNursingPrescriptionGenMedication--><rect codeLine="6" fill="#FEFECE" filter="url(#fj4xh9dyf56zn)" height="48" id="BeNursingPrescriptionGenMedication" style="stroke:#A80036;stroke-width:1.5;" width="264" x="577.5" y="13.5" /><ellipse cx="592.5" cy="29.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;" /><path d="M595.4688,35.1406 Q594.8906,35.4375 594.25,35.5781 Q593.6094,35.7344 592.9063,35.7344 Q590.4063,35.7344 589.0781,34.0938 Q587.7656,32.4375 587.7656,29.3125 Q587.7656,26.1875 589.0781,24.5313 Q590.4063,22.875 592.9063,22.875 Q593.6094,22.875 594.25,23.0313 Q594.9063,23.1875 595.4688,23.4844 L595.4688,26.2031 Q594.8438,25.625 594.25,25.3594 Q593.6563,25.0781 593.0313,25.0781 Q591.6875,25.0781 591,26.1563 Q590.3125,27.2188 590.3125,29.3125 Q590.3125,31.4063 591,32.4844 Q591.6875,33.5469 593.0313,33.5469 Q593.6563,33.5469 594.25,33.2813 Q594.8438,33 595.4688,32.4219 L595.4688,35.1406 Z " fill="#000000" /><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="232" x="606.5" y="33.6543">BeNursingPrescriptionGenMedication</text><line style="stroke:#A80036;stroke-width:1.5;" x1="578.5" x2="840.5" y1="45.5" y2="45.5" /><line style="stroke:#A80036;stroke-width:1.5;" x1="578.5" x2="840.5" y1="53.5" y2="53.5" /><!--MD5=[126dd7d5c103e643f444912a0c0e969b]
+reverse link BeReferralPrescription to BeNursingPrescription--><path codeLine="1" d="M351.0173,70.6807 C292.7663,89.0041 221.7299,111.3494 168.8722,127.9763 " fill="none" id="BeReferralPrescription-backto-BeNursingPrescription" style="stroke:#A80036;stroke-width:1.0;" /><polygon fill="none" points="349.0582,63.9588,370.2371,64.6349,353.2592,77.3137,349.0582,63.9588" style="stroke:#A80036;stroke-width:1.0;" /><!--MD5=[fc1b46c64c0500510100602c29194880]
+reverse link BeReferralPrescription to BeDiagnosticImagingPrescription--><path codeLine="2" d="M408.3339,81.9759 C391.4619,97.5553 373.1497,114.4646 358.7475,127.7634 " fill="none" id="BeReferralPrescription-backto-BeDiagnosticImagingPrescription" style="stroke:#A80036;stroke-width:1.0;" /><polygon fill="none" points="403.8276,76.6092,423.2703,68.1839,413.3253,86.8948,403.8276,76.6092" style="stroke:#A80036;stroke-width:1.0;" /><!--MD5=[7d6f6dd1369cbdd1b3c05501e37e1387]
+reverse link BeReferralPrescription to BeLaboratoryPrescription--><path codeLine="3" d="M504.7943,81.7376 C521.8741,97.3827 540.4484,114.3968 555.0409,127.7634 " fill="none" id="BeReferralPrescription-backto-BeLaboratoryPrescription" style="stroke:#A80036;stroke-width:1.0;" /><polygon fill="none" points="500.0175,86.8549,489.9977,68.1839,509.4739,76.5313,500.0175,86.8549" style="stroke:#A80036;stroke-width:1.0;" /><!--MD5=[8b42a179c75e575de92441be9d497985]
+reverse link BeReferralPrescription to BePhysiotherapyPrescription--><path codeLine="4" d="M561.913,70.9343 C619.4926,89.1971 689.478,111.3947 741.6468,127.9413 " fill="none" id="BeReferralPrescription-backto-BePhysiotherapyPrescription" style="stroke:#A80036;stroke-width:1.0;" /><polygon fill="none" points="559.4576,77.4993,542.5099,64.7801,563.6903,64.1544,559.4576,77.4993" style="stroke:#A80036;stroke-width:1.0;" /></g></svg>
+
+</div>
+
+<p><br clear="ALL" /></p>
+
+<h2 id="prescription-or-proposal-the-difference">Prescription or proposal: the difference</h2>
+
+<p>The difference between a prescription and a proposal depends on the legal authority of the caregivers. By law, only a limited number of caregivers (such as medical doctors, mid-wives, …) can create a prescription.</p>
+
+<p>If another caregiver (without the authority to prescribe) wants to suggest a treatment for a patient, or a prolongation of a treatment, then this will be a proposal.</p>
+
+<p>A proposal can be recognised by the content of the intent field: a prescription contains “order”, a proposal contains “proposal”</p>
+
+<h2 id="status-transitions-of-prescriptions-and-proposals">Status transitions of prescriptions and proposals</h2>
+
+<div>
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="558px" preserveAspectRatio="none" style="width:861px;height:558px;background:#FFFFFF;" version="1.1" viewBox="0 0 861 558" width="861px" zoomAndPan="magnify"><defs><filter height="300%" id="fhqvpymimig7r" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0" /><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" /><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3" /><feBlend in="SourceGraphic" in2="blurOut3" mode="normal" /></filter></defs><g><!--MD5=[91c796aaf0181288b3d16afc6f768aea]
+cluster ServiceRequest.status.active--><rect fill="#FEFECE" filter="url(#fhqvpymimig7r)" height="195" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="369" x="37" y="169" /><rect fill="#FFFFFF" height="162.7031" rx="12.5" ry="12.5" style="stroke:#FFFFFF;stroke-width:1.0;" width="363" x="40" y="198.2969" /><line style="stroke:#A80036;stroke-width:1.5;" x1="37" x2="406" y1="195.2969" y2="195.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="200" x="121.5" y="185.9951">ServiceRequest.status.active</text><g id="ServiceRequest.status.active.Task.status.ready"><rect fill="#FEFECE" filter="url(#fhqvpymimig7r)" height="50.2656" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="142" x="142" y="196" /><line style="stroke:#A80036;stroke-width:1.5;" x1="142" x2="284" y1="222.2969" y2="222.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="152" y="213.9951">Task.status.ready</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="33" x="147" y="238.4355">Open</text></g><g id="ServiceRequest.status.active.Task.status.inprogress"><rect fill="#FEFECE" filter="url(#fhqvpymimig7r)" height="50.2656" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="178" x="45" y="306" /><line style="stroke:#A80036;stroke-width:1.5;" x1="45" x2="223" y1="332.2969" y2="332.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="158" x="55" y="323.9951">Task.status.inprogress</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="78" x="50" y="348.4355">In Uitvoering</text></g><g id="ServiceRequest.status.active.Task.status.failed"><rect fill="#FEFECE" filter="url(#fhqvpymimig7r)" height="50.2656" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="140" x="258" y="306" /><line style="stroke:#A80036;stroke-width:1.5;" x1="258" x2="398" y1="332.2969" y2="332.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="120" x="268" y="323.9951">Task.status.failed</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="57" x="263" y="348.4355">Vervallen</text></g><ellipse cx="552" cy="16" fill="#000000" filter="url(#fhqvpymimig7r)" rx="10" ry="10" style="stroke:none;stroke-width:1.0;" /><g id="ServiceRequest.status.draft"><rect fill="#FEFECE" filter="url(#fhqvpymimig7r)" height="50.2656" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="211" x="446.5" y="86" /><line style="stroke:#A80036;stroke-width:1.5;" x1="446.5" x2="657.5" y1="112.2969" y2="112.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="191" x="456.5" y="103.9951">ServiceRequest.status.draft</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="68" x="451.5" y="128.4355">Registratie</text></g><g id="ServiceRequest.status.enteredinerror"><rect fill="#FEFECE" filter="url(#fhqvpymimig7r)" height="50.2656" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="280" x="567" y="416" /><line style="stroke:#A80036;stroke-width:1.5;" x1="567" x2="847" y1="442.2969" y2="442.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="260" x="577" y="433.9951">ServiceRequest.status.enteredinerror</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="62" x="572" y="458.4355">Weigering</text></g><g id="ServiceRequest.status.revoked"><rect fill="#FEFECE" filter="url(#fhqvpymimig7r)" height="50.2656" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="236" x="296" y="416" /><line style="stroke:#A80036;stroke-width:1.5;" x1="296" x2="532" y1="442.2969" y2="442.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="216" x="306" y="433.9951">ServiceRequest.status.revoked</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="81" x="301" y="458.4355">Geannuleerd</text></g><ellipse cx="414" cy="536" filter="url(#fhqvpymimig7r)" rx="10" ry="10" style="stroke:#000000;stroke-width:1.0;fill:none;" /><ellipse cx="414.5" cy="536.5" fill="#000000" rx="6" ry="6" style="stroke:none;stroke-width:1.0;" /><g id="ServiceRequest.status.completed"><rect fill="#FEFECE" filter="url(#fhqvpymimig7r)" height="50.2656" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="254" x="7" y="416" /><line style="stroke:#A80036;stroke-width:1.5;" x1="7" x2="261" y1="442.2969" y2="442.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="234" x="17" y="433.9951">ServiceRequest.status.completed</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="77" x="12" y="458.4355">[uitgevoerd]</text></g><!--MD5=[7b6195b3e75c39881a0fbe846fa95e7b]
+link *start to ServiceRequest.status.draft--><path d="M552,26.1667 C552,39.0299 552,61.7608 552,80.4572 " fill="none" id="*start-to-ServiceRequest.status.draft" style="stroke:#A80036;stroke-width:1.0;" /><polygon fill="#A80036" points="552,85.612,556,76.612,552,80.612,548,76.612,552,85.612" style="stroke:#A80036;stroke-width:1.0;" /><!--MD5=[8f7e68de749fb55a42fb31cbbb3b37ab]
+link ServiceRequest.status.draft to ServiceRequest.status.active--><path d="M516.6693,136.2362 C495.0019,151.713 467.035,171.6893 443.6938,188.3616 C432.0232,196.6977 421.509,204.2079 413.5168,209.9166 C411.5188,211.3437 409.6784,212.6583 408.0169,213.8451 C407.6016,214.1417 407.1974,214.4304 406.8047,214.7109 C406.6084,214.8511 406.415,214.9893 406.2244,215.1254 " fill="none" id="ServiceRequest.status.draft-to-ServiceRequest.status.active" style="stroke:#A80036;stroke-width:1.0;" /><polygon fill="#A80036" points="406.2244,215.1254,415.873,213.1492,410.2931,212.2192,411.2231,206.6393,406.2244,215.1254" style="stroke:#A80036;stroke-width:1.0;" /><!--MD5=[6c4dfb9b8575517b07c99c738b0b7402]
+link ServiceRequest.status.draft to ServiceRequest.status.enteredinerror--><path d="M563.7774,136.0745 C591.8697,195.884 662.7147,346.7151 692.9607,411.1099 " fill="none" id="ServiceRequest.status.draft-to-ServiceRequest.status.enteredinerror" style="stroke:#A80036;stroke-width:1.0;" /><polygon fill="#A80036" points="695.2405,415.9637,695.0348,406.117,693.1148,411.4381,687.7938,409.5181,695.2405,415.9637" style="stroke:#A80036;stroke-width:1.0;" /><!--MD5=[adfdc2410d7bb2f72d4edc76d4197d41]
+link ServiceRequest.status.active to ServiceRequest.status.revoked--><path d="M406.0688,251.4915 C406.1279,251.739 406.1872,251.9874 406.2465,252.2368 C410.0418,268.1955 414.1147,287.9974 416,306 C418.6848,331.6376 416.3347,338.2244 416,364 C415.8005,379.3625 415.3773,396.4448 414.9713,410.6089 " fill="none" id="ServiceRequest.status.active-to-ServiceRequest.status.revoked" style="stroke:#A80036;stroke-width:1.0;" /><polygon fill="#A80036" points="414.8229,415.6867,419.0842,406.8075,414.969,410.6888,411.0877,406.5736,414.8229,415.6867" style="stroke:#A80036;stroke-width:1.0;" /><!--MD5=[67fb1c38433df96c7383ada94b141ae7]
+link ServiceRequest.status.revoked to *end--><path d="M414,466.4583 C414,483.6886 414,505.8909 414,520.5165 " fill="none" id="ServiceRequest.status.revoked-to-*end" style="stroke:#A80036;stroke-width:1.0;" /><polygon fill="#A80036" points="414,525.5388,418,516.5388,414,520.5388,410,516.5388,414,525.5388" style="stroke:#A80036;stroke-width:1.0;" /><!--MD5=[62e16bd4c63e8509881ba280431afd5b]
+link ServiceRequest.status.enteredinerror to *end--><path d="M629.6344,466.0844 C560.4704,488.5096 464.6317,519.5836 428.5309,531.2886 " fill="none" id="ServiceRequest.status.enteredinerror-to-*end" style="stroke:#A80036;stroke-width:1.0;" /><polygon fill="#A80036" points="423.6483,532.8717,433.4433,533.9006,428.4045,531.3294,430.9757,526.2907,423.6483,532.8717" style="stroke:#A80036;stroke-width:1.0;" /><!--MD5=[f80405a8d9d8bf3ce784f6be632de820]
+link ServiceRequest.status.completed to *end--><path d="M207.933,466.0844 C273.4498,488.3133 364.0136,519.0403 399.195,530.9769 " fill="none" id="ServiceRequest.status.completed-to-*end" style="stroke:#A80036;stroke-width:1.0;" /><polygon fill="#A80036" points="404.3535,532.7271,397.1159,526.0474,399.6186,531.1206,394.5455,533.6232,404.3535,532.7271" style="stroke:#A80036;stroke-width:1.0;" /><!--MD5=[09acbf9e5e28c05f4486688bcfc5b73f]
+link Task.status.ready to Task.status.inprogress--><path d="M194.8758,246.2362 C183.0333,262.7258 167.5224,284.3233 155.1215,301.5903 " fill="none" id="Task.status.ready-to-Task.status.inprogress" style="stroke:#A80036;stroke-width:1.0;" /><polygon fill="#A80036" points="152.0399,305.8812,160.5388,300.9044,154.9565,301.82,154.0409,296.2378,152.0399,305.8812" style="stroke:#A80036;stroke-width:1.0;" /><!--MD5=[eb5f48545910419d246df189a3a00509]
+link Task.status.ready to Task.status.failed--><path d="M239.3833,246.2362 C256.7686,262.8656 279.5847,284.6897 297.7115,302.0284 " fill="none" id="Task.status.ready-to-Task.status.failed" style="stroke:#A80036;stroke-width:1.0;" /><polygon fill="#A80036" points="301.7394,305.8812,298.0005,296.7697,298.1262,302.4251,292.4707,302.5508,301.7394,305.8812" style="stroke:#A80036;stroke-width:1.0;" /><!--MD5=[7ea0a5c567e2fadfc4d7888b2e18dad0]
+link Task.status.inprogress to ServiceRequest.status.completed--><path d="M134,356.2362 C134,372.4464 134,393.5926 134,410.7087 " fill="none" id="Task.status.inprogress-to-ServiceRequest.status.completed" style="stroke:#A80036;stroke-width:1.0;" /><polygon fill="#A80036" points="134,415.8812,138,406.8812,134,410.8812,130,406.8812,134,415.8812" style="stroke:#A80036;stroke-width:1.0;" /></g></svg>
+
+</div>
+
+<p><br clear="ALL" /></p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href=""></a>.  Package hl7.fhir.be.referral#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Feb 3, 2023 12:54+0000">2023-02-03</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+            <!--  -->
+<!-- draft -->
+
+Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a> |
+                 
+                 <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://www.ehealth.fgov.be/standards/fhir/referral/history.html">Version History</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" rel="license" href="http://hl7.org/fhir/R4/license.html"><img style="border-style: none;" alt="CC-BY" src="assets/images/cc-by.png" height="17"/></a>
+<!-- no fitting stylesheet found (status/publisher)-->
+
+
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+
+<!-- / feedback form  -->
+
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

@@ -1,0 +1,47 @@
+{
+  "resourceType" : "SearchParameter",
+  "id" : "be-sp-serviceRequest-intent-or-prescription-type",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: SearchParameter be-sp-serviceRequest-intent-or-prescription-type</b></p><a name=\"be-sp-serviceRequest-intent-or-prescription-type\"> </a><a name=\"hcbe-sp-serviceRequest-intent-or-prescription-type\"> </a><h2>BeReferralIntentOrPrescriptionType</h2><p>Parameter <code>intent-or-prescription-type</code>:<code>token</code></p><div><p>Matches ServiceRequests whose intent OR prescriptionType category matches any of the given tokens. Qualify each value with its system: http://hl7.org/fhir/request-intent for intent, https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-prescription-type for the prescriptionType slice of category. Example: GET [base]/ServiceRequest?intent-or-prescription-type=proposal,telemonitoring-chronic-heart-failure</p>\n</div><table class=\"grid\"><tr><td>Resource</td><td><a href=\"http://hl7.org/fhir/R4/servicerequest.html\">ServiceRequest</a></td></tr><tr><td>Expression</td><td><code>ServiceRequest.intent | ServiceRequest.category.where(coding.system = 'https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-prescription-type')</code></td></tr><tr><td>Multiples</td><td><ul><li>multipleAnd: The parameter may only appear once</li><li>multipleOr: The parameter may have multiple values (separated by comma) where at least one must be true</li></ul></td></tr></table></div>"
+  },
+  "url" : "https://www.ehealth.fgov.be/standards/fhir/drp/SearchParameter/be-sp-serviceRequest-intent-or-prescription-type",
+  "version" : "1.0.0",
+  "name" : "BeReferralIntentOrPrescriptionType",
+  "status" : "active",
+  "date" : "2026-11-01T21:55:08+00:00",
+  "publisher" : "eHealth Platform",
+  "contact" : [{
+    "name" : "eHealth Platform",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.ehealth.fgov.be/standards/fhir"
+    },
+    {
+      "system" : "email",
+      "value" : "support@be-ehealth-standards.atlassian.net"
+    }]
+  },
+  {
+    "name" : "Message Structure eHealth",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "support@be-ehealth-standards.atlassian.net",
+      "use" : "work"
+    }]
+  }],
+  "description" : "Matches ServiceRequests whose intent OR prescriptionType category matches any of the given tokens. Qualify each value with its system: http://hl7.org/fhir/request-intent for intent, https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-prescription-type for the prescriptionType slice of category. Example: GET [base]/ServiceRequest?intent-or-prescription-type=proposal,telemonitoring-chronic-heart-failure",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "BE",
+      "display" : "Belgium"
+    }]
+  }],
+  "code" : "intent-or-prescription-type",
+  "base" : ["ServiceRequest"],
+  "type" : "token",
+  "expression" : "ServiceRequest.intent | ServiceRequest.category.where(coding.system = 'https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-prescription-type')",
+  "multipleOr" : true,
+  "multipleAnd" : false
+}

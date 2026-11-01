@@ -1,0 +1,169 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-implant-type> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "be-cs-implant-type"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem be-cs-implant-type</b></p><a name=\"be-cs-implant-type\"> </a><a name=\"hcbe-cs-implant-type\"> </a><p>This case-insensitive code system <code>https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-implant-type</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">cardiac-pacemaker<a name=\"be-cs-implant-type-cardiac-pacemaker\"> </a></td><td>Cardiac pacemaker</td></tr><tr><td style=\"white-space:nowrap\">cochlear-implant<a name=\"be-cs-implant-type-cochlear-implant\"> </a></td><td>Cochlear implant</td></tr><tr><td style=\"white-space:nowrap\">joint-prosthesis<a name=\"be-cs-implant-type-joint-prosthesis\"> </a></td><td>Joint prosthesis</td></tr><tr><td style=\"white-space:nowrap\">vascular-stent<a name=\"be-cs-implant-type-vascular-stent\"> </a></td><td>Vascular stent</td></tr><tr><td style=\"white-space:nowrap\">icd<a name=\"be-cs-implant-type-icd\"> </a></td><td>Implantable cardioverter-defibrillator</td></tr><tr><td style=\"white-space:nowrap\">other<a name=\"be-cs-implant-type-other\"> </a></td><td>Other implant</td></tr></table><p><b>Additional Language Displays</b></p><table class=\"codes\"><tr><td><b>Code</b></td><td><b>Deutsch (German, de)</b></td><td><b>English (English, en)</b></td><td><b>French (Belgium) (fr)</b></td><td><b>Nederlands (België) (Dutch (Belgium), nl)</b></td></tr><tr><td>cardiac-pacemaker</td><td>Herzschrittmacher</td><td>Cardiac pacemaker</td><td>Stimulateur cardiaque</td><td>Hartpacemaker</td></tr><tr><td>cochlear-implant</td><td>Cochlea-Implantat</td><td>Cochlear implant</td><td>Implant cochléaire</td><td>Cochleair implantaat</td></tr><tr><td>joint-prosthesis</td><td>Gelenkprothese</td><td>Joint prosthesis</td><td>Prothèse articulaire</td><td>Gewrichtsprothese</td></tr><tr><td>vascular-stent</td><td>Gefäßstent</td><td>Vascular stent</td><td>Stent vasculaire</td><td>Vasculaire stent</td></tr><tr><td>icd</td><td>Implantierbarer Kardioverter-Defibrillator</td><td>Implantable cardioverter-defibrillator</td><td>Défibrillateur automatique implantable</td><td>Implanteerbare cardioverter-defibrillator</td></tr><tr><td>other</td><td>Sonstiges Implantat</td><td>Other implant</td><td>Autre implant</td><td>Ander implantaat</td></tr></table></div>"
+  ] ;
+  fhir:CodeSystem.url [ fhir:value "https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-implant-type"] ;
+  fhir:CodeSystem.version [ fhir:value "1.0.0"] ;
+  fhir:CodeSystem.name [ fhir:value "BeCSImplantType"] ;
+  fhir:CodeSystem.title [ fhir:value "BeCSImplantType"] ;
+  fhir:CodeSystem.status [ fhir:value "draft"] ;
+  fhir:CodeSystem.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:CodeSystem.date [ fhir:value "2026-09-04T09:25:18+00:00"^^xsd:dateTime] ;
+  fhir:CodeSystem.description [ fhir:value "Types of implants relevant for diagnostic imaging attention conditions"] ;
+  fhir:CodeSystem.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "BE" ] ;
+       fhir:Coding.display [ fhir:value "Belgium" ]
+     ]
+  ] ;
+  fhir:CodeSystem.caseSensitive [ fhir:value "false"^^xsd:boolean] ;
+  fhir:CodeSystem.content [ fhir:value "complete"] ;
+  fhir:CodeSystem.count [ fhir:value "6"^^xsd:nonNegativeInteger] ;
+  fhir:CodeSystem.concept [
+     fhir:index 0 ;
+     fhir:CodeSystem.concept.code [ fhir:value "cardiac-pacemaker" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Cardiac pacemaker" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Cardiac pacemaker" ]
+     ], [
+       fhir:index 1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Stimulateur cardiaque" ]
+     ], [
+       fhir:index 2 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Hartpacemaker" ]
+     ], [
+       fhir:index 3 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "de" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Herzschrittmacher" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "cochlear-implant" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Cochlear implant" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Cochlear implant" ]
+     ], [
+       fhir:index 1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Implant cochléaire" ]
+     ], [
+       fhir:index 2 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Cochleair implantaat" ]
+     ], [
+       fhir:index 3 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "de" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Cochlea-Implantat" ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:CodeSystem.concept.code [ fhir:value "joint-prosthesis" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Joint prosthesis" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Joint prosthesis" ]
+     ], [
+       fhir:index 1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Prothèse articulaire" ]
+     ], [
+       fhir:index 2 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Gewrichtsprothese" ]
+     ], [
+       fhir:index 3 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "de" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Gelenkprothese" ]
+     ]
+  ], [
+     fhir:index 3 ;
+     fhir:CodeSystem.concept.code [ fhir:value "vascular-stent" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Vascular stent" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Vascular stent" ]
+     ], [
+       fhir:index 1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Stent vasculaire" ]
+     ], [
+       fhir:index 2 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Vasculaire stent" ]
+     ], [
+       fhir:index 3 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "de" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Gefäßstent" ]
+     ]
+  ], [
+     fhir:index 4 ;
+     fhir:CodeSystem.concept.code [ fhir:value "icd" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Implantable cardioverter-defibrillator" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Implantable cardioverter-defibrillator" ]
+     ], [
+       fhir:index 1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Défibrillateur automatique implantable" ]
+     ], [
+       fhir:index 2 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Implanteerbare cardioverter-defibrillator" ]
+     ], [
+       fhir:index 3 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "de" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Implantierbarer Kardioverter-Defibrillator" ]
+     ]
+  ], [
+     fhir:index 5 ;
+     fhir:CodeSystem.concept.code [ fhir:value "other" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Other implant" ] ;
+     fhir:CodeSystem.concept.designation [
+       fhir:index 0 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "en" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Other implant" ]
+     ], [
+       fhir:index 1 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "fr-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Autre implant" ]
+     ], [
+       fhir:index 2 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "nl-BE" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Ander implantaat" ]
+     ], [
+       fhir:index 3 ;
+       fhir:CodeSystem.concept.designation.language [ fhir:value "de" ] ;
+       fhir:CodeSystem.concept.designation.value [ fhir:value "Sonstiges Implantat" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-implant-type.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

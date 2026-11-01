@@ -1,0 +1,96 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://www.ehealth.fgov.be/standards/fhir/drp/CodeSystem/be-cs-glycemia-measurement-timing> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "be-cs-glycemia-measurement-timing"] ; # 
+  fhir:language [ fhir:v "en"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem be-cs-glycemia-measurement-timing</b></p><a name=\"be-cs-glycemia-measurement-timing\"> </a><a name=\"hcbe-cs-glycemia-measurement-timing\"> </a><p>This case-sensitive code system <code>https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-glycemia-measurement-timing</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">fasting<a name=\"be-cs-glycemia-measurement-timing-fasting\"> </a></td><td>Fasting</td></tr><tr><td style=\"white-space:nowrap\">before-insulin-administration<a name=\"be-cs-glycemia-measurement-timing-before-insulin-administration\"> </a></td><td>Before insulin administration</td></tr><tr><td style=\"white-space:nowrap\">before-medication-administration<a name=\"be-cs-glycemia-measurement-timing-before-medication-administration\"> </a></td><td>Before medication administration</td></tr><tr><td style=\"white-space:nowrap\">glycemic-day-profile<a name=\"be-cs-glycemia-measurement-timing-glycemic-day-profile\"> </a></td><td>Daily glycaemic profile</td></tr></table><p><b>Additional Language Displays</b></p><table class=\"codes\"><tr><td><b>Code</b></td><td><b>French (Belgium) (fr)</b></td><td><b>Nederlands (België) (Dutch (Belgium), nl)</b></td></tr><tr><td>fasting</td><td>À jeun</td><td>Nuchter</td></tr><tr><td>before-insulin-administration</td><td>Avant l'administration d'insuline</td><td>Voor insuline toediening</td></tr><tr><td>before-medication-administration</td><td>Avant l'administration de médicaments</td><td>Voor medicatietoediening</td></tr><tr><td>glycemic-day-profile</td><td>Profil glycémique quotidien</td><td>Glycemiedagprofiel</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [ fhir:v "https://www.ehealth.fgov.be/standards/fhir/terminology/CodeSystem/be-cs-glycemia-measurement-timing"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.0.0"] ; # 
+  fhir:name [ fhir:v "BeCSGlycemiaMeasurementTiming"] ; # 
+  fhir:title [ fhir:v "eReferral Glycemia Measurement Timing"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2026-06-19T10:26:42+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "eHealth Platform"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "eHealth Platform" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.ehealth.fgov.be/standards/fhir" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "support@be-ehealth-standards.atlassian.net" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "Message Structure eHealth" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "support@be-ehealth-standards.atlassian.net" ] ;
+       fhir:use [ fhir:v "work" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Timing of glycemia measurements."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "BE" ] ;
+       fhir:display [ fhir:v "Belgium" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "4"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "fasting" ] ;
+     fhir:display [ fhir:v "Fasting" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "nl-BE" ] ;
+       fhir:value [ fhir:v "Nuchter" ]
+     ] [
+       fhir:language [ fhir:v "fr-BE" ] ;
+       fhir:value [ fhir:v "À jeun" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "before-insulin-administration" ] ;
+     fhir:display [ fhir:v "Before insulin administration" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "nl-BE" ] ;
+       fhir:value [ fhir:v "Voor insuline toediening" ]
+     ] [
+       fhir:language [ fhir:v "fr-BE" ] ;
+       fhir:value [ fhir:v "Avant l'administration d'insuline" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "before-medication-administration" ] ;
+     fhir:display [ fhir:v "Before medication administration" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "nl-BE" ] ;
+       fhir:value [ fhir:v "Voor medicatietoediening" ]
+     ] [
+       fhir:language [ fhir:v "fr-BE" ] ;
+       fhir:value [ fhir:v "Avant l'administration de médicaments" ]
+     ] )
+  ] [
+     fhir:code [ fhir:v "glycemic-day-profile" ] ;
+     fhir:display [ fhir:v "Daily glycaemic profile" ] ;
+     fhir:designation ( [
+       fhir:language [ fhir:v "nl-BE" ] ;
+       fhir:value [ fhir:v "Glycemiedagprofiel" ]
+     ] [
+       fhir:language [ fhir:v "fr-BE" ] ;
+       fhir:value [ fhir:v "Profil glycémique quotidien" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

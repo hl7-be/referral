@@ -1,0 +1,205 @@
+# BePerformerTask - Digital Referral Prescription Implementation Guide v1.0.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **BePerformerTask**
+
+## Resource Profile: BePerformerTask 
+
+| | |
+| :--- | :--- |
+| *Official URL*:https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-performer-task | *Version*:1.0.0 |
+| Draft as of 2026-03-23 | *Computable Name*:BePerformerTask |
+
+ 
+Subtask performed by one performer 
+
+**Usages:**
+
+* Examples for this Profile: [Task/example01-care02-colon-cleansing-performer-task](Task-example01-care02-colon-cleansing-performer-task.md), [Task/performer-task-1-uc5a-1](Task-performer-task-1-uc5a-1.md) and [Task/ucgh222p12-2-2-2](Task-ucgh222p12-2-2-2.md)
+
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/hl7.fhir.be.drp|current/StructureDefinition/be-performer-task)
+
+### Formal Views of Profile Content
+
+ [Description of Profiles, Differentials, Snapshots and how the different presentations work](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+
+ 
+
+Other representations of profile: [CSV](StructureDefinition-be-performer-task.csv), [Excel](StructureDefinition-be-performer-task.xlsx), [Schematron](StructureDefinition-be-performer-task.sch) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "be-performer-task",
+  "url" : "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-performer-task",
+  "version" : "1.0.0",
+  "name" : "BePerformerTask",
+  "status" : "draft",
+  "date" : "2026-03-23T09:38:39+00:00",
+  "description" : "Subtask performed by one performer",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "BE",
+      "display" : "Belgium"
+    }]
+  }],
+  "fhirVersion" : "4.0.1",
+  "mapping" : [{
+    "identity" : "workflow",
+    "uri" : "http://hl7.org/fhir/workflow",
+    "name" : "Workflow Pattern"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  }],
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "Task",
+  "baseDefinition" : "http://hl7.org/fhir/StructureDefinition/Task",
+  "derivation" : "constraint",
+  "differential" : {
+    "element" : [{
+      "id" : "Task",
+      "path" : "Task"
+    },
+    {
+      "id" : "Task.identifier",
+      "path" : "Task.identifier",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "system"
+        }],
+        "rules" : "open"
+      }
+    },
+    {
+      "id" : "Task.identifier:UHMEP",
+      "path" : "Task.identifier",
+      "sliceName" : "UHMEP",
+      "short" : "Reference ID of the UHMEP once available there",
+      "min" : 0,
+      "max" : "1",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Task.identifier:UHMEP.system",
+      "path" : "Task.identifier.system",
+      "min" : 1,
+      "fixedUri" : "https://www.ehealth.fgov.be/standards/fhir/referral/NamingSystem/uhmep"
+    },
+    {
+      "id" : "Task.identifier:UHMEP.value",
+      "path" : "Task.identifier.value",
+      "min" : 1
+    },
+    {
+      "id" : "Task.basedOn",
+      "path" : "Task.basedOn",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-organization-task"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Task.partOf",
+      "path" : "Task.partOf",
+      "short" : "Reference to the BeReferral task linked to the prescription",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-task"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Task.status",
+      "path" : "Task.status",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Task.statusReason",
+      "path" : "Task.statusReason",
+      "mustSupport" : true,
+      "binding" : {
+        "strength" : "example",
+        "valueSet" : "https://www.ehealth.fgov.be/standards/fhir/drp/ValueSet/be-vs-performer-task-status-reason"
+      }
+    },
+    {
+      "id" : "Task.intent",
+      "path" : "Task.intent",
+      "binding" : {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString" : "TaskIntent"
+        }],
+        "strength" : "required",
+        "description" : "The actual valueset will be provided when a terminology package is available. For current guidance, see the included [ValueSet](ValueSet-be-vs-task-intent.html).",
+        "valueSet" : "http://hl7.org/fhir/ValueSet/task-intent|4.0.1"
+      }
+    },
+    {
+      "id" : "Task.focus",
+      "path" : "Task.focus",
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-referral-servicerequest",
+        "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-annex-81"]
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Task.executionPeriod",
+      "path" : "Task.executionPeriod",
+      "short" : "Start and end date when the performer executed the task",
+      "mustSupport" : true
+    },
+    {
+      "id" : "Task.authoredOn",
+      "path" : "Task.authoredOn",
+      "min" : 1,
+      "constraint" : [{
+        "key" : "be-inv-long-date",
+        "severity" : "warning",
+        "human" : "date SHALL contain a long date (YYYY-MM-DDThh:mm:ss+zz:zz)",
+        "expression" : "empty() or toString().length()=25",
+        "source" : "https://www.ehealth.fgov.be/standards/fhir/drp/StructureDefinition/be-performer-task"
+      }],
+      "mustSupport" : true
+    },
+    {
+      "id" : "Task.owner",
+      "path" : "Task.owner",
+      "short" : "Reference to the performer of the referral prescription",
+      "min" : 1,
+      "type" : [{
+        "code" : "Reference",
+        "targetProfile" : ["https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole|2.1.2"]
+      }],
+      "mustSupport" : true
+    }]
+  }
+}
+
+```
