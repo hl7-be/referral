@@ -27,75 +27,237 @@ If needed, a signature SHALL be given using a Provenance resource referring to t
 
 #### Nursing medication
 
-Take note the nursing medication referral prescription profile is based on the FHIR MedicationRequest resource. The other nursing profiles are based on the ServiceRequest resource.
+Medication that a nurse administers as part of a prescribed action is normally described on the ServiceRequest. Use a contained Medication, referenced from `orderDetail` with the R5 `parameterFocus` extension (see [Details of an action](#details-of-an-action)).
+
+Use a MedicationRequest only if a separate system has to dispense or process the medication. This guide has no active MedicationRequest profile at the moment.
+
+When a MedicationRequest is used:
 
 *   It is expected the actual medication in the initial phase will be described as text using .medicationCodeableConcept.text. Going forward, it is expected more structured use of medication will be leveraged.
-*   When the referral is for administration of eyedrops (or other ointments) in a post-operative context, the date of the operation SHALL always be given using .encounter and providing minimal encounter information. Also, which eye SHALL be defined using .dosageInstruction.site. 
+*   When the referral is for administration of eyedrops (or other ointments) in a post-operative context, the date of the operation SHALL always be given using .encounter and providing minimal encounter information. Also, which eye SHALL be defined using .dosageInstruction.site.
 
 #### Prescribing multiple actions
 
-Each prescription, be it a ServiceRequest or a MedicationRequest for medication administration, can only contain one action (that can be repeatable). Sometimes the GP wants to prescribe multiple actions that are linked together. E.g. the patient needs an urethral tube, a colon cleansing, but before that the patient needs to be anesthetized using a subcutan injection with 5mg Midazolam.
+> **Draft.** This section describes the intended approach for nursing prescriptions. The profiles, extensions and examples of this guide do not implement it yet, and the open issues below can still change it.
 
-Each action will be a ServiceRequest or a MedicationRequest. The placement of a urethral tube is a ServiceRequest, the colon cleansing is also a ServiceRequest, and the injection with Midazolam is a MedicationRequest.
+Each ServiceRequest contains one action, which can be repeatable.
 
-These three requests will be linked together with a RequestGroup. The RequestGroup will reference the 3 requests in the .action field. The .action.resource field contains a reference to the request. The .action.id field will contain an arbitrary string used as an identifier for the request in the reference. The .action.relatedAction, lastly, will contain a .relationship and an .actionId. The .relationship is the type of relation between the referenced request and another request that has the .action.id that is mentioned in .relatedAction.actionId.
+A prescription with **one action** is a stand-alone ServiceRequest with `intent = order`. It has no RequestGroup. This is the normal pattern.
 
-Below a json example:
+**Several actions created together** by the prescriber are one RequestGroup, with the actions as contained ServiceRequests. This is the exception to the normal pattern. For example, a bladder catheter can be placed, monitored until it is removed, and then removed, which is one RequestGroup with three contained ServiceRequests.
+
+| Concept | Representation |
+|---|---|
+| The prescription | `RequestGroup`, with what the group is in `code`, a patient-friendly identifier in `identifier[SHORT]`, and the overall status in `status` |
+| One action | A contained `ServiceRequest` with `intent = option`, what is requested in `code`, and its own patient-friendly identifier in `identifier[SHORT]`, referenced from `RequestGroup.action.resource` |
+| Discipline and prescription type | `ServiceRequest.category` on each action. A RequestGroup has no `category` element, so the group uses an extension with the same content |
+| Dependencies between actions | `RequestGroup.action.relatedAction` |
+| Status of the prescription | `RequestGroup.status` |
+| Execution and cancellation | `Task`. See [Tracking a group of actions](#tracking-a-group-of-actions) |
+
+The contained requests have `intent = option` because FHIR defines a RequestGroup and its options as a single integrated request, whose status is the status of the RequestGroup. For the same reason:
+
+*   The `status` of a contained request is not maintained separately.
+*   A contained request cannot be changed on its own. To change an action, replace the group using `RequestGroup.replaces`.
+*   Elements required by the ServiceRequest profile are repeated on each contained request, with the same values as on the RequestGroup.
+
+Below a json example. The parameter codes in it are placeholders:
 
 ```
 {
   "resourceType": "RequestGroup",
-  "id": "example01-referralprescription-request-group-gen",
+  "id": "example-nursing-catheter-group",
+  "contained": [
+    {
+      "resourceType": "ServiceRequest",
+      "id": "placement",
+      "identifier": [
+        {
+          "system": "https://www.ehealth.fgov.be/standards/fhir/drp/NamingSystem/uhmep-short",
+          "value": "P9W3HD"
+        }
+      ],
+      "status": "active",
+      "intent": "option",
+      "code": {
+        "text": "Placement of an indwelling bladder catheter"
+      },
+      "subject": {
+        "reference": "Patient/example"
+      },
+      "orderDetail": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-ServiceRequest.orderDetail.parameterFocus",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/_datatype",
+                  "valueString": "CodeableReference"
+                },
+                {
+                  "url": "concept",
+                  "valueCodeableConcept": {
+                    "text": "Indwelling catheter"
+                  }
+                }
+              ]
+            },
+            {
+              "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-ServiceRequest.orderDetail.parameter",
+              "extension": [
+                {
+                  "url": "code",
+                  "valueCodeableConcept": {
+                    "text": "Calibre"
+                  }
+                },
+                {
+                  "url": "value",
+                  "valueQuantity": {
+                    "value": 14,
+                    "unit": "CH",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "[Ch]"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "resourceType": "ServiceRequest",
+      "id": "surveillance",
+      "identifier": [
+        {
+          "system": "https://www.ehealth.fgov.be/standards/fhir/drp/NamingSystem/uhmep-short",
+          "value": "R2K7MA"
+        }
+      ],
+      "status": "active",
+      "intent": "option",
+      "code": {
+        "text": "Surveillance of the bladder catheter"
+      },
+      "subject": {
+        "reference": "Patient/example"
+      }
+    },
+    {
+      "resourceType": "ServiceRequest",
+      "id": "removal",
+      "identifier": [
+        {
+          "system": "https://www.ehealth.fgov.be/standards/fhir/drp/NamingSystem/uhmep-short",
+          "value": "T5N8QB"
+        }
+      ],
+      "status": "active",
+      "intent": "option",
+      "code": {
+        "text": "Removal of the bladder catheter"
+      },
+      "subject": {
+        "reference": "Patient/example"
+      }
+    }
+  ],
   "identifier": [
     {
-      "system": "https://www.ehealth.fgov.be/standards/fhir/NamingSystem/uhmep",
-      "value": "UHMEPVALUE"
+      "system": "https://www.ehealth.fgov.be/standards/fhir/drp/NamingSystem/uhmep-short",
+      "value": "N7B4VS"
     }
   ],
+  "status": "active",
+  "intent": "order",
+  "code": {
+    "text": "Urogenital care"
+  },
+  "subject": {
+    "reference": "Patient/example"
+  },
   "action": [
     {
+      "id": "placement",
       "resource": {
-        "reference": "ServiceRequest/example01-care01-referralprescription-nursing-bladder-care-gen"
-      },
-      "relatedAction": [
-        {
-          "relationship": "after-end",
-          "actionId": "care03"
-        }
-      ],
-      "id": "care01"
+        "reference": "#placement"
+      }
     },
     {
-      "resource": {
-        "reference": "ServiceRequest/example01-care02-colon-cleansing-gen"
-      },
+      "id": "surveillance",
       "relatedAction": [
         {
-          "relationship": "after-end",
-          "actionId": "care03"
+          "actionId": "placement",
+          "relationship": "after-end"
+        },
+        {
+          "actionId": "removal",
+          "relationship": "before-start"
         }
       ],
-      "id": "care02"
+      "resource": {
+        "reference": "#surveillance"
+      }
     },
     {
+      "id": "removal",
       "resource": {
-        "reference": "MedicationRequest/example01-care03-referralprescription-nursing-medication-gen"
-      },
-      "id": "care03"
+        "reference": "#removal"
+      }
     }
-  ],
-  "intent": "order",
-  "status": "active",
-  "subject": {
-    "reference": "Patient1"
-  }
+  ]
 }
-
 ```
 
-#### Multiple actions in one unit
+The value of `.action.id` is an arbitrary string that identifies the action within the group. `.action.relatedAction.relationship` describes how the action relates to the action named in `.relatedAction.actionId`. In the example, surveillance starts after placement has ended, and comes before the start of removal.
 
-When describing the prescription of multiple actions, we showed that multiple requests (ServiceRequests or MedicationRequests) AND a RequestGroup were necessary. These resources must be handled by the system in one go. Therefore, we use the Bundle transaction mechanism as described [here](https://www.hl7.org/fhir/http.html#transaction). The resources, both the requests and the requestgroup can be manipulated separately afterwards.
+> **Open issue: one or two shapes.** Receivers have to handle both stand-alone ServiceRequests and RequestGroups. Implementers are asked whether this is acceptable, or whether they would prefer a RequestGroup for every prescription, even with one action.
+
+#### Details of an action
+
+Details of an action, such as a catheter type and calibre, or an oxygen flow and maximum flow, go in `ServiceRequest.orderDetail`, using the R5 cross-version extensions:
+
+*   `parameterFocus` says what the details apply to: a concept such as the catheter type, or a reference such as a contained Medication.
+*   `parameter` holds a coded parameter and its value, of type Quantity, Ratio, Range, boolean, CodeableConcept, string or Period.
+
+
+> **Open issue: time windows.** How to express a time window for an action, such as 22:00 to 07:00 every day, is still to be decided. The options are a parameter with a Period or a code, or a Timing.
+
+A target to monitor, such as an oxygen saturation range, uses the same monitoring extension as telemonitoring prescriptions.
+
+#### Tracking a group of actions
+
+Tasks are not contained. A group has two levels of Task, both using BeReferralTask:
+
+*   One upper Task, with `focus` pointing to the RequestGroup.
+*   One lower Task per action, with `partOf` pointing to the upper Task, and `focus` pointing to the contained request, for example `RequestGroup/example-nursing-catheter-group#placement`.
+
+BePerformerTask stays below these levels, as described in [Many performers for one prescription](#many-performers-for-one-prescription), because it requires an owner, and the owner is not known when the prescription is created.
+
+The status of each action is on its lower Task:
+
+*   To cancel the whole prescription, cancel the upper Task. This ends all its lower Tasks.
+*   To cancel one action, cancel its lower Task. The RequestGroup stays active.
+
+The rule that the status of the Task is identical to the status of the prescription applies to the upper Task, and not to the lower Tasks.
+
+> **Open issue: reference to a contained request.** FHIR R4 does not define a reference to a contained resource from outside its container. This guide adopts the form that R5 defines, `[type]/[id]#[containedId]`, as a convention. This form still has to be tested with validators and servers. If it does not work, `focus` will point to the RequestGroup, and `Task.input` will carry the `action.id`.
+
+#### Exchanging a group of actions
+
+A group and its Tasks are exchanged in one Bundle, with `Bundle.type = subscription-notification`, pre-adopted from R5. The Bundle reports resources that already exist, so it does not create the prescription, and a transaction Bundle is not used for that purpose. The resources therefore have their final ids in the Bundle.
+
+> **Open issue: Bundle type.** `subscription-notification` is not in the required R4 value set for `Bundle.type`, and in R5 it requires a SubscriptionStatus as its first entry, a resource that does not exist in R4. The alternative under consideration is the approach of the Subscriptions R5 Backport guide for R4: `Bundle.type = history`, with a Parameters resource as its first entry.
+
+The RequestGroup is created together with its orders, which are contained in it. The Tasks are created by the management system, not by the prescriber.
+
+#### Searching for prescriptions
+
+Search for a group on the RequestGroup, not on its contained requests. By default, a FHIR server does not return contained resources in a search, and the contained requests all have `intent = option`, so the intent of the prescription is only available on the RequestGroup. A match returns the whole group.
+
+> **Open issue: finding an action by its identifier.** Each contained request has its own `identifier[SHORT]`, which a search on ServiceRequest does not find. How to search for it is still to be defined. One option is a search parameter on RequestGroup that also indexes the identifiers of its contained requests, and returns the group.
 
 #### The prescription is different from the service/task itself
 
